@@ -15,8 +15,8 @@ export default function Navbar() {
     { name: 'Home', path: '/' },
     { name: 'Cube List', path: '/cube-list' },
     { name: 'Tokens', path: '/tokens' },
-    { name: 'About', path: '/about' },
     { name: 'Tools', path: '/tools' },
+    { name: 'About', path: '/about' },
   ];
 
   return (

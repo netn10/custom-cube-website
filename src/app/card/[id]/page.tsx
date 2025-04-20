@@ -172,22 +172,6 @@ export default function CardDetailPage() {
           </div>
         </div>
       </div>
-      
-      <div className="mt-8 bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6">
-        <h2 className="text-xl font-bold mb-4 dark:text-white">Related Cards</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
-          {/* This would be populated with actual related cards in a real implementation */}
-          {Array(4).fill(null).map((_, index) => (
-            <div 
-              key={index} 
-              className="bg-gray-100 dark:bg-gray-700 p-3 rounded-lg cursor-pointer hover:bg-gray-200 dark:hover:bg-gray-600"
-            >
-              <p className="font-medium dark:text-white">Related Card {index + 1}</p>
-              <p className="text-sm text-gray-600 dark:text-gray-400">Creature</p>
-            </div>
-          ))}
-        </div>
-      </div>
     </div>
   );
 }
