@@ -4,7 +4,7 @@
 
 [build.environment]
   NODE_VERSION = "18"
-  NEXT_PUBLIC_API_URL = "https://mtgcube-api.onrender.com"
+  NEXT_PUBLIC_API_URL = "https://mtgcube-api.onrender.com/api"
 
 [[plugins]]
   package = "@netlify/plugin-nextjs"

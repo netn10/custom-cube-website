@@ -1,7 +1,12 @@
 // API service for fetching data from the Flask backend
 import { Card, Archetype, Token, Suggestion } from '@/types/types';
 
-const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'http://127.0.0.1:5000/api';
+// In development, we use localhost with /api path
+// In production, the URL from env already includes the /api path
+const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL ? process.env.NEXT_PUBLIC_API_URL : 'http://127.0.0.1:5000/api';
+
+// For debugging
+console.log('API_BASE_URL:', API_BASE_URL);
 
 // Generic fetch function with error handling
 async function fetchFromAPI<T>(endpoint: string, options?: RequestInit): Promise<T> {
