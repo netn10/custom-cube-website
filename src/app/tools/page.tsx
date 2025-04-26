@@ -203,7 +203,7 @@ function DraftSimulator() {
       setPickedCards(updatedPickedCards);
       
       // Remove picked card from current pack
-      let updatedPack = currentPack.filter(c => c.id !== card.id);
+      let updatedPack = currentPack.filter((c: { id: string }) => c.id !== card.id);
       
       // Each bot makes a pick from their current pack
       const updatedBots = [...bots];
@@ -229,7 +229,7 @@ function DraftSimulator() {
             ...bot,
             colors: updatedBotColors,
             picks: [...bot.picks, { ...botCard, pickNumber, packNumber }],
-            currentPack: botPack.filter(c => c.id !== botCard.id) // Remove picked card
+            currentPack: botPack.filter((c: { id: string }) => c.id !== botCard.id) // Remove picked card
           };
           
           // Record this pick for history

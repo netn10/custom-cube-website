@@ -47,7 +47,7 @@ export async function getCards(params?: {
     queryParams.append('type', params.type);
   }
   
-  if (params?.custom !== null) {
+  if (params?.custom !== undefined && params.custom !== null) {
     queryParams.append('custom', params.custom ? 'true' : 'false');
   }
   
