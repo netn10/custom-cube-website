@@ -1,4 +1,5 @@
 // API service for fetching data from the Flask backend
+import { Card, Archetype, Token, Suggestion } from '@/types/types';
 
 const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'http://127.0.0.1:5000/api';
 
@@ -31,7 +32,7 @@ export async function getCards(params?: {
   colors?: string[];
   type?: string;
   custom?: boolean | null;
-}) {
+}): Promise<Card[]> {
   let queryParams = new URLSearchParams();
   
   if (params?.search) {
@@ -51,27 +52,27 @@ export async function getCards(params?: {
   }
   
   const queryString = queryParams.toString() ? `?${queryParams.toString()}` : '';
-  return fetchFromAPI(`/cards${queryString}`);
+  return fetchFromAPI<Card[]>(`/cards${queryString}`);
 }
 
-export async function getCardById(id: string) {
-  return fetchFromAPI(`/cards/${id}`);
+export async function getCardById(id: string): Promise<Card> {
+  return fetchFromAPI<Card>(`/cards/${id}`);
 }
 
 // Archetypes API
-export async function getArchetypes() {
-  return fetchFromAPI('/archetypes');
+export async function getArchetypes(): Promise<Archetype[]> {
+  return fetchFromAPI<Archetype[]>('/archetypes');
 }
 
-export async function getArchetypeById(id: string) {
-  return fetchFromAPI(`/archetypes/${id}`);
+export async function getArchetypeById(id: string): Promise<Archetype> {
+  return fetchFromAPI<Archetype>(`/archetypes/${id}`);
 }
 
-export async function getArchetypeCards(id: string) {
-  return fetchFromAPI(`/archetypes/${id}/cards`);
+export async function getArchetypeCards(id: string): Promise<Card[]> {
+  return fetchFromAPI<Card[]>(`/archetypes/${id}/cards`);
 }
 
-export async function getRandomArchetypeCards() {
+export async function getRandomArchetypeCards(): Promise<Card[]> {
   try {
     // Use the full URL to avoid any path issues
     const response = await fetch(`http://127.0.0.1:5000/api/archetypes/random-cards`, {
@@ -99,7 +100,7 @@ export async function getRandomArchetypeCards() {
 export async function getTokens(params?: {
   search?: string;
   colors?: string[];
-}) {
+}): Promise<Token[]> {
   let queryParams = new URLSearchParams();
   
   if (params?.search) {
@@ -111,7 +112,7 @@ export async function getTokens(params?: {
   }
   
   const queryString = queryParams.toString() ? `?${queryParams.toString()}` : '';
-  return fetchFromAPI(`/tokens${queryString}`);
+  return fetchFromAPI<Token[]>(`/tokens${queryString}`);
 }
 
 // Draft API
@@ -120,7 +121,7 @@ export async function getBotDraftPick(params: {
   botColors: string[];
   packNumber: number;
   pickNumber: number;
-}) {
+}): Promise<any> {
   return fetchFromAPI('/draft/bot-pick', {
     method: 'POST',
     body: JSON.stringify(params),
@@ -128,7 +129,7 @@ export async function getBotDraftPick(params: {
 }
 
 // Generate a draft pack
-export async function getDraftPack() {
+export async function getDraftPack(): Promise<Card[]> {
   try {
     // Use the dedicated endpoint for draft packs
     const response = await fetch(`${API_BASE_URL}/draft/pack`, {
@@ -152,7 +153,7 @@ export async function getDraftPack() {
 }
 
 // Card Suggestions API
-export async function getSuggestions() {
+export async function getSuggestions(): Promise<Suggestion[]> {
   return fetchFromAPI('/suggestions');
 }
 
@@ -161,14 +162,14 @@ export async function addSuggestion(suggestion: {
   description?: string;
   imageUrl?: string;
   createdBy?: string;
-}) {
+}): Promise<Suggestion> {
   return fetchFromAPI('/suggestions', {
     method: 'POST',
     body: JSON.stringify(suggestion),
   });
 }
 
-export async function uploadSuggestionImage(imageFile: File) {
+export async function uploadSuggestionImage(imageFile: File): Promise<any> {
   const formData = new FormData();
   formData.append('image', imageFile);
   
@@ -192,11 +193,11 @@ export async function uploadSuggestionImage(imageFile: File) {
 }
 
 // ChatGPT Cards API
-export async function getChatGPTCards() {
+export async function getChatGPTCards(): Promise<Card[]> {
   return fetchFromAPI('/cards/chatgpt');
 }
 
-export async function getChatGPTResponse(prompt: string) {
+export async function getChatGPTResponse(prompt: string): Promise<any> {
   return fetchFromAPI('/chatgpt/response', {
     method: 'POST',
     body: JSON.stringify({ prompt }),

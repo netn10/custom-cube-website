@@ -39,3 +39,13 @@ export type Tool = {
   description: string;
   path: string;
 };
+
+export type Suggestion = {
+  id: string;
+  name: string;
+  description?: string;
+  imageUrl?: string;
+  createdBy?: string;
+  submittedAt: string;
+  status: 'pending' | 'approved' | 'rejected';
+};
