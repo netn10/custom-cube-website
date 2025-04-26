@@ -157,14 +157,14 @@ export default function CardDetailPage() {
               </span>
               
               {card.archetypes.map((archetype: string) => {
-                const archetypeName = archetype.split('-').pop();
+                const archetypeName = archetype.split('-').pop() || archetype;
                 return (
                   <Link 
                     key={archetype} 
                     href={`/archetypes/${archetype}`}
                     className="px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded-full text-sm"
                   >
-                    {archetypeName?.charAt(0).toUpperCase() + archetypeName?.slice(1)} Archetype
+                    {archetypeName.charAt(0).toUpperCase() + archetypeName.slice(1)} Archetype
                   </Link>
                 );
               })}
