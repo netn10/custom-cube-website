@@ -6,6 +6,7 @@ from bson import ObjectId
 from dotenv import load_dotenv
 import json
 import random
+from datetime import datetime
 
 # Load environment variables
 load_dotenv()
@@ -209,7 +210,6 @@ def get_random_archetype_cards():
         print(f"Returning {len(result)} random cards")
         return jsonify(result)
     except Exception as e:
-        print(f"Error getting random archetype cards: {str(e)}")
         return jsonify({"error": str(e)}), 500
 
 @app.route('/api/tokens', methods=['GET'])
@@ -379,6 +379,207 @@ def bot_draft_pick():
             'botColors': bot_colors
         })
     
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+
+# Card Suggestions API
+@app.route('/api/suggestions', methods=['GET'])
+def get_suggestions():
+    """Get all card suggestions"""
+    try:
+        suggestions = list(db.suggestions.find())
+        
+        # Convert ObjectId to string for each suggestion
+        for suggestion in suggestions:
+            suggestion['id'] = str(suggestion.pop('_id'))
+            
+        return jsonify(suggestions)
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+
+@app.route('/api/suggestions', methods=['POST'])
+def add_suggestion():
+    """Add a new card suggestion"""
+    try:
+        data = request.json
+        
+        # Validate required fields
+        if not data.get('name'):
+            return jsonify({"error": "Card name is required"}), 400
+            
+        # Create suggestion document
+        suggestion = {
+            "name": data.get('name'),
+            "description": data.get('description', ''),
+            "imageUrl": data.get('imageUrl', ''),
+            "createdBy": data.get('createdBy', 'Anonymous'),
+            "submittedAt": datetime.now(),
+            "status": "pending"  # pending, approved, rejected
+        }
+        
+        # Insert into database
+        result = db.suggestions.insert_one(suggestion)
+        
+        # Return the created suggestion with properly serialized ID
+        created_suggestion = {
+            "id": str(result.inserted_id),
+            "name": suggestion["name"],
+            "description": suggestion["description"],
+            "imageUrl": suggestion["imageUrl"],
+            "createdBy": suggestion["createdBy"],
+            "submittedAt": suggestion["submittedAt"].isoformat(),
+            "status": suggestion["status"]
+        }
+        return jsonify(created_suggestion), 201
+        
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+
+@app.route('/api/suggestions/upload', methods=['POST'])
+def upload_suggestion_image():
+    """Upload an image for a card suggestion"""
+    try:
+        if 'image' not in request.files:
+            return jsonify({"error": "No image file provided"}), 400
+            
+        image_file = request.files['image']
+        
+        if image_file.filename == '':
+            return jsonify({"error": "No image selected"}), 400
+            
+        # For simplicity, we'll store the image in a base64 format
+        # In a production environment, you would likely use cloud storage
+        import base64
+        image_data = base64.b64encode(image_file.read()).decode('utf-8')
+        
+        # Return the image data to be stored with the suggestion
+        return jsonify({"imageUrl": f"data:image/{image_file.filename.split('.')[-1]};base64,{image_data}"}), 200
+        
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+
+@app.route('/api/cards/chatgpt', methods=['GET'])
+def get_chatgpt_cards():
+    """Get cards that instruct users to ask ChatGPT for something"""
+    try:
+        # Find cards with text containing "ask ChatGPT" or similar phrases
+        query = {
+            "$or": [
+                {"text": {"$regex": "ask ChatGPT", "$options": "i"}},
+                {"text": {"$regex": "ask AI", "$options": "i"}},
+                {"text": {"$regex": "prompt ChatGPT", "$options": "i"}},
+                {"text": {"$regex": "ask an AI", "$options": "i"}},
+                {"oracle_text": {"$regex": "ask ChatGPT", "$options": "i"}},
+                {"oracle_text": {"$regex": "ask AI", "$options": "i"}},
+                {"oracle_text": {"$regex": "prompt ChatGPT", "$options": "i"}},
+                {"oracle_text": {"$regex": "ask an AI", "$options": "i"}}
+            ]
+        }
+        
+        # Execute query
+        cards = list(db.cards.find(query))
+        
+        # If no cards found with the query, create some sample cards for demonstration
+        if not cards:
+            sample_cards = [
+                {
+                    "_id": ObjectId(),
+                    "name": "AI Consultation",
+                    "manaCost": "{2}{U}",
+                    "type": "Instant",
+                    "text": "Ask ChatGPT to create a unique magical creature with three special abilities.",
+                    "colors": ["U"],
+                    "rarity": "Rare",
+                    "imageUrl": "https://via.placeholder.com/265x370/0066cc/ffffff?text=AI+Consultation",
+                    "prompt": "Create a unique magical creature with three special abilities. Describe its appearance and explain each of its abilities in detail."
+                },
+                {
+                    "_id": ObjectId(),
+                    "name": "Creative Spark",
+                    "manaCost": "{1}{R}",
+                    "type": "Sorcery",
+                    "text": "Ask ChatGPT to write a short story about a planeswalker's first encounter with a dragon.",
+                    "colors": ["R"],
+                    "rarity": "Uncommon",
+                    "imageUrl": "https://via.placeholder.com/265x370/cc3300/ffffff?text=Creative+Spark",
+                    "prompt": "Write a short story (250 words or less) about a planeswalker's first encounter with a dragon. Include details about the setting, the planeswalker's reaction, and how the encounter ends."
+                },
+                {
+                    "_id": ObjectId(),
+                    "name": "Wisdom of the Ages",
+                    "manaCost": "{3}{W}{W}",
+                    "type": "Enchantment",
+                    "text": "Whenever a creature enters the battlefield under your control, ask ChatGPT for a wise quote about that creature's type.",
+                    "colors": ["W"],
+                    "rarity": "Mythic Rare",
+                    "imageUrl": "https://via.placeholder.com/265x370/ffffcc/000000?text=Wisdom+of+the+Ages",
+                    "prompt": "Provide a wise or philosophical quote about [CREATURE_TYPE]. The quote can be real or invented, but should sound profound and match the flavor of Magic: The Gathering."
+                },
+                {
+                    "_id": ObjectId(),
+                    "name": "Diabolic Riddle",
+                    "manaCost": "{2}{B}{B}",
+                    "type": "Sorcery",
+                    "text": "Ask ChatGPT to create a riddle with a dark or macabre theme. Your opponent must solve it or lose 5 life.",
+                    "colors": ["B"],
+                    "rarity": "Rare",
+                    "imageUrl": "https://via.placeholder.com/265x370/333333/ffffff?text=Diabolic+Riddle",
+                    "prompt": "Create a challenging riddle with a dark or macabre theme in the style of Magic: The Gathering black mana flavor. The answer should be something found in a typical Magic: The Gathering setting."
+                },
+                {
+                    "_id": ObjectId(),
+                    "name": "Nature's Inspiration",
+                    "manaCost": "{2}{G}",
+                    "type": "Instant",
+                    "text": "Ask ChatGPT to describe a new land type that combines elements of two existing basic lands.",
+                    "colors": ["G"],
+                    "rarity": "Uncommon",
+                    "imageUrl": "https://via.placeholder.com/265x370/00cc66/ffffff?text=Nature's+Inspiration",
+                    "prompt": "Describe a new Magic: The Gathering land type that combines elements of two existing basic lands (choose any two from Plains, Island, Swamp, Mountain, or Forest). Explain its physical appearance, what mana it would produce, and what kind of creatures might inhabit it."
+                }
+            ]
+            
+            # Insert sample cards into database
+            db.cards.insert_many(sample_cards)
+            cards = sample_cards
+        
+        # Convert ObjectId to string for each card
+        for card in cards:
+            card['id'] = str(card.pop('_id'))
+            
+        return jsonify(cards)
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+
+@app.route('/api/chatgpt/response', methods=['POST'])
+def get_chatgpt_response():
+    """Simulate a ChatGPT response for a given prompt"""
+    try:
+        data = request.json
+        prompt = data.get('prompt')
+        
+        if not prompt:
+            return jsonify({"error": "Prompt is required"}), 400
+            
+        # In a real implementation, this would call the OpenAI API
+        # For now, we'll return predefined responses based on keywords in the prompt
+        
+        responses = {
+            "creature": "I've created the Luminous Leviathan, a massive aquatic creature with translucent skin that glows with inner light. It has three abilities:\n\n1. Bioluminescent Burst: Once per day, it can release a blinding flash of light that temporarily blinds nearby creatures.\n\n2. Depth Adaptation: It can survive at any ocean depth, adjusting its body pressure automatically.\n\n3. Memory Absorption: When it touches another creature, it can absorb and store their memories, which it can later project as vivid illusions.",
+            "story": "The air crackled with energy as Nissa stepped through the planar portal. The scorched mountains of Shiv stretched before her, a landscape she'd only heard of in tales. A deafening roar shook the ground beneath her feet.\n\nShe turned to see an enormous dragon with scales like burnished copper swooping down. Heat rippled from its body, distorting the air.\n\n\"Planeswalker,\" the dragon rumbled, landing with surprising grace. \"You smell of forests and growth. Strange to find such in Shiv.\"\n\nNissa stood her ground, though her heart hammered. \"I seek knowledge of elemental binding.\"\n\nThe dragon's laugh sent sparks dancing. \"Then you've found the right teacher.\" Its eyes glinted with ancient wisdom. \"But my lessons never come free.\"",
+            "quote": "\"In the shadow of wings greater than mountains, even the mightiest warrior learns the virtue of humility.\" — Ancient Draconic Proverb",
+            "riddle": "I am born in darkness, yet I illuminate truth. The more you feed me, the hungrier I become for secrets untold. In life I bring death, in death I bring life. What am I?\n\n(Answer: A black mana flame)",
+            "land": "The Mistmarsh is a haunting terrain where the boundaries between Island and Swamp blur into a beautiful yet treacherous landscape. Perpetual fog hangs over dark waters that reflect an opalescent sheen. The land produces both blue and black mana, drawing power from both the calculating intellect of the Islands and the decaying abundance of the Swamps.\n\nCrystalline formations rise from the murky depths, while twisted mangroves create labyrinthine passages through the water. Creatures here have adapted uniquely - many are amphibious with both gills and lungs, while others have developed bioluminescence to navigate the eternal mist."
+        }
+        
+        # Determine which response to return based on keywords in the prompt
+        for key, response in responses.items():
+            if key.lower() in prompt.lower():
+                return jsonify({"response": response})
+                
+        # Default response if no keywords match
+        return jsonify({"response": "After careful consideration of your request, I've crafted a response that blends creativity with the mystical elements of the multiverse. The magic you seek manifests in unexpected ways, revealing patterns that connect across planes of existence. May this insight serve you well in your arcane pursuits."})
+        
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 

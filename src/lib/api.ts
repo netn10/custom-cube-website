@@ -150,3 +150,55 @@ export async function getDraftPack() {
     throw error;
   }
 }
+
+// Card Suggestions API
+export async function getSuggestions() {
+  return fetchFromAPI('/suggestions');
+}
+
+export async function addSuggestion(suggestion: {
+  name: string;
+  description?: string;
+  imageUrl?: string;
+  createdBy?: string;
+}) {
+  return fetchFromAPI('/suggestions', {
+    method: 'POST',
+    body: JSON.stringify(suggestion),
+  });
+}
+
+export async function uploadSuggestionImage(imageFile: File) {
+  const formData = new FormData();
+  formData.append('image', imageFile);
+  
+  try {
+    const response = await fetch(`${API_BASE_URL}/suggestions/upload`, {
+      method: 'POST',
+      body: formData,
+      // Don't set Content-Type header as the browser will set it with the boundary
+    });
+    
+    if (!response.ok) {
+      const errorData = await response.json().catch(() => ({ error: 'Unknown error' }));
+      throw new Error(errorData.error || `API error: ${response.status}`);
+    }
+    
+    return await response.json();
+  } catch (error) {
+    console.error('API fetch error:', error);
+    throw error;
+  }
+}
+
+// ChatGPT Cards API
+export async function getChatGPTCards() {
+  return fetchFromAPI('/cards/chatgpt');
+}
+
+export async function getChatGPTResponse(prompt: string) {
+  return fetchFromAPI('/chatgpt/response', {
+    method: 'POST',
+    body: JSON.stringify({ prompt }),
+  });
+}

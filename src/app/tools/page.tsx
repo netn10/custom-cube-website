@@ -1,8 +1,8 @@
 'use client';
 
-import { useState } from 'react';
-import { FaDice, FaRandom, FaCalculator, FaSearch } from 'react-icons/fa';
-import { getBotDraftPick, getDraftPack } from '@/lib/api';
+import { useState, useRef, useEffect } from 'react';
+import { FaDice, FaRandom, FaCalculator, FaSearch, FaPlusCircle, FaList, FaRobot } from 'react-icons/fa';
+import { getBotDraftPick, getDraftPack, getSuggestions, addSuggestion, uploadSuggestionImage, getChatGPTCards, getChatGPTResponse } from '@/lib/api';
 
 type Tool = {
   id: string;
@@ -44,6 +44,27 @@ export default function ToolsPage() {
       icon: <FaSearch className="h-6 w-6" />,
       component: <ArchetypeFinder />,
     },
+    {
+      id: 'ask-chatgpt',
+      name: 'Ask ChatGPT',
+      description: 'View cards that instruct you to ask ChatGPT for something and get AI-generated responses.',
+      icon: <FaRobot className="h-6 w-6" />,
+      component: <AskChatGPT />,
+    },
+    {
+      id: 'suggest-card',
+      name: 'Suggest a Card',
+      description: 'Submit your own card suggestions for the cube by uploading an image or providing a description.',
+      icon: <FaPlusCircle className="h-6 w-6" />,
+      component: <CardSuggestion />,
+    },
+    {
+      id: 'suggested-cards',
+      name: 'Suggested Cards',
+      description: 'View all card suggestions submitted by the community.',
+      icon: <FaList className="h-6 w-6" />,
+      component: <SuggestedCards />,
+    },
   ];
 
   const selectedTool = tools.find(tool => tool.id === activeTool);
@@ -52,7 +73,7 @@ export default function ToolsPage() {
     <div className="space-y-6">
       <h1 className="text-3xl font-bold text-center dark:text-white">Cube Tools</h1>
       
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         {tools.map(tool => (
           <div
             key={tool.id}
@@ -938,6 +959,469 @@ function ArchetypeFinder() {
                   )}
                 </div>
               ))}
+            </div>
+          )}
+        </div>
+      )}
+    </div>
+  );
+}
+
+// Card Suggestion Component
+function CardSuggestion() {
+  const [submitOption, setSubmitOption] = useState<'image' | 'text' | null>(null);
+  const [cardName, setCardName] = useState('');
+  const [cardDescription, setCardDescription] = useState('');
+  const [createdBy, setCreatedBy] = useState('');
+  const [selectedImage, setSelectedImage] = useState<File | null>(null);
+  const [previewUrl, setPreviewUrl] = useState<string | null>(null);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitSuccess, setSubmitSuccess] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+  const fileInputRef = useRef<HTMLInputElement>(null);
+
+  const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (e.target.files && e.target.files[0]) {
+      const file = e.target.files[0];
+      setSelectedImage(file);
+      
+      // Create preview URL
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        setPreviewUrl(reader.result as string);
+      };
+      reader.readAsDataURL(file);
+    }
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    if (!cardName) {
+      setError('Card name is required');
+      return;
+    }
+    
+    try {
+      setIsSubmitting(true);
+      setError(null);
+      
+      let imageUrl = '';
+      
+      // If image was uploaded, process it first
+      if (submitOption === 'image' && selectedImage) {
+        const uploadResult = await uploadSuggestionImage(selectedImage);
+        imageUrl = uploadResult.imageUrl;
+      }
+      
+      // Submit the suggestion
+      await addSuggestion({
+        name: cardName,
+        description: cardDescription,
+        imageUrl: imageUrl,
+        createdBy: createdBy || 'Anonymous'
+      });
+      
+      // Reset form
+      setCardName('');
+      setCardDescription('');
+      setCreatedBy('');
+      setSelectedImage(null);
+      setPreviewUrl(null);
+      setSubmitOption(null);
+      setSubmitSuccess(true);
+      
+      // Reset success message after 3 seconds
+      setTimeout(() => {
+        setSubmitSuccess(false);
+      }, 3000);
+      
+    } catch (err) {
+      console.error('Error submitting suggestion:', err);
+      setError(`Failed to submit suggestion: ${err instanceof Error ? err.message : String(err)}`);
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
+  return (
+    <div className="space-y-8">
+      <div className="prose dark:prose-invert max-w-none">
+        <p>
+          Have a great idea for a card that would fit perfectly in the cube? Submit your suggestion here!
+          You can either upload an image of your card design or provide a text description.
+        </p>
+      </div>
+      
+      {/* Option Selection */}
+      {!submitOption && (
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div 
+            className="bg-gray-100 dark:bg-gray-700 p-6 rounded-lg shadow-md hover:shadow-lg cursor-pointer transition-all duration-200"
+            onClick={() => setSubmitOption('image')}
+          >
+            <h3 className="text-xl font-bold mb-2 dark:text-white">Upload a Picture</h3>
+            <p className="text-gray-600 dark:text-gray-300">
+              Upload an image of your card design or concept art.
+            </p>
+          </div>
+          
+          <div 
+            className="bg-gray-100 dark:bg-gray-700 p-6 rounded-lg shadow-md hover:shadow-lg cursor-pointer transition-all duration-200"
+            onClick={() => setSubmitOption('text')}
+          >
+            <h3 className="text-xl font-bold mb-2 dark:text-white">Submit Text Description</h3>
+            <p className="text-gray-600 dark:text-gray-300">
+              Describe your card idea with text, including name, cost, type, and abilities.
+            </p>
+          </div>
+        </div>
+      )}
+      
+      {/* Submission Form */}
+      {submitOption && (
+        <div className="bg-gray-100 dark:bg-gray-700 p-6 rounded-lg shadow-md">
+          <button 
+            className="text-blue-500 mb-4 flex items-center"
+            onClick={() => {
+              setSubmitOption(null);
+              setSelectedImage(null);
+              setPreviewUrl(null);
+              setError(null);
+            }}
+          >
+            ← Back to options
+          </button>
+          
+          <h3 className="text-xl font-bold mb-4 dark:text-white">
+            {submitOption === 'image' ? 'Upload Card Image' : 'Describe Your Card'}
+          </h3>
+          
+          <form onSubmit={handleSubmit} className="space-y-4">
+            <div>
+              <label htmlFor="cardName" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+                Card Name *
+              </label>
+              <input
+                type="text"
+                id="cardName"
+                value={cardName}
+                onChange={(e) => setCardName(e.target.value)}
+                className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-800 dark:border-gray-600 dark:text-white"
+                required
+              />
+            </div>
+            
+            <div>
+              <label htmlFor="createdBy" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+                Created By
+              </label>
+              <input
+                type="text"
+                id="createdBy"
+                value={createdBy}
+                onChange={(e) => setCreatedBy(e.target.value)}
+                className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-800 dark:border-gray-600 dark:text-white"
+                placeholder="Your name (optional)"
+              />
+            </div>
+            
+            {submitOption === 'image' && (
+              <div>
+                <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+                  Card Image *
+                </label>
+                <div className="flex items-center space-x-4">
+                  <button
+                    type="button"
+                    onClick={() => fileInputRef.current?.click()}
+                    className="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+                  >
+                    Select Image
+                  </button>
+                  <span className="text-sm text-gray-500 dark:text-gray-400">
+                    {selectedImage ? selectedImage.name : 'No file selected'}
+                  </span>
+                  <input
+                    type="file"
+                    ref={fileInputRef}
+                    onChange={handleImageChange}
+                    accept="image/*"
+                    className="hidden"
+                  />
+                </div>
+                
+                {previewUrl && (
+                  <div className="mt-4">
+                    <p className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Preview:</p>
+                    <img 
+                      src={previewUrl} 
+                      alt="Card preview" 
+                      className="max-w-xs rounded-md shadow-md" 
+                    />
+                  </div>
+                )}
+              </div>
+            )}
+            
+            <div>
+              <label htmlFor="cardDescription" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+                Card Description {submitOption === 'text' && '*'}
+              </label>
+              <textarea
+                id="cardDescription"
+                value={cardDescription}
+                onChange={(e) => setCardDescription(e.target.value)}
+                rows={5}
+                className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-800 dark:border-gray-600 dark:text-white"
+                required={submitOption === 'text'}
+                placeholder={submitOption === 'text' ? 
+                  "Describe your card idea in detail. Include name, cost, type, and abilities." : 
+                  "Optional: Add any additional notes about your card design."}
+              />
+            </div>
+            
+            {error && (
+              <div className="text-red-500 text-sm">
+                {error}
+              </div>
+            )}
+            
+            {submitSuccess && (
+              <div className="text-green-500 text-sm">
+                Your card suggestion was submitted successfully!
+              </div>
+            )}
+            
+            <div>
+              <button
+                type="submit"
+                disabled={isSubmitting}
+                className={`px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 ${
+                  isSubmitting ? 'opacity-50 cursor-not-allowed' : ''
+                }`}
+              >
+                {isSubmitting ? 'Submitting...' : 'Submit Suggestion'}
+              </button>
+            </div>
+          </form>
+        </div>
+      )}
+    </div>
+  );
+}
+
+// Suggested Cards Component
+function SuggestedCards() {
+  const [suggestions, setSuggestions] = useState<any[]>([]);
+  const [isLoadingSuggestions, setIsLoadingSuggestions] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+
+  // Fetch existing suggestions when component mounts
+  useEffect(() => {
+    const fetchSuggestions = async () => {
+      try {
+        setIsLoadingSuggestions(true);
+        const data = await getSuggestions();
+        setSuggestions(data);
+      } catch (err) {
+        console.error('Error fetching suggestions:', err);
+        setError('Failed to load existing suggestions');
+      } finally {
+        setIsLoadingSuggestions(false);
+      }
+    };
+
+    fetchSuggestions();
+  }, []);
+
+  return (
+    <div className="space-y-6">
+      <div className="prose dark:prose-invert max-w-none">
+        <p>
+          Browse all card suggestions submitted by the community. These cards may be considered for inclusion in future cube updates.
+        </p>
+      </div>
+      
+      {isLoadingSuggestions ? (
+        <div className="text-center py-8">
+          <p className="text-gray-500 dark:text-gray-400">Loading suggestions...</p>
+        </div>
+      ) : suggestions.length > 0 ? (
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {suggestions.map((suggestion) => (
+            <div key={suggestion.id} className="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden">
+              {suggestion.imageUrl && (
+                <div className="h-48 overflow-hidden">
+                  <img 
+                    src={suggestion.imageUrl} 
+                    alt={suggestion.name} 
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+              )}
+              <div className="p-4">
+                <h4 className="text-lg font-bold mb-2 dark:text-white">{suggestion.name}</h4>
+                {suggestion.description && (
+                  <p className="text-gray-600 dark:text-gray-300 text-sm mb-2">{suggestion.description}</p>
+                )}
+                <div className="flex justify-between items-center text-xs text-gray-500 dark:text-gray-400">
+                  <p>Created by: {suggestion.createdBy || 'Anonymous'}</p>
+                  <p>Submitted: {new Date(suggestion.submittedAt).toLocaleDateString()}</p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      ) : (
+        <div className="text-center py-8 bg-gray-100 dark:bg-gray-700 rounded-lg">
+          <p className="text-gray-500 dark:text-gray-400">No card suggestions yet. Be the first to suggest a card!</p>
+        </div>
+      )}
+    </div>
+  );
+}
+
+// Ask ChatGPT Component
+function AskChatGPT() {
+  const [cards, setCards] = useState<any[]>([]);
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+  const [selectedCard, setSelectedCard] = useState<any | null>(null);
+  const [chatGPTResponse, setChatGPTResponse] = useState<string | null>(null);
+  const [isGenerating, setIsGenerating] = useState(false);
+
+  // Fetch cards that instruct users to ask ChatGPT
+  useEffect(() => {
+    const fetchChatGPTCards = async () => {
+      try {
+        setIsLoading(true);
+        const data = await getChatGPTCards();
+        setCards(data);
+      } catch (err) {
+        console.error('Error fetching ChatGPT cards:', err);
+        setError('Failed to load ChatGPT cards');
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
+    fetchChatGPTCards();
+  }, []);
+
+  // Handle card click to generate ChatGPT response
+  const handleCardClick = async (card: any) => {
+    setSelectedCard(card);
+    setChatGPTResponse(null);
+    
+    try {
+      setIsGenerating(true);
+      
+      // Get response from ChatGPT
+      const response = await getChatGPTResponse(card.prompt || card.text);
+      setChatGPTResponse(response.response);
+      
+    } catch (err) {
+      console.error('Error getting ChatGPT response:', err);
+      setChatGPTResponse('Sorry, there was an error generating a response. Please try again.');
+    } finally {
+      setIsGenerating(false);
+    }
+  };
+
+  return (
+    <div className="space-y-8">
+      <div className="prose dark:prose-invert max-w-none">
+        <p>
+          Some cards in the cube instruct you to ask ChatGPT for something. Click on any card below to automatically
+          prompt ChatGPT and see the response.
+        </p>
+      </div>
+      
+      {isLoading ? (
+        <div className="text-center py-8">
+          <p className="text-gray-500 dark:text-gray-400">Loading cards...</p>
+        </div>
+      ) : error ? (
+        <div className="text-center py-8 text-red-500">
+          <p>{error}</p>
+        </div>
+      ) : (
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {cards.map((card) => (
+            <div 
+              key={card.id} 
+              className={`bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden cursor-pointer transition-all duration-200 hover:shadow-lg ${
+                selectedCard?.id === card.id ? 'ring-2 ring-blue-500' : ''
+              }`}
+              onClick={() => handleCardClick(card)}
+            >
+              {card.imageUrl && (
+                <div className="h-64 overflow-hidden">
+                  <img 
+                    src={card.imageUrl} 
+                    alt={card.name} 
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+              )}
+              <div className="p-4">
+                <div className="flex justify-between items-start">
+                  <h4 className="text-lg font-bold mb-2 dark:text-white">{card.name}</h4>
+                  <div className="text-sm text-blue-500 dark:text-blue-400 font-medium">
+                    {card.manaCost}
+                  </div>
+                </div>
+                <p className="text-sm text-gray-700 dark:text-gray-300 mb-2">{card.type}</p>
+                <p className="text-sm text-gray-600 dark:text-gray-400 mb-3">{card.text}</p>
+                <div className="flex justify-between items-center">
+                  <div className="flex space-x-1">
+                    {card.colors && card.colors.map((color: string, index: number) => {
+                      const colorMap: Record<string, string> = {
+                        W: 'bg-yellow-100 text-yellow-800',
+                        U: 'bg-blue-100 text-blue-800',
+                        B: 'bg-gray-800 text-gray-100',
+                        R: 'bg-red-100 text-red-800',
+                        G: 'bg-green-100 text-green-800',
+                      };
+                      return (
+                        <span 
+                          key={index} 
+                          className={`inline-block w-5 h-5 rounded-full ${colorMap[color] || 'bg-gray-200'} text-xs flex items-center justify-center`}
+                        >
+                          {color}
+                        </span>
+                      );
+                    })}
+                  </div>
+                  <span className="text-xs text-gray-500 dark:text-gray-400">{card.rarity}</span>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      )}
+      
+      {/* ChatGPT Response Section */}
+      {selectedCard && (
+        <div className="mt-8 bg-gray-100 dark:bg-gray-700 p-6 rounded-lg">
+          <h3 className="text-xl font-bold mb-4 dark:text-white">
+            ChatGPT Response for {selectedCard.name}
+          </h3>
+          
+          {isGenerating ? (
+            <div className="text-center py-8">
+              <p className="text-gray-500 dark:text-gray-400">Generating response...</p>
+            </div>
+          ) : chatGPTResponse ? (
+            <div className="prose dark:prose-invert max-w-none">
+              <div className="bg-white dark:bg-gray-800 p-4 rounded-lg shadow-inner">
+                <p className="whitespace-pre-line">{chatGPTResponse}</p>
+              </div>
+            </div>
+          ) : (
+            <div className="text-center py-8">
+              <p className="text-gray-500 dark:text-gray-400">No response generated yet.</p>
             </div>
           )}
         </div>
