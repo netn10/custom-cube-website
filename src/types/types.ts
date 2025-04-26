@@ -13,6 +13,8 @@ export type Card = {
   type: string;
   rarity: string;
   text: string;
+  flavorText?: string;
+  artist?: string;
   power?: string;
   toughness?: string;
   loyalty?: number;
