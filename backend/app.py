@@ -40,6 +40,30 @@ class MongoJSONEncoder(json.JSONEncoder):
 # Set the custom JSON encoder for Flask
 app.json_encoder = MongoJSONEncoder
 
+@app.route('/', methods=['GET'])
+def index():
+    """Root route that provides API information"""
+    return jsonify({
+        "name": "Custom Cube API",
+        "version": "1.0.0",
+        "description": "API for Custom Cube website",
+        "endpoints": [
+            "/api/cards",
+            "/api/cards/<card_id>",
+            "/api/archetypes",
+            "/api/archetypes/<archetype_id>",
+            "/api/archetypes/<archetype_id>/cards",
+            "/api/archetypes/random-cards",
+            "/api/tokens",
+            "/api/draft/pack",
+            "/api/draft/bot-pick",
+            "/api/suggestions",
+            "/api/chatgpt/cards",
+            "/api/chatgpt/response",
+            "/api/gemini/response"
+        ]
+    })
+
 @app.route('/api/cards', methods=['GET'])
 def get_cards():
     """Get all cards with optional filtering"""
