@@ -14,8 +14,18 @@ load_dotenv()
 
 # MongoDB connection
 MONGO_URI = os.getenv("MONGO_URI", "mongodb+srv://username:password@cluster.mongodb.net/mtgcube")
-client = MongoClient(MONGO_URI)
-db = client["mtgcube"]  # Corrected database name
+print(f"Connecting to MongoDB with URI: {MONGO_URI.split('@')[0]}@...")  # Log URI but hide credentials
+try:
+    client = MongoClient(MONGO_URI)
+    # Test the connection
+    db = client["mtgcube"]
+    db_info = client.server_info()
+    print(f"MongoDB connection successful. Server version: {db_info.get('version', 'unknown')}")
+    print(f"Available databases: {client.list_database_names()}")
+    print(f"Collections in mtgcube: {db.list_collection_names()}")
+except Exception as e:
+    print(f"MongoDB connection error: {str(e)}")
+    # Don't raise the exception, allow the app to start even with DB issues
 
 app = Flask(__name__)
 CORS(app, resources={r"/api/*": {"origins": "*"}})  # Enable CORS for all routes with proper configuration
