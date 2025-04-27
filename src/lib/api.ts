@@ -3,7 +3,7 @@ import { Card, Archetype, Token, Suggestion } from '@/types/types';
 
 // In development, we use localhost with /api path
 // In production, the URL from env already includes the /api path
-const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL ? process.env.NEXT_PUBLIC_API_URL : 'http://127.0.0.1:5000/api';
+export const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL ? process.env.NEXT_PUBLIC_API_URL : 'http://127.0.0.1:5000/api';
 
 // For debugging
 console.log('API_BASE_URL:', API_BASE_URL);
@@ -61,7 +61,29 @@ export async function getCards(params?: {
 }
 
 export async function getCardById(id: string): Promise<Card> {
-  return fetchFromAPI<Card>(`/cards/${id}`);
+  console.log(`Attempting to fetch card with ID: ${id}`);
+  try {
+    const response = await fetch(`${API_BASE_URL}/cards/${id}`, {
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
+    
+    console.log(`API response status: ${response.status}`);
+    
+    if (!response.ok) {
+      const errorText = await response.text();
+      console.error(`API error response: ${errorText}`);
+      throw new Error(`API error: ${response.status} - ${errorText}`);
+    }
+    
+    const data = await response.json();
+    console.log('API response data:', data);
+    return data;
+  } catch (error) {
+    console.error('API fetch error:', error);
+    throw error;
+  }
 }
 
 // Archetypes API

@@ -87,6 +87,7 @@ print(f"Inserted {len(archetypes)} archetypes")
 cards = []
 card_types = ["Creature", "Instant", "Sorcery", "Enchantment", "Artifact", "Land", "Planeswalker"]
 rarities = ["Common", "Uncommon", "Rare", "Mythic Rare"]
+token_types = ["Goblin", "Soldier", "Zombie", "Elemental", "Spirit", "Thopter", "Treasure", "Food", "Clue"]
 
 # Generate 10 cards for each archetype
 for archetype in archetypes:
@@ -114,6 +115,10 @@ for archetype in archetypes:
             "imageUrl": f"/placeholder-{archetype_id}-{i}.jpg",
             "flavorText": f"A flavor text related to {archetype['name']}.",
             "artist": "AI Generated" if i % 2 == 0 else "Custom Artist",
+            "set": f"Custom Cube {i % 3 + 1}",
+            "notes": f"Design notes for {archetype['name']} {card_type}. This card was created to support the {archetype['name']} archetype." if i % 4 == 0 else None,
+            "relatedTokens": [token_types[i % len(token_types)]] if i % 3 == 0 else None,
+            "relatedFace": None,
         }
         cards.append(card)
 
@@ -143,12 +148,76 @@ for i in range(20):
         "imageUrl": f"/placeholder-dual-{i}.jpg",
         "flavorText": f"A card that bridges {archetype1['name']} and {archetype2['name']}.",
         "artist": "Custom Artist",
+        "set": "Custom Cube Special",
+        "notes": f"This card was designed to bridge the {archetype1['name']} and {archetype2['name']} archetypes." if i % 2 == 0 else None,
+        "relatedTokens": [token_types[i % len(token_types)], token_types[(i+1) % len(token_types)]] if i % 3 == 0 else None,
+        "relatedFace": None,
     }
     cards.append(card)
 
 # Insert cards into the database
 result = db.cards.insert_many(cards)
 print(f"Inserted {len(cards)} cards")
+
+# Add some double-faced cards
+double_faced_cards = []
+for i in range(5):
+    # Create front face
+    archetype = archetypes[i % len(archetypes)]
+    colors = archetype["colors"]
+    front_id = f"double-faced-front-{i}"
+    back_id = f"double-faced-back-{i}"
+    
+    front_card = {
+        "name": f"Double-Faced Front {i+1}",
+        "manaCost": f"{{{i % 2 + 1}}}{colors[0]}",
+        "type": "Creature — Transformer",
+        "rarity": "Rare",
+        "text": f"This card transforms into its back face.\n{i+1}/Day — When this condition is met, transform this card.",
+        "power": str(i % 3 + 1),
+        "toughness": str(i % 3 + 1),
+        "colors": [colors[0]],
+        "custom": True,
+        "archetypes": [archetype["id"]],
+        "imageUrl": f"/placeholder-double-faced-front-{i}.jpg",
+        "flavorText": "The front face of a transforming card.",
+        "artist": "Custom Artist",
+        "set": "Custom Cube Transformers",
+        "notes": "This is part of a double-faced card pair.",
+        "relatedTokens": None,
+        "relatedFace": back_id,
+        "_id": front_id
+    }
+    
+    # Create back face
+    back_card = {
+        "name": f"Double-Faced Back {i+1}",
+        "manaCost": "",  # Back faces don't have mana costs
+        "type": "Creature — Transformed",
+        "rarity": "Rare",
+        "text": f"This is the transformed version of Double-Faced Front {i+1}.\nWhen this card transforms, do something powerful.",
+        "power": str(i % 3 + 3),  # Stronger on the back
+        "toughness": str(i % 3 + 3),
+        "colors": [colors[1]],  # Different color on back
+        "custom": True,
+        "archetypes": [archetype["id"]],
+        "imageUrl": f"/placeholder-double-faced-back-{i}.jpg",
+        "flavorText": "The back face reveals its true nature.",
+        "artist": "Custom Artist",
+        "set": "Custom Cube Transformers",
+        "notes": "This is the back face of a double-faced card pair.",
+        "relatedTokens": None,
+        "relatedFace": front_id,
+        "_id": back_id
+    }
+    
+    double_faced_cards.append(front_card)
+    double_faced_cards.append(back_card)
+
+# Insert double-faced cards
+if double_faced_cards:
+    db.cards.insert_many(double_faced_cards)
+    print(f"Inserted {len(double_faced_cards)} double-faced cards")
 
 # Verify that cards were inserted with the correct archetypes
 for archetype in archetypes:
@@ -158,7 +227,6 @@ for archetype in archetypes:
 
 # Generate tokens
 tokens = []
-token_types = ["Goblin", "Soldier", "Zombie", "Elemental", "Spirit", "Thopter", "Treasure", "Food", "Clue"]
 
 for i in range(20):
     token_type = token_types[i % len(token_types)]

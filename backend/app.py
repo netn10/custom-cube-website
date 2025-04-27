@@ -1,4 +1,4 @@
-from flask import Flask, jsonify, request
+from flask import Flask, jsonify, request, Response
 from flask_cors import CORS
 from pymongo import MongoClient
 import os
@@ -60,7 +60,8 @@ def index():
             "/api/suggestions",
             "/api/chatgpt/cards",
             "/api/chatgpt/response",
-            "/api/gemini/response"
+            "/api/gemini/response",
+            "/api/image-proxy"
         ]
     })
 
@@ -122,17 +123,22 @@ def get_cards():
 def get_card(card_id):
     """Get a single card by ID"""
     try:
-        # Try to find by ObjectId first
-        card = None
-        try:
-            card = db.cards.find_one({"_id": ObjectId(card_id)})
-        except:
-            # If not a valid ObjectId, try to find by string id
-            card = db.cards.find_one({"_id": card_id})
+        # First try to find by string ID
+        card = db.cards.find_one({"_id": card_id})
+        
+        # If not found, try with ObjectId
+        if not card:
+            try:
+                card = db.cards.find_one({"_id": ObjectId(card_id)})
+            except:
+                pass
             
         if card:
-            # Convert ObjectId to string
-            card['id'] = str(card.pop('_id'))
+            # Convert ObjectId to string if needed
+            if isinstance(card.get('_id'), ObjectId):
+                card['id'] = str(card.pop('_id'))
+            else:
+                card['id'] = card.pop('_id')
             return jsonify(card)
         return jsonify({"error": "Card not found"}), 404
     except Exception as e:
@@ -663,6 +669,83 @@ def get_gemini_response():
         return jsonify(result)
     except Exception as e:
         return jsonify({"error": str(e)}), 500
+
+@app.route('/api/image-proxy', methods=['GET'])
+def image_proxy():
+    """Proxy for images to avoid CORS issues"""
+    try:
+        # Get the image URL from the query parameter
+        image_url = request.args.get('url')
+        if not image_url:
+            return jsonify({"error": "No URL provided"}), 400
+        
+        print(f"Proxying image request for: {image_url}")
+            
+        # Add headers to avoid rate limiting
+        headers = {
+            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36',
+            'Accept': 'image/webp,image/apng,image/*,*/*;q=0.8',
+            'Accept-Language': 'en-US,en;q=0.9',
+            'Referer': 'https://www.google.com/'
+        }
+            
+        # Make a request to the image URL
+        response = requests.get(image_url, stream=True, headers=headers, timeout=10)
+        
+        # Check if the request was successful
+        if response.status_code != 200:
+            print(f"Failed to fetch image: {response.status_code} - {image_url}")
+            # Return a placeholder image instead of an error
+            placeholder_svg = '''
+            <svg xmlns="http://www.w3.org/2000/svg" width="265" height="370" viewBox="0 0 265 370">
+                <rect width="265" height="370" fill="#eee"/>
+                <text x="50%" y="50%" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#888">
+                    Image Not Available
+                </text>
+            </svg>
+            '''
+            return Response(
+                placeholder_svg,
+                content_type='image/svg+xml',
+                headers={
+                    'Access-Control-Allow-Origin': '*',
+                    'Cache-Control': 'public, max-age=86400'
+                }
+            )
+            
+        # Get the content type from the response
+        content_type = response.headers.get('Content-Type', 'image/jpeg')
+        
+        print(f"Successfully proxied image: {image_url}")
+        
+        # Return the image with the correct content type
+        return Response(
+            response.content,
+            content_type=content_type,
+            headers={
+                'Access-Control-Allow-Origin': '*',
+                'Cache-Control': 'public, max-age=86400'  # Cache for 24 hours
+            }
+        )
+    except Exception as e:
+        print(f"Error in image proxy: {str(e)} - {image_url}")
+        # Return a placeholder image instead of an error
+        placeholder_svg = '''
+        <svg xmlns="http://www.w3.org/2000/svg" width="265" height="370" viewBox="0 0 265 370">
+            <rect width="265" height="370" fill="#eee"/>
+            <text x="50%" y="50%" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#888">
+                Error Loading Image
+            </text>
+        </svg>
+        '''
+        return Response(
+            placeholder_svg,
+            content_type='image/svg+xml',
+            headers={
+                'Access-Control-Allow-Origin': '*',
+                'Cache-Control': 'public, max-age=86400'
+            }
+        )
 
 if __name__ == '__main__':
     app.run(debug=True, port=5000)

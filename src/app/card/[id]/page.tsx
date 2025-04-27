@@ -3,7 +3,7 @@
 import { useParams, useRouter } from 'next/navigation';
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { getCardById } from '@/lib/api';
+import { getCardById, API_BASE_URL } from '@/lib/api';
 import { Card } from '@/types/types';
 
 export default function CardDetailPage() {
@@ -18,7 +18,9 @@ export default function CardDetailPage() {
       // Fetch card data from API
       const fetchCard = async () => {
         try {
+          console.log('Fetching card with ID:', params.id);
           const data = await getCardById(params.id as string);
+          console.log('Card data received:', data);
           setCard(data);
         } catch (err) {
           console.error('Error fetching card:', err);
@@ -100,9 +102,21 @@ export default function CardDetailPage() {
       <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden">
         <div className="md:flex">
           <div className="md:w-1/3 p-4">
-            <div className="bg-gray-300 dark:bg-gray-700 rounded-lg aspect-[2.5/3.5] flex items-center justify-center">
-              <span className="text-gray-500 dark:text-gray-400">Card Image</span>
-            </div>
+            {card.imageUrl ? (
+              <img 
+                src={`${API_BASE_URL}/image-proxy?url=${encodeURIComponent(card.imageUrl)}`}
+                alt={card.name}
+                className="w-full rounded-lg aspect-[2.5/3.5] object-cover"
+                onError={(e) => {
+                  console.error('Error loading image:', card.imageUrl);
+                  e.currentTarget.src = 'data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22100%22%20height%3D%22140%22%20viewBox%3D%220%200%20100%20140%22%20preserveAspectRatio%3D%22none%22%3E%3Crect%20width%3D%22100%22%20height%3D%22140%22%20fill%3D%22%23eee%22%3E%3C%2Frect%3E%3Ctext%20text-anchor%3D%22middle%22%20x%3D%2250%22%20y%3D%2270%22%20style%3D%22fill%3A%23aaa%3Bfont-weight%3Abold%3Bfont-size%3A12px%3Bfont-family%3AArial%2C%20Helvetica%2C%20sans-serif%3Bdominant-baseline%3Acentral%22%3EImage%20Not%20Found%3C%2Ftext%3E%3C%2Fsvg%3E';
+                }}
+              />
+            ) : (
+              <div className="bg-gray-300 dark:bg-gray-700 rounded-lg aspect-[2.5/3.5] flex items-center justify-center">
+                <span className="text-gray-500 dark:text-gray-400">No Image Available</span>
+              </div>
+            )}
           </div>
           
           <div className="md:w-2/3 p-6">
@@ -144,6 +158,49 @@ export default function CardDetailPage() {
               <p className="text-gray-600 dark:text-gray-400 italic">"{card.flavorText}"</p>
               <p className="text-sm text-gray-500 dark:text-gray-500 mt-1">Illustrated by {card.artist}</p>
             </div>
+
+            {card.set && (
+              <div className="mb-4">
+                <p className="text-sm font-semibold dark:text-white">Set: <span className="font-normal">{card.set}</span></p>
+              </div>
+            )}
+            
+            {card.notes && (
+              <div className="mb-4">
+                <p className="text-sm font-semibold dark:text-white">Notes:</p>
+                <p className="text-sm dark:text-gray-300 whitespace-pre-line">{card.notes}</p>
+              </div>
+            )}
+            
+            {card.relatedTokens && card.relatedTokens.length > 0 && (
+              <div className="mb-4">
+                <p className="text-sm font-semibold dark:text-white">Related Tokens:</p>
+                <div className="flex flex-wrap gap-2 mt-1">
+                  {card.relatedTokens.map((token: string) => (
+                    <Link 
+                      key={token}
+                      href={`/tokens?search=${encodeURIComponent(token)}`}
+                      className="px-2 py-1 bg-amber-100 dark:bg-amber-900 text-amber-800 dark:text-amber-200 rounded-full text-xs"
+                    >
+                      {token}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            )}
+            
+            {card.relatedFace && (
+              <div className="mb-4">
+                <p className="text-sm font-semibold dark:text-white">Related Face: 
+                  <Link 
+                    href={`/card/${encodeURIComponent(card.relatedFace)}`}
+                    className="ml-2 text-blue-500 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300"
+                  >
+                    View Related Card
+                  </Link>
+                </p>
+              </div>
+            )}
             
             <div className="flex flex-wrap gap-2 mt-6">
               {card.custom && (

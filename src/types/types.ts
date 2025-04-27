@@ -22,6 +22,10 @@ export type Card = {
   colors: string[];
   custom: boolean;
   archetypes: string[];
+  set?: string;
+  notes?: string;
+  relatedTokens?: string[];
+  relatedFace?: string;
 };
 
 export type Token = {

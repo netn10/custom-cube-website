@@ -1,8 +1,8 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import Link from 'next/link';
-import { getCards } from '@/lib/api';
+import { getCards, API_BASE_URL } from '@/lib/api';
 import { Card } from '@/types/types';
 
 export default function CubeList() {
@@ -202,7 +202,7 @@ export default function CubeList() {
                 const colorClasses: Record<string, string> = {
                   W: 'bg-mtg-white text-black',
                   U: 'bg-mtg-blue text-white',
-                  B: 'bg-mtg-black text-white',
+                  B: 'bg-mtg-black text-black',
                   R: 'bg-mtg-red text-white',
                   G: 'bg-mtg-green text-white',
                 };
@@ -269,9 +269,23 @@ export default function CubeList() {
           {filteredCards.map(card => (
             <Link href={`/card/${card.id}`} key={card.id}>
               <div className="bg-white dark:bg-gray-800 rounded-lg overflow-hidden shadow-md card-hover">
-                <div className="h-40 bg-gray-300 dark:bg-gray-700 flex items-center justify-center">
-                  <span className="text-gray-500 dark:text-gray-400">Card Image</span>
-                </div>
+                {card.imageUrl ? (
+                  <div className="h-40 bg-gray-300 dark:bg-gray-700 relative overflow-hidden">
+                    <img 
+                      src={`${API_BASE_URL}/image-proxy?url=${encodeURIComponent(card.imageUrl)}`}
+                      alt={card.name}
+                      className="w-full h-full object-cover"
+                      onError={(e) => {
+                        console.error('Error loading image:', card.imageUrl);
+                        e.currentTarget.src = 'data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22100%22%20height%3D%22140%22%20viewBox%3D%220%200%20100%20140%22%20preserveAspectRatio%3D%22none%22%3E%3Crect%20width%3D%22100%22%20height%3D%22140%22%20fill%3D%22%23eee%22%3E%3C%2Frect%3E%3Ctext%20text-anchor%3D%22middle%22%20x%3D%2250%22%20y%3D%2270%22%20style%3D%22fill%3A%23aaa%3Bfont-weight%3Abold%3Bfont-size%3A12px%3Bfont-family%3AArial%2C%20Helvetica%2C%20sans-serif%3Bdominant-baseline%3Acentral%22%3EImage%20Not%20Found%3C%2Ftext%3E%3C%2Fsvg%3E';
+                      }}
+                    />
+                  </div>
+                ) : (
+                  <div className="h-40 bg-gray-300 dark:bg-gray-700 flex items-center justify-center">
+                    <span className="text-gray-500 dark:text-gray-400">No Image</span>
+                  </div>
+                )}
                 <div className="p-4">
                   <h3 className="font-bold dark:text-white">{card.name}</h3>
                   <div className="flex items-center justify-between mt-2">
