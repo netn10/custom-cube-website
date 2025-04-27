@@ -5,8 +5,12 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
+    "start": "node server.js",
+    "lint": "next lint",
+    "heroku-postbuild": "npm run build"
+  },
+  "engines": {
+    "node": "18.x"
   },
   "dependencies": {
     "autoprefixer": "^10.4.16",
