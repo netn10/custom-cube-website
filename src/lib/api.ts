@@ -199,12 +199,38 @@ export async function uploadSuggestionImage(imageFile: File): Promise<any> {
 
 // ChatGPT Cards API
 export async function getChatGPTCards(): Promise<Card[]> {
-  return fetchFromAPI('/cards/chatgpt');
+  return fetchFromAPI<Card[]>('/chatgpt_cards');
 }
 
 export async function getChatGPTResponse(prompt: string): Promise<any> {
-  return fetchFromAPI('/chatgpt/response', {
+  return fetchFromAPI('/chatgpt_response', {
     method: 'POST',
     body: JSON.stringify({ prompt }),
   });
 }
+
+export async function getGeminiResponse(prompt: string): Promise<any> {
+  return fetchFromAPI('/gemini/response', {
+    method: 'POST',
+    body: JSON.stringify({ prompt }),
+  });
+}
+
+// Export all API functions
+export {
+  getCards,
+  getCardById,
+  getArchetypes,
+  getArchetypeById,
+  getArchetypeCards,
+  getRandomArchetypeCards,
+  getTokens,
+  getBotDraftPick,
+  getDraftPack,
+  getSuggestions,
+  addSuggestion,
+  uploadSuggestionImage,
+  getChatGPTCards,
+  getChatGPTResponse,
+  getGeminiResponse,
+};

@@ -7,6 +7,7 @@ from dotenv import load_dotenv
 import json
 import random
 from datetime import datetime
+import requests
 
 # Load environment variables
 load_dotenv()
@@ -458,7 +459,7 @@ def upload_suggestion_image():
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 
-@app.route('/api/cards/chatgpt', methods=['GET'])
+@app.route('/api/chatgpt_cards', methods=['GET'])
 def get_chatgpt_cards():
     """Get cards that instruct users to ask ChatGPT for something"""
     try:
@@ -551,35 +552,74 @@ def get_chatgpt_cards():
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 
-@app.route('/api/chatgpt/response', methods=['POST'])
+@app.route('/api/chatgpt_response', methods=['POST'])
 def get_chatgpt_response():
     """Simulate a ChatGPT response for a given prompt"""
     try:
-        data = request.json
-        prompt = data.get('prompt')
+        data = request.get_json()
         
-        if not prompt:
-            return jsonify({"error": "Prompt is required"}), 400
+        if not data or 'prompt' not in data:
+            return jsonify({"error": "No prompt provided"}), 400
             
-        # In a real implementation, this would call the OpenAI API
-        # For now, we'll return predefined responses based on keywords in the prompt
+        prompt = data['prompt']
         
-        responses = {
-            "creature": "I've created the Luminous Leviathan, a massive aquatic creature with translucent skin that glows with inner light. It has three abilities:\n\n1. Bioluminescent Burst: Once per day, it can release a blinding flash of light that temporarily blinds nearby creatures.\n\n2. Depth Adaptation: It can survive at any ocean depth, adjusting its body pressure automatically.\n\n3. Memory Absorption: When it touches another creature, it can absorb and store their memories, which it can later project as vivid illusions.",
-            "story": "The air crackled with energy as Nissa stepped through the planar portal. The scorched mountains of Shiv stretched before her, a landscape she'd only heard of in tales. A deafening roar shook the ground beneath her feet.\n\nShe turned to see an enormous dragon with scales like burnished copper swooping down. Heat rippled from its body, distorting the air.\n\n\"Planeswalker,\" the dragon rumbled, landing with surprising grace. \"You smell of forests and growth. Strange to find such in Shiv.\"\n\nNissa stood her ground, though her heart hammered. \"I seek knowledge of elemental binding.\"\n\nThe dragon's laugh sent sparks dancing. \"Then you've found the right teacher.\" Its eyes glinted with ancient wisdom. \"But my lessons never come free.\"",
-            "quote": "\"In the shadow of wings greater than mountains, even the mightiest warrior learns the virtue of humility.\" — Ancient Draconic Proverb",
-            "riddle": "I am born in darkness, yet I illuminate truth. The more you feed me, the hungrier I become for secrets untold. In life I bring death, in death I bring life. What am I?\n\n(Answer: A black mana flame)",
-            "land": "The Mistmarsh is a haunting terrain where the boundaries between Island and Swamp blur into a beautiful yet treacherous landscape. Perpetual fog hangs over dark waters that reflect an opalescent sheen. The land produces both blue and black mana, drawing power from both the calculating intellect of the Islands and the decaying abundance of the Swamps.\n\nCrystalline formations rise from the murky depths, while twisted mangroves create labyrinthine passages through the water. Creatures here have adapted uniquely - many are amphibious with both gills and lungs, while others have developed bioluminescence to navigate the eternal mist."
+        # For demo purposes, we'll just return a fixed response
+        # In a real app, you would call the ChatGPT API here
+        response = {
+            "response": f"This is a simulated response to: {prompt}",
+            "timestamp": datetime.now().isoformat()
         }
         
-        # Determine which response to return based on keywords in the prompt
-        for key, response in responses.items():
-            if key.lower() in prompt.lower():
-                return jsonify({"response": response})
-                
-        # Default response if no keywords match
-        return jsonify({"response": "After careful consideration of your request, I've crafted a response that blends creativity with the mystical elements of the multiverse. The magic you seek manifests in unexpected ways, revealing patterns that connect across planes of existence. May this insight serve you well in your arcane pursuits."})
+        return jsonify(response)
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+
+@app.route('/api/gemini/response', methods=['POST'])
+def get_gemini_response():
+    """Get a response from Google's Gemini API for a given prompt"""
+    try:
+        data = request.get_json()
         
+        if not data or 'prompt' not in data:
+            return jsonify({"error": "No prompt provided"}), 400
+            
+        prompt = data['prompt']
+        
+        # Get API key from environment variables
+        api_key = os.getenv("GEMINI_API_KEY")
+        if not api_key:
+            return jsonify({"error": "Gemini API key not configured"}), 500
+        
+        # Call Gemini API
+        url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key={api_key}"
+        
+        headers = {
+            "Content-Type": "application/json"
+        }
+        
+        payload = {
+            "contents": [
+                {
+                    "parts": [
+                        {"text": prompt}
+                    ]
+                }
+            ]
+        }
+        
+        response = requests.post(url, headers=headers, json=payload)
+        response.raise_for_status()
+        data = response.json()
+        
+        # Extract the text from the response
+        gemini_response = data['candidates'][0]['content']['parts'][0]['text']
+        
+        result = {
+            "response": gemini_response,
+            "timestamp": datetime.now().isoformat()
+        }
+        
+        return jsonify(result)
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 

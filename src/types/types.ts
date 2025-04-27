@@ -51,3 +51,27 @@ export type Suggestion = {
   submittedAt: string;
   status: 'pending' | 'approved' | 'rejected';
 };
+
+export type DistilledModel = {
+  name: string;
+  base_model: string;
+  download_link: string;
+};
+
+export type BenchmarkResult = {
+  benchmark: string;
+  claude_3_5: string;
+  gpt_4o: string;
+  openai_o1_mini: string;
+  openai_o1: string;
+};
+
+export type DistilledEvaluation = {
+  model: string;
+  aime_2024: string;
+  aime_2024_cons: string;
+  math_500: string;
+  gpqa_diamond: string;
+  livecodebench: string;
+  codeforces_rating: string;
+};

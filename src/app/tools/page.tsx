@@ -2,7 +2,7 @@
 
 import { useState, useRef, useEffect } from 'react';
 import { FaDice, FaRandom, FaCalculator, FaSearch, FaPlusCircle, FaList, FaRobot } from 'react-icons/fa';
-import { getBotDraftPick, getDraftPack, getSuggestions, addSuggestion, uploadSuggestionImage, getChatGPTCards, getChatGPTResponse } from '@/lib/api';
+import { getBotDraftPick, getDraftPack, getSuggestions, addSuggestion, uploadSuggestionImage, getChatGPTCards, getChatGPTResponse, getGeminiResponse } from '@/lib/api';
 
 type Tool = {
   id: string;
@@ -46,8 +46,8 @@ export default function ToolsPage() {
     },
     {
       id: 'ask-chatgpt',
-      name: 'Ask ChatGPT',
-      description: 'View cards that instruct you to ask ChatGPT for something and get AI-generated responses.',
+      name: 'Ask Gemini',
+      description: 'View cards that instruct you to ask Gemini for something and get AI-generated responses.',
       icon: <FaRobot className="h-6 w-6" />,
       component: <AskChatGPT />,
     },
@@ -1317,12 +1317,12 @@ function AskChatGPT() {
     try {
       setIsGenerating(true);
       
-      // Get response from ChatGPT
-      const response = await getChatGPTResponse(card.prompt || card.text);
+      // Get response from Gemini API
+      const response = await getGeminiResponse(card.prompt || card.text);
       setChatGPTResponse(response.response);
       
     } catch (err) {
-      console.error('Error getting ChatGPT response:', err);
+      console.error('Error getting Gemini response:', err);
       setChatGPTResponse('Sorry, there was an error generating a response. Please try again.');
     } finally {
       setIsGenerating(false);
@@ -1333,8 +1333,8 @@ function AskChatGPT() {
     <div className="space-y-8">
       <div className="prose dark:prose-invert max-w-none">
         <p>
-          Some cards in the cube instruct you to ask ChatGPT for something. Click on any card below to automatically
-          prompt ChatGPT and see the response.
+          Some cards in the cube instruct you to ask Gemini for something. Click on any card below to automatically
+          prompt Gemini and see the response.
         </p>
       </div>
       
@@ -1406,7 +1406,7 @@ function AskChatGPT() {
       {selectedCard && (
         <div className="mt-8 bg-gray-100 dark:bg-gray-700 p-6 rounded-lg">
           <h3 className="text-xl font-bold mb-4 dark:text-white">
-            ChatGPT Response for {selectedCard.name}
+            Gemini Response for {selectedCard.name}
           </h3>
           
           {isGenerating ? (
