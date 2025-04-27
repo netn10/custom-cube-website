@@ -122,7 +122,14 @@ def get_cards():
 def get_card(card_id):
     """Get a single card by ID"""
     try:
-        card = db.cards.find_one({"_id": ObjectId(card_id)})
+        # Try to find by ObjectId first
+        card = None
+        try:
+            card = db.cards.find_one({"_id": ObjectId(card_id)})
+        except:
+            # If not a valid ObjectId, try to find by string id
+            card = db.cards.find_one({"_id": card_id})
+            
         if card:
             # Convert ObjectId to string
             card['id'] = str(card.pop('_id'))
