@@ -215,22 +215,3 @@ export async function getGeminiResponse(prompt: string): Promise<any> {
     body: JSON.stringify({ prompt }),
   });
 }
-
-// Export all API functions
-export {
-  getCards,
-  getCardById,
-  getArchetypes,
-  getArchetypeById,
-  getArchetypeCards,
-  getRandomArchetypeCards,
-  getTokens,
-  getBotDraftPick,
-  getDraftPack,
-  getSuggestions,
-  addSuggestion,
-  uploadSuggestionImage,
-  getChatGPTCards,
-  getChatGPTResponse,
-  getGeminiResponse,
-};
