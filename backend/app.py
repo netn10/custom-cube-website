@@ -677,20 +677,22 @@ def image_proxy():
         # Get the image URL from the query parameter
         image_url = request.args.get('url')
         if not image_url:
+            print("No URL provided to image proxy")
             return jsonify({"error": "No URL provided"}), 400
         
         print(f"Proxying image request for: {image_url}")
             
-        # Add headers to avoid rate limiting
+        # Add headers to avoid rate limiting and mimic a browser
         headers = {
             'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36',
             'Accept': 'image/webp,image/apng,image/*,*/*;q=0.8',
             'Accept-Language': 'en-US,en;q=0.9',
-            'Referer': 'https://www.google.com/'
+            'Referer': 'https://scryfall.com/'
         }
             
-        # Make a request to the image URL
-        response = requests.get(image_url, stream=True, headers=headers, timeout=10)
+        # Make a request to the image URL with a longer timeout
+        print(f"Sending request to: {image_url}")
+        response = requests.get(image_url, stream=True, headers=headers, timeout=15, verify=True)
         
         # Check if the request was successful
         if response.status_code != 200:
@@ -716,7 +718,7 @@ def image_proxy():
         # Get the content type from the response
         content_type = response.headers.get('Content-Type', 'image/jpeg')
         
-        print(f"Successfully proxied image: {image_url}")
+        print(f"Successfully proxied image: {image_url} with content type: {content_type}")
         
         # Return the image with the correct content type
         return Response(
@@ -724,7 +726,62 @@ def image_proxy():
             content_type=content_type,
             headers={
                 'Access-Control-Allow-Origin': '*',
-                'Cache-Control': 'public, max-age=86400'  # Cache for 24 hours
+                'Cache-Control': 'public, max-age=86400',  # Cache for 24 hours
+                'X-Content-Type-Options': 'nosniff'
+            }
+        )
+    except requests.exceptions.SSLError as ssl_err:
+        print(f"SSL Error in image proxy: {str(ssl_err)} - {image_url}")
+        # Try again without SSL verification
+        try:
+            response = requests.get(image_url, stream=True, headers=headers, timeout=15, verify=False)
+            if response.status_code == 200:
+                content_type = response.headers.get('Content-Type', 'image/jpeg')
+                print(f"Successfully proxied image after SSL bypass: {image_url}")
+                return Response(
+                    response.content,
+                    content_type=content_type,
+                    headers={
+                        'Access-Control-Allow-Origin': '*',
+                        'Cache-Control': 'public, max-age=86400'
+                    }
+                )
+        except Exception as retry_err:
+            print(f"Retry failed after SSL error: {str(retry_err)}")
+            
+        # If we get here, both attempts failed
+        placeholder_svg = '''
+        <svg xmlns="http://www.w3.org/2000/svg" width="265" height="370" viewBox="0 0 265 370">
+            <rect width="265" height="370" fill="#eee"/>
+            <text x="50%" y="50%" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#888">
+                SSL Error Loading Image
+            </text>
+        </svg>
+        '''
+        return Response(
+            placeholder_svg,
+            content_type='image/svg+xml',
+            headers={
+                'Access-Control-Allow-Origin': '*',
+                'Cache-Control': 'public, max-age=86400'
+            }
+        )
+    except requests.exceptions.Timeout as timeout_err:
+        print(f"Timeout in image proxy: {str(timeout_err)} - {image_url}")
+        placeholder_svg = '''
+        <svg xmlns="http://www.w3.org/2000/svg" width="265" height="370" viewBox="0 0 265 370">
+            <rect width="265" height="370" fill="#eee"/>
+            <text x="50%" y="50%" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#888">
+                Image Request Timed Out
+            </text>
+        </svg>
+        '''
+        return Response(
+            placeholder_svg,
+            content_type='image/svg+xml',
+            headers={
+                'Access-Control-Allow-Origin': '*',
+                'Cache-Control': 'public, max-age=86400'
             }
         )
     except Exception as e:
