@@ -510,86 +510,13 @@ def upload_suggestion_image():
 def get_chatgpt_cards():
     """Get cards that instruct users to ask ChatGPT for something"""
     try:
-        # Find cards with text containing "ask ChatGPT" or similar phrases
+        # Find cards that have a 'prompt' field
         query = {
-            "$or": [
-                {"text": {"$regex": "ask ChatGPT", "$options": "i"}},
-                {"text": {"$regex": "ask AI", "$options": "i"}},
-                {"text": {"$regex": "prompt ChatGPT", "$options": "i"}},
-                {"text": {"$regex": "ask an AI", "$options": "i"}},
-                {"oracle_text": {"$regex": "ask ChatGPT", "$options": "i"}},
-                {"oracle_text": {"$regex": "ask AI", "$options": "i"}},
-                {"oracle_text": {"$regex": "prompt ChatGPT", "$options": "i"}},
-                {"oracle_text": {"$regex": "ask an AI", "$options": "i"}}
-            ]
+            "prompt": {"$exists": True}
         }
         
         # Execute query
         cards = list(db.cards.find(query))
-        
-        # If no cards found with the query, create some sample cards for demonstration
-        if not cards:
-            sample_cards = [
-                {
-                    "_id": ObjectId(),
-                    "name": "AI Consultation",
-                    "manaCost": "{2}{U}",
-                    "type": "Instant",
-                    "text": "Ask ChatGPT to create a unique magical creature with three special abilities.",
-                    "colors": ["U"],
-                    "rarity": "Rare",
-                    "imageUrl": "https://via.placeholder.com/265x370/0066cc/ffffff?text=AI+Consultation",
-                    "prompt": "Create a unique magical creature with three special abilities. Describe its appearance and explain each of its abilities in detail."
-                },
-                {
-                    "_id": ObjectId(),
-                    "name": "Creative Spark",
-                    "manaCost": "{1}{R}",
-                    "type": "Sorcery",
-                    "text": "Ask ChatGPT to write a short story about a planeswalker's first encounter with a dragon.",
-                    "colors": ["R"],
-                    "rarity": "Uncommon",
-                    "imageUrl": "https://via.placeholder.com/265x370/cc3300/ffffff?text=Creative+Spark",
-                    "prompt": "Write a short story (250 words or less) about a planeswalker's first encounter with a dragon. Include details about the setting, the planeswalker's reaction, and how the encounter ends."
-                },
-                {
-                    "_id": ObjectId(),
-                    "name": "Wisdom of the Ages",
-                    "manaCost": "{3}{W}{W}",
-                    "type": "Enchantment",
-                    "text": "Whenever a creature enters the battlefield under your control, ask ChatGPT for a wise quote about that creature's type.",
-                    "colors": ["W"],
-                    "rarity": "Mythic Rare",
-                    "imageUrl": "https://via.placeholder.com/265x370/ffffcc/000000?text=Wisdom+of+the+Ages",
-                    "prompt": "Provide a wise or philosophical quote about [CREATURE_TYPE]. The quote can be real or invented, but should sound profound and match the flavor of Magic: The Gathering."
-                },
-                {
-                    "_id": ObjectId(),
-                    "name": "Diabolic Riddle",
-                    "manaCost": "{2}{B}{B}",
-                    "type": "Sorcery",
-                    "text": "Ask ChatGPT to create a riddle with a dark or macabre theme. Your opponent must solve it or lose 5 life.",
-                    "colors": ["B"],
-                    "rarity": "Rare",
-                    "imageUrl": "https://via.placeholder.com/265x370/333333/ffffff?text=Diabolic+Riddle",
-                    "prompt": "Create a challenging riddle with a dark or macabre theme in the style of Magic: The Gathering black mana flavor. The answer should be something found in a typical Magic: The Gathering setting."
-                },
-                {
-                    "_id": ObjectId(),
-                    "name": "Nature's Inspiration",
-                    "manaCost": "{2}{G}",
-                    "type": "Instant",
-                    "text": "Ask ChatGPT to describe a new land type that combines elements of two existing basic lands.",
-                    "colors": ["G"],
-                    "rarity": "Uncommon",
-                    "imageUrl": "https://via.placeholder.com/265x370/00cc66/ffffff?text=Nature's+Inspiration",
-                    "prompt": "Describe a new Magic: The Gathering land type that combines elements of two existing basic lands (choose any two from Plains, Island, Swamp, Mountain, or Forest). Explain its physical appearance, what mana it would produce, and what kind of creatures might inhabit it."
-                }
-            ]
-            
-            # Insert sample cards into database
-            db.cards.insert_many(sample_cards)
-            cards = sample_cards
         
         # Convert ObjectId to string for each card
         for card in cards:

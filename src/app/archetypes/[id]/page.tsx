@@ -128,37 +128,57 @@ export default function ArchetypePage() {
       
       <div>
         <h2 className="text-2xl font-bold mb-4 dark:text-white">Key Cards</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+        <div className="mtg-card-grid">
           {cards.map(card => (
             <Link href={`/card/${card.id}`} key={card.id}>
-              <div className="bg-white dark:bg-gray-800 rounded-lg overflow-hidden shadow-md card-hover">
-                <div className="h-40 bg-gray-300 dark:bg-gray-700 flex items-center justify-center">
-                  <span className="text-gray-500 dark:text-gray-400">Card Image</span>
-                </div>
-                <div className="p-4">
-                  <h3 className="font-bold dark:text-white">{card.name}</h3>
-                  <div className="flex items-center justify-between mt-2">
-                    <div className="flex space-x-1">
-                      {card.colors.map((color: string) => (
-                        <span 
-                          key={color} 
-                          className={`w-5 h-5 rounded-full flex items-center justify-center text-xs font-bold ${colorMap[color]}`}
-                        >
-                          {color}
-                        </span>
-                      ))}
+              <div className="mtg-card card-hover">
+                {card.imageUrl ? (
+                  <div className="relative h-full w-full overflow-hidden">
+                    <img 
+                      src={card.imageUrl}
+                      alt={card.name}
+                      className="mtg-card-image"
+                      onError={(e) => {
+                        console.error('Error loading image:', card.imageUrl);
+                        e.currentTarget.src = 'data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22100%22%20height%3D%22140%22%20viewBox%3D%220%200%20100%20140%22%20preserveAspectRatio%3D%22none%22%3E%3Crect%20width%3D%22100%22%20height%3D%22140%22%20fill%3D%22%23eee%22%3E%3C%2Frect%3E%3Ctext%20text-anchor%3D%22middle%22%20x%3D%2250%22%20y%3D%2270%22%20style%3D%22fill%3A%23aaa%3Bfont-weight%3Abold%3Bfont-size%3A12px%3Bfont-family%3AArial%2C%20Helvetica%2C%20sans-serif%3Bdominant-baseline%3Acentral%22%3EImage%20Not%20Found%3C%2Ftext%3E%3C%2Fsvg%3E';
+                      }}
+                    />
+                    <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-70 p-2">
+                      <h3 className="font-bold text-white text-sm truncate">{card.name}</h3>
+                      <div className="flex items-center justify-between mt-1">
+                        <div className="flex space-x-1">
+                          {card.colors.map((color: string) => {
+                            const colorClasses: Record<string, string> = {
+                              W: 'bg-mtg-white text-black',
+                              U: 'bg-mtg-blue text-white',
+                              B: 'bg-mtg-black text-black',
+                              R: 'bg-mtg-red text-white',
+                              G: 'bg-mtg-green text-white',
+                            };
+                            
+                            return (
+                              <span 
+                                key={color} 
+                                className={`w-4 h-4 rounded-full flex items-center justify-center text-xs font-bold ${colorClasses[color]}`}
+                              >
+                                {color}
+                              </span>
+                            );
+                          })}
+                        </div>
+                        {card.custom && (
+                          <span className="text-xs px-1 py-0.5 bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 rounded-full">
+                            Custom
+                          </span>
+                        )}
+                      </div>
                     </div>
-                    <span className="text-sm text-gray-600 dark:text-gray-400">{card.manaCost}</span>
                   </div>
-                  <div className="mt-2 flex justify-between">
-                    <span className="text-sm text-gray-600 dark:text-gray-400">{card.type}</span>
-                    {card.custom && (
-                      <span className="text-xs px-2 py-1 bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 rounded-full">
-                        Custom
-                      </span>
-                    )}
+                ) : (
+                  <div className="h-full bg-gray-300 dark:bg-gray-700 flex items-center justify-center">
+                    <span className="text-gray-500 dark:text-gray-400">No Image</span>
                   </div>
-                </div>
+                )}
               </div>
             </Link>
           ))}

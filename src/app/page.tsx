@@ -121,12 +121,23 @@ export default function Home() {
                   
                   {randomCard ? (
                     <div className={`p-4 rounded-lg mb-4 ${getCardColorClasses(randomCard.colors || [])} bg-opacity-20 dark:bg-opacity-30`}>
-                      <div className="text-center">
-                        <p className="text-sm dark:text-gray-300 mb-2">Card Image URL:</p>
-                        <p className="text-xs bg-gray-200 dark:bg-gray-700 p-2 rounded overflow-auto">
-                          {randomCard.imageUrl || 'No image available'}
-                        </p>
-                      </div>
+                      {randomCard.imageUrl ? (
+                        <div className="flex justify-center">
+                          <img 
+                            src={randomCard.imageUrl}
+                            alt={randomCard.name}
+                            className="mtg-card"
+                            onError={(e) => {
+                              console.error('Error loading image:', randomCard.imageUrl);
+                              e.currentTarget.src = 'data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22100%22%20height%3D%22140%22%20viewBox%3D%220%200%20100%20140%22%20preserveAspectRatio%3D%22none%22%3E%3Crect%20width%3D%22100%22%20height%3D%22140%22%20fill%3D%22%23eee%22%3E%3C%2Frect%3E%3Ctext%20text-anchor%3D%22middle%22%20x%3D%2250%22%20y%3D%2270%22%20style%3D%22fill%3A%23aaa%3Bfont-weight%3Abold%3Bfont-size%3A12px%3Bfont-family%3AArial%2C%20Helvetica%2C%20sans-serif%3Bdominant-baseline%3Acentral%22%3EImage%20Not%20Found%3C%2Ftext%3E%3C%2Fsvg%3E';
+                            }}
+                          />
+                        </div>
+                      ) : (
+                        <div className="text-center">
+                          <p className="text-sm dark:text-gray-300">No image available</p>
+                        </div>
+                      )}
                     </div>
                   ) : (
                     <div className="p-4 rounded-lg mb-4 bg-gray-200 dark:bg-gray-700">

@@ -2,7 +2,7 @@
 
 import { useState, useRef, useEffect } from 'react';
 import { FaDice, FaRandom, FaCalculator, FaSearch, FaPlusCircle, FaList, FaRobot } from 'react-icons/fa';
-import { getBotDraftPick, getDraftPack, getSuggestions, addSuggestion, uploadSuggestionImage, getChatGPTCards, getChatGPTResponse, getGeminiResponse } from '@/lib/api';
+import { getBotDraftPick, getDraftPack, getSuggestions, addSuggestion, uploadSuggestionImage, getChatGPTCards, getChatGPTResponse, getGeminiResponse, API_BASE_URL } from '@/lib/api';
 
 type Tool = {
   id: string;
@@ -497,31 +497,71 @@ function DraftSimulator() {
               <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-blue-500"></div>
             </div>
           ) : (
-            <div className="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-5 gap-2 mb-6">
+            <div className="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-5 gap-4 mb-6">
               {currentPack.map(card => (
                 <div 
                   key={card.id} 
-                  className={`${getCardColorClasses(card.colors)} bg-opacity-20 dark:bg-opacity-30 p-2 rounded cursor-pointer hover:bg-opacity-30 dark:hover:bg-opacity-40 transition-colors`}
+                  className="mtg-card card-hover cursor-pointer"
                   onClick={() => pickCard(card)}
                 >
-                  <p className="font-medium dark:text-white">{card.name}</p>
-                  <p className="text-sm text-gray-600 dark:text-gray-400">{card.type}</p>
-                  <div className="flex mt-1">
-                    {card.colors.map((color: string) => (
-                      <span 
-                        key={color} 
-                        className="w-4 h-4 rounded-full mr-1"
-                        style={{ 
-                          backgroundColor: 
-                            color === 'W' ? '#F9FAF4' : 
-                            color === 'U' ? '#0E68AB' : 
-                            color === 'B' ? '#150B00' : 
-                            color === 'R' ? '#D3202A' : 
-                            '#00733E'
+                  {card.imageUrl ? (
+                    <div className="relative h-full w-full overflow-hidden">
+                      <img 
+                        src={card.imageUrl.startsWith('http') ? card.imageUrl : `${API_BASE_URL}/image-proxy?url=${encodeURIComponent(card.imageUrl)}`} 
+                        alt={card.name} 
+                        className="mtg-card-image"
+                        onError={(e) => {
+                          console.error('Error loading image:', card.imageUrl);
+                          e.currentTarget.src = 'data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22100%22%20height%3D%22140%22%20viewBox%3D%220%200%20100%20140%22%20preserveAspectRatio%3D%22none%22%3E%3Crect%20width%3D%22100%22%20height%3D%22140%22%20fill%3D%22%23eee%22%3E%3C%2Frect%3E%3Ctext%20text-anchor%3D%22middle%22%20x%3D%2250%22%20y%3D%2270%22%20style%3D%22fill%3A%23aaa%3Bfont-weight%3Abold%3Bfont-size%3A12px%3Bfont-family%3AArial%2C%20Helvetica%2C%20sans-serif%3Bdominant-baseline%3Acentral%22%3EImage%20Not%20Found%3C%2Ftext%3E%3C%2Fsvg%3E';
                         }}
                       />
-                    ))}
-                  </div>
+                      <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-70 p-2">
+                        <p className="font-medium text-white text-sm truncate">{card.name}</p>
+                        <div className="flex justify-between items-center mt-1">
+                          <div className="flex">
+                            {card.colors.map((color: string) => (
+                              <span 
+                                key={color} 
+                                className="w-4 h-4 rounded-full mr-1"
+                                style={{ 
+                                  backgroundColor: 
+                                    color === 'W' ? '#F9FAF4' : 
+                                    color === 'U' ? '#0E68AB' : 
+                                    color === 'B' ? '#150B00' : 
+                                    color === 'R' ? '#D3202A' : 
+                                    '#00733E'
+                                }}
+                              />
+                            ))}
+                          </div>
+                          <span className="text-xs text-white">{card.type}</span>
+                        </div>
+                      </div>
+                    </div>
+                  ) : (
+                    <div className={`h-full ${getCardColorClasses(card.colors)} bg-opacity-20 dark:bg-opacity-30 flex flex-col justify-between p-3`}>
+                      <p className="font-medium dark:text-white">{card.name}</p>
+                      <div>
+                        <p className="text-sm text-gray-600 dark:text-gray-400">{card.type}</p>
+                        <div className="flex mt-1">
+                          {card.colors.map((color: string) => (
+                            <span 
+                              key={color} 
+                              className="w-4 h-4 rounded-full mr-1"
+                              style={{ 
+                                backgroundColor: 
+                                  color === 'W' ? '#F9FAF4' : 
+                                  color === 'U' ? '#0E68AB' : 
+                                  color === 'B' ? '#150B00' : 
+                                  color === 'R' ? '#D3202A' : 
+                                  '#00733E'
+                              }}
+                            />
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                  )}
                 </div>
               ))}
             </div>
@@ -614,36 +654,40 @@ function RandomPackGenerator() {
       {pack.length > 0 && (
         <div className="mt-4">
           <h3 className="text-lg font-semibold mb-2 dark:text-white">Your Pack:</h3>
-          <div className="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-5 gap-2">
+          <div className="mtg-card-grid">
             {pack.map(card => (
               <div 
                 key={card.id} 
-                className="bg-gray-100 dark:bg-gray-700 p-2 rounded"
+                className="mtg-card"
               >
-                <p className="font-medium dark:text-white">{card.name}</p>
-                <p className="text-sm text-gray-600 dark:text-gray-400">{card.type}</p>
-                <div className="flex justify-between items-center mt-1">
-                  <div className="flex">
-                    {card.colors.map((color: string) => (
-                      <span 
-                        key={color} 
-                        className="w-4 h-4 rounded-full mr-1"
-                        style={{ 
-                          backgroundColor: 
-                            color === 'W' ? '#F9FAF4' : 
-                            color === 'U' ? '#0E68AB' : 
-                            color === 'B' ? '#150B00' : 
-                            color === 'R' ? '#D3202A' : 
-                            '#00733E'
-                        }}
-                      />
-                    ))}
+                <div className="h-full bg-gray-100 dark:bg-gray-700 flex flex-col justify-between p-3">
+                  <p className="font-medium dark:text-white">{card.name}</p>
+                  <div>
+                    <p className="text-sm text-gray-600 dark:text-gray-400">{card.type}</p>
+                    <div className="flex justify-between items-center mt-1">
+                      <div className="flex">
+                        {card.colors.map((color: string) => (
+                          <span 
+                            key={color} 
+                            className="w-4 h-4 rounded-full mr-1"
+                            style={{ 
+                              backgroundColor: 
+                                color === 'W' ? '#F9FAF4' : 
+                                color === 'U' ? '#0E68AB' : 
+                                color === 'B' ? '#150B00' : 
+                                color === 'R' ? '#D3202A' : 
+                                '#00733E'
+                            }}
+                          />
+                        ))}
+                      </div>
+                      {card.custom && (
+                        <span className="text-xs px-1 py-0.5 bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 rounded">
+                          Custom
+                        </span>
+                      )}
+                    </div>
                   </div>
-                  {card.custom && (
-                    <span className="text-xs px-1 py-0.5 bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 rounded">
-                      Custom
-                    </span>
-                  )}
                 </div>
               </div>
             ))}
@@ -1252,18 +1296,22 @@ function SuggestedCards() {
           {suggestions.map((suggestion) => (
             <div key={suggestion.id} className="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden">
               {suggestion.imageUrl && (
-                <div className="h-48 overflow-hidden">
+                <div className="flex justify-center p-2">
                   <img 
-                    src={suggestion.imageUrl} 
+                    src={suggestion.imageUrl.startsWith('http') ? suggestion.imageUrl : `${API_BASE_URL}/image-proxy?url=${encodeURIComponent(suggestion.imageUrl)}`} 
                     alt={suggestion.name} 
-                    className="w-full h-full object-cover"
+                    className="mtg-card"
+                    onError={(e) => {
+                      console.error('Error loading image:', suggestion.imageUrl);
+                      e.currentTarget.src = 'data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22100%22%20height%3D%22140%22%20viewBox%3D%220%200%20100%20140%22%20preserveAspectRatio%3D%22none%22%3E%3Crect%20width%3D%22100%22%20height%3D%22140%22%20fill%3D%22%23eee%22%3E%3C%2Frect%3E%3Ctext%20text-anchor%3D%22middle%22%20x%3D%2250%22%20y%3D%2270%22%20style%3D%22fill%3A%23aaa%3Bfont-weight%3Abold%3Bfont-size%3A12px%3Bfont-family%3AArial%2C%20Helvetica%2C%20sans-serif%3Bdominant-baseline%3Acentral%22%3EImage%20Not%20Found%3C%2Ftext%3E%3C%2Fsvg%3E';
+                    }}
                   />
                 </div>
               )}
               <div className="p-4">
                 <h4 className="text-lg font-bold mb-2 dark:text-white">{suggestion.name}</h4>
                 {suggestion.description && (
-                  <p className="text-gray-600 dark:text-gray-300 text-sm mb-2">{suggestion.description}</p>
+                  <p className="text-sm text-gray-600 dark:text-gray-300 mb-2">{suggestion.description}</p>
                 )}
                 <div className="flex justify-between items-center text-xs text-gray-500 dark:text-gray-400">
                   <p>Created by: {suggestion.createdBy || 'Anonymous'}</p>
@@ -1291,7 +1339,7 @@ function AskChatGPT() {
   const [chatGPTResponse, setChatGPTResponse] = useState<string | null>(null);
   const [isGenerating, setIsGenerating] = useState(false);
 
-  // Fetch cards that instruct users to ask ChatGPT
+  // Fetch cards that have a prompt field
   useEffect(() => {
     const fetchChatGPTCards = async () => {
       try {
@@ -1299,8 +1347,8 @@ function AskChatGPT() {
         const data = await getChatGPTCards();
         setCards(data);
       } catch (err) {
-        console.error('Error fetching ChatGPT cards:', err);
-        setError('Failed to load ChatGPT cards');
+        console.error('Error fetching cards with prompts:', err);
+        setError('Failed to load cards with Gemini prompts');
       } finally {
         setIsLoading(false);
       }
@@ -1309,16 +1357,21 @@ function AskChatGPT() {
     fetchChatGPTCards();
   }, []);
 
-  // Handle card click to generate ChatGPT response
+  // Handle card click to generate Gemini response
   const handleCardClick = async (card: any) => {
     setSelectedCard(card);
     setChatGPTResponse(null);
     
+    if (!card.prompt) {
+      setChatGPTResponse('This card does not have a valid prompt. Please select another card.');
+      return;
+    }
+    
     try {
       setIsGenerating(true);
       
-      // Get response from Gemini API
-      const response = await getGeminiResponse(card.prompt || card.text);
+      // Get response from Gemini API using the card's prompt field
+      const response = await getGeminiResponse(card.prompt);
       setChatGPTResponse(response.response);
       
     } catch (err) {
@@ -1333,7 +1386,7 @@ function AskChatGPT() {
     <div className="space-y-8">
       <div className="prose dark:prose-invert max-w-none">
         <p>
-          Some cards in the cube instruct you to ask Gemini for something. Click on any card below to automatically
+          Some cards in the cube have special prompts for Gemini. Click on any card below to automatically
           prompt Gemini and see the response.
         </p>
       </div>
@@ -1346,6 +1399,10 @@ function AskChatGPT() {
         <div className="text-center py-8 text-red-500">
           <p>{error}</p>
         </div>
+      ) : cards.length === 0 ? (
+        <div className="text-center py-8 bg-gray-100 dark:bg-gray-700 rounded-lg">
+          <p className="text-gray-500 dark:text-gray-400">No cards with Gemini prompts found in the database.</p>
+        </div>
       ) : (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {cards.map((card) => (
@@ -1357,11 +1414,15 @@ function AskChatGPT() {
               onClick={() => handleCardClick(card)}
             >
               {card.imageUrl && (
-                <div className="h-64 overflow-hidden">
+                <div className="flex justify-center p-2">
                   <img 
-                    src={card.imageUrl} 
+                    src={card.imageUrl.startsWith('http') ? card.imageUrl : `${API_BASE_URL}/image-proxy?url=${encodeURIComponent(card.imageUrl)}`} 
                     alt={card.name} 
-                    className="w-full h-full object-cover"
+                    className="mtg-card"
+                    onError={(e) => {
+                      console.error('Error loading image:', card.imageUrl);
+                      e.currentTarget.src = 'data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22100%22%20height%3D%22140%22%20viewBox%3D%220%200%20100%20140%22%20preserveAspectRatio%3D%22none%22%3E%3Crect%20width%3D%22100%22%20height%3D%22140%22%20fill%3D%22%23eee%22%3E%3C%2Frect%3E%3Ctext%20text-anchor%3D%22middle%22%20x%3D%2250%22%20y%3D%2270%22%20style%3D%22fill%3A%23aaa%3Bfont-weight%3Abold%3Bfont-size%3A12px%3Bfont-family%3AArial%2C%20Helvetica%2C%20sans-serif%3Bdominant-baseline%3Acentral%22%3EImage%20Not%20Found%3C%2Ftext%3E%3C%2Fsvg%3E';
+                    }}
                   />
                 </div>
               )}
@@ -1373,7 +1434,10 @@ function AskChatGPT() {
                   </div>
                 </div>
                 <p className="text-sm text-gray-700 dark:text-gray-300 mb-2">{card.type}</p>
-                <p className="text-sm text-gray-600 dark:text-gray-400 mb-3">{card.text}</p>
+                <div className="bg-gray-100 dark:bg-gray-700 p-3 rounded-lg mb-3">
+                  <p className="text-sm font-medium text-gray-800 dark:text-gray-200 mb-1">Prompt:</p>
+                  <p className="text-sm text-gray-600 dark:text-gray-400">{card.prompt}</p>
+                </div>
                 <div className="flex justify-between items-center">
                   <div className="flex space-x-1">
                     {card.colors && card.colors.map((color: string, index: number) => {
