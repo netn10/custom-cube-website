@@ -2,7 +2,7 @@
 
 import { useState, useRef, useEffect } from 'react';
 import { FaDice, FaRandom, FaCalculator, FaSearch, FaPlusCircle, FaList, FaRobot } from 'react-icons/fa';
-import { getBotDraftPick, getDraftPack, getSuggestions, addSuggestion, uploadSuggestionImage, getChatGPTCards, getChatGPTResponse, getGeminiResponse, API_BASE_URL } from '@/lib/api';
+import { getBotDraftPick, getDraftPack, getSuggestions, addSuggestion, uploadSuggestionImage, getChatGPTCards, getChatGPTResponse, getGeminiResponse, getRandomPack, API_BASE_URL } from '@/lib/api';
 
 type Tool = {
   id: string;
@@ -624,70 +624,128 @@ function DraftSimulator() {
 // Random Pack Generator Component
 function RandomPackGenerator() {
   const [pack, setPack] = useState<any[]>([]);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+  const [metadata, setMetadata] = useState<any>(null);
+  const [packSize, setPackSize] = useState(15);
   
-  const generatePack = () => {
-    // In a real implementation, this would fetch actual cards from your cube
-    const newPack = Array(15).fill(null).map((_, i) => ({
-      id: `random-card-${i}`,
-      name: `Example Card ${i + 1}`,
-      colors: ['W', 'U', 'B', 'R', 'G'].slice(0, Math.floor(Math.random() * 3) + 1),
-      type: ['Creature', 'Instant', 'Sorcery', 'Enchantment', 'Artifact'][Math.floor(Math.random() * 5)],
-      manaCost: `{${Math.floor(Math.random() * 5) + 1}}`,
-      custom: Math.random() > 0.5,
-    }));
-    setPack(newPack);
+  const generatePack = async () => {
+    try {
+      setLoading(true);
+      setError(null);
+      
+      const result = await getRandomPack(packSize);
+      setPack(result.pack);
+      setMetadata(result.metadata);
+    } catch (err: any) {
+      console.error('Error generating random pack:', err);
+      setError(err.message || 'Failed to generate random pack');
+      setPack([]);
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
     <div className="space-y-4">
       <p className="dark:text-gray-300">
-        Generate a random 15-card pack from the cube to see what you might open in a draft.
+        Generate a random pack from the cube where each card has an equal chance of appearing.
       </p>
       
-      <button 
-        className="btn-primary"
-        onClick={generatePack}
-      >
-        Generate Random Pack
-      </button>
+      <div className="flex items-center space-x-4 mb-4">
+        <div>
+          <label htmlFor="packSize" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+            Pack Size
+          </label>
+          <input
+            id="packSize"
+            type="number"
+            min="1"
+            max="30"
+            value={packSize}
+            onChange={(e) => setPackSize(Math.max(1, Math.min(30, parseInt(e.target.value) || 15)))}
+            className="w-20 px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white"
+          />
+        </div>
+        
+        <button 
+          className="btn-primary mt-6"
+          onClick={generatePack}
+          disabled={loading}
+        >
+          {loading ? 'Generating...' : 'Generate Random Pack'}
+        </button>
+      </div>
+      
+      {error && (
+        <div className="p-3 bg-red-100 text-red-700 rounded-md">
+          {error}
+        </div>
+      )}
+      
+      {metadata && (
+        <div className="text-sm text-gray-600 dark:text-gray-400">
+          <p>Total cards in database: {metadata.total_cards_in_database}</p>
+          <p>Generated at: {new Date(metadata.timestamp).toLocaleString()}</p>
+        </div>
+      )}
       
       {pack.length > 0 && (
         <div className="mt-4">
-          <h3 className="text-lg font-semibold mb-2 dark:text-white">Your Pack:</h3>
+          <h3 className="text-lg font-semibold mb-2 dark:text-white">Your Pack ({pack.length} cards):</h3>
           <div className="mtg-card-grid">
             {pack.map(card => (
               <div 
                 key={card.id} 
                 className="mtg-card"
               >
-                <div className="h-full bg-gray-100 dark:bg-gray-700 flex flex-col justify-between p-3">
-                  <p className="font-medium dark:text-white">{card.name}</p>
-                  <div>
-                    <p className="text-sm text-gray-600 dark:text-gray-400">{card.type}</p>
-                    <div className="flex justify-between items-center mt-1">
-                      <div className="flex">
-                        {card.colors.map((color: string) => (
-                          <span 
-                            key={color} 
-                            className="w-4 h-4 rounded-full mr-1"
-                            style={{ 
-                              backgroundColor: 
-                                color === 'W' ? '#F9FAF4' : 
-                                color === 'U' ? '#0E68AB' : 
-                                color === 'B' ? '#150B00' : 
-                                color === 'R' ? '#D3202A' : 
-                                '#00733E'
-                            }}
-                          />
-                        ))}
-                      </div>
-                      {card.custom && (
-                        <span className="text-xs px-1 py-0.5 bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 rounded">
-                          Custom
-                        </span>
-                      )}
+                <div className="h-full bg-gray-100 dark:bg-gray-700 flex flex-col justify-between p-3 relative">
+                  {card.imageUrl && (
+                    <div className="absolute inset-0 p-1">
+                      <img 
+                        src={`${API_BASE_URL}/image-proxy?url=${encodeURIComponent(card.imageUrl)}`}
+                        alt={card.name}
+                        className="w-full h-full object-cover rounded"
+                        loading="lazy"
+                      />
                     </div>
-                  </div>
+                  )}
+                  
+                  {!card.imageUrl && (
+                    <>
+                      <div>
+                        <p className="font-medium dark:text-white">{card.name}</p>
+                        <p className="text-xs text-gray-500 dark:text-gray-400">{card.manaCost}</p>
+                      </div>
+                      <div>
+                        <p className="text-sm text-gray-600 dark:text-gray-400">{card.type}</p>
+                        <p className="text-xs mt-1 text-gray-600 dark:text-gray-400 line-clamp-2">{card.text}</p>
+                        <div className="flex justify-between items-center mt-1">
+                          <div className="flex">
+                            {card.colors.map((color: string) => (
+                              <span 
+                                key={color} 
+                                className="w-4 h-4 rounded-full mr-1"
+                                style={{ 
+                                  backgroundColor: 
+                                    color === 'W' ? '#F9FAF4' : 
+                                    color === 'U' ? '#0E68AB' : 
+                                    color === 'B' ? '#150B00' : 
+                                    color === 'R' ? '#D3202A' : 
+                                    '#00733E'
+                                }}
+                              />
+                            ))}
+                          </div>
+                          {card.custom && (
+                            <span className="text-xs px-1 py-0.5 bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 rounded">
+                              Custom
+                            </span>
+                          )}
+                        </div>
+                      </div>
+                    </>
+                  )}
                 </div>
               </div>
             ))}

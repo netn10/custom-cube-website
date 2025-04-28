@@ -158,23 +158,41 @@ export async function getBotDraftPick(params: {
 // Generate a draft pack
 export async function getDraftPack(): Promise<Card[]> {
   try {
-    // Use the dedicated endpoint for draft packs
-    const response = await fetch(`${API_BASE_URL}/draft/pack`, {
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    });
+    const data = await fetchFromAPI<Card[]>('/draft/pack');
     
-    if (!response.ok) {
-      const errorData = await response.json().catch(() => ({ error: 'Unknown error' }));
-      throw new Error(errorData.error || `API error: ${response.status}`);
-    }
+    // Process the cards to ensure they have the correct structure
+    const processedCards = data.map(card => ({
+      ...card,
+      colors: card.colors || [],
+      archetypes: card.archetypes || [],
+    }));
     
-    const pack = await response.json();
-    console.log(`Received pack with ${pack.length} cards`);
-    return pack;
+    return processedCards;
   } catch (error) {
-    console.error('Error generating draft pack:', error);
+    console.error('Error fetching draft pack:', error);
+    throw error;
+  }
+}
+
+// Generate a random pack with equal probability for each card
+export async function getRandomPack(size?: number): Promise<{pack: Card[], metadata: any}> {
+  try {
+    const endpoint = size ? `/random-pack?size=${size}` : '/random-pack';
+    const data = await fetchFromAPI<{pack: Card[], metadata: any}>(endpoint);
+    
+    // Process the cards to ensure they have the correct structure
+    const processedCards = data.pack.map(card => ({
+      ...card,
+      colors: card.colors || [],
+      archetypes: card.archetypes || [],
+    }));
+    
+    return {
+      pack: processedCards,
+      metadata: data.metadata
+    };
+  } catch (error) {
+    console.error('Error fetching random pack:', error);
     throw error;
   }
 }

@@ -61,7 +61,8 @@ def index():
             "/api/chatgpt/cards",
             "/api/chatgpt/response",
             "/api/gemini/response",
-            "/api/image-proxy"
+            "/api/image-proxy",
+            "/api/random-pack"
         ]
     })
 
@@ -730,6 +731,55 @@ def image_proxy():
                 'Cache-Control': 'public, max-age=86400'
             }
         )
+
+@app.route('/api/random-pack', methods=['GET'])
+def get_random_pack():
+    """Generate a random pack of cards from the database where each card has equal probability of appearing"""
+    try:
+        # Get pack size from query parameters, default to 15 cards
+        pack_size = request.args.get('size', default=15, type=int)
+        min_size = request.args.get('min_size', default=1, type=int)
+        
+        # Get all cards from the database
+        all_cards = list(db.cards.find())
+        total_cards = len(all_cards)
+        
+        print(f"Found {total_cards} cards in database")
+        
+        # If we don't have enough cards, adjust the pack size
+        if total_cards < pack_size:
+            if total_cards < min_size:
+                return jsonify({"error": f"Not enough cards in database. Found {total_cards}, minimum required is {min_size}"}), 400
+            
+            print(f"Adjusting pack size from {pack_size} to {total_cards} due to limited cards in database")
+            pack_size = total_cards
+        
+        # Shuffle the cards to randomize
+        random.shuffle(all_cards)
+        
+        # Take the first 'pack_size' cards for the pack
+        pack = all_cards[:pack_size]
+        
+        # Convert ObjectIds to strings for JSON serialization
+        for card in pack:
+            card['id'] = str(card.pop('_id'))
+        
+        # Create response with pack and metadata
+        response = {
+            "pack": pack,
+            "metadata": {
+                "requested_size": int(request.args.get('size', 15)),
+                "actual_size": len(pack),
+                "total_cards_in_database": total_cards,
+                "timestamp": datetime.now().isoformat()
+            }
+        }
+        
+        print(f"Generated random pack with {len(pack)} cards out of {total_cards} total cards")
+        return jsonify(response)
+    except Exception as e:
+        print(f"Error generating random pack: {str(e)}")
+        return jsonify({"error": str(e)}), 500
 
 if __name__ == '__main__':
     app.run(debug=True, port=5000)
