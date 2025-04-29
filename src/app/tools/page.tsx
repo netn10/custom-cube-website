@@ -507,7 +507,7 @@ function DraftSimulator() {
                   {card.imageUrl ? (
                     <div className="relative h-full w-full overflow-hidden">
                       <img 
-                        src={card.imageUrl.startsWith('http') ? card.imageUrl : `${API_BASE_URL}/image-proxy?url=${encodeURIComponent(card.imageUrl)}`} 
+                        src={card.imageUrl.startsWith('data:') ? card.imageUrl : `${API_BASE_URL}/image-proxy?url=${encodeURIComponent(card.imageUrl)}`} 
                         alt={card.name} 
                         className="mtg-card-image"
                         onError={(e) => {
@@ -703,7 +703,7 @@ function RandomPackGenerator() {
                   {card.imageUrl && (
                     <div className="absolute inset-0 p-1">
                       <img 
-                        src={`${API_BASE_URL}/image-proxy?url=${encodeURIComponent(card.imageUrl)}`}
+                        src={card.imageUrl.startsWith('data:') ? card.imageUrl : `${API_BASE_URL}/image-proxy?url=${encodeURIComponent(card.imageUrl)}`} 
                         alt={card.name}
                         className="w-full h-full object-cover rounded"
                         loading="lazy"
@@ -1370,7 +1370,7 @@ function SuggestedCards() {
                 {suggestion.imageUrl && (
                   <div className="flex justify-center p-2">
                     <img 
-                      src={suggestion.imageUrl.startsWith('http') ? suggestion.imageUrl : `${API_BASE_URL}/image-proxy?url=${encodeURIComponent(suggestion.imageUrl)}`} 
+                      src={suggestion.imageUrl.startsWith('data:') ? suggestion.imageUrl : `${API_BASE_URL}/image-proxy?url=${encodeURIComponent(suggestion.imageUrl)}`} 
                       alt={suggestion.name} 
                       className="mtg-card"
                       onError={(e) => {
@@ -1564,7 +1564,7 @@ function AskChatGPT() {
               {card.imageUrl && (
                 <div className="flex justify-center p-2">
                   <img 
-                    src={card.imageUrl.startsWith('http') ? card.imageUrl : `${API_BASE_URL}/image-proxy?url=${encodeURIComponent(card.imageUrl)}`} 
+                    src={card.imageUrl.startsWith('data:') ? card.imageUrl : `${API_BASE_URL}/image-proxy?url=${encodeURIComponent(card.imageUrl)}`} 
                     alt={card.name} 
                     className="mtg-card"
                     onError={(e) => {

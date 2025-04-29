@@ -10,11 +10,14 @@ export default function TokensPage() {
   const [error, setError] = useState<string | null>(null);
   const [searchTerm, setSearchTerm] = useState('');
   const [filterColor, setFilterColor] = useState<string[]>([]);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [totalTokens, setTotalTokens] = useState(0);
+  const tokensPerPage = 20;
 
   useEffect(() => {
     // Fetch tokens on initial load
     fetchTokens();
-  }, []);
+  }, [currentPage]);
 
   // Fetch tokens with current filters
   const fetchTokens = async () => {
@@ -25,7 +28,12 @@ export default function TokensPage() {
       const params: {
         search?: string;
         colors?: string[];
-      } = {};
+        page?: number;
+        limit?: number;
+      } = {
+        page: currentPage,
+        limit: tokensPerPage
+      };
       
       if (searchTerm) {
         params.search = searchTerm;
@@ -36,8 +44,9 @@ export default function TokensPage() {
       }
       
       console.log('Fetching tokens with params:', params);
-      const data = await getTokens(params);
-      setTokens(data);
+      const response = await getTokens(params);
+      setTokens(response.tokens);
+      setTotalTokens(response.total);
     } catch (err) {
       console.error('Error fetching tokens:', err);
       setError('Failed to load tokens. Please try again later.');
@@ -75,7 +84,42 @@ export default function TokensPage() {
 
   // Apply filters and fetch new data
   const applyFilters = () => {
+    setCurrentPage(1);
     fetchTokens();
+  };
+
+  // Handle page change
+  const handlePageChange = (newPage: number) => {
+    setCurrentPage(newPage);
+    // Scroll to top when changing pages
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  // Pagination component for reuse
+  const PaginationControls = () => {
+    if (totalTokens <= tokensPerPage) return null;
+    
+    return (
+      <div className="flex justify-center my-4">
+        <button
+          className="px-4 py-2 bg-gray-200 dark:bg-gray-600 text-gray-800 dark:text-gray-200 rounded-md text-sm mr-2"
+          onClick={() => handlePageChange(currentPage - 1)}
+          disabled={currentPage === 1}
+        >
+          Previous
+        </button>
+        <span className="mx-2 flex items-center text-gray-600 dark:text-gray-400">
+          {currentPage} / {Math.ceil(totalTokens / tokensPerPage)}
+        </span>
+        <button
+          className="px-4 py-2 bg-gray-200 dark:bg-gray-600 text-gray-800 dark:text-gray-200 rounded-md text-sm ml-2"
+          onClick={() => handlePageChange(currentPage + 1)}
+          disabled={currentPage === Math.ceil(totalTokens / tokensPerPage)}
+        >
+          Next
+        </button>
+      </div>
+    );
   };
 
   // Handle search input changes with debounce
@@ -111,7 +155,7 @@ export default function TokensPage() {
                 const colorClasses: Record<string, string> = {
                   W: 'bg-mtg-white text-black',
                   U: 'bg-mtg-blue text-white',
-                  B: 'bg-mtg-black text-white',
+                  B: 'bg-mtg-black text-black',
                   R: 'bg-mtg-red text-white',
                   G: 'bg-mtg-green text-white',
                 };
@@ -176,51 +220,60 @@ export default function TokensPage() {
           {error}
         </div>
       ) : (
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-          {tokens.map(token => (
-            <div key={token.id} className="bg-white dark:bg-gray-800 rounded-lg overflow-hidden shadow-md">
-              <div className="h-40 bg-gray-300 dark:bg-gray-700 flex items-center justify-center">
-                <span className="text-gray-500 dark:text-gray-400">Token Image</span>
-              </div>
-              <div className="p-4">
-                <h3 className="font-bold dark:text-white">{token.name}</h3>
-                <div className="flex items-center mt-2">
-                  <div className="flex space-x-1">
-                    {token.colors.map(color => {
-                      const colorClasses: Record<string, string> = {
-                        W: 'bg-mtg-white text-black',
-                        U: 'bg-mtg-blue text-white',
-                        B: 'bg-mtg-black text-black',
-                        R: 'bg-mtg-red text-white',
-                        G: 'bg-mtg-green text-white',
-                      };
-                      
-                      return (
-                        <span 
-                          key={color} 
-                          className={`w-5 h-5 rounded-full flex items-center justify-center text-xs font-bold ${colorClasses[color]}`}
-                        >
-                          {color}
-                        </span>
-                      );
-                    })}
+        <>
+          <div className="flex justify-center items-center mb-4">
+            <p className="dark:text-gray-300">Showing {tokens.length} of {totalTokens}</p>
+          </div>
+          
+          {/* Top pagination controls */}
+          <PaginationControls />
+          
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+            {tokens.map(token => (
+              <div key={token.id} className="bg-white dark:bg-gray-800 rounded-lg overflow-hidden shadow-md">
+                <div className="h-40 bg-gray-300 dark:bg-gray-700 flex items-center justify-center">
+                  <span className="text-gray-500 dark:text-gray-400">Token Image</span>
+                </div>
+                <div className="p-4">
+                  <h3 className="font-bold dark:text-white">{token.name}</h3>
+                  <div className="flex items-center mt-2">
+                    <div className="flex space-x-1">
+                      {token.colors.map(color => {
+                        const colorClasses: Record<string, string> = {
+                          W: 'bg-mtg-white text-black',
+                          U: 'bg-mtg-blue text-white',
+                          B: 'bg-mtg-black text-black',
+                          R: 'bg-mtg-red text-white',
+                          G: 'bg-mtg-green text-white',
+                        };
+                        
+                        return (
+                          <span 
+                            key={color} 
+                            className={`w-5 h-5 rounded-full flex items-center justify-center text-xs font-bold ${colorClasses[color]}`}
+                          >
+                            {color}
+                          </span>
+                        );
+                      })}
+                    </div>
+                  </div>
+                  <div className="mt-2">
+                    <p className="text-sm text-gray-600 dark:text-gray-400">{token.type}</p>
+                    <p className="text-sm font-semibold dark:text-white mt-1">
+                      {token.power}/{token.toughness}
+                    </p>
+                    {token.abilities && token.abilities.length > 0 && (
+                      <p className="text-sm text-gray-600 dark:text-gray-400 mt-1">
+                        {token.abilities.join(', ')}
+                      </p>
+                    )}
                   </div>
                 </div>
-                <div className="mt-2">
-                  <p className="text-sm text-gray-600 dark:text-gray-400">{token.type}</p>
-                  <p className="text-sm font-semibold dark:text-white mt-1">
-                    {token.power}/{token.toughness}
-                  </p>
-                  {token.abilities && token.abilities.length > 0 && (
-                    <p className="text-sm text-gray-600 dark:text-gray-400 mt-1">
-                      {token.abilities.join(', ')}
-                    </p>
-                  )}
-                </div>
               </div>
-            </div>
-          ))}
-        </div>
+            ))}
+          </div>
+        </>
       )}
     </div>
   );

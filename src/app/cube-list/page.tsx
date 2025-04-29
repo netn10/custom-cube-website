@@ -151,6 +151,33 @@ export default function CubeList() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
+  // Pagination component for reuse
+  const PaginationControls = () => {
+    if (totalCards <= cardsPerPage) return null;
+    
+    return (
+      <div className="flex justify-center my-4">
+        <button
+          className="px-4 py-2 bg-gray-200 dark:bg-gray-600 text-gray-800 dark:text-gray-200 rounded-md text-sm mr-2"
+          onClick={() => handlePageChange(currentPage - 1)}
+          disabled={currentPage === 1}
+        >
+          Previous
+        </button>
+        <span className="mx-2 flex items-center text-gray-600 dark:text-gray-400">
+          {currentPage} / {Math.ceil(totalCards / cardsPerPage)}
+        </span>
+        <button
+          className="px-4 py-2 bg-gray-200 dark:bg-gray-600 text-gray-800 dark:text-gray-200 rounded-md text-sm ml-2"
+          onClick={() => handlePageChange(currentPage + 1)}
+          disabled={currentPage === Math.ceil(totalCards / cardsPerPage)}
+        >
+          Next
+        </button>
+      </div>
+    );
+  };
+
   return (
     <div className="space-y-6">
       <h1 className="text-3xl font-bold text-center dark:text-white">Cube Card List</h1>
@@ -286,6 +313,10 @@ export default function CubeList() {
           <div className="flex justify-center items-center mb-4">
             <p className="dark:text-gray-300">Showing {filteredCards.length} of {totalCards}</p>
           </div>
+          
+          {/* Top pagination controls */}
+          <PaginationControls />
+          
           <div className="mtg-card-grid">
             {filteredCards.map(card => (
               <Link href={`/card/${card.id}`} key={card.id}>
@@ -342,26 +373,6 @@ export default function CubeList() {
             ))}
           </div>
         </>
-      )}
-      
-      {totalCards > cardsPerPage && (
-        <div className="flex justify-center mt-4">
-          <button
-            className="px-4 py-2 bg-gray-200 dark:bg-gray-600 text-gray-800 dark:text-gray-200 rounded-md text-sm"
-            onClick={() => handlePageChange(currentPage - 1)}
-            disabled={currentPage === 1}
-          >
-            Previous
-          </button>
-          <span className="mx-2 text-gray-600 dark:text-gray-400">{currentPage} / {Math.ceil(totalCards / cardsPerPage)}</span>
-          <button
-            className="px-4 py-2 bg-gray-200 dark:bg-gray-600 text-gray-800 dark:text-gray-200 rounded-md text-sm"
-            onClick={() => handlePageChange(currentPage + 1)}
-            disabled={currentPage === Math.ceil(totalCards / cardsPerPage)}
-          >
-            Next
-          </button>
-        </div>
       )}
     </div>
   );
