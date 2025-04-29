@@ -133,7 +133,7 @@ export default function CubeList() {
     }
     
     // Type filter
-    if (filterType && card.type !== filterType) {
+    if (filterType && !card.type.includes(filterType)) {
       return false;
     }
     
