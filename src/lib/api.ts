@@ -142,7 +142,7 @@ export async function getRandomArchetypeCards(): Promise<Card[]> {
 export async function getTokens(params?: {
   search?: string;
   colors?: string[];
-}): Promise<Token[]> {
+}): Promise<{tokens: Token[], total: number}> {
   let queryParams = new URLSearchParams();
   
   if (params?.search) {
@@ -154,7 +154,7 @@ export async function getTokens(params?: {
   }
   
   const queryString = queryParams.toString() ? `?${queryParams.toString()}` : '';
-  return fetchFromAPI<Token[]>(`/tokens${queryString}`);
+  return fetchFromAPI<{tokens: Token[], total: number}>(`/tokens${queryString}`);
 }
 
 // Draft API
