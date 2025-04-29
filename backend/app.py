@@ -74,6 +74,10 @@ def get_cards():
     colors = request.args.get('colors', '').split(',') if request.args.get('colors') else []
     card_type = request.args.get('type', '')
     custom = request.args.get('custom', '')
+    page = int(request.args.get('page', 1))
+    limit = int(request.args.get('limit', 50))
+    
+    print(f"API Request - /api/cards with params: search='{search}', colors={colors}, type='{card_type}', custom='{custom}', page={page}, limit={limit}")
     
     # Build query
     query = {}
@@ -106,19 +110,46 @@ def get_cards():
             query['$or'] = color_query
     
     if card_type:
+        print(f"Searching for card type: {card_type}")
+        
+        # For all card types, including "Creature", just do a simple case-insensitive search
+        # This will match any card that has the type string anywhere in its type field
         query['type'] = {'$regex': card_type, '$options': 'i'}
+        print(f"Using simple regex query for type: {query['type']}")
     
     if custom:
         query['custom'] = custom.lower() == 'true'
     
-    # Execute query
-    cards = list(db.cards.find(query))
+    # Get total count
+    total = db.cards.count_documents(query)
+    
+    # Calculate skip for pagination
+    skip = (page - 1) * limit
+    
+    # Execute query with pagination
+    print("The query is:", query)
+    cards = list(db.cards.find(query).skip(skip).limit(limit))
+    
+    # Debug: Print the first few cards
+    if cards:
+        print(f"Found {len(cards)} cards. First few cards:")
+        for card in cards[:3]:
+            print(f"  - {card.get('name')}, Type: {card.get('type', '')}")
+    else:
+        print("No cards found matching the query.")
     
     # Convert ObjectId to string for each card
     for card in cards:
         card['id'] = str(card.pop('_id'))
     
-    return jsonify(cards)
+    print("Cards found:", {
+        "cards": cards,
+        "total": total
+    })
+    return jsonify({
+        "cards": cards,
+        "total": total
+    })
 
 @app.route('/api/cards/<card_id>', methods=['GET'])
 def get_card(card_id):
@@ -183,14 +214,30 @@ def get_archetype(archetype_id):
 def get_archetype_cards(archetype_id):
     """Get all cards for a specific archetype"""
     try:
+        # Get pagination parameters
+        page = int(request.args.get('page', 1))
+        limit = int(request.args.get('limit', 50))
+        
+        # Calculate skip for pagination
+        skip = (page - 1) * limit
+        
         # Find cards that have this archetype ID in their archetypes array
-        cards = list(db.cards.find({"archetypes": archetype_id}))
+        query = {"archetypes": archetype_id}
+        
+        # Get total count
+        total = db.cards.count_documents(query)
+        
+        # Get paginated cards
+        cards = list(db.cards.find(query).skip(skip).limit(limit))
         
         # Convert ObjectId to string for each card
         for card in cards:
             card['id'] = str(card.pop('_id'))
             
-        return jsonify(cards)
+        return jsonify({
+            "cards": cards,
+            "total": total
+        })
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 
@@ -436,13 +483,27 @@ def bot_draft_pick():
 def get_suggestions():
     """Get all card suggestions"""
     try:
-        suggestions = list(db.suggestions.find())
+        # Get pagination parameters
+        page = int(request.args.get('page', 1))
+        limit = int(request.args.get('limit', 50))
+        
+        # Calculate skip for pagination
+        skip = (page - 1) * limit
+        
+        # Get total count
+        total = db.suggestions.count_documents({})
+        
+        # Get paginated suggestions
+        suggestions = list(db.suggestions.find().skip(skip).limit(limit))
         
         # Convert ObjectId to string for each suggestion
         for suggestion in suggestions:
             suggestion['id'] = str(suggestion.pop('_id'))
             
-        return jsonify(suggestions)
+        return jsonify({
+            "suggestions": suggestions,
+            "total": total
+        })
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 

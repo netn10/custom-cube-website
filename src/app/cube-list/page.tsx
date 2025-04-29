@@ -13,11 +13,14 @@ export default function CubeList() {
   const [filterColor, setFilterColor] = useState<string[]>([]);
   const [filterType, setFilterType] = useState('');
   const [filterCustom, setFilterCustom] = useState<boolean | null>(null);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [totalCards, setTotalCards] = useState(0);
+  const cardsPerPage = 50;
 
   useEffect(() => {
     // Fetch cards on initial load
     fetchCards();
-  }, []);
+  }, [currentPage]);
 
   // Fetch cards with current filters
   const fetchCards = async () => {
@@ -30,7 +33,12 @@ export default function CubeList() {
         colors?: string[];
         type?: string;
         custom?: boolean | null;
-      } = {};
+        page?: number;
+        limit?: number;
+      } = {
+        page: currentPage,
+        limit: cardsPerPage
+      };
       
       if (searchTerm) {
         params.search = searchTerm;
@@ -49,8 +57,9 @@ export default function CubeList() {
       }
       
       console.log('Fetching cards with params:', params);
-      const data = await getCards(params);
-      setCards(data);
+      const response = await getCards(params);
+      setCards(response.cards);
+      setTotalCards(response.total);
     } catch (err) {
       console.error('Error fetching cards:', err);
       setError('Failed to load cards. Please try again later.');
@@ -88,6 +97,8 @@ export default function CubeList() {
 
   // Apply filters and fetch new data
   const applyFilters = () => {
+    setCurrentPage(1);
+    console.log("Applying filters with type:", filterType);
     fetchCards();
   };
 
@@ -96,7 +107,7 @@ export default function CubeList() {
     setSearchTerm(e.target.value);
     // We'll apply the search filter immediately for better UX
     setTimeout(() => {
-      fetchCards();
+      applyFilters();
     }, 300);
   };
 
@@ -133,6 +144,12 @@ export default function CubeList() {
     
     return true;
   });
+
+  const handlePageChange = (newPage: number) => {
+    setCurrentPage(newPage);
+    // Scroll to top when changing pages
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
 
   return (
     <div className="space-y-6">
@@ -265,60 +282,85 @@ export default function CubeList() {
           {error}
         </div>
       ) : (
-        <div className="mtg-card-grid">
-          {filteredCards.map(card => (
-            <Link href={`/card/${card.id}`} key={card.id}>
-              <div className="mtg-card card-hover">
-                {card.imageUrl ? (
-                  <div className="relative h-full w-full overflow-hidden">
-                    <img 
-                      src={`${API_BASE_URL}/image-proxy?url=${encodeURIComponent(card.imageUrl)}`}
-                      alt={card.name}
-                      className="mtg-card-image"
-                      onError={(e) => {
-                        console.error('Error loading image:', card.imageUrl);
-                        e.currentTarget.src = 'data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22100%22%20height%3D%22140%22%20viewBox%3D%220%200%20100%20140%22%20preserveAspectRatio%3D%22none%22%3E%3Crect%20width%3D%22100%22%20height%3D%22140%22%20fill%3D%22%23eee%22%3E%3C%2Frect%3E%3Ctext%20text-anchor%3D%22middle%22%20x%3D%2250%22%20y%3D%2270%22%20style%3D%22fill%3A%23aaa%3Bfont-weight%3Abold%3Bfont-size%3A12px%3Bfont-family%3AArial%2C%20Helvetica%2C%20sans-serif%3Bdominant-baseline%3Acentral%22%3EImage%20Not%20Found%3C%2Ftext%3E%3C%2Fsvg%3E';
-                      }}
-                    />
-                    <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-70 p-2">
-                      <h3 className="font-bold text-white text-sm truncate">{card.name}</h3>
-                      <div className="flex items-center justify-between mt-1">
-                        <div className="flex space-x-1">
-                          {card.colors.map(color => {
-                            const colorClasses: Record<string, string> = {
-                              W: 'bg-mtg-white text-black',
-                              U: 'bg-mtg-blue text-white',
-                              B: 'bg-mtg-black text-black',
-                              R: 'bg-mtg-red text-white',
-                              G: 'bg-mtg-green text-white',
-                            };
-                            
-                            return (
-                              <span 
-                                key={color} 
-                                className={`w-4 h-4 rounded-full flex items-center justify-center text-xs font-bold ${colorClasses[color]}`}
-                              >
-                                {color}
-                              </span>
-                            );
-                          })}
+        <>
+          <div className="flex justify-center items-center mb-4">
+            <p className="dark:text-gray-300">Showing {filteredCards.length} of {totalCards}</p>
+          </div>
+          <div className="mtg-card-grid">
+            {filteredCards.map(card => (
+              <Link href={`/card/${card.id}`} key={card.id}>
+                <div className="mtg-card card-hover">
+                  {card.imageUrl ? (
+                    <div className="relative h-full w-full overflow-hidden">
+                      <img 
+                        src={`${API_BASE_URL}/image-proxy?url=${encodeURIComponent(card.imageUrl)}`}
+                        alt={card.name}
+                        className="mtg-card-image"
+                        onError={(e) => {
+                          console.error('Error loading image:', card.imageUrl);
+                          e.currentTarget.src = 'data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22100%22%20height%3D%22140%22%20viewBox%3D%220%200%20100%20140%22%20preserveAspectRatio%3D%22none%22%3E%3Crect%20width%3D%22100%22%20height%3D%22140%22%20fill%3D%22%23eee%22%3E%3C%2Frect%3E%3Ctext%20text-anchor%3D%22middle%22%20x%3D%2250%22%20y%3D%2270%22%20style%3D%22fill%3A%23aaa%3Bfont-weight%3Abold%3Bfont-size%3A12px%3Bfont-family%3AArial%2C%20Helvetica%2C%20sans-serif%3Bdominant-baseline%3Acentral%22%3EImage%20Not%20Found%3C%2Ftext%3E%3C%2Fsvg%3E';
+                        }}
+                      />
+                      <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-70 p-2">
+                        <h3 className="font-bold text-white text-sm truncate">{card.name}</h3>
+                        <div className="flex items-center justify-between mt-1">
+                          <div className="flex space-x-1">
+                            {card.colors.map(color => {
+                              const colorClasses: Record<string, string> = {
+                                W: 'bg-mtg-white text-black',
+                                U: 'bg-mtg-blue text-white',
+                                B: 'bg-mtg-black text-black',
+                                R: 'bg-mtg-red text-white',
+                                G: 'bg-mtg-green text-white',
+                              };
+                              
+                              return (
+                                <span 
+                                  key={color} 
+                                  className={`w-4 h-4 rounded-full flex items-center justify-center text-xs font-bold ${colorClasses[color]}`}
+                                >
+                                  {color}
+                                </span>
+                              );
+                            })}
+                          </div>
+                          {card.custom && (
+                            <span className="text-xs px-1 py-0.5 bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 rounded-full">
+                              Custom
+                            </span>
+                          )}
                         </div>
-                        {card.custom && (
-                          <span className="text-xs px-1 py-0.5 bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 rounded-full">
-                            Custom
-                          </span>
-                        )}
                       </div>
                     </div>
-                  </div>
-                ) : (
-                  <div className="h-full bg-gray-300 dark:bg-gray-700 flex items-center justify-center">
-                    <span className="text-gray-500 dark:text-gray-400">No Image</span>
-                  </div>
-                )}
-              </div>
-            </Link>
-          ))}
+                  ) : (
+                    <div className="h-full bg-gray-300 dark:bg-gray-700 flex items-center justify-center">
+                      <span className="text-gray-500 dark:text-gray-400">No Image</span>
+                    </div>
+                  )}
+                </div>
+              </Link>
+            ))}
+          </div>
+        </>
+      )}
+      
+      {totalCards > cardsPerPage && (
+        <div className="flex justify-center mt-4">
+          <button
+            className="px-4 py-2 bg-gray-200 dark:bg-gray-600 text-gray-800 dark:text-gray-200 rounded-md text-sm"
+            onClick={() => handlePageChange(currentPage - 1)}
+            disabled={currentPage === 1}
+          >
+            Previous
+          </button>
+          <span className="mx-2 text-gray-600 dark:text-gray-400">{currentPage} / {Math.ceil(totalCards / cardsPerPage)}</span>
+          <button
+            className="px-4 py-2 bg-gray-200 dark:bg-gray-600 text-gray-800 dark:text-gray-200 rounded-md text-sm"
+            onClick={() => handlePageChange(currentPage + 1)}
+            disabled={currentPage === Math.ceil(totalCards / cardsPerPage)}
+          >
+            Next
+          </button>
         </div>
       )}
     </div>

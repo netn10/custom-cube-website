@@ -1318,14 +1318,18 @@ function SuggestedCards() {
   const [suggestions, setSuggestions] = useState<any[]>([]);
   const [isLoadingSuggestions, setIsLoadingSuggestions] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [totalSuggestions, setTotalSuggestions] = useState(0);
+  const suggestionsPerPage = 50;
 
-  // Fetch existing suggestions when component mounts
+  // Fetch existing suggestions when component mounts or page changes
   useEffect(() => {
     const fetchSuggestions = async () => {
       try {
         setIsLoadingSuggestions(true);
-        const data = await getSuggestions();
-        setSuggestions(data);
+        const data = await getSuggestions(currentPage, suggestionsPerPage);
+        setSuggestions(data.suggestions || []);
+        setTotalSuggestions(data.total || 0);
       } catch (err) {
         console.error('Error fetching suggestions:', err);
         setError('Failed to load existing suggestions');
@@ -1335,7 +1339,13 @@ function SuggestedCards() {
     };
 
     fetchSuggestions();
-  }, []);
+  }, [currentPage]);
+
+  const handlePageChange = (newPage: number) => {
+    setCurrentPage(newPage);
+    // Scroll to top when changing pages
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
 
   return (
     <div className="space-y-6">
@@ -1350,35 +1360,115 @@ function SuggestedCards() {
           <p className="text-gray-500 dark:text-gray-400">Loading suggestions...</p>
         </div>
       ) : suggestions.length > 0 ? (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {suggestions.map((suggestion) => (
-            <div key={suggestion.id} className="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden">
-              {suggestion.imageUrl && (
-                <div className="flex justify-center p-2">
-                  <img 
-                    src={suggestion.imageUrl.startsWith('http') ? suggestion.imageUrl : `${API_BASE_URL}/image-proxy?url=${encodeURIComponent(suggestion.imageUrl)}`} 
-                    alt={suggestion.name} 
-                    className="mtg-card"
-                    onError={(e) => {
-                      console.error('Error loading image:', suggestion.imageUrl);
-                      e.currentTarget.src = 'data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22100%22%20height%3D%22140%22%20viewBox%3D%220%200%20100%20140%22%20preserveAspectRatio%3D%22none%22%3E%3Crect%20width%3D%22100%22%20height%3D%22140%22%20fill%3D%22%23eee%22%3E%3C%2Frect%3E%3Ctext%20text-anchor%3D%22middle%22%20x%3D%2250%22%20y%3D%2270%22%20style%3D%22fill%3A%23aaa%3Bfont-weight%3Abold%3Bfont-size%3A12px%3Bfont-family%3AArial%2C%20Helvetica%2C%20sans-serif%3Bdominant-baseline%3Acentral%22%3EImage%20Not%20Found%3C%2Ftext%3E%3C%2Fsvg%3E';
-                    }}
-                  />
-                </div>
-              )}
-              <div className="p-4">
-                <h4 className="text-lg font-bold mb-2 dark:text-white">{suggestion.name}</h4>
-                {suggestion.description && (
-                  <p className="text-sm text-gray-600 dark:text-gray-300 mb-2">{suggestion.description}</p>
+        <>
+          <div className="flex justify-center items-center mb-4">
+            <p className="dark:text-gray-300">Showing {suggestions.length} of {totalSuggestions}</p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {suggestions.map((suggestion) => (
+              <div key={suggestion.id} className="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden">
+                {suggestion.imageUrl && (
+                  <div className="flex justify-center p-2">
+                    <img 
+                      src={suggestion.imageUrl.startsWith('http') ? suggestion.imageUrl : `${API_BASE_URL}/image-proxy?url=${encodeURIComponent(suggestion.imageUrl)}`} 
+                      alt={suggestion.name} 
+                      className="mtg-card"
+                      onError={(e) => {
+                        console.error('Error loading image:', suggestion.imageUrl);
+                        e.currentTarget.src = 'data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22100%22%20height%3D%22140%22%20viewBox%3D%220%200%20100%20140%22%20preserveAspectRatio%3D%22none%22%3E%3Crect%20width%3D%22100%22%20height%3D%22140%22%20fill%3D%22%23eee%22%3E%3C%2Frect%3E%3Ctext%20text-anchor%3D%22middle%22%20x%3D%2250%22%20y%3D%2270%22%20style%3D%22fill%3A%23aaa%3Bfont-weight%3Abold%3Bfont-size%3A12px%3Bfont-family%3AArial%2C%20Helvetica%2C%20sans-serif%3Bdominant-baseline%3Acentral%22%3EImage%20Not%20Found%3C%2Ftext%3E%3C%2Fsvg%3E';
+                      }}
+                    />
+                  </div>
                 )}
-                <div className="flex justify-between items-center text-xs text-gray-500 dark:text-gray-400">
-                  <p>Created by: {suggestion.createdBy || 'Anonymous'}</p>
-                  <p>Submitted: {new Date(suggestion.submittedAt).toLocaleDateString()}</p>
+                <div className="p-4">
+                  <h4 className="text-lg font-bold mb-2 dark:text-white">{suggestion.name}</h4>
+                  {suggestion.description && (
+                    <p className="text-sm text-gray-600 dark:text-gray-300 mb-2">{suggestion.description}</p>
+                  )}
+                  <div className="flex justify-between items-center text-xs text-gray-500 dark:text-gray-400">
+                    <p>Created by: {suggestion.createdBy || 'Anonymous'}</p>
+                    <p>Submitted: {new Date(suggestion.submittedAt).toLocaleDateString()}</p>
+                  </div>
                 </div>
               </div>
+            ))}
+          </div>
+          
+          {/* Pagination controls */}
+          {totalSuggestions > suggestionsPerPage && (
+            <div className="flex justify-center mt-6">
+              <nav className="flex items-center space-x-2">
+                <button
+                  onClick={() => handlePageChange(currentPage - 1)}
+                  disabled={currentPage === 1}
+                  className={`px-3 py-1 rounded ${
+                    currentPage === 1
+                      ? 'bg-gray-200 text-gray-500 cursor-not-allowed dark:bg-gray-700 dark:text-gray-400'
+                      : 'bg-blue-500 text-white hover:bg-blue-600 dark:bg-blue-600 dark:hover:bg-blue-700'
+                  }`}
+                >
+                  Previous
+                </button>
+                
+                <div className="flex items-center space-x-1">
+                  {Array.from({ length: Math.ceil(totalSuggestions / suggestionsPerPage) }, (_, i) => i + 1)
+                    .filter(page => 
+                      page === 1 || 
+                      page === Math.ceil(totalSuggestions / suggestionsPerPage) || 
+                      (page >= currentPage - 1 && page <= currentPage + 1)
+                    )
+                    .map((page, index, array) => {
+                      // Add ellipsis if there are gaps in the sequence
+                      if (index > 0 && page - array[index - 1] > 1) {
+                        return (
+                          <React.Fragment key={`ellipsis-${page}`}>
+                            <span className="px-2 text-gray-500 dark:text-gray-400">...</span>
+                            <button
+                              key={page}
+                              onClick={() => handlePageChange(page)}
+                              className={`w-8 h-8 flex items-center justify-center rounded ${
+                                currentPage === page
+                                  ? 'bg-blue-500 text-white dark:bg-blue-600'
+                                  : 'bg-gray-200 text-gray-700 hover:bg-gray-300 dark:bg-gray-700 dark:text-gray-300 dark:hover:bg-gray-600'
+                              }`}
+                            >
+                              {page}
+                            </button>
+                          </React.Fragment>
+                        );
+                      }
+                      
+                      return (
+                        <button
+                          key={page}
+                          onClick={() => handlePageChange(page)}
+                          className={`w-8 h-8 flex items-center justify-center rounded ${
+                            currentPage === page
+                              ? 'bg-blue-500 text-white dark:bg-blue-600'
+                              : 'bg-gray-200 text-gray-700 hover:bg-gray-300 dark:bg-gray-700 dark:text-gray-300 dark:hover:bg-gray-600'
+                          }`}
+                        >
+                          {page}
+                        </button>
+                      );
+                    })}
+                </div>
+                
+                <button
+                  onClick={() => handlePageChange(currentPage + 1)}
+                  disabled={currentPage >= Math.ceil(totalSuggestions / suggestionsPerPage)}
+                  className={`px-3 py-1 rounded ${
+                    currentPage >= Math.ceil(totalSuggestions / suggestionsPerPage)
+                      ? 'bg-gray-200 text-gray-500 cursor-not-allowed dark:bg-gray-700 dark:text-gray-400'
+                      : 'bg-blue-500 text-white hover:bg-blue-600 dark:bg-blue-600 dark:hover:bg-blue-700'
+                  }`}
+                >
+                  Next
+                </button>
+              </nav>
             </div>
-          ))}
-        </div>
+          )}
+        </>
       ) : (
         <div className="text-center py-8 bg-gray-100 dark:bg-gray-700 rounded-lg">
           <p className="text-gray-500 dark:text-gray-400">No card suggestions yet. Be the first to suggest a card!</p>
@@ -1466,9 +1556,9 @@ function AskChatGPT() {
           {cards.map((card) => (
             <div 
               key={card.id} 
-              className={`bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden cursor-pointer transition-all duration-200 hover:shadow-lg ${
-                selectedCard?.id === card.id ? 'ring-2 ring-blue-500' : ''
-              }`}
+              className={`bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden cursor-pointer transition-all duration-200 
+                ${selectedCard?.id === card.id ? 'ring-2 ring-blue-500' : ''}
+              `}
               onClick={() => handleCardClick(card)}
             >
               {card.imageUrl && (

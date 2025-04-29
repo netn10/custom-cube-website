@@ -37,7 +37,9 @@ export async function getCards(params?: {
   colors?: string[];
   type?: string;
   custom?: boolean | null;
-}): Promise<Card[]> {
+  page?: number;
+  limit?: number;
+}): Promise<{cards: Card[], total: number}> {
   let queryParams = new URLSearchParams();
   
   if (params?.search) {
@@ -52,12 +54,20 @@ export async function getCards(params?: {
     queryParams.append('type', params.type);
   }
   
-  if (params?.custom !== undefined && params.custom !== null) {
+  if (params?.custom !== undefined && params?.custom !== null) {
     queryParams.append('custom', params.custom ? 'true' : 'false');
   }
   
+  if (params?.page !== undefined) {
+    queryParams.append('page', params.page.toString());
+  }
+  
+  if (params?.limit !== undefined) {
+    queryParams.append('limit', params.limit.toString());
+  }
+  
   const queryString = queryParams.toString() ? `?${queryParams.toString()}` : '';
-  return fetchFromAPI<Card[]>(`/cards${queryString}`);
+  return fetchFromAPI<{cards: Card[], total: number}>(`/cards${queryString}`);
 }
 
 export async function getCardById(id: string): Promise<Card> {
@@ -95,8 +105,13 @@ export async function getArchetypeById(id: string): Promise<Archetype> {
   return fetchFromAPI<Archetype>(`/archetypes/${id}`);
 }
 
-export async function getArchetypeCards(id: string): Promise<Card[]> {
-  return fetchFromAPI<Card[]>(`/archetypes/${id}/cards`);
+export async function getArchetypeCards(id: string, page: number = 1, limit: number = 50): Promise<{cards: Card[], total: number}> {
+  const queryParams = new URLSearchParams();
+  queryParams.append('page', page.toString());
+  queryParams.append('limit', limit.toString());
+  
+  const queryString = queryParams.toString() ? `?${queryParams.toString()}` : '';
+  return fetchFromAPI<{cards: Card[], total: number}>(`/archetypes/${id}/cards${queryString}`);
 }
 
 export async function getRandomArchetypeCards(): Promise<Card[]> {
@@ -198,8 +213,13 @@ export async function getRandomPack(size?: number): Promise<{pack: Card[], metad
 }
 
 // Card Suggestions API
-export async function getSuggestions(): Promise<Suggestion[]> {
-  return fetchFromAPI('/suggestions');
+export async function getSuggestions(page: number = 1, limit: number = 50): Promise<{suggestions: Suggestion[], total: number}> {
+  const queryParams = new URLSearchParams();
+  queryParams.append('page', page.toString());
+  queryParams.append('limit', limit.toString());
+  
+  const queryString = queryParams.toString() ? `?${queryParams.toString()}` : '';
+  return fetchFromAPI<{suggestions: Suggestion[], total: number}>(`/suggestions${queryString}`);
 }
 
 export async function addSuggestion(suggestion: {

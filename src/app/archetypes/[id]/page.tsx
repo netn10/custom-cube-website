@@ -13,6 +13,9 @@ export default function ArchetypePage() {
   const [cards, setCards] = useState<Card[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [totalCards, setTotalCards] = useState(0);
+  const cardsPerPage = 50;
 
   useEffect(() => {
     if (params.id) {
@@ -25,9 +28,10 @@ export default function ArchetypePage() {
           const archetypeData = await getArchetypeById(archetypeId);
           setArchetype(archetypeData);
           
-          // Fetch cards for this archetype
-          const cardsData = await getArchetypeCards(archetypeId);
-          setCards(cardsData);
+          // Fetch cards for this archetype with pagination
+          const cardsData = await getArchetypeCards(archetypeId, currentPage, cardsPerPage);
+          setCards(cardsData.cards);
+          setTotalCards(cardsData.total);
           
           setError(null);
         } catch (err) {
@@ -40,7 +44,13 @@ export default function ArchetypePage() {
       
       fetchData();
     }
-  }, [params.id]);
+  }, [params.id, currentPage]);
+
+  const handlePageChange = (newPage: number) => {
+    setCurrentPage(newPage);
+    // Scroll to top when changing pages
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
 
   if (loading) {
     return (
@@ -128,6 +138,9 @@ export default function ArchetypePage() {
       
       <div>
         <h2 className="text-2xl font-bold mb-4 dark:text-white">Key Cards</h2>
+        <div className="flex justify-center items-center mb-4">
+          <p className="dark:text-gray-300">Showing {cards.length} of {totalCards}</p>
+        </div>
         <div className="mtg-card-grid">
           {cards.map(card => (
             <Link href={`/card/${card.id}`} key={card.id}>
@@ -183,6 +196,81 @@ export default function ArchetypePage() {
             </Link>
           ))}
         </div>
+        
+        {/* Pagination controls */}
+        {totalCards > cardsPerPage && (
+          <div className="flex justify-center mt-6">
+            <nav className="flex items-center space-x-2">
+              <button
+                onClick={() => handlePageChange(currentPage - 1)}
+                disabled={currentPage === 1}
+                className={`px-3 py-1 rounded ${
+                  currentPage === 1
+                    ? 'bg-gray-200 text-gray-500 cursor-not-allowed dark:bg-gray-700 dark:text-gray-400'
+                    : 'bg-blue-500 text-white hover:bg-blue-600 dark:bg-blue-600 dark:hover:bg-blue-700'
+                }`}
+              >
+                Previous
+              </button>
+              
+              <div className="flex items-center space-x-1">
+                {Array.from({ length: Math.ceil(totalCards / cardsPerPage) }, (_, i) => i + 1)
+                  .filter(page => 
+                    page === 1 || 
+                    page === Math.ceil(totalCards / cardsPerPage) || 
+                    (page >= currentPage - 1 && page <= currentPage + 1)
+                  )
+                  .map((page, index, array) => {
+                    // Add ellipsis if there are gaps in the sequence
+                    if (index > 0 && page - array[index - 1] > 1) {
+                      return (
+                        <React.Fragment key={`ellipsis-${page}`}>
+                          <span className="px-2 text-gray-500 dark:text-gray-400">...</span>
+                          <button
+                            key={page}
+                            onClick={() => handlePageChange(page)}
+                            className={`w-8 h-8 flex items-center justify-center rounded ${
+                              currentPage === page
+                                ? 'bg-blue-500 text-white dark:bg-blue-600'
+                                : 'bg-gray-200 text-gray-700 hover:bg-gray-300 dark:bg-gray-700 dark:text-gray-300 dark:hover:bg-gray-600'
+                            }`}
+                          >
+                            {page}
+                          </button>
+                        </React.Fragment>
+                      );
+                    }
+                    
+                    return (
+                      <button
+                        key={page}
+                        onClick={() => handlePageChange(page)}
+                        className={`w-8 h-8 flex items-center justify-center rounded ${
+                          currentPage === page
+                            ? 'bg-blue-500 text-white dark:bg-blue-600'
+                            : 'bg-gray-200 text-gray-700 hover:bg-gray-300 dark:bg-gray-700 dark:text-gray-300 dark:hover:bg-gray-600'
+                        }`}
+                      >
+                        {page}
+                      </button>
+                    );
+                  })}
+              </div>
+              
+              <button
+                onClick={() => handlePageChange(currentPage + 1)}
+                disabled={currentPage >= Math.ceil(totalCards / cardsPerPage)}
+                className={`px-3 py-1 rounded ${
+                  currentPage >= Math.ceil(totalCards / cardsPerPage)
+                    ? 'bg-gray-200 text-gray-500 cursor-not-allowed dark:bg-gray-700 dark:text-gray-400'
+                    : 'bg-blue-500 text-white hover:bg-blue-600 dark:bg-blue-600 dark:hover:bg-blue-700'
+                }`}
+              >
+                Next
+              </button>
+            </nav>
+          </div>
+        )}
       </div>
       
       <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
