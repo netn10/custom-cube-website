@@ -40,7 +40,7 @@ export default function EditCardPage(): JSX.Element {
     set: 'Custom Cube 1',
     notes: '',
     relatedTokens: [] as string[],
-    relatedFace: null
+    relatedFace: undefined
   });
 
   // Load existing card data when the component mounts
