@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { getArchetypes, getRandomArchetypeCards } from '@/lib/api';
+import { getArchetypes, getRandomArchetypeCards, getCubeStatistics } from '@/lib/api';
 import { Archetype } from '@/types/types';
 import Image from 'next/image';
 
@@ -23,6 +23,12 @@ export default function Home() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [heroCardIndex, setHeroCardIndex] = useState(0);
+  const [statistics, setStatistics] = useState({
+    totalCards: 0,
+    totalArchetypes: 0,
+    customCardPercentage: 0,
+    recommendedPlayers: 0
+  });
 
   useEffect(() => {
     // Function to fetch archetypes and random cards data
@@ -60,6 +66,10 @@ export default function Home() {
           console.error('Unexpected response format:', randomCardsData);
           setArchetypeCards([]);
         }
+        
+        // Fetch cube statistics
+        const statsData = await getCubeStatistics();
+        setStatistics(statsData);
         
         setError(null);
       } catch (err) {
@@ -299,25 +309,24 @@ export default function Home() {
             <h3 className="text-2xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-mtg-white via-mtg-red to-mtg-blue">
               Cube Statistics
             </h3>
-            
-            <div className="grid grid-cols-2 gap-4">
+                        <div className="grid grid-cols-2 gap-4">
               <div className="bg-gray-800/60 p-4 rounded-lg border border-gray-700 transform hover:scale-105 transition-all">
-                <div className="text-4xl font-bold mb-2 text-mtg-white">360</div>
+                <div className="text-4xl font-bold mb-2 text-mtg-white">{statistics.totalCards}</div>
                 <div className="text-gray-400">Total Cards</div>
               </div>
               
               <div className="bg-gray-800/60 p-4 rounded-lg border border-gray-700 transform hover:scale-105 transition-all">
-                <div className="text-4xl font-bold mb-2 text-mtg-blue">10</div>
+                <div className="text-4xl font-bold mb-2 text-mtg-blue">{statistics.totalArchetypes}</div>
                 <div className="text-gray-400">Archetypes</div>
               </div>
               
               <div className="bg-gray-800/60 p-4 rounded-lg border border-gray-700 transform hover:scale-105 transition-all">
-                <div className="text-4xl font-bold mb-2 text-mtg-red">60%</div>
+                <div className="text-4xl font-bold mb-2 text-mtg-red">{statistics.customCardPercentage}%</div>
                 <div className="text-gray-400">Custom Cards</div>
               </div>
               
               <div className="bg-gray-800/60 p-4 rounded-lg border border-gray-700 transform hover:scale-105 transition-all">
-                <div className="text-4xl font-bold mb-2 text-mtg-green">8</div>
+                <div className="text-4xl font-bold mb-2 text-mtg-green">{statistics.recommendedPlayers}</div>
                 <div className="text-gray-400">Players</div>
               </div>
             </div>

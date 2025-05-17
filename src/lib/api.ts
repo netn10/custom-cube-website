@@ -309,7 +309,33 @@ export async function uploadSuggestionImage(imageFile: File): Promise<any> {
 
 // ChatGPT Cards API
 export async function getChatGPTCards(): Promise<Card[]> {
-  return fetchFromAPI<Card[]>('/chatgpt_cards');
+  return fetchFromAPI<Card[]>(`/chatgpt/cards`);
+}
+
+// Cube Statistics API
+export async function getCubeStatistics(): Promise<{
+  totalCards: number;
+  totalArchetypes: number;
+  customCardPercentage: number;
+  recommendedPlayers: number;
+}> {
+  try {
+    return fetchFromAPI<{
+      totalCards: number;
+      totalArchetypes: number;
+      customCardPercentage: number;
+      recommendedPlayers: number;
+    }>('/statistics');
+  } catch (error) {
+    console.error('Error fetching cube statistics:', error);
+    // Return default values if API fails
+    return {
+      totalCards: 360,
+      totalArchetypes: 10,
+      customCardPercentage: 60,
+      recommendedPlayers: 8
+    };
+  }
 }
 
 export async function getChatGPTResponse(prompt: string): Promise<any> {
