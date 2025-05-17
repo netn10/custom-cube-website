@@ -326,9 +326,9 @@ export default function AddCard() {
           type="number"
           name="loyalty"
           placeholder="For planeswalkers only"
-          value={formData.loyalty === null ? '' : formData.loyalty}
+          value={formData.loyalty === null ? '' : String(formData.loyalty)}
           onChange={(e) => {
-            const value = e.target.value === '' ? null : parseInt(e.target.value);
+            const value = e.target.value === '' ? null : Number(e.target.value);
             setFormData({ ...formData, loyalty: value });
           }}
         />
