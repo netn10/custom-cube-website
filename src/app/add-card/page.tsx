@@ -29,7 +29,7 @@ export default function AddCard(): JSX.Element {
     set: 'Custom Cube 1',
     notes: '',
     relatedTokens: [] as string[],
-    relatedFace: null
+    relatedFace: undefined
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -208,7 +208,7 @@ export default function AddCard(): JSX.Element {
         set: 'Custom Cube 1',
         notes: '',
         relatedTokens: [],
-        relatedFace: null
+        relatedFace: undefined
       });
       setJsonInput('');
       
