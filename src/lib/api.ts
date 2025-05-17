@@ -31,6 +31,52 @@ async function fetchFromAPI<T>(endpoint: string, options?: RequestInit): Promise
   }
 }
 
+// Add a new card
+export async function addCard(cardData: Partial<Card>): Promise<Card> {
+  try {
+    const response = await fetch(`${API_BASE_URL}/cards/add`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(cardData),
+    });
+
+    if (!response.ok) {
+      const errorData = await response.json();
+      throw new Error(errorData.error || 'Failed to add card');
+    }
+
+    return await response.json();
+  } catch (error) {
+    console.error('Error adding card:', error);
+    throw error;
+  }
+}
+
+// Update an existing card
+export async function updateCard(id: string, cardData: Partial<Card>): Promise<Card> {
+  try {
+    const response = await fetch(`${API_BASE_URL}/cards/update/${id}`, {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(cardData),
+    });
+
+    if (!response.ok) {
+      const errorData = await response.json();
+      throw new Error(errorData.error || 'Failed to update card');
+    }
+
+    return await response.json();
+  } catch (error) {
+    console.error('Error updating card:', error);
+    throw error;
+  }
+}
+
 // Cards API
 export async function getCards(params?: {
   search?: string;
