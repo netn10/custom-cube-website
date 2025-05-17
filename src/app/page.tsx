@@ -503,7 +503,7 @@ export default function Home() {
                                 // Try a color-based fallback image
                                 if (archetype.colors && archetype.colors.length > 0) {
                                   const colorCombo = archetype.colors.join('');
-                                  const colorMap = {
+                                  const colorMap: Record<string, string> = {
                                     'W': 'https://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Plains',
                                     'U': 'https://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Island',
                                     'B': 'https://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Swamp',
@@ -522,9 +522,9 @@ export default function Home() {
                                   };
                                   
                                   // Try to find a matching color combination or use the first color
-                                  if (colorMap[colorCombo]) {
+                                  if (colorCombo in colorMap) {
                                     e.currentTarget.src = colorMap[colorCombo];
-                                  } else if (colorMap[archetype.colors[0]]) {
+                                  } else if (archetype.colors[0] in colorMap) {
                                     e.currentTarget.src = colorMap[archetype.colors[0]];
                                   } else {
                                     e.currentTarget.src = 'data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22100%22%20height%3D%22140%22%20viewBox%3D%220%200%20100%20140%22%20preserveAspectRatio%3D%22none%22%3E%3Crect%20width%3D%22100%22%20height%3D%22140%22%20fill%3D%22%23eee%22%3E%3C%2Frect%3E%3Ctext%20text-anchor%3D%22middle%22%20x%3D%2250%22%20y%3D%2270%22%20style%3D%22fill%3A%23aaa%3Bfont-weight%3Abold%3Bfont-size%3A12px%3Bfont-family%3AArial%2C%20Helvetica%2C%20sans-serif%3Bdominant-baseline%3Acentral%22%3E${archetype.name}%3C%2Ftext%3E%3C%2Fsvg%3E';
