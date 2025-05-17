@@ -68,4 +68,10 @@ body {
     aspect-ratio: 2.5/3.5;
     @apply mx-auto;
   }
+
+  .fixed-card-size {
+    width: calc(var(--mtg-card-width) * 1.2);
+    height: calc(var(--mtg-card-height) * 1.2);
+    @apply mx-auto;
+  }
 }
