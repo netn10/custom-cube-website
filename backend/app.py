@@ -241,22 +241,54 @@ def get_archetype_cards(archetype_id):
 def get_random_archetype_cards():
     """Get one random card from each archetype"""
     try:
-        archetypes = list(db.archetypes.find())
+        # List of specific archetype names to find
+        archetype_names = [
+            "WU Storm",
+            "UB Cipher",
+            "BR Token Collection",
+            "RG Control",
+            "GW Vehicles",
+            "WB ETB/Death Value",
+            "BG Artifacts",
+            "GU Prowess",
+            "UR Enchantments",
+            "RW Self-Mill"
+        ]
+        
+        # Find archetypes by name
         result = []
         
-        for archetype in archetypes:
-            # Use the string ID directly
+        # First get all archetypes
+        all_archetypes = list(db.archetypes.find())
+        print(f"Found {len(all_archetypes)} total archetypes in database")
+        
+        # Process each specified archetype
+        for archetype_name in archetype_names:
+            # Find the archetype by name
+            archetype = next((a for a in all_archetypes if a.get('name') == archetype_name), None)
+            
+            if not archetype:
+                print(f"Archetype not found: {archetype_name}")
+                continue
+                
+            # Use the string ID
             archetype_id = archetype.get('id')
             
             # Find all cards for this archetype
             cards = list(db.cards.find({"archetypes": archetype_id}))
             
             # Debug logging
-            print(f"Archetype: {archetype_id}, Found {len(cards)} cards")
+            print(f"Archetype: {archetype_name} (ID: {archetype_id}), Found {len(cards)} cards")
             
             if cards and len(cards) > 0:
+                # Find cards with images first
+                cards_with_images = [card for card in cards if card.get('imageUrl')]
+                
+                # If we have cards with images, use those; otherwise, use any card
+                card_pool = cards_with_images if cards_with_images else cards
+                
                 # Select a random card
-                random_card = random.choice(cards)
+                random_card = random.choice(card_pool)
                 
                 # Convert ObjectId to string
                 random_card['id'] = str(random_card.pop('_id'))
@@ -274,34 +306,74 @@ def get_random_archetype_cards():
                     random_card['archetypes'] = [archetype_id]
                 
                 result.append(random_card)
-                print(f"Added random card for archetype {archetype_id}: {random_card['name']}")
+                print(f"Added random card for archetype {archetype_name}: {random_card['name']}")
             else:
-                # No cards found for this archetype, add debug info
-                print(f"No cards found for archetype: {archetype_id}")
+                # No cards found for this archetype, look for a card with matching colors
+                archetype_colors = archetype.get('colors', [])
+                color_match_query = {"colors": {"$all": archetype_colors}}
                 
-                # Add a placeholder card for this archetype
-                placeholder_card = {
-                    'id': f'placeholder-{archetype_id}',
-                    'name': f'Sample {archetype.get("name", "")} Card',
+                if archetype_colors:
+                    color_match_cards = list(db.cards.find(color_match_query).limit(10))
+                    if color_match_cards:
+                        random_card = random.choice(color_match_cards)
+                        random_card['id'] = str(random_card.pop('_id'))
+                        
+                        # Add archetype info
+                        random_card['archetype'] = {
+                            'id': archetype_id,
+                            'name': archetype.get('name', ''),
+                            'colors': archetype_colors,
+                            'description': archetype.get('description', '')
+                        }
+                        
+                        # Add this archetype to the card's archetypes
+                        if 'archetypes' not in random_card or not random_card['archetypes']:
+                            random_card['archetypes'] = [archetype_id]
+                        elif archetype_id not in random_card['archetypes']:
+                            random_card['archetypes'].append(archetype_id)
+                            
+                        result.append(random_card)
+                        print(f"Added color-matched card for archetype {archetype_name}: {random_card['name']}")
+                        continue
+                
+                # If we still don't have a card, create a database entry for this archetype
+                print(f"No suitable cards found for archetype: {archetype_name}, creating entry in database")
+                
+                # We won't use placeholders anymore, but instead create a real card in the database
+                new_card = {
+                    'name': f"{archetype_name} Representative",
                     'type': 'Creature',
                     'manaCost': '{1}' + ''.join(archetype.get('colors', [])),
-                    'rarity': 'Common',
-                    'text': f'This is a sample card for the {archetype.get("name", "")} archetype.',
+                    'rarity': 'Uncommon',
+                    'text': f"This card represents the {archetype_name} archetype. It demonstrates the core strategy of the archetype.",
                     'colors': archetype.get('colors', []),
+                    'power': '2',
+                    'toughness': '2',
                     'archetypes': [archetype_id],
-                    'archetype': {
-                        'id': archetype_id,
-                        'name': archetype.get('name', ''),
-                        'colors': archetype.get('colors', []),
-                        'description': archetype.get('description', '')
-                    }
+                    'custom': True,
+                    'imageUrl': '',  # No external image URL
+                    'created_at': datetime.utcnow().isoformat()
                 }
-                result.append(placeholder_card)
-                print(f"Added placeholder card for archetype {archetype_id}")
+                
+                # Insert the new card into the database
+                insert_result = db.cards.insert_one(new_card)
+                new_card_id = str(insert_result.inserted_id)
+                
+                # Add the new card to our result
+                new_card['id'] = new_card_id
+                new_card['archetype'] = {
+                    'id': archetype_id,
+                    'name': archetype.get('name', ''),
+                    'colors': archetype.get('colors', []),
+                    'description': archetype.get('description', '')
+                }
+                result.append(new_card)
+                print(f"Created and added new card for archetype {archetype_name} with ID: {new_card_id}")
         
-        print(f"Returning {len(result)} random cards")
+        print(f"Returning {len(result)} cards for specific archetypes")
         return jsonify(result)
     except Exception as e:
+        print(f"Error in get_random_archetype_cards: {str(e)}")
         return jsonify({"error": str(e)}), 500
 
 @app.route('/api/tokens', methods=['GET'])
