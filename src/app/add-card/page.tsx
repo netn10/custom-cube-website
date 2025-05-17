@@ -356,8 +356,12 @@ export default function AddCard() {
           placeholder="For planeswalkers only"
           value={formData.loyalty === undefined ? '' : String(formData.loyalty)}
           onChange={(e) => {
-            const value = e.target.value === '' ? undefined : Number(e.target.value);
-            setFormData({ ...formData, loyalty: value });
+            // When empty, set as undefined (which is compatible with the optional number type)
+            if (e.target.value === '') {
+              setFormData({ ...formData, loyalty: undefined });
+            } else {
+              setFormData({ ...formData, loyalty: Number(e.target.value) });
+            }
           }}
         />
       </div>
