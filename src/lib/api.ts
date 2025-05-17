@@ -34,7 +34,9 @@ async function fetchFromAPI<T>(endpoint: string, options?: RequestInit): Promise
 // Add a new card
 export async function addCard(cardData: Partial<Card>): Promise<Card> {
   try {
-    const response = await fetch(`${API_BASE_URL}/cards/add`, {
+    // Check if the API URL already includes /api to avoid duplication
+    const endpoint = `/cards/add`;
+    const response = await fetch(`${API_BASE_URL}${endpoint}`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -43,8 +45,8 @@ export async function addCard(cardData: Partial<Card>): Promise<Card> {
     });
 
     if (!response.ok) {
-      const errorData = await response.json();
-      throw new Error(errorData.error || 'Failed to add card');
+      const errorData = await response.json().catch(() => ({ error: 'Unknown error' }));
+      throw new Error(errorData.error || `Failed to add card: ${response.status}`);
     }
 
     return await response.json();
@@ -57,7 +59,9 @@ export async function addCard(cardData: Partial<Card>): Promise<Card> {
 // Update an existing card
 export async function updateCard(id: string, cardData: Partial<Card>): Promise<Card> {
   try {
-    const response = await fetch(`${API_BASE_URL}/cards/update/${id}`, {
+    // Check if the API URL already includes /api to avoid duplication
+    const endpoint = `/cards/update/${id}`;
+    const response = await fetch(`${API_BASE_URL}${endpoint}`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
@@ -66,8 +70,8 @@ export async function updateCard(id: string, cardData: Partial<Card>): Promise<C
     });
 
     if (!response.ok) {
-      const errorData = await response.json();
-      throw new Error(errorData.error || 'Failed to update card');
+      const errorData = await response.json().catch(() => ({ error: 'Unknown error' }));
+      throw new Error(errorData.error || `Failed to update card: ${response.status}`);
     }
 
     return await response.json();
@@ -322,22 +326,4 @@ export async function getGeminiResponse(prompt: string): Promise<any> {
   });
 }
 
-// Update an existing card
-export async function updateCard(id: string, cardData: Partial<Card>): Promise<Card> {
-  // Check if the API URL already includes /api to avoid duplication
-  const endpoint = API_BASE_URL.endsWith('/api') ? `/cards/update/${id}` : `/api/cards/update/${id}`;
-  const response = await fetch(`${API_BASE_URL}${endpoint}`, {
-    method: 'PUT',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify(cardData),
-  });
-  
-  if (!response.ok) {
-    const errorData = await response.json().catch(() => ({ error: 'Unknown error' }));
-    throw new Error(errorData.error || `Failed to update card: ${response.status}`);
-  }
-  
-  return await response.json();
-}
+
