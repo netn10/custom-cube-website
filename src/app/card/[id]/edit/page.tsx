@@ -497,7 +497,7 @@ export default function EditCardPage(): JSX.Element {
           type="text"
           name="relatedTokens"
           placeholder="Comma-separated token names"
-          value={formData.relatedTokens.join(', ')}
+          value={formData.relatedTokens?.join(', ') || ''}
           onChange={handleTokensChange}
         />
         <p className="text-xs italic mt-1">E.g. "Goblin, Treasure, Clue"</p>
