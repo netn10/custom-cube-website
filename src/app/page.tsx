@@ -24,8 +24,9 @@ export default function Home() {
   const [error, setError] = useState<string | null>(null);
   const [heroCardIndex, setHeroCardIndex] = useState(0);
 
-  // Function to fetch archetypes and random cards data
-  const fetchData = async () => {
+  useEffect(() => {
+    // Function to fetch archetypes and random cards data
+    const fetchData = async () => {
       try {
         setLoading(true);
         
@@ -354,7 +355,46 @@ export default function Home() {
               onClick={() => {
                 setError(null);
                 setLoading(true);
-                fetchData();
+                // Fetch data again
+                const fetchAgain = async () => {
+                  try {
+                    // Fetch archetypes
+                    const archetypesData = await getArchetypes();
+                    
+                    // Make sure we're using the string ID from the API
+                    const processedArchetypes = archetypesData.map(archetype => ({
+                      ...archetype,
+                      // Ensure we're using the string ID, not the MongoDB ObjectID
+                      id: archetype.id
+                    }));
+                    
+                    setArchetypes(processedArchetypes);
+                    
+                    // Fetch random cards
+                    const randomCardsData = await getRandomArchetypeCards();
+                    
+                    if (Array.isArray(randomCardsData)) {
+                      const processedCards = randomCardsData.map(card => {
+                        return {
+                          ...card,
+                          archetypes: card.archetypes || []
+                        };
+                      });
+                      setArchetypeCards(processedCards);
+                    } else {
+                      console.error('Unexpected response format:', randomCardsData);
+                      setArchetypeCards([]);
+                    }
+                    
+                    setError(null);
+                  } catch (err) {
+                    console.error('Error fetching data:', err);
+                    setError('Failed to load data. Please try again later.');
+                  } finally {
+                    setLoading(false);
+                  }
+                };
+                fetchAgain();
               }}
               className="mt-4 px-6 py-2 bg-mtg-red text-white rounded-lg hover:bg-red-600 transition-colors"
             >
