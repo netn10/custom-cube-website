@@ -166,8 +166,8 @@ export async function getArchetypeCards(id: string, page: number = 1, limit: num
 
 export async function getRandomArchetypeCards(): Promise<Card[]> {
   try {
-    // Use the full URL to avoid any path issues
-    const response = await fetch(`http://127.0.0.1:5000/api/archetypes/random-cards`, {
+    // Use the API_BASE_URL to ensure it works in all environments
+    const response = await fetch(`${API_BASE_URL}/archetypes/random-cards`, {
       headers: {
         'Content-Type': 'application/json',
       },
