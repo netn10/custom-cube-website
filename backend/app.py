@@ -382,6 +382,10 @@ def get_tokens():
     # Get query parameters
     search = request.args.get('search', '')
     colors = request.args.get('colors', '').split(',') if request.args.get('colors') else []
+    page = int(request.args.get('page', 1))
+    limit = int(request.args.get('limit', 20))
+    
+    print(f"API Request - /api/tokens with params: search='{search}', colors={colors}, page={page}, limit={limit}")
     
     # Build query
     query = {}
@@ -413,14 +417,24 @@ def get_tokens():
         if color_query:
             query['$or'] = color_query
     
-    # Execute query
-    tokens = list(db.tokens.find(query))
+    # Get total count
+    total = db.tokens.count_documents(query)
+    
+    # Calculate skip for pagination
+    skip = (page - 1) * limit
+    
+    # Execute query with pagination
+    print("The query is:", query)
+    tokens = list(db.tokens.find(query).skip(skip).limit(limit))
     
     # Convert ObjectId to string for each token
     for token in tokens:
         token['id'] = str(token.pop('_id'))
     
-    return jsonify(tokens)
+    return jsonify({
+        "tokens": tokens,
+        "total": total
+    })
 
 @app.route('/api/draft/pack', methods=['GET'])
 def get_draft_pack():

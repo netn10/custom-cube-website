@@ -12,12 +12,13 @@ export default function TokensPage() {
   const [filterColor, setFilterColor] = useState<string[]>([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [totalTokens, setTotalTokens] = useState(0);
-  const tokensPerPage = 20;
+  const [tokensPerPage, setTokensPerPage] = useState(20);
+  const [visiblePageNumbers, setVisiblePageNumbers] = useState<number[]>([]);
 
   useEffect(() => {
     // Fetch tokens on initial load
     fetchTokens();
-  }, [currentPage]);
+  }, [currentPage, tokensPerPage]);
 
   // Fetch tokens with current filters
   const fetchTokens = async () => {
@@ -95,29 +96,115 @@ export default function TokensPage() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  // Pagination component for reuse
+  // Calculate visible page numbers whenever current page or total changes
+  useEffect(() => {
+    const totalPages = Math.ceil(totalTokens / tokensPerPage);
+    let startPage = Math.max(1, currentPage - 2);
+    let endPage = Math.min(totalPages, startPage + 4);
+    
+    // Adjust start page if we're at the end of the range
+    if (endPage - startPage < 4) {
+      startPage = Math.max(1, endPage - 4);
+    }
+    
+    const pages = [];
+    for (let i = startPage; i <= endPage; i++) {
+      pages.push(i);
+    }
+    
+    setVisiblePageNumbers(pages);
+  }, [currentPage, totalTokens, tokensPerPage]);
+
+  // Handle change in tokens per page
+  const handleTokensPerPageChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    const newValue = parseInt(e.target.value);
+    setTokensPerPage(newValue);
+    setCurrentPage(1); // Reset to first page when changing items per page
+    setTimeout(() => {
+      fetchTokens();
+    }, 100);
+  };
+
+  // Enhanced pagination component
   const PaginationControls = () => {
     if (totalTokens <= tokensPerPage) return null;
     
+    const totalPages = Math.ceil(totalTokens / tokensPerPage);
+    
     return (
-      <div className="flex justify-center my-4">
-        <button
-          className="px-4 py-2 bg-gray-200 dark:bg-gray-600 text-gray-800 dark:text-gray-200 rounded-md text-sm mr-2"
-          onClick={() => handlePageChange(currentPage - 1)}
-          disabled={currentPage === 1}
-        >
-          Previous
-        </button>
-        <span className="mx-2 flex items-center text-gray-600 dark:text-gray-400">
-          {currentPage} / {Math.ceil(totalTokens / tokensPerPage)}
-        </span>
-        <button
-          className="px-4 py-2 bg-gray-200 dark:bg-gray-600 text-gray-800 dark:text-gray-200 rounded-md text-sm ml-2"
-          onClick={() => handlePageChange(currentPage + 1)}
-          disabled={currentPage === Math.ceil(totalTokens / tokensPerPage)}
-        >
-          Next
-        </button>
+      <div className="flex flex-col sm:flex-row items-center justify-between my-4 gap-4">
+        <div className="flex items-center">
+          <label className="text-sm text-gray-600 dark:text-gray-400 mr-2">Tokens per page:</label>
+          <select 
+            value={tokensPerPage} 
+            onChange={handleTokensPerPageChange}
+            className="px-2 py-1 bg-white dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded text-sm text-gray-800 dark:text-gray-200"
+          >
+            <option value={10}>10</option>
+            <option value={20}>20</option>
+            <option value={50}>50</option>
+          </select>
+          <span className="ml-4 text-sm text-gray-600 dark:text-gray-400">
+            Showing {Math.min(totalTokens, (currentPage - 1) * tokensPerPage + 1)} - {Math.min(totalTokens, currentPage * tokensPerPage)} of {totalTokens}
+          </span>
+        </div>
+        
+        <div className="flex items-center">
+          <button
+            className="w-8 h-8 flex items-center justify-center bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 rounded mr-1 hover:bg-gray-300 dark:hover:bg-gray-600 disabled:opacity-50 disabled:cursor-not-allowed"
+            onClick={() => handlePageChange(1)}
+            disabled={currentPage === 1}
+            aria-label="First page"
+            title="First page"
+          >
+            <span>«</span>
+          </button>
+          
+          <button
+            className="w-8 h-8 flex items-center justify-center bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 rounded mr-1 hover:bg-gray-300 dark:hover:bg-gray-600 disabled:opacity-50 disabled:cursor-not-allowed"
+            onClick={() => handlePageChange(currentPage - 1)}
+            disabled={currentPage === 1}
+            aria-label="Previous page"
+            title="Previous page"
+          >
+            <span>‹</span>
+          </button>
+          
+          {visiblePageNumbers.map(pageNum => (
+            <button
+              key={pageNum}
+              className={`w-8 h-8 flex items-center justify-center rounded mx-1 text-sm 
+                ${currentPage === pageNum 
+                  ? 'bg-blue-600 text-white' 
+                  : 'bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 hover:bg-gray-300 dark:hover:bg-gray-600'}`}
+              onClick={() => handlePageChange(pageNum)}
+              aria-label={`Page ${pageNum}`}
+              aria-current={currentPage === pageNum ? 'page' : undefined}
+            >
+              {pageNum}
+            </button>
+          ))}
+          
+          <button
+            className="w-8 h-8 flex items-center justify-center bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 rounded ml-1 hover:bg-gray-300 dark:hover:bg-gray-600 disabled:opacity-50 disabled:cursor-not-allowed"
+            onClick={() => handlePageChange(currentPage + 1)}
+            disabled={currentPage === totalPages}
+            aria-label="Next page"
+            title="Next page"
+          >
+            <span>›</span>
+          </button>
+          
+          <button
+            className="w-8 h-8 flex items-center justify-center bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 rounded ml-1 hover:bg-gray-300 dark:hover:bg-gray-600 disabled:opacity-50 disabled:cursor-not-allowed"
+            onClick={() => handlePageChange(totalPages)}
+            disabled={currentPage === totalPages}
+            aria-label="Last page"
+            title="Last page"
+          >
+            <span>»</span>
+          </button>
+        </div>
       </div>
     );
   };
@@ -222,7 +309,7 @@ export default function TokensPage() {
       ) : (
         <>
           <div className="flex justify-center items-center mb-4">
-            <p className="dark:text-gray-300">Showing {tokens.length} of {totalTokens}</p>
+            <p className="dark:text-gray-300">Results: {totalTokens} tokens found</p>
           </div>
           
           {/* Top pagination controls */}

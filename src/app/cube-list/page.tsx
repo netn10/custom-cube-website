@@ -15,12 +15,13 @@ export default function CubeList() {
   const [filterCustom, setFilterCustom] = useState<boolean | null>(null);
   const [currentPage, setCurrentPage] = useState(1);
   const [totalCards, setTotalCards] = useState(0);
-  const cardsPerPage = 50;
+  const [cardsPerPage, setCardsPerPage] = useState(50);
+  const [visiblePageNumbers, setVisiblePageNumbers] = useState<number[]>([]);
 
   useEffect(() => {
     // Fetch cards on initial load
     fetchCards();
-  }, [currentPage]);
+  }, [currentPage, cardsPerPage]);
 
   // Fetch cards with current filters
   const fetchCards = async () => {
@@ -151,29 +152,115 @@ export default function CubeList() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  // Pagination component for reuse
+  // Calculate visible page numbers whenever current page or total changes
+  useEffect(() => {
+    const totalPages = Math.ceil(totalCards / cardsPerPage);
+    let startPage = Math.max(1, currentPage - 2);
+    let endPage = Math.min(totalPages, startPage + 4);
+    
+    // Adjust start page if we're at the end of the range
+    if (endPage - startPage < 4) {
+      startPage = Math.max(1, endPage - 4);
+    }
+    
+    const pages = [];
+    for (let i = startPage; i <= endPage; i++) {
+      pages.push(i);
+    }
+    
+    setVisiblePageNumbers(pages);
+  }, [currentPage, totalCards, cardsPerPage]);
+
+  // Handle change in cards per page
+  const handleCardsPerPageChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    const newValue = parseInt(e.target.value);
+    setCardsPerPage(newValue);
+    setCurrentPage(1); // Reset to first page when changing items per page
+    setTimeout(() => {
+      fetchCards();
+    }, 100);
+  };
+
+  // Enhanced pagination component
   const PaginationControls = () => {
     if (totalCards <= cardsPerPage) return null;
     
+    const totalPages = Math.ceil(totalCards / cardsPerPage);
+    
     return (
-      <div className="flex justify-center my-4">
-        <button
-          className="px-4 py-2 bg-gray-200 dark:bg-gray-600 text-gray-800 dark:text-gray-200 rounded-md text-sm mr-2"
-          onClick={() => handlePageChange(currentPage - 1)}
-          disabled={currentPage === 1}
-        >
-          Previous
-        </button>
-        <span className="mx-2 flex items-center text-gray-600 dark:text-gray-400">
-          {currentPage} / {Math.ceil(totalCards / cardsPerPage)}
-        </span>
-        <button
-          className="px-4 py-2 bg-gray-200 dark:bg-gray-600 text-gray-800 dark:text-gray-200 rounded-md text-sm ml-2"
-          onClick={() => handlePageChange(currentPage + 1)}
-          disabled={currentPage === Math.ceil(totalCards / cardsPerPage)}
-        >
-          Next
-        </button>
+      <div className="flex flex-col sm:flex-row items-center justify-between my-4 gap-4">
+        <div className="flex items-center">
+          <label className="text-sm text-gray-600 dark:text-gray-400 mr-2">Cards per page:</label>
+          <select 
+            value={cardsPerPage} 
+            onChange={handleCardsPerPageChange}
+            className="px-2 py-1 bg-white dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded text-sm text-gray-800 dark:text-gray-200"
+          >
+            <option value={20}>20</option>
+            <option value={50}>50</option>
+            <option value={100}>100</option>
+          </select>
+          <span className="ml-4 text-sm text-gray-600 dark:text-gray-400">
+            Showing {Math.min(totalCards, (currentPage - 1) * cardsPerPage + 1)} - {Math.min(totalCards, currentPage * cardsPerPage)} of {totalCards}
+          </span>
+        </div>
+        
+        <div className="flex items-center">
+          <button
+            className="w-8 h-8 flex items-center justify-center bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 rounded mr-1 hover:bg-gray-300 dark:hover:bg-gray-600 disabled:opacity-50 disabled:cursor-not-allowed"
+            onClick={() => handlePageChange(1)}
+            disabled={currentPage === 1}
+            aria-label="First page"
+            title="First page"
+          >
+            <span>«</span>
+          </button>
+          
+          <button
+            className="w-8 h-8 flex items-center justify-center bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 rounded mr-1 hover:bg-gray-300 dark:hover:bg-gray-600 disabled:opacity-50 disabled:cursor-not-allowed"
+            onClick={() => handlePageChange(currentPage - 1)}
+            disabled={currentPage === 1}
+            aria-label="Previous page"
+            title="Previous page"
+          >
+            <span>‹</span>
+          </button>
+          
+          {visiblePageNumbers.map(pageNum => (
+            <button
+              key={pageNum}
+              className={`w-8 h-8 flex items-center justify-center rounded mx-1 text-sm 
+                ${currentPage === pageNum 
+                  ? 'bg-blue-600 text-white' 
+                  : 'bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 hover:bg-gray-300 dark:hover:bg-gray-600'}`}
+              onClick={() => handlePageChange(pageNum)}
+              aria-label={`Page ${pageNum}`}
+              aria-current={currentPage === pageNum ? 'page' : undefined}
+            >
+              {pageNum}
+            </button>
+          ))}
+          
+          <button
+            className="w-8 h-8 flex items-center justify-center bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 rounded ml-1 hover:bg-gray-300 dark:hover:bg-gray-600 disabled:opacity-50 disabled:cursor-not-allowed"
+            onClick={() => handlePageChange(currentPage + 1)}
+            disabled={currentPage === totalPages}
+            aria-label="Next page"
+            title="Next page"
+          >
+            <span>›</span>
+          </button>
+          
+          <button
+            className="w-8 h-8 flex items-center justify-center bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 rounded ml-1 hover:bg-gray-300 dark:hover:bg-gray-600 disabled:opacity-50 disabled:cursor-not-allowed"
+            onClick={() => handlePageChange(totalPages)}
+            disabled={currentPage === totalPages}
+            aria-label="Last page"
+            title="Last page"
+          >
+            <span>»</span>
+          </button>
+        </div>
       </div>
     );
   };
@@ -311,7 +398,7 @@ export default function CubeList() {
       ) : (
         <>
           <div className="flex justify-center items-center mb-4">
-            <p className="dark:text-gray-300">Showing {filteredCards.length} of {totalCards}</p>
+            <p className="dark:text-gray-300">Results: {totalCards} cards found</p>
           </div>
           
           {/* Top pagination controls */}
