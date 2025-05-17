@@ -30,7 +30,7 @@ export default function EditCardPage() {
     text: '',
     power: '',
     toughness: '',
-    loyalty: null as number | null,
+    loyalty: null,
     colors: [] as string[],
     custom: true,
     archetypes: [] as string[],
