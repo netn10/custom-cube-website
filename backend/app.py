@@ -841,5 +841,79 @@ def add_card():
         print(f"Error adding card: {str(e)}")
         return jsonify({"error": str(e)}), 500
 
+@app.route('/api/cards/update/<card_id>', methods=['PUT'])
+def update_card(card_id):
+    """Update an existing card in the database"""
+    try:
+        data = request.json
+        
+        # Validate required fields
+        if not data.get('name'):
+            return jsonify({"error": "Card name is required"}), 400
+        if not data.get('manaCost'):
+            return jsonify({"error": "Mana cost is required"}), 400
+        if not data.get('type'):
+            return jsonify({"error": "Card type is required"}), 400
+        if not data.get('text'):
+            return jsonify({"error": "Card text is required"}), 400
+        if not data.get('colors') or not isinstance(data.get('colors'), list):
+            return jsonify({"error": "Card colors must be provided as a list"}), 400
+        
+        # Try to find the card by string ID first
+        existing_card = db.cards.find_one({"_id": card_id})
+        
+        # If not found, try to find by ObjectId
+        if not existing_card:
+            try:
+                existing_card = db.cards.find_one({"_id": ObjectId(card_id)})
+            except:
+                return jsonify({"error": "Card not found"}), 404
+        
+        if not existing_card:
+            return jsonify({"error": "Card not found"}), 404
+        
+        # Create update document
+        update_data = {
+            "name": data.get('name'),
+            "manaCost": data.get('manaCost'),
+            "type": data.get('type'),
+            "rarity": data.get('rarity', 'Common'),
+            "text": data.get('text'),
+            "power": data.get('power') if data.get('power') else None,
+            "toughness": data.get('toughness') if data.get('toughness') else None,
+            "loyalty": data.get('loyalty'),
+            "colors": data.get('colors', []),
+            "custom": data.get('custom', True),
+            "archetypes": data.get('archetypes', []),
+            "imageUrl": data.get('imageUrl', ''),
+            "flavorText": data.get('flavorText', ''),
+            "artist": data.get('artist', ''),
+            "set": data.get('set', 'Custom Cube 1'),
+            "notes": data.get('notes', ''),
+            "relatedTokens": data.get('relatedTokens', []),
+            "relatedFace": data.get('relatedFace')
+        }
+        
+        # Update in database
+        result = db.cards.update_one(
+            {"_id": ObjectId(card_id) if not isinstance(existing_card["_id"], str) else card_id},
+            {"$set": update_data}
+        )
+        
+        if result.modified_count == 0:
+            return jsonify({"warning": "No changes were made to the card"}), 200
+        
+        # Return the updated card
+        updated_card = db.cards.find_one({"_id": ObjectId(card_id) if not isinstance(existing_card["_id"], str) else card_id})
+        if updated_card:
+            updated_card["id"] = str(updated_card.pop("_id"))
+            return jsonify(updated_card), 200
+        else:
+            return jsonify({"error": "Failed to retrieve updated card"}), 500
+        
+    except Exception as e:
+        print(f"Error updating card: {str(e)}")
+        return jsonify({"error": str(e)}), 500
+
 if __name__ == '__main__':
     app.run(debug=True, port=5000)

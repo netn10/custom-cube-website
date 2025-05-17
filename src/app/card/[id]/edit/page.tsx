@@ -1,15 +1,28 @@
 'use client';
 
-import { useState } from 'react';
-import { useRouter } from 'next/navigation';
+import { useState, useEffect } from 'react';
+import { useParams, useRouter } from 'next/navigation';
 import Link from 'next/link';
+import { getCardById, updateCard } from '@/lib/api';
+import { Card } from '@/types/types';
 
-export default function AddCard() {
+export default function EditCardPage() {
+  const params = useParams();
   const router = useRouter();
+  const [loading, setLoading] = useState(true);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [errorMessage, setErrorMessage] = useState('');
+  const [successMessage, setSuccessMessage] = useState('');
   const [inputMethod, setInputMethod] = useState<'form' | 'json'>('form');
   const [jsonInput, setJsonInput] = useState('');
   const [jsonError, setJsonError] = useState('');
-  const [formData, setFormData] = useState({
+  
+  const colorOptions = ['W', 'U', 'B', 'R', 'G'];
+  const rarityOptions = ['Common', 'Uncommon', 'Rare', 'Mythic'];
+
+  // Initialize form data with empty values
+  const [formData, setFormData] = useState<Card>({
+    id: '',
     name: '',
     manaCost: '',
     type: '',
@@ -30,13 +43,26 @@ export default function AddCard() {
     relatedFace: null
   });
 
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [errorMessage, setErrorMessage] = useState('');
-  const [successMessage, setSuccessMessage] = useState('');
+  // Load existing card data when the component mounts
+  useEffect(() => {
+    if (params.id) {
+      const fetchCard = async () => {
+        try {
+          const cardData = await getCardById(params.id as string);
+          setFormData(cardData);
+          setJsonInput(JSON.stringify(cardData, null, 2));
+          setLoading(false);
+        } catch (error) {
+          console.error('Error fetching card:', error);
+          setErrorMessage('Failed to load card. Please try again.');
+          setLoading(false);
+        }
+      };
+      
+      fetchCard();
+    }
+  }, [params.id]);
 
-  const colorOptions = ['W', 'U', 'B', 'R', 'G'];
-  const rarityOptions = ['Common', 'Uncommon', 'Rare', 'Mythic'];
-  
   // Handle input changes
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
@@ -69,7 +95,7 @@ export default function AddCard() {
     setFormData({ ...formData, relatedTokens: tokens });
   };
 
-  // Parse JSON input and set form data
+  // Parse JSON input and update form data
   const handleJsonParse = () => {
     setJsonError('');
     try {
@@ -84,26 +110,22 @@ export default function AddCard() {
         throw new Error('Colors must be provided as an array');
       }
       
+      // Check for missing set and imageUrl
+      let warnings = [];
+      if (!parsedData.set) warnings.push('Set is missing');
+      if (!parsedData.imageUrl) warnings.push('Image URL is missing');
+      
+      if (warnings.length > 0) {
+        const proceed = window.confirm(`Warning: ${warnings.join(' and ')}. Continue anyway?`);
+        if (!proceed) {
+          return;
+        }
+      }
+      
       // Set form data from parsed JSON
       setFormData({
-        name: parsedData.name || '',
-        manaCost: parsedData.manaCost || '',
-        type: parsedData.type || '',
-        rarity: parsedData.rarity || 'Common',
-        text: parsedData.text || '',
-        power: parsedData.power || '',
-        toughness: parsedData.toughness || '',
-        loyalty: parsedData.loyalty,
-        colors: Array.isArray(parsedData.colors) ? parsedData.colors : [],
-        custom: parsedData.custom !== undefined ? parsedData.custom : true,
-        archetypes: Array.isArray(parsedData.archetypes) ? parsedData.archetypes : [],
-        imageUrl: parsedData.imageUrl || '',
-        flavorText: parsedData.flavorText || '',
-        artist: parsedData.artist || '',
-        set: parsedData.set || 'Custom Cube 1',
-        notes: parsedData.notes || '',
-        relatedTokens: Array.isArray(parsedData.relatedTokens) ? parsedData.relatedTokens : [],
-        relatedFace: parsedData.relatedFace
+        ...parsedData,
+        id: formData.id // Preserve the original card ID
       });
       
       // Switch to form view to show parsed data
@@ -155,6 +177,9 @@ export default function AddCard() {
           }
         }
         
+        // Ensure the ID is preserved
+        parsedData.id = formData.id;
+        
         // Use the parsed data instead of form data
         await submitCard(parsedData);
       } catch (error) {
@@ -169,62 +194,33 @@ export default function AddCard() {
   };
   
   // Function to submit card data to API
-  const submitCard = async (cardData: any) => {
+  const submitCard = async (cardData: Card) => {
     try {
-      const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000/api';
-      // Check if the API URL already includes /api to avoid duplication
-      const endpoint = apiUrl.endsWith('/api') ? '/cards/add' : '/api/cards/add';
-      const response = await fetch(`${apiUrl}${endpoint}`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(cardData),
-      });
+      // Use the updateCard function with the card ID
+      const updatedCard = await updateCard(cardData.id, cardData);
       
-      if (!response.ok) {
-        const errorData = await response.json();
-        throw new Error(errorData.error || 'Failed to add card');
-      }
+      setSuccessMessage('Card updated successfully!');
       
-      const data = await response.json();
-      setSuccessMessage('Card added successfully!');
-      
-      // Reset form and JSON input after successful submission
-      setFormData({
-        name: '',
-        manaCost: '',
-        type: '',
-        rarity: 'Common',
-        text: '',
-        power: '',
-        toughness: '',
-        loyalty: null,
-        colors: [],
-        custom: true,
-        archetypes: [],
-        imageUrl: '',
-        flavorText: '',
-        artist: '',
-        set: 'Custom Cube 1',
-        notes: '',
-        relatedTokens: [],
-        relatedFace: null
-      });
-      setJsonInput('');
-      
-      // Redirect to the newly created card after a delay
+      // Redirect to the card view page after a delay
       setTimeout(() => {
-        router.push(`/card/${data.id}`);
+        router.push(`/card/${cardData.id}`);
       }, 1500);
       
     } catch (error) {
-      console.error('Error adding card:', error);
+      console.error('Error updating card:', error);
       setErrorMessage(error instanceof Error ? error.message : 'An unknown error occurred');
     } finally {
       setIsSubmitting(false);
     }
   };
+
+  if (loading) {
+    return (
+      <div className="flex justify-center items-center h-64">
+        <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-blue-500"></div>
+      </div>
+    );
+  }
 
   // Render form fields
   const renderFormFields = () => (
@@ -326,7 +322,7 @@ export default function AddCard() {
           type="text"
           name="power"
           placeholder="Leave empty for non-creatures"
-          value={formData.power}
+          value={formData.power || ''}
           onChange={handleChange}
         />
       </div>
@@ -341,7 +337,7 @@ export default function AddCard() {
           type="text"
           name="toughness"
           placeholder="Leave empty for non-creatures"
-          value={formData.toughness}
+          value={formData.toughness || ''}
           onChange={handleChange}
         />
       </div>
@@ -418,7 +414,7 @@ export default function AddCard() {
           type="url"
           name="imageUrl"
           placeholder="https://example.com/image.jpg"
-          value={formData.imageUrl}
+          value={formData.imageUrl || ''}
           onChange={handleChange}
         />
       </div>
@@ -433,7 +429,7 @@ export default function AddCard() {
           id="flavorText"
           name="flavorText"
           rows={2}
-          value={formData.flavorText}
+          value={formData.flavorText || ''}
           onChange={handleChange}
         />
       </div>
@@ -448,7 +444,7 @@ export default function AddCard() {
           id="artist"
           type="text"
           name="artist"
-          value={formData.artist}
+          value={formData.artist || ''}
           onChange={handleChange}
         />
       </div>
@@ -463,7 +459,7 @@ export default function AddCard() {
           id="set"
           type="text"
           name="set"
-          value={formData.set}
+          value={formData.set || ''}
           onChange={handleChange}
         />
       </div>
@@ -479,7 +475,7 @@ export default function AddCard() {
           name="notes"
           rows={3}
           placeholder="Add notes about the card design, power level, etc."
-          value={formData.notes}
+          value={formData.notes || ''}
           onChange={handleChange}
         />
       </div>
@@ -503,7 +499,7 @@ export default function AddCard() {
       
       {/* Submit Button for Form */}
       <div className="flex items-center justify-between mt-6 md:col-span-2">
-        <Link href="/" className="text-blue-500 hover:text-blue-700">
+        <Link href={`/card/${formData.id}`} className="text-blue-500 hover:text-blue-700">
           Cancel
         </Link>
         <button
@@ -511,7 +507,7 @@ export default function AddCard() {
           type="submit"
           disabled={isSubmitting}
         >
-          {isSubmitting ? 'Submitting...' : 'Add Card'}
+          {isSubmitting ? 'Updating...' : 'Update Card'}
         </button>
       </div>
     </div>
@@ -521,7 +517,7 @@ export default function AddCard() {
   const renderJsonInput = () => (
     <div className="mb-4">
       <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="jsonInput">
-        Paste Card JSON
+        Edit Card JSON
       </label>
       <textarea
         className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline font-mono"
@@ -529,19 +525,6 @@ export default function AddCard() {
         rows={20}
         value={jsonInput}
         onChange={(e) => setJsonInput(e.target.value)}
-        placeholder={`{
-  "name": "Altruistic Channeler",
-  "manaCost": "{W}",
-  "type": "Creature — Human Druid",
-  "rarity": "Rare",
-  "text": "{T}: Add {W}{W}{W}. Spend this mana only to cast spells. Whenever you cast a spell this way, target opponent gains control of it. If it has targets, that player may choose new targets for it.",
-  "power": "1",
-  "toughness": "1",
-  "colors": ["W"],
-  "custom": true,
-  "archetypes": ["Storm"],
-  "imageUrl": "https://i.imgur.com/example.png"
-}`}
         required
       />
       {jsonError && (
@@ -560,7 +543,7 @@ export default function AddCard() {
           className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
           disabled={isSubmitting}
         >
-          {isSubmitting ? 'Submitting...' : 'Submit JSON'}
+          {isSubmitting ? 'Updating...' : 'Update via JSON'}
         </button>
       </div>
     </div>
@@ -568,7 +551,7 @@ export default function AddCard() {
 
   return (
     <div className="container mx-auto px-4 py-8">
-      <h1 className="text-3xl font-bold mb-6">Add New Card</h1>
+      <h1 className="text-3xl font-bold mb-6">Edit Card: {formData.name}</h1>
       
       {errorMessage && (
         <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded mb-4">

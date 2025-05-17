@@ -275,3 +275,23 @@ export async function getGeminiResponse(prompt: string): Promise<any> {
     body: JSON.stringify({ prompt }),
   });
 }
+
+// Update an existing card
+export async function updateCard(id: string, cardData: Partial<Card>): Promise<Card> {
+  // Check if the API URL already includes /api to avoid duplication
+  const endpoint = API_BASE_URL.endsWith('/api') ? `/cards/update/${id}` : `/api/cards/update/${id}`;
+  const response = await fetch(`${API_BASE_URL}${endpoint}`, {
+    method: 'PUT',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(cardData),
+  });
+  
+  if (!response.ok) {
+    const errorData = await response.json().catch(() => ({ error: 'Unknown error' }));
+    throw new Error(errorData.error || `Failed to update card: ${response.status}`);
+  }
+  
+  return await response.json();
+}
