@@ -786,5 +786,60 @@ def get_random_pack():
         print(f"Error generating random pack: {str(e)}")
         return jsonify({"error": str(e)}), 500
 
+@app.route('/api/cards/add', methods=['POST'])
+def add_card():
+    """Add a new card to the database"""
+    try:
+        data = request.json
+        
+        # Validate required fields
+        if not data.get('name'):
+            return jsonify({"error": "Card name is required"}), 400
+        if not data.get('manaCost'):
+            return jsonify({"error": "Mana cost is required"}), 400
+        if not data.get('type'):
+            return jsonify({"error": "Card type is required"}), 400
+        if not data.get('text'):
+            return jsonify({"error": "Card text is required"}), 400
+        if not data.get('colors') or not isinstance(data.get('colors'), list):
+            return jsonify({"error": "Card colors must be provided as a list"}), 400
+            
+        # Create card document with MongoDB ObjectId
+        card = {
+            "_id": ObjectId(),
+            "name": data.get('name'),
+            "manaCost": data.get('manaCost'),
+            "type": data.get('type'),
+            "rarity": data.get('rarity', 'Common'),
+            "text": data.get('text'),
+            "power": data.get('power') if data.get('power') else None,
+            "toughness": data.get('toughness') if data.get('toughness') else None,
+            "loyalty": data.get('loyalty'),
+            "colors": data.get('colors', []),
+            "custom": data.get('custom', True),
+            "archetypes": data.get('archetypes', []),
+            "imageUrl": data.get('imageUrl', ''),
+            "flavorText": data.get('flavorText', ''),
+            "artist": data.get('artist', ''),
+            "set": data.get('set', 'Custom Cube 1'),
+            "notes": data.get('notes', ''),
+            "relatedTokens": data.get('relatedTokens', []),
+            "relatedFace": data.get('relatedFace')
+        }
+        
+        # Insert into database
+        db.cards.insert_one(card)
+        
+        # Return the created card with properly serialized ID
+        card_id = str(card["_id"])
+        card.pop("_id")
+        card["id"] = card_id
+        
+        return jsonify(card), 201
+        
+    except Exception as e:
+        print(f"Error adding card: {str(e)}")
+        return jsonify({"error": str(e)}), 500
+
 if __name__ == '__main__':
     app.run(debug=True, port=5000)
