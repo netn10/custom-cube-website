@@ -405,9 +405,23 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {filteredArchetypes.map((archetype) => {
               // Find the card for this archetype by matching with the card's archetypes array
-              const randomCard = archetypeCards.find(card => 
+              let randomCard = archetypeCards.find(card => 
                 card && card.archetypes && Array.isArray(card.archetypes) && card.archetypes.includes(archetype.id)
               );
+              
+              // If no card with image found, create a placeholder with appropriate search term
+              if (!randomCard?.imageUrl) {
+                const archetypeColors = archetype.colors.join('');
+                const archetypeName = archetype.name;
+                const searchTerm = `${archetypeColors} ${archetypeName}`;
+                
+                randomCard = {
+                  ...randomCard || {},
+                  name: randomCard?.name || `${archetypeName} Card`,
+                  imageUrl: `https://api.scryfall.com/cards/named?fuzzy=${encodeURIComponent(searchTerm)}&format=image`,
+                  archetypes: [archetype.id]
+                };
+              }
               
               return (
                 <div 
@@ -418,11 +432,9 @@ export default function Home() {
                   onClick={() => setSelectedArchetype(selectedArchetype === archetype.id ? null : archetype.id)}
                 >
                   {/* Card background with parallax effect */}
-                  {randomCard?.imageUrl && (
-                    <div className="absolute inset-0 opacity-10 group-hover:opacity-20 transition-opacity duration-500 bg-center bg-cover transform group-hover:scale-110 transition-transform duration-1000"
-                         style={{ backgroundImage: `url(${randomCard.imageUrl})` }}>
-                    </div>
-                  )}
+                  <div className="absolute inset-0 opacity-10 group-hover:opacity-20 transition-opacity duration-500 bg-center bg-cover transform group-hover:scale-110 transition-transform duration-1000"
+                       style={{ backgroundImage: `url(${randomCard.imageUrl})` }}>
+                  </div>
                   
                   <div className="p-6 relative z-10">
                     {/* Archetype badge - number of cards */}
