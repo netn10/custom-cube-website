@@ -19,12 +19,13 @@ export default function Home() {
   const [archetypes, setArchetypes] = useState<Archetype[]>([]);
   const [archetypeCards, setArchetypeCards] = useState<any[]>([]);
   const [selectedArchetype, setSelectedArchetype] = useState<string | null>(null);
+  const [colorFilter, setColorFilter] = useState<string>('');
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [heroCardIndex, setHeroCardIndex] = useState(0);
 
-  useEffect(() => {
-    const fetchData = async () => {
+  // Function to fetch archetypes and random cards data
+  const fetchData = async () => {
       try {
         setLoading(true);
         
@@ -70,6 +71,15 @@ export default function Home() {
 
     fetchData();
   }, []);
+  
+  // Filter archetypes based on selected color
+  const filteredArchetypes = archetypes.filter(archetype => {
+    if (!colorFilter) return true;
+    if (colorFilter === 'multi') {
+      return archetype.colors.length > 1;
+    }
+    return archetype.colors.includes(colorFilter);
+  });
 
   // Rotate hero cards every 5 seconds
   useEffect(() => {
@@ -150,7 +160,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Archetypes Section with Improved Card Display */}
+      {/* Archetypes Section with Interactive Filtering and Card Display */}
       <section id="archetypes" className="px-4 py-12 bg-gradient-to-b from-gray-900 to-black">
         <h2 className="text-4xl font-bold mb-8 text-center text-white">
           <span className="relative inline-block">
@@ -158,6 +168,66 @@ export default function Home() {
             <span className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-mtg-blue to-mtg-red"></span>
           </span>
         </h2>
+        
+        {/* Filter Controls */}
+        <div className="max-w-6xl mx-auto mb-8 p-4 bg-black/30 backdrop-blur-sm rounded-xl border border-gray-800">
+          <div className="flex flex-wrap gap-3 justify-center">
+            <button 
+              onClick={() => setSelectedArchetype(null)}
+              className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${selectedArchetype === null ? 'bg-mtg-gold text-black' : 'bg-gray-800 text-gray-300 hover:bg-gray-700'}`}
+            >
+              All Archetypes
+            </button>
+            <button 
+              onClick={() => setColorFilter(colorFilter === '' ? '' : '')}
+              className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${colorFilter === '' ? 'bg-mtg-gold text-black' : 'bg-gray-800 text-gray-300 hover:bg-gray-700'}`}
+            >
+              All Colors
+            </button>
+            <button 
+              onClick={() => setColorFilter('W')}
+              className={`px-4 py-2 rounded-full text-sm font-medium transition-all flex items-center gap-2 ${colorFilter === 'W' ? 'bg-mtg-white text-black' : 'bg-gray-800 text-gray-300 hover:bg-gray-700'}`}
+            >
+              <span className="w-4 h-4 rounded-full bg-mtg-white inline-block"></span>
+              White
+            </button>
+            <button 
+              onClick={() => setColorFilter('U')}
+              className={`px-4 py-2 rounded-full text-sm font-medium transition-all flex items-center gap-2 ${colorFilter === 'U' ? 'bg-mtg-blue text-white' : 'bg-gray-800 text-gray-300 hover:bg-gray-700'}`}
+            >
+              <span className="w-4 h-4 rounded-full bg-mtg-blue inline-block"></span>
+              Blue
+            </button>
+            <button 
+              onClick={() => setColorFilter('B')}
+              className={`px-4 py-2 rounded-full text-sm font-medium transition-all flex items-center gap-2 ${colorFilter === 'B' ? 'bg-mtg-black text-white' : 'bg-gray-800 text-gray-300 hover:bg-gray-700'}`}
+            >
+              <span className="w-4 h-4 rounded-full bg-mtg-black inline-block"></span>
+              Black
+            </button>
+            <button 
+              onClick={() => setColorFilter('R')}
+              className={`px-4 py-2 rounded-full text-sm font-medium transition-all flex items-center gap-2 ${colorFilter === 'R' ? 'bg-mtg-red text-white' : 'bg-gray-800 text-gray-300 hover:bg-gray-700'}`}
+            >
+              <span className="w-4 h-4 rounded-full bg-mtg-red inline-block"></span>
+              Red
+            </button>
+            <button 
+              onClick={() => setColorFilter('G')}
+              className={`px-4 py-2 rounded-full text-sm font-medium transition-all flex items-center gap-2 ${colorFilter === 'G' ? 'bg-mtg-green text-white' : 'bg-gray-800 text-gray-300 hover:bg-gray-700'}`}
+            >
+              <span className="w-4 h-4 rounded-full bg-mtg-green inline-block"></span>
+              Green
+            </button>
+            <button 
+              onClick={() => setColorFilter('multi')}
+              className={`px-4 py-2 rounded-full text-sm font-medium transition-all flex items-center gap-2 ${colorFilter === 'multi' ? 'bg-mtg-gold text-black' : 'bg-gray-800 text-gray-300 hover:bg-gray-700'}`}
+            >
+              <span className="w-4 h-4 rounded-full bg-gradient-to-r from-mtg-red via-mtg-green to-mtg-blue inline-block"></span>
+              Multicolor
+            </button>
+          </div>
+        </div>
         
         {/* Interactive Color Wheel and Cube Stats */}
         <div className="max-w-6xl mx-auto mb-16 grid md:grid-cols-2 gap-8 items-center">
@@ -280,10 +350,20 @@ export default function Home() {
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
             </svg>
             <p className="text-xl text-red-400">{error}</p>
+            <button 
+              onClick={() => {
+                setError(null);
+                setLoading(true);
+                fetchData();
+              }}
+              className="mt-4 px-6 py-2 bg-mtg-red text-white rounded-lg hover:bg-red-600 transition-colors"
+            >
+              Try Again
+            </button>
           </div>
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {archetypes.map((archetype) => {
+            {filteredArchetypes.map((archetype) => {
               // Find the card for this archetype by matching with the card's archetypes array
               const randomCard = archetypeCards.find(card => 
                 card && card.archetypes && Array.isArray(card.archetypes) && card.archetypes.includes(archetype.id)
@@ -294,7 +374,8 @@ export default function Home() {
                   key={archetype.id}
                   className={`relative group overflow-hidden rounded-xl transition-all duration-500 
                     ${selectedArchetype === archetype.id ? 'ring-4 ring-mtg-gold' : ''}
-                    dark:bg-gray-800/80 bg-white/90 backdrop-blur-sm transform hover:scale-105 hover:shadow-2xl`}
+                    dark:bg-gray-800/80 bg-white/90 backdrop-blur-sm transform hover:scale-105 hover:shadow-2xl cursor-pointer`}
+                  onClick={() => setSelectedArchetype(selectedArchetype === archetype.id ? null : archetype.id)}
                 >
                   {/* Card background with parallax effect */}
                   {randomCard?.imageUrl && (
@@ -304,6 +385,12 @@ export default function Home() {
                   )}
                   
                   <div className="p-6 relative z-10">
+                    {/* Archetype badge - number of cards */}
+                    <div className="absolute top-2 right-2 bg-black/60 text-white text-xs px-2 py-1 rounded-full">
+                      {archetype.colors.map((color) => (
+                        <span key={color} className={`inline-block w-4 h-4 rounded-full mr-1 ${colorMap[color]}`}></span>
+                      ))}
+                    </div>
                     <div className="flex items-center mb-4">
                       <h3 className="text-2xl font-bold mr-4 dark:text-white group-hover:text-mtg-gold transition-colors duration-300">
                         {archetype.name}
@@ -349,12 +436,29 @@ export default function Home() {
                         </div>
                       )}
                       
-                      <Link 
-                        href={`/archetypes/${archetype.id}`}
-                        className="px-4 py-2 bg-gradient-to-r from-mtg-blue to-mtg-red text-white rounded-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300"
-                      >
-                        View Details
-                      </Link>
+                      <div className="flex flex-col gap-2">
+                        <Link 
+                          href={`/archetypes/${archetype.id}`}
+                          className="px-4 py-2 bg-gradient-to-r from-mtg-blue to-mtg-red text-white rounded-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 text-center"
+                          onClick={(e) => e.stopPropagation()}
+                        >
+                          View Details
+                        </Link>
+                        {selectedArchetype === archetype.id && (
+                          <button 
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              window.open(`/archetypes/${archetype.id}`, '_blank');
+                            }}
+                            className="px-4 py-2 bg-gray-700 text-white rounded-lg shadow hover:bg-gray-600 transition-all duration-300 text-center text-sm flex items-center justify-center gap-1"
+                          >
+                            <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                            </svg>
+                            Open in New Tab
+                          </button>
+                        )}
+                      </div>
                     </div>
                   </div>
                 </div>
