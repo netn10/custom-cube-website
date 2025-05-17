@@ -12,6 +12,7 @@ export default function AddCard(): JSX.Element {
   const [jsonInput, setJsonInput] = useState('');
   const [jsonError, setJsonError] = useState('');
   const [formData, setFormData] = useState<Card>({
+    id: '', // Add empty id field to satisfy Card type
     name: '',
     manaCost: '',
     type: '',
@@ -191,6 +192,7 @@ export default function AddCard(): JSX.Element {
       
       // Reset form and JSON input after successful submission
       setFormData({
+        id: '', // Empty id field for new form
         name: '',
         manaCost: '',
         type: '',
