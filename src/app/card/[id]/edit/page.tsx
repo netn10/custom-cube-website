@@ -6,7 +6,7 @@ import Link from 'next/link';
 import { getCardById, updateCard } from '@/lib/api';
 import { Card } from '@/types/types';
 
-export default function EditCardPage() {
+export default function EditCardPage(): JSX.Element {
   const params = useParams();
   const router = useRouter();
   const [loading, setLoading] = useState(true);

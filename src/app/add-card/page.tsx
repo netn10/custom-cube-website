@@ -3,13 +3,15 @@
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
+import { addCard } from '@/lib/api';
+import { Card } from '@/types/types';
 
-export default function AddCard() {
+export default function AddCard(): JSX.Element {
   const router = useRouter();
   const [inputMethod, setInputMethod] = useState<'form' | 'json'>('form');
   const [jsonInput, setJsonInput] = useState('');
   const [jsonError, setJsonError] = useState('');
-  const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState<Card>({
     name: '',
     manaCost: '',
     type: '',
