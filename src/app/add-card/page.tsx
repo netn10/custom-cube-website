@@ -142,8 +142,10 @@ export default function AddCard() {
   // Function to submit card data to API
   const submitCard = async (cardData: any) => {
     try {
-      const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000';
-      const response = await fetch(`${apiUrl}/api/cards/add`, {
+      const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000/api';
+      // Check if the API URL already includes /api to avoid duplication
+      const endpoint = apiUrl.endsWith('/api') ? '/cards/add' : '/api/cards/add';
+      const response = await fetch(`${apiUrl}${endpoint}`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
