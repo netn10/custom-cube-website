@@ -85,14 +85,13 @@ def get_cards():
     query = {}
     
     if search:
-        # Ensure partial matching for card names
         query['name'] = {'$regex': search, '$options': 'i'}
 
     if body_search:
-        # For token abilities, ensure partial matching in the array
-        ability_query = {'abilities': {'$regex': body_search, '$options': 'i'}}
+        # For token abilities, we need to search differently since it's an array
+        ability_query = {'abilities': {'': body_search, '': 'i'}}
         if 'name' in query:
-            query = {'$or': [{'name': query['name']}, ability_query]}
+            query = {'': [{'name': query['name']}, ability_query]}
         else:
             query.update(ability_query)
     
@@ -406,14 +405,13 @@ def get_tokens():
     query = {}
     
     if search:
-        # Ensure partial matching for card names
         query['name'] = {'$regex': search, '$options': 'i'}
 
     if body_search:
-        # For token abilities, ensure partial matching in the array
-        ability_query = {'abilities': {'$regex': body_search, '$options': 'i'}}
+        # For token abilities, we need to search differently since it's an array
+        ability_query = {'abilities': {'': body_search, '': 'i'}}
         if 'name' in query:
-            query = {'$or': [{'name': query['name']}, ability_query]}
+            query = {'': [{'name': query['name']}, ability_query]}
         else:
             query.update(ability_query)
     

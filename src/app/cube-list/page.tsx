@@ -10,8 +10,10 @@ export default function CubeList() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [searchTerm, setSearchTerm] = useState('');
+  const [bodySearchTerm, setBodySearchTerm] = useState('');
   const [filterColor, setFilterColor] = useState<string[]>([]);
   const [filterType, setFilterType] = useState('');
+  const [filterSet, setFilterSet] = useState('');
   const [filterCustom, setFilterCustom] = useState<boolean | null>(null);
   const [currentPage, setCurrentPage] = useState(1);
   const [totalCards, setTotalCards] = useState(0);
@@ -31,8 +33,10 @@ export default function CubeList() {
     try {
       const params: {
         search?: string;
+        body_search?: string;
         colors?: string[];
         type?: string;
+        set?: string;
         custom?: boolean | null;
         page?: number;
         limit?: number;
@@ -45,12 +49,20 @@ export default function CubeList() {
         params.search = searchTerm;
       }
       
+      if (bodySearchTerm) {
+        params.body_search = bodySearchTerm;
+      }
+      
       if (filterColor.length > 0) {
         params.colors = filterColor;
       }
       
       if (filterType) {
         params.type = filterType;
+      }
+      
+      if (filterSet) {
+        params.set = filterSet;
       }
       
       if (filterCustom !== null) {
@@ -106,6 +118,15 @@ export default function CubeList() {
   // Handle search input changes with debounce
   const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearchTerm(e.target.value);
+    // We'll apply the search filter immediately for better UX
+    setTimeout(() => {
+      applyFilters();
+    }, 300);
+  };
+  
+  // Handle body text search input changes with debounce
+  const handleBodySearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setBodySearchTerm(e.target.value);
     // We'll apply the search filter immediately for better UX
     setTimeout(() => {
       applyFilters();
@@ -273,14 +294,27 @@ export default function CubeList() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           <div>
             <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-              Search
+              Search by Name
             </label>
             <input
               type="text"
-              placeholder="Search cards..."
+              placeholder="Search card names..."
               className="w-full p-2 border border-gray-300 dark:border-gray-600 rounded-md dark:bg-gray-700 dark:text-white"
               value={searchTerm}
               onChange={handleSearchChange}
+            />
+          </div>
+          
+          <div>
+            <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+              Search Card Text
+            </label>
+            <input
+              type="text"
+              placeholder="Search card text/abilities..."
+              className="w-full p-2 border border-gray-300 dark:border-gray-600 rounded-md dark:bg-gray-700 dark:text-white"
+              value={bodySearchTerm}
+              onChange={handleBodySearchChange}
             />
           </div>
           
@@ -304,6 +338,24 @@ export default function CubeList() {
             </select>
           </div>
           
+          <div>
+            <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+              Set
+            </label>
+            <select
+              className="w-full p-2 border border-gray-300 dark:border-gray-600 rounded-md dark:bg-gray-700 dark:text-white"
+              value={filterSet}
+              onChange={(e) => setFilterSet(e.target.value)}
+            >
+              <option value="">All Sets</option>
+              <option value="Set 1">Set 1</option>
+              <option value="Set 2">Set 2</option>
+              <option value="Set 3">Set 3</option>
+            </select>
+          </div>
+        </div>
+        
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
           <div>
             <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
               Card Source

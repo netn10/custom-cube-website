@@ -84,8 +84,10 @@ export async function updateCard(id: string, cardData: Partial<Card>): Promise<C
 // Cards API
 export async function getCards(params?: {
   search?: string;
+  body_search?: string;
   colors?: string[];
   type?: string;
+  set?: string;
   custom?: boolean | null;
   page?: number;
   limit?: number;
@@ -96,12 +98,20 @@ export async function getCards(params?: {
     queryParams.append('search', params.search);
   }
   
+  if (params?.body_search) {
+    queryParams.append('body_search', params.body_search);
+  }
+  
   if (params?.colors && params.colors.length > 0) {
     queryParams.append('colors', params.colors.join(','));
   }
   
   if (params?.type) {
     queryParams.append('type', params.type);
+  }
+  
+  if (params?.set) {
+    queryParams.append('set', params.set);
   }
   
   if (params?.custom !== undefined && params?.custom !== null) {
@@ -191,7 +201,10 @@ export async function getRandomArchetypeCards(): Promise<Card[]> {
 // Tokens API
 export async function getTokens(params?: {
   search?: string;
+  body_search?: string;
   colors?: string[];
+  page?: number;
+  limit?: number;
 }): Promise<{tokens: Token[], total: number}> {
   let queryParams = new URLSearchParams();
   
@@ -199,8 +212,20 @@ export async function getTokens(params?: {
     queryParams.append('search', params.search);
   }
   
+  if (params?.body_search) {
+    queryParams.append('body_search', params.body_search);
+  }
+  
   if (params?.colors && params.colors.length > 0) {
     queryParams.append('colors', params.colors.join(','));
+  }
+  
+  if (params?.page !== undefined) {
+    queryParams.append('page', params.page.toString());
+  }
+  
+  if (params?.limit !== undefined) {
+    queryParams.append('limit', params.limit.toString());
   }
   
   const queryString = queryParams.toString() ? `?${queryParams.toString()}` : '';

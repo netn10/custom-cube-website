@@ -9,6 +9,7 @@ export default function TokensPage() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [searchTerm, setSearchTerm] = useState('');
+  const [bodySearchTerm, setBodySearchTerm] = useState('');
   const [filterColor, setFilterColor] = useState<string[]>([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [totalTokens, setTotalTokens] = useState(0);
@@ -28,6 +29,7 @@ export default function TokensPage() {
     try {
       const params: {
         search?: string;
+        body_search?: string;
         colors?: string[];
         page?: number;
         limit?: number;
@@ -38,6 +40,10 @@ export default function TokensPage() {
       
       if (searchTerm) {
         params.search = searchTerm;
+      }
+      
+      if (bodySearchTerm) {
+        params.body_search = bodySearchTerm;
       }
       
       if (filterColor.length > 0) {
@@ -213,6 +219,11 @@ export default function TokensPage() {
   const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearchTerm(e.target.value);
   };
+  
+  // Handle body text search input changes
+  const handleBodySearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setBodySearchTerm(e.target.value);
+  };
 
   return (
     <div className="space-y-6">
@@ -222,14 +233,27 @@ export default function TokensPage() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div>
             <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-              Search
+              Search by Name
             </label>
             <input
               type="text"
-              placeholder="Search tokens..."
+              placeholder="Search token names..."
               className="w-full p-2 border border-gray-300 dark:border-gray-600 rounded-md dark:bg-gray-700 dark:text-white"
               value={searchTerm}
               onChange={handleSearchChange}
+            />
+          </div>
+          
+          <div>
+            <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+              Search Token Abilities
+            </label>
+            <input
+              type="text"
+              placeholder="Search abilities text..."
+              className="w-full p-2 border border-gray-300 dark:border-gray-600 rounded-md dark:bg-gray-700 dark:text-white"
+              value={bodySearchTerm}
+              onChange={handleBodySearchChange}
             />
           </div>
           
