@@ -196,7 +196,7 @@ export default function AddCard() {
         text: '',
         power: '',
         toughness: '',
-        loyalty: null,
+        loyalty: undefined,
         colors: [],
         custom: true,
         archetypes: [],
