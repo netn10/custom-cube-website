@@ -17,7 +17,7 @@ export default function AddCard() {
     text: '',
     power: '',
     toughness: '',
-    loyalty: null as number | null,
+    loyalty: undefined,
     colors: [] as string[],
     custom: true,
     archetypes: [] as string[],
@@ -86,14 +86,11 @@ export default function AddCard() {
       
       // Set form data from parsed JSON
       setFormData({
-        name: parsedData.name || '',
-        manaCost: parsedData.manaCost || '',
-        type: parsedData.type || '',
-        rarity: parsedData.rarity || 'Common',
-        text: parsedData.text || '',
+        ...parsedData,
+        // Ensure loyalty is properly typed
+        loyalty: parsedData.loyalty === null ? undefined : parsedData.loyalty,
         power: parsedData.power || '',
         toughness: parsedData.toughness || '',
-        loyalty: parsedData.loyalty,
         colors: Array.isArray(parsedData.colors) ? parsedData.colors : [],
         custom: parsedData.custom !== undefined ? parsedData.custom : true,
         archetypes: Array.isArray(parsedData.archetypes) ? parsedData.archetypes : [],
@@ -357,9 +354,9 @@ export default function AddCard() {
           type="number"
           name="loyalty"
           placeholder="For planeswalkers only"
-          value={formData.loyalty === null ? '' : String(formData.loyalty)}
+          value={formData.loyalty === undefined ? '' : String(formData.loyalty)}
           onChange={(e) => {
-            const value = e.target.value === '' ? null : Number(e.target.value);
+            const value = e.target.value === '' ? undefined : Number(e.target.value);
             setFormData({ ...formData, loyalty: value });
           }}
         />

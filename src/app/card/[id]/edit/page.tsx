@@ -30,7 +30,7 @@ export default function EditCardPage() {
     text: '',
     power: '',
     toughness: '',
-    loyalty: null,
+    loyalty: undefined,
     colors: [] as string[],
     custom: true,
     archetypes: [] as string[],
@@ -125,7 +125,9 @@ export default function EditCardPage() {
       // Set form data from parsed JSON
       setFormData({
         ...parsedData,
-        id: formData.id // Preserve the original card ID
+        id: formData.id, // Preserve the original card ID
+        // Ensure loyalty is properly typed
+        loyalty: parsedData.loyalty === null ? undefined : parsedData.loyalty
       });
       
       // Switch to form view to show parsed data
@@ -353,9 +355,9 @@ export default function EditCardPage() {
           type="number"
           name="loyalty"
           placeholder="For planeswalkers only"
-          value={formData.loyalty === null ? '' : String(formData.loyalty)}
+          value={formData.loyalty === undefined ? '' : String(formData.loyalty)}
           onChange={(e) => {
-            const value = e.target.value === '' ? null : Number(e.target.value);
+            const value = e.target.value === '' ? undefined : Number(e.target.value);
             setFormData({ ...formData, loyalty: value });
           }}
         />
