@@ -125,6 +125,7 @@ export default function CubeList() {
   };
   
   // Handle body text search input changes with debounce
+  // This now searches in both card name and text fields
   const handleBodySearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setBodySearchTerm(e.target.value);
     // We'll apply the search filter immediately for better UX
@@ -307,11 +308,11 @@ export default function CubeList() {
           
           <div>
             <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-              Search Card Text
+              Search Name & Text
             </label>
             <input
               type="text"
-              placeholder="Search card text/abilities..."
+              placeholder="Search in names and card text..."
               className="w-full p-2 border border-gray-300 dark:border-gray-600 rounded-md dark:bg-gray-700 dark:text-white"
               value={bodySearchTerm}
               onChange={handleBodySearchChange}

@@ -89,12 +89,18 @@ def get_cards():
         query['name'] = {'$regex': search, '$options': 'i'}
 
     if body_search:
-        # For token abilities, ensure partial matching in the array
-        ability_query = {'abilities': {'$regex': body_search, '$options': 'i'}}
+        # Search in both name and text fields
+        name_query = {'name': {'$regex': body_search, '$options': 'i'}}
+        text_query = {'text': {'$regex': body_search, '$options': 'i'}}
+        
+        # Use $or to match either field
         if 'name' in query:
-            query = {'$or': [{'name': query['name']}, ability_query]}
+            # If we already have a name filter, combine it with both queries
+            query = {'$or': [{'$and': [{'name': query['name']}, {'text': text_query['text']}]}, 
+                              {'name': name_query['name']}]}
         else:
-            query.update(ability_query)
+            # Otherwise just search in either field
+            query['$or'] = [name_query, text_query]
     
     if colors and colors[0]:  # Check if colors is not empty
         color_query = []
@@ -410,12 +416,18 @@ def get_tokens():
         query['name'] = {'$regex': search, '$options': 'i'}
 
     if body_search:
-        # For token abilities, ensure partial matching in the array
-        ability_query = {'abilities': {'$regex': body_search, '$options': 'i'}}
+        # Search in both name and text fields
+        name_query = {'name': {'$regex': body_search, '$options': 'i'}}
+        text_query = {'text': {'$regex': body_search, '$options': 'i'}}
+        
+        # Use $or to match either field
         if 'name' in query:
-            query = {'$or': [{'name': query['name']}, ability_query]}
+            # If we already have a name filter, combine it with both queries
+            query = {'$or': [{'$and': [{'name': query['name']}, {'text': text_query['text']}]}, 
+                              {'name': name_query['name']}]}
         else:
-            query.update(ability_query)
+            # Otherwise just search in either field
+            query['$or'] = [name_query, text_query]
     
     if colors and colors[0]:  # Check if colors is not empty
         color_query = []
