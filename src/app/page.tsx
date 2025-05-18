@@ -4,8 +4,9 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { getArchetypes, getRandomCards, getCubeStatistics } from '@/lib/api';
 import { API_BASE_URL } from '@/lib/api';
-import { Archetype } from '@/types/types';
+import { Archetype, Card } from '@/types/types';
 import Image from 'next/image';
+import BoosterPackAnimation from '@/components/BoosterPackAnimation';
 
 // Color mapping for visual representation
 const colorMap: Record<string, string> = {
@@ -60,12 +61,13 @@ function getCardColorClasses(colors: string[]) {
 
 export default function Home() {
   const [archetypes, setArchetypes] = useState<Archetype[]>([]);
-  const [archetypeCards, setArchetypeCards] = useState<any[]>([]);
+  const [archetypeCards, setArchetypeCards] = useState<Card[]>([]);
   const [selectedArchetype, setSelectedArchetype] = useState<string | null>(null);
   const [colorFilter, setColorFilter] = useState<string>('');
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [heroCardIndex, setHeroCardIndex] = useState(0);
+  const [showBoosterAnimation, setShowBoosterAnimation] = useState(true);
   const [statistics, setStatistics] = useState({
     totalCards: 0,
     totalArchetypes: 0,
@@ -91,8 +93,8 @@ export default function Home() {
         
         setArchetypes(processedArchetypes);
         
-        // Fetch totally random cards from the cube
-        const randomCardsData = await getRandomCards(8); // Get 8 random cards for the card row
+        // Fetch totally random cards from the cube - now 15 cards for the booster pack
+        const randomCardsData = await getRandomCards(15); // Get 15 random cards for the booster pack
         
         console.log('Random cards data received:', randomCardsData);
         
@@ -151,8 +153,20 @@ export default function Home() {
     }
   }, [archetypeCards]);
 
+  // Function to handle when booster pack animation completes
+  const handleBoosterAnimationComplete = () => {
+    setShowBoosterAnimation(false);
+  };
+
   return (
     <div className="space-y-12">
+      {/* Booster Pack Animation */}
+      {!loading && showBoosterAnimation && archetypeCards.length > 0 && (
+        <BoosterPackAnimation 
+          cards={archetypeCards} 
+          onAnimationComplete={handleBoosterAnimationComplete} 
+        />
+      )}
       {/* Hero Section with Animated Background */}
       <section className="relative overflow-hidden">
         <div className="absolute inset-0 z-0 opacity-20">
