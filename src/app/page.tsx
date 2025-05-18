@@ -2,9 +2,8 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { getCubeStatistics, getRandomArchetypeCards, getArchetypes } from '@/lib/api';
+import { getCubeStatistics, getRandomArchetypeCards } from '@/lib/api';
 import Image from 'next/image';
-import { Archetype } from '@/types/types';
 
 // Color mapping for visual representation
 const colorMap: Record<string, string> = {
@@ -19,7 +18,6 @@ export default function Home() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [archetypeCards, setArchetypeCards] = useState<Array<{name: string, imageUrl?: string}>>([]);
-  const [archetypes, setArchetypes] = useState<Archetype[]>([]);
   const [statistics, setStatistics] = useState({
     totalCards: 0,
     totalArchetypes: 0,
@@ -307,79 +305,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Archetypes Section with Color-Coded Cards */}
-      <section id="archetypes" className="relative px-4 py-16 bg-black/60">
-        <div className="absolute inset-0 bg-gradient-to-br from-mtg-black/50 via-transparent to-mtg-blue/20 z-0"></div>
-        
-        <div className="max-w-6xl mx-auto relative z-10">
-          <h2 className="text-4xl font-bold mb-12 text-center text-white">
-            <span className="relative inline-block">
-              <span className="relative z-10">The 10 Archetypes</span>
-              <span className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-mtg-blue via-mtg-red to-mtg-green"></span>
-            </span>
-          </h2>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6 mb-8">
-            {archetypes.map((archetype) => {
-              // Determine background gradient based on colors
-              const colorClasses = archetype.colors.map(color => {
-                switch(color) {
-                  case 'W': return 'from-mtg-white/80';
-                  case 'U': return 'via-mtg-blue/80';
-                  case 'B': return 'via-mtg-black/80';
-                  case 'R': return 'via-mtg-red/80';
-                  case 'G': return 'to-mtg-green/80';
-                  default: return '';
-                }
-              }).filter(Boolean).join(' ');
-              
-              // Text color depends on if white is present
-              const textColor = archetype.colors.includes('W') && archetype.colors.length === 1 
-                ? 'text-black' 
-                : 'text-white';
-              
-              return (
-                <Link 
-                  href={`/archetypes/${archetype.id}`} 
-                  key={archetype.id}
-                  className={`block rounded-lg overflow-hidden shadow-lg transform transition-all duration-300 hover:scale-105 hover:-translate-y-1 hover:shadow-2xl`}
-                >
-                  <div className={`bg-gradient-to-br ${colorClasses || 'from-gray-700 to-gray-900'} p-5 h-full flex flex-col`}>
-                    <h3 className={`text-xl font-bold mb-2 ${textColor}`}>{archetype.name}</h3>
-                    <p className={`text-sm mb-3 line-clamp-3 ${textColor} opacity-90`}>
-                      {archetype.description}
-                    </p>
-                    <div className="mt-auto pt-2 flex space-x-1">
-                      {archetype.colors.map((color, idx) => (
-                        <div 
-                          key={idx} 
-                          className={`w-6 h-6 rounded-full flex items-center justify-center ${colorMap[color] || 'bg-gray-500'}`}
-                          title={color === 'W' ? 'White' : color === 'U' ? 'Blue' : color === 'B' ? 'Black' : color === 'R' ? 'Red' : 'Green'}
-                        >
-                          {color}
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                </Link>
-              );
-            })}
-          </div>
-          
-          <div className="text-center mt-8">
-            <Link
-              href="/archetypes"
-              className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-mtg-blue to-mtg-green text-white rounded-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300"
-            >
-              <span>Explore All Archetypes</span>
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
-                <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
-              </svg>
-            </Link>
-          </div>
-        </div>
-      </section>
-      
       {/* Add floating animation keyframes */}
       <style jsx>{`
         @keyframes float1 {
