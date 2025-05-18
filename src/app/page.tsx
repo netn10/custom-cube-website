@@ -226,7 +226,6 @@ export default function Home() {
             </div>
           </div>
         )}
-      </section>
 
       {/* About Section with Improved Design */}
       <section className="relative px-4 py-16">
