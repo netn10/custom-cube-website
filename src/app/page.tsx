@@ -18,6 +18,7 @@ const colorMap: Record<string, string> = {
 export default function Home() {
   const [archetypes, setArchetypes] = useState<Archetype[]>([]);
   const [archetypeCards, setArchetypeCards] = useState<any[]>([]);
+  const [randomCubeCards, setRandomCubeCards] = useState<Card[]>([]);
   const [selectedArchetype, setSelectedArchetype] = useState<string | null>(null);
   const [colorFilter, setColorFilter] = useState<string>('');
   const [loading, setLoading] = useState(true);
@@ -51,7 +52,7 @@ export default function Home() {
         
         setArchetypes(processedArchetypes);
         
-        // Fetch random cards
+        // Fetch random cards for archetypes
         const randomCardsData = await getRandomArchetypeCards();
         
         if (Array.isArray(randomCardsData)) {
@@ -68,6 +69,17 @@ export default function Home() {
         } else {
           console.error('Unexpected response format:', randomCardsData);
           setArchetypeCards([]);
+        }
+        
+        // Fetch random cards from the entire cube for the bottom section
+        try {
+          const randomCubeData = await getRandomPack(8); // Get 8 random cards from the cube
+          if (randomCubeData && randomCubeData.pack) {
+            setRandomCubeCards(randomCubeData.pack);
+          }
+        } catch (err) {
+          console.error('Error fetching random cube cards:', err);
+          setRandomCubeCards([]);
         }
         
         // Booster cards will be fetched on demand when the pack is clicked
@@ -1000,7 +1012,8 @@ export default function Home() {
               
               <div className="relative">
                 <div className="grid grid-cols-2 gap-4 transform rotate-3">
-                  {archetypeCards.slice(0, 4).map((card, index) => (
+                  {/* Display completely random cards from the cube, not related to archetypes */}
+                  {randomCubeCards.slice(0, 4).map((card, index) => (
                     card?.imageUrl && (
                       <div 
                         key={index} 
