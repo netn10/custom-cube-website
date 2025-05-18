@@ -418,7 +418,7 @@ export default function Home() {
               const archetypeSpecificCards = archetypeCards.filter(card => {
                 if (!card || !card.archetypes || !Array.isArray(card.archetypes)) return false;
                 
-                return card.archetypes.some(cardArchetype => {
+                return card.archetypes.some((cardArchetype: string) => {
                   // Try direct ID match
                   if (cardArchetype === archetype.id) return true;
                   
