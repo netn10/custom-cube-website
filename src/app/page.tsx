@@ -2,8 +2,8 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { getArchetypes, getRandomArchetypeCards, getCubeStatistics } from '@/lib/api';
-import { Archetype } from '@/types/types';
+import { getArchetypes, getRandomArchetypeCards, getCubeStatistics, getRandomPack } from '@/lib/api';
+import { Archetype, Card } from '@/types/types';
 import Image from 'next/image';
 
 // Color mapping for visual representation
@@ -23,6 +23,9 @@ export default function Home() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [heroCardIndex, setHeroCardIndex] = useState(0);
+  const [boosterCards, setBoosterCards] = useState<Card[]>([]);
+  const [isBoosterOpened, setIsBoosterOpened] = useState(false);
+  const [isBoosterOpening, setIsBoosterOpening] = useState(false);
   const [statistics, setStatistics] = useState({
     totalCards: 0,
     totalArchetypes: 0,
@@ -67,6 +70,39 @@ export default function Home() {
           setArchetypeCards([]);
         }
         
+        // Fetch random pack for booster animation
+        const randomPackData = await getRandomPack(15);
+        if (randomPackData && randomPackData.pack) {
+          // Make sure we have exactly 15 cards and each has an id property
+          const processedPack = randomPackData.pack.map(card => ({
+            ...card,
+            // Ensure each card has an id (use _id if available, otherwise use id)
+            id: card.id || card._id || `card-${Math.random().toString(36).substr(2, 9)}`,
+            // Ensure MongoDB _id is available for links
+            _id: card._id || card.id || `card-${Math.random().toString(36).substr(2, 9)}`
+          }));
+          
+          // Ensure we have exactly 15 cards
+          const fullPack = [...processedPack];
+          while (fullPack.length < 15) {
+            // Add placeholder cards if needed
+            fullPack.push({
+              id: `placeholder-${fullPack.length}`,
+              _id: `placeholder-${fullPack.length}`,
+              name: 'Mystery Card',
+              manaCost: '{?}',
+              type: 'Card',
+              rarity: 'Common',
+              text: 'This card is a mystery.',
+              colors: [],
+              custom: true,
+              archetypes: []
+            });
+          }
+          
+          setBoosterCards(fullPack.slice(0, 15)); // Ensure exactly 15 cards
+        }
+        
         // Fetch cube statistics
         const statsData = await getCubeStatistics();
         setStatistics(statsData);
@@ -82,6 +118,19 @@ export default function Home() {
 
     fetchData();
   }, []);
+  
+  // Function to handle booster pack opening
+  const handleOpenBooster = () => {
+    if (!isBoosterOpening && !isBoosterOpened) {
+      setIsBoosterOpening(true);
+      
+      // After animation completes, set the booster as opened
+      setTimeout(() => {
+        setIsBoosterOpened(true);
+        setIsBoosterOpening(false);
+      }, 3000); // Extended duration for the full animation sequence
+    }
+  };
   
   // Filter archetypes based on selected color
   const filteredArchetypes = archetypes.filter(archetype => {
@@ -141,32 +190,90 @@ export default function Home() {
             </Link>
           </div>
           
-          {/* Floating cards animation */}
-          <div className="mt-12 relative h-48">
-            {archetypeCards.slice(0, 5).map((card, index) => (
-              card?.imageUrl && (
-                <div 
-                  key={index}
-                  className="absolute mtg-card transform transition-all duration-500 hover:scale-110 hover:z-50 shadow-2xl"
-                  style={{
-                    left: `${20 + index * 15}%`,
-                    top: `${index % 2 === 0 ? 0 : 10}%`,
-                    transform: `rotate(${-10 + index * 5}deg)`,
-                    zIndex: index,
-                    animation: `float${index % 3 + 1} ${3 + index}s ease-in-out infinite`
-                  }}
-                >
-                  <img 
-                    src={card.imageUrl}
-                    alt={card.name}
-                    className="w-full h-full rounded-lg"
-                    onError={(e) => {
-                      e.currentTarget.src = 'data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22100%22%20height%3D%22140%22%20viewBox%3D%220%200%20100%20140%22%20preserveAspectRatio%3D%22none%22%3E%3Crect%20width%3D%22100%22%20height%3D%22140%22%20fill%3D%22%23eee%22%3E%3C%2Frect%3E%3Ctext%20text-anchor%3D%22middle%22%20x%3D%2250%22%20y%3D%2270%22%20style%3D%22fill%3A%23aaa%3Bfont-weight%3Abold%3Bfont-size%3A12px%3Bfont-family%3AArial%2C%20Helvetica%2C%20sans-serif%3Bdominant-baseline%3Acentral%22%3EImage%20Not%20Found%3C%2Ftext%3E%3C%2Fsvg%3E';
-                    }}
-                  />
+          {/* Booster pack opening animation */}
+          <div className="mt-12 relative">
+            {!isBoosterOpening && !isBoosterOpened ? (
+              <div 
+                className="relative mx-auto w-64 cursor-pointer transform hover:scale-105 transition-all duration-300 shadow-xl"
+                onClick={handleOpenBooster}
+              >
+                <div className="bg-gradient-to-br from-mtg-red via-mtg-blue to-mtg-green rounded-lg shadow-2xl p-2">
+                  <div className="bg-black/80 w-full h-full rounded-lg flex flex-col items-center justify-center p-4">
+                    <div className="text-mtg-gold font-bold text-xl mb-2">Custom Cube</div>
+                    <div className="text-white text-sm mb-4">15 Random Cards</div>
+                    <div className="w-full h-48 bg-gradient-to-br from-mtg-gold/30 to-mtg-gold/10 rounded-lg flex items-center justify-center shimmer-effect">
+                      <img 
+                        src="https://i.imgur.com/ZeNaTYL.png" 
+                        alt="Booster Pack"
+                        className="w-32 h-auto object-contain opacity-70"
+                      />
+                    </div>
+                    <div className="mt-4 text-white text-sm animate-pulse">Click to Open</div>
+                  </div>
                 </div>
-              )
-            ))}
+              </div>
+            ) : isBoosterOpening ? (
+              <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/90">
+                <div className="relative">
+                  {/* Animated background */}
+                  <div className="absolute inset-0 -z-10 opacity-50">
+                    <div className="w-screen h-screen bg-gradient-to-r from-mtg-red via-mtg-blue to-mtg-green animate-pulse"></div>
+                  </div>
+                  
+                  {/* Spinning booster pack */}
+                  <div className="relative w-64 animate-[spin_3s_ease-in-out]">
+                    <div className="bg-gradient-to-br from-mtg-red via-mtg-blue to-mtg-green rounded-lg shadow-2xl p-2">
+                      <div className="bg-black/80 w-full h-full rounded-lg flex items-center justify-center p-4">
+                        <div className="text-mtg-gold font-bold text-xl">Opening...</div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  {/* Explosion rings */}
+                  <div className="absolute inset-0 -z-10 flex items-center justify-center">
+                    <div className="w-32 h-32 rounded-full bg-mtg-red opacity-70 animate-[ping_1s_ease-in-out_infinite]"></div>
+                  </div>
+                  <div className="absolute inset-0 -z-10 flex items-center justify-center">
+                    <div className="w-48 h-48 rounded-full bg-mtg-blue opacity-60 animate-[ping_1.5s_ease-in-out_infinite]"></div>
+                  </div>
+                  <div className="absolute inset-0 -z-10 flex items-center justify-center">
+                    <div className="w-64 h-64 rounded-full bg-mtg-green opacity-50 animate-[ping_2s_ease-in-out_infinite]"></div>
+                  </div>
+                </div>
+              </div>
+            ) : (
+              <div className="grid grid-cols-5 grid-rows-3 gap-4 md:gap-6 w-full max-w-4xl mx-auto my-16" style={{ minHeight: '600px' }}>
+                {console.log(`Rendering booster pack with ${boosterCards.length} cards:`, boosterCards)}
+                {boosterCards.slice(0, 15).map((card, index) => (
+                  <div 
+                    key={index}
+                    className="mtg-card transform transition-all duration-500 hover:scale-125 hover:z-50 shadow-2xl"
+                    style={{
+                      animation: `cardReveal 0.5s ${index * 0.05}s forwards`,
+                      opacity: 0,
+                      transform: 'scale(0) rotate(180deg)',
+                      zIndex: isBoosterOpened ? 10 + index : 0
+                    }}
+                  >
+                    <Link href={`/card/${card._id}`} passHref>
+                      <div className="relative w-full h-full">
+                        <img 
+                          src={card.imageUrl || '/card-back.jpg'} 
+                          alt={card.name || 'MTG Card'}
+                          className="w-full h-full object-cover rounded-lg"
+                          onError={(e) => {
+                            e.currentTarget.src = '/card-back.jpg';
+                          }}
+                        />
+                        <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-1 rounded-b-lg">
+                          <p className="text-white text-xs font-bold truncate">{card.name}</p>
+                        </div>
+                      </div>
+                    </Link>
+                  </div>
+                ))}
+              </div>
+            )}
           </div>
         </div>
       </section>
@@ -508,7 +615,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Add floating animation keyframes */}
+      {/* Add animation keyframes */}
       <style jsx>{`
         @keyframes float1 {
           0%, 100% { transform: translateY(0px) rotate(-5deg); }
@@ -521,6 +628,16 @@ export default function Home() {
         @keyframes float3 {
           0%, 100% { transform: translateY(0px) rotate(5deg); }
           50% { transform: translateY(-8px) rotate(5deg); }
+        }
+        @keyframes booster-opening {
+          0% { transform: scale(1); }
+          50% { transform: scale(1.2); opacity: 0.8; }
+          100% { transform: scale(0.1); opacity: 0; }
+        }
+        @keyframes cardReveal {
+          0% { transform: scale(0.1); opacity: 0; }
+          70% { transform: scale(1.1); }
+          100% { transform: scale(1); opacity: 1; }
         }
       `}</style>
     </div>
