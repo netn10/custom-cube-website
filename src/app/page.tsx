@@ -44,7 +44,8 @@ export default function Home() {
     
     fetchData();
   }, []);
-
+  
+  // The JSX part of the component
   return (
     <div className="space-y-12">
       {/* Hero Section with Animated Background */}
