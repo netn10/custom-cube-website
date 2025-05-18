@@ -1,11 +1,11 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { getArchetypes, getRandomArchetypeCards, getCubeStatistics } from '@/lib/api';
+import { getArchetypes, getRandomCards, getCubeStatistics } from '@/lib/api';
+import { API_BASE_URL } from '@/lib/api';
 import { Archetype } from '@/types/types';
 import Image from 'next/image';
-import BoosterPackAnimation from '@/components/BoosterPackAnimation';
 
 // Color mapping for visual representation
 const colorMap: Record<string, string> = {
@@ -16,15 +16,56 @@ const colorMap: Record<string, string> = {
   G: 'bg-mtg-green text-white',
 };
 
+// Helper function to get the proxied image URL
+function getProxiedImageUrl(originalUrl: string): string {
+  // If the URL is already proxied or is a local URL, return it as is
+  if (originalUrl.startsWith('/') || originalUrl.includes('localhost') || originalUrl.includes('127.0.0.1')) {
+    return originalUrl;
+  }
+  
+  // Otherwise, proxy through our backend to avoid CORS issues
+  // URL encode the original URL to ensure it's properly passed as a parameter
+  const encodedUrl = encodeURIComponent(originalUrl);
+  return `${API_BASE_URL}/proxy-image?url=${encodedUrl}`;
+}
+
+// Helper function to get fallback image URL based on card colors
+function getFallbackImageUrl(colors: string[] = []): string {
+  // Default fallback image for cards with no color information
+  return '/images/card-back.jpg';
+}
+
+// Helper function to get color classes for cards
+function getCardColorClasses(colors: string[]) {
+  if (!colors || colors.length === 0) {
+    return 'bg-gray-700'; // Colorless
+  }
+  
+  if (colors.length > 1) {
+    // Multi-color card
+    return 'bg-gradient-to-br from-mtg-gold to-yellow-600';
+  }
+  
+  // Single color card
+  const color = colors[0];
+  switch (color) {
+    case 'W': return 'bg-mtg-white text-gray-900';
+    case 'U': return 'bg-mtg-blue';
+    case 'B': return 'bg-mtg-black';
+    case 'R': return 'bg-mtg-red';
+    case 'G': return 'bg-mtg-green';
+    default: return 'bg-gray-700'; // Fallback
+  }
+}
+
 export default function Home() {
   const [archetypes, setArchetypes] = useState<Archetype[]>([]);
-  const [archetypeCards, setArchetypeCards] = useState<Card[]>([]);
+  const [archetypeCards, setArchetypeCards] = useState<any[]>([]);
   const [selectedArchetype, setSelectedArchetype] = useState<string | null>(null);
   const [colorFilter, setColorFilter] = useState<string>('');
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [heroCardIndex, setHeroCardIndex] = useState(0);
-  const [showBoosterAnimation, setShowBoosterAnimation] = useState(true);
   const [statistics, setStatistics] = useState({
     totalCards: 0,
     totalArchetypes: 0,
@@ -50,12 +91,16 @@ export default function Home() {
         
         setArchetypes(processedArchetypes);
         
-        // Fetch random cards
-        const randomCardsData = await getRandomArchetypeCards();
+        // Fetch totally random cards from the cube
+        const randomCardsData = await getRandomCards(8); // Get 8 random cards for the card row
+        
+        console.log('Random cards data received:', randomCardsData);
         
         if (Array.isArray(randomCardsData)) {
           // Make sure each card has the correct structure
           const processedCards = randomCardsData.map(card => {
+            console.log('Processing card:', card.name, 'Image URL:', card.imageUrl);
+            
             // Ensure card has all required properties
             return {
               ...card,
@@ -63,6 +108,7 @@ export default function Home() {
               archetypes: card.archetypes || []
             };
           });
+          console.log('Processed cards:', processedCards);
           setArchetypeCards(processedCards);
         } else {
           console.error('Unexpected response format:', randomCardsData);
@@ -105,29 +151,16 @@ export default function Home() {
     }
   }, [archetypeCards]);
 
-  // Function to handle when booster pack animation completes
-  const handleBoosterAnimationComplete = () => {
-    setShowBoosterAnimation(false);
-  };
-
-  // Modified return statement to help with deployment
-  return React.createElement(
-    'div',
-    { className: 'space-y-12', 'data-testid': 'home-container' },
-      {/* Booster Pack Animation */}
-      {!loading && showBoosterAnimation && archetypeCards.length > 0 && (
-        <BoosterPackAnimation 
-          cards={archetypeCards} 
-          onAnimationComplete={handleBoosterAnimationComplete} 
-        />
-      )}
+  return (
+    <div className="space-y-12">
       {/* Hero Section with Animated Background */}
       <section className="relative overflow-hidden">
         <div className="absolute inset-0 z-0 opacity-20">
           {archetypeCards.length > 0 && archetypeCards[heroCardIndex]?.imageUrl && (
-            <div className="w-full h-full blur-sm scale-110 bg-center bg-cover transition-all duration-1000 ease-in-out"
-                 style={{ backgroundImage: `url(${archetypeCards[heroCardIndex].imageUrl})` }}>
-            </div>
+            <div 
+              className="w-full h-full blur-sm scale-110 bg-center bg-cover transition-all duration-1000 ease-in-out"
+              style={{ backgroundImage: `url(${archetypeCards[heroCardIndex].imageUrl})` }}
+            />
           )}
         </div>
         
@@ -159,8 +192,9 @@ export default function Home() {
           
           {/* Floating cards animation */}
           <div className="mt-12 relative h-48">
-            {archetypeCards.slice(0, 5).map((card, index) => (
-              card?.imageUrl && (
+            {archetypeCards.slice(0, 5).map((card, index) => {
+              console.log(`Rendering card ${index}:`, card.name, 'Image URL:', card.imageUrl);
+              return (
                 <div 
                   key={index}
                   className="absolute mtg-card transform transition-all duration-500 hover:scale-110 hover:z-50 shadow-2xl"
@@ -173,19 +207,198 @@ export default function Home() {
                   }}
                 >
                   <img 
-                    src={card.imageUrl}
-                    alt={card.name}
-                    className="w-full h-full rounded-lg"
+                    src={card.imageUrl ? getProxiedImageUrl(card.imageUrl) : getFallbackImageUrl(card.colors)}
+                    alt={card.name || 'MTG Card'}
+                    className="w-full h-full object-cover"
                     onError={(e) => {
-                      e.currentTarget.src = 'data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22100%22%20height%3D%22140%22%20viewBox%3D%220%200%20100%20140%22%20preserveAspectRatio%3D%22none%22%3E%3Crect%20width%3D%22100%22%20height%3D%22140%22%20fill%3D%22%23eee%22%3E%3C%2Frect%3E%3Ctext%20text-anchor%3D%22middle%22%20x%3D%2250%22%20y%3D%2270%22%20style%3D%22fill%3A%23aaa%3Bfont-weight%3Abold%3Bfont-size%3A12px%3Bfont-family%3AArial%2C%20Helvetica%2C%20sans-serif%3Bdominant-baseline%3Acentral%22%3EImage%20Not%20Found%3C%2Ftext%3E%3C%2Fsvg%3E';
+                      console.error(`Failed to load image for ${card.name || 'unknown'}:`, card.imageUrl);
+                      e.currentTarget.src = getFallbackImageUrl(card.colors);
                     }}
+                    style={{ width: '200px', height: '280px' }}
                   />
                 </div>
-              )
-            ))}
+              );
+            })}
           </div>
         </div>
-      </section>        
+      </section>
+
+      {/* Archetypes Section with Interactive Filtering and Card Display */}
+      <section id="archetypes" className="px-4 py-12 bg-gradient-to-b from-gray-900 to-black">
+        <h2 className="text-4xl font-bold mb-8 text-center text-white">
+          <span className="relative inline-block">
+            <span className="relative z-10">Explore The Archetypes</span>
+            <span className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-mtg-blue to-mtg-red"></span>
+          </span>
+        </h2>
+        
+        {/* Filter Controls */}
+        <div className="max-w-6xl mx-auto mb-8 p-4 bg-black/30 backdrop-blur-sm rounded-xl border border-gray-800">
+          <div className="flex flex-wrap gap-3 justify-center">
+            <button 
+              onClick={() => setSelectedArchetype(null)}
+              className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${selectedArchetype === null ? 'bg-mtg-gold text-black' : 'bg-gray-800 text-gray-300 hover:bg-gray-700'}`}
+            >
+              All Archetypes
+            </button>
+            <button 
+              onClick={() => setColorFilter(colorFilter === '' ? '' : '')}
+              className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${colorFilter === '' ? 'bg-mtg-gold text-black' : 'bg-gray-800 text-gray-300 hover:bg-gray-700'}`}
+            >
+              All Colors
+            </button>
+            <button 
+              onClick={() => setColorFilter('W')}
+              className={`px-4 py-2 rounded-full text-sm font-medium transition-all flex items-center gap-2 ${colorFilter === 'W' ? 'bg-mtg-white text-black' : 'bg-gray-800 text-gray-300 hover:bg-gray-700'}`}
+            >
+              <span className="w-4 h-4 rounded-full bg-mtg-white inline-block"></span>
+              White
+            </button>
+            <button 
+              onClick={() => setColorFilter('U')}
+              className={`px-4 py-2 rounded-full text-sm font-medium transition-all flex items-center gap-2 ${colorFilter === 'U' ? 'bg-mtg-blue text-white' : 'bg-gray-800 text-gray-300 hover:bg-gray-700'}`}
+            >
+              <span className="w-4 h-4 rounded-full bg-mtg-blue inline-block"></span>
+              Blue
+            </button>
+            <button 
+              onClick={() => setColorFilter('B')}
+              className={`px-4 py-2 rounded-full text-sm font-medium transition-all flex items-center gap-2 ${colorFilter === 'B' ? 'bg-mtg-black text-white' : 'bg-gray-800 text-gray-300 hover:bg-gray-700'}`}
+            >
+              <span className="w-4 h-4 rounded-full bg-mtg-black inline-block"></span>
+              Black
+            </button>
+            <button 
+              onClick={() => setColorFilter('R')}
+              className={`px-4 py-2 rounded-full text-sm font-medium transition-all flex items-center gap-2 ${colorFilter === 'R' ? 'bg-mtg-red text-white' : 'bg-gray-800 text-gray-300 hover:bg-gray-700'}`}
+            >
+              <span className="w-4 h-4 rounded-full bg-mtg-red inline-block"></span>
+              Red
+            </button>
+            <button 
+              onClick={() => setColorFilter('G')}
+              className={`px-4 py-2 rounded-full text-sm font-medium transition-all flex items-center gap-2 ${colorFilter === 'G' ? 'bg-mtg-green text-white' : 'bg-gray-800 text-gray-300 hover:bg-gray-700'}`}
+            >
+              <span className="w-4 h-4 rounded-full bg-mtg-green inline-block"></span>
+              Green
+            </button>
+            <button 
+              onClick={() => setColorFilter('multi')}
+              className={`px-4 py-2 rounded-full text-sm font-medium transition-all flex items-center gap-2 ${colorFilter === 'multi' ? 'bg-mtg-gold text-black' : 'bg-gray-800 text-gray-300 hover:bg-gray-700'}`}
+            >
+              <span className="w-4 h-4 rounded-full bg-gradient-to-r from-mtg-red via-mtg-green to-mtg-blue inline-block"></span>
+              Multicolor
+            </button>
+          </div>
+        </div>
+        
+        {/* Interactive Color Wheel and Cube Stats */}
+        <div className="max-w-6xl mx-auto mb-16 grid md:grid-cols-2 gap-8 items-center">
+          {/* Color Wheel Visualization */}
+          <div className="relative aspect-square max-w-md mx-auto p-8">
+            <div className="absolute inset-0 rounded-full bg-gray-800 shadow-xl"></div>
+            
+            {/* White */}
+            <div className="absolute w-1/3 h-1/3 top-[5%] left-1/2 -translate-x-1/2 flex items-center justify-center transform hover:scale-110 transition-transform cursor-pointer">
+              <div className="w-20 h-20 rounded-full bg-mtg-white flex items-center justify-center shadow-lg hover:shadow-white/30">
+                <span className="text-black font-bold text-xl">W</span>
+              </div>
+            </div>
+            
+            {/* Blue */}
+            <div className="absolute w-1/3 h-1/3 top-1/2 right-[5%] -translate-y-1/2 flex items-center justify-center transform hover:scale-110 transition-transform cursor-pointer">
+              <div className="w-20 h-20 rounded-full bg-mtg-blue flex items-center justify-center shadow-lg hover:shadow-blue/30">
+                <span className="text-white font-bold text-xl">U</span>
+              </div>
+            </div>
+            
+            {/* Black */}
+            <div className="absolute w-1/3 h-1/3 bottom-[10%] right-[20%] flex items-center justify-center transform hover:scale-110 transition-transform cursor-pointer">
+              <div className="w-20 h-20 rounded-full bg-mtg-black flex items-center justify-center shadow-lg hover:shadow-white/30">
+                <span className="text-white font-bold text-xl">B</span>
+              </div>
+            </div>
+            
+            {/* Red */}
+            <div className="absolute w-1/3 h-1/3 bottom-[10%] left-[20%] flex items-center justify-center transform hover:scale-110 transition-transform cursor-pointer">
+              <div className="w-20 h-20 rounded-full bg-mtg-red flex items-center justify-center shadow-lg hover:shadow-red/30">
+                <span className="text-white font-bold text-xl">R</span>
+              </div>
+            </div>
+            
+            {/* Green */}
+            <div className="absolute w-1/3 h-1/3 top-1/2 left-[5%] -translate-y-1/2 flex items-center justify-center transform hover:scale-110 transition-transform cursor-pointer">
+              <div className="w-20 h-20 rounded-full bg-mtg-green flex items-center justify-center shadow-lg hover:shadow-green/30">
+                <span className="text-white font-bold text-xl">G</span>
+              </div>
+            </div>
+            
+            {/* Center - Colorless */}
+            <div className="absolute w-1/4 h-1/4 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center justify-center transform hover:scale-110 transition-transform cursor-pointer">
+              <div className="w-16 h-16 rounded-full bg-mtg-colorless flex items-center justify-center shadow-lg hover:shadow-white/30">
+                <span className="text-black font-bold text-xl">C</span>
+              </div>
+            </div>
+            
+            {/* Connecting lines */}
+            <svg className="absolute inset-0 w-full h-full" viewBox="0 0 100 100">
+              <line x1="50" y1="15" x2="80" y2="50" stroke="rgba(255,255,255,0.2)" strokeWidth="1" />
+              <line x1="80" y1="50" x2="70" y2="80" stroke="rgba(255,255,255,0.2)" strokeWidth="1" />
+              <line x1="70" y1="80" x2="30" y2="80" stroke="rgba(255,255,255,0.2)" strokeWidth="1" />
+              <line x1="30" y1="80" x2="20" y2="50" stroke="rgba(255,255,255,0.2)" strokeWidth="1" />
+              <line x1="20" y1="50" x2="50" y2="15" stroke="rgba(255,255,255,0.2)" strokeWidth="1" />
+              
+              <line x1="50" y1="15" x2="50" y2="50" stroke="rgba(255,255,255,0.2)" strokeWidth="1" />
+              <line x1="80" y1="50" x2="50" y2="50" stroke="rgba(255,255,255,0.2)" strokeWidth="1" />
+              <line x1="70" y1="80" x2="50" y2="50" stroke="rgba(255,255,255,0.2)" strokeWidth="1" />
+              <line x1="30" y1="80" x2="50" y2="50" stroke="rgba(255,255,255,0.2)" strokeWidth="1" />
+              <line x1="20" y1="50" x2="50" y2="50" stroke="rgba(255,255,255,0.2)" strokeWidth="1" />
+            </svg>
+          </div>
+          
+          {/* Cube Statistics */}
+          <div className="text-white space-y-6">
+            <h3 className="text-2xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-mtg-white via-mtg-red to-mtg-blue">
+              Cube Statistics
+            </h3>
+                        <div className="grid grid-cols-2 gap-4">
+              <div className="bg-gray-800/60 p-4 rounded-lg border border-gray-700 transform hover:scale-105 transition-all">
+                <div className="text-4xl font-bold mb-2 text-mtg-white">{statistics.totalCards}</div>
+                <div className="text-gray-400">Total Cards</div>
+              </div>
+              
+              <div className="bg-gray-800/60 p-4 rounded-lg border border-gray-700 transform hover:scale-105 transition-all">
+                <div className="text-4xl font-bold mb-2 text-mtg-blue">{statistics.totalArchetypes}</div>
+                <div className="text-gray-400">Archetypes</div>
+              </div>
+              
+              <div className="bg-gray-800/60 p-4 rounded-lg border border-gray-700 transform hover:scale-105 transition-all">
+                <div className="text-4xl font-bold mb-2 text-mtg-red">{statistics.customCardPercentage}%</div>
+                <div className="text-gray-400">Custom Cards</div>
+              </div>
+              
+              <div className="bg-gray-800/60 p-4 rounded-lg border border-gray-700 transform hover:scale-105 transition-all">
+                <div className="text-4xl font-bold mb-2 text-mtg-green">{statistics.recommendedPlayers}</div>
+                <div className="text-gray-400">Players</div>
+              </div>
+            </div>
+            
+            <div className="bg-black/40 p-6 rounded-lg border border-gray-800">
+              <h4 className="text-xl font-bold mb-3 text-mtg-gold">Design Philosophy</h4>
+              <p className="text-gray-300 mb-3">
+                This cube focuses on creating unique gameplay experiences that aren't well-represented in standard Magic formats.
+                Each archetype has been carefully crafted to provide distinct strategic paths while maintaining overall balance.
+              </p>
+              <div className="flex flex-wrap gap-2 mt-4">
+                <span className="px-3 py-1 bg-mtg-blue/20 text-blue-300 rounded-full text-sm">Synergy-Driven</span>
+                <span className="px-3 py-1 bg-mtg-red/20 text-red-300 rounded-full text-sm">Interactive</span>
+                <span className="px-3 py-1 bg-mtg-green/20 text-green-300 rounded-full text-sm">Diverse Strategies</span>
+                <span className="px-3 py-1 bg-mtg-white/20 text-gray-300 rounded-full text-sm">Balanced Power</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        
         {loading ? (
           <div className="flex justify-center py-20">
             <div className="relative">
@@ -331,9 +544,23 @@ export default function Home() {
                   onClick={() => setSelectedArchetype(selectedArchetype === archetype.id ? null : archetype.id)}
                 >
                   {/* Card background with parallax effect */}
-                  <div className="absolute inset-0 opacity-10 group-hover:opacity-20 transition-opacity duration-500 bg-center bg-cover transform group-hover:scale-110 transition-transform duration-1000"
-                       style={{ backgroundImage: `url(${randomCard.imageUrl})` }}>
-                  </div>
+                  {randomCard?.imageUrl && (
+                    <div 
+                      className="absolute inset-0 opacity-10 group-hover:opacity-20 transition-opacity duration-500 bg-center bg-cover transform group-hover:scale-110 transition-transform duration-1000"
+                      style={{ backgroundImage: `url(${getProxiedImageUrl(randomCard.imageUrl)})` }}
+                    >
+                      <img 
+                        src={getProxiedImageUrl(randomCard.imageUrl)} 
+                        alt="" 
+                        className="hidden" 
+                        onError={(e) => {
+                          // If the image fails to load, set the background to a fallback color
+                          e.currentTarget.parentElement.style.backgroundImage = 'none';
+                          e.currentTarget.parentElement.style.backgroundColor = '#1a1a1a';
+                        }}
+                      />
+                    </div>
+                  )}
                   
                   <div className="p-6 relative z-10">
                     {/* Archetype badge - number of cards */}
@@ -362,62 +589,11 @@ export default function Home() {
                       {archetype.description}
                     </p>
                     
-                    <div className="flex justify-between items-end">
-                      {randomCard ? (
-                        <div className="relative w-1/2 aspect-[2.5/3.5] overflow-hidden rounded-lg shadow-lg transform transition-transform duration-500 group-hover:scale-105">
-                          {randomCard.imageUrl ? (
-                            <img 
-                              src={randomCard.imageUrl}
-                              alt={randomCard.name}
-                              className="w-full h-full object-cover"
-                              onError={(e) => {
-                                console.error('Error loading image:', randomCard.imageUrl);
-                                
-                                // Try a color-based fallback image
-                                if (archetype.colors && archetype.colors.length > 0) {
-                                  const colorCombo = archetype.colors.join('');
-                                  const colorMap: Record<string, string> = {
-                                    'W': 'https://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Plains',
-                                    'U': 'https://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Island',
-                                    'B': 'https://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Swamp',
-                                    'R': 'https://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Mountain',
-                                    'G': 'https://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Forest',
-                                    'WU': 'https://gatherer.wizards.com/Handlers/Image.ashx?type=card&multiverseid=430504',
-                                    'UB': 'https://gatherer.wizards.com/Handlers/Image.ashx?type=card&multiverseid=430506',
-                                    'BR': 'https://gatherer.wizards.com/Handlers/Image.ashx?type=card&multiverseid=430507',
-                                    'RG': 'https://gatherer.wizards.com/Handlers/Image.ashx?type=card&multiverseid=430502',
-                                    'GW': 'https://gatherer.wizards.com/Handlers/Image.ashx?type=card&multiverseid=430500',
-                                    'WB': 'https://gatherer.wizards.com/Handlers/Image.ashx?type=card&multiverseid=430501',
-                                    'UR': 'https://gatherer.wizards.com/Handlers/Image.ashx?type=card&multiverseid=430503',
-                                    'BG': 'https://gatherer.wizards.com/Handlers/Image.ashx?type=card&multiverseid=430505',
-                                    'RW': 'https://gatherer.wizards.com/Handlers/Image.ashx?type=card&multiverseid=430508',
-                                    'GU': 'https://gatherer.wizards.com/Handlers/Image.ashx?type=card&multiverseid=430509'
-                                  };
-                                  
-                                  // Try to find a matching color combination or use the first color
-                                  if (colorCombo in colorMap) {
-                                    e.currentTarget.src = colorMap[colorCombo];
-                                  } else if (archetype.colors[0] in colorMap) {
-                                    e.currentTarget.src = colorMap[archetype.colors[0]];
-                                  } else {
-                                    e.currentTarget.src = 'data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22100%22%20height%3D%22140%22%20viewBox%3D%220%200%20100%20140%22%20preserveAspectRatio%3D%22none%22%3E%3Crect%20width%3D%22100%22%20height%3D%22140%22%20fill%3D%22%23eee%22%3E%3C%2Frect%3E%3Ctext%20text-anchor%3D%22middle%22%20x%3D%2250%22%20y%3D%2270%22%20style%3D%22fill%3A%23aaa%3Bfont-weight%3Abold%3Bfont-size%3A12px%3Bfont-family%3AArial%2C%20Helvetica%2C%20sans-serif%3Bdominant-baseline%3Acentral%22%3E${archetype.name}%3C%2Ftext%3E%3C%2Fsvg%3E';
-                                  }
-                                } else {
-                                  e.currentTarget.src = 'data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22100%22%20height%3D%22140%22%20viewBox%3D%220%200%20100%20140%22%20preserveAspectRatio%3D%22none%22%3E%3Crect%20width%3D%22100%22%20height%3D%22140%22%20fill%3D%22%23eee%22%3E%3C%2Frect%3E%3Ctext%20text-anchor%3D%22middle%22%20x%3D%2250%22%20y%3D%2270%22%20style%3D%22fill%3A%23aaa%3Bfont-weight%3Abold%3Bfont-size%3A12px%3Bfont-family%3AArial%2C%20Helvetica%2C%20sans-serif%3Bdominant-baseline%3Acentral%22%3E${archetype.name}%3C%2Ftext%3E%3C%2Fsvg%3E';
-                                }
-                              }}
-                            />
-                          ) : (
-                            <div className="w-full h-full flex items-center justify-center bg-gray-200 dark:bg-gray-700">
-                              <p className="text-sm text-gray-500 dark:text-gray-400">No image</p>
-                            </div>
-                          )}
-                        </div>
-                      ) : (
-                        <div className="w-1/2 aspect-[2.5/3.5] rounded-lg bg-gray-200 dark:bg-gray-700 flex items-center justify-center">
-                          <p className="text-center text-gray-500 dark:text-gray-400">No card</p>
-                        </div>
-                      )}
+                    {!randomCard?.imageUrl && (
+                      <div className="w-1/2 aspect-[2.5/3.5] rounded-lg bg-gray-200 dark:bg-gray-700 flex items-center justify-center">
+                        <p className="text-center text-gray-500 dark:text-gray-400">No card</p>
+                      </div>
+                    )}
                       
                       <div className="flex flex-col gap-2">
                         <Link 
@@ -531,24 +707,4 @@ export default function Home() {
       `}</style>
     </div>
   );
-}
-
-// Helper function to get color classes for cards
-function getCardColorClasses(colors: string[]) {
-  if (!colors || colors.length === 0) return 'bg-gray-300 dark:bg-gray-700';
-  
-  const colorClasses: Record<string, string> = {
-    W: 'bg-mtg-white text-black',
-    U: 'bg-mtg-blue text-white',
-    B: 'bg-mtg-black text-white',
-    R: 'bg-mtg-red text-white',
-    G: 'bg-mtg-green text-white',
-  };
-  
-  if (colors.length === 1) {
-    return colorClasses[colors[0]];
-  } else {
-    // For multicolor cards
-    return 'bg-mtg-gold text-black';
-  }
 }

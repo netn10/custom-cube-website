@@ -865,9 +865,22 @@ def get_random_pack():
         # Take the first 'pack_size' cards for the pack
         pack = all_cards[:pack_size]
         
-        # Convert ObjectIds to strings for JSON serialization
+        # Convert ObjectIds to strings and add proxied image URLs for custom cards
         for card in pack:
             card['id'] = str(card.pop('_id'))
+            
+            # For custom cards, set a proxied URL to ensure images load correctly
+            if card.get('custom', False) and card.get('imageUrl'):
+                # Store the original URL
+                card['originalImageUrl'] = card['imageUrl']
+                
+                # For Imgur images, use the direct image URL which should work without proxy
+                if 'imgur.com' in card['imageUrl'].lower():
+                    card['imageUrl'] = card['imageUrl']
+                else:
+                    # For other custom card images, set the image proxy URL directly
+                    host_url = request.host_url.rstrip('/')
+                    card['imageUrl'] = f"{host_url}/api/image-proxy?url={card['imageUrl']}"
         
         # Create response with pack and metadata
         response = {
