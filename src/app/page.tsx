@@ -414,9 +414,32 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {filteredArchetypes.map((archetype) => {
               // Get all cards that belong to this specific archetype
-              const archetypeSpecificCards = archetypeCards.filter(card => 
-                card && card.archetypes && Array.isArray(card.archetypes) && card.archetypes.includes(archetype.id)
-              );
+              // Handle both ID matching and name matching (archetypes may be stored as full names like "GU Prowess")
+              const archetypeSpecificCards = archetypeCards.filter(card => {
+                if (!card || !card.archetypes || !Array.isArray(card.archetypes)) return false;
+                
+                return card.archetypes.some(cardArchetype => {
+                  // Try direct ID match
+                  if (cardArchetype === archetype.id) return true;
+                  
+                  // Try name match (e.g., "GU Prowess" matches archetype with name "Prowess" and colors ["G", "U"])
+                  if (typeof cardArchetype === 'string') {
+                    // Check if archetype name is contained in the card's archetype string
+                    const archetypeNameInCard = cardArchetype.includes(archetype.name);
+                    
+                    // Check if all of the archetype's colors are mentioned in the card's archetype string
+                    const archetypeColorsInCard = archetype.colors.every(color => 
+                      cardArchetype.includes(color)
+                    );
+                    
+                    return archetypeNameInCard || archetypeColorsInCard;
+                  }
+                  
+                  return false;
+                });
+              });
+              
+              console.log(`Archetype: ${archetype.name}, Cards found: ${archetypeSpecificCards.length}`);
               
               // If we have cards for this archetype, pick one randomly
               let randomCard = null;
