@@ -206,7 +206,7 @@ export default function Home() {
           
           {/* Floating cards animation */}
           <div className="mt-12 relative h-48">
-            {archetypeCards.slice(0, 5).map((card, index) => {
+            {archetypeCards.slice(0, 15).map((card, index) => {
               console.log(`Rendering card ${index}:`, card.name, 'Image URL:', card.imageUrl);
               return (
                 <div 
