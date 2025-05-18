@@ -16,10 +16,7 @@ const colorMap: Record<string, string> = {
 };
 
 export default function Home() {
-  const [archetypes, setArchetypes] = useState<Archetype[]>([]);
   const [archetypeCards, setArchetypeCards] = useState<any[]>([]);
-  const [selectedArchetype, setSelectedArchetype] = useState<string | null>(null);
-  const [colorFilter, setColorFilter] = useState<string>('');
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [heroCardIndex, setHeroCardIndex] = useState(0);
@@ -31,40 +28,41 @@ export default function Home() {
   });
 
   useEffect(() => {
-    // Function to fetch archetypes and random cards data
+    // Function to fetch sample featured cards for the hero section
     const fetchData = async () => {
       try {
         setLoading(true);
         
-        // Fetch archetypes
-        const archetypesData = await getArchetypes();
-        
-        // Make sure we're using the string ID from the API
-        const processedArchetypes = archetypesData.map(archetype => ({
-          ...archetype,
-          // Ensure we're using the string ID, not the MongoDB ObjectID
-          id: archetype.id
-        }));
-        
-        setArchetypes(processedArchetypes);
-        
-        // Fetch random cards
+        // Fetch featured cards for the hero section
         const randomCardsData = await getRandomArchetypeCards();
         
         if (Array.isArray(randomCardsData)) {
-          // Make sure each card has the correct structure
+          // Process the cards to ensure they have valid imageUrl
           const processedCards = randomCardsData.map(card => {
-            // Ensure card has all required properties
             return {
               ...card,
-              // Make sure archetypes is an array
-              archetypes: card.archetypes || []
+              // Ensure valid imageUrl
+              imageUrl: card.imageUrl && card.imageUrl.trim() !== '' ? card.imageUrl : 'https://i.imgur.com/MNDyDPT.png'
             };
           });
           setArchetypeCards(processedCards);
         } else {
           console.error('Unexpected response format:', randomCardsData);
-          setArchetypeCards([]);
+          // Provide fallback cards if the API call fails
+          setArchetypeCards([
+            {
+              name: 'Example Card 1',
+              imageUrl: 'https://i.imgur.com/MNDyDPT.png'
+            },
+            {
+              name: 'Example Card 2',
+              imageUrl: 'https://i.imgur.com/KwNKcbO.png'
+            },
+            {
+              name: 'Example Card 3',
+              imageUrl: 'https://i.imgur.com/fVuTogB.png'
+            }
+          ]);
         }
         
         // Fetch cube statistics
@@ -83,14 +81,7 @@ export default function Home() {
     fetchData();
   }, []);
   
-  // Filter archetypes based on selected color
-  const filteredArchetypes = archetypes.filter(archetype => {
-    if (!colorFilter) return true;
-    if (colorFilter === 'multi') {
-      return archetype.colors.length > 1;
-    }
-    return archetype.colors.includes(colorFilter);
-  });
+  // Since we've removed the archetypes section, we don't need filtering logic
 
   // Rotate hero cards every 5 seconds
   useEffect(() => {
