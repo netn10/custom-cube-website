@@ -162,257 +162,89 @@ export default function Home() {
         </div>
       </section>
         
-        {loading ? (
-          <div className="flex justify-center py-20">
-            <div className="relative">
-              <div className="animate-spin rounded-full h-16 w-16 border-t-2 border-b-2 border-mtg-blue"></div>
-              <div className="animate-spin rounded-full h-16 w-16 border-l-2 border-r-2 border-mtg-red absolute top-0 left-0" style={{animationDirection: 'reverse', animationDuration: '1.5s'}}></div>
-            </div>
+      {/* Displayed content */}
+      {loading ? (
+        <div className="flex justify-center py-20">
+          <div className="relative">
+            <div className="animate-spin rounded-full h-16 w-16 border-t-2 border-b-2 border-mtg-blue"></div>
+            <div className="animate-spin rounded-full h-16 w-16 border-l-2 border-r-2 border-mtg-red absolute top-0 left-0" style={{animationDirection: 'reverse', animationDuration: '1.5s'}}></div>
           </div>
-        ) : error ? (
-          <div className="text-center py-10 bg-red-900/20 rounded-lg">
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12 mx-auto text-red-500 mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
-            </svg>
-            <p className="text-xl text-red-400">{error}</p>
-            <button 
-              onClick={() => {
-                setError(null);
-                setLoading(true);
-                // Fetch data again
-                const fetchAgain = async () => {
-                  try {
-                    // Fetch archetypes
-                    const archetypesData = await getArchetypes();
-                    
-                    // Make sure we're using the string ID from the API
-                    const processedArchetypes = archetypesData.map(archetype => ({
-                      ...archetype,
-                      // Ensure we're using the string ID, not the MongoDB ObjectID
-                      id: archetype.id
-                    }));
-                    
-                    setArchetypes(processedArchetypes);
-                    
-                    // Fetch random cards
-                    const randomCardsData = await getRandomArchetypeCards();
-                    
-                    if (Array.isArray(randomCardsData)) {
-                      const processedCards = randomCardsData.map(card => {
-                        return {
-                          ...card,
-                          archetypes: card.archetypes || []
-                        };
-                      });
-                      setArchetypeCards(processedCards);
-                    } else {
-                      console.error('Unexpected response format:', randomCardsData);
-                      setArchetypeCards([]);
-                    }
-                    
-                    setError(null);
-                  } catch (err) {
-                    console.error('Error fetching data:', err);
-                    setError('Failed to load data. Please try again later.');
-                  } finally {
-                    setLoading(false);
-                  }
-                };
-                fetchAgain();
-              }}
-              className="mt-4 px-6 py-2 bg-mtg-red text-white rounded-lg hover:bg-red-600 transition-colors"
-            >
-              Try Again
-            </button>
-          </div>
-        ) : (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {filteredArchetypes.map((archetype) => {
-              // We need to find a unique card for each archetype, preferring cards that specifically belong to this archetype
-              // Get cards that have this archetype listed in their archetypes array
-              const archetypeSpecificCards = archetypeCards.filter(card => 
-                card && card.archetypes && Array.isArray(card.archetypes) && 
-                card.archetypes.includes(archetype.id) && card.imageUrl
-              );
-              
-              // If we have archetype-specific cards, use a random one from them
-              let randomCard = null;
-              if (archetypeSpecificCards.length > 0) {
-                // Get a random card from the specific cards for this archetype
-                randomCard = archetypeSpecificCards[Math.floor(Math.random() * archetypeSpecificCards.length)];
-              } else {
-                // Otherwise, try to find a card by matching colors
-                randomCard = archetypeCards.find(card => 
-                  card && card.archetypes && Array.isArray(card.archetypes) && 
-                  card.archetypes.includes(archetype.id) && card.imageUrl
-                );
-              }
-              
-              // If no card or no image found, use appropriate fallback
-              if (!randomCard || !randomCard.imageUrl) {
-                // First, try to find any card with the same colors as the archetype
-                const archetypeColors = archetype.colors;
-                let fallbackCard = archetypeCards.find(card => 
-                  card && card.imageUrl && card.colors && 
-                  archetypeColors.every(color => card.colors.includes(color)) &&
-                  card.colors.length === archetypeColors.length
-                );
-                
-                // If that fails, just find any card with at least one matching color
-                if (!fallbackCard) {
-                  fallbackCard = archetypeCards.find(card => 
-                    card && card.imageUrl && card.colors && 
-                    archetypeColors.some(color => card.colors.includes(color))
-                  );
-                }
-                
-                // If all else fails, just use any card that has an image
-                if (!fallbackCard) {
-                  fallbackCard = archetypeCards.find(card => card && card.imageUrl);
-                }
-                
-                // Use the fallback or create a minimal placeholder
-                if (fallbackCard) {
-                  randomCard = {
-                    ...fallbackCard,
-                    archetypes: [archetype.id]
-                  };
-                } else {
-                  // Create a basic placeholder - we shouldn't get here if there are any cards with images
-                  randomCard = {
-                    ...randomCard || {},
-                    name: randomCard?.name || `${archetype.name} Card`,
-                    imageUrl: `/placeholder-${archetype.colors.join('')}.jpg`,
-                    archetypes: [archetype.id]
-                  };
-                }
-              }
-              
-              return (
-                <div 
-                  key={archetype.id}
-                  className={`relative group overflow-hidden rounded-xl transition-all duration-500 
-                    ${selectedArchetype === archetype.id ? 'ring-4 ring-mtg-gold' : ''}
-                    dark:bg-gray-800/80 bg-white/90 backdrop-blur-sm transform hover:scale-105 hover:shadow-2xl cursor-pointer`}
-                  onClick={() => setSelectedArchetype(selectedArchetype === archetype.id ? null : archetype.id)}
-                >
-                  {/* Card background with parallax effect */}
-                  <div className="absolute inset-0 opacity-10 group-hover:opacity-20 transition-opacity duration-500 bg-center bg-cover transform group-hover:scale-110 transition-transform duration-1000"
-                       style={{ backgroundImage: `url(${randomCard.imageUrl})` }}>
-                  </div>
+        </div>
+      ) : error ? (
+        <div className="text-center py-10 bg-red-900/20 rounded-lg max-w-5xl mx-auto">
+          <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12 mx-auto text-red-500 mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+          </svg>
+          <p className="text-xl text-red-400">{error}</p>
+          <button 
+            onClick={() => {
+              setError(null);
+              setLoading(true);
+              // Fetch data again
+              const fetchAgain = async () => {
+                try {
+                  // Fetch featured cards for the hero section
+                  const randomCardsData = await getRandomArchetypeCards();
                   
-                  <div className="p-6 relative z-10">
-                    {/* Archetype badge - number of cards */}
-                    <div className="absolute top-2 right-2 bg-black/60 text-white text-xs px-2 py-1 rounded-full">
-                      {archetype.colors.map((color) => (
-                        <span key={color} className={`inline-block w-4 h-4 rounded-full mr-1 ${colorMap[color]}`}></span>
-                      ))}
-                    </div>
-                    <div className="flex items-center mb-4">
-                      <h3 className="text-2xl font-bold mr-4 dark:text-white group-hover:text-mtg-gold transition-colors duration-300">
-                        {archetype.name}
-                      </h3>
-                      <div className="flex space-x-1">
-                        {archetype.colors.map((color) => (
-                          <span 
-                            key={color} 
-                            className={`w-7 h-7 rounded-full flex items-center justify-center text-xs font-bold transform group-hover:scale-110 transition-transform ${colorMap[color]}`}
-                          >
-                            {color}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
-                    
-                    <p className="dark:text-gray-300 mb-6 line-clamp-3 group-hover:line-clamp-none transition-all duration-500">
-                      {archetype.description}
-                    </p>
-                    
-                    <div className="flex justify-between items-end">
-                      {randomCard ? (
-                        <div className="relative w-1/2 aspect-[2.5/3.5] overflow-hidden rounded-lg shadow-lg transform transition-transform duration-500 group-hover:scale-105">
-                          {randomCard.imageUrl ? (
-                            <img 
-                              src={randomCard.imageUrl}
-                              alt={randomCard.name}
-                              className="w-full h-full object-cover"
-                              onError={(e) => {
-                                console.error('Error loading image:', randomCard.imageUrl);
-                                
-                                // Try a color-based fallback image
-                                if (archetype.colors && archetype.colors.length > 0) {
-                                  const colorCombo = archetype.colors.join('');
-                                  const colorMap: Record<string, string> = {
-                                    'W': 'https://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Plains',
-                                    'U': 'https://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Island',
-                                    'B': 'https://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Swamp',
-                                    'R': 'https://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Mountain',
-                                    'G': 'https://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Forest',
-                                    'WU': 'https://gatherer.wizards.com/Handlers/Image.ashx?type=card&multiverseid=430504',
-                                    'UB': 'https://gatherer.wizards.com/Handlers/Image.ashx?type=card&multiverseid=430506',
-                                    'BR': 'https://gatherer.wizards.com/Handlers/Image.ashx?type=card&multiverseid=430507',
-                                    'RG': 'https://gatherer.wizards.com/Handlers/Image.ashx?type=card&multiverseid=430502',
-                                    'GW': 'https://gatherer.wizards.com/Handlers/Image.ashx?type=card&multiverseid=430500',
-                                    'WB': 'https://gatherer.wizards.com/Handlers/Image.ashx?type=card&multiverseid=430501',
-                                    'UR': 'https://gatherer.wizards.com/Handlers/Image.ashx?type=card&multiverseid=430503',
-                                    'BG': 'https://gatherer.wizards.com/Handlers/Image.ashx?type=card&multiverseid=430505',
-                                    'RW': 'https://gatherer.wizards.com/Handlers/Image.ashx?type=card&multiverseid=430508',
-                                    'GU': 'https://gatherer.wizards.com/Handlers/Image.ashx?type=card&multiverseid=430509'
-                                  };
-                                  
-                                  // Try to find a matching color combination or use the first color
-                                  if (colorCombo in colorMap) {
-                                    e.currentTarget.src = colorMap[colorCombo];
-                                  } else if (archetype.colors[0] in colorMap) {
-                                    e.currentTarget.src = colorMap[archetype.colors[0]];
-                                  } else {
-                                    e.currentTarget.src = 'data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22100%22%20height%3D%22140%22%20viewBox%3D%220%200%20100%20140%22%20preserveAspectRatio%3D%22none%22%3E%3Crect%20width%3D%22100%22%20height%3D%22140%22%20fill%3D%22%23eee%22%3E%3C%2Frect%3E%3Ctext%20text-anchor%3D%22middle%22%20x%3D%2250%22%20y%3D%2270%22%20style%3D%22fill%3A%23aaa%3Bfont-weight%3Abold%3Bfont-size%3A12px%3Bfont-family%3AArial%2C%20Helvetica%2C%20sans-serif%3Bdominant-baseline%3Acentral%22%3E${archetype.name}%3C%2Ftext%3E%3C%2Fsvg%3E';
-                                  }
-                                } else {
-                                  e.currentTarget.src = 'data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22100%22%20height%3D%22140%22%20viewBox%3D%220%200%20100%20140%22%20preserveAspectRatio%3D%22none%22%3E%3Crect%20width%3D%22100%22%20height%3D%22140%22%20fill%3D%22%23eee%22%3E%3C%2Frect%3E%3Ctext%20text-anchor%3D%22middle%22%20x%3D%2250%22%20y%3D%2270%22%20style%3D%22fill%3A%23aaa%3Bfont-weight%3Abold%3Bfont-size%3A12px%3Bfont-family%3AArial%2C%20Helvetica%2C%20sans-serif%3Bdominant-baseline%3Acentral%22%3E${archetype.name}%3C%2Ftext%3E%3C%2Fsvg%3E';
-                                }
-                              }}
-                            />
-                          ) : (
-                            <div className="w-full h-full flex items-center justify-center bg-gray-200 dark:bg-gray-700">
-                              <p className="text-sm text-gray-500 dark:text-gray-400">No image</p>
-                            </div>
-                          )}
-                        </div>
-                      ) : (
-                        <div className="w-1/2 aspect-[2.5/3.5] rounded-lg bg-gray-200 dark:bg-gray-700 flex items-center justify-center">
-                          <p className="text-center text-gray-500 dark:text-gray-400">No card</p>
-                        </div>
-                      )}
-                      
-                      <div className="flex flex-col gap-2">
-                        <Link 
-                          href={`/archetypes/${archetype.id}`}
-                          className="px-4 py-2 bg-gradient-to-r from-mtg-blue to-mtg-red text-white rounded-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 text-center"
-                          onClick={(e) => e.stopPropagation()}
-                        >
-                          View Details
-                        </Link>
-                        {selectedArchetype === archetype.id && (
-                          <button 
-                            onClick={(e) => {
-                              e.stopPropagation();
-                              window.open(`/archetypes/${archetype.id}`, '_blank');
-                            }}
-                            className="px-4 py-2 bg-gray-700 text-white rounded-lg shadow hover:bg-gray-600 transition-all duration-300 text-center text-sm flex items-center justify-center gap-1"
-                          >
-                            <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                            </svg>
-                            Open in New Tab
-                          </button>
-                        )}
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              );
-            })}
+                  if (Array.isArray(randomCardsData)) {
+                    // Process the cards to ensure they have valid imageUrl
+                    const processedCards = randomCardsData.map(card => {
+                      return {
+                        ...card,
+                        // Ensure valid imageUrl 
+                        imageUrl: card.imageUrl && card.imageUrl.trim() !== '' ? card.imageUrl : 'https://i.imgur.com/MNDyDPT.png'
+                      };
+                    });
+                    setArchetypeCards(processedCards);
+                  } else {
+                    console.error('Unexpected response format:', randomCardsData);
+                    // Provide fallback cards if the API call fails
+                    setArchetypeCards([
+                      {
+                        name: 'Example Card 1',
+                        imageUrl: 'https://i.imgur.com/MNDyDPT.png'
+                      },
+                      {
+                        name: 'Example Card 2',
+                        imageUrl: 'https://i.imgur.com/KwNKcbO.png'
+                      },
+                      {
+                        name: 'Example Card 3',
+                        imageUrl: 'https://i.imgur.com/fVuTogB.png'
+                      }
+                    ]);
+                  }
+                  
+                  // Fetch cube statistics
+                  const statsData = await getCubeStatistics();
+                  setStatistics(statsData);
+                  
+                  setError(null);
+                } catch (err) {
+                  console.error('Error fetching data:', err);
+                  setError('Failed to load data. Please try again later.');
+                } finally {
+                  setLoading(false);
+                }
+              };
+              fetchAgain();
+            }}
+            className="mt-4 px-6 py-2 bg-mtg-red text-white rounded-lg hover:bg-red-600 transition-colors"
+          >
+            Try Again
+          </button>
+        </div>
+      ) : (
+          <div className="p-8 text-center max-w-4xl mx-auto">
+            <h2 className="text-3xl font-bold mb-4 text-white">Welcome to the Custom MTG Cube</h2>
+            <p className="text-lg mb-6 text-gray-300">
+              This custom cube features unique and creative Magic: The Gathering cards designed specifically for a unique drafting experience.
+            </p>
+            <div className="flex justify-center gap-4">
+              <Link href="/cube-list" className="px-6 py-3 bg-mtg-blue text-white rounded-lg shadow-lg hover:bg-blue-700 transform hover:scale-105 transition-all duration-300 font-bold">
+                Browse All Cards
+              </Link>
+            </div>
           </div>
         )}
       </section>
