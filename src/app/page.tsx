@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { getCubeStatistics } from '@/lib/api';
+import { getCubeStatistics, getRandomArchetypeCards } from '@/lib/api';
 import Image from 'next/image';
 
 // Color mapping for visual representation
@@ -17,6 +17,7 @@ const colorMap: Record<string, string> = {
 export default function Home() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  const [archetypeCards, setArchetypeCards] = useState<Array<{name: string, imageUrl?: string}>>([]);
   const [statistics, setStatistics] = useState({
     totalCards: 0,
     totalArchetypes: 0,
@@ -34,6 +35,37 @@ export default function Home() {
         if (statsData) {
           setStatistics(statsData);
         }
+        
+        // Fetch featured cards for the hero section
+        const randomCardsData = await getRandomArchetypeCards();
+        if (Array.isArray(randomCardsData)) {
+          // Process the cards to ensure they have valid imageUrl
+          const processedCards = randomCardsData.map(card => {
+            return {
+              ...card,
+              // Ensure valid imageUrl 
+              imageUrl: card.imageUrl && card.imageUrl.trim() !== '' ? card.imageUrl : 'https://i.imgur.com/MNDyDPT.png'
+            };
+          });
+          setArchetypeCards(processedCards);
+        } else {
+          // Provide fallback cards if the API call fails
+          setArchetypeCards([
+            {
+              name: 'Example Card 1',
+              imageUrl: 'https://i.imgur.com/MNDyDPT.png'
+            },
+            {
+              name: 'Example Card 2',
+              imageUrl: 'https://i.imgur.com/KwNKcbO.png'
+            },
+            {
+              name: 'Example Card 3',
+              imageUrl: 'https://i.imgur.com/fVuTogB.png'
+            }
+          ]);
+        }
+        
         setLoading(false);
       } catch (err) {
         console.error('Failed to fetch data:', err);
