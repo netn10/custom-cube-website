@@ -2,8 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { getArchetypes, getRandomCards, getCubeStatistics } from '@/lib/api';
-import { API_BASE_URL } from '@/lib/api';
+import { getArchetypes, getRandomArchetypeCards, getCubeStatistics } from '@/lib/api';
 import { Archetype } from '@/types/types';
 import Image from 'next/image';
 
@@ -15,48 +14,6 @@ const colorMap: Record<string, string> = {
   R: 'bg-mtg-red text-white',
   G: 'bg-mtg-green text-white',
 };
-
-// Helper function to get the proxied image URL
-function getProxiedImageUrl(originalUrl: string): string {
-  // If the URL is already proxied or is a local URL, return it as is
-  if (originalUrl.startsWith('/') || originalUrl.includes('localhost') || originalUrl.includes('127.0.0.1')) {
-    return originalUrl;
-  }
-  
-  // Otherwise, proxy through our backend to avoid CORS issues
-  // URL encode the original URL to ensure it's properly passed as a parameter
-  const encodedUrl = encodeURIComponent(originalUrl);
-  return `${API_BASE_URL}/proxy-image?url=${encodedUrl}`;
-}
-
-// Helper function to get fallback image URL based on card colors
-function getFallbackImageUrl(colors: string[] = []): string {
-  // Default fallback image for cards with no color information
-  return '/images/card-back.jpg';
-}
-
-// Helper function to get color classes for cards
-function getCardColorClasses(colors: string[]) {
-  if (!colors || colors.length === 0) {
-    return 'bg-gray-700'; // Colorless
-  }
-  
-  if (colors.length > 1) {
-    // Multi-color card
-    return 'bg-gradient-to-br from-mtg-gold to-yellow-600';
-  }
-  
-  // Single color card
-  const color = colors[0];
-  switch (color) {
-    case 'W': return 'bg-mtg-white text-gray-900';
-    case 'U': return 'bg-mtg-blue';
-    case 'B': return 'bg-mtg-black';
-    case 'R': return 'bg-mtg-red';
-    case 'G': return 'bg-mtg-green';
-    default: return 'bg-gray-700'; // Fallback
-  }
-}
 
 export default function Home() {
   const [archetypes, setArchetypes] = useState<Archetype[]>([]);
@@ -91,16 +48,12 @@ export default function Home() {
         
         setArchetypes(processedArchetypes);
         
-        // Fetch totally random cards from the cube
-        const randomCardsData = await getRandomCards(8); // Get 8 random cards for the card row
-        
-        console.log('Random cards data received:', randomCardsData);
+        // Fetch random cards
+        const randomCardsData = await getRandomArchetypeCards();
         
         if (Array.isArray(randomCardsData)) {
           // Make sure each card has the correct structure
           const processedCards = randomCardsData.map(card => {
-            console.log('Processing card:', card.name, 'Image URL:', card.imageUrl);
-            
             // Ensure card has all required properties
             return {
               ...card,
@@ -108,7 +61,6 @@ export default function Home() {
               archetypes: card.archetypes || []
             };
           });
-          console.log('Processed cards:', processedCards);
           setArchetypeCards(processedCards);
         } else {
           console.error('Unexpected response format:', randomCardsData);
@@ -157,10 +109,9 @@ export default function Home() {
       <section className="relative overflow-hidden">
         <div className="absolute inset-0 z-0 opacity-20">
           {archetypeCards.length > 0 && archetypeCards[heroCardIndex]?.imageUrl && (
-            <div 
-              className="w-full h-full blur-sm scale-110 bg-center bg-cover transition-all duration-1000 ease-in-out"
-              style={{ backgroundImage: `url(${archetypeCards[heroCardIndex].imageUrl})` }}
-            />
+            <div className="w-full h-full blur-sm scale-110 bg-center bg-cover transition-all duration-1000 ease-in-out"
+                 style={{ backgroundImage: `url(${archetypeCards[heroCardIndex].imageUrl})` }}>
+            </div>
           )}
         </div>
         
@@ -192,9 +143,8 @@ export default function Home() {
           
           {/* Floating cards animation */}
           <div className="mt-12 relative h-48">
-            {archetypeCards.slice(0, 5).map((card, index) => {
-              console.log(`Rendering card ${index}:`, card.name, 'Image URL:', card.imageUrl);
-              return (
+            {archetypeCards.slice(0, 5).map((card, index) => (
+              card?.imageUrl && (
                 <div 
                   key={index}
                   className="absolute mtg-card transform transition-all duration-500 hover:scale-110 hover:z-50 shadow-2xl"
@@ -207,18 +157,16 @@ export default function Home() {
                   }}
                 >
                   <img 
-                    src={card.imageUrl ? getProxiedImageUrl(card.imageUrl) : getFallbackImageUrl(card.colors)}
-                    alt={card.name || 'MTG Card'}
-                    className="w-full h-full object-cover"
+                    src={card.imageUrl}
+                    alt={card.name}
+                    className="w-full h-full rounded-lg"
                     onError={(e) => {
-                      console.error(`Failed to load image for ${card.name || 'unknown'}:`, card.imageUrl);
-                      e.currentTarget.src = getFallbackImageUrl(card.colors);
+                      e.currentTarget.src = 'data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22100%22%20height%3D%22140%22%20viewBox%3D%220%200%20100%20140%22%20preserveAspectRatio%3D%22none%22%3E%3Crect%20width%3D%22100%22%20height%3D%22140%22%20fill%3D%22%23eee%22%3E%3C%2Frect%3E%3Ctext%20text-anchor%3D%22middle%22%20x%3D%2250%22%20y%3D%2270%22%20style%3D%22fill%3A%23aaa%3Bfont-weight%3Abold%3Bfont-size%3A12px%3Bfont-family%3AArial%2C%20Helvetica%2C%20sans-serif%3Bdominant-baseline%3Acentral%22%3EImage%20Not%20Found%3C%2Ftext%3E%3C%2Fsvg%3E';
                     }}
-                    style={{ width: '200px', height: '280px' }}
                   />
                 </div>
-              );
-            })}
+              )
+            ))}
           </div>
         </div>
       </section>
@@ -544,23 +492,9 @@ export default function Home() {
                   onClick={() => setSelectedArchetype(selectedArchetype === archetype.id ? null : archetype.id)}
                 >
                   {/* Card background with parallax effect */}
-                  {randomCard?.imageUrl && (
-                    <div 
-                      className="absolute inset-0 opacity-10 group-hover:opacity-20 transition-opacity duration-500 bg-center bg-cover transform group-hover:scale-110 transition-transform duration-1000"
-                      style={{ backgroundImage: `url(${getProxiedImageUrl(randomCard.imageUrl)})` }}
-                    >
-                      <img 
-                        src={getProxiedImageUrl(randomCard.imageUrl)} 
-                        alt="" 
-                        className="hidden" 
-                        onError={(e) => {
-                          // If the image fails to load, set the background to a fallback color
-                          e.currentTarget.parentElement.style.backgroundImage = 'none';
-                          e.currentTarget.parentElement.style.backgroundColor = '#1a1a1a';
-                        }}
-                      />
-                    </div>
-                  )}
+                  <div className="absolute inset-0 opacity-10 group-hover:opacity-20 transition-opacity duration-500 bg-center bg-cover transform group-hover:scale-110 transition-transform duration-1000"
+                       style={{ backgroundImage: `url(${randomCard.imageUrl})` }}>
+                  </div>
                   
                   <div className="p-6 relative z-10">
                     {/* Archetype badge - number of cards */}
@@ -589,11 +523,62 @@ export default function Home() {
                       {archetype.description}
                     </p>
                     
-                    {!randomCard?.imageUrl && (
-                      <div className="w-1/2 aspect-[2.5/3.5] rounded-lg bg-gray-200 dark:bg-gray-700 flex items-center justify-center">
-                        <p className="text-center text-gray-500 dark:text-gray-400">No card</p>
-                      </div>
-                    )}
+                    <div className="flex justify-between items-end">
+                      {randomCard ? (
+                        <div className="relative w-1/2 aspect-[2.5/3.5] overflow-hidden rounded-lg shadow-lg transform transition-transform duration-500 group-hover:scale-105">
+                          {randomCard.imageUrl ? (
+                            <img 
+                              src={randomCard.imageUrl}
+                              alt={randomCard.name}
+                              className="w-full h-full object-cover"
+                              onError={(e) => {
+                                console.error('Error loading image:', randomCard.imageUrl);
+                                
+                                // Try a color-based fallback image
+                                if (archetype.colors && archetype.colors.length > 0) {
+                                  const colorCombo = archetype.colors.join('');
+                                  const colorMap: Record<string, string> = {
+                                    'W': 'https://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Plains',
+                                    'U': 'https://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Island',
+                                    'B': 'https://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Swamp',
+                                    'R': 'https://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Mountain',
+                                    'G': 'https://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Forest',
+                                    'WU': 'https://gatherer.wizards.com/Handlers/Image.ashx?type=card&multiverseid=430504',
+                                    'UB': 'https://gatherer.wizards.com/Handlers/Image.ashx?type=card&multiverseid=430506',
+                                    'BR': 'https://gatherer.wizards.com/Handlers/Image.ashx?type=card&multiverseid=430507',
+                                    'RG': 'https://gatherer.wizards.com/Handlers/Image.ashx?type=card&multiverseid=430502',
+                                    'GW': 'https://gatherer.wizards.com/Handlers/Image.ashx?type=card&multiverseid=430500',
+                                    'WB': 'https://gatherer.wizards.com/Handlers/Image.ashx?type=card&multiverseid=430501',
+                                    'UR': 'https://gatherer.wizards.com/Handlers/Image.ashx?type=card&multiverseid=430503',
+                                    'BG': 'https://gatherer.wizards.com/Handlers/Image.ashx?type=card&multiverseid=430505',
+                                    'RW': 'https://gatherer.wizards.com/Handlers/Image.ashx?type=card&multiverseid=430508',
+                                    'GU': 'https://gatherer.wizards.com/Handlers/Image.ashx?type=card&multiverseid=430509'
+                                  };
+                                  
+                                  // Try to find a matching color combination or use the first color
+                                  if (colorCombo in colorMap) {
+                                    e.currentTarget.src = colorMap[colorCombo];
+                                  } else if (archetype.colors[0] in colorMap) {
+                                    e.currentTarget.src = colorMap[archetype.colors[0]];
+                                  } else {
+                                    e.currentTarget.src = 'data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22100%22%20height%3D%22140%22%20viewBox%3D%220%200%20100%20140%22%20preserveAspectRatio%3D%22none%22%3E%3Crect%20width%3D%22100%22%20height%3D%22140%22%20fill%3D%22%23eee%22%3E%3C%2Frect%3E%3Ctext%20text-anchor%3D%22middle%22%20x%3D%2250%22%20y%3D%2270%22%20style%3D%22fill%3A%23aaa%3Bfont-weight%3Abold%3Bfont-size%3A12px%3Bfont-family%3AArial%2C%20Helvetica%2C%20sans-serif%3Bdominant-baseline%3Acentral%22%3E${archetype.name}%3C%2Ftext%3E%3C%2Fsvg%3E';
+                                  }
+                                } else {
+                                  e.currentTarget.src = 'data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22100%22%20height%3D%22140%22%20viewBox%3D%220%200%20100%20140%22%20preserveAspectRatio%3D%22none%22%3E%3Crect%20width%3D%22100%22%20height%3D%22140%22%20fill%3D%22%23eee%22%3E%3C%2Frect%3E%3Ctext%20text-anchor%3D%22middle%22%20x%3D%2250%22%20y%3D%2270%22%20style%3D%22fill%3A%23aaa%3Bfont-weight%3Abold%3Bfont-size%3A12px%3Bfont-family%3AArial%2C%20Helvetica%2C%20sans-serif%3Bdominant-baseline%3Acentral%22%3E${archetype.name}%3C%2Ftext%3E%3C%2Fsvg%3E';
+                                }
+                              }}
+                            />
+                          ) : (
+                            <div className="w-full h-full flex items-center justify-center bg-gray-200 dark:bg-gray-700">
+                              <p className="text-sm text-gray-500 dark:text-gray-400">No image</p>
+                            </div>
+                          )}
+                        </div>
+                      ) : (
+                        <div className="w-1/2 aspect-[2.5/3.5] rounded-lg bg-gray-200 dark:bg-gray-700 flex items-center justify-center">
+                          <p className="text-center text-gray-500 dark:text-gray-400">No card</p>
+                        </div>
+                      )}
                       
                       <div className="flex flex-col gap-2">
                         <Link 
@@ -707,4 +692,24 @@ export default function Home() {
       `}</style>
     </div>
   );
+}
+
+// Helper function to get color classes for cards
+function getCardColorClasses(colors: string[]) {
+  if (!colors || colors.length === 0) return 'bg-gray-300 dark:bg-gray-700';
+  
+  const colorClasses: Record<string, string> = {
+    W: 'bg-mtg-white text-black',
+    U: 'bg-mtg-blue text-white',
+    B: 'bg-mtg-black text-white',
+    R: 'bg-mtg-red text-white',
+    G: 'bg-mtg-green text-white',
+  };
+  
+  if (colors.length === 1) {
+    return colorClasses[colors[0]];
+  } else {
+    // For multicolor cards
+    return 'bg-mtg-gold text-black';
+  }
 }

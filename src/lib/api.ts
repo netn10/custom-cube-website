@@ -377,25 +377,4 @@ export async function getGeminiResponse(prompt: string): Promise<any> {
   });
 }
 
-// Get totally random cards from the cube
-export async function getRandomCards(count: number = 5): Promise<Card[]> {
-  try {
-    const response = await fetch(`${API_BASE_URL}/random-pack?size=${count}`, {
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      cache: 'no-store' // Prevent caching to ensure fresh cards each time
-    });
-    
-    if (!response.ok) {
-      const errorData = await response.json().catch(() => ({ error: 'Unknown error' }));
-      throw new Error(errorData.error || `API error: ${response.status}`);
-    }
-    
-    const data = await response.json();
-    return data.pack;
-  } catch (error) {
-    console.error('Error fetching random cards:', error);
-    throw error;
-  }
-}
+

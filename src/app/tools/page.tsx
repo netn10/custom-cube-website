@@ -929,16 +929,16 @@ function ArchetypeFinder() {
   const [searchResults, setSearchResults] = useState<any[] | null>(null);
   
   const archetypes = [
-    { id: 'WU Storm', name: 'Storm', colors: ['W', 'U'] },
-    { id: 'UB Cipher', name: 'Broken Cipher', colors: ['U', 'B'] },
-    { id: 'BR Token Collection', name: 'Token Collection', colors: ['B', 'R'] },
-    { id: 'RG Control', name: 'Control', colors: ['R', 'G'] },
-    { id: 'GW Vehicles', name: 'Vehicles', colors: ['G', 'W'] },
-    { id: 'WB ETB/Death Value', name: 'Blink/ETB/Value', colors: ['W', 'B'] },
-    { id: 'BG Artifacts', name: 'Artifacts', colors: ['B', 'G'] },
-    { id: 'UR Enchantments', name: 'Enchantments', colors: ['U', 'R'] },
-    { id: 'RW Self-Mill', name: 'Self-mill', colors: ['R', 'W'] },
-    { id: 'GU Prowess', name: 'Prowess', colors: ['G', 'U'] },
+    { id: 'wu-storm', name: 'Storm', colors: ['W', 'U'] },
+    { id: 'ub-broken-cipher', name: 'Broken Cipher', colors: ['U', 'B'] },
+    { id: 'br-token-collection', name: 'Token Collection', colors: ['B', 'R'] },
+    { id: 'rg-control', name: 'Control', colors: ['R', 'G'] },
+    { id: 'gw-vehicles', name: 'Vehicles', colors: ['G', 'W'] },
+    { id: 'wb-blink', name: 'Blink/ETB/Value', colors: ['W', 'B'] },
+    { id: 'bg-artifacts', name: 'Artifacts', colors: ['B', 'G'] },
+    { id: 'ur-enchantments', name: 'Enchantments', colors: ['U', 'R'] },
+    { id: 'rw-self-mill', name: 'Self-mill', colors: ['R', 'W'] },
+    { id: 'gu-prowess', name: 'Prowess', colors: ['G', 'U'] },
   ];
   
   const keywords = {
