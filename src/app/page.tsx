@@ -159,7 +159,7 @@ export default function Home() {
   };
 
   return (
-    <div className="space-y-12">
+    <div className="space-y-12" data-testid="home-container">
       {/* Booster Pack Animation */}
       {!loading && showBoosterAnimation && archetypeCards.length > 0 && (
         <BoosterPackAnimation 
