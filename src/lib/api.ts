@@ -334,7 +334,7 @@ export async function uploadSuggestionImage(imageFile: File): Promise<any> {
 
 // ChatGPT Cards API
 export async function getChatGPTCards(): Promise<Card[]> {
-  return fetchFromAPI<Card[]>(`/chatgpt/cards`);
+  return fetchFromAPI<Card[]>(`/chatgpt_cards`);
 }
 
 // Cube Statistics API

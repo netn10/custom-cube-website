@@ -3,13 +3,14 @@
 import { useParams, useRouter } from 'next/navigation';
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { getCardById, API_BASE_URL } from '@/lib/api';
+import { getCardById, getCards, API_BASE_URL } from '@/lib/api';
 import { Card } from '@/types/types';
 
 export default function CardDetailPage() {
   const params = useParams();
   const router = useRouter();
   const [card, setCard] = useState<Card | null>(null);
+  const [relatedCard, setRelatedCard] = useState<Card | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
@@ -22,6 +23,19 @@ export default function CardDetailPage() {
           const data = await getCardById(params.id as string);
           console.log('Card data received:', data);
           setCard(data);
+          
+          // If the card has a related face, fetch that card
+          if (data.relatedFace) {
+            try {
+              // Search for the card by name
+              const relatedCardResults = await getCards({ search: data.relatedFace });
+              if (relatedCardResults.cards.length > 0) {
+                setRelatedCard(relatedCardResults.cards[0]);
+              }
+            } catch (err) {
+              console.error('Error fetching related card:', err);
+            }
+          }
         } catch (err) {
           console.error('Error fetching card:', err);
           setError('Failed to load card details. Please try again later.');
@@ -195,10 +209,10 @@ export default function CardDetailPage() {
               <div className="mb-4">
                 <p className="text-sm font-semibold dark:text-white">Related Face: 
                   <Link 
-                    href={`/card/${encodeURIComponent(card.relatedFace)}`}
+                    href={relatedCard ? `/card/${relatedCard.id}` : `/cube-list?search=${encodeURIComponent(card.relatedFace)}`}
                     className="ml-2 text-blue-500 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300"
                   >
-                    View Related Card
+                    {card.relatedFace}
                   </Link>
                 </p>
               </div>

@@ -40,6 +40,8 @@ class MongoJSONEncoder(json.JSONEncoder):
 # Set the custom JSON encoder for Flask
 app.json_encoder = MongoJSONEncoder
 
+
+
 @app.route('/', methods=['GET'])
 def index():
     """Root route that provides API information"""
@@ -259,43 +261,25 @@ def get_archetype_cards(archetype_id):
 
 @app.route('/api/archetypes/random-cards', methods=['GET'])
 def get_random_archetype_cards():
-    """Get one random card from each archetype"""
+    """Get one random card from each archetype in the database"""
     try:
-        # List of specific archetype names to find
-        archetype_names = [
-            "WU Storm",
-            "UB Cipher",
-            "BR Token Collection",
-            "RG Control",
-            "GW Vehicles",
-            "WB ETB/Death Value",
-            "BG Artifacts",
-            "GU Prowess",
-            "UR Enchantments",
-            "RW Self-Mill"
-        ]
-        
-        # Find archetypes by name
-        result = []
-        
-        # First get all archetypes
+        # Get all archetypes from the database
         all_archetypes = list(db.archetypes.find())
         print(f"Found {len(all_archetypes)} total archetypes in database")
         
-        # Process each specified archetype
-        for archetype_name in archetype_names:
-            # Find the archetype by name
-            archetype = next((a for a in all_archetypes if a.get('name') == archetype_name), None)
+        # Process all archetypes and find a random card for each
+        result = []
+        for archetype in all_archetypes:
+            # Make sure we have a valid ID
+            if '_id' in archetype:
+                archetype['id'] = str(archetype['_id'])
             
-            if not archetype:
-                print(f"Archetype not found: {archetype_name}")
-                continue
-                
-            # Use the string ID
             archetype_id = archetype.get('id')
+            archetype_name = archetype.get('name', 'Unknown')
             
-            # Find all cards for this archetype
-            cards = list(db.cards.find({"archetypes": archetype_id}))
+            # Find all cards for this archetype by checking the archetypes array
+            # We need to check for both the archetype ID and name since some cards might use either
+            cards = list(db.cards.find({"$or": [{"archetypes": archetype_id}, {"archetypes": archetype_name}]}))
             
             # Debug logging
             print(f"Archetype: {archetype_name} (ID: {archetype_id}), Found {len(cards)} cards")
@@ -316,7 +300,7 @@ def get_random_archetype_cards():
                 # Add archetype info to the card
                 random_card['archetype'] = {
                     'id': archetype_id,
-                    'name': archetype.get('name', ''),
+                    'name': archetype_name,
                     'colors': archetype.get('colors', []),
                     'description': archetype.get('description', '')
                 }
@@ -341,7 +325,7 @@ def get_random_archetype_cards():
                         # Add archetype info
                         random_card['archetype'] = {
                             'id': archetype_id,
-                            'name': archetype.get('name', ''),
+                            'name': archetype_name,
                             'colors': archetype_colors,
                             'description': archetype.get('description', '')
                         }
@@ -383,14 +367,14 @@ def get_random_archetype_cards():
                 new_card['id'] = new_card_id
                 new_card['archetype'] = {
                     'id': archetype_id,
-                    'name': archetype.get('name', ''),
+                    'name': archetype_name,
                     'colors': archetype.get('colors', []),
                     'description': archetype.get('description', '')
                 }
                 result.append(new_card)
                 print(f"Created and added new card for archetype {archetype_name} with ID: {new_card_id}")
         
-        print(f"Returning {len(result)} cards for specific archetypes")
+        print(f"Returning {len(result)} random cards for {len(all_archetypes)} archetypes")
         return jsonify(result)
     except Exception as e:
         print(f"Error in get_random_archetype_cards: {str(e)}")
