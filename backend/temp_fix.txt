@@ -1,6 +1,0 @@
-﻿if body_search:
-    ability_query = {'abilities': {'': {'': body_search, '': 'i'}}}
-    if 'name' in query:
-        query = {'': [query, ability_query]}
-    else:
-        query.update(ability_query)

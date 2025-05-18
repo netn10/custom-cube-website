@@ -45,16 +45,33 @@ export default function CubeList() {
         limit: cardsPerPage
       };
       
-      if (searchTerm) {
-        params.search = searchTerm;
+      // Special handling for "colorless" search term
+      let searchTermToUse = searchTerm;
+      let colorFilters = [...filterColor];
+      
+      // Check if the search term contains "colorless" (case insensitive)
+      if (searchTerm && searchTerm.toLowerCase().includes('colorless')) {
+        // Add 'colorless' to color filters if not already there
+        if (!colorFilters.includes('colorless')) {
+          colorFilters.push('colorless');
+        }
+        
+        // Remove "colorless" from the search term
+        searchTermToUse = searchTerm.replace(/colorless/gi, '').trim();
+      }
+      
+      // Apply the possibly modified search term
+      if (searchTermToUse) {
+        params.search = searchTermToUse;
       }
       
       if (bodySearchTerm) {
         params.body_search = bodySearchTerm;
       }
       
-      if (filterColor.length > 0) {
-        params.colors = filterColor;
+      // Apply color filters (original + potentially added 'colorless')
+      if (colorFilters.length > 0) {
+        params.colors = colorFilters;
       }
       
       if (filterType) {
