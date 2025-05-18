@@ -413,33 +413,28 @@ export default function Home() {
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {filteredArchetypes.map((archetype) => {
-              // Get all cards that belong to this specific archetype
-              // Handle both ID matching and name matching (archetypes may be stored as full names like "GU Prowess")
+              // Based on the list provided, we know the exact archetype format matches
+              // Example: "GU Prowess" is the exact archetype string we need to match
+              
+              // Create the exact archetype string to match
+              const exactArchetypeName = `${archetype.colors.join('')} ${archetype.name}`;
+              
+              // Find cards that explicitly list this exact archetype
               const archetypeSpecificCards = archetypeCards.filter(card => {
                 if (!card || !card.archetypes || !Array.isArray(card.archetypes)) return false;
                 
                 return card.archetypes.some((cardArchetype: string) => {
-                  // Try direct ID match
-                  if (cardArchetype === archetype.id) return true;
-                  
-                  // Try name match (e.g., "GU Prowess" matches archetype with name "Prowess" and colors ["G", "U"])
-                  if (typeof cardArchetype === 'string') {
-                    // Check if archetype name is contained in the card's archetype string
-                    const archetypeNameInCard = cardArchetype.includes(archetype.name);
-                    
-                    // Check if all of the archetype's colors are mentioned in the card's archetype string
-                    const archetypeColorsInCard = archetype.colors.every(color => 
-                      cardArchetype.includes(color)
-                    );
-                    
-                    return archetypeNameInCard || archetypeColorsInCard;
-                  }
-                  
-                  return false;
+                  return cardArchetype === exactArchetypeName;
                 });
               });
               
-              console.log(`Archetype: ${archetype.name}, Cards found: ${archetypeSpecificCards.length}`);
+              // Log detailed info for debugging
+              console.log(`Archetype: ${exactArchetypeName}, Cards found: ${archetypeSpecificCards.length}`);
+              if (archetypeSpecificCards.length > 0) {
+                console.log('  - Sample cards:', archetypeSpecificCards.slice(0, 3).map(c => `${c.name}`));
+              } else {
+                console.log('  - No matching cards found');
+              }
               
               // If we have cards for this archetype, pick one randomly
               let randomCard = null;
