@@ -413,10 +413,25 @@ export default function Home() {
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {filteredArchetypes.map((archetype) => {
-              // Find the card for this archetype by matching with the card's archetypes array
-              let randomCard = archetypeCards.find(card => 
-                card && card.archetypes && Array.isArray(card.archetypes) && card.archetypes.includes(archetype.id)
+              // We need to find a unique card for each archetype, preferring cards that specifically belong to this archetype
+              // Get cards that have this archetype listed in their archetypes array
+              const archetypeSpecificCards = archetypeCards.filter(card => 
+                card && card.archetypes && Array.isArray(card.archetypes) && 
+                card.archetypes.includes(archetype.id) && card.imageUrl
               );
+              
+              // If we have archetype-specific cards, use a random one from them
+              let randomCard = null;
+              if (archetypeSpecificCards.length > 0) {
+                // Get a random card from the specific cards for this archetype
+                randomCard = archetypeSpecificCards[Math.floor(Math.random() * archetypeSpecificCards.length)];
+              } else {
+                // Otherwise, try to find a card by matching colors
+                randomCard = archetypeCards.find(card => 
+                  card && card.archetypes && Array.isArray(card.archetypes) && 
+                  card.archetypes.includes(archetype.id) && card.imageUrl
+                );
+              }
               
               // If no card or no image found, use appropriate fallback
               if (!randomCard || !randomCard.imageUrl) {
