@@ -40,6 +40,43 @@ class MongoJSONEncoder(json.JSONEncoder):
 # Set the custom JSON encoder for Flask
 app.json_encoder = MongoJSONEncoder
 
+# Function to get default image URL based on card colors
+def get_default_image_for_colors(colors):
+    """Return a default image URL based on card colors"""
+    if not colors:
+        return "https://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Wastes"  # Colorless default
+    
+    # For single colors
+    if len(colors) == 1:
+        color_map = {
+            'W': "https://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Plains",
+            'U': "https://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Island",
+            'B': "https://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Swamp",
+            'R': "https://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Mountain",
+            'G': "https://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Forest"
+        }
+        return color_map.get(colors[0], "https://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Wastes")
+    
+    # For color pairs
+    if len(colors) == 2:
+        color_pair = ''.join(sorted(colors))
+        color_pair_map = {
+            'WU': "https://gatherer.wizards.com/Handlers/Image.ashx?type=card&multiverseid=430504",  # Azorius
+            'UB': "https://gatherer.wizards.com/Handlers/Image.ashx?type=card&multiverseid=430506",  # Dimir
+            'BR': "https://gatherer.wizards.com/Handlers/Image.ashx?type=card&multiverseid=430507",  # Rakdos
+            'RG': "https://gatherer.wizards.com/Handlers/Image.ashx?type=card&multiverseid=430502",  # Gruul
+            'GW': "https://gatherer.wizards.com/Handlers/Image.ashx?type=card&multiverseid=430500",  # Selesnya
+            'WB': "https://gatherer.wizards.com/Handlers/Image.ashx?type=card&multiverseid=430501",  # Orzhov
+            'UR': "https://gatherer.wizards.com/Handlers/Image.ashx?type=card&multiverseid=430503",  # Izzet
+            'BG': "https://gatherer.wizards.com/Handlers/Image.ashx?type=card&multiverseid=430505",  # Golgari
+            'RW': "https://gatherer.wizards.com/Handlers/Image.ashx?type=card&multiverseid=430508",  # Boros
+            'GU': "https://gatherer.wizards.com/Handlers/Image.ashx?type=card&multiverseid=430509"   # Simic
+        }
+        return color_pair_map.get(color_pair, "https://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Command Tower")
+    
+    # For 3+ colors
+    return "https://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Command Tower"
+
 
 
 @app.route('/', methods=['GET'])
@@ -1019,43 +1056,6 @@ def update_card(card_id):
     except Exception as e:
         print(f"Error updating card: {str(e)}")
         return jsonify({"error": str(e)}), 500
-
-# Function to get default image URL based on card colors
-def get_default_image_for_colors(colors):
-    """Return a default image URL based on card colors"""
-    if not colors:
-        return "https://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Wastes"  # Colorless default
-    
-    # For single colors
-    if len(colors) == 1:
-        color_map = {
-            'W': "https://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Plains",
-            'U': "https://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Island",
-            'B': "https://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Swamp",
-            'R': "https://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Mountain",
-            'G': "https://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Forest"
-        }
-        return color_map.get(colors[0], "https://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Wastes")
-    
-    # For color pairs
-    if len(colors) == 2:
-        color_pair = ''.join(sorted(colors))
-        color_pair_map = {
-            'WU': "https://gatherer.wizards.com/Handlers/Image.ashx?type=card&multiverseid=430504",  # Azorius
-            'UB': "https://gatherer.wizards.com/Handlers/Image.ashx?type=card&multiverseid=430506",  # Dimir
-            'BR': "https://gatherer.wizards.com/Handlers/Image.ashx?type=card&multiverseid=430507",  # Rakdos
-            'RG': "https://gatherer.wizards.com/Handlers/Image.ashx?type=card&multiverseid=430502",  # Gruul
-            'GW': "https://gatherer.wizards.com/Handlers/Image.ashx?type=card&multiverseid=430500",  # Selesnya
-            'WB': "https://gatherer.wizards.com/Handlers/Image.ashx?type=card&multiverseid=430501",  # Orzhov
-            'UR': "https://gatherer.wizards.com/Handlers/Image.ashx?type=card&multiverseid=430503",  # Izzet
-            'BG': "https://gatherer.wizards.com/Handlers/Image.ashx?type=card&multiverseid=430505",  # Golgari
-            'RW': "https://gatherer.wizards.com/Handlers/Image.ashx?type=card&multiverseid=430508",  # Boros
-            'GU': "https://gatherer.wizards.com/Handlers/Image.ashx?type=card&multiverseid=430509"   # Simic
-        }
-        return color_pair_map.get(color_pair, "https://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Command Tower")
-    
-    # For 3+ colors
-    return "https://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Command Tower"
 
 # Get cube statistics
 @app.route('/api/statistics', methods=['GET'])
