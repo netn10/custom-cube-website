@@ -228,11 +228,12 @@ def get_archetypes():
     
     # Convert ObjectId to string for each archetype
     for archetype in archetypes:
-        # Use the string ID field directly instead of the MongoDB ObjectID
+        # Convert MongoDB ObjectID to a string ID
         if '_id' in archetype:
-            # Remove the MongoDB ObjectID as we'll use the string ID
+            archetype['id'] = str(archetype['_id'])
             archetype.pop('_id')
     
+    print(f"Returning {len(archetypes)} archetypes")
     return jsonify(archetypes)
 
 @app.route('/api/archetypes/<archetype_id>', methods=['GET'])
