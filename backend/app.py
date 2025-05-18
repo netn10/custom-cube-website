@@ -367,40 +367,6 @@ def get_random_archetype_cards():
                         result.append(random_card)
                         print(f"Added color-matched card for archetype {archetype_name}: {random_card['name']}")
                         continue
-                
-                # If we still don't have a card, create a database entry for this archetype
-                print(f"No suitable cards found for archetype: {archetype_name}, creating entry in database")
-                
-                # We won't use placeholders anymore, but instead create a real card in the database
-                new_card = {
-                    'name': f"{archetype_name} Representative",
-                    'type': 'Creature',
-                    'manaCost': '{1}' + ''.join(archetype.get('colors', [])),
-                    'rarity': 'Uncommon',
-                    'text': f"This card represents the {archetype_name} archetype. It demonstrates the core strategy of the archetype.",
-                    'colors': archetype.get('colors', []),
-                    'power': '2',
-                    'toughness': '2',
-                    'archetypes': [archetype_id],
-                    'custom': True,
-                    'imageUrl': get_default_image_for_colors(archetype.get('colors', [])),  # Use appropriate default image based on colors
-                    'created_at': datetime.utcnow().isoformat()
-                }
-                
-                # Insert the new card into the database
-                insert_result = db.cards.insert_one(new_card)
-                new_card_id = str(insert_result.inserted_id)
-                
-                # Add the new card to our result
-                new_card['id'] = new_card_id
-                new_card['archetype'] = {
-                    'id': archetype_id,
-                    'name': archetype_name,
-                    'colors': archetype.get('colors', []),
-                    'description': archetype.get('description', '')
-                }
-                result.append(new_card)
-                print(f"Created and added new card for archetype {archetype_name} with ID: {new_card_id}")
         
         print(f"Returning {len(result)} random cards for {len(all_archetypes)} archetypes")
         return jsonify(result)

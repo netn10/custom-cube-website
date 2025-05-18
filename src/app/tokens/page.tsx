@@ -72,19 +72,24 @@ export default function TokensPage() {
 
   // Special filter for colorless or multicolor
   const toggleSpecialFilter = (filterType: string) => {
-    if (filterType === 'colorless') {
-      // For colorless, we set a special filter value
-      if (filterColor.includes('colorless')) {
-        setFilterColor(filterColor.filter(c => c !== 'colorless'));
+    // Always use lowercase for comparison
+    const lowercaseFilterType = filterType.toLowerCase();
+    
+    if (lowercaseFilterType === 'colorless') {
+      // For colorless, we set a special filter value (case-insensitive check)
+      const hasColorless = filterColor.some(c => c.toLowerCase() === 'colorless');
+      if (hasColorless) {
+        setFilterColor(filterColor.filter(c => c.toLowerCase() !== 'colorless'));
       } else {
-        setFilterColor([...filterColor, 'colorless']);
+        setFilterColor([...filterColor, 'colorless']); // Always use lowercase for consistency
       }
-    } else if (filterType === 'multicolor') {
-      // For multicolor, we set a special filter value
-      if (filterColor.includes('multicolor')) {
-        setFilterColor(filterColor.filter(c => c !== 'multicolor'));
+    } else if (lowercaseFilterType === 'multicolor') {
+      // For multicolor, we set a special filter value (case-insensitive check)
+      const hasMulticolor = filterColor.some(c => c.toLowerCase() === 'multicolor');
+      if (hasMulticolor) {
+        setFilterColor(filterColor.filter(c => c.toLowerCase() !== 'multicolor'));
       } else {
-        setFilterColor([...filterColor, 'multicolor']);
+        setFilterColor([...filterColor, 'multicolor']); // Always use lowercase for consistency
       }
     }
   };
@@ -287,7 +292,7 @@ export default function TokensPage() {
               {/* Colorless option */}
               <button
                 className={`px-2 py-1 bg-gray-300 dark:bg-gray-600 text-gray-800 dark:text-white rounded-md text-xs
-                  ${filterColor.includes('colorless') ? 'ring-2 ring-yellow-400' : 'opacity-70'}`}
+                  ${filterColor.some(c => c.toLowerCase() === 'colorless') ? 'ring-2 ring-yellow-400' : 'opacity-70'}`}
                 onClick={() => toggleSpecialFilter('colorless')}
               >
                 Colorless
@@ -296,7 +301,7 @@ export default function TokensPage() {
               {/* Multicolor option */}
               <button
                 className={`px-2 py-1 bg-gradient-to-r from-mtg-red via-mtg-green to-mtg-blue text-white rounded-md text-xs
-                  ${filterColor.includes('multicolor') ? 'ring-2 ring-yellow-400' : 'opacity-70'}`}
+                  ${filterColor.some(c => c.toLowerCase() === 'multicolor') ? 'ring-2 ring-yellow-400' : 'opacity-70'}`}
                 onClick={() => toggleSpecialFilter('multicolor')}
               >
                 Multicolor
