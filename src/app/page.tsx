@@ -413,48 +413,55 @@ export default function Home() {
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {filteredArchetypes.map((archetype) => {
-              // Find the card for this archetype by matching with the card's archetypes array
-              let randomCard = archetypeCards.find(card => 
+              // Get all cards that belong to this specific archetype
+              const archetypeSpecificCards = archetypeCards.filter(card => 
                 card && card.archetypes && Array.isArray(card.archetypes) && card.archetypes.includes(archetype.id)
               );
+              
+              // If we have cards for this archetype, pick one randomly
+              let randomCard = null;
+              if (archetypeSpecificCards.length > 0) {
+                const randomIndex = Math.floor(Math.random() * archetypeSpecificCards.length);
+                randomCard = archetypeSpecificCards[randomIndex];
+              }
               
               // If no card or no image found, use appropriate fallback
               if (!randomCard || !randomCard.imageUrl) {
                 // First, try to find any card with the same colors as the archetype
                 const archetypeColors = archetype.colors;
-                let fallbackCard = archetypeCards.find(card => 
+                const colorMatchCards = archetypeCards.filter(card => 
                   card && card.imageUrl && card.colors && 
                   archetypeColors.every(color => card.colors.includes(color)) &&
                   card.colors.length === archetypeColors.length
                 );
                 
-                // If that fails, just find any card with at least one matching color
-                if (!fallbackCard) {
-                  fallbackCard = archetypeCards.find(card => 
+                // If we have color-matched cards, pick one randomly
+                if (colorMatchCards.length > 0) {
+                  randomCard = colorMatchCards[Math.floor(Math.random() * colorMatchCards.length)];
+                } else {
+                  // If no exact color match, find cards with at least one matching color
+                  const partialColorMatchCards = archetypeCards.filter(card => 
                     card && card.imageUrl && card.colors && 
                     archetypeColors.some(color => card.colors.includes(color))
                   );
-                }
-                
-                // If all else fails, just use any card that has an image
-                if (!fallbackCard) {
-                  fallbackCard = archetypeCards.find(card => card && card.imageUrl);
-                }
-                
-                // Use the fallback or create a minimal placeholder
-                if (fallbackCard) {
-                  randomCard = {
-                    ...fallbackCard,
-                    archetypes: [archetype.id]
-                  };
-                } else {
-                  // Create a basic placeholder - we shouldn't get here if there are any cards with images
-                  randomCard = {
-                    ...randomCard || {},
-                    name: randomCard?.name || `${archetype.name} Card`,
-                    imageUrl: `/placeholder-${archetype.colors.join('')}.jpg`,
-                    archetypes: [archetype.id]
-                  };
+                  
+                  if (partialColorMatchCards.length > 0) {
+                    randomCard = partialColorMatchCards[Math.floor(Math.random() * partialColorMatchCards.length)];
+                  } else {
+                    // If all else fails, just use any card that has an image
+                    const cardsWithImages = archetypeCards.filter(card => card && card.imageUrl);
+                    
+                    if (cardsWithImages.length > 0) {
+                      randomCard = cardsWithImages[Math.floor(Math.random() * cardsWithImages.length)];
+                    } else {
+                      // Create a basic placeholder - we shouldn't get here if there are any cards with images
+                      randomCard = {
+                        name: `${archetype.name} Card`,
+                        imageUrl: `/placeholder-${archetype.colors.join('')}.jpg`,
+                        archetypes: [archetype.id]
+                      };
+                    }
+                  }
                 }
               }
               
