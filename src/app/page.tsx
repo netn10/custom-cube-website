@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { getArchetypes, getRandomCards, getCubeStatistics } from '@/lib/api';
 import { API_BASE_URL } from '@/lib/api';
@@ -158,8 +158,10 @@ export default function Home() {
     setShowBoosterAnimation(false);
   };
 
-  return (
-    <div className="space-y-12" data-testid="home-container">
+  // Modified return statement to help with deployment
+  return React.createElement(
+    'div',
+    { className: 'space-y-12', 'data-testid': 'home-container' },
       {/* Booster Pack Animation */}
       {!loading && showBoosterAnimation && archetypeCards.length > 0 && (
         <BoosterPackAnimation 
@@ -542,6 +544,6 @@ export default function Home() {
           50% { transform: translateY(-8px) rotate(5deg); }
         }
       `}</style>
-    </div>
+    )
   );
 }
