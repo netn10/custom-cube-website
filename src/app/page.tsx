@@ -250,7 +250,7 @@ export default function Home() {
               // Example: "GU Prowess" is the exact archetype string we need to match
               
               // Create the exact archetype string to match
-              const exactArchetypeName = `${archetype.colors.join('')} ${archetype.name}`;
+              const exactArchetypeName = `${archetype.name}`;
               
               // Find cards that explicitly list this exact archetype
               const archetypeSpecificCards = archetypeCards.filter(card => {

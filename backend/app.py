@@ -339,34 +339,6 @@ def get_random_archetype_cards():
                 
                 result.append(random_card)
                 print(f"Added random card for archetype {archetype_name}: {random_card['name']}")
-            else:
-                # No cards found for this archetype, look for a card with matching colors
-                archetype_colors = archetype.get('colors', [])
-                color_match_query = {"colors": {"$all": archetype_colors}}
-                
-                if archetype_colors:
-                    color_match_cards = list(db.cards.find(color_match_query).limit(10))
-                    if color_match_cards:
-                        random_card = random.choice(color_match_cards)
-                        random_card['id'] = str(random_card.pop('_id'))
-                        
-                        # Add archetype info
-                        random_card['archetype'] = {
-                            'id': archetype_id,
-                            'name': archetype_name,
-                            'colors': archetype_colors,
-                            'description': archetype.get('description', '')
-                        }
-                        
-                        # Add this archetype to the card's archetypes
-                        if 'archetypes' not in random_card or not random_card['archetypes']:
-                            random_card['archetypes'] = [archetype_id]
-                        elif archetype_id not in random_card['archetypes']:
-                            random_card['archetypes'].append(archetype_id)
-                            
-                        result.append(random_card)
-                        print(f"Added color-matched card for archetype {archetype_name}: {random_card['name']}")
-                        continue
         
         print(f"Returning {len(result)} random cards for {len(all_archetypes)} archetypes")
         return jsonify(result)
