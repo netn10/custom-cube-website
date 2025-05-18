@@ -51,12 +51,6 @@ export default function Home() {
           });
           setArchetypeCards(processedCards);
         } else {
-        
-        // Fetch archetypes for the archetype section
-        const archetypesData = await getArchetypes();
-        if (Array.isArray(archetypesData)) {
-          setArchetypes(archetypesData);
-        }
           // Provide fallback cards if the API call fails
           setArchetypeCards([
             {
@@ -72,6 +66,21 @@ export default function Home() {
               imageUrl: 'https://i.imgur.com/fVuTogB.png'
             }
           ]);
+        }
+        
+        try {
+          // Fetch archetypes for the archetype section - in a separate try/catch for better error handling
+          console.log('Fetching archetypes...');
+          const archetypesData = await getArchetypes();
+          console.log('Archetypes data:', archetypesData);
+          if (Array.isArray(archetypesData)) {
+            setArchetypes(archetypesData);
+          } else {
+            console.error('Archetypes data is not an array:', archetypesData);
+          }
+        } catch (archetypeError) {
+          console.error('Error fetching archetypes:', archetypeError);
+        }
         }
         
         setLoading(false);
