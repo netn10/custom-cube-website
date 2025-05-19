@@ -15,11 +15,12 @@ export default function TokensPage() {
   const [totalTokens, setTotalTokens] = useState(0);
   const [tokensPerPage, setTokensPerPage] = useState(20);
   const [visiblePageNumbers, setVisiblePageNumbers] = useState<number[]>([]);
+  const [sortFields, setSortFields] = useState<Array<{field: string, direction: 'asc' | 'desc'}>>([{field: 'name', direction: 'asc'}]);
 
   useEffect(() => {
     // Fetch tokens on initial load
     fetchTokens();
-  }, [currentPage, tokensPerPage]);
+  }, [currentPage, tokensPerPage, JSON.stringify(sortFields)]);
 
   // Fetch tokens with current filters
   const fetchTokens = async () => {
@@ -33,9 +34,13 @@ export default function TokensPage() {
         colors?: string[];
         page?: number;
         limit?: number;
+        sort_by?: string;
+        sort_dir?: string;
       } = {
         page: currentPage,
-        limit: tokensPerPage
+        limit: tokensPerPage,
+        sort_by: sortFields.map(sort => sort.field).join(','),
+        sort_dir: sortFields.map(sort => sort.direction).join(',')
       };
       
       if (searchTerm) {
@@ -264,6 +269,94 @@ export default function TokensPage() {
           
           <div>
             <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+              Sorting
+            </label>
+            {sortFields.map((sortItem, index) => (
+              <div key={index} className="flex flex-col md:flex-row gap-2 mb-2 p-2 border border-gray-200 dark:border-gray-700 rounded">
+                <div className="flex-1">
+                  <select
+                    className="w-full p-2 border border-gray-300 dark:border-gray-600 rounded-md dark:bg-gray-700 dark:text-white"
+                    value={sortItem.field}
+                    onChange={(e) => {
+                      const newSortFields = [...sortFields];
+                      newSortFields[index].field = e.target.value;
+                      setSortFields(newSortFields);
+                    }}
+                  >
+                    <option value="name">Name</option>
+                    <option value="type">Type</option>
+                    <option value="power">Power</option>
+                    <option value="toughness">Toughness</option>
+                    <option value="colors">Color</option>
+                  </select>
+                </div>
+                
+                <div className="flex gap-4">
+                  <label className="inline-flex items-center">
+                    <input
+                      type="radio"
+                      className="form-radio h-4 w-4 text-blue-600"
+                      checked={sortItem.direction === 'asc'}
+                      onChange={() => {
+                        const newSortFields = [...sortFields];
+                        newSortFields[index].direction = 'asc';
+                        setSortFields(newSortFields);
+                      }}
+                    />
+                    <span className="ml-2 text-gray-700 dark:text-gray-300">Asc</span>
+                  </label>
+                  <label className="inline-flex items-center">
+                    <input
+                      type="radio"
+                      className="form-radio h-4 w-4 text-blue-600"
+                      checked={sortItem.direction === 'desc'}
+                      onChange={() => {
+                        const newSortFields = [...sortFields];
+                        newSortFields[index].direction = 'desc';
+                        setSortFields(newSortFields);
+                      }}
+                    />
+                    <span className="ml-2 text-gray-700 dark:text-gray-300">Desc</span>
+                  </label>
+                </div>
+                
+                <div className="flex gap-2">
+                  {index > 0 && (
+                    <button
+                      className="p-1 bg-red-500 text-white rounded hover:bg-red-600"
+                      onClick={() => {
+                        const newSortFields = [...sortFields];
+                        newSortFields.splice(index, 1);
+                        setSortFields(newSortFields);
+                      }}
+                      aria-label="Remove sort field"
+                    >
+                      <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                      </svg>
+                    </button>
+                  )}
+                  
+                  {index === sortFields.length - 1 && (
+                    <button
+                      className="p-1 bg-blue-500 text-white rounded hover:bg-blue-600"
+                      onClick={() => {
+                        setSortFields([...sortFields, {field: 'name', direction: 'asc'}]);
+                      }}
+                      aria-label="Add sort field"
+                    >
+                      <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
+                      </svg>
+                    </button>
+                  )}
+                </div>
+              </div>
+            ))}
+          </div>
+          
+          <div>
+            <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
               Colors
             </label>
             <div className="flex flex-wrap gap-2">
@@ -337,8 +430,21 @@ export default function TokensPage() {
         </div>
       ) : (
         <>
-          <div className="flex justify-center items-center mb-4">
+          <div className="flex flex-col items-center mb-4 space-y-2">
             <p className="dark:text-gray-300">Results: {totalTokens} tokens found</p>
+            <div className="text-sm text-gray-600 dark:text-gray-400 text-center">
+              <p>
+                <strong>Filters:</strong> {searchTerm ? `Name: "${searchTerm}"` : ''} 
+                {bodySearchTerm ? `Text: "${bodySearchTerm}"` : ''} 
+                {filterColor.length > 0 ? `Colors: ${filterColor.join(', ')}` : ''}
+                {!searchTerm && !bodySearchTerm && filterColor.length === 0 ? 'None' : ''}
+              </p>
+              <p>
+                <strong>Sorting:</strong> {sortFields.map((sort, index) => 
+                  `${index + 1}. ${sort.field} (${sort.direction === 'asc' ? 'ascending' : 'descending'})`
+                ).join(', ')}
+              </p>
+            </div>
           </div>
           
           {/* Top pagination controls */}

@@ -91,6 +91,8 @@ export async function getCards(params?: {
   custom?: boolean | null;
   page?: number;
   limit?: number;
+  sort_by?: string;
+  sort_dir?: string;
 }): Promise<{cards: Card[], total: number}> {
   let queryParams = new URLSearchParams();
   
@@ -124,6 +126,14 @@ export async function getCards(params?: {
   
   if (params?.limit !== undefined) {
     queryParams.append('limit', params.limit.toString());
+  }
+  
+  if (params?.sort_by) {
+    queryParams.append('sort_by', params.sort_by);
+  }
+  
+  if (params?.sort_dir) {
+    queryParams.append('sort_dir', params.sort_dir);
   }
   
   const queryString = queryParams.toString() ? `?${queryParams.toString()}` : '';
@@ -205,6 +215,8 @@ export async function getTokens(params?: {
   colors?: string[];
   page?: number;
   limit?: number;
+  sort_by?: string;
+  sort_dir?: string;
 }): Promise<{tokens: Token[], total: number}> {
   let queryParams = new URLSearchParams();
   
@@ -226,6 +238,14 @@ export async function getTokens(params?: {
   
   if (params?.limit !== undefined) {
     queryParams.append('limit', params.limit.toString());
+  }
+  
+  if (params?.sort_by) {
+    queryParams.append('sort_by', params.sort_by);
+  }
+  
+  if (params?.sort_dir) {
+    queryParams.append('sort_dir', params.sort_dir);
   }
   
   const queryString = queryParams.toString() ? `?${queryParams.toString()}` : '';

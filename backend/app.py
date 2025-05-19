@@ -107,8 +107,10 @@ def get_cards():
     custom = request.args.get('custom', '')
     page = int(request.args.get('page', 1))
     limit = int(request.args.get('limit', 50))
+    sort_by = request.args.get('sort_by', 'name')
+    sort_dir = request.args.get('sort_dir', 'asc')
     
-    print(f"API Request - /api/cards with params: search='{search}', body_search='{body_search}', colors={colors}, type='{card_type}', set='{card_set}', custom='{custom}', page={page}, limit={limit}")
+    print(f"API Request - /api/cards with params: search='{search}', body_search='{body_search}', colors={colors}, type='{card_type}', set='{card_set}', custom='{custom}', page={page}, limit={limit}, sort_by='{sort_by}', sort_dir='{sort_dir}'")
     
     # Build query
     query = {}
@@ -175,9 +177,28 @@ def get_cards():
     # Calculate skip for pagination
     skip = (page - 1) * limit
     
-    # Execute query with pagination
+    # Execute query with pagination and sorting
     print("The query is:", query)
-    cards = list(db.cards.find(query).skip(skip).limit(limit))
+    
+    # Handle multiple sort fields
+    sort_fields = sort_by.split(',') if sort_by else ['name']
+    sort_directions = sort_dir.split(',') if sort_dir else ['asc']
+    
+    # Ensure we have a direction for each field
+    while len(sort_directions) < len(sort_fields):
+        sort_directions.append('asc')
+    
+    # Create sort specification
+    sort_spec = []
+    for i, field in enumerate(sort_fields):
+        # Get corresponding direction or default to asc
+        direction = 1 if i >= len(sort_directions) or sort_directions[i].lower() == 'asc' else -1
+        sort_spec.append((field, direction))
+    
+    print(f"Sorting with: {sort_spec}")
+    
+    # Execute query with sorting
+    cards = list(db.cards.find(query).sort(sort_spec).skip(skip).limit(limit))
     
     # Debug: Print the first few cards
     if cards:
@@ -355,8 +376,10 @@ def get_tokens():
     colors = request.args.get('colors', '').split(',') if request.args.get('colors') else []
     page = int(request.args.get('page', 1))
     limit = int(request.args.get('limit', 20))
+    sort_by = request.args.get('sort_by', 'name')
+    sort_dir = request.args.get('sort_dir', 'asc')
     
-    print(f"API Request - /api/tokens with params: search='{search}', body_search='{body_search}', colors={colors}, page={page}, limit={limit}")
+    print(f"API Request - /api/tokens with params: search='{search}', body_search='{body_search}', colors={colors}, page={page}, limit={limit}, sort_by='{sort_by}', sort_dir='{sort_dir}'")
     
     # Build query
     query = {}
@@ -409,9 +432,28 @@ def get_tokens():
     # Calculate skip for pagination
     skip = (page - 1) * limit
     
-    # Execute query with pagination
+    # Execute query with pagination and sorting
     print("The query is:", query)
-    tokens = list(db.tokens.find(query).skip(skip).limit(limit))
+    
+    # Handle multiple sort fields
+    sort_fields = sort_by.split(',') if sort_by else ['name']
+    sort_directions = sort_dir.split(',') if sort_dir else ['asc']
+    
+    # Ensure we have a direction for each field
+    while len(sort_directions) < len(sort_fields):
+        sort_directions.append('asc')
+    
+    # Create sort specification
+    sort_spec = []
+    for i, field in enumerate(sort_fields):
+        # Get corresponding direction or default to asc
+        direction = 1 if i >= len(sort_directions) or sort_directions[i].lower() == 'asc' else -1
+        sort_spec.append((field, direction))
+    
+    print(f"Sorting with: {sort_spec}")
+    
+    # Execute query with sorting
+    tokens = list(db.tokens.find(query).sort(sort_spec).skip(skip).limit(limit))
     
     # Convert ObjectId to string for each token
     for token in tokens:
