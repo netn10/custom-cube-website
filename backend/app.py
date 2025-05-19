@@ -102,6 +102,7 @@ def get_cards():
     search = request.args.get('search', '')
     body_search = request.args.get('body_search', '')
     colors = request.args.get('colors', '').split(',') if request.args.get('colors') else []
+    color_match = request.args.get('color_match', 'includes')  # 'exact', 'includes', or 'at-most'
     card_type = request.args.get('type', '')
     card_set = request.args.get('set', '')
     custom = request.args.get('custom', '')
@@ -110,7 +111,7 @@ def get_cards():
     sort_by = request.args.get('sort_by', 'name')
     sort_dir = request.args.get('sort_dir', 'asc')
     
-    print(f"API Request - /api/cards with params: search='{search}', body_search='{body_search}', colors={colors}, type='{card_type}', set='{card_set}', custom='{custom}', page={page}, limit={limit}, sort_by='{sort_by}', sort_dir='{sort_dir}'")
+    print(f"API Request - /api/cards with params: search='{search}', body_search='{body_search}', colors={colors}, color_match='{color_match}', type='{card_type}', set='{card_set}', custom='{custom}', page={page}, limit={limit}, sort_by='{sort_by}', sort_dir='{sort_dir}')")
     
     # Build query
     query = {}
@@ -151,7 +152,15 @@ def get_cards():
         
         # Add regular color filters if any remain
         if colors:
-            color_query.append({'colors': {'$in': colors}})
+            if color_match == 'exact':
+                color_query.append({'colors': {'$all': colors, '$size': len(colors)}})
+            elif color_match == 'includes':
+                color_query.append({'colors': {'$all': colors}})
+            elif color_match == 'at-most':
+                color_query.append({'colors': {'$not': {'$elemMatch': {'$nin': colors}}}})
+            else:
+                # Default to includes behavior
+                color_query.append({'colors': {'$all': colors}})
         
         # Combine all color queries with OR
         if color_query:
@@ -374,12 +383,13 @@ def get_tokens():
     search = request.args.get('search', '')
     body_search = request.args.get('body_search', '')
     colors = request.args.get('colors', '').split(',') if request.args.get('colors') else []
+    color_match = request.args.get('color_match', 'includes')  # 'exact', 'includes', or 'at-most'
     page = int(request.args.get('page', 1))
     limit = int(request.args.get('limit', 20))
     sort_by = request.args.get('sort_by', 'name')
     sort_dir = request.args.get('sort_dir', 'asc')
     
-    print(f"API Request - /api/tokens with params: search='{search}', body_search='{body_search}', colors={colors}, page={page}, limit={limit}, sort_by='{sort_by}', sort_dir='{sort_dir}'")
+    print(f"API Request - /api/tokens with params: search='{search}', body_search='{body_search}', colors={colors}, color_match='{color_match}', page={page}, limit={limit}, sort_by='{sort_by}', sort_dir='{sort_dir}')")
     
     # Build query
     query = {}
@@ -420,7 +430,15 @@ def get_tokens():
         
         # Add regular color filters if any remain
         if colors:
-            color_query.append({'colors': {'$in': colors}})
+            if color_match == 'exact':
+                color_query.append({'colors': {'$all': colors, '$size': len(colors)}})
+            elif color_match == 'includes':
+                color_query.append({'colors': {'$all': colors}})
+            elif color_match == 'at-most':
+                color_query.append({'colors': {'$not': {'$elemMatch': {'$nin': colors}}}})
+            else:
+                # Default to includes behavior
+                color_query.append({'colors': {'$all': colors}})
         
         # Combine all color queries with OR
         if color_query:

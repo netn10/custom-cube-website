@@ -12,6 +12,7 @@ export default function CubeList() {
   const [searchTerm, setSearchTerm] = useState('');
   const [bodySearchTerm, setBodySearchTerm] = useState('');
   const [filterColor, setFilterColor] = useState<string[]>([]);
+  const [colorMatchType, setColorMatchType] = useState<'exact' | 'includes' | 'at-most'>('includes');
   const [filterType, setFilterType] = useState('');
   const [filterSet, setFilterSet] = useState('');
   const [filterCustom, setFilterCustom] = useState<boolean | null>(null);
@@ -77,6 +78,7 @@ export default function CubeList() {
       // Apply color filters (original + potentially added 'colorless')
       if (colorFilters.length > 0) {
         params.colors = colorFilters;
+        params.color_match = colorMatchType;
       }
       
       if (filterType) {
@@ -180,7 +182,27 @@ export default function CubeList() {
         if (card.colors.length <= 1) {
           return false;
         }
+      } else if (colorMatchType === 'exact') {
+        // For exact match, the card must have exactly the selected colors (no more, no less)
+        // First check if card has all the selected colors
+        const hasAllSelectedColors = filterColor.every(color => card.colors.includes(color));
+        // Then check if card has no other colors
+        const hasNoOtherColors = card.colors.every(color => filterColor.includes(color));
+        
+        if (!hasAllSelectedColors || !hasNoOtherColors) {
+          return false;
+        }
+      } else if (colorMatchType === 'at-most') {
+        // For at-most match type, the card must have only colors from the selected colors
+        // (but doesn't need to have all of them)
+        // Check if card has any color that's not in the selected colors
+        const hasUnselectedColor = card.colors.some(color => !filterColor.includes(color));
+        
+        if (hasUnselectedColor) {
+          return false;
+        }
       } else if (!filterColor.some(color => card.colors.includes(color))) {
+        // For 'includes' match type, card must have at least one of the selected colors
         return false;
       }
     }
@@ -499,7 +521,37 @@ export default function CubeList() {
             <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
               Colors
             </label>
-            <div className="flex flex-wrap gap-2">
+            <div className="mb-2">
+              <div className="flex flex-wrap gap-2 mb-2">
+                <label className="inline-flex items-center">
+                  <input
+                    type="radio"
+                    className="form-radio h-4 w-4 text-blue-600"
+                    checked={colorMatchType === 'exact'}
+                    onChange={() => setColorMatchType('exact')}
+                  />
+                  <span className="ml-2 text-gray-700 dark:text-gray-300">Exactly these colors</span>
+                </label>
+                <label className="inline-flex items-center">
+                  <input
+                    type="radio"
+                    className="form-radio h-4 w-4 text-blue-600"
+                    checked={colorMatchType === 'includes'}
+                    onChange={() => setColorMatchType('includes')}
+                  />
+                  <span className="ml-2 text-gray-700 dark:text-gray-300">Including these colors</span>
+                </label>
+                <label className="inline-flex items-center">
+                  <input
+                    type="radio"
+                    className="form-radio h-4 w-4 text-blue-600"
+                    checked={colorMatchType === 'at-most'}
+                    onChange={() => setColorMatchType('at-most')}
+                  />
+                  <span className="ml-2 text-gray-700 dark:text-gray-300">At most these colors</span>
+                </label>
+              </div>
+              <div className="flex flex-wrap gap-2">
               {['W', 'U', 'B', 'R', 'G'].map(color => {
                 const colorClasses: Record<string, string> = {
                   W: 'bg-mtg-white text-black',
@@ -546,6 +598,7 @@ export default function CubeList() {
               >
                 Clear
               </button>
+              </div>
             </div>
           </div>
           
@@ -577,7 +630,7 @@ export default function CubeList() {
                 {filterType ? `Type: ${filterType}` : ''} 
                 {filterSet ? `Set: ${filterSet}` : ''} 
                 {filterCustom !== null ? `Custom: ${filterCustom ? 'Yes' : 'No'}` : ''} 
-                {filterColor.length > 0 ? `Colors: ${filterColor.join(', ')}` : ''}
+                {filterColor.length > 0 ? `Colors: ${filterColor.join(', ')} (${colorMatchType === 'exact' ? 'Exactly' : colorMatchType === 'includes' ? 'Including' : 'At most'})` : ''}
                 {!searchTerm && !bodySearchTerm && !filterType && !filterSet && filterCustom === null && filterColor.length === 0 ? 'None' : ''}
               </p>
               <p>

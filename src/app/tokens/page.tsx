@@ -11,6 +11,7 @@ export default function TokensPage() {
   const [searchTerm, setSearchTerm] = useState('');
   const [bodySearchTerm, setBodySearchTerm] = useState('');
   const [filterColor, setFilterColor] = useState<string[]>([]);
+  const [colorMatchType, setColorMatchType] = useState<'exact' | 'includes' | 'at-most'>('includes');
   const [currentPage, setCurrentPage] = useState(1);
   const [totalTokens, setTotalTokens] = useState(0);
   const [tokensPerPage, setTokensPerPage] = useState(20);
@@ -53,6 +54,7 @@ export default function TokensPage() {
       
       if (filterColor.length > 0) {
         params.colors = filterColor;
+        params.color_match = colorMatchType;
       }
       
       console.log('Fetching tokens with params:', params);
@@ -359,7 +361,37 @@ export default function TokensPage() {
             <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
               Colors
             </label>
-            <div className="flex flex-wrap gap-2">
+            <div className="mb-2">
+              <div className="flex flex-wrap gap-2 mb-2">
+                <label className="inline-flex items-center">
+                  <input
+                    type="radio"
+                    className="form-radio h-4 w-4 text-blue-600"
+                    checked={colorMatchType === 'exact'}
+                    onChange={() => setColorMatchType('exact')}
+                  />
+                  <span className="ml-2 text-gray-700 dark:text-gray-300">Exactly these colors</span>
+                </label>
+                <label className="inline-flex items-center">
+                  <input
+                    type="radio"
+                    className="form-radio h-4 w-4 text-blue-600"
+                    checked={colorMatchType === 'includes'}
+                    onChange={() => setColorMatchType('includes')}
+                  />
+                  <span className="ml-2 text-gray-700 dark:text-gray-300">Including these colors</span>
+                </label>
+                <label className="inline-flex items-center">
+                  <input
+                    type="radio"
+                    className="form-radio h-4 w-4 text-blue-600"
+                    checked={colorMatchType === 'at-most'}
+                    onChange={() => setColorMatchType('at-most')}
+                  />
+                  <span className="ml-2 text-gray-700 dark:text-gray-300">At most these colors</span>
+                </label>
+              </div>
+              <div className="flex flex-wrap gap-2">
               {['W', 'U', 'B', 'R', 'G'].map(color => {
                 const colorClasses: Record<string, string> = {
                   W: 'bg-mtg-white text-black',
@@ -406,6 +438,7 @@ export default function TokensPage() {
               >
                 Clear
               </button>
+              </div>
             </div>
           </div>
         </div>
@@ -436,7 +469,7 @@ export default function TokensPage() {
               <p>
                 <strong>Filters:</strong> {searchTerm ? `Name: "${searchTerm}"` : ''} 
                 {bodySearchTerm ? `Text: "${bodySearchTerm}"` : ''} 
-                {filterColor.length > 0 ? `Colors: ${filterColor.join(', ')}` : ''}
+                {filterColor.length > 0 ? `Colors: ${filterColor.join(', ')} (${colorMatchType === 'exact' ? 'Exactly' : colorMatchType === 'includes' ? 'Including' : 'At most'})` : ''}
                 {!searchTerm && !bodySearchTerm && filterColor.length === 0 ? 'None' : ''}
               </p>
               <p>

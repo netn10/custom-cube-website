@@ -86,6 +86,7 @@ export async function getCards(params?: {
   search?: string;
   body_search?: string;
   colors?: string[];
+  color_match?: 'exact' | 'includes' | 'at-most';
   type?: string;
   set?: string;
   custom?: boolean | null;
@@ -213,6 +214,7 @@ export async function getTokens(params?: {
   search?: string;
   body_search?: string;
   colors?: string[];
+  color_match?: 'exact' | 'includes' | 'at-most';
   page?: number;
   limit?: number;
   sort_by?: string;
