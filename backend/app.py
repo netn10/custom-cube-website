@@ -107,6 +107,7 @@ def get_cards():
     card_set = request.args.get('set', '')
     custom = request.args.get('custom', '')
     facedown = request.args.get('facedown', '')
+    include_facedown = request.args.get('include_facedown', 'false').lower() == 'true'
     page = int(request.args.get('page', 1))
     limit = int(request.args.get('limit', 50))
     sort_by = request.args.get('sort_by', 'name')
@@ -117,8 +118,9 @@ def get_cards():
     # Build query using a simple approach that's less error-prone
     query = {}
     
-    # Basic filter for facedown cards - exclude them
-    query['facedown'] = {'$ne': True}
+    # Base query - exclude facedown cards by default unless include_facedown is specified
+    if not include_facedown:
+        query['facedown'] = {'$ne': True}
     
     # Add name search if provided
     if search:

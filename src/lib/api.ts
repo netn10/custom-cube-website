@@ -90,6 +90,7 @@ export async function getCards(params?: {
   type?: string;
   set?: string;
   custom?: boolean | null;
+  include_facedown?: boolean;
   page?: number;
   limit?: number;
   sort_by?: string;
