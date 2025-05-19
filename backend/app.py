@@ -297,8 +297,12 @@ def get_archetype_cards(archetype_id):
         # Calculate skip for pagination
         skip = (page - 1) * limit
         
-        # Find cards that have this archetype ID in their archetypes array
-        query = {"archetypes": archetype_id}
+        # Get the archetype to get its name
+        archetype = db.archetypes.find_one({"_id": ObjectId(archetype_id)})
+        archetype_name = archetype.get('name', '') if archetype else ''
+        
+        # Find cards that have this archetype ID OR name in their archetypes array
+        query = {"$or": [{"archetypes": archetype_id}, {"archetypes": archetype_name}]}
         
         # Get total count
         total = db.cards.count_documents(query)

@@ -14,6 +14,7 @@ export default function Navbar() {
   const navLinks = [
     { name: 'Home', path: '/' },
     { name: 'Cube List', path: '/cube-list' },
+    { name: 'Archetypes', path: '/archetypes' },
     { name: 'Add Card', path: '/add-card' },
     { name: 'Tokens', path: '/tokens' },
     { name: 'Tools', path: '/tools' },
