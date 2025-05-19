@@ -15,6 +15,24 @@ type Tool = {
 
 export default function ToolsPage() {
   const [activeTool, setActiveTool] = useState<string | null>(null);
+  const toolContentRef = useRef<HTMLDivElement>(null);
+  
+  // Function to scroll to bottom of page smoothly
+  const scrollToBottom = () => {
+    window.scrollTo({
+      top: document.documentElement.scrollHeight,
+      behavior: 'smooth'
+    });
+  };
+
+  // Effect to scroll when tool content is rendered
+  useEffect(() => {
+    if (toolContentRef.current && activeTool) {
+      setTimeout(() => {
+        toolContentRef.current?.scrollIntoView({ behavior: 'smooth' });
+      }, 1000);
+    }
+  }, [activeTool]);
 
   const tools: Tool[] = [
     {
@@ -80,7 +98,9 @@ export default function ToolsPage() {
             key={tool.id}
             className={`bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md cursor-pointer transition-all duration-200 
               ${activeTool === tool.id ? 'ring-2 ring-blue-500' : 'hover:shadow-lg'}`}
-            onClick={() => setActiveTool(tool.id)}
+            onClick={() => {
+              setActiveTool(tool.id);
+            }}
           >
             <div className="flex items-center mb-4">
               <div className="mr-4 text-blue-500 dark:text-blue-400">
@@ -94,7 +114,10 @@ export default function ToolsPage() {
       </div>
       
       {selectedTool && (
-        <div className="mt-8 bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
+        <div 
+          ref={toolContentRef}
+          className="mt-8 bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md"
+        >
           <h2 className="text-2xl font-bold mb-4 dark:text-white">{selectedTool.name}</h2>
           <div>{selectedTool.component}</div>
         </div>
@@ -1575,41 +1598,6 @@ function AskChatGPT() {
                   />
                 </div>
               )}
-              <div className="p-4">
-                <div className="flex justify-between items-start">
-                  <h4 className="text-lg font-bold mb-2 dark:text-white">{card.name}</h4>
-                  <div className="text-sm text-blue-500 dark:text-blue-400 font-medium">
-                    {card.manaCost}
-                  </div>
-                </div>
-                <p className="text-sm text-gray-700 dark:text-gray-300 mb-2">{card.type}</p>
-                <div className="bg-gray-100 dark:bg-gray-700 p-3 rounded-lg mb-3">
-                  <p className="text-sm font-medium text-gray-800 dark:text-gray-200 mb-1">Prompt:</p>
-                  <p className="text-sm text-gray-600 dark:text-gray-400">{card.prompt}</p>
-                </div>
-                <div className="flex justify-between items-center">
-                  <div className="flex space-x-1">
-                    {card.colors && card.colors.map((color: string, index: number) => {
-                      const colorMap: Record<string, string> = {
-                        W: 'bg-yellow-100 text-yellow-800',
-                        U: 'bg-blue-100 text-blue-800',
-                        B: 'bg-gray-800 text-gray-100',
-                        R: 'bg-red-100 text-red-800',
-                        G: 'bg-green-100 text-green-800',
-                      };
-                      return (
-                        <span 
-                          key={index} 
-                          className={`inline-block w-5 h-5 rounded-full ${colorMap[color] || 'bg-gray-200'} text-xs flex items-center justify-center`}
-                        >
-                          {color}
-                        </span>
-                      );
-                    })}
-                  </div>
-                  <span className="text-xs text-gray-500 dark:text-gray-400">{card.rarity}</span>
-                </div>
-              </div>
             </div>
           ))}
         </div>
@@ -1617,7 +1605,16 @@ function AskChatGPT() {
       
       {/* ChatGPT Response Section */}
       {selectedCard && (
-        <div className="mt-8 bg-gray-100 dark:bg-gray-700 p-6 rounded-lg">
+        <div 
+          className="mt-8 bg-gray-100 dark:bg-gray-700 p-6 rounded-lg"
+          ref={(el) => {
+            // Scroll to this element once it's rendered
+            if (el) {
+              setTimeout(() => {
+                el.scrollIntoView({ behavior: 'smooth' });
+              }, 100);
+            }
+          }}>
           <h3 className="text-xl font-bold mb-4 dark:text-white">
             Gemini Response for {selectedCard.name}
           </h3>

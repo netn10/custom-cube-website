@@ -148,12 +148,20 @@ export default function Home() {
           setTimeout(() => {
             const cardsContainer = document.getElementById('booster-cards');
             if (cardsContainer) {
-              cardsContainer.scrollIntoView({ behavior: 'smooth', block: 'start' });
+              cardsContainer.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'nearest' });
+              // Scroll up a bit to show the title
+              setTimeout(() => {
+                window.scrollBy({ top: -100, behavior: 'smooth' });
+              }, 500);
             } else {
               // Fallback to class selector if ID is not found
               const containerByClass = document.querySelector('.booster-cards-container');
               if (containerByClass) {
-                containerByClass.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                containerByClass.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'nearest' });
+                // Scroll up a bit to show the title
+                setTimeout(() => {
+                  window.scrollBy({ top: -100, behavior: 'smooth' });
+                }, 500);
               }
             }
           }, 300); // Slightly longer delay to ensure all cards are rendered
@@ -664,7 +672,7 @@ export default function Home() {
                 </div>
               </div>
             ) : (
-              <div id="booster-cards" className="grid grid-cols-5 grid-rows-3 gap-4 md:gap-6 w-full max-w-4xl mx-auto my-16 booster-cards-container" style={{ minHeight: '600px' }}>
+              <div id="booster-cards" className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-2 sm:gap-3 md:gap-4 lg:gap-6 w-full max-w-4xl mx-auto pt-24 pb-16 mt-4 booster-cards-container" style={{ minHeight: '600px' }}>
                 {console.log(`Rendering booster pack with ${boosterCards.length} cards:`, boosterCards)}
                 {boosterCards.slice(0, 15).map((card, index) => (
                   <div 
