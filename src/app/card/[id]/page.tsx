@@ -107,7 +107,7 @@ export default function CardDetailPage() {
       
       return `<span class="inline-block w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold ${colorClass} mx-0.5">${symbol}</span>`;
     });
-  }
+  };
 
   return (
     <div className="max-w-4xl mx-auto">
