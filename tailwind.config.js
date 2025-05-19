@@ -7,6 +7,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      screens: {
+        'xs': '480px',
+      },
       colors: {
         'mtg-white': '#F9FAF4',
         'mtg-blue': '#0E68AB',

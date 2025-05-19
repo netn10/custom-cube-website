@@ -672,12 +672,12 @@ export default function Home() {
                 </div>
               </div>
             ) : (
-              <div id="booster-cards" className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-2 sm:gap-3 md:gap-4 lg:gap-6 w-full max-w-4xl mx-auto pt-24 pb-16 mt-4 booster-cards-container" style={{ minHeight: '600px' }}>
+              <div id="booster-cards" className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 w-full max-w-4xl mx-auto pt-24 pb-16 mt-4 booster-cards-container" style={{ minHeight: '600px' }}>
                 {console.log(`Rendering booster pack with ${boosterCards.length} cards:`, boosterCards)}
                 {boosterCards.slice(0, 15).map((card, index) => (
                   <div 
                     key={index}
-                    className="mtg-card transform transition-all duration-500 hover:scale-125 hover:z-50 shadow-2xl"
+                    className="mtg-card transform transition-all duration-500 hover:scale-125 hover:z-50 shadow-2xl mx-auto"
                     style={{
                       animation: `cardReveal 0.4s ${index * 0.03}s forwards`,
                       opacity: 0,
@@ -854,12 +854,12 @@ export default function Home() {
               }
               
               return (
-                <div 
+                <Link 
+                  href={`/archetypes/${archetype.id}`}
                   key={archetype.id}
                   className={`relative group overflow-hidden rounded-xl transition-all duration-500 
                     ${selectedArchetype === archetype.id ? 'ring-4 ring-mtg-gold' : ''}
-                    dark:bg-gray-800/80 bg-white/90 backdrop-blur-sm transform hover:scale-105 hover:shadow-2xl cursor-pointer`}
-                  onClick={() => setSelectedArchetype(selectedArchetype === archetype.id ? null : archetype.id)}
+                    dark:bg-gray-800/80 bg-white/90 backdrop-blur-sm transform hover:scale-105 hover:shadow-2xl cursor-pointer block`}
                 >
                   {/* Card background with parallax effect */}
                   <div className="absolute inset-0 opacity-10 group-hover:opacity-20 transition-opacity duration-500 bg-center bg-cover transform group-hover:scale-110 transition-transform duration-1000"
@@ -895,55 +895,64 @@ export default function Home() {
                     
                     <div className="flex justify-between items-end">
                       {randomCard ? (
-                        <div className="relative w-1/2 aspect-[2.5/3.5] overflow-hidden rounded-lg shadow-lg transform transition-transform duration-500 group-hover:scale-105">
+                        <Link 
+                          href={`/card/${randomCard._id || randomCard.id}`} 
+                          className="relative w-1/2 aspect-[2.5/3.5] overflow-hidden rounded-lg shadow-lg transform transition-transform duration-500 group-hover:scale-105 cursor-pointer"
+                          onClick={(e) => e.stopPropagation()} /* Prevent triggering the parent Link */
+                        >
                           {randomCard.imageUrl ? (
-                            <img 
-                              src={randomCard.imageUrl}
-                              alt={randomCard.name}
-                              className="w-full h-full object-cover"
-                              onError={(e) => {
-                                console.error('Error loading image:', randomCard.imageUrl);
-                                
-                                // Try a color-based fallback image
-                                if (archetype.colors && archetype.colors.length > 0) {
-                                  const colorCombo = archetype.colors.join('');
-                                  const colorMap: Record<string, string> = {
-                                    'W': 'https://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Plains',
-                                    'U': 'https://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Island',
-                                    'B': 'https://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Swamp',
-                                    'R': 'https://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Mountain',
-                                    'G': 'https://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Forest',
-                                    'WU': 'https://gatherer.wizards.com/Handlers/Image.ashx?type=card&multiverseid=430504',
-                                    'UB': 'https://gatherer.wizards.com/Handlers/Image.ashx?type=card&multiverseid=430506',
-                                    'BR': 'https://gatherer.wizards.com/Handlers/Image.ashx?type=card&multiverseid=430507',
-                                    'RG': 'https://gatherer.wizards.com/Handlers/Image.ashx?type=card&multiverseid=430502',
-                                    'GW': 'https://gatherer.wizards.com/Handlers/Image.ashx?type=card&multiverseid=430500',
-                                    'WB': 'https://gatherer.wizards.com/Handlers/Image.ashx?type=card&multiverseid=430501',
-                                    'UR': 'https://gatherer.wizards.com/Handlers/Image.ashx?type=card&multiverseid=430503',
-                                    'BG': 'https://gatherer.wizards.com/Handlers/Image.ashx?type=card&multiverseid=430505',
-                                    'RW': 'https://gatherer.wizards.com/Handlers/Image.ashx?type=card&multiverseid=430508',
-                                    'GU': 'https://gatherer.wizards.com/Handlers/Image.ashx?type=card&multiverseid=430509'
-                                  };
+                            <>
+                              <img 
+                                src={randomCard.imageUrl}
+                                alt={randomCard.name}
+                                className="w-full h-full object-cover"
+                                onError={(e) => {
+                                  console.error('Error loading image:', randomCard.imageUrl);
                                   
-                                  // Try to find a matching color combination or use the first color
-                                  if (colorCombo in colorMap) {
-                                    e.currentTarget.src = colorMap[colorCombo];
-                                  } else if (archetype.colors[0] in colorMap) {
-                                    e.currentTarget.src = colorMap[archetype.colors[0]];
+                                  // Try a color-based fallback image
+                                  if (archetype.colors && archetype.colors.length > 0) {
+                                    const colorCombo = archetype.colors.join('');
+                                    const colorMap: Record<string, string> = {
+                                      'W': 'https://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Plains',
+                                      'U': 'https://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Island',
+                                      'B': 'https://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Swamp',
+                                      'R': 'https://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Mountain',
+                                      'G': 'https://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Forest',
+                                      'WU': 'https://gatherer.wizards.com/Handlers/Image.ashx?type=card&multiverseid=430504',
+                                      'UB': 'https://gatherer.wizards.com/Handlers/Image.ashx?type=card&multiverseid=430506',
+                                      'BR': 'https://gatherer.wizards.com/Handlers/Image.ashx?type=card&multiverseid=430507',
+                                      'RG': 'https://gatherer.wizards.com/Handlers/Image.ashx?type=card&multiverseid=430502',
+                                      'GW': 'https://gatherer.wizards.com/Handlers/Image.ashx?type=card&multiverseid=430500',
+                                      'WB': 'https://gatherer.wizards.com/Handlers/Image.ashx?type=card&multiverseid=430501',
+                                      'UR': 'https://gatherer.wizards.com/Handlers/Image.ashx?type=card&multiverseid=430503',
+                                      'BG': 'https://gatherer.wizards.com/Handlers/Image.ashx?type=card&multiverseid=430505',
+                                      'RW': 'https://gatherer.wizards.com/Handlers/Image.ashx?type=card&multiverseid=430508',
+                                      'GU': 'https://gatherer.wizards.com/Handlers/Image.ashx?type=card&multiverseid=430509'
+                                    };
+                                    
+                                    // Try to find a matching color combination or use the first color
+                                    if (colorCombo in colorMap) {
+                                      e.currentTarget.src = colorMap[colorCombo];
+                                    } else if (archetype.colors[0] in colorMap) {
+                                      e.currentTarget.src = colorMap[archetype.colors[0]];
+                                    } else {
+                                      e.currentTarget.src = 'data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22100%22%20height%3D%22140%22%20viewBox%3D%220%200%20100%20140%22%20preserveAspectRatio%3D%22none%22%3E%3Crect%20width%3D%22100%22%20height%3D%22140%22%20fill%3D%22%23eee%22%3E%3C%2Frect%3E%3Ctext%20text-anchor%3D%22middle%22%20x%3D%2250%22%20y%3D%2270%22%20style%3D%22fill%3A%23aaa%3Bfont-weight%3Abold%3Bfont-size%3A12px%3Bfont-family%3AArial%2C%20Helvetica%2C%20sans-serif%3Bdominant-baseline%3Acentral%22%3E${archetype.name}%3C%2Ftext%3E%3C%2Fsvg%3E';
+                                    }
                                   } else {
                                     e.currentTarget.src = 'data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22100%22%20height%3D%22140%22%20viewBox%3D%220%200%20100%20140%22%20preserveAspectRatio%3D%22none%22%3E%3Crect%20width%3D%22100%22%20height%3D%22140%22%20fill%3D%22%23eee%22%3E%3C%2Frect%3E%3Ctext%20text-anchor%3D%22middle%22%20x%3D%2250%22%20y%3D%2270%22%20style%3D%22fill%3A%23aaa%3Bfont-weight%3Abold%3Bfont-size%3A12px%3Bfont-family%3AArial%2C%20Helvetica%2C%20sans-serif%3Bdominant-baseline%3Acentral%22%3E${archetype.name}%3C%2Ftext%3E%3C%2Fsvg%3E';
                                   }
-                                } else {
-                                  e.currentTarget.src = 'data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22100%22%20height%3D%22140%22%20viewBox%3D%220%200%20100%20140%22%20preserveAspectRatio%3D%22none%22%3E%3Crect%20width%3D%22100%22%20height%3D%22140%22%20fill%3D%22%23eee%22%3E%3C%2Frect%3E%3Ctext%20text-anchor%3D%22middle%22%20x%3D%2250%22%20y%3D%2270%22%20style%3D%22fill%3A%23aaa%3Bfont-weight%3Abold%3Bfont-size%3A12px%3Bfont-family%3AArial%2C%20Helvetica%2C%20sans-serif%3Bdominant-baseline%3Acentral%22%3E${archetype.name}%3C%2Ftext%3E%3C%2Fsvg%3E';
-                                }
-                              }}
-                            />
+                                }}
+                              />
+                              <div className="absolute bottom-0 left-0 right-0 bg-black/60 p-1 text-white text-xs font-semibold truncate">
+                                {randomCard.name}
+                              </div>
+                            </>
                           ) : (
                             <div className="w-full h-full flex items-center justify-center bg-gray-200 dark:bg-gray-700">
                               <p className="text-sm text-gray-500 dark:text-gray-400">No image</p>
                             </div>
                           )}
-                        </div>
+                        </Link>
                       ) : (
                         <div className="w-1/2 aspect-[2.5/3.5] rounded-lg bg-gray-200 dark:bg-gray-700 flex items-center justify-center">
                           <p className="text-center text-gray-500 dark:text-gray-400">No card</p>
@@ -951,31 +960,15 @@ export default function Home() {
                       )}
                       
                       <div className="flex flex-col gap-2">
-                        <Link 
-                          href={`/archetypes/${archetype.id}`}
+                        <div 
                           className="px-4 py-2 bg-gradient-to-r from-mtg-blue to-mtg-red text-white rounded-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 text-center"
-                          onClick={(e) => e.stopPropagation()}
                         >
                           View Details
-                        </Link>
-                        {selectedArchetype === archetype.id && (
-                          <button 
-                            onClick={(e) => {
-                              e.stopPropagation();
-                              window.open(`/archetypes/${archetype.id}`, '_blank');
-                            }}
-                            className="px-4 py-2 bg-gray-700 text-white rounded-lg shadow hover:bg-gray-600 transition-all duration-300 text-center text-sm flex items-center justify-center gap-1"
-                          >
-                            <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                            </svg>
-                            Open in New Tab
-                          </button>
-                        )}
+                        </div>
                       </div>
                     </div>
                   </div>
-                </div>
+                </Link>
               );
             })}
           </div>

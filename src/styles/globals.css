@@ -399,6 +399,13 @@ body {
     max-width: var(--mtg-card-width);
     height: auto;
   }
+  
+  @media (max-width: 640px) {
+    .mtg-card {
+      min-width: 120px;
+      min-height: 168px;
+    }
+  }
 
   .mtg-card-image {
     @apply w-full h-full object-cover;
