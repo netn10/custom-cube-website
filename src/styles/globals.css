@@ -13,9 +13,10 @@
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
-  --mtg-card-width: 63mm;
-  --mtg-card-height: 88mm;
+  --mtg-card-width: 50mm;
+  --mtg-card-height: 70mm;
   --mtg-card-aspect-ratio: calc(2.5 / 3.5);
+  font-size: 14px;
 }
 
 /* Floating card animations */
@@ -154,19 +155,19 @@
 /* Pack light burst animation */
 @keyframes packLightBurst {
   0% { width: 0; height: 0; opacity: 0; }
-  10% { width: 50px; height: 50px; opacity: 1; }
-  30% { width: 200px; height: 200px; opacity: 0.9; }
-  60% { width: 350px; height: 350px; opacity: 0.6; }
-  100% { width: 600px; height: 600px; opacity: 0; }
+  10% { width: 40px; height: 40px; opacity: 1; }
+  30% { width: 160px; height: 160px; opacity: 0.9; }
+  60% { width: 280px; height: 280px; opacity: 0.6; }
+  100% { width: 480px; height: 480px; opacity: 0; }
 }
 
 /* Magical energy burst animation */
 @keyframes magicalEnergyBurst {
   0% { width: 0; height: 0; opacity: 0; }
-  10% { width: 50px; height: 50px; opacity: 0.9; }
-  30% { width: 200px; height: 200px; opacity: 0.8; }
-  60% { width: 500px; height: 500px; opacity: 0.6; }
-  100% { width: 1200px; height: 1200px; opacity: 0; }
+  10% { width: 40px; height: 40px; opacity: 0.9; }
+  30% { width: 160px; height: 160px; opacity: 0.8; }
+  60% { width: 400px; height: 400px; opacity: 0.6; }
+  100% { width: 800px; height: 800px; opacity: 0; }
 }
 
 /* Card fly out animation */
@@ -377,7 +378,11 @@ body {
 
 @layer components {
   .card-hover {
-    @apply transition-transform duration-300 hover:scale-105 hover:shadow-lg cursor-pointer;
+    @apply transition-transform duration-300 hover:scale-105 hover:shadow-md cursor-pointer;
+  }
+  
+  .compact-ui {
+    @apply text-sm;
   }
   
   .nav-link {

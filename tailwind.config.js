@@ -10,6 +10,9 @@ module.exports = {
       screens: {
         'xs': '480px',
       },
+      scale: {
+        '102': '1.02',
+      },
       colors: {
         'mtg-white': '#F9FAF4',
         'mtg-blue': '#0E68AB',

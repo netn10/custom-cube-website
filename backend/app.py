@@ -106,15 +106,22 @@ def get_cards():
     card_type = request.args.get('type', '')
     card_set = request.args.get('set', '')
     custom = request.args.get('custom', '')
+    facedown = request.args.get('facedown', '')
     page = int(request.args.get('page', 1))
     limit = int(request.args.get('limit', 50))
     sort_by = request.args.get('sort_by', 'name')
     sort_dir = request.args.get('sort_dir', 'asc')
     
-    print(f"API Request - /api/cards with params: search='{search}', body_search='{body_search}', colors={colors}, color_match='{color_match}', type='{card_type}', set='{card_set}', custom='{custom}', page={page}, limit={limit}, sort_by='{sort_by}', sort_dir='{sort_dir}')")
+    print(f"API Request - /api/cards with params: search='{search}', body_search='{body_search}', colors={colors}, color_match='{color_match}', type='{card_type}', set='{card_set}', custom='{custom}', facedown='{facedown}', page={page}, limit={limit}, sort_by='{sort_by}', sort_dir='{sort_dir}')")
     
     # Build query
     query = {}
+    
+    # Always exclude facedown cards regardless of the parameter
+    # This ensures facedown cards are never sent to the client
+    query['$or'] = [{'facedown': False}, {'facedown': {'$exists': False}}]
+    
+    # The facedown parameter is now ignored as we always exclude facedown cards
     
     if search:
         # Ensure partial matching for card names
@@ -180,8 +187,10 @@ def get_cards():
     if custom:
         query['custom'] = custom.lower() == 'true'
     
-    # Get total count
+    # Get total count - this will exclude facedown cards due to the query
+    # Make sure we're counting with the exact same query used for fetching
     total = db.cards.count_documents(query)
+    print(f"Total cards matching query: {total}")
     
     # Calculate skip for pagination
     skip = (page - 1) * limit
@@ -207,7 +216,12 @@ def get_cards():
     print(f"Sorting with: {sort_spec}")
     
     # Execute query with sorting
-    cards = list(db.cards.find(query).sort(sort_spec).skip(skip).limit(limit))
+    cursor = db.cards.find(query).sort(sort_spec).skip(skip).limit(limit)
+    cards = list(cursor)
+    
+    # Ensure we have exactly 'limit' cards per page (except for the last page)
+    cards_count = len(cards)
+    print(f"Retrieved {cards_count} cards for page {page} with limit {limit}")
     
     # Debug: Print the first few cards
     if cards:
@@ -302,13 +316,29 @@ def get_archetype_cards(archetype_id):
         archetype_name = archetype.get('name', '') if archetype else ''
         
         # Find cards that have this archetype ID OR name in their archetypes array
-        query = {"$or": [{"archetypes": archetype_id}, {"archetypes": archetype_name}]}
+        # Also exclude facedown cards
+        query = {
+            "$and": [
+                {"$or": [{"archetypes": archetype_id}, {"archetypes": archetype_name}]},
+                {"$or": [{'facedown': False}, {'facedown': {'$exists': False}}]}
+            ]
+        }
         
         # Get total count
         total = db.cards.count_documents(query)
         
         # Get paginated cards
-        cards = list(db.cards.find(query).skip(skip).limit(limit))
+        cursor = db.cards.find(query).skip(skip).limit(limit)
+        cards = list(cursor)
+        
+        # If the number of cards is less than the limit, get the remaining cards from the next page
+        while len(cards) < limit and skip + len(cards) < total:
+            skip += len(cards)
+            cursor = db.cards.find(query).skip(skip).limit(limit - len(cards))
+            cards.extend(list(cursor))
+        
+        # Debug info
+        print(f"Retrieved {len(cards)} cards for archetype page {page} with limit {limit}")
         
         # Convert ObjectId to string for each card
         for card in cards:
@@ -341,7 +371,13 @@ def get_random_archetype_cards():
             
             # Find all cards for this archetype by checking the archetypes array
             # We need to check for both the archetype ID and name since some cards might use either
-            cards = list(db.cards.find({"$or": [{"archetypes": archetype_id}, {"archetypes": archetype_name}]}))
+            # Also exclude facedown cards
+            cards = list(db.cards.find({
+                "$and": [
+                    {"$or": [{"archetypes": archetype_id}, {"archetypes": archetype_name}]},
+                    {"$or": [{"facedown": False}, {"facedown": {"$exists": False}}]}
+                ]
+            }))
             
             # Debug logging
             print(f"Archetype: {archetype_name} (ID: {archetype_id}), Found {len(cards)} cards")

@@ -22,11 +22,11 @@ export default function Navbar() {
   ];
 
   return (
-    <nav className="bg-gray-800 dark:bg-gray-900 text-white shadow-md">
+    <nav className="bg-gray-800 dark:bg-gray-900 text-white shadow-md text-sm">
       <div className="container mx-auto px-4">
-        <div className="flex justify-between items-center h-16">
+        <div className="flex justify-between items-center h-12">
           <div className="flex items-center">
-            <Link href="/" className="text-xl font-bold">
+            <Link href="/" className="text-lg font-bold">
               Custom MTG Cube
             </Link>
           </div>

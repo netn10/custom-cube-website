@@ -23,9 +23,20 @@ export default function CubeList() {
   const [sortFields, setSortFields] = useState<Array<{field: string, direction: 'asc' | 'desc'}>>([{field: 'name', direction: 'asc'}]);
 
   useEffect(() => {
-    // Fetch cards on initial load
+    // Fetch cards whenever any filter changes
     fetchCards();
-  }, [currentPage, cardsPerPage, JSON.stringify(sortFields)]);
+  }, [
+    currentPage, 
+    cardsPerPage, 
+    JSON.stringify(sortFields),
+    searchTerm,
+    bodySearchTerm,
+    JSON.stringify(filterColor),
+    colorMatchType,
+    filterType,
+    filterSet,
+    filterCustom
+  ]);
 
   // Fetch cards with current filters
   const fetchCards = async () => {
@@ -44,11 +55,13 @@ export default function CubeList() {
         limit?: number;
         sort_by?: string;
         sort_dir?: string;
+        facedown?: string;
       } = {
         page: currentPage,
         limit: cardsPerPage,
         sort_by: sortFields.map(sort => sort.field).join(','),
-        sort_dir: sortFields.map(sort => sort.direction).join(',')
+        sort_dir: sortFields.map(sort => sort.direction).join(','),
+        facedown: 'false' // Always exclude facedown cards
       };
       
       // Special handling for "colorless" search term
@@ -111,6 +124,7 @@ export default function CubeList() {
     } else {
       setFilterColor([...filterColor, color]);
     }
+    resetPage();
   };
 
   // Special filter for colorless or multicolor
@@ -135,35 +149,33 @@ export default function CubeList() {
         setFilterColor([...filterColor, 'multicolor']); // Always use lowercase for consistency
       }
     }
+    resetPage();
   };
 
-  // Apply filters and fetch new data
-  const applyFilters = () => {
+  // Reset page when filters change
+  const resetPage = () => {
     setCurrentPage(1);
-    console.log("Applying filters with type:", filterType);
-    fetchCards();
   };
 
   // Handle search input changes with debounce
   const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearchTerm(e.target.value);
-    // We'll apply the search filter immediately for better UX
-    setTimeout(() => {
-      applyFilters();
-    }, 300);
+    resetPage();
   };
   
-  // Handle body text search input changes with debounce
+  // Handle body text search input changes
   // This now searches in both card name and text fields
   const handleBodySearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setBodySearchTerm(e.target.value);
-    // We'll apply the search filter immediately for better UX
-    setTimeout(() => {
-      applyFilters();
-    }, 300);
+    resetPage();
   };
 
   const filteredCards = cards.filter(card => {
+    // Exclude facedown cards
+    if (card.facedown === true) {
+      return false;
+    }
+    
     // Search term filter
     if (searchTerm && !card.name.toLowerCase().includes(searchTerm.toLowerCase())) {
       return false;
@@ -250,9 +262,6 @@ export default function CubeList() {
     const newValue = parseInt(e.target.value);
     setCardsPerPage(newValue);
     setCurrentPage(1); // Reset to first page when changing items per page
-    setTimeout(() => {
-      fetchCards();
-    }, 100);
   };
 
   // Enhanced pagination component
@@ -378,7 +387,10 @@ export default function CubeList() {
             <select
               className="w-full p-2 border border-gray-300 dark:border-gray-600 rounded-md dark:bg-gray-700 dark:text-white"
               value={filterType}
-              onChange={(e) => setFilterType(e.target.value)}
+              onChange={(e) => {
+                setFilterType(e.target.value);
+                resetPage();
+              }}
             >
               <option value="">All Types</option>
               <option value="Creature">Creature</option>
@@ -398,7 +410,10 @@ export default function CubeList() {
             <select
               className="w-full p-2 border border-gray-300 dark:border-gray-600 rounded-md dark:bg-gray-700 dark:text-white"
               value={filterSet}
-              onChange={(e) => setFilterSet(e.target.value)}
+              onChange={(e) => {
+                setFilterSet(e.target.value);
+                resetPage();
+              }}
             >
               <option value="">All Sets</option>
               <option value="Set 1">Set 1</option>
@@ -419,6 +434,7 @@ export default function CubeList() {
               onChange={(e) => {
                 if (e.target.value === '') setFilterCustom(null);
                 else setFilterCustom(e.target.value === 'custom');
+                resetPage();
               }}
             >
               <option value="">All Cards</option>
@@ -441,6 +457,7 @@ export default function CubeList() {
                       const newSortFields = [...sortFields];
                       newSortFields[index].field = e.target.value;
                       setSortFields(newSortFields);
+                      resetPage();
                     }}
                   >
                     <option value="name">Name</option>
@@ -461,6 +478,7 @@ export default function CubeList() {
                         const newSortFields = [...sortFields];
                         newSortFields[index].direction = 'asc';
                         setSortFields(newSortFields);
+                        resetPage();
                       }}
                     />
                     <span className="ml-2 text-gray-700 dark:text-gray-300">Asc</span>
@@ -474,6 +492,7 @@ export default function CubeList() {
                         const newSortFields = [...sortFields];
                         newSortFields[index].direction = 'desc';
                         setSortFields(newSortFields);
+                        resetPage();
                       }}
                     />
                     <span className="ml-2 text-gray-700 dark:text-gray-300">Desc</span>
@@ -488,6 +507,7 @@ export default function CubeList() {
                         const newSortFields = [...sortFields];
                         newSortFields.splice(index, 1);
                         setSortFields(newSortFields);
+                        resetPage();
                       }}
                       aria-label="Remove sort field"
                     >
@@ -502,6 +522,7 @@ export default function CubeList() {
                       className="p-1 bg-blue-500 text-white rounded hover:bg-blue-600"
                       onClick={() => {
                         setSortFields([...sortFields, {field: 'name', direction: 'asc'}]);
+                        resetPage();
                       }}
                       aria-label="Add sort field"
                     >
@@ -528,7 +549,10 @@ export default function CubeList() {
                     type="radio"
                     className="form-radio h-4 w-4 text-blue-600"
                     checked={colorMatchType === 'exact'}
-                    onChange={() => setColorMatchType('exact')}
+                    onChange={() => {
+                      setColorMatchType('exact');
+                      resetPage();
+                    }}
                   />
                   <span className="ml-2 text-gray-700 dark:text-gray-300">Exactly these colors</span>
                 </label>
@@ -537,7 +561,10 @@ export default function CubeList() {
                     type="radio"
                     className="form-radio h-4 w-4 text-blue-600"
                     checked={colorMatchType === 'includes'}
-                    onChange={() => setColorMatchType('includes')}
+                    onChange={() => {
+                      setColorMatchType('includes');
+                      resetPage();
+                    }}
                   />
                   <span className="ml-2 text-gray-700 dark:text-gray-300">Including these colors</span>
                 </label>
@@ -546,7 +573,10 @@ export default function CubeList() {
                     type="radio"
                     className="form-radio h-4 w-4 text-blue-600"
                     checked={colorMatchType === 'at-most'}
-                    onChange={() => setColorMatchType('at-most')}
+                    onChange={() => {
+                      setColorMatchType('at-most');
+                      resetPage();
+                    }}
                   />
                   <span className="ml-2 text-gray-700 dark:text-gray-300">At most these colors</span>
                 </label>
@@ -594,7 +624,10 @@ export default function CubeList() {
               
               <button
                 className="px-2 py-1 bg-gray-200 dark:bg-gray-600 text-gray-800 dark:text-gray-200 rounded-md text-sm"
-                onClick={() => setFilterColor([])}
+                onClick={() => {
+                  setFilterColor([]);
+                  resetPage();
+                }}
               >
                 Clear
               </button>
@@ -602,12 +635,7 @@ export default function CubeList() {
             </div>
           </div>
           
-          <button
-            className="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-md transition-colors"
-            onClick={applyFilters}
-          >
-            Apply Filters
-          </button>
+          {/* Apply Filters button removed - filters now apply automatically */}
         </div>
       </div>
       

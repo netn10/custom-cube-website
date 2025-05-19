@@ -26,6 +26,7 @@ export type Card = {
   notes?: string;
   relatedTokens?: string[];
   relatedFace?: string;
+  facedown?: boolean;
 };
 
 export type Token = {

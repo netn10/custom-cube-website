@@ -201,21 +201,19 @@ export default function ArchetypesPage() {
         // Wait for all promises to resolve in parallel
         const results = await Promise.all(cardFetchPromises);
         
-        // Check if component is still mounted
-        if (!isMounted) return;
+        // Create a map of archetype ID to cards
+        const cardMap: Record<string, Card[]> = {};
         
-        // Process the results and build the cards map
-        const cardsMap: Record<string, Card[]> = {};
-        
+        // Process each result
         results.forEach(({ archetypeId, cards, colors }) => {
-          if (cards.length > 0) {
-            cardsMap[archetypeId] = processArchetypeCards(cards, colors);
-          } else {
-            cardsMap[archetypeId] = [];
-          }
+          // Filter out facedown cards before processing
+          const visibleCards = cards.filter(card => !card.facedown);
+          // Process cards for this archetype
+          const processedCards = processArchetypeCards(visibleCards, colors);
+          cardMap[archetypeId] = processedCards;
         });
         
-        setArchetypeCardsMap(cardsMap);
+        setArchetypeCardsMap(cardMap);
         dataLoaded.cards = true;
         setError(null);
       } catch (err) {
