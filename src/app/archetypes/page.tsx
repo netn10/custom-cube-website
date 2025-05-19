@@ -34,6 +34,11 @@ export default function ArchetypesPage() {
   const [error, setError] = useState<string | null>(null);
   const [expandedArchetype, setExpandedArchetype] = useState<string | null>(null);
 
+  // Helper function to get a random item from an array
+  const getRandomItem = <T,>(array: T[]): T => {
+    return array[Math.floor(Math.random() * array.length)];
+  };
+
   // Function to process and organize cards by color for an archetype
   const processArchetypeCards = (cards: Card[], archetypeColors: string[]): Card[] => {
     if (cards.length === 0) return [];
@@ -42,6 +47,7 @@ export default function ArchetypesPage() {
     const leftColorCards: Card[] = [];
     const rightColorCards: Card[] = [];
     const multiColorCards: Card[] = [];
+    const otherCards: Card[] = [];
     
     // Only process if we have at least one color
     if (archetypeColors.length > 0) {
@@ -62,32 +68,44 @@ export default function ArchetypesPage() {
         else if (card.colors.includes(leftColor) && card.colors.includes(rightColor)) {
           multiColorCards.push(card);
         }
+        // Any other card
+        else {
+          otherCards.push(card);
+        }
       });
       
-      // Prepare the final cards array with the best matches
+      // Prepare the final cards array with random matches from each category
       const finalCards: Card[] = [];
       
-      // Add a left color card if available, otherwise use any card
+      // Add a random left color card if available, otherwise use any card
       if (leftColorCards.length > 0) {
-        finalCards.push(leftColorCards[0]);
+        finalCards.push(getRandomItem(leftColorCards));
       } else if (cards.length > 0) {
-        finalCards.push(cards[0]);
+        finalCards.push(getRandomItem(cards));
       }
       
-      // Add a multicolor card if available, otherwise use any card
+      // Add a random multicolor card if available, otherwise use any card
       if (multiColorCards.length > 0) {
-        finalCards.push(multiColorCards[0]);
+        finalCards.push(getRandomItem(multiColorCards));
       } else if (cards.length > finalCards.length) {
-        finalCards.push(cards[finalCards.length]);
+        // Try to avoid duplicates by removing cards already selected
+        const remainingCards = cards.filter(card => 
+          !finalCards.some(selectedCard => selectedCard.id === card.id)
+        );
+        finalCards.push(remainingCards.length > 0 ? getRandomItem(remainingCards) : getRandomItem(cards));
       } else if (finalCards.length > 0) {
         finalCards.push({...finalCards[0]});
       }
       
-      // Add a right color card if available, otherwise use any card
+      // Add a random right color card if available, otherwise use any card
       if (rightColorCards.length > 0) {
-        finalCards.push(rightColorCards[0]);
+        finalCards.push(getRandomItem(rightColorCards));
       } else if (cards.length > finalCards.length) {
-        finalCards.push(cards[finalCards.length]);
+        // Try to avoid duplicates by removing cards already selected
+        const remainingCards = cards.filter(card => 
+          !finalCards.some(selectedCard => selectedCard.id === card.id)
+        );
+        finalCards.push(remainingCards.length > 0 ? getRandomItem(remainingCards) : getRandomItem(cards));
       } else if (finalCards.length > 0) {
         finalCards.push({...finalCards[0]});
       }
@@ -99,8 +117,16 @@ export default function ArchetypesPage() {
       
       return finalCards;
     } else {
-      // If no colors, just use the first 3 cards
-      const finalCards = cards.slice(0, Math.min(3, cards.length));
+      // If no colors, just use 3 random cards
+      const finalCards: Card[] = [];
+      const cardsCopy = [...cards];
+      
+      // Select 3 random cards without replacement if possible
+      for (let i = 0; i < 3 && cardsCopy.length > 0; i++) {
+        const randomIndex = Math.floor(Math.random() * cardsCopy.length);
+        finalCards.push(cardsCopy[randomIndex]);
+        cardsCopy.splice(randomIndex, 1); // Remove the selected card
+      }
       
       // Make sure we have exactly 3 cards
       while (finalCards.length < 3 && finalCards.length > 0) {
@@ -112,14 +138,26 @@ export default function ArchetypesPage() {
     }
   };
 
-  // Fetch archetypes on component mount
+  // Fetch archetypes and cards only once on component mount
   useEffect(() => {
+    // Track if the component is mounted to prevent state updates after unmount
+    let isMounted = true;
+    
+    // Use a ref to track if data has been loaded
+    const dataLoaded = { archetypes: false, cards: false };
+    
     const fetchArchetypes = async () => {
+      // Skip if already loaded
+      if (dataLoaded.archetypes) return;
+      
       try {
         setLoading(true);
         
         // Fetch archetypes
         const archetypesData = await getArchetypes();
+        
+        // Check if component is still mounted
+        if (!isMounted) return;
         
         // Process archetypes to ensure they have proper IDs
         const processedArchetypes = archetypesData.map(archetype => ({
@@ -128,19 +166,25 @@ export default function ArchetypesPage() {
         }));
         
         setArchetypes(processedArchetypes);
+        dataLoaded.archetypes = true;
         setLoading(false);
         
         // After setting archetypes, fetch cards in parallel
         fetchArchetypeCards(processedArchetypes);
       } catch (err) {
-        console.error('Error fetching archetypes:', err);
-        setError('Failed to load archetypes. Please try again later.');
-        setLoading(false);
+        if (isMounted) {
+          console.error('Error fetching archetypes:', err);
+          setError('Failed to load archetypes. Please try again later.');
+          setLoading(false);
+        }
       }
     };
 
     // Function to fetch cards for all archetypes in parallel
     const fetchArchetypeCards = async (archetypes: Archetype[]) => {
+      // Skip if already loaded
+      if (dataLoaded.cards) return;
+      
       try {
         setCardsLoading(true);
         
@@ -157,6 +201,9 @@ export default function ArchetypesPage() {
         // Wait for all promises to resolve in parallel
         const results = await Promise.all(cardFetchPromises);
         
+        // Check if component is still mounted
+        if (!isMounted) return;
+        
         // Process the results and build the cards map
         const cardsMap: Record<string, Card[]> = {};
         
@@ -166,21 +213,39 @@ export default function ArchetypesPage() {
           } else {
             cardsMap[archetypeId] = [];
           }
-          console.log(`Loaded ${cardsMap[archetypeId].length} cards for archetype ${archetypeId}`);
         });
         
         setArchetypeCardsMap(cardsMap);
+        dataLoaded.cards = true;
         setError(null);
       } catch (err) {
-        console.error('Error fetching archetype cards:', err);
-        setError('Failed to load archetype cards. Please try again later.');
+        if (isMounted) {
+          console.error('Error fetching archetype cards:', err);
+          setError('Failed to load archetype cards. Please try again later.');
+        }
       } finally {
-        setCardsLoading(false);
+        if (isMounted) {
+          setCardsLoading(false);
+        }
       }
     };
 
-    fetchArchetypes();
+    // Only fetch if not already loaded
+    if (!dataLoaded.archetypes) {
+      fetchArchetypes();
+    }
+    
+    // Cleanup function to prevent memory leaks and state updates after unmount
+    return () => {
+      isMounted = false;
+    };
   }, []);
+  
+  // Add a console log to verify the component is not re-rendering unnecessarily
+  // This can be removed in production
+  useEffect(() => {
+    console.log('ArchetypesPage rendered');
+  });
 
 
 
