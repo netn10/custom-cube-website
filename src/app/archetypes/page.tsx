@@ -34,12 +34,89 @@ export default function ArchetypesPage() {
   const [error, setError] = useState<string | null>(null);
   const [expandedArchetype, setExpandedArchetype] = useState<string | null>(null);
 
+  // Function to process and organize cards by color for an archetype
+  const processArchetypeCards = (cards: Card[], archetypeColors: string[]): Card[] => {
+    if (cards.length === 0) return [];
+    
+    // Organize cards by color
+    const leftColorCards: Card[] = [];
+    const rightColorCards: Card[] = [];
+    const multiColorCards: Card[] = [];
+    
+    // Only process if we have at least one color
+    if (archetypeColors.length > 0) {
+      const leftColor = archetypeColors[0];
+      const rightColor = archetypeColors.length > 1 ? archetypeColors[archetypeColors.length - 1] : archetypeColors[0];
+      
+      // Sort cards into appropriate categories
+      cards.forEach(card => {
+        // Card has exactly one color and it's the left color
+        if (card.colors.length === 1 && card.colors.includes(leftColor) && !card.colors.includes(rightColor)) {
+          leftColorCards.push(card);
+        }
+        // Card has exactly one color and it's the right color
+        else if (card.colors.length === 1 && card.colors.includes(rightColor) && !card.colors.includes(leftColor)) {
+          rightColorCards.push(card);
+        }
+        // Card has both colors (multicolor)
+        else if (card.colors.includes(leftColor) && card.colors.includes(rightColor)) {
+          multiColorCards.push(card);
+        }
+      });
+      
+      // Prepare the final cards array with the best matches
+      const finalCards: Card[] = [];
+      
+      // Add a left color card if available, otherwise use any card
+      if (leftColorCards.length > 0) {
+        finalCards.push(leftColorCards[0]);
+      } else if (cards.length > 0) {
+        finalCards.push(cards[0]);
+      }
+      
+      // Add a multicolor card if available, otherwise use any card
+      if (multiColorCards.length > 0) {
+        finalCards.push(multiColorCards[0]);
+      } else if (cards.length > finalCards.length) {
+        finalCards.push(cards[finalCards.length]);
+      } else if (finalCards.length > 0) {
+        finalCards.push({...finalCards[0]});
+      }
+      
+      // Add a right color card if available, otherwise use any card
+      if (rightColorCards.length > 0) {
+        finalCards.push(rightColorCards[0]);
+      } else if (cards.length > finalCards.length) {
+        finalCards.push(cards[finalCards.length]);
+      } else if (finalCards.length > 0) {
+        finalCards.push({...finalCards[0]});
+      }
+      
+      // Make sure we have exactly 3 cards
+      while (finalCards.length < 3 && finalCards.length > 0) {
+        finalCards.push({...finalCards[finalCards.length - 1]});
+      }
+      
+      return finalCards;
+    } else {
+      // If no colors, just use the first 3 cards
+      const finalCards = cards.slice(0, Math.min(3, cards.length));
+      
+      // Make sure we have exactly 3 cards
+      while (finalCards.length < 3 && finalCards.length > 0) {
+        const lastCard = finalCards[finalCards.length - 1];
+        finalCards.push({...lastCard});
+      }
+      
+      return finalCards;
+    }
+  };
+
   // Fetch archetypes on component mount
   useEffect(() => {
     const fetchArchetypes = async () => {
       try {
         setLoading(true);
-        setCardsLoading(true);
         
         // Fetch archetypes
         const archetypesData = await getArchetypes();
@@ -51,108 +128,53 @@ export default function ArchetypesPage() {
         }));
         
         setArchetypes(processedArchetypes);
+        setLoading(false);
         
-        // Initialize cards map
+        // After setting archetypes, fetch cards in parallel
+        fetchArchetypeCards(processedArchetypes);
+      } catch (err) {
+        console.error('Error fetching archetypes:', err);
+        setError('Failed to load archetypes. Please try again later.');
+        setLoading(false);
+      }
+    };
+
+    // Function to fetch cards for all archetypes in parallel
+    const fetchArchetypeCards = async (archetypes: Archetype[]) => {
+      try {
+        setCardsLoading(true);
+        
+        // Create an array of promises for all archetype card fetches
+        const cardFetchPromises = archetypes.map(archetype => 
+          getArchetypeCards(archetype.id, 1, 30)
+            .then(({ cards }) => ({ archetypeId: archetype.id, cards, colors: archetype.colors }))
+            .catch(error => {
+              console.error(`Error fetching cards for archetype ${archetype.id}:`, error);
+              return { archetypeId: archetype.id, cards: [], colors: archetype.colors };
+            })
+        );
+        
+        // Wait for all promises to resolve in parallel
+        const results = await Promise.all(cardFetchPromises);
+        
+        // Process the results and build the cards map
         const cardsMap: Record<string, Card[]> = {};
         
-        // Fetch cards for each archetype to ensure we have 3 cards for each
-        for (const archetype of processedArchetypes) {
-          try {
-            // Fetch cards for this specific archetype
-            const { cards } = await getArchetypeCards(archetype.id, 1, 30); // Fetch more cards to have a better selection
-            
-            if (cards.length > 0) {
-              // Organize cards by color
-              const leftColorCards: Card[] = [];
-              const rightColorCards: Card[] = [];
-              const multiColorCards: Card[] = [];
-              
-              // Get the archetype colors
-              const archetypeColors = archetype.colors;
-              
-              // Only process if we have at least one color
-              if (archetypeColors.length > 0) {
-                const leftColor = archetypeColors[0];
-                const rightColor = archetypeColors.length > 1 ? archetypeColors[archetypeColors.length - 1] : archetypeColors[0];
-                
-                // Sort cards into appropriate categories
-                cards.forEach(card => {
-                  // Card has exactly one color and it's the left color
-                  if (card.colors.length === 1 && card.colors.includes(leftColor) && !card.colors.includes(rightColor)) {
-                    leftColorCards.push(card);
-                  }
-                  // Card has exactly one color and it's the right color
-                  else if (card.colors.length === 1 && card.colors.includes(rightColor) && !card.colors.includes(leftColor)) {
-                    rightColorCards.push(card);
-                  }
-                  // Card has both colors (multicolor)
-                  else if (card.colors.includes(leftColor) && card.colors.includes(rightColor)) {
-                    multiColorCards.push(card);
-                  }
-                });
-                
-                // Prepare the final cards array with the best matches
-                const finalCards: Card[] = [];
-                
-                // Add a left color card if available, otherwise use any card
-                if (leftColorCards.length > 0) {
-                  finalCards.push(leftColorCards[0]);
-                } else if (cards.length > 0) {
-                  finalCards.push(cards[0]);
-                }
-                
-                // Add a multicolor card if available, otherwise use any card
-                if (multiColorCards.length > 0) {
-                  finalCards.push(multiColorCards[0]);
-                } else if (cards.length > finalCards.length) {
-                  finalCards.push(cards[finalCards.length]);
-                } else if (finalCards.length > 0) {
-                  finalCards.push({...finalCards[0]});
-                }
-                
-                // Add a right color card if available, otherwise use any card
-                if (rightColorCards.length > 0) {
-                  finalCards.push(rightColorCards[0]);
-                } else if (cards.length > finalCards.length) {
-                  finalCards.push(cards[finalCards.length]);
-                } else if (finalCards.length > 0) {
-                  finalCards.push({...finalCards[0]});
-                }
-                
-                // Make sure we have exactly 3 cards
-                while (finalCards.length < 3 && finalCards.length > 0) {
-                  finalCards.push({...finalCards[finalCards.length - 1]});
-                }
-                
-                cardsMap[archetype.id] = finalCards;
-              } else {
-                // If no colors, just use the first 3 cards
-                cardsMap[archetype.id] = cards.slice(0, Math.min(3, cards.length));
-                
-                // Make sure we have exactly 3 cards
-                while (cardsMap[archetype.id].length < 3 && cardsMap[archetype.id].length > 0) {
-                  const lastCard = cardsMap[archetype.id][cardsMap[archetype.id].length - 1];
-                  cardsMap[archetype.id].push({...lastCard});
-                }
-              }
-            } else {
-              cardsMap[archetype.id] = [];
-            }
-            
-            console.log(`Loaded ${cardsMap[archetype.id].length} cards for archetype ${archetype.id}`);
-          } catch (error) {
-            console.error(`Error fetching cards for archetype ${archetype.id}:`, error);
-            cardsMap[archetype.id] = [];
+        results.forEach(({ archetypeId, cards, colors }) => {
+          if (cards.length > 0) {
+            cardsMap[archetypeId] = processArchetypeCards(cards, colors);
+          } else {
+            cardsMap[archetypeId] = [];
           }
-        }
+          console.log(`Loaded ${cardsMap[archetypeId].length} cards for archetype ${archetypeId}`);
+        });
         
         setArchetypeCardsMap(cardsMap);
         setError(null);
       } catch (err) {
-        console.error('Error fetching archetypes and cards:', err);
-        setError('Failed to load archetypes. Please try again later.');
+        console.error('Error fetching archetype cards:', err);
+        setError('Failed to load archetype cards. Please try again later.');
       } finally {
-        setLoading(false);
         setCardsLoading(false);
       }
     };
