@@ -170,67 +170,9 @@ export default function CubeList() {
     resetPage();
   };
 
-  const filteredCards = cards.filter(card => {
-    // Exclude facedown cards
-    if (card.facedown === true) {
-      return false;
-    }
-    
-    // Search term filter
-    if (searchTerm && !card.name.toLowerCase().includes(searchTerm.toLowerCase())) {
-      return false;
-    }
-    
-    // Color filter - using case-insensitive comparison
-    if (filterColor.length > 0) {
-      const hasColorless = filterColor.some(c => c.toLowerCase() === 'colorless');
-      const hasMulticolor = filterColor.some(c => c.toLowerCase() === 'multicolor');
-      
-      if (hasColorless) {
-        if (card.colors.length > 0) {
-          return false;
-        }
-      } else if (hasMulticolor) {
-        if (card.colors.length <= 1) {
-          return false;
-        }
-      } else if (colorMatchType === 'exact') {
-        // For exact match, the card must have exactly the selected colors (no more, no less)
-        // First check if card has all the selected colors
-        const hasAllSelectedColors = filterColor.every(color => card.colors.includes(color));
-        // Then check if card has no other colors
-        const hasNoOtherColors = card.colors.every(color => filterColor.includes(color));
-        
-        if (!hasAllSelectedColors || !hasNoOtherColors) {
-          return false;
-        }
-      } else if (colorMatchType === 'at-most') {
-        // For at-most match type, the card must have only colors from the selected colors
-        // (but doesn't need to have all of them)
-        // Check if card has any color that's not in the selected colors
-        const hasUnselectedColor = card.colors.some(color => !filterColor.includes(color));
-        
-        if (hasUnselectedColor) {
-          return false;
-        }
-      } else if (!filterColor.some(color => card.colors.includes(color))) {
-        // For 'includes' match type, card must have at least one of the selected colors
-        return false;
-      }
-    }
-    
-    // Type filter
-    if (filterType && !card.type.includes(filterType)) {
-      return false;
-    }
-    
-    // Custom filter
-    if (filterCustom !== null && card.custom !== filterCustom) {
-      return false;
-    }
-    
-    return true;
-  });
+  // We no longer need local filtering as the backend is handling all filters
+  // All filtering is done on the server side now
+  const filteredCards = cards;
 
   const handlePageChange = (newPage: number) => {
     setCurrentPage(newPage);
@@ -673,7 +615,7 @@ export default function CubeList() {
           <PaginationControls />
           
           <div className="mtg-card-grid">
-            {filteredCards.map(card => (
+            {cards.map(card => (
               <Link href={`/card/${card.id}`} key={card.id}>
                 <div className="mtg-card card-hover">
                   {card.imageUrl ? (

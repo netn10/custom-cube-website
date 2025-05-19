@@ -114,32 +114,40 @@ def get_cards():
     
     print(f"API Request - /api/cards with params: search='{search}', body_search='{body_search}', colors={colors}, color_match='{color_match}', type='{card_type}', set='{card_set}', custom='{custom}', facedown='{facedown}', page={page}, limit={limit}, sort_by='{sort_by}', sort_dir='{sort_dir}')")
     
-    # Build query
+    # Build query using a simple approach that's less error-prone
     query = {}
     
-    # Always exclude facedown cards regardless of the parameter
-    # This ensures facedown cards are never sent to the client
-    query['$or'] = [{'facedown': False}, {'facedown': {'$exists': False}}]
+    # Basic filter for facedown cards - exclude them
+    query['facedown'] = {'$ne': True}
     
-    # The facedown parameter is now ignored as we always exclude facedown cards
-    
+    # Add name search if provided
     if search:
-        # Ensure partial matching for card names
         query['name'] = {'$regex': search, '$options': 'i'}
-
+    
+    # Add body text search if provided
     if body_search:
-        # Search in both name and text fields
-        name_query = {'name': {'$regex': body_search, '$options': 'i'}}
-        text_query = {'text': {'$regex': body_search, '$options': 'i'}}
+        # We need to search in both name and text fields
+        body_query = {
+            '$or': [
+                {'name': {'$regex': body_search, '$options': 'i'}},
+                {'text': {'$regex': body_search, '$options': 'i'}}
+            ]
+        }
         
-        # Use $or to match either field
+        # If we already have a name filter, we need to preserve it
         if 'name' in query:
-            # If we already have a name filter, combine it with both queries
-            query = {'$or': [{'$and': [{'name': query['name']}, {'text': text_query['text']}]}, 
-                              {'name': name_query['name']}]}
+            existing_name_filter = query['name']
+            # Remove the existing name filter as we'll include it in the $and
+            del query['name']
+            # Create an $and condition that combines the name filter with the body search
+            query['$and'] = [
+                {'name': existing_name_filter},
+                body_query
+            ]
         else:
-            # Otherwise just search in either field
-            query['$or'] = [name_query, text_query]
+            # No existing name filter, just add the body query directly
+            for key, value in body_query.items():
+                query[key] = value
     
     if colors and colors[0]:  # Check if colors is not empty
         color_query = []

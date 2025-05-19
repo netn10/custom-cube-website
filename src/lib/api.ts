@@ -109,6 +109,10 @@ export async function getCards(params?: {
     queryParams.append('colors', params.colors.join(','));
   }
   
+  if (params?.color_match) {
+    queryParams.append('color_match', params.color_match);
+  }
+  
   if (params?.type) {
     queryParams.append('type', params.type);
   }
@@ -232,6 +236,10 @@ export async function getTokens(params?: {
   
   if (params?.colors && params.colors.length > 0) {
     queryParams.append('colors', params.colors.join(','));
+  }
+  
+  if (params?.color_match) {
+    queryParams.append('color_match', params.color_match);
   }
   
   if (params?.page !== undefined) {
@@ -398,5 +406,6 @@ export async function getGeminiResponse(prompt: string): Promise<any> {
     body: JSON.stringify({ prompt }),
   });
 }
+
 
 
