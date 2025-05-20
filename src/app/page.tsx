@@ -214,12 +214,12 @@ export default function Home() {
           )}
         </div>
         
-        <div className="relative z-10 py-20 px-4 bg-gradient-to-r from-black/70 via-transparent to-black/70 text-center">
+        <div className="relative z-10 py-20 px-4 bg-gradient-to-r from-gray-100/80 via-transparent to-gray-100/80 dark:from-black/70 dark:via-transparent dark:to-black/70 text-center">
           <h1 className="text-6xl font-extrabold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-mtg-blue via-mtg-red to-mtg-green">
             Custom MTG Cube
           </h1>
           
-          <p className="text-xl max-w-3xl mx-auto mb-8 text-white drop-shadow-lg">
+          <p className="text-xl max-w-3xl mx-auto mb-8 text-gray-800 dark:text-white drop-shadow-lg">
             A 360-card cube featuring mostly custom cards with "weird" archetypes. Discover unique gameplay experiences 
             that push the boundaries of traditional Magic.
           </p>
@@ -251,7 +251,7 @@ export default function Home() {
                 {/* MTG Booster Pack */}
                 <div className="relative w-full h-full">
                   {/* Main booster pack */}
-                  <div className="absolute inset-0 bg-black rounded-lg overflow-hidden border-4 border-mtg-gold shadow-[0_0_15px_5px_rgba(255,215,0,0.3)]">
+                  <div className="absolute inset-0 bg-gray-800 dark:bg-black rounded-lg overflow-hidden border-4 border-mtg-gold shadow-[0_0_15px_5px_rgba(255,215,0,0.3)]">
                     {/* Pack background with MTG style */}
                     <div className="absolute inset-0 bg-gradient-to-br from-mtg-red via-mtg-blue to-mtg-green opacity-80"></div>
                     
@@ -267,20 +267,20 @@ export default function Home() {
                     {/* Pack artwork and design */}
                     <div className="absolute inset-0 flex flex-col items-center justify-between p-4">
                       {/* Top logo area */}
-                      <div className="w-full bg-black/60 rounded-lg p-2 border-b-2 border-mtg-gold">
+                      <div className="w-full bg-gray-900/60 dark:bg-black/60 rounded-lg p-2 border-b-2 border-mtg-gold">
                         <div className="text-mtg-gold font-extrabold text-3xl text-center drop-shadow-lg tracking-wider">CUSTOM CUBE</div>
                       </div>
                       
                       {/* Center artwork */}
                       <div className="relative w-full h-64 flex items-center justify-center my-2 overflow-hidden">
                         {/* Pack artwork background */}
-                        <div className="absolute inset-0 bg-black/40 rounded-lg"></div>
+                        <div className="absolute inset-0 bg-gray-700/40 dark:bg-black/40 rounded-lg"></div>
                         
                         {/* Animated background effect */}
                         <div className="absolute inset-0 bg-gradient-to-br from-mtg-red/20 via-mtg-blue/20 to-mtg-green/20 animate-[pulse_3s_ease-in-out_infinite]"></div>
                         
                         {/* Cube symbol */}
-                        <div className="relative z-10 w-40 h-40 bg-black/60 rounded-full flex items-center justify-center border-2 border-mtg-gold shadow-[0_0_10px_2px_rgba(255,215,0,0.5)]">
+                        <div className="relative z-10 w-40 h-40 bg-gray-800/60 dark:bg-black/60 rounded-full flex items-center justify-center border-2 border-mtg-gold shadow-[0_0_10px_2px_rgba(255,215,0,0.5)]">
                           <img 
                             src="https://i.imgur.com/hkGysU7.png" 
                             alt="Cube Symbol"
@@ -295,7 +295,7 @@ export default function Home() {
                       </div>
                       
                       {/* Bottom info area */}
-                      <div className="w-full bg-black/60 rounded-lg p-2 border-t-2 border-mtg-gold flex flex-col items-center">
+                      <div className="w-full bg-gray-900/60 dark:bg-black/60 rounded-lg p-2 border-t-2 border-mtg-gold flex flex-col items-center">
                         <div className="text-white text-sm font-bold">15 RANDOM CARDS</div>
                         <div className="text-mtg-gold text-lg mt-1 animate-pulse font-bold">CLICK TO OPEN</div>
                       </div>
@@ -982,19 +982,19 @@ export default function Home() {
 
       {/* About Section with Improved Design */}
       <section className="relative px-4 py-16">
-        <div className="absolute inset-0 bg-gradient-to-br from-mtg-black/80 via-transparent to-mtg-blue/30 z-0"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-mtg-black/80 via-transparent to-mtg-blue/30 dark:from-mtg-black/80 dark:via-transparent dark:to-mtg-blue/30 light:from-mtg-white/80 light:via-transparent light:to-mtg-blue/10 z-0"></div>
         
         <div className="max-w-4xl mx-auto relative z-10">
-          <h2 className="text-3xl font-bold mb-8 text-center text-white">
+          <h2 className="text-3xl font-bold mb-8 text-center text-gray-800 dark:text-white">
             <span className="relative inline-block">
               <span className="relative z-10">About This Cube</span>
               <span className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-mtg-red to-mtg-green"></span>
             </span>
           </h2>
           
-          <div className="bg-black/50 backdrop-blur-sm p-8 rounded-2xl shadow-2xl border border-gray-800">
+          <div className="bg-white/80 dark:bg-black/50 backdrop-blur-sm p-8 rounded-2xl shadow-2xl border border-gray-300 dark:border-gray-800">
             <div className="grid md:grid-cols-2 gap-8">
-              <div className="space-y-4 text-gray-200">
+              <div className="space-y-4 text-gray-700 dark:text-gray-200">
                 <p className="text-lg leading-relaxed">
                   This is a journey through Magic, with many "what ifs," references, nostalgia, and surprises. 
                   The cube is designed to be drafted with 8 players, but works well with any number.
