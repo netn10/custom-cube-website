@@ -172,8 +172,33 @@ export default function Home() {
     }
   };
   
+  // Sort archetypes by the color wheel order (WU, UB, BR, RG, GW, WB, UR, BG, RW, GU)
+  const colorWheelOrder = ['WU', 'UB', 'BR', 'RG', 'GW', 'WB', 'UR', 'BG', 'RW', 'GU'];
+  
+  const sortedArchetypes = [...archetypes].sort((a, b) => {
+    // Create color code for each archetype
+    const aColors = a.colors.join('');
+    const bColors = b.colors.join('');
+    
+    // Find index in colorWheelOrder
+    const aIndex = colorWheelOrder.indexOf(aColors);
+    const bIndex = colorWheelOrder.indexOf(bColors);
+    
+    // If both are in the color wheel order, sort by that
+    if (aIndex !== -1 && bIndex !== -1) {
+      return aIndex - bIndex;
+    }
+    
+    // If only one is in the color wheel, prioritize it
+    if (aIndex !== -1) return -1;
+    if (bIndex !== -1) return 1;
+    
+    // Otherwise, sort by name
+    return a.name.localeCompare(b.name);
+  });
+  
   // Filter archetypes based on selected color
-  const filteredArchetypes = archetypes.filter(archetype => {
+  const filteredArchetypes = sortedArchetypes.filter(archetype => {
     if (!colorFilter) return true;
     if (colorFilter === 'multi') {
       return archetype.colors.length > 1;
@@ -781,7 +806,7 @@ export default function Home() {
             </button>
           </div>
         ) : (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center">
             {filteredArchetypes.map((archetype) => {
               // Based on the list provided, we know the exact archetype format matches
               // Example: "GU Prowess" is the exact archetype string we need to match
@@ -859,14 +884,14 @@ export default function Home() {
                   key={archetype.id}
                   className={`relative group overflow-hidden rounded-xl transition-all duration-500 
                     ${selectedArchetype === archetype.id ? 'ring-4 ring-mtg-gold' : ''}
-                    dark:bg-gray-800/80 bg-white/90 backdrop-blur-sm transform hover:scale-105 hover:shadow-2xl cursor-pointer block`}
+                    dark:bg-gray-800/80 bg-white/90 backdrop-blur-sm transform hover:scale-105 hover:shadow-2xl cursor-pointer block w-full h-full flex flex-col`}
                 >
                   {/* Card background with parallax effect */}
                   <div className="absolute inset-0 opacity-10 group-hover:opacity-20 transition-opacity duration-500 bg-center bg-cover transform group-hover:scale-110 transition-transform duration-1000"
                        style={{ backgroundImage: `url(${randomCard.imageUrl})` }}>
                   </div>
                   
-                  <div className="p-6 relative z-10">
+                  <div className="p-6 relative z-10 flex flex-col h-full">
                     {/* Archetype badge - number of cards */}
                     <div className="absolute top-2 right-2 bg-black/60 text-white text-xs px-2 py-1 rounded-full">
                       {archetype.colors.map((color) => (
@@ -893,11 +918,11 @@ export default function Home() {
                       {archetype.description}
                     </p>
                     
-                    <div className="flex justify-between items-end">
+                    <div className="flex flex-col items-center mt-auto">
                       {randomCard ? (
                         <Link 
                           href={`/card/${encodeURIComponent(randomCard.name)}`} 
-                          className="relative w-1/2 aspect-[2.5/3.5] overflow-hidden rounded-lg shadow-lg transform transition-transform duration-500 group-hover:scale-105 cursor-pointer"
+                          className="relative w-1/2 aspect-[2.5/3.5] overflow-hidden rounded-lg shadow-lg transform transition-transform duration-500 group-hover:scale-105 cursor-pointer mx-auto mb-4"
                           onClick={(e) => e.stopPropagation()} /* Prevent triggering the parent Link */
                         >
                           {randomCard.imageUrl ? (
@@ -954,14 +979,14 @@ export default function Home() {
                           )}
                         </Link>
                       ) : (
-                        <div className="w-1/2 aspect-[2.5/3.5] rounded-lg bg-gray-200 dark:bg-gray-700 flex items-center justify-center">
+                        <div className="w-1/2 aspect-[2.5/3.5] rounded-lg bg-gray-200 dark:bg-gray-700 flex items-center justify-center mx-auto mb-4">
                           <p className="text-center text-gray-500 dark:text-gray-400">No card</p>
                         </div>
                       )}
                       
-                      <div className="flex flex-col gap-2">
+                      <div className="w-full">
                         <div 
-                          className="px-4 py-2 bg-gradient-to-r from-mtg-blue to-mtg-red text-white rounded-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 text-center"
+                          className="px-4 py-2 bg-gradient-to-r from-mtg-blue to-mtg-red text-white rounded-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 text-center w-full"
                         >
                           View Details
                         </div>
@@ -1016,20 +1041,26 @@ export default function Home() {
                   {/* Display completely random cards from the cube, not related to archetypes */}
                   {randomCubeCards.slice(0, 4).map((card, index) => (
                     card?.imageUrl && (
-                      <div 
-                        key={index} 
-                        className="mtg-card overflow-hidden rounded-lg shadow-xl transform hover:rotate-0 hover:scale-105 transition-all duration-300"
+                      <Link 
+                        key={index}
+                        href={`/card/${encodeURIComponent(card.name)}`}
+                        className="mtg-card overflow-hidden rounded-lg shadow-xl transform hover:rotate-0 hover:scale-105 transition-all duration-300 cursor-pointer"
                         style={{ transform: `rotate(${(index % 2 === 0 ? -5 : 5)}deg)` }}
                       >
-                        <img 
-                          src={card.imageUrl}
-                          alt={card.name || 'MTG Card'}
-                          className="w-full h-full object-cover"
-                          onError={(e) => {
-                            e.currentTarget.src = 'data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22100%22%20height%3D%22140%22%20viewBox%3D%220%200%20100%20140%22%20preserveAspectRatio%3D%22none%22%3E%3Crect%20width%3D%22100%22%20height%3D%22140%22%20fill%3D%22%23eee%22%3E%3C%2Frect%3E%3Ctext%20text-anchor%3D%22middle%22%20x%3D%2250%22%20y%3D%2270%22%20style%3D%22fill%3A%23aaa%3Bfont-weight%3Abold%3Bfont-size%3A12px%3Bfont-family%3AArial%2C%20Helvetica%2C%20sans-serif%3Bdominant-baseline%3Acentral%22%3EImage%20Not%20Found%3C%2Ftext%3E%3C%2Fsvg%3E';
-                          }}
-                        />
-                      </div>
+                        <div className="relative">
+                          <img 
+                            src={card.imageUrl}
+                            alt={card.name || 'MTG Card'}
+                            className="w-full h-full object-cover"
+                            onError={(e) => {
+                              e.currentTarget.src = 'data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22100%22%20height%3D%22140%22%20viewBox%3D%220%200%20100%20140%22%20preserveAspectRatio%3D%22none%22%3E%3Crect%20width%3D%22100%22%20height%3D%22140%22%20fill%3D%22%23eee%22%3E%3C%2Frect%3E%3Ctext%20text-anchor%3D%22middle%22%20x%3D%2250%22%20y%3D%2270%22%20style%3D%22fill%3A%23aaa%3Bfont-weight%3Abold%3Bfont-size%3A12px%3Bfont-family%3AArial%2C%20Helvetica%2C%20sans-serif%3Bdominant-baseline%3Acentral%22%3EImage%20Not%20Found%3C%2Ftext%3E%3C%2Fsvg%3E';
+                            }}
+                          />
+                          <div className="absolute bottom-0 left-0 right-0 bg-black/60 p-1 text-white text-xs font-semibold truncate">
+                            {card.name}
+                          </div>
+                        </div>
+                      </Link>
                     )
                   ))}
                 </div>

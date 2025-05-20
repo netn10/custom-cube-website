@@ -365,6 +365,10 @@ def get_archetype_cards(archetype_id):
 def get_random_archetype_cards():
     """Get one random card from each archetype in the database"""
     try:
+        # Check if we should exclude facedown cards
+        exclude_facedown = request.args.get('exclude_facedown', 'false').lower() == 'true'
+        print(f"Random archetype cards request: exclude_facedown={exclude_facedown}")
+        
         # Get all archetypes from the database
         all_archetypes = list(db.archetypes.find())
         print(f"Found {len(all_archetypes)} total archetypes in database")
@@ -379,15 +383,15 @@ def get_random_archetype_cards():
             archetype_id = archetype.get('id')
             archetype_name = archetype.get('name', 'Unknown')
             
+            # Build the query for cards in this archetype
+            query = {"$and": [{"$or": [{"archetypes": archetype_id}, {"archetypes": archetype_name}]}]}
+            
+            # Add facedown filter if needed
+            if exclude_facedown:
+                query["$and"].append({"$or": [{"facedown": False}, {"facedown": {"$exists": False}}]})
+            
             # Find all cards for this archetype by checking the archetypes array
-            # We need to check for both the archetype ID and name since some cards might use either
-            # Also exclude facedown cards
-            cards = list(db.cards.find({
-                "$and": [
-                    {"$or": [{"archetypes": archetype_id}, {"archetypes": archetype_name}]},
-                    {"$or": [{"facedown": False}, {"facedown": {"$exists": False}}]}
-                ]
-            }))
+            cards = list(db.cards.find(query))
             
             # Debug logging
             print(f"Archetype: {archetype_name} (ID: {archetype_id}), Found {len(cards)} cards")
@@ -926,12 +930,20 @@ def get_random_pack():
         # Get pack size from query parameters, default to 15 cards
         pack_size = request.args.get('size', default=15, type=int)
         min_size = request.args.get('min_size', default=1, type=int)
+        exclude_facedown = request.args.get('exclude_facedown', 'false').lower() == 'true'
         
-        # Get all cards from the database
-        all_cards = list(db.cards.find())
+        print(f"Random pack request: size={pack_size}, exclude_facedown={exclude_facedown}")
+        
+        # Build query to filter cards
+        query = {}
+        if exclude_facedown:
+            query["$or"] = [{"facedown": False}, {"facedown": {"$exists": False}}]
+        
+        # Get filtered cards from the database
+        all_cards = list(db.cards.find(query))
         total_cards = len(all_cards)
         
-        print(f"Found {total_cards} cards in database")
+        print(f"Found {total_cards} cards in database after filtering")
         
         # If we don't have enough cards, adjust the pack size
         if total_cards < pack_size:
@@ -958,6 +970,7 @@ def get_random_pack():
                 "requested_size": int(request.args.get('size', 15)),
                 "actual_size": len(pack),
                 "total_cards_in_database": total_cards,
+                "exclude_facedown": exclude_facedown,
                 "timestamp": datetime.now().isoformat()
             }
         }

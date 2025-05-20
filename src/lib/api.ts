@@ -189,6 +189,7 @@ export async function getArchetypeCards(id: string, page: number = 1, limit: num
   const queryParams = new URLSearchParams();
   queryParams.append('page', page.toString());
   queryParams.append('limit', limit.toString());
+  queryParams.append('exclude_facedown', 'true');
   
   const queryString = queryParams.toString() ? `?${queryParams.toString()}` : '';
   return fetchFromAPI<{cards: Card[], total: number}>(`/archetypes/${id}/cards${queryString}`);
@@ -197,7 +198,7 @@ export async function getArchetypeCards(id: string, page: number = 1, limit: num
 export async function getRandomArchetypeCards(): Promise<Card[]> {
   try {
     // Use the API_BASE_URL to ensure it works in all environments
-    const response = await fetch(`${API_BASE_URL}/archetypes/random-cards`, {
+    const response = await fetch(`${API_BASE_URL}/archetypes/random-cards?exclude_facedown=true`, {
       headers: {
         'Content-Type': 'application/json',
       },
@@ -302,7 +303,7 @@ export async function getDraftPack(): Promise<Card[]> {
 // Generate a random pack with equal probability for each card
 export async function getRandomPack(size?: number): Promise<{pack: Card[], metadata: any}> {
   try {
-    const endpoint = size ? `/random-pack?size=${size}` : '/random-pack';
+    const endpoint = size ? `/random-pack?size=${size}&exclude_facedown=true` : '/random-pack?exclude_facedown=true';
     const data = await fetchFromAPI<{pack: Card[], metadata: any}>(endpoint);
     
     // Process the cards to ensure they have the correct structure
