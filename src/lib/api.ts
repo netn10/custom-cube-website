@@ -142,6 +142,10 @@ export async function getCards(params?: {
     queryParams.append('sort_dir', params.sort_dir);
   }
   
+  if (params?.include_facedown) {
+    queryParams.append('include_facedown', params.include_facedown ? 'true' : 'false');
+  }
+  
   const queryString = queryParams.toString() ? `?${queryParams.toString()}` : '';
   return fetchFromAPI<{cards: Card[], total: number}>(`/cards${queryString}`);
 }

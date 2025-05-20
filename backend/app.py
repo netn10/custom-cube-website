@@ -107,18 +107,20 @@ def get_cards():
     card_set = request.args.get('set', '')
     custom = request.args.get('custom', '')
     facedown = request.args.get('facedown', '')
+    include_facedown = request.args.get('include_facedown', '').lower() == 'true'
     page = int(request.args.get('page', 1))
     limit = int(request.args.get('limit', 50))
     sort_by = request.args.get('sort_by', 'name')
     sort_dir = request.args.get('sort_dir', 'asc')
     
-    print(f"API Request - /api/cards with params: search='{search}', body_search='{body_search}', colors={colors}, color_match='{color_match}', type='{card_type}', set='{card_set}', custom='{custom}', facedown='{facedown}', page={page}, limit={limit}, sort_by='{sort_by}', sort_dir='{sort_dir}')")
+    print(f"API Request - /api/cards with params: search='{search}', body_search='{body_search}', colors={colors}, color_match='{color_match}', type='{card_type}', set='{card_set}', custom='{custom}', facedown='{facedown}', include_facedown='{include_facedown}', page={page}, limit={limit}, sort_by='{sort_by}', sort_dir='{sort_dir}')")
     
     # Build query using a simple approach that's less error-prone
     query = {}
     
-    # Basic filter for facedown cards - exclude them
-    query['facedown'] = {'$ne': True}
+    # Basic filter for facedown cards - exclude them unless include_facedown is true
+    if not include_facedown:
+        query['facedown'] = {'$ne': True}
     
     # Add name search if provided
     if search:

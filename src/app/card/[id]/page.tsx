@@ -24,7 +24,7 @@ export default function CardDetailPage() {
           
           // First search for the card by exact name
           console.log('Searching for exact match...');
-          const exactSearchResults = await getCards({ search: `"${cardName}"`, limit: 10, include_facedown: true });
+          const exactSearchResults = await getCards({ search: `"${cardName}"`, limit: 10, facedown: true });
           
           // If we don't get an exact match, try a broader search
           let searchResults = exactSearchResults;
