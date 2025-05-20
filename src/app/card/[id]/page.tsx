@@ -24,18 +24,11 @@ export default function CardDetailPage() {
           console.log('Card data received:', data);
           setCard(data);
           
-          // Handle related face linking - always get the direct ID
-          if (data.relatedFaceId) {
-            // We have the direct ID, no need to search
-            setRelatedCard({ id: data.relatedFaceId, name: data.relatedFace || 'Related Face' });
-          } else if (data.relatedFace && data.otherFaceId) {
-            // For backward compatibility - some cards may have otherFaceId
-            setRelatedCard({ id: data.otherFaceId, name: data.relatedFace || 'Related Face' });
-          } else if (data.relatedFace) {
-            // If we only have the name but not the ID, we'll search for it to get the ID
+          // If the card has a related face, fetch that card
+          if (data.relatedFace) {
             try {
-              // Search for the card by name (including facedown cards)
-              const relatedCardResults = await getCards({ search: data.relatedFace, include_facedown: true });
+              // Search for the card by name
+              const relatedCardResults = await getCards({ search: data.relatedFace });
               if (relatedCardResults.cards.length > 0) {
                 setRelatedCard(relatedCardResults.cards[0]);
               }
@@ -95,11 +88,8 @@ export default function CardDetailPage() {
     G: 'bg-mtg-green text-white',
   };
 
-  // Function to convert mana cost to JSX elements
+  // Function to format mana cost with colored symbols
   const formatManaCost = (manaCost: string) => {
-    if (!manaCost) return '';
-    
-    // Create a safe HTML string for dangerouslySetInnerHTML
     return manaCost.replace(/\{([WUBRGC0-9]+)\}/g, (match, symbol) => {
       const colorClass = symbol.length === 1 && 'WUBRG'.includes(symbol)
         ? colorMap[symbol]
@@ -215,26 +205,15 @@ export default function CardDetailPage() {
               </div>
             )}
             
-            {(card.relatedFace || card.relatedFaceId) && (
+            {card.relatedFace && (
               <div className="mb-4">
                 <p className="text-sm font-semibold dark:text-white">Related Face: 
-                  {relatedCard ? (
-                    <Link 
-                      href={`/card/${relatedCard.id}`}
-                      className="ml-2 text-blue-500 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300"
-                    >
-                      {card.relatedFace || 'View Related Face'}
-                    </Link>
-                  ) : card.relatedFaceId ? (
-                    <Link 
-                      href={`/card/${card.relatedFaceId}`}
-                      className="ml-2 text-blue-500 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300"
-                    >
-                      {card.relatedFace || 'View Related Face'}
-                    </Link>
-                  ) : (
-                    <span className="ml-2 text-gray-500 dark:text-gray-400">Loading...</span>
-                  )
+                  <Link 
+                    href={relatedCard ? `/card/${relatedCard.id}` : `/cube-list?search=${encodeURIComponent(card.relatedFace)}`}
+                    className="ml-2 text-blue-500 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300"
+                  >
+                    {card.relatedFace}
+                  </Link>
                 </p>
               </div>
             )}
