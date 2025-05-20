@@ -381,6 +381,16 @@ body {
     @apply transition-transform duration-300 hover:scale-105 hover:shadow-md cursor-pointer;
   }
   
+  /* Hide scrollbar on booster cards container while maintaining scroll functionality */
+  .booster-cards-container {
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE and Edge */
+  }
+  
+  .booster-cards-container::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Edge */
+  }
+  
   .compact-ui {
     @apply text-sm;
   }

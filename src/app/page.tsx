@@ -697,7 +697,7 @@ export default function Home() {
                 </div>
               </div>
             ) : (
-              <div id="booster-cards" className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 w-full max-w-4xl mx-auto pt-24 pb-16 mt-4 booster-cards-container" style={{ minHeight: '600px' }}>
+              <div id="booster-cards" className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 w-full max-w-4xl mx-auto pt-8 sm:pt-12 md:pt-16 pb-8 sm:pb-12 mt-4 booster-cards-container" style={{ minHeight: 'auto', maxHeight: '100vh', overflowY: 'auto' }}>
                 {console.log(`Rendering booster pack with ${boosterCards.length} cards:`, boosterCards)}
                 {boosterCards.slice(0, 15).map((card, index) => (
                   <div 
