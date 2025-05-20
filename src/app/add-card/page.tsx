@@ -1,16 +1,26 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import { addCard } from '@/lib/api';
 import { Card } from '@/types/types';
+import { useAuth } from '@/contexts/AuthContext';
 
 export default function AddCard(): JSX.Element {
   const router = useRouter();
+  const { isAuthenticated, isAdmin, token } = useAuth();
   const [inputMethod, setInputMethod] = useState<'form' | 'json'>('form');
   const [jsonInput, setJsonInput] = useState('');
   const [jsonError, setJsonError] = useState('');
+  
+  // Redirect non-admin users
+  useEffect(() => {
+    if (!isAuthenticated) {
+      // If not authenticated, redirect to login
+      router.push('/login');
+    }
+  }, [isAuthenticated, router]);
   const [formData, setFormData] = useState<Card>({
     id: '', // Add empty id field to satisfy Card type
     name: '',
@@ -171,23 +181,12 @@ export default function AddCard(): JSX.Element {
   // Function to submit card data to API
   const submitCard = async (cardData: any) => {
     try {
-      const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000/api';
-      // Check if the API URL already includes /api to avoid duplication
-      const endpoint = apiUrl.endsWith('/api') ? '/cards/add' : '/api/cards/add';
-      const response = await fetch(`${apiUrl}${endpoint}`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(cardData),
-      });
-      
-      if (!response.ok) {
-        const errorData = await response.json();
-        throw new Error(errorData.error || 'Failed to add card');
+      if (!token) {
+        throw new Error('You must be logged in as an admin to add cards');
       }
       
-      const data = await response.json();
+      // Use the API function with token
+      const data = await addCard(cardData, token);
       setSuccessMessage('Card added successfully!');
       
       // Reset form and JSON input after successful submission
@@ -571,6 +570,26 @@ export default function AddCard(): JSX.Element {
     </div>
   );
 
+  // If not authenticated or not admin, show message
+  if (!isAuthenticated || !isAdmin) {
+    return (
+      <div className="container mx-auto px-4 py-8 max-w-xl">
+        <div className="bg-red-100 border-l-4 border-red-500 text-red-700 p-4 mb-6" role="alert">
+          <p className="font-bold">Access Denied</p>
+          <p>You must be logged in as an admin to add new cards.</p>
+          <div className="mt-4">
+            <Link href="/login" className="inline-block bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mr-2">
+              Log In
+            </Link>
+            <Link href="/" className="inline-block bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded">
+              Return to Home
+            </Link>
+          </div>
+        </div>
+      </div>
+    );
+  }
+  
   return (
     <div className="container mx-auto px-4 py-8">
       <h1 className="text-3xl font-bold mb-6">Add New Card</h1>

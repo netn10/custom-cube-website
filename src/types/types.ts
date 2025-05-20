@@ -80,3 +80,29 @@ export type DistilledEvaluation = {
   livecodebench: string;
   codeforces_rating: string;
 };
+
+export type User = {
+  id: string;
+  username: string;
+  email?: string;
+  is_admin: boolean;
+  created_at?: string;
+};
+
+export type AuthState = {
+  isAuthenticated: boolean;
+  user: User | null;
+  token: string | null;
+  isAdmin: boolean;
+};
+
+export type LoginCredentials = {
+  username: string;
+  password: string;
+};
+
+export type RegisterFormData = {
+  username: string;
+  password: string;
+  email?: string;
+};

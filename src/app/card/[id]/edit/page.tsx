@@ -5,14 +5,24 @@ import { useParams, useRouter } from 'next/navigation';
 import Link from 'next/link';
 import { getCards, updateCard } from '@/lib/api';
 import { Card } from '@/types/types';
+import { useAuth } from '@/contexts/AuthContext';
 
 export default function EditCardPage(): JSX.Element {
   const params = useParams();
   const router = useRouter();
+  const { isAuthenticated, isAdmin, token } = useAuth();
   const [loading, setLoading] = useState(true);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
   const [successMessage, setSuccessMessage] = useState('');
+  
+  // Redirect non-admin users
+  useEffect(() => {
+    if (!isAuthenticated) {
+      // If not authenticated, redirect to login
+      router.push('/login');
+    }
+  }, [isAuthenticated, router]);
   const [inputMethod, setInputMethod] = useState<'form' | 'json'>('form');
   const [jsonInput, setJsonInput] = useState('');
   const [jsonError, setJsonError] = useState('');
@@ -45,7 +55,7 @@ export default function EditCardPage(): JSX.Element {
 
   // Load existing card data when the component mounts
   useEffect(() => {
-    if (params.id) {
+    if (params.id && isAuthenticated) {
       const fetchCard = async () => {
         try {
           const cardName = decodeURIComponent(params.id as string);
@@ -205,8 +215,12 @@ export default function EditCardPage(): JSX.Element {
   // Function to submit card data to API
   const submitCard = async (cardData: Card) => {
     try {
-      // Use the updateCard function with the card ID
-      const updatedCard = await updateCard(cardData.id, cardData);
+      if (!token) {
+        throw new Error('You must be logged in as an admin to update cards');
+      }
+      
+      // Use the updateCard function with the card ID and auth token
+      const updatedCard = await updateCard(cardData.id, cardData, token);
       
       setSuccessMessage('Card updated successfully!');
       
@@ -222,6 +236,26 @@ export default function EditCardPage(): JSX.Element {
       setIsSubmitting(false);
     }
   };
+
+  // If not authenticated or not admin, show access denied message
+  if (!isAuthenticated || !isAdmin) {
+    return (
+      <div className="container mx-auto px-4 py-8 max-w-xl">
+        <div className="bg-red-100 border-l-4 border-red-500 text-red-700 p-4 mb-6" role="alert">
+          <p className="font-bold">Access Denied</p>
+          <p>You must be logged in as an admin to edit cards.</p>
+          <div className="mt-4">
+            <Link href="/login" className="inline-block bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mr-2">
+              Log In
+            </Link>
+            <Link href="/" className="inline-block bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded">
+              Return to Home
+            </Link>
+          </div>
+        </div>
+      </div>
+    );
+  }
 
   if (loading) {
     return (

@@ -1,5 +1,5 @@
 // API service for fetching data from the Flask backend
-import { Card, Archetype, Token, Suggestion } from '@/types/types';
+import { Card, Archetype, Token, Suggestion, User, LoginCredentials, RegisterFormData } from '@/types/types';
 
 // In development, we use localhost with /api path
 // In production, the URL from env already includes the /api path
@@ -7,6 +7,33 @@ export const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL ? process.env.NEXT_P
 
 // For debugging
 console.log('API_BASE_URL:', API_BASE_URL);
+
+// Authentication API
+
+// Register a new user
+export async function registerUser(userData: RegisterFormData): Promise<{ message: string, user_id: string }> {
+  return fetchFromAPI<{ message: string, user_id: string }>('/auth/register', {
+    method: 'POST',
+    body: JSON.stringify(userData),
+  });
+}
+
+// Login user
+export async function loginUser(credentials: LoginCredentials): Promise<{ token: string, user: User }> {
+  return fetchFromAPI<{ token: string, user: User }>('/auth/login', {
+    method: 'POST',
+    body: JSON.stringify(credentials),
+  });
+}
+
+// Get current user profile
+export async function getUserProfile(token: string): Promise<User> {
+  return fetchFromAPI<User>('/auth/profile', {
+    headers: {
+      'Authorization': `Bearer ${token}`,
+    },
+  });
+}
 
 // Generic fetch function with error handling
 async function fetchFromAPI<T>(endpoint: string, options?: RequestInit): Promise<T> {
@@ -32,7 +59,7 @@ async function fetchFromAPI<T>(endpoint: string, options?: RequestInit): Promise
 }
 
 // Add a new card
-export async function addCard(cardData: Partial<Card>): Promise<Card> {
+export async function addCard(cardData: Partial<Card>, token: string): Promise<Card> {
   try {
     // Check if the API URL already includes /api to avoid duplication
     const endpoint = `/cards/add`;
@@ -40,6 +67,7 @@ export async function addCard(cardData: Partial<Card>): Promise<Card> {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
+        'Authorization': `Bearer ${token}`
       },
       body: JSON.stringify(cardData),
     });
@@ -57,7 +85,7 @@ export async function addCard(cardData: Partial<Card>): Promise<Card> {
 }
 
 // Update an existing card
-export async function updateCard(id: string, cardData: Partial<Card>): Promise<Card> {
+export async function updateCard(id: string, cardData: Partial<Card>, token: string): Promise<Card> {
   try {
     // Check if the API URL already includes /api to avoid duplication
     const endpoint = `/cards/update/${id}`;
@@ -65,6 +93,7 @@ export async function updateCard(id: string, cardData: Partial<Card>): Promise<C
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
+        'Authorization': `Bearer ${token}`
       },
       body: JSON.stringify(cardData),
     });

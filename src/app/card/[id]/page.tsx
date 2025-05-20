@@ -5,10 +5,12 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { getCards, API_BASE_URL } from '@/lib/api';
 import { Card } from '@/types/types';
+import { useAuth } from '@/contexts/AuthContext';
 
 export default function CardDetailPage() {
   const params = useParams();
   const router = useRouter();
+  const { isAuthenticated, isAdmin } = useAuth();
   const [card, setCard] = useState<Card | null>(null);
   const [relatedCard, setRelatedCard] = useState<Card | null>(null);
   const [loading, setLoading] = useState(true);
@@ -352,15 +354,17 @@ export default function CardDetailPage() {
               </div>
             )}
             
-            {/* Edit Card Button */}
-            <div className="mt-6 mb-4">
-              <Link href={`/card/${encodeURIComponent(card.name)}/edit`} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline inline-flex items-center">
-                <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path>
-                </svg>
-                Edit Card
-              </Link>
-            </div>
+            {/* Edit Card Button - Only shown for authenticated admins */}
+            {isAuthenticated && isAdmin && (
+              <div className="mt-6 mb-4">
+                <Link href={`/card/${encodeURIComponent(card.name)}/edit`} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline inline-flex items-center">
+                  <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path>
+                  </svg>
+                  Edit Card
+                </Link>
+              </div>
+            )}
             
             <div className="flex flex-wrap gap-2 mt-4">
               {card.custom && (

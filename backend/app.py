@@ -1,4 +1,4 @@
-from flask import Flask, jsonify, request, Response
+from flask import Flask, jsonify, request, Response, session
 from flask_cors import CORS
 from pymongo import MongoClient
 import os
@@ -6,8 +6,11 @@ from bson import ObjectId
 from dotenv import load_dotenv
 import json
 import random
-from datetime import datetime
+from datetime import datetime, timedelta
 import requests
+import jwt
+from functools import wraps
+from werkzeug.security import generate_password_hash, check_password_hash
 
 # Load environment variables
 load_dotenv()
@@ -28,7 +31,12 @@ except Exception as e:
     # Don't raise the exception, allow the app to start even with DB issues
 
 app = Flask(__name__)
-CORS(app, resources={r"/api/*": {"origins": "*"}}, supports_credentials=True)  # Enable CORS for all routes with proper configuration
+app.config['SECRET_KEY'] = os.getenv('SECRET_KEY', 'dev_secret_key_change_in_production')
+app.config['JWT_SECRET_KEY'] = os.getenv('JWT_SECRET_KEY', 'jwt_secret_key_change_in_production')
+app.config['JWT_ACCESS_TOKEN_EXPIRES'] = timedelta(hours=24)
+
+# Configure CORS to allow credentials
+CORS(app, resources={r"/api/*": {"origins": "*"}}, supports_credentials=True, expose_headers=['Authorization'])
 
 # Custom JSON encoder to handle MongoDB ObjectId
 class MongoJSONEncoder(json.JSONEncoder):
@@ -39,6 +47,41 @@ class MongoJSONEncoder(json.JSONEncoder):
 
 # Set the custom JSON encoder for Flask
 app.json_encoder = MongoJSONEncoder
+
+# Authentication decorator
+def admin_required(f):
+    @wraps(f)
+    def decorated(*args, **kwargs):
+        token = None
+        
+        # Check if token is in headers
+        auth_header = request.headers.get('Authorization')
+        if auth_header and auth_header.startswith('Bearer '):
+            token = auth_header.split(' ')[1]
+        
+        if not token:
+            return jsonify({'error': 'Authentication token is missing!'}), 401
+        
+        try:
+            # Decode token
+            data = jwt.decode(token, app.config['JWT_SECRET_KEY'], algorithms=['HS256'])
+            current_user = db.users.find_one({'_id': ObjectId(data['user_id'])})
+            
+            if not current_user:
+                return jsonify({'error': 'User not found!'}), 401
+                
+            # Check if user is admin
+            if not current_user.get('is_admin', False):
+                return jsonify({'error': 'Admin privileges required!'}), 403
+                
+        except jwt.ExpiredSignatureError:
+            return jsonify({'error': 'Token expired!'}), 401
+        except jwt.InvalidTokenError:
+            return jsonify({'error': 'Invalid token!'}), 401
+            
+        return f(*args, **kwargs)
+    
+    return decorated
 
 # Function to get default image URL based on card colors
 def get_default_image_for_colors(colors):
@@ -69,6 +112,105 @@ def get_default_image_for_colors(colors):
 
 
 
+# Auth routes
+@app.route('/api/auth/register', methods=['POST'])
+def register():
+    """Register a new user"""
+    data = request.get_json()
+    
+    # Validate required fields
+    if not data or not data.get('username') or not data.get('password'):
+        return jsonify({'error': 'Missing username or password'}), 400
+    
+    # Check if username already exists
+    if db.users.find_one({'username': data['username']}):
+        return jsonify({'error': 'Username already exists'}), 409
+    
+    # Create new user
+    new_user = {
+        'username': data['username'],
+        'password': generate_password_hash(data['password']),
+        'email': data.get('email'),
+        'is_admin': data.get('is_admin', False),  # Default to non-admin
+        'created_at': datetime.utcnow(),
+    }
+    
+    # First user is automatically an admin
+    if db.users.count_documents({}) == 0:
+        new_user['is_admin'] = True
+    
+    user_id = db.users.insert_one(new_user).inserted_id
+    
+    return jsonify({
+        'message': 'User registered successfully',
+        'user_id': str(user_id)
+    }), 201
+
+@app.route('/api/auth/login', methods=['POST'])
+def login():
+    """Login and get authentication token"""
+    data = request.get_json()
+    
+    # Validate required fields
+    if not data or not data.get('username') or not data.get('password'):
+        return jsonify({'error': 'Missing username or password'}), 400
+    
+    # Check if user exists
+    user = db.users.find_one({'username': data['username']})
+    if not user or not check_password_hash(user['password'], data['password']):
+        return jsonify({'error': 'Invalid username or password'}), 401
+    
+    # Generate JWT token
+    token = jwt.encode({
+        'user_id': str(user['_id']),
+        'username': user['username'],
+        'is_admin': user.get('is_admin', False),
+        'exp': datetime.utcnow() + app.config['JWT_ACCESS_TOKEN_EXPIRES']
+    }, app.config['JWT_SECRET_KEY'], algorithm='HS256')
+    
+    return jsonify({
+        'token': token,
+        'user': {
+            'id': str(user['_id']),
+            'username': user['username'],
+            'is_admin': user.get('is_admin', False)
+        }
+    })
+
+@app.route('/api/auth/profile', methods=['GET'])
+def get_profile():
+    """Get current user profile"""
+    token = None
+    auth_header = request.headers.get('Authorization')
+    
+    if auth_header and auth_header.startswith('Bearer '):
+        token = auth_header.split(' ')[1]
+    
+    if not token:
+        return jsonify({'error': 'Authentication token is missing!'}), 401
+    
+    try:
+        # Decode token
+        data = jwt.decode(token, app.config['JWT_SECRET_KEY'], algorithms=['HS256'])
+        current_user = db.users.find_one({'_id': ObjectId(data['user_id'])})
+        
+        if not current_user:
+            return jsonify({'error': 'User not found!'}), 401
+            
+        # Return user profile without password
+        return jsonify({
+            'id': str(current_user['_id']),
+            'username': current_user['username'],
+            'email': current_user.get('email'),
+            'is_admin': current_user.get('is_admin', False),
+            'created_at': current_user.get('created_at')
+        })
+            
+    except jwt.ExpiredSignatureError:
+        return jsonify({'error': 'Token expired!'}), 401
+    except jwt.InvalidTokenError:
+        return jsonify({'error': 'Invalid token!'}), 401
+
 @app.route('/', methods=['GET'])
 def index():
     """Root route that provides API information"""
@@ -77,6 +219,9 @@ def index():
         "version": "1.0.0",
         "description": "API for Custom Cube website",
         "endpoints": [
+            "/api/auth/register",
+            "/api/auth/login",
+            "/api/auth/profile",
             "/api/cards",
             "/api/cards/<card_id>",
             "/api/archetypes",
@@ -982,6 +1127,7 @@ def get_random_pack():
         return jsonify({"error": str(e)}), 500
 
 @app.route('/api/cards/add', methods=['POST'])
+@admin_required
 def add_card():
     """Add a new card to the database"""
     try:
@@ -1037,6 +1183,7 @@ def add_card():
         return jsonify({"error": str(e)}), 500
 
 @app.route('/api/cards/update/<card_id>', methods=['PUT'])
+@admin_required
 def update_card(card_id):
     """Update an existing card in the database"""
     try:
