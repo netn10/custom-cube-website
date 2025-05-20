@@ -144,24 +144,28 @@ export default function Home() {
           setIsBoosterOpened(true);
           setIsBoosterOpening(false);
           
-          // Scroll to show all cards
+          // Show booster cards section without needing to scroll
           setTimeout(() => {
             const cardsContainer = document.getElementById('booster-cards');
-            if (cardsContainer) {
-              cardsContainer.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'nearest' });
-              // Scroll up a bit to show the title
-              setTimeout(() => {
-                window.scrollBy({ top: -100, behavior: 'smooth' });
-              }, 500);
-            } else {
-              // Fallback to class selector if ID is not found
-              const containerByClass = document.querySelector('.booster-cards-container');
-              if (containerByClass) {
-                containerByClass.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'nearest' });
+            // Instead of scrolling to the cards, we'll make sure the viewport shows them
+            // Only on mobile do we need to scroll to the cards
+            if (window.innerWidth < 768) {
+              if (cardsContainer) {
+                cardsContainer.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'nearest' });
                 // Scroll up a bit to show the title
                 setTimeout(() => {
                   window.scrollBy({ top: -100, behavior: 'smooth' });
                 }, 500);
+              } else {
+                // Fallback to class selector if ID is not found
+                const containerByClass = document.querySelector('.booster-cards-container');
+                if (containerByClass) {
+                  containerByClass.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'nearest' });
+                  // Scroll up a bit to show the title
+                  setTimeout(() => {
+                    window.scrollBy({ top: -100, behavior: 'smooth' });
+                  }, 500);
+                }
               }
             }
           }, 300); // Slightly longer delay to ensure all cards are rendered
@@ -697,17 +701,18 @@ export default function Home() {
                 </div>
               </div>
             ) : (
-              <div id="booster-cards" className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 w-full max-w-4xl mx-auto pt-8 sm:pt-12 md:pt-16 pb-8 sm:pb-12 mt-4 booster-cards-container" style={{ minHeight: 'auto', maxHeight: '100vh', overflowY: 'auto' }}>
+              <div id="booster-cards" className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 xl:grid-cols-5 gap-2 md:gap-3 w-full max-w-5xl mx-auto pt-4 sm:pt-6 md:pt-8 pb-4 sm:pb-6 mt-4 booster-cards-container">
                 {console.log(`Rendering booster pack with ${boosterCards.length} cards:`, boosterCards)}
                 {boosterCards.slice(0, 15).map((card, index) => (
                   <div 
                     key={index}
-                    className="mtg-card transform transition-all duration-500 hover:scale-125 hover:z-50 shadow-2xl mx-auto"
+                    className="mtg-card transform transition-all duration-500 hover:scale-110 hover:z-50 shadow-2xl mx-auto"
                     style={{
                       animation: `cardReveal 0.4s ${index * 0.03}s forwards`,
                       opacity: 0,
                       transform: 'scale(0) rotate(180deg)',
-                      zIndex: isBoosterOpened ? 10 + index : 0
+                      zIndex: isBoosterOpened ? 10 + index : 0,
+                      maxWidth: '95%'
                     }}
                   >
                     <Link href={`/card/${encodeURIComponent(card.name)}`} passHref>
@@ -892,12 +897,6 @@ export default function Home() {
                   </div>
                   
                   <div className="p-6 relative z-10 flex flex-col h-full">
-                    {/* Archetype badge - number of cards */}
-                    <div className="absolute top-2 right-2 bg-black/60 text-white text-xs px-2 py-1 rounded-full">
-                      {archetype.colors.map((color) => (
-                        <span key={color} className={`inline-block w-4 h-4 rounded-full mr-1 ${colorMap[color]}`}></span>
-                      ))}
-                    </div>
                     <div className="flex items-center mb-4">
                       <h3 className="text-2xl font-bold mr-4 dark:text-white group-hover:text-mtg-gold transition-colors duration-300">
                         {archetype.name}
