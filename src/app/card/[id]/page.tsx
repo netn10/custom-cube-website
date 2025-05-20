@@ -3,7 +3,7 @@
 import { useParams, useRouter } from 'next/navigation';
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { getCardById, getCards, API_BASE_URL } from '@/lib/api';
+import { getCards, API_BASE_URL } from '@/lib/api';
 import { Card } from '@/types/types';
 
 export default function CardDetailPage() {
@@ -16,19 +16,47 @@ export default function CardDetailPage() {
 
   useEffect(() => {
     if (params.id) {
-      // Fetch card data from API
+      // Fetch card data from API using name search
       const fetchCard = async () => {
         try {
-          console.log('Fetching card with ID:', params.id);
-          const data = await getCardById(params.id as string);
-          console.log('Card data received:', data);
-          setCard(data);
+          const cardName = decodeURIComponent(params.id as string);
+          console.log('Fetching card with name:', cardName);
           
+          // First search for the card by exact name
+          console.log('Searching for exact match...');
+          const exactSearchResults = await getCards({ search: `"${cardName}"`, limit: 10, include_facedown: true });
+          
+          // If we don't get an exact match, try a broader search
+          let searchResults = exactSearchResults;
+          if (exactSearchResults.cards.length === 0) {
+            console.log('No exact matches, trying broader search...');
+            searchResults = await getCards({ search: cardName, limit: 10, include_facedown: true });
+          }
+          
+          // Look for cards in the results
+          const cards = searchResults.cards;
+          
+          // First, try to find an exact name match (case insensitive)
+          const exactMatch = cards.find(c => 
+            c.name.toLowerCase() === cardName.toLowerCase()
+          );
+          
+          // Determine the card to use - exact match, first result, or facedown card
+          let cardToUse: Card | null = null;
+          
+          if (exactMatch) {
+            console.log('Found exact matching card:', exactMatch.name);
+            cardToUse = exactMatch;
+          }
+          
+          setCard(cardToUse);
+          console.log('Card data to use:', cardToUse);
+            
           // If the card has a related face, fetch that card
-          if (data.relatedFace) {
+          if (cardToUse && cardToUse.relatedFace) {
             try {
               // Search for the card by name
-              const relatedCardResults = await getCards({ search: data.relatedFace });
+              const relatedCardResults = await getCards({ search: cardToUse.relatedFace, include_facedown: true });
               if (relatedCardResults.cards.length > 0) {
                 setRelatedCard(relatedCardResults.cards[0]);
               }
@@ -71,7 +99,7 @@ export default function CardDetailPage() {
     return (
       <div className="text-center py-12">
         <h2 className="text-2xl font-bold mb-4 dark:text-white">Card Not Found</h2>
-        <p className="mb-6 dark:text-gray-300">The card you're looking for doesn't exist or has been removed.</p>
+        <p className="mb-6 dark:text-gray-300">The card you're looking for with name "{decodeURIComponent(params.id as string)}" doesn't exist or has been removed.</p>
         <Link href="/cube-list" className="btn-primary">
           Back to Cube List
         </Link>
@@ -209,7 +237,7 @@ export default function CardDetailPage() {
               <div className="mb-4">
                 <p className="text-sm font-semibold dark:text-white">Related Face: 
                   <Link 
-                    href={relatedCard ? `/card/${relatedCard.id}` : `/cube-list?search=${encodeURIComponent(card.relatedFace)}`}
+                    href={`/card/${encodeURIComponent(card.relatedFace)}`}
                     className="ml-2 text-blue-500 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300"
                   >
                     {card.relatedFace}
@@ -220,7 +248,7 @@ export default function CardDetailPage() {
             
             {/* Edit Card Button */}
             <div className="mt-6 mb-4">
-              <Link href={`/card/${card.id}/edit`} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline inline-flex items-center">
+              <Link href={`/card/${encodeURIComponent(card.name)}/edit`} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline inline-flex items-center">
                 <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path>
                 </svg>

@@ -685,7 +685,7 @@ export default function Home() {
                       zIndex: isBoosterOpened ? 10 + index : 0
                     }}
                   >
-                    <Link href={`/card/${card._id}`} passHref>
+                    <Link href={`/card/${encodeURIComponent(card.name)}`} passHref>
                       <div className="relative w-full h-full">
                         <img 
                           src={card.imageUrl || '/card-back.jpg'} 
@@ -896,7 +896,7 @@ export default function Home() {
                     <div className="flex justify-between items-end">
                       {randomCard ? (
                         <Link 
-                          href={`/card/${randomCard._id || randomCard.id}`} 
+                          href={`/card/${encodeURIComponent(randomCard.name)}`} 
                           className="relative w-1/2 aspect-[2.5/3.5] overflow-hidden rounded-lg shadow-lg transform transition-transform duration-500 group-hover:scale-105 cursor-pointer"
                           onClick={(e) => e.stopPropagation()} /* Prevent triggering the parent Link */
                         >

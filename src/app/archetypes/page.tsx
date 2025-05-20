@@ -398,7 +398,7 @@ export default function ArchetypesPage() {
                         >
                           
                           {archetypeCardsMap[archetype.id]?.[0]?.imageUrl ? (
-                            <Link href={`/card/${archetypeCardsMap[archetype.id][0].id}`} className="block h-full">
+                            <Link href={`/card/${encodeURIComponent(archetypeCardsMap[archetype.id][0].name)}`} className="block h-full">
                               <div className="relative h-full w-full">
                                 <Image 
                                   src={archetypeCardsMap[archetype.id][0].imageUrl} 
@@ -429,7 +429,7 @@ export default function ArchetypesPage() {
                           
                           
                           {archetypeCardsMap[archetype.id]?.[1]?.imageUrl ? (
-                            <Link href={`/card/${archetypeCardsMap[archetype.id][1].id}`} className="block h-full">
+                            <Link href={`/card/${encodeURIComponent(archetypeCardsMap[archetype.id][1].name)}`} className="block h-full">
                               <div className="relative h-full w-full">
                                 <Image 
                                   src={archetypeCardsMap[archetype.id][1].imageUrl} 
@@ -460,7 +460,7 @@ export default function ArchetypesPage() {
                           
                           
                           {archetypeCardsMap[archetype.id]?.[2]?.imageUrl ? (
-                            <Link href={`/card/${archetypeCardsMap[archetype.id][2].id}`} className="block h-full">
+                            <Link href={`/card/${encodeURIComponent(archetypeCardsMap[archetype.id][2].name)}`} className="block h-full">
                               <div className="relative h-full w-full">
                                 <Image 
                                   src={archetypeCardsMap[archetype.id][2].imageUrl} 

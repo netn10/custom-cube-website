@@ -94,6 +94,7 @@ export async function getCards(params?: {
   limit?: number;
   sort_by?: string;
   sort_dir?: string;
+  include_facedown?: boolean;
 }): Promise<{cards: Card[], total: number}> {
   let queryParams = new URLSearchParams();
   

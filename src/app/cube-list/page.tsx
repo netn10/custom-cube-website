@@ -616,7 +616,7 @@ export default function CubeList() {
           
           <div className="mtg-card-grid">
             {cards.map(card => (
-              <Link href={`/card/${card.id}`} key={card.id}>
+              <Link href={`/card/${encodeURIComponent(card.name)}`} key={card.id}>
                 <div className="mtg-card card-hover">
                   {card.imageUrl ? (
                     <div className="relative h-full w-full overflow-hidden">

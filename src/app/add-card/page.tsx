@@ -216,7 +216,7 @@ export default function AddCard(): JSX.Element {
       
       // Redirect to the newly created card after a delay
       setTimeout(() => {
-        router.push(`/card/${data.id}`);
+        router.push(`/card/${encodeURIComponent(data.name)}`);
       }, 1500);
       
     } catch (error) {

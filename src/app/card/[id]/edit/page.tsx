@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 import { useParams, useRouter } from 'next/navigation';
 import Link from 'next/link';
-import { getCardById, updateCard } from '@/lib/api';
+import { getCards, updateCard } from '@/lib/api';
 import { Card } from '@/types/types';
 
 export default function EditCardPage(): JSX.Element {
@@ -48,13 +48,20 @@ export default function EditCardPage(): JSX.Element {
     if (params.id) {
       const fetchCard = async () => {
         try {
-          const cardData = await getCardById(params.id as string);
-          setFormData(cardData);
-          setJsonInput(JSON.stringify(cardData, null, 2));
-          setLoading(false);
+          const cardName = decodeURIComponent(params.id as string);
+          const searchResults = await getCards({ search: cardName, limit: 1 });
+          
+          if (searchResults.cards.length > 0) {
+            const cardData = searchResults.cards[0];
+            setFormData(cardData);
+            setJsonInput(JSON.stringify(cardData, null, 2));
+          } else {
+            setErrorMessage(`Card not found with name: ${cardName}`);
+          }
         } catch (error) {
-          console.error('Error fetching card:', error);
-          setErrorMessage('Failed to load card. Please try again.');
+          console.error('Error loading card data:', error);
+          setErrorMessage('Unable to load card data. Please try again later.');
+        } finally {
           setLoading(false);
         }
       };
@@ -205,7 +212,7 @@ export default function EditCardPage(): JSX.Element {
       
       // Redirect to the card view page after a delay
       setTimeout(() => {
-        router.push(`/card/${cardData.id}`);
+        router.push(`/card/${encodeURIComponent(cardData.name)}`);
       }, 1500);
       
     } catch (error) {
@@ -505,7 +512,7 @@ export default function EditCardPage(): JSX.Element {
       
       {/* Submit Button for Form */}
       <div className="flex items-center justify-between mt-6 md:col-span-2">
-        <Link href={`/card/${formData.id}`} className="text-blue-500 hover:text-blue-700">
+        <Link href={`/card/${encodeURIComponent(formData.name)}`} className="text-blue-500 hover:text-blue-700">
           Cancel
         </Link>
         <button
