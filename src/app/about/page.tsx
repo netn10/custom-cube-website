@@ -12,7 +12,7 @@ export default function AboutPage() {
           </p>
           
           <p>
-            This is a 360-card cube featuring mostly custom cards with "weird" archetypes. 
+            This is a 480-card cube featuring mostly custom cards with "weird" archetypes. 
             The custom cards represent archetypes that aren't well-defined in "real" Magic, 
             while the "reprints" are the simple, tried-and-true, "if it ain't broke, don't fix it" staples.
           </p>

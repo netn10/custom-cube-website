@@ -2,9 +2,8 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { getArchetypes, getRandomArchetypeCards, getCubeStatistics, getRandomPack } from '@/lib/api';
+import { getArchetypes, getRandomArchetypeCards, getRandomPack } from '@/lib/api';
 import { Archetype, Card } from '@/types/types';
-import Image from 'next/image';
 
 // Color mapping for visual representation
 const colorMap: Record<string, string> = {
@@ -83,10 +82,6 @@ export default function Home() {
         }
         
         // Booster cards will be fetched on demand when the pack is clicked
-        
-        // Fetch cube statistics
-        const statsData = await getCubeStatistics();
-        setStatistics(statsData);
         
         setError(null);
       } catch (err) {
@@ -220,7 +215,7 @@ export default function Home() {
           </h1>
           
           <p className="text-xl max-w-3xl mx-auto mb-8 text-gray-800 dark:text-white drop-shadow-lg">
-            A 360-card cube featuring mostly custom cards with "weird" archetypes. Discover unique gameplay experiences 
+            A 480-card cube featuring mostly custom cards with "weird" archetypes. Discover unique gameplay experiences 
             that push the boundaries of traditional Magic.
           </p>
           
