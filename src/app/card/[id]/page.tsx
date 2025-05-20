@@ -116,15 +116,119 @@ export default function CardDetailPage() {
     G: 'bg-mtg-green text-white',
   };
 
+  // Create a general helper function for symbol spans
+  const createSymbolSpan = (color: string, content: string, title?: string, size: string = 'w-5 h-5') => {
+    const titleAttr = title ? ` title="${title}"` : '';
+    return `<span style="display:inline-flex;vertical-align:middle" class="mx-0.5"><span class="inline-block ${size} ${color} rounded-full flex items-center justify-center text-xs font-bold"${titleAttr}>${content}</span></span>`;
+  };
+  
   // Function to format mana cost with colored symbols
   const formatManaCost = (manaCost: string) => {
-    return manaCost.replace(/\{([WUBRGC0-9]+)\}/g, (match, symbol) => {
-      const colorClass = symbol.length === 1 && 'WUBRG'.includes(symbol)
-        ? colorMap[symbol]
-        : 'bg-mtg-colorless text-black';
+    if (!manaCost) return '';
+    
+    return manaCost.replace(/\{([^}]+)\}/g, (match, symbol) => {
+      // Handle Phyrexian mana symbols in either U/P or P/U format
+      if (symbol.includes('/P')) {
+        const color = symbol.split('/')[0];
+        const colorClass = 'WUBRG'.includes(color) ? colorMap[color] : 'bg-mtg-colorless text-black';
+        return createSymbolSpan(colorClass, `${color}/P`, `Phyrexian ${color}`, 'w-6 h-6');
+      }
       
-      return `<span class="inline-block w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold ${colorClass} mx-0.5">${symbol}</span>`;
+      if (symbol.includes('P/')) {
+        const color = symbol.split('/')[1];
+        const colorClass = 'WUBRG'.includes(color) ? colorMap[color] : 'bg-mtg-colorless text-black';
+        return createSymbolSpan(colorClass, `P/${color}`, `Phyrexian ${color}`, 'w-6 h-6');
+      }
+      
+      // Handle hybrid mana symbols
+      if (symbol.includes('/')) {
+        const colors = symbol.split('/');
+        // First check if both are colors
+        if (colors.length === 2 && colors.every(c => 'WUBRG'.includes(c))) {
+          return createSymbolSpan(`bg-gradient-to-br from-mtg-${colors[0].toLowerCase()} to-mtg-${colors[1].toLowerCase()}`, symbol, `${colors[0]}/${colors[1]}`, 'w-6 h-6');
+        }
+      }
+      
+      // Handle regular mana symbols
+      if (symbol.length === 1 && 'WUBRG'.includes(symbol)) {
+        return createSymbolSpan(colorMap[symbol], symbol, undefined, 'w-6 h-6');
+      }
+      
+      // Handle colorless mana
+      if (/^[0-9]+$/.test(symbol)) {
+        return createSymbolSpan('bg-mtg-colorless text-black', symbol, undefined, 'w-6 h-6');
+      }
+      
+      // Handle variable mana X
+      if (symbol === 'X') {
+        return createSymbolSpan('bg-mtg-colorless text-black', 'X', 'Variable Mana', 'w-6 h-6');
+      }
+      
+      // Return the original match if no specific formatting applies
+      return `<span class="inline-block w-6 h-6 bg-mtg-colorless text-black rounded-full flex items-center justify-center text-xs font-bold mx-0.5">${symbol}</span>`;
     });
+  };
+
+  // Function to format card text with appropriate symbols while preserving line breaks
+  const formatCardText = (text: string) => {
+    if (!text) return '';
+        
+    // Replace all mana symbols with their HTML equivalents
+    const processedText = text.replace(/\{([^}]+)\}/g, (match, symbol) => {
+      // Handle tap symbol
+      if (symbol === 'T') {
+        return createSymbolSpan('bg-gray-300 dark:bg-gray-600', 'T', 'Tap');
+      }
+      
+      // Handle untap symbol
+      if (symbol === 'Q') {
+        return createSymbolSpan('bg-gray-300 dark:bg-gray-600', 'Q', 'Untap');
+      }
+      
+      // Handle Phyrexian mana symbols in either U/P or P/U format
+      if (symbol.includes('/P')) {
+        const color = symbol.split('/')[0];
+        const colorClass = 'WUBRG'.includes(color) ? colorMap[color] : 'bg-mtg-colorless text-black';
+        return createSymbolSpan(colorClass, `${color}/P`, `Phyrexian ${color}`);
+      }
+      
+      if (symbol.includes('P/')) {
+        const color = symbol.split('/')[1];
+        const colorClass = 'WUBRG'.includes(color) ? colorMap[color] : 'bg-mtg-colorless text-black';
+        return createSymbolSpan(colorClass, `P/${color}`, `Phyrexian ${color}`);
+      }
+      
+      // Handle hybrid mana symbols
+      if (symbol.includes('/')) {
+        const colors = symbol.split('/');
+        // First check if both are colors
+        if (colors.length === 2 && colors.every(c => 'WUBRG'.includes(c))) {
+          return createSymbolSpan(`bg-gradient-to-br from-mtg-${colors[0].toLowerCase()} to-mtg-${colors[1].toLowerCase()}`, symbol, `${colors[0]}/${colors[1]}`);
+        }
+      }
+      
+      // Handle regular mana symbols
+      if (symbol.length === 1 && 'WUBRG'.includes(symbol)) {
+        return createSymbolSpan(colorMap[symbol], symbol);
+      }
+      
+      // Handle colorless mana
+      if (/^[0-9]+$/.test(symbol)) {
+        return createSymbolSpan('bg-mtg-colorless text-black', symbol);
+      }
+      
+      // Handle variable mana X
+      if (symbol === 'X') {
+        return createSymbolSpan('bg-mtg-colorless text-black', 'X', 'Variable Mana');
+      }
+      
+      // Return the original match if no specific formatting applies
+      return match;
+    });
+    
+    // Now handle line breaks by converting them to <br /> tags
+    // This preserves all original line breaks in the text
+    return processedText.replace(/\n/g, '<br />');
   };
 
   return (
@@ -185,7 +289,9 @@ export default function CardDetailPage() {
             </div>
             
             <div className="bg-gray-100 dark:bg-gray-700 p-4 rounded-lg mb-4">
-              <p className="whitespace-pre-line dark:text-white">{card.text}</p>
+              <p className="dark:text-white text-base leading-relaxed" 
+                 style={{ lineHeight: '1.6em' }}
+                 dangerouslySetInnerHTML={{ __html: formatCardText(card.text) }} />
             </div>
             
             {(card.power && card.toughness) && (
