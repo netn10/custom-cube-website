@@ -144,31 +144,12 @@ export default function Home() {
           setIsBoosterOpened(true);
           setIsBoosterOpening(false);
           
-          // Show booster cards section without needing to scroll
+          // Let the booster cards simply reveal in place without forcing a scroll
+          // This avoids the issue on mobile where content gets pushed up
           setTimeout(() => {
-            const cardsContainer = document.getElementById('booster-cards');
-            // Instead of scrolling to the cards, we'll make sure the viewport shows them
-            // Only on mobile do we need to scroll to the cards
-            if (window.innerWidth < 768) {
-              if (cardsContainer) {
-                cardsContainer.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'nearest' });
-                // Scroll up a bit to show the title
-                setTimeout(() => {
-                  window.scrollBy({ top: -100, behavior: 'smooth' });
-                }, 500);
-              } else {
-                // Fallback to class selector if ID is not found
-                const containerByClass = document.querySelector('.booster-cards-container');
-                if (containerByClass) {
-                  containerByClass.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'nearest' });
-                  // Scroll up a bit to show the title
-                  setTimeout(() => {
-                    window.scrollBy({ top: -100, behavior: 'smooth' });
-                  }, 500);
-                }
-              }
-            }
-          }, 300); // Slightly longer delay to ensure all cards are rendered
+            // No automatic scrolling - cards will appear in place
+            // This provides a better user experience, especially on mobile
+          }, 300);
         }, 2000); // Increased duration to match the realistic pack opening animation
       } catch (error) {
         console.error('Error fetching booster cards:', error);
@@ -811,7 +792,7 @@ export default function Home() {
             </button>
           </div>
         ) : (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center">
+          <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8 justify-items-center">
             {filteredArchetypes.map((archetype) => {
               // Based on the list provided, we know the exact archetype format matches
               // Example: "GU Prowess" is the exact archetype string we need to match
@@ -896,16 +877,16 @@ export default function Home() {
                        style={{ backgroundImage: `url(${randomCard.imageUrl})` }}>
                   </div>
                   
-                  <div className="p-6 relative z-10 flex flex-col h-full">
+                  <div className="p-3 sm:p-4 md:p-6 relative z-10 flex flex-col h-full">
                     <div className="flex items-center mb-4">
-                      <h3 className="text-2xl font-bold mr-4 dark:text-white group-hover:text-mtg-gold transition-colors duration-300">
+                      <h3 className="text-lg sm:text-xl md:text-2xl font-bold mr-2 sm:mr-4 dark:text-white group-hover:text-mtg-gold transition-colors duration-300">
                         {archetype.name}
                       </h3>
                       <div className="flex space-x-1">
                         {archetype.colors.map((color) => (
                           <span 
                             key={color} 
-                            className={`w-7 h-7 rounded-full flex items-center justify-center text-xs font-bold transform group-hover:scale-110 transition-transform ${colorMap[color]}`}
+                            className={`w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 rounded-full flex items-center justify-center text-[10px] sm:text-xs font-bold transform group-hover:scale-110 transition-transform ${colorMap[color]}`}
                           >
                             {color}
                           </span>
@@ -913,7 +894,7 @@ export default function Home() {
                       </div>
                     </div>
                     
-                    <p className="dark:text-gray-300 mb-6 line-clamp-3 group-hover:line-clamp-none transition-all duration-500">
+                    <p className="dark:text-gray-300 text-sm sm:text-base mb-4 sm:mb-6 line-clamp-2 sm:line-clamp-3 group-hover:line-clamp-none transition-all duration-500">
                       {archetype.description}
                     </p>
                     
@@ -921,7 +902,7 @@ export default function Home() {
                       {randomCard ? (
                         <Link 
                           href={`/card/${encodeURIComponent(randomCard.name)}`} 
-                          className="relative w-1/2 aspect-[2.5/3.5] overflow-hidden rounded-lg shadow-lg transform transition-transform duration-500 group-hover:scale-105 cursor-pointer mx-auto mb-4"
+                          className="relative w-[65%] sm:w-[55%] md:w-1/2 aspect-[2.5/3.5] overflow-hidden rounded-lg shadow-lg transform transition-transform duration-500 group-hover:scale-105 cursor-pointer mx-auto mb-4"
                           onClick={(e) => e.stopPropagation()} /* Prevent triggering the parent Link */
                         >
                           {randomCard.imageUrl ? (
