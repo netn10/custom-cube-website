@@ -17,8 +17,8 @@ export default function Navbar() {
   // Filter navLinks based on authentication status
   const navLinks = [
     { name: 'Home', path: '/' },
-    { name: 'Cube List', path: '/cube-list' },
     { name: 'Archetypes', path: '/archetypes' },
+    { name: 'Cube List', path: '/cube-list' },
     { name: 'Tokens', path: '/tokens' },
     { name: 'Tools', path: '/tools' },
     { name: 'About', path: '/about' },
@@ -27,6 +27,7 @@ export default function Navbar() {
   // Only admin users can add/edit cards
   const adminLinks = [
     { name: 'Add Card', path: '/add-card' },
+    { name: 'Add Token', path: '/add-token' },
   ];
   
   const handleLogout = () => {

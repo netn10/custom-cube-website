@@ -297,6 +297,60 @@ export async function getTokens(params?: {
   return fetchFromAPI<{tokens: Token[], total: number}>(`/tokens${queryString}`);
 }
 
+// Get a single token by name
+export async function getTokenByName(name: string): Promise<Token> {
+  console.log(`Attempting to fetch token with name: ${name}`);
+  try {
+    // Double-encode slashes and other special characters to ensure proper URL handling
+    const safeTokenName = name.replace(/\//g, '%2F');
+    const response = await fetch(`${API_BASE_URL}/tokens/${encodeURIComponent(safeTokenName)}`, {
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
+    
+    console.log(`API response status: ${response.status}`);
+    
+    if (!response.ok) {
+      const errorText = await response.text();
+      console.error(`API error response: ${errorText}`);
+      throw new Error(`API error: ${response.status} - ${errorText}`);
+    }
+    
+    const data = await response.json();
+    console.log('API response data:', data);
+    return data;
+  } catch (error) {
+    console.error(`Error fetching token by name: ${error}`);
+    throw error;
+  }
+}
+
+// Add a new token
+export async function addToken(tokenData: Partial<Token>, token: string): Promise<Token> {
+  try {
+    const endpoint = `/tokens/add`;
+    const response = await fetch(`${API_BASE_URL}${endpoint}`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${token}`
+      },
+      body: JSON.stringify(tokenData),
+    });
+
+    if (!response.ok) {
+      const errorData = await response.json().catch(() => ({ error: 'Unknown error' }));
+      throw new Error(errorData.error || `Failed to add token: ${response.status}`);
+    }
+
+    return await response.json();
+  } catch (error) {
+    console.error('Error adding token:', error);
+    throw error;
+  }
+}
+
 // Draft API
 export async function getBotDraftPick(params: {
   availableCards: any[];

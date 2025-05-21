@@ -38,6 +38,7 @@ export type Token = {
   toughness?: string;
   abilities?: string[];
   imageUrl?: string;
+  artist?: string;
 };
 
 export type Tool = {

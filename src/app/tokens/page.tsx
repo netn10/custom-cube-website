@@ -1,7 +1,8 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { getTokens } from '@/lib/api';
+import Link from 'next/link';
+import { getTokens, API_BASE_URL } from '@/lib/api';
 import { Token } from '@/types/types';
 
 export default function TokensPage() {
@@ -19,9 +20,17 @@ export default function TokensPage() {
   const [sortFields, setSortFields] = useState<Array<{field: string, direction: 'asc' | 'desc'}>>([{field: 'name', direction: 'asc'}]);
 
   useEffect(() => {
-    // Fetch tokens on initial load
+    // Fetch tokens whenever any filter changes
     fetchTokens();
-  }, [currentPage, tokensPerPage, JSON.stringify(sortFields)]);
+  }, [
+    currentPage, 
+    tokensPerPage, 
+    JSON.stringify(sortFields),
+    searchTerm,
+    bodySearchTerm,
+    JSON.stringify(filterColor),
+    colorMatchType
+  ]);
 
   // Fetch tokens with current filters
   const fetchTokens = async () => {
@@ -59,7 +68,19 @@ export default function TokensPage() {
       
       console.log('Fetching tokens with params:', params);
       const response = await getTokens(params);
-      setTokens(response.tokens);
+      
+      // Check if we need to filter out colorless tokens (when multicolor is selected)
+      let filteredTokens = response.tokens;
+      
+      // If multicolor is selected but not colorless, filter out tokens with no colors
+      if (filterColor.includes('multicolor') && !filterColor.includes('colorless')) {
+        filteredTokens = filteredTokens.filter(token => {
+          // Filter out tokens with empty colors array or no colors property
+          return token.colors && token.colors.length > 0;
+        });
+      }
+      
+      setTokens(filteredTokens);
       setTotalTokens(response.total);
     } catch (err) {
       console.error('Error fetching tokens:', err);
@@ -88,7 +109,9 @@ export default function TokensPage() {
       if (hasColorless) {
         setFilterColor(filterColor.filter(c => c.toLowerCase() !== 'colorless'));
       } else {
-        setFilterColor([...filterColor, 'colorless']); // Always use lowercase for consistency
+        // Remove multicolor filter if it exists when selecting colorless
+        const newFilters = filterColor.filter(c => c.toLowerCase() !== 'multicolor');
+        setFilterColor([...newFilters, 'colorless']); // Always use lowercase for consistency
       }
     } else if (lowercaseFilterType === 'multicolor') {
       // For multicolor, we set a special filter value (case-insensitive check)
@@ -96,15 +119,16 @@ export default function TokensPage() {
       if (hasMulticolor) {
         setFilterColor(filterColor.filter(c => c.toLowerCase() !== 'multicolor'));
       } else {
-        setFilterColor([...filterColor, 'multicolor']); // Always use lowercase for consistency
+        // Remove colorless filter if it exists when selecting multicolor
+        const newFilters = filterColor.filter(c => c.toLowerCase() !== 'colorless');
+        setFilterColor([...newFilters, 'multicolor']); // Always use lowercase for consistency
       }
     }
   };
 
-  // Apply filters and fetch new data
-  const applyFilters = () => {
+  // Reset page when filters change
+  const resetPage = () => {
     setCurrentPage(1);
-    fetchTokens();
   };
 
   // Handle page change
@@ -113,6 +137,8 @@ export default function TokensPage() {
     // Scroll to top when changing pages
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
+  
+  // We no longer need local filtering as the backend is handling all filters
 
   // Calculate visible page numbers whenever current page or total changes
   useEffect(() => {
@@ -138,9 +164,6 @@ export default function TokensPage() {
     const newValue = parseInt(e.target.value);
     setTokensPerPage(newValue);
     setCurrentPage(1); // Reset to first page when changing items per page
-    setTimeout(() => {
-      fetchTokens();
-    }, 100);
   };
 
   // Enhanced pagination component
@@ -227,14 +250,16 @@ export default function TokensPage() {
     );
   };
 
-  // Handle search input changes with debounce
+  // Handle search input changes
   const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearchTerm(e.target.value);
+    resetPage();
   };
   
   // Handle body text search input changes
   const handleBodySearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setBodySearchTerm(e.target.value);
+    resetPage();
   };
 
   return (
@@ -258,11 +283,11 @@ export default function TokensPage() {
           
           <div>
             <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-              Search Token Abilities
+              Search Name & Abilities
             </label>
             <input
               type="text"
-              placeholder="Search abilities text..."
+              placeholder="Search in names and abilities..."
               className="w-full p-2 border border-gray-300 dark:border-gray-600 rounded-md dark:bg-gray-700 dark:text-white"
               value={bodySearchTerm}
               onChange={handleBodySearchChange}
@@ -443,14 +468,7 @@ export default function TokensPage() {
           </div>
         </div>
         
-        <div className="mt-4 flex justify-end">
-          <button
-            className="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-md transition-colors"
-            onClick={applyFilters}
-          >
-            Apply Filters
-          </button>
-        </div>
+        {/* Apply Filters button removed - filters now apply automatically */}
       </div>
       
       {loading ? (
@@ -483,16 +501,65 @@ export default function TokensPage() {
           {/* Top pagination controls */}
           <PaginationControls />
           
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+          <div className="mtg-card-grid">
             {tokens.map(token => (
-              <div key={token.id} className="bg-white dark:bg-gray-800 rounded-lg overflow-hidden shadow-md">
-                <div className="h-40 bg-gray-300 dark:bg-gray-700 flex items-center justify-center">
-                  <span className="text-gray-500 dark:text-gray-400">Token Image</span>
-                </div>
-                <div className="p-4">
-                  <h3 className="font-bold dark:text-white">{token.name}</h3>
-                  <div className="flex items-center mt-2">
-                    <div className="flex space-x-1">
+              <Link href={`/token/${encodeURIComponent(token.name)}`} key={token.id}>
+                <div className="mtg-card card-hover">
+                {token.imageUrl ? (
+                  <div className="relative h-full w-full overflow-hidden">
+                    <img 
+                      src={token.imageUrl}
+                      alt={token.name}
+                      className="mtg-card-image"
+                      onError={(e) => {
+                        console.error('Error loading image:', token.imageUrl);
+                        // Try the proxy if direct loading fails
+                        if (token.imageUrl) {
+                          e.currentTarget.src = `${API_BASE_URL}/image-proxy?url=${encodeURIComponent(token.imageUrl)}`;
+                          // Set a backup error handler for the proxy
+                          e.currentTarget.onerror = () => {
+                            e.currentTarget.src = 'data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22100%22%20height%3D%22140%22%20viewBox%3D%220%200%20100%20140%22%20preserveAspectRatio%3D%22none%22%3E%3Crect%20width%3D%22100%22%20height%3D%22140%22%20fill%3D%22%23eee%22%3E%3C%2Frect%3E%3Ctext%20text-anchor%3D%22middle%22%20x%3D%2250%22%20y%3D%2270%22%20style%3D%22fill%3A%23aaa%3Bfont-weight%3Abold%3Bfont-size%3A12px%3Bfont-family%3AArial%2C%20Helvetica%2C%20sans-serif%3Bdominant-baseline%3Acentral%22%3EImage%20Not%20Found%3C%2Ftext%3E%3C%2Fsvg%3E';
+                          };
+                        } else {
+                          e.currentTarget.src = 'data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22100%22%20height%3D%22140%22%20viewBox%3D%220%200%20100%20140%22%20preserveAspectRatio%3D%22none%22%3E%3Crect%20width%3D%22100%22%20height%3D%22140%22%20fill%3D%22%23eee%22%3E%3C%2Frect%3E%3Ctext%20text-anchor%3D%22middle%22%20x%3D%2250%22%20y%3D%2270%22%20style%3D%22fill%3A%23aaa%3Bfont-weight%3Abold%3Bfont-size%3A12px%3Bfont-family%3AArial%2C%20Helvetica%2C%20sans-serif%3Bdominant-baseline%3Acentral%22%3EImage%20Not%20Found%3C%2Ftext%3E%3C%2Fsvg%3E';
+                        }
+                      }}
+                    />
+                    <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-70 p-2">
+                      <h3 className="font-bold text-white text-sm truncate">{token.name}</h3>
+                      <div className="flex items-center justify-between mt-1">
+                        <div className="flex space-x-1">
+                          {token.colors.map(color => {
+                            const colorClasses: Record<string, string> = {
+                              W: 'bg-mtg-white text-black',
+                              U: 'bg-mtg-blue text-white',
+                              B: 'bg-mtg-black text-black',
+                              R: 'bg-mtg-red text-white',
+                              G: 'bg-mtg-green text-white',
+                            };
+                            
+                            return (
+                              <span 
+                                key={color} 
+                                className={`w-4 h-4 rounded-full flex items-center justify-center text-xs font-bold ${colorClasses[color]}`}
+                              >
+                                {color}
+                              </span>
+                            );
+                          })}
+                        </div>
+                        {token.power && token.toughness && (
+                          <span className="text-xs px-1 py-0.5 bg-gray-100 text-gray-800 rounded-full">
+                            {token.power}/{token.toughness}
+                          </span>
+                        )}
+                      </div>
+                    </div>
+                  </div>
+                ) : (
+                  <div className="h-full bg-gray-300 dark:bg-gray-700 flex flex-col items-center justify-center p-2">
+                    <span className="text-gray-500 dark:text-gray-400 mb-2">{token.name}</span>
+                    <div className="flex space-x-1 mb-1">
                       {token.colors.map(color => {
                         const colorClasses: Record<string, string> = {
                           W: 'bg-mtg-white text-black',
@@ -505,27 +572,21 @@ export default function TokensPage() {
                         return (
                           <span 
                             key={color} 
-                            className={`w-5 h-5 rounded-full flex items-center justify-center text-xs font-bold ${colorClasses[color]}`}
+                            className={`w-4 h-4 rounded-full flex items-center justify-center text-xs font-bold ${colorClasses[color]}`}
                           >
                             {color}
                           </span>
                         );
                       })}
                     </div>
-                  </div>
-                  <div className="mt-2">
-                    <p className="text-sm text-gray-600 dark:text-gray-400">{token.type}</p>
-                    <p className="text-sm font-semibold dark:text-white mt-1">
-                      {token.power}/{token.toughness}
-                    </p>
-                    {token.abilities && token.abilities.length > 0 && (
-                      <p className="text-sm text-gray-600 dark:text-gray-400 mt-1">
-                        {token.abilities.join(', ')}
-                      </p>
+                    <p className="text-xs text-gray-500 dark:text-gray-400">{token.type}</p>
+                    {token.power && token.toughness && (
+                      <p className="text-xs text-gray-500 dark:text-gray-400">{token.power}/{token.toughness}</p>
                     )}
                   </div>
-                </div>
+                )}
               </div>
+              </Link>
             ))}
           </div>
         </>

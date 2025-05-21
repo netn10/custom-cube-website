@@ -1,21 +1,84 @@
 'use client';
 
-import { useParams, useRouter } from 'next/navigation';
+import { useParams, useRouter, useSearchParams } from 'next/navigation';
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { getCards, API_BASE_URL } from '@/lib/api';
 import { Card } from '@/types/types';
 import { useAuth } from '@/contexts/AuthContext';
+import CardPreview from '@/components/CardPreview';
 
 export default function CardDetailPage() {
   const params = useParams();
   const router = useRouter();
+  const searchParams = useSearchParams();
   const { isAuthenticated, isAdmin } = useAuth();
+  
+  // Store token image URLs
+  const [tokenImages, setTokenImages] = useState<{[name: string]: string}>({});
+  // Store related face image URL
+  const [relatedFaceImage, setRelatedFaceImage] = useState<string>('');
+
+  // Get the current URL parameters to preserve when going back to the cube list
+  const getBackToCubeListURL = () => {
+    // Get all search parameters from the current URL
+    const currentParams = new URLSearchParams();
+    
+    // Copy the parameters we want to preserve
+    const preserveParams = ['search', 'bodySearch', 'colors', 'colorMatch', 'type', 'set', 'custom', 'page', 'limit', 'sort'];
+    
+    // Check if we have parameters in the URL
+    let hasURLParams = false;
+    preserveParams.forEach(param => {
+      if (searchParams.has(param)) {
+        currentParams.set(param, searchParams.get(param)!);
+        hasURLParams = true;
+      }
+    });
+    
+    // If we don't have URL parameters, try to load from localStorage
+    if (!hasURLParams && typeof window !== 'undefined') {
+      const savedFilters = localStorage.getItem('cubeListFilters');
+      if (savedFilters) {
+        const savedParams = new URLSearchParams(savedFilters);
+        preserveParams.forEach(param => {
+          if (savedParams.has(param)) {
+            currentParams.set(param, savedParams.get(param)!);
+          }
+        });
+      }
+    }
+    
+    // Build the URL
+    const queryString = currentParams.toString();
+    return `/cube-list${queryString ? `?${queryString}` : ''}`;
+  };
   const [card, setCard] = useState<Card | null>(null);
   const [relatedCard, setRelatedCard] = useState<Card | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
+  // Store current search parameters in localStorage when component mounts
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      // Only store parameters if we have at least one filter parameter
+      const preserveParams = ['search', 'bodySearch', 'colors', 'colorMatch', 'type', 'set', 'custom', 'page', 'limit', 'sort'];
+      let hasAnyParams = false;
+      
+      preserveParams.forEach(param => {
+        if (searchParams.has(param)) {
+          hasAnyParams = true;
+        }
+      });
+      
+      // Only save if we have parameters and came from the cube list
+      const referrer = document.referrer;
+      if (hasAnyParams && referrer.includes('/cube-list')) {
+        localStorage.setItem('cubeListFilters', searchParams.toString());
+      }
+    }
+  }, [searchParams]);
+  
   useEffect(() => {
     if (params.id) {
       // Fetch card data from API using name search
@@ -61,9 +124,42 @@ export default function CardDetailPage() {
               const relatedCardResults = await getCards({ search: cardToUse.relatedFace, include_facedown: true });
               if (relatedCardResults.cards.length > 0) {
                 setRelatedCard(relatedCardResults.cards[0]);
+                // Save the related face image URL if available
+                if (relatedCardResults.cards[0].imageUrl) {
+                  setRelatedFaceImage(relatedCardResults.cards[0].imageUrl);
+                }
               }
             } catch (err) {
               console.error('Error fetching related card:', err);
+            }
+          }
+          
+          // If card has related tokens, fetch their images
+          if (cardToUse && cardToUse.relatedTokens && cardToUse.relatedTokens.length > 0) {
+            try {
+              // Create a batch request to fetch all token data
+              const tokenPromises = cardToUse.relatedTokens.map(async (tokenName: string) => {
+                const tokenResults = await getCards({ search: `"${tokenName}"`, include_facedown: true });
+                if (tokenResults.cards.length > 0) {
+                  const token = tokenResults.cards[0];
+                  if (token.imageUrl) {
+                    return { name: tokenName, imageUrl: token.imageUrl };
+                  }
+                }
+                return { name: tokenName, imageUrl: '' };
+              });
+              
+              const tokenData = await Promise.all(tokenPromises);
+              const tokenImageMap = tokenData.reduce((acc, token) => {
+                if (token.imageUrl) {
+                  acc[token.name] = token.imageUrl;
+                }
+                return acc;
+              }, {} as {[name: string]: string});
+              
+              setTokenImages(tokenImageMap);
+            } catch (err) {
+              console.error('Error fetching token images:', err);
             }
           }
         } catch (err) {
@@ -90,9 +186,12 @@ export default function CardDetailPage() {
     return (
       <div className="text-center py-12">
         <h2 className="text-2xl font-bold mb-4 dark:text-white">{error}</h2>
-        <Link href="/cube-list" className="btn-primary">
+        <button 
+          onClick={() => router.push(getBackToCubeListURL())} 
+          className="btn-primary"
+        >
           Back to Cube List
-        </Link>
+        </button>
       </div>
     );
   }
@@ -102,9 +201,12 @@ export default function CardDetailPage() {
       <div className="text-center py-12">
         <h2 className="text-2xl font-bold mb-4 dark:text-white">Card Not Found</h2>
         <p className="mb-6 dark:text-gray-300">The card you're looking for with name "{decodeURIComponent(params.id as string)}" doesn't exist or has been removed.</p>
-        <Link href="/cube-list" className="btn-primary">
+        <button 
+          onClick={() => router.push(getBackToCubeListURL())} 
+          className="btn-primary"
+        >
           Back to Cube List
-        </Link>
+        </button>
       </div>
     );
   }
@@ -237,7 +339,7 @@ export default function CardDetailPage() {
     <div className="max-w-4xl mx-auto">
       <div className="mb-4">
         <button 
-          onClick={() => router.back()} 
+          onClick={() => router.push(getBackToCubeListURL())} 
           className="flex items-center text-blue-500 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300"
         >
           <svg className="w-5 h-5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -329,13 +431,18 @@ export default function CardDetailPage() {
                 <p className="text-sm font-semibold dark:text-white">Related Tokens:</p>
                 <div className="flex flex-wrap gap-2 mt-1">
                   {card.relatedTokens.map((token: string) => (
-                    <Link 
-                      key={token}
-                      href={`/tokens?search=${encodeURIComponent(token)}`}
-                      className="px-2 py-1 bg-amber-100 dark:bg-amber-900 text-amber-800 dark:text-amber-200 rounded-full text-xs"
+                    <CardPreview 
+                      key={token} 
+                      cardName={token} 
+                      imageUrl={tokenImages[token] || undefined}
                     >
-                      {token}
-                    </Link>
+                      <Link 
+                        href={`/token/${encodeURIComponent(token)}`}
+                        className="px-2 py-1 bg-amber-100 dark:bg-amber-900 text-amber-800 dark:text-amber-200 rounded-full text-xs"
+                      >
+                        {token}
+                      </Link>
+                    </CardPreview>
                   ))}
                 </div>
               </div>
@@ -344,12 +451,14 @@ export default function CardDetailPage() {
             {card.relatedFace && (
               <div className="mb-4">
                 <p className="text-sm font-semibold dark:text-white">Related Face: 
-                  <Link 
-                    href={`/card/${encodeURIComponent(card.relatedFace)}`}
-                    className="ml-2 text-blue-500 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300"
-                  >
-                    {card.relatedFace}
-                  </Link>
+                  <CardPreview cardName={card.relatedFace} imageUrl={relatedFaceImage || undefined}>
+                    <Link 
+                      href={`/card/${encodeURIComponent(card.relatedFace)}`}
+                      className="ml-2 text-blue-500 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300"
+                    >
+                      {card.relatedFace}
+                    </Link>
+                  </CardPreview>
                 </p>
               </div>
             )}

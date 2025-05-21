@@ -6,6 +6,7 @@ from bson import ObjectId
 from dotenv import load_dotenv
 import json
 import random
+import re
 from datetime import datetime, timedelta
 import requests
 import jwt
@@ -248,6 +249,7 @@ def get_cards():
     body_search = request.args.get('body_search', '')
     colors = request.args.get('colors', '').split(',') if request.args.get('colors') else []
     color_match = request.args.get('color_match', 'includes')  # 'exact', 'includes', or 'at-most'
+    exclude_colorless = request.args.get('exclude_colorless', '').lower() == 'true'
     card_type = request.args.get('type', '')
     card_set = request.args.get('set', '')
     custom = request.args.get('custom', '')
@@ -680,6 +682,109 @@ def get_tokens():
         "tokens": tokens,
         "total": total
     })
+
+@app.route('/api/tokens', methods=['GET'])
+def get_token_by_query():
+    """Get a single token by name using query parameter"""
+    try:
+        token_name = request.args.get('name')
+        if not token_name:
+            return jsonify({'error': 'Token name not provided in query parameter'}), 400
+        
+        return get_token_by_name(token_name)
+    except Exception as e:
+        print(f"Error getting token by query: {str(e)}")
+        return jsonify({'error': str(e)}), 500
+
+@app.route('/api/tokens/<string:token_name>', methods=['GET'])
+def get_token(token_name):
+    """Get a single token by name"""
+    try:
+        # URL decode the token name
+        import urllib.parse
+        token_name = urllib.parse.unquote(token_name).strip()
+        
+        return get_token_by_name(token_name)
+    except Exception as e:
+        print(f"Error getting token: {str(e)}")
+        return jsonify({'error': str(e)}), 500
+
+def get_token_by_name(token_name):
+    """Helper function to get token by name - used by both routes"""
+    print(f"Looking for token with name: '{token_name}'")
+    
+    # Find token by name (case-insensitive)
+    # Using exact match rather than regex to avoid issues with special characters
+    token = db.tokens.find_one({'name': {'$regex': f'^{re.escape(token_name)}$', '$options': 'i'}})
+    
+    if not token:
+        return jsonify({'error': f'Token not found: {token_name}'}), 404
+    
+    # Convert ObjectId to string
+    token['id'] = str(token.pop('_id'))
+    
+    # Find cards that create this token
+    creator_cards = list(db.cards.find({'relatedTokens': {'$regex': f'^{re.escape(token_name)}$', '$options': 'i'}}))
+    print(f"Found {len(creator_cards)} creator cards for token: '{token_name}'")
+    
+    # If no exact match found, try a more flexible search
+    if not creator_cards:
+        print(f"No exact matches found, trying flexible search for token: '{token_name}'")
+        creator_cards = list(db.cards.find({'relatedTokens': {'$regex': re.escape(token_name), '$options': 'i'}}))
+        print(f"Found {len(creator_cards)} creator cards with flexible search")
+
+    for card in creator_cards:
+        card['id'] = str(card.pop('_id'))
+    
+    # Add the creator cards to the token response
+    token['creatorCards'] = creator_cards
+    
+    return jsonify(token)
+
+@app.route('/api/tokens/add', methods=['POST'])
+@admin_required
+def add_token():
+    """Add a new token to the database"""
+    try:
+        # Get token data from request
+        token_data = request.get_json()
+        
+        # Validate required fields
+        if not token_data.get('name'):
+            return jsonify({'error': 'Token name is required'}), 400
+        if not token_data.get('type'):
+            return jsonify({'error': 'Token type is required'}), 400
+        if token_data.get('colors') is not None and not isinstance(token_data.get('colors'), list):
+            return jsonify({'error': 'Colors must be provided as an array'}), 400
+        
+        # Ensure colors is an array even if not provided (colorless token)
+        if 'colors' not in token_data or token_data.get('colors') is None:
+            token_data['colors'] = []
+        
+        # Prepare token document
+        new_token = {
+            'name': token_data.get('name'),
+            'type': token_data.get('type'),
+            'colors': token_data.get('colors', []),
+            'power': token_data.get('power'),
+            'toughness': token_data.get('toughness'),
+            'abilities': token_data.get('abilities', []),
+            'imageUrl': token_data.get('imageUrl'),
+            'artist': token_data.get('artist')
+        }
+        
+        # Insert token into database
+        result = db.tokens.insert_one(new_token)
+        
+        # Get the inserted token with its ID
+        inserted_token = db.tokens.find_one({'_id': result.inserted_id})
+        inserted_token['id'] = str(inserted_token.pop('_id'))
+        
+        return jsonify(inserted_token), 201
+        
+    except Exception as e:
+        print(f"Error adding token: {str(e)}")
+        return jsonify({'error': str(e)}), 500
 
 @app.route('/api/draft/pack', methods=['GET'])
 def get_draft_pack():
@@ -1142,8 +1247,12 @@ def add_card():
             return jsonify({"error": "Card type is required"}), 400
         if not data.get('text'):
             return jsonify({"error": "Card text is required"}), 400
-        if not data.get('colors') or not isinstance(data.get('colors'), list):
+        if data.get('colors') is not None and not isinstance(data.get('colors'), list):
             return jsonify({"error": "Card colors must be provided as a list"}), 400
+            
+        # Ensure colors is an array even if not provided (colorless card)
+        if 'colors' not in data or data.get('colors') is None:
+            data['colors'] = []
             
         # Create card document with MongoDB ObjectId
         card = {
@@ -1198,8 +1307,12 @@ def update_card(card_id):
             return jsonify({"error": "Card type is required"}), 400
         if not data.get('text'):
             return jsonify({"error": "Card text is required"}), 400
-        if not data.get('colors') or not isinstance(data.get('colors'), list):
+        if data.get('colors') is not None and not isinstance(data.get('colors'), list):
             return jsonify({"error": "Card colors must be provided as a list"}), 400
+            
+        # Ensure colors is an array even if not provided (colorless card)
+        if 'colors' not in data or data.get('colors') is None:
+            data['colors'] = []
         
         # Try to find the card by string ID first
         existing_card = db.cards.find_one({"_id": card_id})

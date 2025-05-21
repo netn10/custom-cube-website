@@ -3,27 +3,81 @@
 import { useState, useEffect, useMemo } from 'react';
 import Link from 'next/link';
 import { getCards, API_BASE_URL } from '@/lib/api';
+import { useSearchParams, useRouter } from 'next/navigation';
 import { Card } from '@/types/types';
 
 export default function CubeList() {
+  const searchParams = useSearchParams();
+  const router = useRouter();
+
   const [cards, setCards] = useState<Card[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
-  const [searchTerm, setSearchTerm] = useState('');
-  const [bodySearchTerm, setBodySearchTerm] = useState('');
-  const [filterColor, setFilterColor] = useState<string[]>([]);
-  const [colorMatchType, setColorMatchType] = useState<'exact' | 'includes' | 'at-most'>('includes');
-  const [filterType, setFilterType] = useState('');
-  const [filterSet, setFilterSet] = useState('');
-  const [filterCustom, setFilterCustom] = useState<boolean | null>(null);
-  const [currentPage, setCurrentPage] = useState(1);
+  
+  // Initialize state from URL parameters
+  const [searchTerm, setSearchTerm] = useState(searchParams.get('search') || '');
+  const [bodySearchTerm, setBodySearchTerm] = useState(searchParams.get('bodySearch') || '');
+  const [filterColor, setFilterColor] = useState<string[]>(
+    searchParams.get('colors') ? searchParams.get('colors')!.split(',') : []
+  );
+  const [colorMatchType, setColorMatchType] = useState<'exact' | 'includes' | 'at-most'>(
+    (searchParams.get('colorMatch') as 'exact' | 'includes' | 'at-most') || 'includes'
+  );
+  const [filterType, setFilterType] = useState(searchParams.get('type') || '');
+  const [filterSet, setFilterSet] = useState(searchParams.get('set') || '');
+  const [filterCustom, setFilterCustom] = useState<boolean | null>(
+    searchParams.has('custom') ? searchParams.get('custom') === 'true' : null
+  );
+  const [currentPage, setCurrentPage] = useState(
+    parseInt(searchParams.get('page') || '1')
+  );
   const [totalCards, setTotalCards] = useState(0);
-  const [cardsPerPage, setCardsPerPage] = useState(50);
+  const [cardsPerPage, setCardsPerPage] = useState(
+    parseInt(searchParams.get('limit') || '50')
+  );
   const [visiblePageNumbers, setVisiblePageNumbers] = useState<number[]>([]);
-  const [sortFields, setSortFields] = useState<Array<{field: string, direction: 'asc' | 'desc'}>>([{field: 'name', direction: 'asc'}]);
+  const [sortFields, setSortFields] = useState<Array<{field: string, direction: 'asc' | 'desc'}>>(
+    searchParams.get('sort') 
+      ? searchParams.get('sort')!.split(',').map(s => {
+          const [field, direction] = s.split(':');
+          return { field, direction: direction as 'asc' | 'desc' };
+        })
+      : [{field: 'name', direction: 'asc'}]
+  );
 
+  // Function to update the URL with current filters
+  const updateURLWithFilters = () => {
+    // Create a new URLSearchParams object
+    const params = new URLSearchParams();
+    
+    // Only add non-empty filters to the URL
+    if (searchTerm) params.set('search', searchTerm);
+    if (bodySearchTerm) params.set('bodySearch', bodySearchTerm);
+    if (filterColor.length > 0) params.set('colors', filterColor.join(','));
+    if (colorMatchType !== 'includes') params.set('colorMatch', colorMatchType);
+    if (filterType) params.set('type', filterType);
+    if (filterSet) params.set('set', filterSet);
+    if (filterCustom !== null) params.set('custom', filterCustom.toString());
+    if (currentPage !== 1) params.set('page', currentPage.toString());
+    if (cardsPerPage !== 50) params.set('limit', cardsPerPage.toString());
+    
+    // Add sort fields
+    if (sortFields.length > 0 && !(sortFields.length === 1 && sortFields[0].field === 'name' && sortFields[0].direction === 'asc')) {
+      const sortParam = sortFields.map(s => `${s.field}:${s.direction}`).join(',');
+      params.set('sort', sortParam);
+    }
+    
+    // Update the URL without refreshing the page
+    const newUrl = `${window.location.pathname}?${params.toString()}`;
+    window.history.replaceState({ path: newUrl }, '', newUrl);
+  };
+
+  // Fetch cards when component mounts or filters change
   useEffect(() => {
-    // Fetch cards whenever any filter changes
+    // Update URL with current filters
+    updateURLWithFilters();
+    
+    // Fetch cards with current filters
     fetchCards();
   }, [
     currentPage, 
@@ -88,10 +142,24 @@ export default function CubeList() {
         params.body_search = bodySearchTerm;
       }
       
-      // Apply color filters (original + potentially added 'colorless')
+      // Apply color filters with special handling for our marker filters
       if (colorFilters.length > 0) {
-        params.colors = colorFilters;
+        // Special handling for 'not-colorless' marker - we need to ensure colorless cards are excluded
+        // when multicolor filter is applied
+        const hasNotColorlessMarker = colorFilters.includes('not-colorless');
+        
+        // Filter out our special marker, as it's not a real color the API understands
+        const apiColorFilters = colorFilters.filter(c => c !== 'not-colorless');
+        
+        // Set the filtered colors array for the API
+        params.colors = apiColorFilters;
         params.color_match = colorMatchType;
+        
+        // If we have the not-colorless marker, add a special parameter to tell the API
+        // to exclude colorless cards
+        if (hasNotColorlessMarker) {
+          params.exclude_colorless = 'true';
+        }
       }
       
       if (filterType) {
@@ -108,7 +176,19 @@ export default function CubeList() {
       
       console.log('Fetching cards with params:', params);
       const response = await getCards(params);
-      setCards(response.cards);
+      
+      // Check if we need to filter out colorless cards (when multicolor is selected)
+      let filteredCards = response.cards;
+      
+      // If multicolor is selected but not colorless, filter out cards with no colors
+      if (colorFilters.includes('multicolor') && !colorFilters.includes('colorless')) {
+        filteredCards = filteredCards.filter(card => {
+          // Filter out cards with empty colors array or no colors property
+          return card.colors && card.colors.length > 0;
+        });
+      }
+      
+      setCards(filteredCards);
       setTotalCards(response.total);
     } catch (err) {
       console.error('Error fetching cards:', err);
@@ -138,7 +218,9 @@ export default function CubeList() {
       if (hasColorless) {
         setFilterColor(filterColor.filter(c => c.toLowerCase() !== 'colorless'));
       } else {
-        setFilterColor([...filterColor, 'colorless']); // Always use lowercase for consistency
+        // Remove multicolor filter if it exists when selecting colorless
+        const newFilters = filterColor.filter(c => c.toLowerCase() !== 'multicolor');
+        setFilterColor([...newFilters, 'colorless']); // Always use lowercase for consistency
       }
     } else if (lowercaseFilterType === 'multicolor') {
       // For multicolor, we set a special filter value (case-insensitive check)
@@ -146,7 +228,17 @@ export default function CubeList() {
       if (hasMulticolor) {
         setFilterColor(filterColor.filter(c => c.toLowerCase() !== 'multicolor'));
       } else {
-        setFilterColor([...filterColor, 'multicolor']); // Always use lowercase for consistency
+        // Set explicit multicolor condition that excludes colorless
+        // 1. First, remove any existing multicolor or colorless filters
+        let newFilters = filterColor.filter(c => 
+          c.toLowerCase() !== 'multicolor' && c.toLowerCase() !== 'colorless'
+        );
+        
+        // 2. Then add back just the multicolor filter
+        newFilters = [...newFilters, 'multicolor', 'not-colorless']; // Add a special marker filter
+        setFilterColor(newFilters);
+        
+        // This special 'not-colorless' filter will be handled in the fetchCards function
       }
     }
     resetPage();
@@ -342,6 +434,8 @@ export default function CubeList() {
               <option value="Artifact">Artifact</option>
               <option value="Land">Land</option>
               <option value="Planeswalker">Planeswalker</option>
+              <option value="Kindred">Kindred</option>
+              <option value="Battle">Battle</option>
             </select>
           </div>
           
