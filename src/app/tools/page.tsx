@@ -267,8 +267,15 @@ function DraftSimulator() {
         }
       }
       
-      // Add current bot picks to history
-      setBotPicks([...botPicks, ...currentBotPicks]);
+      // Add current bot picks to history - organize by bot ID
+      const updatedBotPicks = [...botPicks];
+      
+      // Add each bot's pick to their respective history
+      currentBotPicks.forEach(pick => {
+        updatedBotPicks.push(pick);
+      });
+      
+      setBotPicks(updatedBotPicks);
       
       // Pass packs - in a real draft, packs are passed around the table
       // For pack 1 and 3, pass to the left; for pack 2, pass to the right
@@ -357,6 +364,11 @@ function DraftSimulator() {
 
   const toggleBotPicks = () => {
     setBotPicksVisible(!botPicksVisible);
+  };
+  
+  // Function to organize bot picks by bot ID
+  const getBotPicksById = (botId: number) => {
+    return botPicks.filter(pick => pick.botId === botId);
   };
 
   const getCardColorClasses = (colors: string[]) => {
@@ -483,17 +495,50 @@ function DraftSimulator() {
                       </span>
                     </div>
                     
-                    <div className="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-5 lg:grid-cols-9 gap-2">
-                      {bot.picks.map((card: any, index: number) => (
-                        <div 
-                          key={`${card.id}-${index}`} 
-                          className={`p-2 rounded text-xs ${getCardColorClasses(card.colors)} bg-opacity-20 dark:bg-opacity-30`}
-                        >
-                          <p className="font-medium dark:text-white">{card.name}</p>
-                          <p className="text-xs text-gray-600 dark:text-gray-400">{card.type}</p>
-                          <p className="text-xs text-gray-500 dark:text-gray-500">Pack {card.packNumber}, Pick {card.pickNumber}</p>
-                        </div>
-                      ))}
+                    <div className="overflow-y-auto max-h-96 border border-gray-200 dark:border-gray-700 rounded p-2">
+                      <table className="w-full text-sm">
+                        <thead className="bg-gray-100 dark:bg-gray-800">
+                          <tr>
+                            <th className="py-2 px-3 text-left">#</th>
+                            <th className="py-2 px-3 text-left">Card</th>
+                            <th className="py-2 px-3 text-left">Type</th>
+                            <th className="py-2 px-3 text-left">Pack/Pick</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          {bot.picks.map((card: any, index: number) => (
+                            <tr 
+                              key={`${card.id}-${index}`} 
+                              className={`border-t border-gray-200 dark:border-gray-700 ${index % 2 === 0 ? 'bg-white dark:bg-gray-900' : 'bg-gray-50 dark:bg-gray-800'}`}
+                            >
+                              <td className="py-2 px-3 font-medium">{index + 1}</td>
+                              <td className="py-2 px-3">
+                                <div className="flex items-center">
+                                  <div className="flex mr-2">
+                                    {card.colors.map((color: string) => (
+                                      <span 
+                                        key={color} 
+                                        className="w-3 h-3 rounded-full mr-1"
+                                        style={{ 
+                                          backgroundColor: 
+                                            color === 'W' ? '#F9FAF4' : 
+                                            color === 'U' ? '#0E68AB' : 
+                                            color === 'B' ? '#150B00' : 
+                                            color === 'R' ? '#D3202A' : 
+                                            '#00733E'
+                                        }}
+                                      />
+                                    ))}
+                                  </div>
+                                  <span className="font-medium dark:text-white">{card.name}</span>
+                                </div>
+                              </td>
+                              <td className="py-2 px-3 text-gray-600 dark:text-gray-400">{card.type}</td>
+                              <td className="py-2 px-3 text-gray-500 dark:text-gray-500">Pack {card.packNumber}, Pick {card.pickNumber}</td>
+                            </tr>
+                          ))}
+                        </tbody>
+                      </table>
                     </div>
                   </div>
                 ))}
@@ -605,7 +650,7 @@ function DraftSimulator() {
                 </button>
               </div>
               
-              <div className="grid grid-cols-1 sm:grid-cols-4 md:grid-cols-6 gap-2">
+              <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-2">
                 {pickedCards.map((card, index) => (
                   <div 
                     key={`${card.id}-${index}`} 
@@ -617,25 +662,40 @@ function DraftSimulator() {
                 ))}
               </div>
               
-              {botPicksVisible && botPicks.length > 0 && (
+              {botPicksVisible && (
                 <div className="mt-4">
-                  <h3 className="text-lg font-semibold mb-2 dark:text-white">Recent Bot Picks:</h3>
+                  <h3 className="text-lg font-semibold mb-2 dark:text-white">Bot Picks:</h3>
                   
-                  <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2">
-                    {botPicks.slice(-numBots * 2).map((pick, index) => (
-                      <div 
-                        key={`bot-pick-${index}`} 
-                        className="bg-gray-100 dark:bg-gray-800 p-2 rounded-lg text-sm"
-                      >
-                        <p className="font-medium dark:text-white">
-                          {pick.botName} picked:
-                        </p>
-                        <div className={`mt-1 p-2 rounded ${getCardColorClasses(pick.card.colors)} bg-opacity-20 dark:bg-opacity-30`}>
-                          <p className="font-medium dark:text-white">{pick.card.name}</p>
-                          <p className="text-xs text-gray-600 dark:text-gray-400">{pick.card.type}</p>
+                  <div className="space-y-4">
+                    {bots.map(bot => {
+                      const botPickHistory = getBotPicksById(bot.id);
+                      return (
+                        <div key={bot.id} className="bg-gray-100 dark:bg-gray-800 p-3 rounded-lg">
+                          <h4 className="text-md font-medium dark:text-white mb-2">
+                            {bot.name} Picks ({botPickHistory.length}):
+                          </h4>
+                          
+                          {botPickHistory.length > 0 ? (
+                            <div className="space-y-2">
+                              {botPickHistory.map((pick, index) => (
+                                <div 
+                                  key={index} 
+                                  className="flex items-start border-b border-gray-200 dark:border-gray-700 pb-2 last:border-0"
+                                >
+                                  <span className="text-gray-500 dark:text-gray-400 mr-2 min-w-[20px] text-right">{index + 1}.</span>
+                                  <div>
+                                    <p className="font-medium dark:text-white">{pick.card.name}</p>
+                                    <p className="text-xs text-gray-600 dark:text-gray-400">{pick.card.type}</p>
+                                  </div>
+                                </div>
+                              ))}
+                            </div>
+                          ) : (
+                            <p className="text-sm text-gray-500 dark:text-gray-400">No picks yet</p>
+                          )}
                         </div>
-                      </div>
-                    ))}
+                      );
+                    })}
                   </div>
                 </div>
               )}
