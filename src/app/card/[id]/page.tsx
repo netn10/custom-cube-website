@@ -3,8 +3,8 @@
 import { useParams, useRouter, useSearchParams } from 'next/navigation';
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { getCards, API_BASE_URL } from '@/lib/api';
-import { Card } from '@/types/types';
+import { getCards, getTokenByName, API_BASE_URL } from '@/lib/api';
+import { Card, Token } from '@/types/types';
 import { useAuth } from '@/contexts/AuthContext';
 import CardPreview from '@/components/CardPreview';
 
@@ -134,18 +134,41 @@ export default function CardDetailPage() {
             }
           }
           
-          // If card has related tokens, fetch their images
+          // If card has related tokens, fetch their images using the token API
           if (cardToUse && cardToUse.relatedTokens && cardToUse.relatedTokens.length > 0) {
             try {
-              // Create a batch request to fetch all token data
+              console.log('Fetching images for tokens:', cardToUse.relatedTokens);
+              
+              // Create a batch request to fetch all token data using the token API
               const tokenPromises = cardToUse.relatedTokens.map(async (tokenName: string) => {
-                const tokenResults = await getCards({ search: `"${tokenName}"`, include_facedown: true });
-                if (tokenResults.cards.length > 0) {
-                  const token = tokenResults.cards[0];
-                  if (token.imageUrl) {
+                console.log(`Searching for token by name: "${tokenName}"`);
+                try {
+                  // Use the token-specific API endpoint
+                  const token = await getTokenByName(tokenName);
+                  console.log(`Found token ${tokenName}:`, token);
+                  
+                  if (token && token.imageUrl) {
+                    console.log(`Token ${tokenName} has image URL:`, token.imageUrl);
                     return { name: tokenName, imageUrl: token.imageUrl };
                   }
+                } catch (tokenError) {
+                  console.log(`Error fetching token ${tokenName} from token API:`, tokenError);
+                  // If token API fails, fall back to card API
+                  console.log(`Falling back to card API for token: ${tokenName}`);
+                  const tokenResults = await getCards({ search: `"${tokenName}"`, include_facedown: true });
+                  
+                  if (tokenResults.cards.length > 0) {
+                    const tokenCard = tokenResults.cards[0];
+                    console.log(`Found token ${tokenName} in card API:`, tokenCard);
+                    
+                    if (tokenCard.imageUrl) {
+                      console.log(`Token ${tokenName} has image URL from card API:`, tokenCard.imageUrl);
+                      return { name: tokenName, imageUrl: tokenCard.imageUrl };
+                    }
+                  }
                 }
+                
+                console.log(`No image found for token: ${tokenName}`);
                 return { name: tokenName, imageUrl: '' };
               });
               
@@ -157,6 +180,7 @@ export default function CardDetailPage() {
                 return acc;
               }, {} as {[name: string]: string});
               
+              console.log('Final token image map:', tokenImageMap);
               setTokenImages(tokenImageMap);
             } catch (err) {
               console.error('Error fetching token images:', err);
@@ -430,20 +454,30 @@ export default function CardDetailPage() {
               <div className="mb-4">
                 <p className="text-sm font-semibold dark:text-white">Related Tokens:</p>
                 <div className="flex flex-wrap gap-2 mt-1">
-                  {card.relatedTokens.map((token: string) => (
-                    <CardPreview 
-                      key={token} 
-                      cardName={token} 
-                      imageUrl={tokenImages[token] || undefined}
-                    >
-                      <Link 
-                        href={`/token/${encodeURIComponent(token)}`}
-                        className="px-2 py-1 bg-amber-100 dark:bg-amber-900 text-amber-800 dark:text-amber-200 rounded-full text-xs"
+                  {card.relatedTokens.map((token: string) => {
+                    console.log(`Rendering token ${token} with image URL:`, tokenImages[token]);
+                    return (
+                      <CardPreview 
+                        key={token} 
+                        cardName={token} 
+                        imageUrl={tokenImages[token] || ''}
                       >
-                        {token}
-                      </Link>
-                    </CardPreview>
-                  ))}
+                        <Link 
+                          href={`/token/${encodeURIComponent(token)}`}
+                          className="px-2 py-1 bg-amber-100 dark:bg-amber-900 text-amber-800 dark:text-amber-200 rounded-full text-xs"
+                          onClick={(e) => {
+                            // Prevent navigation if token images are still loading
+                            if (!tokenImages[token]) {
+                              e.preventDefault();
+                              console.log(`Token ${token} image not loaded yet, preventing navigation`);
+                            }
+                          }}
+                        >
+                          {token}
+                        </Link>
+                      </CardPreview>
+                    );
+                  })}
                 </div>
               </div>
             )}

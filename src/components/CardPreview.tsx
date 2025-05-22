@@ -33,7 +33,9 @@ export default function CardPreview({ children, cardName, imageUrl }: CardPrevie
       }
     }, 5000); // 5 second timeout
     
-    if (imageUrl) {
+    if (imageUrl && imageUrl.trim() !== '') {
+      console.log(`Processing image for ${cardName}:`, imageUrl);
+      
       // Process the image URL through the proxy
       const imageProxyUrl = `${API_BASE_URL}/image-proxy?url=${encodeURIComponent(imageUrl)}`;
       setProcessedImageUrl(imageProxyUrl);
@@ -44,6 +46,7 @@ export default function CardPreview({ children, cardName, imageUrl }: CardPrevie
       
       img.onload = () => {
         if (isMounted.current) {
+          console.log(`Image for ${cardName} loaded successfully`);
           clearTimeout(loadingTimeout);
           setIsLoading(false);
         }
@@ -65,6 +68,7 @@ export default function CardPreview({ children, cardName, imageUrl }: CardPrevie
       };
     } else {
       // If no image URL is provided, don't show loading state
+      console.log(`No image URL provided for ${cardName}`);
       setIsLoading(false);
     }
     
@@ -103,7 +107,7 @@ export default function CardPreview({ children, cardName, imageUrl }: CardPrevie
       {showPreview && (
         <div className="absolute z-50 left-1/2 transform -translate-x-1/2 bottom-full mb-2">
           <div className="w-48 bg-white dark:bg-gray-800 rounded-lg shadow-xl p-2 transition-opacity duration-200">
-            {imageUrl ? (
+            {imageUrl && imageUrl.trim() !== '' ? (
               <>
                 {isLoading && (
                   <div className="h-64 flex items-center justify-center bg-gray-100 dark:bg-gray-700 rounded">
@@ -117,6 +121,7 @@ export default function CardPreview({ children, cardName, imageUrl }: CardPrevie
                     className="w-full rounded"
                     onError={(e) => {
                       if (isMounted.current) {
+                        console.error(`Error loading image for ${cardName}:`, processedImageUrl);
                         // Try direct URL as fallback if using proxy URL
                         if (processedImageUrl.includes('/image-proxy')) {
                           console.log('Image proxy failed, trying direct URL:', imageUrl);
@@ -131,7 +136,7 @@ export default function CardPreview({ children, cardName, imageUrl }: CardPrevie
                 {error && (
                   <div className="h-64 flex items-center justify-center bg-gray-100 dark:bg-gray-700 rounded">
                     <span className="text-sm text-gray-500 dark:text-gray-400 text-center">
-                      Image not available
+                      Image not available for {cardName}
                     </span>
                   </div>
                 )}
