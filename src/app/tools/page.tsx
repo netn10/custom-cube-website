@@ -787,7 +787,7 @@ function DraftSimulator() {
                                   className="inline-block mr-3 mb-3 group relative"
                                 >
                                   {pick.card.imageUrl ? (
-                                    <div className="relative w-20 h-28 overflow-hidden rounded shadow-md hover:shadow-lg transition-shadow duration-200">
+                                    <div className="relative w-32 h-44 overflow-hidden rounded shadow-md hover:shadow-lg transition-shadow duration-200">
                                       <img 
                                         src={pick.card.imageUrl.startsWith('data:') ? pick.card.imageUrl : `${API_BASE_URL}/image-proxy?url=${encodeURIComponent(pick.card.imageUrl)}`} 
                                         alt={pick.card.name} 
