@@ -5,8 +5,6 @@ import { Card, Archetype, Token, Suggestion, User, LoginCredentials, RegisterFor
 // In production, the URL from env already includes the /api path
 export const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL ? process.env.NEXT_PUBLIC_API_URL : 'http://127.0.0.1:5000/api';
 
-// For debugging
-console.log('API_BASE_URL:', API_BASE_URL);
 
 // Authentication API
 
@@ -180,15 +178,12 @@ export async function getCards(params?: {
 }
 
 export async function getCardById(id: string): Promise<Card> {
-  console.log(`Attempting to fetch card with ID: ${id}`);
   try {
     const response = await fetch(`${API_BASE_URL}/cards/${id}`, {
       headers: {
         'Content-Type': 'application/json',
       },
     });
-    
-    console.log(`API response status: ${response.status}`);
     
     if (!response.ok) {
       const errorText = await response.text();
@@ -197,10 +192,8 @@ export async function getCardById(id: string): Promise<Card> {
     }
     
     const data = await response.json();
-    console.log('API response data:', data);
     return data;
   } catch (error) {
-    console.error('API fetch error:', error);
     throw error;
   }
 }
@@ -240,10 +233,8 @@ export async function getRandomArchetypeCards(): Promise<Card[]> {
     }
     
     const data = await response.json();
-    console.log('Raw API response for random cards:', data);
     return data;
   } catch (error) {
-    console.error('Error fetching random archetype cards:', error);
     throw error;
   }
 }
@@ -299,7 +290,6 @@ export async function getTokens(params?: {
 
 // Get a single token by name
 export async function getTokenByName(name: string): Promise<Token> {
-  console.log(`Attempting to fetch token with name: ${name}`);
   try {
     // Double-encode slashes and other special characters to ensure proper URL handling
     const safeTokenName = name.replace(/\//g, '%2F');
@@ -309,8 +299,6 @@ export async function getTokenByName(name: string): Promise<Token> {
       },
     });
     
-    console.log(`API response status: ${response.status}`);
-    
     if (!response.ok) {
       const errorText = await response.text();
       console.error(`API error response: ${errorText}`);
@@ -318,7 +306,6 @@ export async function getTokenByName(name: string): Promise<Token> {
     }
     
     const data = await response.json();
-    console.log('API response data:', data);
     return data;
   } catch (error) {
     console.error(`Error fetching token by name: ${error}`);
@@ -401,7 +388,6 @@ export async function getMultipleDraftPacks(count: number): Promise<Card[][]> {
   } catch (error) {
     console.error('Error fetching multiple draft packs:', error);
     // Fallback to fetching packs individually if the bulk endpoint fails
-    console.log('Falling back to individual pack fetching');
     const packs: Card[][] = [];
     for (let i = 0; i < count; i++) {
       try {

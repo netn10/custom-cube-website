@@ -175,7 +175,6 @@ function CubeListContent() {
         params.custom = filterCustom;
       }
       
-      console.log('Fetching cards with params:', params);
       const response = await getCards(params);
       
       // Check if we need to filter out colorless cards (when multicolor is selected)
@@ -192,7 +191,6 @@ function CubeListContent() {
       setCards(filteredCards);
       setTotalCards(response.total);
     } catch (err) {
-      console.error('Error fetching cards:', err);
       setError('Failed to load cards. Please try again later.');
     } finally {
       setLoading(false);

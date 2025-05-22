@@ -34,7 +34,6 @@ export default function CardPreview({ children, cardName, imageUrl }: CardPrevie
     }, 5000); // 5 second timeout
     
     if (imageUrl && imageUrl.trim() !== '') {
-      console.log(`Processing image for ${cardName}:`, imageUrl);
       
       // Process the image URL through the proxy
       const imageProxyUrl = `${API_BASE_URL}/image-proxy?url=${encodeURIComponent(imageUrl)}`;
@@ -46,7 +45,6 @@ export default function CardPreview({ children, cardName, imageUrl }: CardPrevie
       
       img.onload = () => {
         if (isMounted.current) {
-          console.log(`Image for ${cardName} loaded successfully`);
           clearTimeout(loadingTimeout);
           setIsLoading(false);
         }
@@ -55,20 +53,16 @@ export default function CardPreview({ children, cardName, imageUrl }: CardPrevie
       img.onerror = () => {
         if (isMounted.current) {
           clearTimeout(loadingTimeout);
-          console.error('Error loading image preview for', cardName);
           setError(true);
           setIsLoading(false);
           
           // Try to use the direct image URL as fallback
           if (imageUrl !== processedImageUrl) {
-            console.log('Attempting to load direct image URL as fallback:', imageUrl);
             setProcessedImageUrl(imageUrl);
           }
         }
       };
     } else {
-      // If no image URL is provided, don't show loading state
-      console.log(`No image URL provided for ${cardName}`);
       setIsLoading(false);
     }
     
@@ -124,7 +118,6 @@ export default function CardPreview({ children, cardName, imageUrl }: CardPrevie
                         console.error(`Error loading image for ${cardName}:`, processedImageUrl);
                         // Try direct URL as fallback if using proxy URL
                         if (processedImageUrl.includes('/image-proxy')) {
-                          console.log('Image proxy failed, trying direct URL:', imageUrl);
                           e.currentTarget.src = imageUrl;
                         } else {
                           setError(true);

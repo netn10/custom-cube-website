@@ -678,7 +678,6 @@ export default function Home() {
               </div>
             ) : (
               <div id="booster-cards" className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 xl:grid-cols-5 gap-2 md:gap-3 w-full max-w-5xl mx-auto pt-4 sm:pt-6 md:pt-8 pb-4 sm:pb-6 mt-4 booster-cards-container">
-                {console.log(`Rendering booster pack with ${boosterCards.length} cards:`, boosterCards)}
                 {boosterCards.slice(0, 15).map((card, index) => (
                   <div 
                     key={index}
@@ -803,15 +802,7 @@ export default function Home() {
                   return cardArchetype === exactArchetypeName;
                 });
               });
-              
-              // Log detailed info for debugging
-              console.log(`Archetype: ${exactArchetypeName}, Cards found: ${archetypeSpecificCards.length}`);
-              if (archetypeSpecificCards.length > 0) {
-                console.log('  - Sample cards:', archetypeSpecificCards.slice(0, 3).map(c => `${c.name}`));
-              } else {
-                console.log('  - No matching cards found');
-              }
-              
+                            
               // If we have cards for this archetype, pick one randomly
               let randomCard = null;
               if (archetypeSpecificCards.length > 0) {

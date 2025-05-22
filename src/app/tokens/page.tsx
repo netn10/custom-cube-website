@@ -66,7 +66,6 @@ export default function TokensPage() {
         params.color_match = colorMatchType;
       }
       
-      console.log('Fetching tokens with params:', params);
       const response = await getTokens(params);
       
       // Check if we need to filter out colorless tokens (when multicolor is selected)

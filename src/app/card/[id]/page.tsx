@@ -3,7 +3,8 @@
 import { useParams, useRouter, useSearchParams } from 'next/navigation';
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { getCards, getTokenByName, API_BASE_URL } from '@/lib/api';
+import { getCards, getTokenByName, API_BASE_URL, getGeminiResponse } from '@/lib/api';
+import { FaRobot } from 'react-icons/fa';
 import { Card, Token } from '@/types/types';
 import { useAuth } from '@/contexts/AuthContext';
 import CardPreview from '@/components/CardPreview';
@@ -18,6 +19,26 @@ export default function CardDetailPage() {
   const [tokenImages, setTokenImages] = useState<{[name: string]: string}>({});
   // Store related face image URL
   const [relatedFaceImage, setRelatedFaceImage] = useState<string>('');
+  // AI Archetype Analysis
+  const [aiLoading, setAiLoading] = useState(false);
+  const [aiResponse, setAiResponse] = useState<string | null>(null);
+  const [showAiAnalysis, setShowAiAnalysis] = useState(false);
+  const [aiAnalysisRequested, setAiAnalysisRequested] = useState(false);
+  const [lastAnalysisTime, setLastAnalysisTime] = useState<number | null>(null);
+  
+  // Archetype data
+  const archetypes = [
+    { id: 'wu-storm', name: 'Storm', colors: ['W', 'U'], description: 'Cast multiple spells in a turn to trigger powerful effects.' },
+    { id: 'ub-broken-cipher', name: 'Broken Cipher', colors: ['U', 'B'], description: 'Encode secrets onto creatures and gain value when they deal combat damage.' },
+    { id: 'br-token-collection', name: 'Token Collection', colors: ['B', 'R'], description: 'Create and collect various token types for different synergies.' },
+    { id: 'rg-control', name: 'Control', colors: ['R', 'G'], description: 'An unusual take on control using red and green to dominate the board.' },
+    { id: 'gw-vehicles', name: 'Vehicles', colors: ['G', 'W'], description: 'Crew powerful artifact vehicles with your creatures for strong attacks.' },
+    { id: 'wb-blink', name: 'Blink/ETB/Value', colors: ['W', 'B'], description: 'Flicker creatures in and out of the battlefield to accumulate triggers.' },
+    { id: 'bg-artifacts', name: 'Artifacts', colors: ['B', 'G'], description: 'Leverage artifacts for value and synergy in an unusual color combination.' },
+    { id: 'ur-enchantments', name: 'Enchantments', colors: ['U', 'R'], description: 'Use enchantments to control the game and generate value over time.' },
+    { id: 'rw-self-mill', name: 'Self-mill', colors: ['R', 'W'], description: 'Put cards from your library into your graveyard for value and synergy.' },
+    { id: 'gu-prowess', name: 'Prowess', colors: ['G', 'U'], description: 'Cast non-creature spells to trigger bonuses on your creatures.' },
+  ];
 
   // Get the current URL parameters to preserve when going back to the cube list
   const getBackToCubeListURL = () => {
@@ -85,16 +106,11 @@ export default function CardDetailPage() {
       const fetchCard = async () => {
         try {
           const cardName = decodeURIComponent(params.id as string);
-          console.log('Fetching card with name:', cardName);
-          
-          // First search for the card by exact name
-          console.log('Searching for exact match...');
-          const exactSearchResults = await getCards({ search: `"${cardName}"`, limit: 10, facedown: true });
+          const exactSearchResults = await getCards({ search: `"${cardName}"`, limit: 10, include_facedown: true });
           
           // If we don't get an exact match, try a broader search
           let searchResults = exactSearchResults;
           if (exactSearchResults.cards.length === 0) {
-            console.log('No exact matches, trying broader search...');
             searchResults = await getCards({ search: cardName, limit: 10, include_facedown: true });
           }
           
@@ -110,12 +126,10 @@ export default function CardDetailPage() {
           let cardToUse: Card | null = null;
           
           if (exactMatch) {
-            console.log('Found exact matching card:', exactMatch.name);
             cardToUse = exactMatch;
           }
           
           setCard(cardToUse);
-          console.log('Card data to use:', cardToUse);
             
           // If the card has a related face, fetch that card
           if (cardToUse && cardToUse.relatedFace) {
@@ -134,41 +148,32 @@ export default function CardDetailPage() {
             }
           }
           
+          // We don't automatically analyze with AI anymore - user must click the button
+          
           // If card has related tokens, fetch their images using the token API
           if (cardToUse && cardToUse.relatedTokens && cardToUse.relatedTokens.length > 0) {
             try {
-              console.log('Fetching images for tokens:', cardToUse.relatedTokens);
               
               // Create a batch request to fetch all token data using the token API
               const tokenPromises = cardToUse.relatedTokens.map(async (tokenName: string) => {
-                console.log(`Searching for token by name: "${tokenName}"`);
                 try {
                   // Use the token-specific API endpoint
                   const token = await getTokenByName(tokenName);
-                  console.log(`Found token ${tokenName}:`, token);
                   
                   if (token && token.imageUrl) {
-                    console.log(`Token ${tokenName} has image URL:`, token.imageUrl);
                     return { name: tokenName, imageUrl: token.imageUrl };
                   }
                 } catch (tokenError) {
-                  console.log(`Error fetching token ${tokenName} from token API:`, tokenError);
-                  // If token API fails, fall back to card API
-                  console.log(`Falling back to card API for token: ${tokenName}`);
                   const tokenResults = await getCards({ search: `"${tokenName}"`, include_facedown: true });
                   
                   if (tokenResults.cards.length > 0) {
-                    const tokenCard = tokenResults.cards[0];
-                    console.log(`Found token ${tokenName} in card API:`, tokenCard);
-                    
+                    const tokenCard = tokenResults.cards[0];                    
                     if (tokenCard.imageUrl) {
-                      console.log(`Token ${tokenName} has image URL from card API:`, tokenCard.imageUrl);
                       return { name: tokenName, imageUrl: tokenCard.imageUrl };
                     }
                   }
                 }
                 
-                console.log(`No image found for token: ${tokenName}`);
                 return { name: tokenName, imageUrl: '' };
               });
               
@@ -180,7 +185,6 @@ export default function CardDetailPage() {
                 return acc;
               }, {} as {[name: string]: string});
               
-              console.log('Final token image map:', tokenImageMap);
               setTokenImages(tokenImageMap);
             } catch (err) {
               console.error('Error fetching token images:', err);
@@ -197,6 +201,65 @@ export default function CardDetailPage() {
       fetchCard();
     }
   }, [params.id]);
+  
+  const getAIAnalysis = async () => {
+    // Check if card exists
+    if (!card) return;
+    
+    // Check if analysis was already requested
+    if (aiAnalysisRequested) return;
+    
+    // Check for rate limiting (only allow one request per minute)
+    const now = Date.now();
+    if (lastAnalysisTime && now - lastAnalysisTime < 60000) {
+      setAiResponse('Please wait at least 1 minute between AI analysis requests.');
+      return;
+    }
+    
+    try {
+      setAiLoading(true);
+      setAiAnalysisRequested(true);
+      setLastAnalysisTime(now);
+      
+      // Create a detailed prompt for the AI
+      const archetypeDescriptions = archetypes.map(a => 
+        `${a.name} (${a.colors.join('/')}): ${a.description}`
+      ).join('\n');
+      
+      // Build a description of the card
+      let cardDescription = `${card.name} - ${card.type}`;
+      if (card.manaCost) {
+        cardDescription += ` - Mana Cost: ${card.manaCost}`;
+      }
+      if (card.power && card.toughness) {
+        cardDescription += ` (${card.power}/${card.toughness})`;
+      }
+      if (card.colors && card.colors.length > 0) {
+        cardDescription += ` - Colors: ${card.colors.join('/')}`;
+      }
+      if (card.text) {
+        cardDescription += `\nCard Text: ${card.text}`;
+      }
+      
+      const prompt = `You are an expert Magic: The Gathering card analyst. Based on the following card description, determine which archetype(s) from our custom cube would be the best fit for this card. Explain why the card fits into these archetypes and how it could be used strategically. Be specific and detailed in your analysis.\n\nCard: "${cardDescription}"\n\nAvailable archetypes in our cube:\n${archetypeDescriptions}\n\nProvide your analysis in a concise format with clear recommendations.`;
+      
+      // Call the Gemini API
+      const response = await getGeminiResponse(prompt);
+      setAiResponse(response.response);
+    } catch (error) {
+      console.error('Error getting AI analysis:', error);
+      setAiResponse('Sorry, there was an error analyzing this card with AI. Please try again later.');
+    } finally {
+      setAiLoading(false);
+    }
+  };
+  
+  const handleAnalysisButtonClick = () => {
+    setShowAiAnalysis(true);
+    if (!aiAnalysisRequested) {
+      getAIAnalysis();
+    }
+  };
 
   if (loading) {
     return (
@@ -455,7 +518,6 @@ export default function CardDetailPage() {
                 <p className="text-sm font-semibold dark:text-white">Related Tokens:</p>
                 <div className="flex flex-wrap gap-2 mt-1">
                   {card.relatedTokens.map((token: string) => {
-                    console.log(`Rendering token ${token} with image URL:`, tokenImages[token]);
                     return (
                       <CardPreview 
                         key={token} 
@@ -469,7 +531,6 @@ export default function CardDetailPage() {
                             // Prevent navigation if token images are still loading
                             if (!tokenImages[token]) {
                               e.preventDefault();
-                              console.log(`Token ${token} image not loaded yet, preventing navigation`);
                             }
                           }}
                         >
@@ -532,6 +593,50 @@ export default function CardDetailPage() {
                   </Link>
                 );
               })}
+            </div>
+            
+            {/* AI Archetype Analysis Button */}
+            <div className="mt-8">
+              {!showAiAnalysis ? (
+                <button
+                  onClick={handleAnalysisButtonClick}
+                  className="flex items-center justify-center w-full py-3 px-4 bg-blue-100 hover:bg-blue-200 dark:bg-blue-900 dark:hover:bg-blue-800 text-blue-800 dark:text-blue-200 rounded-lg transition-colors"
+                >
+                  <FaRobot className="mr-2" />
+                  <span>Analyze with AI Archetype Finder</span>
+                </button>
+              ) : (
+                <div className="bg-gray-50 dark:bg-gray-800 p-4 rounded-lg border border-gray-200 dark:border-gray-700">
+                  <div className="flex items-center justify-between mb-3">
+                    <div className="flex items-center">
+                      <FaRobot className="text-blue-500 mr-2" />
+                      <h3 className="text-lg font-semibold dark:text-white">AI Archetype Analysis</h3>
+                    </div>
+                    {lastAnalysisTime && (
+                      <div className="text-xs text-gray-500 dark:text-gray-400">
+                        Rate limited: 1 request per minute
+                      </div>
+                    )}
+                  </div>
+                  
+                  {aiLoading ? (
+                    <div className="flex justify-center items-center py-8">
+                      <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-500"></div>
+                      <span className="ml-2 text-gray-600 dark:text-gray-400">Analyzing with AI...</span>
+                    </div>
+                  ) : aiResponse ? (
+                    <div className="prose dark:prose-invert max-w-none">
+                      <div className="bg-white dark:bg-gray-700 p-4 rounded-lg shadow-inner">
+                        <div className="whitespace-pre-line">{aiResponse}</div>
+                      </div>
+                    </div>
+                  ) : (
+                    <p className="text-gray-600 dark:text-gray-400 py-4 text-center">
+                      AI analysis is loading...
+                    </p>
+                  )}
+                </div>
+              )}
             </div>
           </div>
         </div>

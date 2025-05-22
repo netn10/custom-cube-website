@@ -57,13 +57,6 @@ export default function ToolsPage() {
       component: <ManaCalculator />,
     },
     {
-      id: 'archetype-finder',
-      name: 'Archetype Finder',
-      description: 'Find which archetype a card fits into best based on its abilities and synergies.',
-      icon: <FaSearch className="h-6 w-6" />,
-      component: <ArchetypeFinder />,
-    },
-    {
       id: 'ask-chatgpt',
       name: 'Ask Gemini',
       description: 'View cards that instruct you to ask Gemini for something and get AI-generated responses.',
@@ -148,7 +141,6 @@ function DraftSimulator() {
     try {
       setLoading(true);
       setError(null);
-      console.log("Starting draft...");
       
       // Reset draft state
       setPickedCards([]);
@@ -170,11 +162,9 @@ function DraftSimulator() {
       // Generate packs for all players (player + bots) in a single request
       const totalPlayers = numBots + 1; // +1 for the human player
       const totalPacks = totalPlayers * 3; // 3 packs per player
-      console.log(`Requesting ${totalPacks} packs in a single call...`);
       
       // Use the new bulk API to get all packs at once
       const allPacksFlat = await getMultipleDraftPacks(totalPacks);
-      console.log(`Received ${allPacksFlat.length} packs`);
       
       // Reshape the flat array of packs into the format we need:
       // [round][player_index] = pack
@@ -333,10 +323,6 @@ function DraftSimulator() {
           setDraftStarted(false);
           setDraftComplete(true);
           
-          // Log completion stats
-          console.log(`Draft complete! You drafted ${updatedPickedCards.length} cards.`);
-          console.log(`Expected total: 45 cards (3 packs × 15 cards)`);
-          
           // Check if we have the expected number of cards
           if (updatedPickedCards.length !== 45) {
             console.warn(`You drafted ${updatedPickedCards.length} cards instead of expected 45`);
@@ -344,7 +330,6 @@ function DraftSimulator() {
           
           // Log bot stats
           updatedBots.forEach(bot => {
-            console.log(`${bot.name} drafted ${bot.picks.length} cards`);
             if (bot.picks.length !== 45) {
               console.warn(`${bot.name} drafted ${bot.picks.length} cards instead of expected 45`);
             }
@@ -1008,153 +993,6 @@ function ManaCalculator() {
   );
 }
 
-// Archetype Finder Component
-function ArchetypeFinder() {
-  const [searchTerm, setSearchTerm] = useState('');
-  const [searchResults, setSearchResults] = useState<any[] | null>(null);
-  
-  const archetypes = [
-    { id: 'wu-storm', name: 'Storm', colors: ['W', 'U'] },
-    { id: 'ub-broken-cipher', name: 'Broken Cipher', colors: ['U', 'B'] },
-    { id: 'br-token-collection', name: 'Token Collection', colors: ['B', 'R'] },
-    { id: 'rg-control', name: 'Control', colors: ['R', 'G'] },
-    { id: 'gw-vehicles', name: 'Vehicles', colors: ['G', 'W'] },
-    { id: 'wb-blink', name: 'Blink/ETB/Value', colors: ['W', 'B'] },
-    { id: 'bg-artifacts', name: 'Artifacts', colors: ['B', 'G'] },
-    { id: 'ur-enchantments', name: 'Enchantments', colors: ['U', 'R'] },
-    { id: 'rw-self-mill', name: 'Self-mill', colors: ['R', 'W'] },
-    { id: 'gu-prowess', name: 'Prowess', colors: ['G', 'U'] },
-  ];
-  
-  const keywords = {
-    'Storm': ['storm', 'cast', 'spell', 'instant', 'sorcery', 'copy'],
-    'Broken Cipher': ['cipher', 'encode', 'combat damage', 'unblockable', 'evasion'],
-    'Token Collection': ['token', 'create', 'creature token', 'sacrifice'],
-    'Control': ['destroy', 'damage', 'counter', 'exile', 'return'],
-    'Vehicles': ['vehicle', 'crew', 'artifact', 'pilot'],
-    'Blink/ETB/Value': ['flicker', 'exile', 'return', 'battlefield', 'enters', 'etb'],
-    'Artifacts': ['artifact', 'equipment', 'attach', 'equip', 'sacrifice'],
-    'Enchantments': ['enchantment', 'aura', 'attach', 'enchant'],
-    'Self-mill': ['mill', 'graveyard', 'discard', 'draw', 'library'],
-    'Prowess': ['prowess', 'noncreature', 'spell', 'cast', 'trigger'],
-  };
-
-  const findArchetypes = () => {
-    if (!searchTerm.trim()) {
-      return;
-    }
-    
-    const term = searchTerm.toLowerCase();
-    
-    // Calculate a score for each archetype based on keyword matches
-    const results = archetypes.map(archetype => {
-      const archetypeKeywords = keywords[archetype.name as keyof typeof keywords];
-      
-      let score = 0;
-      archetypeKeywords.forEach(keyword => {
-        if (term.includes(keyword.toLowerCase())) {
-          score += 1;
-        }
-      });
-      
-      return {
-        ...archetype,
-        score,
-        keywords: archetypeKeywords.filter(keyword => 
-          term.includes(keyword.toLowerCase())
-        ),
-      };
-    });
-    
-    // Sort by score and filter out zero scores
-    const filteredResults = results
-      .filter(result => result.score > 0)
-      .sort((a, b) => b.score - a.score);
-    
-    setSearchResults(filteredResults.length > 0 ? filteredResults : []);
-  };
-
-  return (
-    <div className="space-y-4">
-      <p className="dark:text-gray-300">
-        Find which archetype a card fits into best based on its abilities and synergies.
-        Enter a card name or its rules text to see matching archetypes.
-      </p>
-      
-      <div className="flex space-x-2">
-        <input
-          type="text"
-          placeholder="Enter card name or rules text..."
-          className="flex-grow p-2 border border-gray-300 dark:border-gray-600 rounded-md dark:bg-gray-700 dark:text-white"
-          value={searchTerm}
-          onChange={(e) => setSearchTerm(e.target.value)}
-          onKeyDown={(e) => e.key === 'Enter' && findArchetypes()}
-        />
-        <button 
-          className="btn-primary"
-          onClick={findArchetypes}
-        >
-          Find Archetypes
-        </button>
-      </div>
-      
-      {searchResults && (
-        <div className="mt-4">
-          <h3 className="text-lg font-semibold mb-3 dark:text-white">Matching Archetypes:</h3>
-          
-          {searchResults.length === 0 ? (
-            <p className="text-gray-600 dark:text-gray-400">
-              No matching archetypes found. Try different keywords or check the About page for archetype descriptions.
-            </p>
-          ) : (
-            <div className="space-y-3">
-              {searchResults.map(result => (
-                <div 
-                  key={result.id} 
-                  className="bg-gray-100 dark:bg-gray-700 p-4 rounded-lg"
-                >
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center">
-                      <h4 className="text-lg font-semibold dark:text-white">{result.name}</h4>
-                      <div className="flex ml-3">
-                        {result.colors.map((color: string) => (
-                          <span 
-                            key={color} 
-                            className="w-5 h-5 rounded-full mx-0.5"
-                            style={{ 
-                              backgroundColor: 
-                                color === 'W' ? '#F9FAF4' : 
-                                color === 'U' ? '#0E68AB' : 
-                                color === 'B' ? '#150B00' : 
-                                color === 'R' ? '#D3202A' : 
-                                '#00733E'
-                            }}
-                          />
-                        ))}
-                      </div>
-                    </div>
-                    <span className="text-sm font-medium px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded-full">
-                      Match Score: {result.score}
-                    </span>
-                  </div>
-                  
-                  {result.keywords.length > 0 && (
-                    <div className="mt-2">
-                      <p className="text-sm text-gray-600 dark:text-gray-400">
-                        Matching keywords: {result.keywords.join(', ')}
-                      </p>
-                    </div>
-                  )}
-                </div>
-              ))}
-            </div>
-          )}
-        </div>
-      )}
-    </div>
-  );
-}
-
 // Card Suggestion Component
 function CardSuggestion() {
   const [submitOption, setSubmitOption] = useState<'image' | 'text' | null>(null);
@@ -1581,7 +1419,6 @@ function AskChatGPT() {
         const data = await getChatGPTCards();
         setCards(data);
       } catch (err) {
-        console.error('Error fetching cards with prompts:', err);
         setError('Failed to load cards with Gemini prompts');
       } finally {
         setIsLoading(false);

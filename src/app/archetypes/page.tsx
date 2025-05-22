@@ -193,7 +193,6 @@ export default function ArchetypesPage() {
           getArchetypeCards(archetype.id, 1, 30)
             .then(({ cards }) => ({ archetypeId: archetype.id, cards, colors: archetype.colors }))
             .catch(error => {
-              console.error(`Error fetching cards for archetype ${archetype.id}:`, error);
               return { archetypeId: archetype.id, cards: [], colors: archetype.colors };
             })
         );
@@ -239,25 +238,6 @@ export default function ArchetypesPage() {
     };
   }, []);
   
-  // Add a console log to verify the component is not re-rendering unnecessarily
-  // This can be removed in production
-  useEffect(() => {
-    console.log('ArchetypesPage rendered');
-  });
-
-
-
-  // Toggle expanded archetype description
-  const toggleArchetypeExpansion = (archetypeId: string, event: React.MouseEvent) => {
-    // Prevent the click from triggering the parent div's onClick
-    event.stopPropagation();
-    
-    if (expandedArchetype === archetypeId) {
-      setExpandedArchetype(null);
-    } else {
-      setExpandedArchetype(archetypeId);
-    }
-  };
 
   // Get color classes for the archetype card
   const getArchetypeColorClasses = (colors: string[]) => {
@@ -310,8 +290,6 @@ export default function ArchetypesPage() {
       
       // Make sure we have at least 3 cards (or as many as possible)
       const cardsToUse = cards.slice(0, Math.max(3, cards.length));
-      
-      console.log(`Fetched ${cards.length} cards for archetype ${archetypeId}`, cards);
       
       // Update the cards map
       setArchetypeCardsMap(prev => ({
