@@ -48,6 +48,38 @@ export default function TokenDetailPage() {
     return colorClasses[color] || 'bg-gray-300 text-black';
   };
 
+  // Function to sort colors in the correct order: WU, UB, BR, RG, GW, WB, BG, GU, UR, RW
+  const sortColors = (colors: string[]) => {
+    if (!colors || colors.length === 0) return [];
+    
+    // For single color, no sorting needed
+    if (colors.length === 1) return colors;
+    
+    // Define the correct order for dual color pairs
+    const dualColorOrder = ['WU', 'UB', 'BR', 'RG', 'GW', 'WB', 'BG', 'GU', 'UR', 'RW'];
+    
+    // If we have exactly 2 colors, check if they form a known pair
+    if (colors.length === 2) {
+      const pair = colors.join('');
+      // Check if this pair exists in our order (in either direction)
+      const normalPairIndex = dualColorOrder.indexOf(pair);
+      if (normalPairIndex >= 0) {
+        return [colors[0], colors[1]]; // Already in correct order
+      }
+      
+      // Check if the reversed pair exists
+      const reversedPair = colors[1] + colors[0];
+      const reversedPairIndex = dualColorOrder.indexOf(reversedPair);
+      if (reversedPairIndex >= 0) {
+        return [colors[1], colors[0]]; // Reverse to match the correct order
+      }
+    }
+    
+    // For more than 2 colors or unknown combinations, sort by WUBRG order
+    const colorOrder = { W: 0, U: 1, B: 2, R: 3, G: 4 };
+    return [...colors].sort((a, b) => (colorOrder[a as keyof typeof colorOrder] || 5) - (colorOrder[b as keyof typeof colorOrder] || 5));
+  };
+
   if (loading) {
     return (
       <div className="container mx-auto px-4 py-8 max-w-4xl">
@@ -129,7 +161,7 @@ export default function TokenDetailPage() {
             <span className="text-gray-700 dark:text-gray-300 mr-2">Colors:</span>
             <div className="flex space-x-1">
               {token.colors && token.colors.length > 0 ? (
-                token.colors.map(color => (
+                sortColors(token.colors).map(color => (
                   <span 
                     key={color} 
                     className={`w-6 h-6 rounded-full flex items-center justify-center text-sm font-bold ${getColorClass(color)}`}
@@ -155,11 +187,9 @@ export default function TokenDetailPage() {
           {token.abilities && token.abilities.length > 0 && (
             <div className="mb-4">
               <h2 className="text-lg font-semibold mb-1 dark:text-white">Abilities:</h2>
-              <ul className="list-disc list-inside text-gray-700 dark:text-gray-300">
-                {token.abilities.map((ability, index) => (
-                  <li key={index} className="mb-1">{ability}</li>
-                ))}
-              </ul>
+              {token.abilities.map((ability, index) => (
+                <p key={index} className="mb-1">{ability}</p>
+              ))}
             </div>
           )}
           

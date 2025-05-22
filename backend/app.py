@@ -788,10 +788,10 @@ def add_token():
 
 @app.route('/api/draft/pack', methods=['GET'])
 def get_draft_pack():
-    """Generate a random draft pack of 15 cards"""
+    """Generate a random draft pack of 15 unique cards, excluding facedown cards"""
     try:
-        # Get all cards from the database
-        all_cards = list(db.cards.find())
+        # Get all cards from the database that are not facedown
+        all_cards = list(db.cards.find({"facedown": {"$ne": True}}))
         
         # Convert ObjectIds to strings
         for card in all_cards:
@@ -799,16 +799,63 @@ def get_draft_pack():
         
         # Ensure we have enough cards
         if len(all_cards) < 15:
-            return jsonify({"error": "Not enough cards in database to create a draft pack"}), 400
+            return jsonify({"error": "Not enough visible cards in database to create a draft pack"}), 400
         
         # Shuffle the cards and take 15 for the pack
         random.shuffle(all_cards)
         pack = all_cards[:15]
         
-        print(f"Generated draft pack with {len(pack)} cards")
+        print(f"Generated draft pack with {len(pack)} unique visible cards")
         return jsonify(pack)
     except Exception as e:
         print(f"Error generating draft pack: {str(e)}")
+        return jsonify({"error": str(e)}), 500
+
+@app.route('/api/draft/packs', methods=['GET'])
+def get_multiple_draft_packs():
+    """Generate multiple random draft packs in a single request with no duplicate cards across all packs, excluding facedown cards"""
+    try:
+        # Get the count parameter (default to 1 if not provided)
+        count = request.args.get('count', default=1, type=int)
+        
+        # Limit the maximum number of packs to avoid abuse
+        if count > 50:
+            count = 50
+            print(f"Requested pack count exceeded maximum, limiting to 50")
+        
+        print(f"Generating {count} draft packs in a single request with no duplicates, excluding facedown cards")
+        
+        # Get all cards from the database once, excluding facedown cards
+        all_cards = list(db.cards.find({"facedown": {"$ne": True}}))
+        
+        # Convert ObjectIds to strings
+        for card in all_cards:
+            card['id'] = str(card.pop('_id'))
+        
+        # Calculate total cards needed (15 cards per pack)
+        total_cards_needed = count * 15
+        
+        # Ensure we have enough unique cards in the database
+        if len(all_cards) < total_cards_needed:
+            print(f"Warning: Not enough unique visible cards ({len(all_cards)}) for {count} packs requiring {total_cards_needed} cards")
+            return jsonify({"error": f"Not enough unique visible cards in database. Have {len(all_cards)}, need {total_cards_needed}"}), 400
+        
+        # Shuffle all cards once
+        random.shuffle(all_cards)
+        
+        # Generate the requested number of packs without duplicates
+        packs = []
+        for i in range(count):
+            # Take the next 15 cards for this pack
+            start_idx = i * 15
+            end_idx = start_idx + 15
+            pack = all_cards[start_idx:end_idx]
+            packs.append(pack)
+        
+        print(f"Successfully generated {len(packs)} draft packs with no duplicates, all visible cards")
+        return jsonify(packs)
+    except Exception as e:
+        print(f"Error generating multiple draft packs: {str(e)}")
         return jsonify({"error": str(e)}), 500
 
 @app.route('/api/draft/bot-pick', methods=['POST'])

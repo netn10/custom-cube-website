@@ -138,6 +138,38 @@ export default function TokensPage() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
   
+  // Function to sort colors in the correct order: WU, UB, BR, RG, GW, WB, BG, GU, UR, RW
+  const sortColors = (colors: string[]) => {
+    if (!colors || colors.length === 0) return [];
+    
+    // For single color, no sorting needed
+    if (colors.length === 1) return colors;
+    
+    // Define the correct order for dual color pairs
+    const dualColorOrder = ['WU', 'UB', 'BR', 'RG', 'GW', 'WB', 'BG', 'GU', 'UR', 'RW'];
+    
+    // If we have exactly 2 colors, check if they form a known pair
+    if (colors.length === 2) {
+      const pair = colors.join('');
+      // Check if this pair exists in our order (in either direction)
+      const normalPairIndex = dualColorOrder.indexOf(pair);
+      if (normalPairIndex >= 0) {
+        return [colors[0], colors[1]]; // Already in correct order
+      }
+      
+      // Check if the reversed pair exists
+      const reversedPair = colors[1] + colors[0];
+      const reversedPairIndex = dualColorOrder.indexOf(reversedPair);
+      if (reversedPairIndex >= 0) {
+        return [colors[1], colors[0]]; // Reverse to match the correct order
+      }
+    }
+    
+    // For more than 2 colors or unknown combinations, sort by WUBRG order
+    const colorOrder = { W: 0, U: 1, B: 2, R: 3, G: 4 };
+    return [...colors].sort((a, b) => (colorOrder[a as keyof typeof colorOrder] || 5) - (colorOrder[b as keyof typeof colorOrder] || 5));
+  };
+  
   // We no longer need local filtering as the backend is handling all filters
 
   // Calculate visible page numbers whenever current page or total changes
@@ -417,6 +449,7 @@ export default function TokensPage() {
                 </label>
               </div>
               <div className="flex flex-wrap gap-2">
+              {/* Display color filters in WUBRG order */}
               {['W', 'U', 'B', 'R', 'G'].map(color => {
                 const colorClasses: Record<string, string> = {
                   W: 'bg-mtg-white text-black',
@@ -529,7 +562,7 @@ export default function TokensPage() {
                       <h3 className="font-bold text-white text-sm truncate">{token.name}</h3>
                       <div className="flex items-center justify-between mt-1">
                         <div className="flex space-x-1">
-                          {token.colors.map(color => {
+                          {sortColors(token.colors).map(color => {
                             const colorClasses: Record<string, string> = {
                               W: 'bg-mtg-white text-black',
                               U: 'bg-mtg-blue text-white',
@@ -560,7 +593,7 @@ export default function TokensPage() {
                   <div className="h-full bg-gray-300 dark:bg-gray-700 flex flex-col items-center justify-center p-2">
                     <span className="text-gray-500 dark:text-gray-400 mb-2">{token.name}</span>
                     <div className="flex space-x-1 mb-1">
-                      {token.colors.map(color => {
+                      {sortColors(token.colors).map(color => {
                         const colorClasses: Record<string, string> = {
                           W: 'bg-mtg-white text-black',
                           U: 'bg-mtg-blue text-white',

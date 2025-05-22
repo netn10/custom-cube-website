@@ -3,7 +3,7 @@
 import React from 'react';
 import { useState, useRef, useEffect } from 'react';
 import { FaDice, FaRandom, FaCalculator, FaSearch, FaPlusCircle, FaList, FaRobot } from 'react-icons/fa';
-import { getBotDraftPick, getDraftPack, getSuggestions, addSuggestion, uploadSuggestionImage, getChatGPTCards, getChatGPTResponse, getGeminiResponse, getRandomPack, API_BASE_URL } from '@/lib/api';
+import { getBotDraftPick, getDraftPack, getMultipleDraftPacks, getSuggestions, addSuggestion, uploadSuggestionImage, getChatGPTCards, getChatGPTResponse, getGeminiResponse, getRandomPack, API_BASE_URL } from '@/lib/api';
 
 type Tool = {
   id: string;
@@ -167,28 +167,30 @@ function DraftSimulator() {
       }));
       setBots(newBots);
       
-      // Generate packs for all players (player + bots)
+      // Generate packs for all players (player + bots) in a single request
       const totalPlayers = numBots + 1; // +1 for the human player
-      const newAllPacks: any[][] = [];
+      const totalPacks = totalPlayers * 3; // 3 packs per player
+      console.log(`Requesting ${totalPacks} packs in a single call...`);
       
-      // Create 3 packs for each player
-      for (let packIdx = 0; packIdx < 3; packIdx++) {
-        const packsForThisRound: any[] = [];
+      // Use the new bulk API to get all packs at once
+      const allPacksFlat = await getMultipleDraftPacks(totalPacks);
+      console.log(`Received ${allPacksFlat.length} packs`);
+      
+      // Reshape the flat array of packs into the format we need:
+      // [round][player_index] = pack
+      const newAllPacks: any[][] = [[], [], []];
+      
+      // Distribute packs by round and player
+      for (let i = 0; i < allPacksFlat.length; i++) {
+        const roundIndex = Math.floor(i / totalPlayers);
+        const pack = allPacksFlat[i];
         
-        // Generate a pack for each player
-        for (let playerIdx = 0; playerIdx < totalPlayers; playerIdx++) {
-          console.log(`Generating pack ${packIdx + 1} for player ${playerIdx + 1}`);
-          const pack = await getDraftPack();
-          
-          // Ensure we have exactly 15 cards in the pack
-          if (pack.length !== totalCardsPerPack) {
-            console.warn(`Pack contains ${pack.length} cards instead of expected ${totalCardsPerPack}`);
-          }
-          
-          packsForThisRound.push(pack);
+        // Ensure we have exactly 15 cards in the pack
+        if (pack.length !== totalCardsPerPack) {
+          console.warn(`Pack contains ${pack.length} cards instead of expected ${totalCardsPerPack}`);
         }
         
-        newAllPacks.push(packsForThisRound);
+        newAllPacks[roundIndex].push(pack);
       }
       
       setAllPacks(newAllPacks);
@@ -426,7 +428,7 @@ function DraftSimulator() {
             <div className="mb-6">
               <h4 className="text-lg font-medium mb-2 dark:text-white">Your Draft Pool ({pickedCards.length} cards)</h4>
               
-              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 lg:grid-cols-9 gap-2">
+              <div className="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-5 lg:grid-cols-9 gap-2">
                 {pickedCards.map((card, index) => (
                   <div 
                     key={`${card.id}-${index}`} 
@@ -481,7 +483,7 @@ function DraftSimulator() {
                       </span>
                     </div>
                     
-                    <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 lg:grid-cols-9 gap-2">
+                    <div className="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-5 lg:grid-cols-9 gap-2">
                       {bot.picks.map((card: any, index: number) => (
                         <div 
                           key={`${card.id}-${index}`} 
@@ -521,11 +523,11 @@ function DraftSimulator() {
               <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-blue-500"></div>
             </div>
           ) : (
-            <div className="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-5 gap-4 mb-6">
+            <div className="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-5 gap-2 md:gap-4 mb-6">
               {currentPack.map(card => (
                 <div 
                   key={card.id} 
-                  className="mtg-card card-hover cursor-pointer"
+                  className="mtg-card card-hover cursor-pointer h-auto"
                   onClick={() => pickCard(card)}
                 >
                   {card.imageUrl ? (
@@ -533,14 +535,14 @@ function DraftSimulator() {
                       <img 
                         src={card.imageUrl.startsWith('data:') ? card.imageUrl : `${API_BASE_URL}/image-proxy?url=${encodeURIComponent(card.imageUrl)}`} 
                         alt={card.name} 
-                        className="mtg-card-image"
+                        className="mtg-card-image w-full h-auto object-contain"
                         onError={(e) => {
                           console.error('Error loading image:', card.imageUrl);
                           e.currentTarget.src = 'data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22100%22%20height%3D%22140%22%20viewBox%3D%220%200%20100%20140%22%20preserveAspectRatio%3D%22none%22%3E%3Crect%20width%3D%22100%22%20height%3D%22140%22%20fill%3D%22%23eee%22%3E%3C%2Frect%3E%3Ctext%20text-anchor%3D%22middle%22%20x%3D%2250%22%20y%3D%2270%22%20style%3D%22fill%3A%23aaa%3Bfont-weight%3Abold%3Bfont-size%3A12px%3Bfont-family%3AArial%2C%20Helvetica%2C%20sans-serif%3Bdominant-baseline%3Acentral%22%3EImage%20Not%20Found%3C%2Ftext%3E%3C%2Fsvg%3E';
                         }}
                       />
-                      <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-70 p-2">
-                        <p className="font-medium text-white text-sm truncate">{card.name}</p>
+                      <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-80 p-1 sm:p-2">
+                        <p className="font-medium text-white text-xs sm:text-sm truncate">{card.name}</p>
                         <div className="flex justify-between items-center mt-1">
                           <div className="flex">
                             {card.colors.map((color: string) => (
@@ -558,7 +560,7 @@ function DraftSimulator() {
                               />
                             ))}
                           </div>
-                          <span className="text-xs text-white">{card.type}</span>
+                          <span className="text-xs text-white hidden sm:inline">{card.type}</span>
                         </div>
                       </div>
                     </div>

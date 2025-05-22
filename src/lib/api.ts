@@ -383,6 +383,39 @@ export async function getDraftPack(): Promise<Card[]> {
   }
 }
 
+// Generate multiple draft packs in a single request
+export async function getMultipleDraftPacks(count: number): Promise<Card[][]> {
+  try {
+    const data = await fetchFromAPI<Card[][]>(`/draft/packs?count=${count}`);
+    
+    // Process the cards in each pack to ensure they have the correct structure
+    const processedPacks = data.map(pack => 
+      pack.map(card => ({
+        ...card,
+        colors: card.colors || [],
+        archetypes: card.archetypes || [],
+      }))
+    );
+    
+    return processedPacks;
+  } catch (error) {
+    console.error('Error fetching multiple draft packs:', error);
+    // Fallback to fetching packs individually if the bulk endpoint fails
+    console.log('Falling back to individual pack fetching');
+    const packs: Card[][] = [];
+    for (let i = 0; i < count; i++) {
+      try {
+        const pack = await getDraftPack();
+        packs.push(pack);
+      } catch (e) {
+        console.error(`Error fetching individual pack ${i}:`, e);
+        throw e;
+      }
+    }
+    return packs;
+  }
+}
+
 // Generate a random pack with equal probability for each card
 export async function getRandomPack(size?: number): Promise<{pack: Card[], metadata: any}> {
   try {
