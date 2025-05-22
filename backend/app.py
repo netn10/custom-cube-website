@@ -935,9 +935,26 @@ def bot_draft_pick():
                 score += 5  # Creatures are important
 
                 # Power/toughness bonus
-                power = int(card.get("power", 0) or 0)
-                toughness = int(card.get("toughness", 0) or 0)
-                score += min(power + toughness, 8) / 2
+                # Handle cases where power or toughness might be '*' (variable values)
+                power_val = card.get("power", "0")
+                toughness_val = card.get("toughness", "0")
+                
+                # Convert to int, handling special cases
+                try:
+                    power = int(power_val) if power_val and power_val != '*' else 0
+                except (ValueError, TypeError):
+                    power = 0
+                    
+                try:
+                    toughness = int(toughness_val) if toughness_val and toughness_val != '*' else 0
+                except (ValueError, TypeError):
+                    toughness = 0
+                    
+                # Cards with '*' in power/toughness are often powerful
+                if power_val == '*' or toughness_val == '*':
+                    score += 3  # Give a bonus for variable stats as they're usually strong
+                else:
+                    score += min(power + toughness, 8) / 2
 
             elif "Instant" in card.get("type", "") or "Sorcery" in card.get("type", ""):
                 score += 4  # Spells are good but not as essential as creatures

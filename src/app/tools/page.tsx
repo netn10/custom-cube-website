@@ -130,12 +130,23 @@ function DraftSimulator() {
   const [error, setError] = useState<string | null>(null);
   const [bots, setBots] = useState<any[]>([]);
   const [botPicksVisible, setBotPicksVisible] = useState(false);
+  const [openBotTabs, setOpenBotTabs] = useState<number[]>([]);
   const [botPicks, setBotPicks] = useState<any[]>([]);
   const [numBots, setNumBots] = useState(7);
   const [draftComplete, setDraftComplete] = useState(false);
   const [totalCardsPerPack] = useState(15); // Standard MTG pack size
   const [allPacks, setAllPacks] = useState<any[][]>([]);
   const [draftDirection, setDraftDirection] = useState<'left' | 'right'>('left');
+
+  const toggleBotTab = (botId: number) => {
+    setOpenBotTabs(prev => {
+      if (prev.includes(botId)) {
+        return prev.filter(id => id !== botId);
+      } else {
+        return [...prev, botId];
+      }
+    });
+  };
 
   const startDraft = async () => {
     try {
@@ -148,15 +159,36 @@ function DraftSimulator() {
       setPickNumber(1);
       setBotPicks([]);
       setDraftComplete(false);
+      setOpenBotTabs([]);
       
-      // Initialize bots
-      const newBots = Array(numBots).fill(null).map((_, i) => ({
-        id: i + 1,
-        name: `Bot ${i + 1}`,
-        colors: [],
-        picks: [],
-        currentPack: []
-      }));
+      // Define all possible color pairs for bots
+      const colors = ['W', 'U', 'B', 'R', 'G'];
+      const colorPairs = [];
+      
+      // Generate all possible color pairs
+      for (let i = 0; i < colors.length; i++) {
+        for (let j = i + 1; j < colors.length; j++) {
+          colorPairs.push([colors[i], colors[j]]);
+        }
+      }
+      
+      const newBots = Array(numBots).fill(null).map((_, i) => {
+        // Assign a random color pair to each bot
+        const randomPairIndex = Math.floor(Math.random() * colorPairs.length);
+        const preferredColors = colorPairs[randomPairIndex];
+        
+        return {
+          id: i + 1,
+          name: `Bot ${i + 1}`,
+          // Start with an empty colors array, but bots will have preferred colors
+          // that influence their early picks (handled in pickCard)
+          colors: [],
+          preferredColors: preferredColors,
+          // No specific archetype name anymore
+          picks: [],
+          currentPack: []
+        };
+      });
       setBots(newBots);
       
       // Generate packs for all players (player + bots) in a single request
@@ -225,19 +257,51 @@ function DraftSimulator() {
       const updatedBots = [...bots];
       const currentBotPicks: any[] = [];
       
+      // Process bot picks one by one
       for (let i = 0; i < updatedBots.length; i++) {
         const bot = updatedBots[i];
         const botPack = bot.currentPack;
         
         if (botPack.length > 0) {
-          // Bot makes a pick (for now, just random)
-          const randomIndex = Math.floor(Math.random() * botPack.length);
-          const botCard = botPack[randomIndex];
+          let botCard;
           
-          // Update bot's colors if they don't have any yet
+          try {
+            // Use the API to get an intelligent bot pick based on the bot's current strategy
+            const pickResponse = await getBotDraftPick({
+              availableCards: botPack,
+              botColors: bot.colors,
+              packNumber,
+              pickNumber
+            });
+            
+            botCard = pickResponse.card || botPack[0];
+          } catch (error) {
+            console.warn('Error getting bot pick from API, falling back to local strategy:', error);
+            
+            // Fallback to local strategy if API fails
+            botCard = getBotPickUsingLocalStrategy(botPack, bot.colors, bot.picks, packNumber, pickNumber);
+          }
+          
+          // Update bot's colors based on the pick and existing strategy
           let updatedBotColors = [...bot.colors];
-          if (updatedBotColors.length === 0 && botCard.colors && botCard.colors.length > 0) {
-            updatedBotColors = botCard.colors;
+          
+          // Early picks (first 3-5 picks) establish the bot's color identity
+          if (packNumber === 1 && pickNumber <= 5) {
+            if (botCard.colors && botCard.colors.length > 0) {
+              // For early picks, if the card is colored, adjust the bot's color preference
+              if (updatedBotColors.length === 0) {
+                // First colored card - adopt its colors fully
+                updatedBotColors = botCard.colors;
+              } else if (updatedBotColors.length > 0 && botCard.colors.length <= 2) {
+                // If bot already has colors and this is a 1-2 color card, look for overlapping colors
+                const overlappingColors = botCard.colors.filter((c: string) => updatedBotColors.includes(c));
+                
+                if (overlappingColors.length > 0) {
+                  // Strengthen the overlapping colors (maintain direction but refine)
+                  updatedBotColors = [...new Set([...overlappingColors, ...updatedBotColors.slice(0, 1)])];
+                }
+              }
+            }
           }
           
           // Add card to bot's picks
@@ -328,6 +392,242 @@ function DraftSimulator() {
             console.warn(`You drafted ${updatedPickedCards.length} cards instead of expected 45`);
           }
           
+          // Build bot decks
+          const updatedBotsWithDecks = updatedBots.map(bot => {
+            // Get all cards this bot has picked
+            const botCards = botPicks.filter(pick => pick.botId === bot.id).map(pick => pick.card);
+            
+            // Determine bot's final colors - use the 2 most common colors from their picks
+            const colorCount: Record<string, number> = {};
+            botCards.forEach(card => {
+              if (card.colors && card.colors.length > 0) {
+                card.colors.forEach((color: string) => {
+                  colorCount[color] = (colorCount[color] || 0) + 1;
+                });
+              }
+            });
+            
+            // Sort colors by count
+            const sortedColors = Object.entries(colorCount)
+              .sort(([, countA], [, countB]) => (countB as number) - (countA as number))
+              .map(([color]) => color);
+            
+            // Determine if this should be a 2-color or 3-color deck
+            // Only go to 3 colors if there's a good reason (3rd color has significant presence)
+            let mainColors;
+            if (sortedColors.length >= 3 && 
+                (colorCount[sortedColors[2]] >= 5 || // Either has significant presence
+                 (colorCount[sortedColors[2]] >= 3 && colorCount[sortedColors[2]] >= colorCount[sortedColors[1]] * 0.7))) { // Or close to 2nd color
+              mainColors = sortedColors.slice(0, 3);
+            } else {
+              mainColors = sortedColors.slice(0, Math.min(2, sortedColors.length));
+            }
+            
+            // Score each card for deck inclusion
+            const scoredCards = botCards.map(card => {
+              let score = 0;
+              
+              // Check color match
+              if (card.colors && card.colors.length > 0) {
+                const matchingColors = card.colors.filter((c: string) => mainColors.includes(c)).length;
+                const nonMatchingColors = card.colors.filter((c: string) => !mainColors.includes(c)).length;
+                
+                // Higher bonus for perfect color matches
+                if (matchingColors === card.colors.length) {
+                  score += 3 * matchingColors;
+                } else {
+                  score += 2 * matchingColors;
+                }
+                
+                // Heavier penalty for off-color cards
+                score -= nonMatchingColors * 2;
+                
+                // Additional scoring for multicolor cards that fit our strategy
+                if (card.colors.length > 1 && matchingColors === card.colors.length) {
+                  score += 1; // Bonus for multicolor cards that perfectly match our colors
+                }
+                
+                // Penalize splashing a 3rd color if we're mainly in 2 colors
+                if (mainColors.length === 2 && matchingColors < card.colors.length) {
+                  score -= 1;
+                }
+              } else {
+                // Colorless cards get a small bonus
+                score += 1;
+              }
+              
+              // Card type considerations
+              if (card.type) {
+                if (card.type.includes('Creature')) {
+                  score += 0.8; // Creatures are important
+                }
+                if (card.type.includes('Removal') || 
+                    card.type.includes('Destroy') || 
+                    card.type.includes('Exile')) {
+                  score += 1.5; // Removal is very valuable
+                }
+                if (card.type.includes('Card Draw') || 
+                    card.type.includes('Draw a card')) {
+                  score += 1; // Card draw is valuable
+                }
+                if (card.type.includes('Counter') && 
+                    card.type.includes('Spell')) {
+                  score += 0.7; // Counterspells are situationally good
+                }
+              }
+              
+              // Consider mana curve
+              if (card.cmc !== undefined) {
+                // Prefer a good curve (more low drops, fewer high drops)
+                if (card.cmc <= 2) score += 0.5; // Early plays are important
+                if (card.cmc >= 6) score -= 0.3; // Too many expensive cards is bad
+              }
+              
+              return { card, score };
+            });
+            
+            // Sort by score
+            scoredCards.sort((a, b) => b.score - a.score);
+            
+            // First select the top cards by score (we'll determine exact count after analyzing curve)
+            const topCards = scoredCards.slice(0, 24).map(scored => scored.card);
+            
+            // Analyze the mana curve to determine ideal land count (16 or 17)
+            const avgCmc = topCards.reduce((sum, card) => sum + (card.cmc || 0), 0) / topCards.length || 0;
+            
+            // Select cards for the deck - number depends on land count
+            // Lower curve = 24 cards, 16 lands; Higher curve = 23 cards, 17 lands
+            const useLowerLandCount = avgCmc < 3.0 && mainColors.length <= 2;
+            const nonLandCount = useLowerLandCount ? 24 : 23;
+            const landCount = useLowerLandCount ? 16 : 17;
+            
+            // Select the final cards for the deck
+            const deckCards = topCards.slice(0, nonLandCount);
+            
+            // Create a deck object with the selected cards and land distribution
+            const deck = {
+              cards: deckCards,
+              colors: mainColors,
+              totalCards: nonLandCount,
+              landCount: landCount,
+              // Calculate land distribution based on color requirements
+              lands: (() => {
+                const landDistribution: Record<string, number> = {};
+                
+                // If only one color, all lands are that color
+                if (mainColors.length === 1) {
+                  landDistribution[mainColors[0]] = landCount;
+                  return landDistribution;
+                }
+                
+                // Calculate color pip requirements based on selected deck cards
+                const colorPips: Record<string, number> = {};
+                mainColors.forEach(color => { colorPips[color] = 0; });
+                
+                // Count colored mana symbols in card costs
+                deckCards.forEach(card => {
+                  if (card.manaCost) {
+                    mainColors.forEach(color => {
+                      // Count color pips in mana cost using regex
+                      const colorSymbol = color === 'W' ? 'W' : 
+                                         color === 'U' ? 'U' : 
+                                         color === 'B' ? 'B' : 
+                                         color === 'R' ? 'R' : 'G';
+                      const matches = card.manaCost.match(new RegExp(colorSymbol, 'g'));
+                      if (matches) {
+                        colorPips[color] += matches.length;
+                      }
+                    });
+                  } else if (card.colors) {
+                    // If no mana cost info, just count the card's colors
+                    card.colors.forEach((color: string) => {
+                      if (mainColors.includes(color)) {
+                        colorPips[color] = (colorPips[color] || 0) + 1;
+                      }
+                    });
+                  }
+                });
+                
+                // Calculate total color requirements
+                const totalPips = Object.values(colorPips).reduce((sum, count) => sum + count, 0) || 1;
+                
+                // Distribute lands proportionally to color requirements
+                let remainingLands = landCount;
+                
+                if (mainColors.length === 2) {
+                  // Two colors: distribute proportionally with minimums
+                  const firstColorRatio = colorPips[mainColors[0]] / totalPips;
+                  let firstColorLands = Math.round(landCount * firstColorRatio);
+                  
+                  // Ensure minimum land counts per color
+                  firstColorLands = Math.max(firstColorLands, Math.floor(landCount * 0.35));
+                  firstColorLands = Math.min(firstColorLands, Math.ceil(landCount * 0.65));
+                  
+                  landDistribution[mainColors[0]] = firstColorLands;
+                  landDistribution[mainColors[1]] = landCount - firstColorLands;
+                } else if (mainColors.length === 3) {
+                  // Three colors: more complex distribution
+                  for (let i = 0; i < 2; i++) { // Handle first two colors
+                    const color = mainColors[i];
+                    const ratio = colorPips[color] / totalPips;
+                    let colorLands = Math.round(landCount * ratio);
+                    
+                    // Ensure minimum viable land count
+                    colorLands = Math.max(colorLands, Math.floor(landCount * 0.2));
+                    
+                    landDistribution[color] = colorLands;
+                    remainingLands -= colorLands;
+                  }
+                  
+                  // Third color gets remaining lands
+                  landDistribution[mainColors[2]] = remainingLands;
+                  
+                  // Ensure third color gets at least a minimum number of lands
+                  if (landDistribution[mainColors[2]] < 3) {
+                    // Redistribute if third color gets too few lands
+                    if (landDistribution[mainColors[0]] > 5) {
+                      landDistribution[mainColors[0]]--;
+                      landDistribution[mainColors[2]]++;
+                    }
+                    if (landDistribution[mainColors[2]] < 3 && landDistribution[mainColors[1]] > 5) {
+                      landDistribution[mainColors[1]]--;
+                      landDistribution[mainColors[2]]++;
+                    }
+                  }
+                }
+                
+                // Verify the total is exactly the expected land count
+                const totalCalculatedLands = Object.values(landDistribution).reduce((sum, count) => sum + count, 0);
+                if (totalCalculatedLands !== landCount) {
+                  console.error('Land distribution error:', landDistribution, 'total:', totalCalculatedLands, 'expected:', landCount);
+                  
+                  // If somehow we got a wrong total, fix it with a reasonable distribution
+                  if (mainColors.length === 2) {
+                    const half = Math.floor(landCount / 2);
+                    landDistribution[mainColors[0]] = half + (landCount % 2);
+                    landDistribution[mainColors[1]] = half;
+                  } else if (mainColors.length === 3) {
+                    // For 3 colors, do a 40/40/20 split
+                    const third = Math.floor(landCount / 3);
+                    landDistribution[mainColors[0]] = third + Math.floor((landCount % 3) / 2) + ((landCount % 3) % 2);
+                    landDistribution[mainColors[1]] = third + Math.floor((landCount % 3) / 2);
+                    landDistribution[mainColors[2]] = third;
+                  }
+                }
+                
+                return landDistribution;
+              })() 
+            };
+            
+            return {
+              ...bot,
+              deck: deck,
+              deckBuilt: true
+            };
+          });
+          
+          setBots(updatedBotsWithDecks);
+          
           // Log bot stats
           updatedBots.forEach(bot => {
             if (bot.picks.length !== 45) {
@@ -354,6 +654,74 @@ function DraftSimulator() {
   // Function to organize bot picks by bot ID
   const getBotPicksById = (botId: number) => {
     return botPicks.filter(pick => pick.botId === botId);
+  };
+
+  // Local strategy for bot picks when API is unavailable
+  const getBotPickUsingLocalStrategy = (cards: any[], botColors: string[], botPicks: any[], packNumber: number, pickNumber: number) => {
+    // If bot has no established colors yet, prioritize powerful single-color cards in early picks
+    if (botColors.length === 0) {
+      // Look for powerful mono-colored cards first (simplified heuristic: lower mana cost often = better early pick)
+      const monoColoredCards = cards.filter(card => card.colors && card.colors.length === 1);
+      if (monoColoredCards.length > 0) {
+        // Sort by mana cost as a simple power approximation
+        monoColoredCards.sort((a, b) => (a.cmc || 999) - (b.cmc || 999));
+        return monoColoredCards[0];
+      }
+    }
+    
+    // If bot has established colors, prioritize cards matching its colors
+    if (botColors.length > 0) {
+      // Score cards based on color match and other factors
+      const scoredCards = cards.map(card => {
+        let score = 0;
+        
+        // Higher score for color matches
+        if (card.colors && card.colors.length > 0) {
+          const colorMatches = card.colors.filter((color: string) => botColors.includes(color)).length;
+          score += colorMatches * 3; // Heavy weight on color matching
+          
+          // Penalize cards with colors outside the bot's colors
+          const nonMatches = card.colors.filter((color: string) => !botColors.includes(color)).length;
+          score -= nonMatches * 2;
+        }
+        
+        // Give some value to colorless cards
+        if (!card.colors || card.colors.length === 0) {
+          score += 1;
+        }
+        
+        // Later in the draft, prioritize curve considerations
+        if (packNumber >= 2) {
+          // Count cards by mana cost to evaluate curve needs
+          const cmcCounts = botPicks.reduce((counts: any, pick: any) => {
+            const cmc = pick.cmc || 0;
+            counts[cmc] = (counts[cmc] || 0) + 1;
+            return counts;
+          }, {});
+          
+          // Simplistic curve preference (could be refined further)
+          const cardCmc = card.cmc || 0;
+          const countAtCmc = cmcCounts[cardCmc] || 0;
+          
+          // Prefer cards that fill curve gaps
+          if ((cardCmc <= 3 && countAtCmc < 4) || 
+              (cardCmc === 4 && countAtCmc < 3) || 
+              (cardCmc >= 5 && countAtCmc < 2)) {
+            score += 1;
+          }
+        }
+        
+        return { card, score };
+      });
+      
+      // Sort by score and return the highest scored card
+      scoredCards.sort((a, b) => b.score - a.score);
+      return scoredCards[0].card;
+    }
+    
+    // Fallback to random if no strategy applies
+    const randomIndex = Math.floor(Math.random() * cards.length);
+    return cards[randomIndex];
   };
 
   const getCardColorClasses = (colors: string[]) => {
@@ -541,12 +909,15 @@ function DraftSimulator() {
           
           {botPicksVisible && (
             <div className="mt-6 bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
-              <h4 className="text-lg font-medium mb-4 dark:text-white">Bot Draft Pools</h4>
+              <h4 className="text-lg font-medium mb-4 dark:text-white">Bot Decks</h4>
               
-              <div className="space-y-6">
+              <div className="space-y-4">
                 {bots.map(bot => (
                   <div key={bot.id} className="bg-gray-100 dark:bg-gray-700 p-4 rounded-lg">
-                    <div className="flex items-center justify-between mb-3">
+                    <div 
+                      className="flex items-center justify-between cursor-pointer" 
+                      onClick={() => toggleBotTab(bot.id)}
+                    >
                       <div className="flex items-center">
                         <h5 className="font-medium text-lg dark:text-white">{bot.name}</h5>
                         <div className="flex ml-3">
@@ -558,35 +929,108 @@ function DraftSimulator() {
                           ))}
                         </div>
                       </div>
-                      <span className="text-sm text-gray-600 dark:text-gray-400">
-                        {bot.picks.length} cards {bot.picks.length !== 45 && `(expected 45)`}
-                      </span>
+                      <div className="flex items-center">
+                        <span className="text-sm text-gray-600 dark:text-gray-400 mr-3">
+                          {bot.picks.length} cards picked
+                        </span>
+                        <svg 
+                          className={`w-5 h-5 transition-transform duration-200 ${openBotTabs.includes(bot.id) ? 'transform rotate-180' : ''}`} 
+                          fill="none" 
+                          stroke="currentColor" 
+                          viewBox="0 0 24 24" 
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                        </svg>
+                      </div>
                     </div>
                     
-                    <div className="overflow-y-auto max-h-96 border border-gray-200 dark:border-gray-700 rounded p-2">
-                      <table className="w-full text-sm">
-                        <thead className="bg-gray-100 dark:bg-gray-800">
-                          <tr>
-                            <th className="py-2 px-3 text-left">#</th>
-                            <th className="py-2 px-3 text-left">Card</th>
-                            <th className="py-2 px-3 text-left">Type</th>
-                            <th className="py-2 px-3 text-left">Pack/Pick</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          {bot.picks.map((card: any, index: number) => (
-                            <tr 
+                    {openBotTabs.includes(bot.id) && (
+                      <div className="mt-3">
+                        <div className="flex items-end justify-between mb-3">
+                          <h6 className="font-medium text-sm dark:text-white">
+                            {bot.deckBuilt ? 'Deck Built' : 'Cards Picked'}
+                          </h6>
+                          {bot.deckBuilt && (
+                            <div className="flex flex-col items-end">
+                              <span className="text-sm font-medium text-gray-700 dark:text-gray-300">
+                                40-card deck ({bot.deck.totalCards} spells + {bot.deck.totalLandCount} lands)
+                              </span>
+                              <div className="flex items-center mt-1">
+                                {Object.entries(bot.deck.basicLands as Record<string, number>).map(([color, count]) => (
+                                  <div key={color} className="flex items-center mx-1" title={`${count} ${color} basic lands`}>
+                                    <span 
+                                      className={`w-4 h-4 rounded-full mr-1 ${getCardColorClasses([color])}`}
+                                    />
+                                    <span className="text-xs">{count}</span>
+                                  </div>
+                                ))}
+                                {bot.deck.nonBasicLands.length > 0 && (
+                                  <div className="flex items-center mx-1" title={`${bot.deck.nonBasicLands.length} non-basic lands`}>
+                                    <span className="w-4 h-4 rounded-full mr-1 bg-mtg-gold"></span>
+                                    <span className="text-xs">{bot.deck.nonBasicLands.length}</span>
+                                  </div>
+                                )}
+                              </div>
+                            </div>
+                          )}
+                        </div>
+                        
+                        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-3">
+                          {(bot.deckBuilt ? 
+                            // If deck is built, show the deck cards first
+                            [...bot.deck.cards, ...bot.picks.filter((pick: any) => 
+                              !bot.deck.cards.some((deckCard: any) => deckCard.id === pick.id)
+                            )] : 
+                            // Otherwise show all picks
+                            bot.picks
+                          ).map((card: any, index: number) => (
+                            <div 
                               key={`${card.id}-${index}`} 
-                              className={`border-t border-gray-200 dark:border-gray-700 ${index % 2 === 0 ? 'bg-white dark:bg-gray-900' : 'bg-gray-50 dark:bg-gray-800'}`}
+                              className="relative group"
                             >
-                              <td className="py-2 px-3 font-medium">{index + 1}</td>
-                              <td className="py-2 px-3">
-                                <div className="flex items-center">
-                                  <div className="flex mr-2">
+                              {card.imageUrl ? (
+                                <div className="relative w-full aspect-[2.5/3.5] overflow-hidden rounded shadow-md hover:shadow-lg transition-shadow duration-200">
+                                  <img 
+                                    src={card.imageUrl.startsWith('data:') ? card.imageUrl : `${API_BASE_URL}/image-proxy?url=${encodeURIComponent(card.imageUrl)}`} 
+                                    alt={card.name} 
+                                    className="w-full h-full object-cover"
+                                    onError={(e) => {
+                                      console.error('Error loading image:', card.imageUrl);
+                                      e.currentTarget.src = 'data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22100%22%20height%3D%22140%22%20viewBox%3D%220%200%20100%20140%22%20preserveAspectRatio%3D%22none%22%3E%3Crect%20width%3D%22100%22%20height%3D%22140%22%20fill%3D%22%23eee%22%3E%3C%2Frect%3E%3Ctext%20text-anchor%3D%22middle%22%20x%3D%2250%22%20y%3D%2270%22%20style%3D%22fill%3A%23aaa%3Bfont-weight%3Abold%3Bfont-size%3A12px%3Bfont-family%3AArial%2C%20Helvetica%2C%20sans-serif%3Bdominant-baseline%3Acentral%22%3EImage%20Not%20Found%3C%2Ftext%3E%3C%2Fsvg%3E';
+                                    }}
+                                  />
+                                  <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-80 p-1">
+                                    <div className="flex justify-between items-center">
+                                      <div className="flex">
+                                        {card.colors.map((color: string) => (
+                                          <span 
+                                            key={color} 
+                                            className="w-3 h-3 rounded-full mr-0.5"
+                                            style={{ 
+                                              backgroundColor: 
+                                                color === 'W' ? '#F9FAF4' : 
+                                                color === 'U' ? '#0E68AB' : 
+                                                color === 'B' ? '#150B00' : 
+                                                color === 'R' ? '#D3202A' : 
+                                                '#00733E'
+                                            }}
+                                          />
+                                        ))}
+                                      </div>
+                                      <p className="text-white text-xs">P{card.packNumber}-P{card.pickNumber}</p>
+                                    </div>
+                                  </div>
+                                  <CardHoverPreview card={card} />
+                                </div>
+                              ) : (
+                                <div className={`aspect-[2.5/3.5] ${getCardColorClasses(card.colors)} bg-opacity-20 dark:bg-opacity-30 flex flex-col justify-between rounded p-2 shadow-md hover:shadow-lg transition-shadow duration-200`}>
+                                  <p className="text-sm truncate font-medium dark:text-white">{card.name}</p>
+                                  <div className="flex justify-center">
                                     {card.colors.map((color: string) => (
                                       <span 
                                         key={color} 
-                                        className="w-3 h-3 rounded-full mr-1"
+                                        className="w-3 h-3 rounded-full mx-0.5"
                                         style={{ 
                                           backgroundColor: 
                                             color === 'W' ? '#F9FAF4' : 
@@ -598,16 +1042,22 @@ function DraftSimulator() {
                                       />
                                     ))}
                                   </div>
-                                  <span className="font-medium dark:text-white">{card.name}</span>
+                                  <div className="flex justify-between items-center">
+                                    <span className="text-xs dark:text-gray-300">{card.type?.split(' ')[0]}</span>
+                                    <span className="text-xs dark:text-white">P{card.packNumber}-P{card.pickNumber}</span>
+                                  </div>
                                 </div>
-                              </td>
-                              <td className="py-2 px-3 text-gray-600 dark:text-gray-400">{card.type}</td>
-                              <td className="py-2 px-3 text-gray-500 dark:text-gray-500">Pack {card.packNumber}, Pick {card.pickNumber}</td>
-                            </tr>
+                              )}
+                              {bot.deckBuilt && bot.deck.cards.some((deckCard: any) => deckCard.id === card.id) && (
+                                <div className="absolute top-0 right-0 bg-green-500 text-white text-xs px-1 rounded-bl">
+                                  Deck
+                                </div>
+                              )}
+                            </div>
                           ))}
-                        </tbody>
-                      </table>
-                    </div>
+                        </div>
+                      </div>
+                    )}
                   </div>
                 ))}
               </div>
