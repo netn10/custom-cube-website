@@ -375,6 +375,52 @@ function DraftSimulator() {
     }
   };
 
+  // Card hover preview component that follows the cursor
+  const CardHoverPreview = ({ card }: { card: any }) => {
+    const [hovering, setHovering] = useState(false);
+    const [position, setPosition] = useState({ x: 0, y: 0 });
+    
+    // Handle mouse movement to update the preview position
+    const handleMouseMove = (e: React.MouseEvent) => {
+      setPosition({ x: e.clientX, y: e.clientY });
+    };
+    
+    if (!card?.imageUrl) return null;
+    
+    return (
+      <>
+        <div 
+          className="absolute inset-0 cursor-pointer z-10"
+          onMouseEnter={() => setHovering(true)}
+          onMouseLeave={() => setHovering(false)}
+          onMouseMove={handleMouseMove}
+        />
+        {hovering && (
+          <div 
+            className="fixed z-50 pointer-events-none"
+            style={{
+              left: `${position.x + 20}px`,
+              top: `${position.y - 20}px`,
+              transform: 'translate(0, -50%)',
+              maxWidth: '350px'
+            }}
+          >
+            <img 
+              src={card.imageUrl.startsWith('data:') ? card.imageUrl : `${API_BASE_URL}/image-proxy?url=${encodeURIComponent(card.imageUrl)}`}
+              alt={card.name}
+              className="w-full h-auto rounded shadow-xl"
+              style={{ maxHeight: '500px' }}
+              onError={(e) => {
+                console.error('Error loading preview image:', card.imageUrl);
+                e.currentTarget.src = 'data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22300%22%20height%3D%22420%22%20viewBox%3D%220%200%20300%20420%22%20preserveAspectRatio%3D%22none%22%3E%3Crect%20width%3D%22300%22%20height%3D%22420%22%20fill%3D%22%23eee%22%3E%3C%2Frect%3E%3Ctext%20text-anchor%3D%22middle%22%20x%3D%22150%22%20y%3D%22210%22%20style%3D%22fill%3A%23aaa%3Bfont-weight%3Abold%3Bfont-size%3A16px%3Bfont-family%3AArial%2C%20Helvetica%2C%20sans-serif%3Bdominant-baseline%3Acentral%22%3EImage%20Not%20Found%3C%2Ftext%3E%3C%2Fsvg%3E';
+              }}
+            />
+          </div>
+        )}
+      </>
+    );
+  };
+
   return (
     <div className="space-y-4">
       {!draftStarted && !draftComplete ? (
@@ -425,19 +471,56 @@ function DraftSimulator() {
             <div className="mb-6">
               <h4 className="text-lg font-medium mb-2 dark:text-white">Your Draft Pool ({pickedCards.length} cards)</h4>
               
-              <div className="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-5 lg:grid-cols-9 gap-2">
+              <div className="flex flex-wrap">
                 {pickedCards.map((card, index) => (
                   <div 
-                    key={`${card.id}-${index}`} 
-                    className={`p-2 rounded text-xs ${getCardColorClasses(card.colors)} bg-opacity-20 dark:bg-opacity-30`}
+                    key={index} 
+                    className="inline-block mr-3 mb-3 group relative"
                   >
-                    <p className="font-medium dark:text-white">{card.name}</p>
-                    <p className="text-xs text-gray-600 dark:text-gray-400">{card.type}</p>
-                    <p className="text-xs text-gray-500 dark:text-gray-500">Pack {card.packNumber}, Pick {card.pickNumber}</p>
+                    {card.imageUrl ? (
+                      <div className="relative w-32 h-44 overflow-hidden rounded shadow-md hover:shadow-lg transition-shadow duration-200">
+                        <img 
+                          src={card.imageUrl.startsWith('data:') ? card.imageUrl : `${API_BASE_URL}/image-proxy?url=${encodeURIComponent(card.imageUrl)}`} 
+                          alt={card.name} 
+                          className="w-full h-full object-cover"
+                          onError={(e) => {
+                            console.error('Error loading image:', card.imageUrl);
+                            e.currentTarget.src = 'data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22100%22%20height%3D%22140%22%20viewBox%3D%220%200%20100%20140%22%20preserveAspectRatio%3D%22none%22%3E%3Crect%20width%3D%22100%22%20height%3D%22140%22%20fill%3D%22%23eee%22%3E%3C%2Frect%3E%3Ctext%20text-anchor%3D%22middle%22%20x%3D%2250%22%20y%3D%2270%22%20style%3D%22fill%3A%23aaa%3Bfont-weight%3Abold%3Bfont-size%3A12px%3Bfont-family%3AArial%2C%20Helvetica%2C%20sans-serif%3Bdominant-baseline%3Acentral%22%3EImage%20Not%20Found%3C%2Ftext%3E%3C%2Fsvg%3E';
+                          }}
+                        />
+                        <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-80 p-1">
+                          <p className="text-white text-xs truncate">{card.name}</p>
+                          <p className="text-xs text-gray-300 text-center">P{card.packNumber}-P{card.pickNumber}</p>
+                        </div>
+                        <CardHoverPreview card={card} />
+                      </div>
+                    ) : (
+                      <div className={`w-40 h-56 ${getCardColorClasses(card.colors)} bg-opacity-20 dark:bg-opacity-30 flex flex-col justify-between rounded p-2 shadow-md hover:shadow-lg transition-shadow duration-200`}>
+                        <p className="text-sm truncate font-medium dark:text-white">{card.name}</p>
+                        <div className="flex justify-center">
+                          {card.colors.map((color: string) => (
+                            <span 
+                              key={color} 
+                              className="w-3 h-3 rounded-full mx-0.5"
+                              style={{ 
+                                backgroundColor: 
+                                  color === 'W' ? '#F9FAF4' : 
+                                  color === 'U' ? '#0E68AB' : 
+                                  color === 'B' ? '#150B00' : 
+                                  color === 'R' ? '#D3202A' : 
+                                  '#00733E'
+                              }}
+                            />
+                          ))}
+                        </div>
+                        <p className="text-xs text-center dark:text-white">P{card.packNumber}-P{card.pickNumber}</p>
+                      </div>
+                    )}
                   </div>
                 ))}
               </div>
             </div>
+            
             
             <div className="flex justify-between">
               <button 
@@ -635,14 +718,50 @@ function DraftSimulator() {
                 </button>
               </div>
               
-              <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-2">
+              <div className="flex flex-wrap">
                 {pickedCards.map((card, index) => (
                   <div 
                     key={`${card.id}-${index}`} 
-                    className={`p-2 rounded text-xs ${getCardColorClasses(card.colors)} bg-opacity-20 dark:bg-opacity-30`}
+                    className="inline-block mr-3 mb-3 group relative"
                   >
-                    <p className="font-medium dark:text-white">{card.name}</p>
-                    <p className="text-xs text-gray-600 dark:text-gray-400">{card.type}</p>
+                    {card.imageUrl ? (
+                      <div className="relative w-32 h-44 overflow-hidden rounded shadow-md hover:shadow-lg transition-shadow duration-200">
+                        <img 
+                          src={card.imageUrl.startsWith('data:') ? card.imageUrl : `${API_BASE_URL}/image-proxy?url=${encodeURIComponent(card.imageUrl)}`} 
+                          alt={card.name} 
+                          className="w-full h-full object-cover"
+                          onError={(e) => {
+                            console.error('Error loading image:', card.imageUrl);
+                            e.currentTarget.src = 'data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22100%22%20height%3D%22140%22%20viewBox%3D%220%200%20100%20140%22%20preserveAspectRatio%3D%22none%22%3E%3Crect%20width%3D%22100%22%20height%3D%22140%22%20fill%3D%22%23eee%22%3E%3C%2Frect%3E%3Ctext%20text-anchor%3D%22middle%22%20x%3D%2250%22%20y%3D%2270%22%20style%3D%22fill%3A%23aaa%3Bfont-weight%3Abold%3Bfont-size%3A12px%3Bfont-family%3AArial%2C%20Helvetica%2C%20sans-serif%3Bdominant-baseline%3Acentral%22%3EImage%20Not%20Found%3C%2Ftext%3E%3C%2Fsvg%3E';
+                          }}
+                        />
+                        <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-80 p-1">
+                          <p className="text-white text-xs truncate">{index + 1}</p>
+                        </div>
+                        <CardHoverPreview card={card} />
+                      </div>
+                    ) : (
+                      <div className={`w-32 h-44 ${getCardColorClasses(card.colors)} bg-opacity-20 dark:bg-opacity-30 flex flex-col justify-between rounded p-2 shadow-md hover:shadow-lg transition-shadow duration-200`}>
+                        <p className="text-sm truncate font-medium dark:text-white">{card.name}</p>
+                        <div className="flex justify-center">
+                          {card.colors.map((color: string) => (
+                            <span 
+                              key={color} 
+                              className="w-3 h-3 rounded-full mx-0.5"
+                              style={{ 
+                                backgroundColor: 
+                                  color === 'W' ? '#F9FAF4' : 
+                                  color === 'U' ? '#0E68AB' : 
+                                  color === 'B' ? '#150B00' : 
+                                  color === 'R' ? '#D3202A' : 
+                                  '#00733E'
+                              }}
+                            />
+                          ))}
+                        </div>
+                        <p className="text-xs text-center dark:text-white">{index + 1}</p>
+                      </div>
+                    )}
                   </div>
                 ))}
               </div>
@@ -665,13 +784,46 @@ function DraftSimulator() {
                               {botPickHistory.map((pick, index) => (
                                 <div 
                                   key={index} 
-                                  className="flex items-start border-b border-gray-200 dark:border-gray-700 pb-2 last:border-0"
+                                  className="inline-block mr-3 mb-3 group relative"
                                 >
-                                  <span className="text-gray-500 dark:text-gray-400 mr-2 min-w-[20px] text-right">{index + 1}.</span>
-                                  <div>
-                                    <p className="font-medium dark:text-white">{pick.card.name}</p>
-                                    <p className="text-xs text-gray-600 dark:text-gray-400">{pick.card.type}</p>
-                                  </div>
+                                  {pick.card.imageUrl ? (
+                                    <div className="relative w-20 h-28 overflow-hidden rounded shadow-md hover:shadow-lg transition-shadow duration-200">
+                                      <img 
+                                        src={pick.card.imageUrl.startsWith('data:') ? pick.card.imageUrl : `${API_BASE_URL}/image-proxy?url=${encodeURIComponent(pick.card.imageUrl)}`} 
+                                        alt={pick.card.name} 
+                                        className="w-full h-full object-cover"
+                                        onError={(e) => {
+                                          console.error('Error loading image:', pick.card.imageUrl);
+                                          e.currentTarget.src = 'data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22100%22%20height%3D%22140%22%20viewBox%3D%220%200%20100%20140%22%20preserveAspectRatio%3D%22none%22%3E%3Crect%20width%3D%22100%22%20height%3D%22140%22%20fill%3D%22%23eee%22%3E%3C%2Frect%3E%3Ctext%20text-anchor%3D%22middle%22%20x%3D%2250%22%20y%3D%2270%22%20style%3D%22fill%3A%23aaa%3Bfont-weight%3Abold%3Bfont-size%3A12px%3Bfont-family%3AArial%2C%20Helvetica%2C%20sans-serif%3Bdominant-baseline%3Acentral%22%3EImage%20Not%20Found%3C%2Ftext%3E%3C%2Fsvg%3E';
+                                        }}
+                                      />
+                                      <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-80 p-1">
+                                        <p className="text-white text-xs truncate">{index + 1}</p>
+                                      </div>
+                                      <CardHoverPreview card={pick.card} />
+                                    </div>
+                                  ) : (
+                                    <div className={`w-32 h-44 ${getCardColorClasses(pick.card.colors)} bg-opacity-20 dark:bg-opacity-30 flex flex-col justify-between rounded p-2 shadow-md hover:shadow-lg transition-shadow duration-200`}>
+                                      <p className="text-sm truncate font-medium dark:text-white">{pick.card.name}</p>
+                                      <div className="flex justify-center">
+                                        {pick.card.colors.map((color: string) => (
+                                          <span 
+                                            key={color} 
+                                            className="w-3 h-3 rounded-full mx-0.5"
+                                            style={{ 
+                                              backgroundColor: 
+                                                color === 'W' ? '#F9FAF4' : 
+                                                color === 'U' ? '#0E68AB' : 
+                                                color === 'B' ? '#150B00' : 
+                                                color === 'R' ? '#D3202A' : 
+                                                '#00733E'
+                                            }}
+                                          />
+                                        ))}
+                                      </div>
+                                      <p className="text-white text-xs text-center">{index + 1}</p>
+                                    </div>
+                                  )}
                                 </div>
                               ))}
                             </div>
