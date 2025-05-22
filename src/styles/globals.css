@@ -429,7 +429,13 @@ body {
 
   .mtg-card-grid {
     @apply grid gap-4;
-    grid-template-columns: repeat(auto-fill, minmax(min(100%, var(--mtg-card-width)), 1fr));
+    /* Show three cards per row on mobile */
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+
+    /* Revert to auto-fill for larger screens */
+    @media (min-width: 768px) {
+      grid-template-columns: repeat(auto-fill, minmax(min(100%, var(--mtg-card-width)), 1fr));
+    }
   }
 
   .mtg-card-detail {
