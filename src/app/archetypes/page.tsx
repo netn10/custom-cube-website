@@ -325,6 +325,32 @@ export default function ArchetypesPage() {
     }
   };
 
+  // Sort archetypes by the color wheel order (WU, UB, BR, RG, GW, WB, BG, GU, UR, RW)
+  const colorWheelOrder = ['WU', 'UB', 'BR', 'RG', 'GW', 'WB', 'BG', 'GU', 'UR', 'RW'];
+  
+  // Sort archetypes based on the color wheel order
+  const sortedArchetypes = [...archetypes].sort((a, b) => {
+    // Create color code for each archetype
+    const aColors = a.colors.join('');
+    const bColors = b.colors.join('');
+    
+    // Find index in colorWheelOrder
+    const aIndex = colorWheelOrder.indexOf(aColors);
+    const bIndex = colorWheelOrder.indexOf(bColors);
+    
+    // If both are in the color wheel order, sort by that
+    if (aIndex !== -1 && bIndex !== -1) {
+      return aIndex - bIndex;
+    }
+    
+    // If only one is in the color wheel, prioritize it
+    if (aIndex !== -1) return -1;
+    if (bIndex !== -1) return 1;
+    
+    // Otherwise, sort by name
+    return a.name.localeCompare(b.name);
+  });
+
   return (
     <div className="container mx-auto px-4 py-8">
       <div className="max-w-7xl mx-auto">
@@ -346,7 +372,7 @@ export default function ArchetypesPage() {
           <div className="text-center text-red-500 p-4 bg-red-50 dark:bg-red-900/20 rounded-lg">{error}</div>
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {archetypes.map((archetype) => (
+            {sortedArchetypes.map((archetype) => (
               <div 
                 key={archetype.id}
                 className="bg-white dark:bg-gray-800 rounded-xl shadow-md overflow-hidden transition-all duration-300 hover:shadow-lg"
@@ -356,9 +382,9 @@ export default function ArchetypesPage() {
                   className={`p-5 ${getArchetypeColorClasses(archetype.colors)} cursor-pointer transition-all duration-200 hover:brightness-105`}
                   onClick={() => fetchArchetypeCards(archetype.id)}
                 >
-                  <div className="flex justify-between items-center">
-                    <h3 className="text-2xl font-bold">{archetype.name}</h3>
-                    <div className="flex space-x-2">
+                  <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-2">
+                    <h3 className="text-2xl font-bold truncate">{archetype.name}</h3>
+                    <div className="flex space-x-2 flex-shrink-0">
                       {archetype.colors.map((color) => (
                         <div 
                           key={color} 

@@ -35,7 +35,7 @@ export const archetypes: Archetype[] = [
     id: 'wb-blink',
     name: 'Blink/ETB/Value',
     colors: ['W', 'B'],
-    description: 'Flicker creatures in and out of the battlefield to trigger powerful enter-the-battlefield effects.',
+    description: 'Flicker creatures in and out of the battlefield to accumulate triggers.',
   },
   {
     id: 'bg-artifacts',

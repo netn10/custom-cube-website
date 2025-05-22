@@ -152,8 +152,8 @@ export default function Home() {
     }
   };
   
-  // Sort archetypes by the color wheel order (WU, UB, BR, RG, GW, WB, UR, BG, RW, GU)
-  const colorWheelOrder = ['WU', 'UB', 'BR', 'RG', 'GW', 'WB', 'UR', 'BG', 'RW', 'GU'];
+  // Sort archetypes by the color wheel order (WU, UB, BR, RG, GW, WB, BG, GU, UR, RW)
+  const colorWheelOrder = ['WU', 'UB', 'BR', 'RG', 'GW', 'WB', 'BG', 'GU', 'UR', 'RW'];
   
   const sortedArchetypes = [...archetypes].sort((a, b) => {
     // Create color code for each archetype
@@ -873,11 +873,11 @@ export default function Home() {
                   </div>
                   
                   <div className="p-3 sm:p-4 md:p-6 relative z-10 flex flex-col h-full">
-                    <div className="flex items-center mb-4">
-                      <h3 className="text-lg sm:text-xl md:text-2xl font-bold mr-2 sm:mr-4 dark:text-white group-hover:text-mtg-gold transition-colors duration-300">
+                    <div className="flex flex-col sm:flex-row sm:items-center mb-4">
+                      <h3 className="text-lg sm:text-xl md:text-2xl font-bold mr-2 sm:mr-4 dark:text-white group-hover:text-mtg-gold transition-colors duration-300 truncate">
                         {archetype.name}
                       </h3>
-                      <div className="flex space-x-1">
+                      <div className="flex space-x-1 mt-1 sm:mt-0">
                         {archetype.colors.map((color) => (
                           <span 
                             key={color} 

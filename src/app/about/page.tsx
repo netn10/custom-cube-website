@@ -29,7 +29,7 @@ export default function AboutPage() {
             <li><strong>BR - Token Collection:</strong> Create and collect various token types for different synergies.</li>
             <li><strong>RG - Control:</strong> An unusual take on control using red and green to dominate the board.</li>
             <li><strong>GW - Vehicles:</strong> Crew powerful artifact vehicles with your creatures for strong attacks.</li>
-            <li><strong>WB - Blink/ETB/Value:</strong> Flicker creatures in and out of the battlefield to trigger powerful enter-the-battlefield effects.</li>
+            <li><strong>WB - Blink/ETB/Value:</strong> Flicker creatures in and out of the battlefield to accumulate triggers.</li>
             <li><strong>BG - Artifacts:</strong> Leverage artifacts for value and synergy in an unusual color combination.</li>
             <li><strong>UR - Enchantments:</strong> Use enchantments to control the game and generate value over time.</li>
             <li><strong>RW - Self-mill:</strong> Put cards from your library into your graveyard for value and synergy.</li>
