@@ -1,12 +1,13 @@
 'use client';
 
-import { useState, useEffect, useMemo } from 'react';
+import { useState, useEffect, useMemo, Suspense } from 'react';
 import Link from 'next/link';
 import { getCards, API_BASE_URL } from '@/lib/api';
 import { useSearchParams, useRouter } from 'next/navigation';
 import { Card } from '@/types/types';
 
-export default function CubeList() {
+// Component that uses the useSearchParams hook
+function CubeListContent() {
   const searchParams = useSearchParams();
   const router = useRouter();
 
@@ -775,5 +776,26 @@ export default function CubeList() {
         </>
       )}
     </div>
+  );
+}
+
+// Loading fallback component
+function CubeListLoading() {
+  return (
+    <div className="container mx-auto px-4 py-8">
+      <h1 className="text-2xl font-bold mb-6 dark:text-white">Cube Card List</h1>
+      <div className="flex justify-center items-center h-64">
+        <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-blue-500"></div>
+      </div>
+    </div>
+  );
+}
+
+// Main component that wraps the content in a Suspense boundary
+export default function CubeList() {
+  return (
+    <Suspense fallback={<CubeListLoading />}>
+      <CubeListContent />
+    </Suspense>
   );
 }
