@@ -45,3 +45,4 @@ venv.bak/
 .DS_Store
 Thumbs.db
 /python_scripts/cube_images
+*.pdf
