@@ -20,6 +20,7 @@ export default function Navbar() {
     { name: 'Archetypes', path: '/archetypes' },
     { name: 'Cube List', path: '/cube-list' },
     { name: 'Tokens', path: '/tokens' },
+    { name: 'Resources', path: '/resources' },
     { name: 'Tools', path: '/tools' },
     { name: 'About', path: '/about' },
   ];

@@ -171,12 +171,13 @@ def main():
     parser = argparse.ArgumentParser(description="Create a PDF with all card or token images from MongoDB")
     parser.add_argument("--tokens", action="store_true", help="Download token images instead of card images")
     parser.add_argument("--output", "-o", default=None, help="Output PDF file name")
+    parser.add_argument("--update-resources", action="store_true", help="Update the website resources with the generated PDFs")
     args = parser.parse_args()
     
     # Determine collection and default output file name
     if args.tokens:
         collection = db.tokens
-        default_output = "all_tokens.pdf"
+        default_output = "my_tokens.pdf"
         print("Downloading token images...")
     else:
         collection = db.cards
@@ -193,6 +194,18 @@ def main():
     
     # Create PDF with all images
     create_pdf(items, output_file)
+    
+    # Update website resources if requested
+    if args.update_resources:
+        try:
+            print("Updating website resources with the generated PDF...")
+            # Import and run the update_pdf_resources script
+            import update_pdf_resources
+            update_pdf_resources.update_pdf_resources()
+        except Exception as e:
+            print(f"Error updating resources: {e}")
+            print("PDF was generated successfully, but resources were not updated.")
+            print("You can manually run 'python update_pdf_resources.py' to update the resources.")
 
 if __name__ == "__main__":
     main()
