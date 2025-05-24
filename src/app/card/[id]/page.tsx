@@ -595,50 +595,51 @@ export default function CardDetailPage() {
               })}
             </div>
             
-            {/* AI Archetype Analysis Button */}
-            <div className="mt-8">
-              {!showAiAnalysis ? (
-                <button
-                  onClick={handleAnalysisButtonClick}
-                  className="flex items-center justify-center w-full py-3 px-4 bg-blue-100 hover:bg-blue-200 dark:bg-blue-900 dark:hover:bg-blue-800 text-blue-800 dark:text-blue-200 rounded-lg transition-colors"
-                >
-                  <FaRobot className="mr-2" />
-                  <span>Analyze with AI Archetype Finder</span>
-                </button>
-              ) : (
-                <div className="bg-gray-50 dark:bg-gray-800 p-4 rounded-lg border border-gray-200 dark:border-gray-700">
-                  <div className="flex items-center justify-between mb-3">
-                    <div className="flex items-center">
-                      <FaRobot className="text-blue-500 mr-2" />
-                      <h3 className="text-lg font-semibold dark:text-white">AI Archetype Analysis</h3>
-                    </div>
-                    {lastAnalysisTime && (
-                      <div className="text-xs text-gray-500 dark:text-gray-400">
-                        Rate limited: 1 request per minute
-                      </div>
-                    )}
-                  </div>
-                  
-                  {aiLoading ? (
-                    <div className="flex justify-center items-center py-8">
-                      <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-500"></div>
-                      <span className="ml-2 text-gray-600 dark:text-gray-400">Analyzing with AI...</span>
-                    </div>
-                  ) : aiResponse ? (
-                    <div className="prose dark:prose-invert max-w-none">
-                      <div className="bg-white dark:bg-gray-700 p-4 rounded-lg shadow-inner">
-                        <div className="whitespace-pre-line">{aiResponse}</div>
-                      </div>
-                    </div>
-                  ) : (
-                    <p className="text-gray-600 dark:text-gray-400 py-4 text-center">
-                      AI analysis is loading...
-                    </p>
-                  )}
+          </div>
+        </div>
+        
+        {/* AI Archetype Analysis Button - Moved outside the two-column layout to span full width */}
+        <div className="p-4">
+          {!showAiAnalysis ? (
+            <button
+              onClick={handleAnalysisButtonClick}
+              className="flex items-center justify-center w-full py-3 px-4 bg-blue-100 hover:bg-blue-200 dark:bg-blue-900 dark:hover:bg-blue-800 text-blue-800 dark:text-blue-200 rounded-lg transition-colors"
+            >
+              <FaRobot className="mr-2" />
+              <span>Analyze with AI Archetype Finder</span>
+            </button>
+          ) : (
+            <div className="bg-gray-50 dark:bg-gray-800 p-4 rounded-lg border border-gray-200 dark:border-gray-700 w-full">
+              <div className="flex items-center justify-between mb-3">
+                <div className="flex items-center">
+                  <FaRobot className="text-blue-500 mr-2" />
+                  <h3 className="text-lg font-semibold dark:text-white">AI Archetype Analysis</h3>
                 </div>
+                {lastAnalysisTime && (
+                  <div className="text-xs text-gray-500 dark:text-gray-400">
+                    Rate limited: 1 request per minute
+                  </div>
+                )}
+              </div>
+              
+              {aiLoading ? (
+                <div className="flex justify-center items-center py-8">
+                  <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-500"></div>
+                  <span className="ml-2 text-gray-600 dark:text-gray-400">Analyzing with AI...</span>
+                </div>
+              ) : aiResponse ? (
+                <div className="prose dark:prose-invert max-w-none w-full">
+                  <div className="bg-white dark:bg-gray-700 p-4 rounded-lg shadow-inner w-full">
+                    <div className="whitespace-pre-line">{aiResponse}</div>
+                  </div>
+                </div>
+              ) : (
+                <p className="text-gray-600 dark:text-gray-400 py-4 text-center">
+                  AI analysis is loading...
+                </p>
               )}
             </div>
-          </div>
+          )}
         </div>
       </div>
     </div>
