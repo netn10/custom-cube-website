@@ -3,9 +3,9 @@
 import { useParams, useRouter, useSearchParams } from 'next/navigation';
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { getCards, getTokenByName, API_BASE_URL, getGeminiResponse } from '@/lib/api';
-import { FaRobot } from 'react-icons/fa';
-import { Card, Token } from '@/types/types';
+import { getCards, getTokenByName, API_BASE_URL, getGeminiResponse, getCardComments, addComment, deleteComment } from '@/lib/api';
+import { FaRobot, FaTrash } from 'react-icons/fa';
+import { Card, Token, Comment } from '@/types/types';
 import { useAuth } from '@/contexts/AuthContext';
 import CardPreview from '@/components/CardPreview';
 
@@ -13,7 +13,7 @@ export default function CardDetailPage() {
   const params = useParams();
   const router = useRouter();
   const searchParams = useSearchParams();
-  const { isAuthenticated, isAdmin } = useAuth();
+  const { isAuthenticated, isAdmin, user } = useAuth();
   
   // Store token image URLs
   const [tokenImages, setTokenImages] = useState<{[name: string]: string}>({});
@@ -25,6 +25,13 @@ export default function CardDetailPage() {
   const [showAiAnalysis, setShowAiAnalysis] = useState(false);
   const [aiAnalysisRequested, setAiAnalysisRequested] = useState(false);
   const [lastAnalysisTime, setLastAnalysisTime] = useState<number | null>(null);
+  
+  // Comments state
+  const [comments, setComments] = useState<Comment[]>([]);
+  const [commentContent, setCommentContent] = useState('');
+  const [guestUsername, setGuestUsername] = useState('');
+  const [isSubmittingComment, setIsSubmittingComment] = useState(false);
+  const [commentError, setCommentError] = useState<string | null>(null);
   
   // Archetype data
   const archetypes = [
@@ -100,6 +107,125 @@ export default function CardDetailPage() {
     }
   }, [searchParams]);
   
+  // Function to fetch comments for the current card
+  const fetchComments = async (cardId: string) => {
+    try {
+      const commentsData = await getCardComments(cardId);
+      setComments(commentsData);
+    } catch (error) {
+      console.error('Error fetching comments:', error);
+      setCommentError('Failed to load comments. Please try again later.');
+    }
+  };
+
+  // Function to handle comment submission
+  const handleCommentSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    if (!commentContent.trim()) {
+      setCommentError('Comment cannot be empty.');
+      return;
+    }
+    
+    if (!isAuthenticated && !guestUsername.trim()) {
+      setCommentError('Please enter a username to post as a guest.');
+      return;
+    }
+    
+    if (!card?.id) {
+      setCommentError('Card information is missing.');
+      return;
+    }
+    
+    try {
+      setIsSubmittingComment(true);
+      setCommentError(null);
+      
+      // Create a mock comment for immediate display
+      const tempId = `temp-${Date.now()}`;
+      const currentTime = new Date().toISOString();
+      const displayName = isAuthenticated ? (user?.username || 'User') : guestUsername.trim();
+      
+      // Create a temporary comment to show immediately
+      const tempComment: Comment = {
+        id: tempId,
+        cardId: card.id,
+        userId: isAuthenticated ? (user?.id || 'guest') : 'guest',
+        username: displayName,
+        content: commentContent,
+        createdAt: currentTime
+      };
+      
+      // Add the temporary comment to the UI
+      setComments(prevComments => [tempComment, ...prevComments]);
+      
+      // Prepare the data to send to the API
+      let commentData: CommentFormData = { content: commentContent };
+      let token: string | null = null;
+      
+      // If user is authenticated, use their token
+      if (isAuthenticated) {
+        token = localStorage.getItem('auth_token');
+        if (!token) {
+          // Even if token is missing, we've already shown the temp comment
+          console.warn('Authentication token is missing, but proceeding with guest comment');
+        }
+      } else {
+        // For non-authenticated users, include the guest username
+        commentData.username = guestUsername.trim();
+      }
+      
+      // Clear the comment input field immediately for better UX
+      setCommentContent('');
+      
+      // Send the comment to the server
+      try {
+        const newComment = await addComment(card.id, commentData, token || undefined);
+        
+        // Replace the temporary comment with the real one from the server
+        setComments(prevComments => {
+          return prevComments.map(comment => 
+            comment.id === tempId ? newComment : comment
+          );
+        });
+      } catch (error) {
+        // If the server request fails, keep the temporary comment but mark it as failed
+        console.error('Error submitting comment to server:', error);
+        setComments(prevComments => {
+          return prevComments.map(comment => 
+            comment.id === tempId ? {
+              ...comment,
+              content: comment.content + ' [Failed to save - please try again]',
+            } : comment
+          );
+        });
+        setCommentError('Comment displayed locally but failed to save to server. Please try again.');
+      }
+    } catch (error) {
+      console.error('Error in comment submission process:', error);
+      setCommentError('Failed to submit comment. Please try again later.');
+    } finally {
+      setIsSubmittingComment(false);
+    }
+  };
+  
+  // Function to handle comment deletion
+  const handleDeleteComment = async (commentId: string) => {
+    try {
+      const token = localStorage.getItem('auth_token');
+      if (!token) {
+        setCommentError('Authentication token is missing. Please log in again.');
+        return;
+      }
+      
+      await deleteComment(commentId, token);
+      setComments(prevComments => prevComments.filter(comment => comment.id !== commentId));
+    } catch (error) {
+      console.error('Error deleting comment:', error);
+      setCommentError('Failed to delete comment. Please try again later.');
+    }
+  };
+
   useEffect(() => {
     if (params.id) {
       // Fetch card data from API using name search
@@ -146,6 +272,11 @@ export default function CardDetailPage() {
             } catch (err) {
               console.error('Error fetching related card:', err);
             }
+          }
+          
+          // Fetch comments for the card if we have a valid card ID
+          if (cardToUse && cardToUse.id) {
+            fetchComments(cardToUse.id);
           }
           
           // We don't automatically analyze with AI anymore - user must click the button
@@ -640,6 +771,99 @@ export default function CardDetailPage() {
               )}
             </div>
           )}
+        </div>
+        
+        {/* Comment Section */}
+        <div className="p-4 border-t border-gray-200 dark:border-gray-700 mt-4">
+          <h3 className="text-xl font-semibold mb-4 dark:text-white">Comments</h3>
+          
+          {/* Comment Form - Available to all users */}
+          <form onSubmit={handleCommentSubmit} className="mb-6">
+            {/* Username field for non-logged-in users */}
+            {!isAuthenticated && (
+              <div className="mb-4">
+                <label htmlFor="guest-username" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+                  Your Name
+                </label>
+                <input
+                  id="guest-username"
+                  type="text"
+                  className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:text-white"
+                  placeholder="Enter your name"
+                  value={guestUsername}
+                  onChange={(e) => setGuestUsername(e.target.value)}
+                  disabled={isSubmittingComment}
+                />
+              </div>
+            )}
+            
+            {/* Comment content field */}
+            <div className="mb-4">
+              <label htmlFor="comment-content" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+                Comment
+              </label>
+              <textarea
+                id="comment-content"
+                className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:text-white"
+                rows={3}
+                placeholder="Share your thoughts about this card..."
+                value={commentContent}
+                onChange={(e) => setCommentContent(e.target.value)}
+                disabled={isSubmittingComment}
+              ></textarea>
+            </div>
+            
+            {commentError && (
+              <div className="mb-4 text-red-500 dark:text-red-400">{commentError}</div>
+            )}
+            
+            <button
+              type="submit"
+              className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline disabled:opacity-50"
+              disabled={isSubmittingComment}
+            >
+              {isSubmittingComment ? 'Posting...' : 'Post Comment'}
+            </button>
+            
+            {!isAuthenticated && (
+              <p className="mt-2 text-sm text-gray-500 dark:text-gray-400">
+                Or <Link href="/login" className="text-blue-500 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300">log in</Link> to comment with your account.
+              </p>
+            )}
+          </form>
+          
+          {/* Comments List */}
+          <div className="space-y-4">
+            {comments.length > 0 ? (
+              comments.map((comment) => (
+                <div key={comment.id} className="bg-gray-50 dark:bg-gray-800 p-4 rounded-lg border border-gray-200 dark:border-gray-700">
+                  <div className="flex justify-between items-start mb-2">
+                    <div className="font-semibold dark:text-white">{comment.username}</div>
+                    <div className="text-xs text-gray-500 dark:text-gray-400">
+                      {new Date(comment.createdAt).toLocaleString()}
+                    </div>
+                  </div>
+                  <p className="text-gray-700 dark:text-gray-300 whitespace-pre-line">{comment.content}</p>
+                  
+                  {/* Delete button - Only shown to comment owner or admin */}
+                  {isAuthenticated && (isAdmin || (user && user.id === comment.userId)) && (
+                    <button
+                      onClick={() => handleDeleteComment(comment.id)}
+                      className="mt-2 text-red-500 hover:text-red-700 dark:text-red-400 dark:hover:text-red-300 text-sm flex items-center"
+                      aria-label="Delete comment"
+                    >
+                      <FaTrash className="mr-1" />
+                      Delete
+                    </button>
+                  )}
+                </div>
+              ))
+            ) : (
+              <div className="text-center py-6 text-gray-500 dark:text-gray-400">
+                No comments yet. Be the first to share your thoughts!
+              </div>
+            )}
+          </div>
         </div>
       </div>
     </div>

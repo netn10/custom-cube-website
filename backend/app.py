@@ -1475,5 +1475,176 @@ def update_card(card_id):
         return jsonify({"error": str(e)}), 500
 
 
+# Comments API
+@app.route("/api/comments/card/<card_id>", methods=["GET"])
+def get_card_comments(card_id):
+    """Get all comments for a specific card"""
+    try:
+        # Get comments for the card
+        comments = list(db.comments.find({"cardId": card_id}).sort("createdAt", -1))
+        
+        # If no comments are found, return an empty list
+        if not comments:
+            return jsonify([]), 200
+            
+        # Format the comments for the response
+        formatted_comments = []
+        for comment in comments:
+            formatted_comments.append({
+                "id": str(comment["_id"]),
+                "cardId": comment["cardId"],
+                "userId": comment.get("userId", "guest"),
+                "username": comment.get("username", "Guest"),
+                "content": comment["content"],
+                "createdAt": comment.get("createdAt", datetime.utcnow().isoformat())
+            })
+            
+        return jsonify(formatted_comments), 200
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+
+@app.route("/api/comments/card/<card_id>", methods=["POST"])
+def add_authenticated_comment(card_id):
+    """Add a new comment for a card (authenticated user)"""
+    try:
+        # Get the comment data from the request
+        data = request.get_json()
+        
+        # Validate required fields
+        if not data or not data.get("content"):
+            return jsonify({"error": "Comment content is required"}), 400
+            
+        # Verify authentication
+        token = None
+        auth_header = request.headers.get("Authorization")
+        
+        if not auth_header or not auth_header.startswith("Bearer "):
+            return jsonify({"error": "Authentication token is missing"}), 401
+            
+        token = auth_header.split(" ")[1]
+        
+        try:
+            # Decode token
+            decoded = jwt.decode(token, app.config["JWT_SECRET_KEY"], algorithms=["HS256"])
+            user_id = decoded["user_id"]
+            username = decoded["username"]
+        except jwt.ExpiredSignatureError:
+            return jsonify({"error": "Token expired"}), 401
+        except jwt.InvalidTokenError:
+            return jsonify({"error": "Invalid token"}), 401
+            
+        # Create the comment
+        new_comment = {
+            "cardId": card_id,
+            "userId": user_id,
+            "username": username,
+            "content": data["content"],
+            "createdAt": datetime.utcnow().isoformat()
+        }
+        
+        # Insert the comment into the database
+        result = db.comments.insert_one(new_comment)
+        
+        # Return the created comment
+        created_comment = {
+            "id": str(result.inserted_id),
+            "cardId": new_comment["cardId"],
+            "userId": new_comment["userId"],
+            "username": new_comment["username"],
+            "content": new_comment["content"],
+            "createdAt": new_comment["createdAt"]
+        }
+        
+        return jsonify(created_comment), 201
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+
+@app.route("/api/comments/card/<card_id>/guest", methods=["POST"])
+def add_guest_comment(card_id):
+    """Add a new comment for a card (guest user)"""
+    try:
+        # Get the comment data from the request
+        data = request.get_json()
+        
+        # Validate required fields
+        if not data or not data.get("content"):
+            return jsonify({"error": "Comment content is required"}), 400
+            
+        # Validate guest username
+        if not data.get("username"):
+            return jsonify({"error": "Guest username is required"}), 400
+            
+        # Create the comment
+        new_comment = {
+            "cardId": card_id,
+            "userId": "guest",
+            "username": data["username"],
+            "content": data["content"],
+            "createdAt": datetime.utcnow().isoformat()
+        }
+        
+        # Insert the comment into the database
+        result = db.comments.insert_one(new_comment)
+        
+        # Return the created comment
+        created_comment = {
+            "id": str(result.inserted_id),
+            "cardId": new_comment["cardId"],
+            "userId": new_comment["userId"],
+            "username": new_comment["username"],
+            "content": new_comment["content"],
+            "createdAt": new_comment["createdAt"]
+        }
+        
+        return jsonify(created_comment), 201
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+
+@app.route("/api/comments/<comment_id>", methods=["DELETE"])
+def delete_comment(comment_id):
+    """Delete a comment (only for comment owner or admin)"""
+    try:
+        # Verify authentication
+        token = None
+        auth_header = request.headers.get("Authorization")
+        
+        if not auth_header or not auth_header.startswith("Bearer "):
+            return jsonify({"error": "Authentication token is missing"}), 401
+            
+        token = auth_header.split(" ")[1]
+        
+        try:
+            # Decode token
+            decoded = jwt.decode(token, app.config["JWT_SECRET_KEY"], algorithms=["HS256"])
+            user_id = decoded["user_id"]
+            is_admin = decoded.get("is_admin", False)
+        except jwt.ExpiredSignatureError:
+            return jsonify({"error": "Token expired"}), 401
+        except jwt.InvalidTokenError:
+            return jsonify({"error": "Invalid token"}), 401
+            
+        # Find the comment
+        try:
+            comment = db.comments.find_one({"_id": ObjectId(comment_id)})
+        except:
+            return jsonify({"error": "Comment not found"}), 404
+            
+        if not comment:
+            return jsonify({"error": "Comment not found"}), 404
+            
+        # Check if user is the comment owner or an admin
+        if comment.get("userId") != user_id and not is_admin:
+            return jsonify({"error": "You are not authorized to delete this comment"}), 403
+            
+        # Delete the comment
+        result = db.comments.delete_one({"_id": ObjectId(comment_id)})
+        
+        if result.deleted_count == 0:
+            return jsonify({"error": "Failed to delete comment"}), 500
+            
+        return jsonify({"message": "Comment deleted successfully"}), 200
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+
 if __name__ == "__main__":
     app.run(debug=True, port=5000)

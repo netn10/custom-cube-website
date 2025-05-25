@@ -107,3 +107,17 @@ export type RegisterFormData = {
   password: string;
   email?: string;
 };
+
+export type Comment = {
+  id: string;
+  cardId: string;
+  userId: string;
+  username: string;
+  content: string;
+  createdAt: string;
+};
+
+export type CommentFormData = {
+  content: string;
+  username?: string; // Optional username for non-logged-in users
+};

@@ -1,5 +1,5 @@
 // API service for fetching data from the Flask backend
-import { Card, Archetype, Token, Suggestion, User, LoginCredentials, RegisterFormData } from '@/types/types';
+import { Card, Archetype, Token, Suggestion, User, LoginCredentials, RegisterFormData, Comment, CommentFormData } from '@/types/types';
 
 // In development, we use localhost with /api path
 // In production, the URL from env already includes the /api path
@@ -515,5 +515,53 @@ export async function getGeminiResponse(prompt: string): Promise<any> {
   });
 }
 
+// Comments API
 
+// Get comments for a card
+export async function getCardComments(cardId: string): Promise<Comment[]> {
+  try {
+    return await fetchFromAPI<Comment[]>(`/comments/card/${cardId}`);
+  } catch (error) {
+    console.error('Error fetching comments:', error);
+    // Return empty array instead of throwing to avoid breaking the UI
+    return [];
+  }
+}
 
+// Add a new comment
+export async function addComment(cardId: string, commentData: CommentFormData, token?: string): Promise<Comment> {
+  try {
+    // For guest comments, we need to ensure the endpoint can handle them
+    // We'll use a different API path for guest comments vs. authenticated comments
+    const endpoint = token 
+      ? `/comments/card/${cardId}` // Authenticated comment endpoint
+      : `/comments/card/${cardId}/guest`; // Guest comment endpoint
+    
+    const options: RequestInit = {
+      method: 'POST',
+      body: JSON.stringify(commentData),
+    };
+    
+    // Only add Authorization header if token is provided (for logged-in users)
+    if (token) {
+      options.headers = {
+        'Authorization': `Bearer ${token}`
+      };
+    }
+    
+    return await fetchFromAPI<Comment>(endpoint, options);
+  } catch (error) {
+    console.error('Error adding comment:', error);
+    throw error;
+  }
+}
+
+// Delete a comment (only for comment owner or admin)
+export async function deleteComment(commentId: string, token: string): Promise<{ message: string }> {
+  return fetchFromAPI<{ message: string }>(`/comments/${commentId}`, {
+    method: 'DELETE',
+    headers: {
+      'Authorization': `Bearer ${token}`
+    },
+  });
+}
