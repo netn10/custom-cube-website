@@ -15,7 +15,8 @@ export default function RelatedFaceCard({ card, className = '', children }: Rela
   const [isHovering, setIsHovering] = useState<boolean>(false);
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const isMounted = useRef(true);
-  const childrenRef = useRef<HTMLDivElement>(null);
+  const imgRef = useRef<HTMLImageElement>(null);
+  const originalSrcRef = useRef<string | null>(null);
 
   // Fetch the related face image when component mounts
   useEffect(() => {
@@ -68,17 +69,14 @@ export default function RelatedFaceCard({ card, className = '', children }: Rela
     
     setIsHovering(true);
     
-    // Find the image element inside the children and change its src
-    if (childrenRef.current) {
-      const imgElement = childrenRef.current.querySelector('img');
-      if (imgElement) {
-        // Store the original src in a data attribute if not already stored
-        if (!imgElement.dataset.originalSrc) {
-          imgElement.dataset.originalSrc = imgElement.src;
-        }
-        // Change to related face image
-        imgElement.src = processImageUrl(relatedFaceImageUrl);
-      }
+    // Find the image element and change its src
+    const imgElement = imgRef.current || document.querySelector('img');
+    if (imgElement) {
+      // Store the original src
+      originalSrcRef.current = imgElement.src;
+      
+      // Change to related face image
+      imgElement.src = processImageUrl(relatedFaceImageUrl);
     }
   };
 
@@ -86,32 +84,35 @@ export default function RelatedFaceCard({ card, className = '', children }: Rela
     setIsHovering(false);
     
     // Restore the original image
-    if (childrenRef.current) {
-      const imgElement = childrenRef.current.querySelector('img');
-      if (imgElement && imgElement.dataset.originalSrc) {
-        imgElement.src = imgElement.dataset.originalSrc;
-      }
+    const imgElement = imgRef.current || document.querySelector('img');
+    if (imgElement && originalSrcRef.current) {
+      imgElement.src = originalSrcRef.current;
     }
   };
 
   return (
     <div 
-      ref={childrenRef}
       className={`relative ${className}`}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
       {children || (
         <img 
+          ref={imgRef}
           src={processImageUrl(card.imageUrl || '') || '/card-back.jpg'}
           alt={card.name}
           className="w-full h-full object-cover rounded-lg transition-all duration-300"
-          data-original-src={processImageUrl(card.imageUrl || '')}
           onError={(e) => {
             console.error(`Error loading image for ${card.name}`);
             e.currentTarget.src = '/card-back.jpg';
           }}
         />
+      )}
+      
+      {card.relatedFace && (
+        <div className="absolute top-2 right-2 bg-black bg-opacity-50 text-white rounded-full w-6 h-6 flex items-center justify-center">
+          <span className="text-xs">↔</span>
+        </div>
       )}
     </div>
   );
