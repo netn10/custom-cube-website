@@ -46,3 +46,6 @@ venv.bak/
 Thumbs.db
 /python_scripts/cube_images
 *.pdf
+*.log
+*.log
+*.log
