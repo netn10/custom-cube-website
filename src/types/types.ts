@@ -121,3 +121,17 @@ export type CommentFormData = {
   content: string;
   username?: string; // Optional username for non-logged-in users
 };
+
+export type CardHistoryEntry = {
+  _id: string;
+  card_id: string;
+  timestamp: string;
+  version_data: Card;
+};
+
+export type CardHistoryResponse = {
+  history: CardHistoryEntry[];
+  total: number;
+  page: number;
+  limit: number;
+};

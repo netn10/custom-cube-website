@@ -1,5 +1,5 @@
 // API service for fetching data from the Flask backend
-import { Card, Archetype, Token, Suggestion, User, LoginCredentials, RegisterFormData, Comment, CommentFormData } from '@/types/types';
+import { Card, Archetype, Token, Suggestion, User, LoginCredentials, RegisterFormData, Comment, CommentFormData, CardHistoryEntry, CardHistoryResponse } from '@/types/types';
 
 // In development, we use localhost with /api path
 // In production, the URL from env already includes the /api path
@@ -194,6 +194,65 @@ export async function getCardById(id: string): Promise<Card> {
     const data = await response.json();
     return data;
   } catch (error) {
+    throw error;
+  }
+}
+
+// Get card history (past iterations)
+export async function getCardHistory(cardId: string, page: number = 1, limit: number = 10): Promise<CardHistoryResponse> {
+  try {
+    const response = await fetch(`${API_BASE_URL}/cards/${cardId}/history?page=${page}&limit=${limit}`, {
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
+    
+    if (!response.ok) {
+      const errorText = await response.text();
+      console.error(`API error response: ${errorText}`);
+      throw new Error(`API error: ${response.status} - ${errorText}`);
+    }
+    
+    return await response.json();
+  } catch (error) {
+    console.error('Error fetching card history:', error);
+    throw error;
+  }
+}
+
+// Manually add a card history entry (admin only)
+export async function addCardHistory(
+  cardId: string, 
+  note: string, 
+  token: string, 
+  customCardData?: Partial<Card>
+): Promise<{ message: string, entry_id: string }> {
+  try {
+    const payload: any = { note };
+    
+    // If custom card data is provided, include it in the request
+    if (customCardData) {
+      payload.custom_card_data = customCardData;
+    }
+    
+    const response = await fetch(`${API_BASE_URL}/cards/${cardId}/history`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${token}`
+      },
+      body: JSON.stringify(payload)
+    });
+    
+    if (!response.ok) {
+      const errorText = await response.text();
+      console.error(`API error response: ${errorText}`);
+      throw new Error(`API error: ${response.status} - ${errorText}`);
+    }
+    
+    return await response.json();
+  } catch (error) {
+    console.error('Error adding card history:', error);
     throw error;
   }
 }

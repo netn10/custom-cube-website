@@ -1441,6 +1441,20 @@ def update_card(card_id):
             "relatedFace": data.get("relatedFace"),
         }
 
+        # Store the current version in card_history before updating
+        history_entry = {
+            "card_id": str(existing_card["_id"]),
+            "timestamp": datetime.utcnow(),
+            "version_data": existing_card.copy()
+        }
+        
+        # Convert ObjectId to string for storage
+        if not isinstance(history_entry["version_data"]["_id"], str):
+            history_entry["version_data"]["_id"] = str(history_entry["version_data"]["_id"])
+            
+        # Insert into card_history collection
+        db.card_history.insert_one(history_entry)
+
         # Update in database
         result = db.cards.update_one(
             {
@@ -1643,6 +1657,95 @@ def delete_comment(comment_id):
             return jsonify({"error": "Failed to delete comment"}), 500
             
         return jsonify({"message": "Comment deleted successfully"}), 200
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+
+# Card History API
+@app.route("/api/cards/<card_id>/history", methods=["GET"])
+def get_card_history(card_id):
+    """Get the history of a card's iterations"""
+    try:
+        # Get pagination parameters
+        page = int(request.args.get('page', 1))
+        limit = int(request.args.get('limit', 10))
+        skip = (page - 1) * limit
+        
+        # Query the card_history collection
+        history_entries = list(db.card_history.find(
+            {"card_id": card_id}
+        ).sort("timestamp", -1).skip(skip).limit(limit))
+        
+        # Count total entries for pagination
+        total_entries = db.card_history.count_documents({"card_id": card_id})
+        
+        # Format the response
+        formatted_entries = []
+        for entry in history_entries:
+            # Convert ObjectId to string in the entry
+            entry["_id"] = str(entry["_id"])
+            # Format timestamp
+            entry["timestamp"] = entry["timestamp"].isoformat()
+            formatted_entries.append(entry)
+        
+        return jsonify({
+            "history": formatted_entries,
+            "total": total_entries,
+            "page": page,
+            "limit": limit
+        })
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+
+@app.route("/api/cards/<card_id>/history", methods=["POST"])
+@admin_required
+def add_card_history(card_id):
+    """Manually add a history entry for a card (admin only)"""
+    try:
+        # Verify the card exists
+        card = None
+        try:
+            # Try as string ID first
+            card = db.cards.find_one({"_id": card_id})
+            if not card:
+                # Try as ObjectId
+                card = db.cards.find_one({"_id": ObjectId(card_id)})
+        except:
+            pass
+        
+        if not card:
+            return jsonify({"error": "Card not found"}), 404
+        
+        # Check if custom card data is provided
+        if request.json.get("custom_card_data"):
+            # Use the provided custom card data
+            version_data = request.json.get("custom_card_data")
+            # Ensure the ID is preserved
+            version_data["_id"] = str(card["_id"])
+            version_data["id"] = str(card["_id"])
+        else:
+            # Get the current card data to use as version data
+            version_data = card.copy()
+            # Convert ObjectId to string
+            if not isinstance(version_data["_id"], str):
+                version_data["_id"] = str(version_data["_id"])
+        
+        # Create history entry
+        history_entry = {
+            "card_id": str(card["_id"]),
+            "timestamp": datetime.utcnow(),
+            "version_data": version_data,
+            "note": request.json.get("note", "Manual history entry"),
+            "manual_entry": True
+        }
+        
+        # Insert into card_history collection
+        result = db.card_history.insert_one(history_entry)
+        
+        # Return success response
+        return jsonify({
+            "message": "History entry added successfully",
+            "entry_id": str(result.inserted_id)
+        }), 201
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 

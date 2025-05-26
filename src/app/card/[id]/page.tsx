@@ -3,12 +3,13 @@
 import { useParams, useRouter, useSearchParams } from 'next/navigation';
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { getCards, getTokenByName, API_BASE_URL, getGeminiResponse, getCardComments, addComment, deleteComment } from '@/lib/api';
-import { FaRobot, FaTrash } from 'react-icons/fa';
+import { getCards, getTokenByName, API_BASE_URL, getGeminiResponse, getCardComments, addComment, deleteComment, addCardHistory } from '@/lib/api';
+import { FaRobot, FaTrash, FaHistory, FaPlus, FaSave } from 'react-icons/fa';
 import { Card, Token, Comment } from '@/types/types';
 import { useAuth } from '@/contexts/AuthContext';
 import CardPreview from '@/components/CardPreview';
 import RelatedFaceCardDetail from '@/components/RelatedFaceCardDetail';
+import CardHistoryModal from '@/components/CardHistoryModal';
 
 export default function CardDetailPage() {
   const params = useParams();
@@ -26,6 +27,16 @@ export default function CardDetailPage() {
   const [showAiAnalysis, setShowAiAnalysis] = useState(false);
   const [aiAnalysisRequested, setAiAnalysisRequested] = useState(false);
   const [lastAnalysisTime, setLastAnalysisTime] = useState<number | null>(null);
+  
+  // Card History Modal
+  const [showHistoryModal, setShowHistoryModal] = useState(false);
+  const [showAddHistoryForm, setShowAddHistoryForm] = useState(false);
+  const [historyNote, setHistoryNote] = useState('');
+  const [addingHistory, setAddingHistory] = useState(false);
+  const [historyError, setHistoryError] = useState<string | null>(null);
+  const [historySuccess, setHistorySuccess] = useState<string | null>(null);
+  const [customCardData, setCustomCardData] = useState<Partial<Card> | null>(null);
+  const [useCustomData, setUseCustomData] = useState(false);
   
   // Comments state
   const [comments, setComments] = useState<Comment[]>([]);
@@ -619,6 +630,359 @@ export default function CardDetailPage() {
               </div>
             </div>
             
+            <div className="flex space-x-2 mb-4">
+              <button
+                onClick={handleAnalysisButtonClick}
+                className="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg flex items-center space-x-2 transition-colors"
+              >
+                <FaRobot className="text-white" />
+                <span>AI Analysis</span>
+              </button>
+              
+              {/* Card History Button */}
+              <button
+                onClick={() => setShowHistoryModal(true)}
+                className="px-4 py-2 bg-purple-600 hover:bg-purple-700 text-white rounded-lg flex items-center space-x-2 transition-colors"
+              >
+                <FaHistory className="text-white" />
+                <span>View History</span>
+              </button>
+              
+              {/* Add History Button (Admin Only) */}
+              {isAdmin && (
+                <button
+                  onClick={() => setShowAddHistoryForm(!showAddHistoryForm)}
+                  className="px-4 py-2 bg-green-600 hover:bg-green-700 text-white rounded-lg flex items-center space-x-2 transition-colors"
+                >
+                  <FaPlus className="text-white" />
+                  <span>Add History</span>
+                </button>
+              )}
+            </div>
+            
+            {/* Add History Form (Admin Only) */}
+            {isAdmin && showAddHistoryForm && (
+              <div className="bg-green-50 dark:bg-green-900 p-4 rounded-lg mb-4 border border-green-200 dark:border-green-800">
+                <h3 className="text-lg font-semibold mb-2 text-green-800 dark:text-green-200">Add History Entry</h3>
+                {historyError && (
+                  <div className="bg-red-100 dark:bg-red-900 text-red-700 dark:text-red-200 p-2 rounded mb-2">
+                    {historyError}
+                  </div>
+                )}
+                {historySuccess && (
+                  <div className="bg-green-100 dark:bg-green-900 text-green-700 dark:text-green-200 p-2 rounded mb-2">
+                    {historySuccess}
+                  </div>
+                )}
+                
+                <div className="mb-4">
+                  <div className="flex items-center mb-2">
+                    <input
+                      type="checkbox"
+                      id="useCustomData"
+                      checked={useCustomData}
+                      onChange={(e) => {
+                        setUseCustomData(e.target.checked);
+                        if (e.target.checked && !customCardData && card) {
+                          // Initialize with current card data
+                          setCustomCardData({
+                            ...card,
+                            id: card.id,
+                            _id: card.id
+                          });
+                        }
+                      }}
+                      className="mr-2 h-4 w-4"
+                    />
+                    <label htmlFor="useCustomData" className="text-sm font-medium text-gray-700 dark:text-gray-300">
+                      Customize card data for this history entry
+                    </label>
+                  </div>
+                </div>
+                
+                <div className="mb-3">
+                  <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+                    Note (optional)
+                  </label>
+                  <textarea
+                    value={historyNote}
+                    onChange={(e) => setHistoryNote(e.target.value)}
+                    placeholder="Add a note about this version (e.g., 'Initial design', 'Balance adjustment')"
+                    className="w-full p-2 border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100"
+                    rows={3}
+                  />
+                </div>
+                
+                {useCustomData && customCardData && (
+                  <div className="bg-white dark:bg-gray-800 p-4 rounded-lg mb-4 border border-gray-200 dark:border-gray-700">
+                    <h4 className="text-md font-semibold mb-3 text-gray-800 dark:text-gray-200">Custom Card Data</h4>
+                    
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                      {/* Card Name */}
+                      <div>
+                        <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+                          Card Name
+                        </label>
+                        <input
+                          type="text"
+                          value={customCardData.name || ''}
+                          onChange={(e) => setCustomCardData({...customCardData, name: e.target.value})}
+                          className="w-full p-2 border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100"
+                        />
+                      </div>
+                      
+                      {/* Mana Cost */}
+                      <div>
+                        <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+                          Mana Cost
+                        </label>
+                        <input
+                          type="text"
+                          value={customCardData.manaCost || ''}
+                          onChange={(e) => setCustomCardData({...customCardData, manaCost: e.target.value})}
+                          className="w-full p-2 border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100"
+                        />
+                      </div>
+                      
+                      {/* Type */}
+                      <div>
+                        <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+                          Type
+                        </label>
+                        <input
+                          type="text"
+                          value={customCardData.type || ''}
+                          onChange={(e) => setCustomCardData({...customCardData, type: e.target.value})}
+                          className="w-full p-2 border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100"
+                        />
+                      </div>
+                      
+                      {/* Rarity */}
+                      <div>
+                        <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+                          Rarity
+                        </label>
+                        <select
+                          value={customCardData.rarity || 'Common'}
+                          onChange={(e) => setCustomCardData({...customCardData, rarity: e.target.value})}
+                          className="w-full p-2 border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100"
+                        >
+                          <option value="Common">Common</option>
+                          <option value="Uncommon">Uncommon</option>
+                          <option value="Rare">Rare</option>
+                          <option value="Mythic Rare">Mythic Rare</option>
+                        </select>
+                      </div>
+                      
+                      {/* Power */}
+                      <div>
+                        <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+                          Power
+                        </label>
+                        <input
+                          type="text"
+                          value={customCardData.power || ''}
+                          onChange={(e) => setCustomCardData({...customCardData, power: e.target.value})}
+                          className="w-full p-2 border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100"
+                        />
+                      </div>
+                      
+                      {/* Toughness */}
+                      <div>
+                        <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+                          Toughness
+                        </label>
+                        <input
+                          type="text"
+                          value={customCardData.toughness || ''}
+                          onChange={(e) => setCustomCardData({...customCardData, toughness: e.target.value})}
+                          className="w-full p-2 border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100"
+                        />
+                      </div>
+                      
+                      {/* Loyalty */}
+                      <div>
+                        <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+                          Loyalty (for Planeswalkers)
+                        </label>
+                        <input
+                          type="number"
+                          value={customCardData.loyalty || ''}
+                          onChange={(e) => setCustomCardData({...customCardData, loyalty: parseInt(e.target.value) || undefined})}
+                          className="w-full p-2 border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100"
+                        />
+                      </div>
+                      
+                      {/* Image URL */}
+                      <div>
+                        <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+                          Image URL
+                        </label>
+                        <input
+                          type="text"
+                          value={customCardData.imageUrl || ''}
+                          onChange={(e) => setCustomCardData({...customCardData, imageUrl: e.target.value})}
+                          className="w-full p-2 border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100"
+                        />
+                      </div>
+                      
+                      {/* Artist */}
+                      <div>
+                        <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+                          Artist
+                        </label>
+                        <input
+                          type="text"
+                          value={customCardData.artist || ''}
+                          onChange={(e) => setCustomCardData({...customCardData, artist: e.target.value})}
+                          className="w-full p-2 border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100"
+                        />
+                      </div>
+                    </div>
+                    
+                    {/* Card Text */}
+                    <div className="mb-4">
+                      <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+                        Card Text
+                      </label>
+                      <textarea
+                        value={customCardData.text || ''}
+                        onChange={(e) => setCustomCardData({...customCardData, text: e.target.value})}
+                        className="w-full p-2 border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100"
+                        rows={4}
+                      />
+                    </div>
+                    
+                    {/* Flavor Text */}
+                    <div className="mb-4">
+                      <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+                        Flavor Text
+                      </label>
+                      <textarea
+                        value={customCardData.flavorText || ''}
+                        onChange={(e) => setCustomCardData({...customCardData, flavorText: e.target.value})}
+                        className="w-full p-2 border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100"
+                        rows={2}
+                      />
+                    </div>
+                    
+                    {/* Preview of the card */}
+                    <div className="mt-4 p-3 bg-gray-50 dark:bg-gray-700 rounded-lg">
+                      <h5 className="text-sm font-medium mb-2 text-gray-700 dark:text-gray-300">Card Preview</h5>
+                      <div className="flex">
+                        <div className="w-1/3">
+                          {customCardData.imageUrl ? (
+                            <img 
+                              src={`${API_BASE_URL}/image-proxy?url=${encodeURIComponent(customCardData.imageUrl)}`}
+                              alt={customCardData.name || 'Card'}
+                              className="w-full rounded-lg shadow-md"
+                              onError={(e) => {
+                                e.currentTarget.src = 'data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22100%22%20height%3D%22140%22%20viewBox%3D%220%200%20100%20140%22%20preserveAspectRatio%3D%22none%22%3E%3Crect%20width%3D%22100%22%20height%3D%22140%22%20fill%3D%22%23eee%22%3E%3C%2Frect%3E%3Ctext%20text-anchor%3D%22middle%22%20x%3D%2250%22%20y%3D%2270%22%20style%3D%22fill%3A%23aaa%3Bfont-weight%3Abold%3Bfont-size%3A12px%3Bfont-family%3AArial%2C%20Helvetica%2C%20sans-serif%3Bdominant-baseline%3Acentral%22%3EImage%20Not%20Found%3C%2Ftext%3E%3C%2Fsvg%3E';
+                              }}
+                            />
+                          ) : (
+                            <div className="w-full h-40 bg-gray-200 dark:bg-gray-600 rounded-lg flex items-center justify-center text-gray-500 dark:text-gray-400">
+                              No Image
+                            </div>
+                          )}
+                        </div>
+                        <div className="w-2/3 pl-4">
+                          <h3 className="text-lg font-bold">{customCardData.name || 'Unnamed Card'}</h3>
+                          <div className="text-sm text-gray-600 dark:text-gray-300 mb-1">
+                            {customCardData.manaCost || ''}
+                          </div>
+                          <div className="text-sm text-gray-600 dark:text-gray-300 mb-2">
+                            {customCardData.type || 'No Type'}
+                          </div>
+                          <div className="text-sm mb-2">{customCardData.text || 'No text'}</div>
+                          {(customCardData.power || customCardData.toughness) && (
+                            <div className="text-sm text-gray-600 dark:text-gray-300 mb-1">
+                              Power/Toughness: {customCardData.power || '0'}/{customCardData.toughness || '0'}
+                            </div>
+                          )}
+                          {customCardData.loyalty && (
+                            <div className="text-sm text-gray-600 dark:text-gray-300 mb-1">
+                              Loyalty: {customCardData.loyalty}
+                            </div>
+                          )}
+                          {customCardData.artist && (
+                            <div className="text-xs text-gray-500 dark:text-gray-400 italic mt-2">
+                              Artist: {customCardData.artist}
+                            </div>
+                          )}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                )}
+                
+                <div className="flex space-x-2">
+                  <button
+                    onClick={async () => {
+                      if (!card?.id) return;
+                      
+                      try {
+                        setAddingHistory(true);
+                        setHistoryError(null);
+                        
+                        const token = localStorage.getItem('token');
+                        if (!token) {
+                          setHistoryError('Authentication token is missing. Please log in again.');
+                          return;
+                        }
+                        
+                        const result = await addCardHistory(
+                          card.id,
+                          historyNote || 'Manual history entry',
+                          token,
+                          useCustomData ? customCardData || undefined : undefined
+                        );
+                        
+                        setHistorySuccess('History entry added successfully!');
+                        setHistoryNote('');
+                        
+                        // Auto-hide success message after 3 seconds
+                        setTimeout(() => {
+                          setHistorySuccess(null);
+                        }, 3000);
+                      } catch (error) {
+                        console.error('Error adding history:', error);
+                        setHistoryError('Failed to add history entry. Please try again.');
+                      } finally {
+                        setAddingHistory(false);
+                      }
+                    }}
+                    disabled={addingHistory}
+                    className="px-4 py-2 bg-green-600 hover:bg-green-700 text-white rounded-lg flex items-center space-x-2 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                  >
+                    {addingHistory ? (
+                      <>
+                        <div className="animate-spin h-4 w-4 border-2 border-white border-t-transparent rounded-full mr-2" />
+                        <span>Saving...</span>
+                      </>
+                    ) : (
+                      <>
+                        <FaSave className="text-white" />
+                        <span>Save History</span>
+                      </>
+                    )}
+                  </button>
+                  <button
+                    onClick={() => {
+                      setShowAddHistoryForm(false);
+                      setHistoryNote('');
+                      setHistoryError(null);
+                      setHistorySuccess(null);
+                      setUseCustomData(false);
+                    }}
+                    className="px-4 py-2 bg-gray-500 hover:bg-gray-600 text-white rounded-lg transition-colors"
+                  >
+                    Cancel
+                  </button>
+                </div>
+              </div>
+            )}
+            
             <div className="bg-gray-100 dark:bg-gray-700 p-4 rounded-lg mb-4">
               <p className="dark:text-white text-base leading-relaxed" 
                  style={{ lineHeight: '1.6em' }}
@@ -875,6 +1239,15 @@ export default function CardDetailPage() {
           </div>
         </div>
       </div>
+      
+      {/* Card History Modal */}
+      {card && card.id && (
+        <CardHistoryModal
+          cardId={card.id}
+          isOpen={showHistoryModal}
+          onClose={() => setShowHistoryModal(false)}
+        />
+      )}
     </div>
   );
 }
