@@ -220,29 +220,6 @@ export async function getCardHistory(cardId: string, page: number = 1, limit: nu
   }
 }
 
-// Check if a card has any history entries
-export async function hasCardHistory(cardId: string): Promise<boolean> {
-  try {
-    const response = await fetch(`${API_BASE_URL}/cards/${cardId}/has-history`, {
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    });
-    
-    if (!response.ok) {
-      const errorText = await response.text();
-      console.error(`API error response: ${errorText}`);
-      throw new Error(`API error: ${response.status} - ${errorText}`);
-    }
-    
-    const data = await response.json();
-    return data.has_history;
-  } catch (error) {
-    console.error('Error checking if card has history:', error);
-    return false; // Default to false if there's an error
-  }
-}
-
 // Manually add a card history entry (admin only)
 export async function addCardHistory(
   cardId: string, 

@@ -6,7 +6,6 @@ import { getCards, API_BASE_URL } from '@/lib/api';
 import { useSearchParams, useRouter } from 'next/navigation';
 import { Card } from '@/types/types';
 import RelatedFaceCard from '@/components/RelatedFaceCard';
-import '@/styles/historic.css'; // Import historic mode styles
 
 // Component that uses the useSearchParams hook
 function CubeListContent() {
@@ -30,12 +29,6 @@ function CubeListContent() {
   const [filterSet, setFilterSet] = useState(searchParams.get('set') || '');
   const [filterCustom, setFilterCustom] = useState<boolean | null>(
     searchParams.has('custom') ? searchParams.get('custom') === 'true' : null
-  );
-  const [historicMode, setHistoricMode] = useState<boolean>(
-    searchParams.get('historicMode') === 'true'
-  );
-  const [combinedHistoric, setCombinedHistoric] = useState<boolean>(
-    searchParams.get('combinedHistoric') === 'true'
   );
   const [currentPage, setCurrentPage] = useState(
     parseInt(searchParams.get('page') || '1')
@@ -67,8 +60,6 @@ function CubeListContent() {
     if (filterType) params.set('type', filterType);
     if (filterSet) params.set('set', filterSet);
     if (filterCustom !== null) params.set('custom', filterCustom.toString());
-    if (historicMode) params.set('historicMode', 'true');
-    if (combinedHistoric) params.set('combinedHistoric', 'true');
     if (currentPage !== 1) params.set('page', currentPage.toString());
     if (cardsPerPage !== 50) params.set('limit', cardsPerPage.toString());
     
@@ -100,9 +91,7 @@ function CubeListContent() {
     colorMatchType,
     filterType,
     filterSet,
-    filterCustom,
-    historicMode,
-    combinedHistoric
+    filterCustom
   ]);
 
   // Fetch cards with current filters
@@ -123,8 +112,6 @@ function CubeListContent() {
         sort_by?: string;
         sort_dir?: string;
         facedown?: string;
-        historic_mode?: boolean;
-        combinedHistoric?: boolean;
       } = {
         page: currentPage,
         limit: cardsPerPage,
@@ -187,16 +174,6 @@ function CubeListContent() {
       
       if (filterCustom !== null) {
         params.custom = filterCustom;
-      }
-      
-      // Apply historic mode filters
-      if (historicMode && filterSet) {
-        params.historic_mode = true;
-      }
-      
-      // Apply combined historic mode filter
-      if (combinedHistoric && filterSet === 'combined') {
-        params.combinedHistoric = true;
       }
       
       const response = await getCards(params);
@@ -405,11 +382,8 @@ function CubeListContent() {
     );
   };
 
-  // Determine if we should apply the historic background
-  const historicBackgroundClass = historicMode ? 'historic-background' : '';
-  
   return (
-    <div className={`space-y-6 transition-all duration-500 ${historicBackgroundClass}`}>
+    <div className="space-y-6">
       <h1 className="text-3xl font-bold text-center dark:text-white">Cube Card List</h1>
       
       <div className="bg-white dark:bg-gray-800 p-4 rounded-lg shadow">
@@ -482,28 +456,6 @@ function CubeListContent() {
               <option value="Set 2">Set 2</option>
               <option value="Set 3">Set 3</option>
             </select>
-          </div>
-          
-          <div>
-            <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-              Historic Mode
-            </label>
-            <div className="flex items-center">
-              <label className="inline-flex items-center">
-                <input
-                  type="checkbox"
-                  className="form-checkbox h-5 w-5 text-blue-600"
-                  checked={historicMode}
-                  onChange={() => {
-                    setHistoricMode(!historicMode);
-                    resetPage();
-                  }}
-                />
-                <span className="ml-2 text-gray-700 dark:text-gray-300">
-                  Show historic cards (as they existed when the set was released)
-                </span>
-              </label>
-            </div>
           </div>
         </div>
         
@@ -742,9 +694,8 @@ function CubeListContent() {
                 {filterType ? `Type: ${filterType}` : ''} 
                 {filterSet ? `Set: ${filterSet}` : ''} 
                 {filterCustom !== null ? `Custom: ${filterCustom ? 'Yes' : 'No'}` : ''} 
-                {historicMode ? ` Historic Mode: ${filterSet ? `Showing ${filterSet} as it existed at release` : 'No set selected'}` : ''}
                 {filterColor.length > 0 ? `Colors: ${filterColor.join(', ')} (${colorMatchType === 'exact' ? 'Exactly' : colorMatchType === 'includes' ? 'Including' : 'At most'})` : ''}
-                {!searchTerm && !bodySearchTerm && !filterType && !filterSet && filterCustom === null && !historicMode && filterColor.length === 0 ? 'None' : ''}
+                {!searchTerm && !bodySearchTerm && !filterType && !filterSet && filterCustom === null && filterColor.length === 0 ? 'None' : ''}
               </p>
               <p>
                 <strong>Sorting:</strong> {sortFields.map((sort, index) => 
@@ -759,63 +710,77 @@ function CubeListContent() {
           
           <div className="mtg-card-grid">
             {cards.map(card => (
-              <div key={card.id} className={`${(historicMode || combinedHistoric) && card.is_historic ? 'historic-card set-' + (card.set === 'Set 1' ? '1' : '2') : ''}`}>
-                <Link href={`/card/${encodeURIComponent(card.name)}`}>
-                  <div className="mtg-card card-hover">
-                    {card.imageUrl ? (
-                      <div className="relative">
-                        <RelatedFaceCard card={card} />
-                        {(historicMode || combinedHistoric) && card.is_historic && (
-                          <div className={`historic-badge set-${card.set === 'Set 1' ? '1' : '2'}`}>
-                            {card.set}
+              <Link href={`/card/${encodeURIComponent(card.name)}`} key={card.id}>
+                <div className="mtg-card card-hover">
+                  {card.imageUrl ? (
+                    <div className="relative h-full w-full overflow-hidden">
+                      {card.relatedFace ? (
+                        <RelatedFaceCard card={card} className="w-full h-full" />
+                      ) : (
+                        <img 
+                          src={card.imageUrl}
+                          alt={card.name}
+                          className="mtg-card-image"
+                          onError={(e) => {
+                            console.error('Error loading image:', card.imageUrl);
+                            // Try the proxy if direct loading fails
+                            if (card.imageUrl) {
+                              e.currentTarget.src = `${API_BASE_URL}/image-proxy?url=${encodeURIComponent(card.imageUrl)}`;
+                              // Set a backup error handler for the proxy
+                              e.currentTarget.onerror = () => {
+                                e.currentTarget.src = 'data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22100%22%20height%3D%22140%22%20viewBox%3D%220%200%20100%20140%22%20preserveAspectRatio%3D%22none%22%3E%3Crect%20width%3D%22100%22%20height%3D%22140%22%20fill%3D%22%23eee%22%3E%3C%2Frect%3E%3Ctext%20text-anchor%3D%22middle%22%20x%3D%2250%22%20y%3D%2270%22%20style%3D%22fill%3A%23aaa%3Bfont-weight%3Abold%3Bfont-size%3A12px%3Bfont-family%3AArial%2C%20Helvetica%2C%20sans-serif%3Bdominant-baseline%3Acentral%22%3EImage%20Not%20Found%3C%2Ftext%3E%3C%2Fsvg%3E';
+                              };
+                            } else {
+                              e.currentTarget.src = 'data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22100%22%20height%3D%22140%22%20viewBox%3D%220%200%20100%20140%22%20preserveAspectRatio%3D%22none%22%3E%3Crect%20width%3D%22100%22%20height%3D%22140%22%20fill%3D%22%23eee%22%3E%3C%2Frect%3E%3Ctext%20text-anchor%3D%22middle%22%20x%3D%2250%22%20y%3D%2270%22%20style%3D%22fill%3A%23aaa%3Bfont-weight%3Abold%3Bfont-size%3A12px%3Bfont-family%3AArial%2C%20Helvetica%2C%20sans-serif%3Bdominant-baseline%3Acentral%22%3EImage%20Not%20Found%3C%2Ftext%3E%3C%2Fsvg%3E';
+                            }
+                          }}
+                        />
+                      )}
+                      <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-70 p-2">
+                        <h3 className="font-bold text-white text-sm truncate">{card.name}</h3>
+                        <div className="flex items-center justify-between mt-1">
+                          <div className="flex space-x-1">
+                            {card.colors.map(color => {
+                              const colorClasses: Record<string, string> = {
+                                W: 'bg-mtg-white text-black',
+                                U: 'bg-mtg-blue text-white',
+                                B: 'bg-mtg-black text-black',
+                                R: 'bg-mtg-red text-white',
+                                G: 'bg-mtg-green text-white',
+                              };
+                              
+                              return (
+                                <span 
+                                  key={color} 
+                                  className={`w-4 h-4 rounded-full flex items-center justify-center text-xs font-bold ${colorClasses[color]}`}
+                                >
+                                  {color}
+                                </span>
+                              );
+                            })}
                           </div>
-                        )}
-                        <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-70 p-2">
-                          <h3 className="font-bold text-white text-sm truncate">{card.name}</h3>
-                          <div className="flex items-center justify-between mt-1">
-                            <div className="flex space-x-1">
-                              {card.colors.map(color => {
-                                const colorClasses: Record<string, string> = {
-                                  W: 'bg-mtg-white text-black',
-                                  U: 'bg-mtg-blue text-white',
-                                  B: 'bg-mtg-black text-black',
-                                  R: 'bg-mtg-red text-white',
-                                  G: 'bg-mtg-green text-white',
-                                };
-                                
-                                return (
-                                  <span 
-                                    key={color} 
-                                    className={`w-4 h-4 rounded-full flex items-center justify-center text-xs font-bold ${colorClasses[color]}`}
-                                  >
-                                    {color}
-                                  </span>
-                                );
-                              })}
-                            </div>
-                            <div className="flex items-center space-x-1">
-                              {card.custom && (
-                                <span className="text-xs px-1 py-0.5 bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 rounded-full">
-                                  Custom
-                                </span>
-                              )}
-                              {card.relatedFace && (
-                                <span className="text-xs px-1 py-0.5 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded-full" title="Has related face">
-                                  ↔
-                                </span>
-                              )}
-                            </div>
+                          <div className="flex items-center space-x-1">
+                            {card.custom && (
+                              <span className="text-xs px-1 py-0.5 bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 rounded-full">
+                                Custom
+                              </span>
+                            )}
+                            {card.relatedFace && (
+                              <span className="text-xs px-1 py-0.5 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded-full" title="Has related face">
+                                ↔
+                              </span>
+                            )}
                           </div>
                         </div>
                       </div>
-                    ) : (
-                      <div className="h-full bg-gray-300 dark:bg-gray-700 flex items-center justify-center">
-                        <span className="text-gray-500 dark:text-gray-400">No Image</span>
-                      </div>
-                    )}
-                  </div>
-                </Link>
-              </div>
+                    </div>
+                  ) : (
+                    <div className="h-full bg-gray-300 dark:bg-gray-700 flex items-center justify-center">
+                      <span className="text-gray-500 dark:text-gray-400">No Image</span>
+                    </div>
+                  )}
+                </div>
+              </Link>
             ))}
           </div>
         </>

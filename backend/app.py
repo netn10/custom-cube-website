@@ -2,8 +2,7 @@ from flask import Flask, jsonify, request, Response, session
 from flask_cors import CORS
 from pymongo import MongoClient
 import os
-import sys
-from bson import ObjectId, json_util
+from bson import ObjectId
 from dotenv import load_dotenv
 import json
 import random
@@ -13,28 +12,6 @@ import requests
 import jwt
 from functools import wraps
 from werkzeug.security import generate_password_hash, check_password_hash
-
-def convert_objectid(obj):
-    """Convert ObjectId to string in a dictionary."""
-    if isinstance(obj, ObjectId):
-        return str(obj)
-    elif isinstance(obj, dict):
-        return {k: convert_objectid(v) for k, v in obj.items()}
-    elif isinstance(obj, list):
-        return [convert_objectid(item) for item in obj]
-    return obj
-
-# Set up debug logging to file
-def debug_log(*args):
-    with open('debug.log', 'a', encoding='utf-8') as f:
-        timestamp = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-        message = ' '.join(str(arg) for arg in args)
-        f.write(f'[{timestamp}] {message}\n')
-        print(f'[DEBUG] {message}')
-
-# Clear the debug log at startup
-with open('debug.log', 'w', encoding='utf-8') as f:
-    f.write('=== DEBUG LOG STARTED ===\n')
 
 # Load environment variables
 load_dotenv()
@@ -289,78 +266,6 @@ def index():
 @app.route("/api/cards", methods=["GET"])
 def get_cards():
     """Get all cards with optional filtering"""
-    # Debug logging
-    debug_log("\n=== DEBUG: get_cards called ===")
-    debug_log(f"Request args: {request.args}")
-    debug_log(f"Current working directory: {os.getcwd()}")
-    debug_log(f"Python version: {sys.version}")
-    debug_log(f"MongoDB URI: {MONGO_URI}")
-    
-    # Check for Stealing Time card - try with case-insensitive search
-    stealing_time = db.cards.find_one({"name": {"$regex": "^Stealing Time$", "$options": "i"}})
-    if stealing_time:
-        debug_log(f"Found 'Stealing Time' in set: {stealing_time.get('set')} (ID: {stealing_time.get('_id')})")        
-        debug_log(f"Full card data: {stealing_time}")
-        
-        # Check all history entries for this card
-        card_id_str = str(stealing_time['_id'])
-        debug_log(f"Searching for history with card_id: {card_id_str}")
-        
-        # Try to find any history entries with this card ID
-        history = list(db.card_history.find({"$or": [
-            {"card_id": card_id_str},
-            {"card_id": stealing_time['_id']}  # Try with ObjectId too
-        ]}).sort("timestamp", 1))
-        
-        debug_log(f"Found {len(history)} history entries for 'Stealing Time'")
-        for i, entry in enumerate(history, 1):
-            vd = entry.get('version_data', {})
-            debug_log(f"  Entry {i}:")
-            debug_log(f"    Set: {vd.get('set', 'N/A')}")
-            debug_log(f"    Timestamp: {entry.get('timestamp')}")
-            debug_log(f"    Version Data ID: {vd.get('_id')}")
-            debug_log(f"    Entry ID: {entry.get('_id')}")
-            debug_log(f"    Card ID: {entry.get('card_id')} (type: {type(entry.get('card_id')).__name__})")
-        
-        # Check if there are any Set 1 versions in history
-        set1_versions = list(db.card_history.find({
-            "$or": [
-                {"card_id": card_id_str},
-                {"card_id": stealing_time['_id']}
-            ],
-            "version_data.set": "Set 1"
-        }))
-        debug_log(f"Found {len(set1_versions)} Set 1 versions in history")
-        
-        # Try to find any Set 1 versions by card name
-        set1_by_name = list(db.card_history.find({
-            "version_data.name": "Stealing Time",
-            "version_data.set": "Set 1"
-        }))
-        debug_log(f"Found {len(set1_by_name)} Set 1 versions by card name")
-        
-        # Special debug - dump the full JSON of any Set 1 versions found by name
-        for i, entry in enumerate(set1_by_name):
-            debug_log(f"Set 1 'Stealing Time' by name (entry {i+1}):")
-            debug_log(f"  Full entry: {entry}")
-            debug_log(f"  Card ID: {entry.get('card_id')}")
-            debug_log(f"  Version data: {entry.get('version_data')}")
-            debug_log(f"  Set: {entry.get('version_data', {}).get('set')}")
-            debug_log(f"  Name: {entry.get('version_data', {}).get('name')}")
-        
-        # Check all collections in the database
-        collections = db.list_collection_names()
-        debug_log(f"Available collections: {collections}")
-        
-        # Check if we can find the card in any collection
-        for collection_name in collections:
-            if collection_name.startswith('system.'):
-                continue
-            collection = db[collection_name]
-            count = collection.count_documents({"name": "Stealing Time"})
-            if count > 0:
-                debug_log(f"Found {count} documents in collection '{collection_name}' with name 'Stealing Time'")
-    
     # Get query parameters
     search = request.args.get("search", "")
     body_search = request.args.get("body_search", "")
@@ -376,13 +281,6 @@ def get_cards():
     custom = request.args.get("custom", "")
     facedown = request.args.get("facedown", "")
     include_facedown = request.args.get("include_facedown", "").lower() == "true"
-    # Check for both parameter names for backward compatibility
-    historic_mode_param = request.args.get("historic_mode", "")
-    historic_mode_camel = request.args.get("historicMode", "")
-    historic_mode = historic_mode_param.lower() == "true" or historic_mode_camel.lower() == "true"
-    
-    # Historic mode is now handled with the historic_mode parameter only
-    # combined_historic is no longer used
     page = int(request.args.get("page", 1))
     limit = int(request.args.get("limit", 50))
     sort_by = request.args.get("sort_by", "name")
@@ -493,306 +391,20 @@ def get_cards():
         )
         sort_spec.append((field, direction))
 
-    # Check if we need to use historic mode
-    if historic_mode and card_set:
-        try:
-            # Get the set number from the set name (e.g., "Set 1" -> 1)
-            set_number = int(card_set.split()[-1]) if card_set.split()[-1].isdigit() else None
-            
-            # Create a list to store the historic cards
-            historic_cards = []
-            
-            # In Historic Mode, Set 3 cannot be selected
-            if set_number == 3:
-                return jsonify({"error": "Set 3 cannot be selected in Historic Mode"}), 400
-                
-            # Modify the query based on set number
-            if set_number == 1:
-                # For Historic Set 1, we only want cards from Set 1 and cards that have a historic version in Set 1
-                if "set" in query:
-                    # Remove the set filter - we'll filter after getting historic versions
-                    del query["set"]
-            elif set_number == 2:
-                # For Historic Set 2, we want cards from Set 1 and Set 2 as they existed when Set 2 was created
-                if "set" in query and query["set"] == "Set 2":
-                    query["set"] = {"$in": ["Set 1", "Set 2"]}
-            
-            # Execute query with sorting to get the current cards
-            cursor = db.cards.find(query).sort(sort_spec).skip(skip).limit(limit)
-            current_cards = list(cursor)
-            
-            # For each current card, find its historic version
-            for card in current_cards:
-                card_id = card.get("_id")
-                
-                # Convert ObjectId to string for consistency
-                if isinstance(card_id, ObjectId):
-                    card_id = str(card_id)
-                
-                # Find historic entries for this card
-                historic_entries = list(db.card_history.find({"card_id": card_id}).sort("timestamp", 1))
-                
-                # Find the appropriate historic version based on set number
-                historic_version = None
-                
-                if historic_entries:
-                    # For Historic Set 1, only include cards from Set 1 and cards with a historic version in Set 1
-                    if set_number == 1:
-                        # Get the current set of the card
-                        current_set = card.get("set")
-                        
-                        # If the card is already in Set 1, use the current version
-                        if current_set == "Set 1":
-                            historic_version = card
-                        else:
-                            # For cards not in Set 1, check if they have a historic version in Set 1
-                            set1_entries = [entry for entry in historic_entries 
-                                           if entry.get("version_data", {}).get("set") == "Set 1"]
-                            if set1_entries:
-                                # Use the historic version from Set 1
-                                historic_version = set1_entries[0].get("version_data")
-                            else:
-                                # Skip cards that don't have a historic version in Set 1
-                                historic_version = None
-                    
-                    # For Historic Set 2, include cards from Set 1 and Set 2 as they existed when Set 2 was created
-                    elif set_number == 2:
-                        current_set = card.get("set")
-                        
-                        # For Set 2 cards, use the earliest version from Set 2
-                        if current_set == "Set 2":
-                            set2_entries = [entry for entry in historic_entries 
-                                          if entry.get("version_data", {}).get("set") == "Set 2"]
-                            
-                            if set2_entries:
-                                # Use the earliest version from Set 2 (original release version)
-                                historic_version = set2_entries[0].get("version_data")
-                            else:
-                                # If no historic version exists, use the current version
-                                historic_version = card
-                        
-                        # For Set 1 cards, use the latest version from Set 1 that existed when Set 2 was released
-                        elif current_set == "Set 1":
-                            set1_entries = [entry for entry in historic_entries 
-                                          if entry.get("version_data", {}).get("set") == "Set 1"]
-                            
-                            if set1_entries:
-                                # Use the latest version from Set 1 that existed when Set 2 was released
-                                historic_version = set1_entries[-1].get("version_data")
-                            else:
-                                # If no historic version exists, use the current version
-                                historic_version = card
-                        
-                        # For cards from later sets, check if they have a historic version in Set 1 or Set 2
-                        else:
-                            # First check for Set 2 version
-                            set2_entries = [entry for entry in historic_entries 
-                                          if entry.get("version_data", {}).get("set") == "Set 2"]
-                            
-                            if set2_entries:
-                                # Use the earliest version from Set 2
-                                historic_version = set2_entries[0].get("version_data")
-                            else:
-                                # If no Set 2 version, check for Set 1 version
-                                set1_entries = [entry for entry in historic_entries 
-                                              if entry.get("version_data", {}).get("set") == "Set 1"]
-                                
-                                if set1_entries:
-                                    # Use the latest version from Set 1
-                                    historic_version = set1_entries[-1].get("version_data")
-                                else:
-                                    # Skip cards that don't have a historic version in Set 1 or Set 2
-                                    historic_version = None
-                
-                # If we found a historic version, use it
-                if historic_version:
-                    # Convert ObjectId to string if needed
-                    if isinstance(historic_version.get("_id"), ObjectId):
-                        historic_version["id"] = str(historic_version.pop("_id"))
-                    elif "_id" in historic_version:
-                        historic_version["id"] = historic_version.pop("_id")
-                    
-                    # Add a field to indicate if this is a historic version
-                    historic_version["is_historic"] = True
-                    
-                    # Add to our list of historic cards
-                    historic_cards.append(historic_version)
-                else:
-                    # If no historic version found, use the current card
-                    card["id"] = str(card.pop("_id"))
-                    historic_cards.append(card)
-            
-            # Process cards based on the historic mode and set selection
-            if set_number == 1 or set_number == 2:
-                # Filter out cards that don't have a historic version for the selected set
-                filtered_cards = [card for card in historic_cards if card is not None]
-                cards = filtered_cards
-                
-                # Special debug for Stealing Time
-                stealing_time_card = db.cards.find_one({"name": "Stealing Time"})
-                if stealing_time_card:
-                    debug_log(f"Found current 'Stealing Time' card in set: {stealing_time_card.get('set')}")
-                    debug_log(f"  ID: {stealing_time_card.get('_id')}")
-                    
-                    # Check for history entries
-                    st_history = list(db.card_history.find({"card_id": str(stealing_time_card.get('_id'))}))
-                    debug_log(f"Found {len(st_history)} history entries for current 'Stealing Time' card")
-                    
-                    # Also try to find by name
-                    st_history_by_name = list(db.card_history.find({"version_data.name": "Stealing Time"}))
-                    debug_log(f"Found {len(st_history_by_name)} history entries for 'Stealing Time' by name")
-                    
-                    # Check all history entries for Set 1 versions
-                    st_set1_history = list(db.card_history.find({
-                        "version_data.name": "Stealing Time",
-                        "version_data.set": "Set 1"
-                    }))
-                    debug_log(f"Found {len(st_set1_history)} Set 1 history entries for 'Stealing Time'")
-                    for entry in st_set1_history:
-                        debug_log(f"  Set 1 'Stealing Time' entry:")
-                        debug_log(f"    Card ID: {entry.get('card_id')}")
-                        debug_log(f"    Set: {entry.get('version_data', {}).get('set')}")
-                        debug_log(f"    Name: {entry.get('version_data', {}).get('name')}")
-                
-                # First pass: Process all Set 1 cards
-                for card in all_cards:
-                    card_id = str(card["_id"])
-                    current_set = card.get("set")
-                    card_name = card.get("name")
-                    
-                    # Skip if we've already processed this card (by name)
-                    if card_name in processed_card_names:
-                        continue
-                        
-                    # Get all historic entries for this card
-                    historic_entries = list(db.card_history.find({"card_id": card_id}).sort("timestamp", 1))
-                    
-                    # Always check if this card has a Set 1 version, regardless of current set
-                    has_set1_version = any(entry.get("version_data", {}).get("set") == "Set 1" for entry in historic_entries)
-                    
-                    # If no history entries found by card_id, try to find by name
-                    if not has_set1_version and card_name:
-                        # Try to find any Set 1 versions by card name
-                        set1_by_name = list(db.card_history.find({
-                            "version_data.name": card_name,
-                            "version_data.set": "Set 1"
-                        }))
-                        if set1_by_name:
-                            has_set1_version = True
-                            historic_entries.extend(set1_by_name)
-                            debug_log(f"Found Set 1 version of '{card_name}' by name search")
-                            
-                            # Special debug for Stealing Time
-                            if card_name == "Stealing Time":
-                                debug_log(f"Found 'Stealing Time' Set 1 version by name search")
-                                for entry in set1_by_name:
-                                    debug_log(f"  Entry: {entry.get('_id')}")
-                                    debug_log(f"  Card ID: {entry.get('card_id')}")
-                                    debug_log(f"  Set: {entry.get('version_data', {}).get('set')}")
-                    
-                    # If this card has a Set 1 version, use that
-                    if has_set1_version:
-                        # Find all Set 1 entries
-                        set1_entries = [entry for entry in historic_entries 
-                                      if entry.get("version_data", {}).get("set") == "Set 1"]
-                        
-                        if set1_entries:
-                            # Use the latest Set 1 entry (as it existed when Set 2 was released)
-                            set1_version = set1_entries[-1].get("version_data")
-                            if set1_version:
-                                # Convert ObjectId to string if needed
-                                if isinstance(set1_version.get("_id"), ObjectId):
-                                    set1_version["id"] = str(set1_version.pop("_id"))
-                                elif "_id" in set1_version:
-                                    set1_version["id"] = set1_version.pop("_id")
-                                
-                                # Add a field to indicate this is a historic version
-                                set1_version["is_historic"] = True
-                                combined_cards.append(set1_version)
-                                processed_card_names.add(card_name)
-                        elif current_set == "Set 1":
-                            # If no historic entries but it's a Set 1 card, use current version
-                            card_copy = card.copy()
-                            card_copy["id"] = str(card_copy.pop("_id"))
-                            combined_cards.append(card_copy)
-                            processed_card_names.add(card_name)
-                
-                # Second pass: Process Set 2 cards that don't have a Set 1 version
-                for card in all_cards:
-                    card_id = str(card["_id"])
-                    current_set = card.get("set")
-                    card_name = card.get("name")
-                    
-                    # Skip if we've already processed this card (by name)
-                    if card_name in processed_card_names:
-                        continue
-                        
-                    # Get all historic entries for this card
-                    historic_entries = list(db.card_history.find({"card_id": card_id}).sort("timestamp", 1))
-                    
-                    # Always check if this card has a Set 2 version, regardless of current set
-                    has_set2_version = any(entry.get("version_data", {}).get("set") == "Set 2" for entry in historic_entries)
-                    
-                    # If this card has a Set 2 version, use that
-                    if has_set2_version:
-                        # Find all Set 2 entries
-                        set2_entries = [entry for entry in historic_entries 
-                                      if entry.get("version_data", {}).get("set") == "Set 2"]
-                        
-                        if set2_entries:
-                            # Use the earliest Set 2 entry (original release version)
-                            set2_version = set2_entries[0].get("version_data")
-                            if set2_version:
-                                # Convert ObjectId to string if needed
-                                if isinstance(set2_version.get("_id"), ObjectId):
-                                    set2_version["id"] = str(set2_version.pop("_id"))
-                                elif "_id" in set2_version:
-                                    set2_version["id"] = set2_version.pop("_id")
-                                
-                                # Add a field to indicate this is a historic version
-                                set2_version["is_historic"] = True
-                                combined_cards.append(set2_version)
-                                processed_card_names.add(card_name)
-                        elif current_set == "Set 2":
-                            # If no historic entries but it's a Set 2 card, use current version
-                            card_copy = card.copy()
-                            card_copy["id"] = str(card_copy.pop("_id"))
-                            combined_cards.append(card_copy)
-                            processed_card_names.add(card_name)
-                
-                # Apply pagination to the combined cards
-                total = len(combined_cards)
-                cards = combined_cards[skip:skip+limit]
-            else:
-                # Use the historic cards list as our result
-                cards = historic_cards
-        except Exception as e:
-            # If anything goes wrong, fall back to normal behavior
-            print(f"Error in historic mode: {str(e)}")
-            cursor = db.cards.find(query).sort(sort_spec)
-            cards = list(cursor)
-    else:
-        # Normal mode - just get cards normally
-        cursor = db.cards.find(query).sort(sort_spec)
-        cards = list(cursor)
-    
-    # Apply pagination
-    paginated_cards = cards[skip:skip+limit]
-    
-    # Convert all ObjectIds to strings in the response
-    response_data = {
-        "cards": convert_objectid(paginated_cards),
-        "total": len(cards)
-    }
-    
-    # Use json_util.dumps to handle MongoDB types
-    return Response(
-        json_util.dumps(response_data),
-        mimetype='application/json'
-    )
+    # Execute query with sorting
+    cursor = db.cards.find(query).sort(sort_spec).skip(skip).limit(limit)
+    cards = list(cursor)
+
+    # Convert ObjectId to string for each card
+    for card in cards:
+        card["id"] = str(card.pop("_id"))
+
+    return jsonify({"cards": cards, "total": total})
+
 
 @app.route("/api/cards/<card_id>", methods=["GET"])
 def get_card(card_id):
+    """Get a single card by ID"""
     try:
         # First try to find by string ID
         card = db.cards.find_one({"_id": card_id})
@@ -2080,19 +1692,6 @@ def get_card_history(card_id):
             "total": total_entries,
             "page": page,
             "limit": limit
-        })
-    except Exception as e:
-        return jsonify({"error": str(e)}), 500
-
-@app.route("/api/cards/<card_id>/has-history", methods=["GET"])
-def has_card_history(card_id):
-    """Check if a card has any history entries"""
-    try:
-        # Check if there are any history entries for this card
-        has_history = db.card_history.count_documents({"card_id": card_id}) > 0
-        
-        return jsonify({
-            "has_history": has_history
         })
     except Exception as e:
         return jsonify({"error": str(e)}), 500

@@ -3,7 +3,7 @@
 import { useParams, useRouter, useSearchParams } from 'next/navigation';
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { getCards, getTokenByName, API_BASE_URL, getGeminiResponse, getCardComments, addComment, deleteComment, addCardHistory, hasCardHistory } from '@/lib/api';
+import { getCards, getTokenByName, API_BASE_URL, getGeminiResponse, getCardComments, addComment, deleteComment, addCardHistory } from '@/lib/api';
 import { FaRobot, FaTrash, FaHistory, FaPlus, FaSave } from 'react-icons/fa';
 import { Card, Token, Comment } from '@/types/types';
 import { useAuth } from '@/contexts/AuthContext';
@@ -37,7 +37,6 @@ export default function CardDetailPage() {
   const [historySuccess, setHistorySuccess] = useState<string | null>(null);
   const [customCardData, setCustomCardData] = useState<Partial<Card> | null>(null);
   const [useCustomData, setUseCustomData] = useState(false);
-  const [hasHistory, setHasHistory] = useState(false);
   
   // Comments state
   const [comments, setComments] = useState<Comment[]>([]);
@@ -238,23 +237,6 @@ export default function CardDetailPage() {
       setCommentError('Failed to delete comment. Please try again later.');
     }
   };
-
-  // Check if card has history
-  useEffect(() => {
-    if (card?.id) {
-      const checkCardHistory = async () => {
-        try {
-          const hasHistoryResult = await hasCardHistory(card.id);
-          setHasHistory(hasHistoryResult);
-        } catch (err) {
-          console.error('Error checking card history:', err);
-          setHasHistory(false);
-        }
-      };
-      
-      checkCardHistory();
-    }
-  }, [card]);
 
   useEffect(() => {
     if (params.id) {
@@ -657,16 +639,14 @@ export default function CardDetailPage() {
                 <span>AI Analysis</span>
               </button>
               
-              {/* Card History Button - Only shown if card has history */}
-              {hasHistory && (
-                <button
-                  onClick={() => setShowHistoryModal(true)}
-                  className="px-4 py-2 bg-purple-600 hover:bg-purple-700 text-white rounded-lg flex items-center space-x-2 transition-colors"
-                >
-                  <FaHistory className="text-white" />
-                  <span>View History</span>
-                </button>
-              )}
+              {/* Card History Button */}
+              <button
+                onClick={() => setShowHistoryModal(true)}
+                className="px-4 py-2 bg-purple-600 hover:bg-purple-700 text-white rounded-lg flex items-center space-x-2 transition-colors"
+              >
+                <FaHistory className="text-white" />
+                <span>View History</span>
+              </button>
               
               {/* Add History Button (Admin Only) */}
               {isAdmin && (
