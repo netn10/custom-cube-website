@@ -28,6 +28,35 @@ export default function ResourcesPage() {
     <div className="max-w-4xl mx-auto">
       <h1 className="text-3xl font-bold mb-6">Resources</h1>
       
+      {/* Historic Set Viewing */}
+      <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 border border-gray-200 dark:border-gray-700 mb-6">
+        <h2 className="text-xl font-semibold mb-4">Historic Set Viewing</h2>
+        <p className="mb-4">
+          View cards as they existed in previous sets. This is useful for seeing how cards have evolved over time.
+        </p>
+        
+        <div className="flex flex-wrap gap-3">
+          <Link 
+            href="/cube-list?historicMode=true&set=Set%201" 
+            className="inline-flex items-center px-4 py-2 bg-purple-600 hover:bg-purple-700 text-white rounded-md transition-colors"
+          >
+            Historic Set 1
+          </Link>
+          <Link 
+            href="/cube-list?historicMode=true&set=Set%202" 
+            className="inline-flex items-center px-4 py-2 bg-indigo-600 hover:bg-indigo-700 text-white rounded-md transition-colors"
+          >
+            Historic Set 2
+          </Link>
+          <Link 
+            href="/cube-list?combinedHistoric=true&set=combined" 
+            className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white rounded-md transition-colors"
+          >
+            Historic Set 1 + Set 2
+          </Link>
+        </div>
+      </div>
+      
       <div className="grid md:grid-cols-2 gap-6">
         {/* Cards PDF */}
         <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 border border-gray-200 dark:border-gray-700">
