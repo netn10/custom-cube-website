@@ -3,7 +3,7 @@
 import { useParams, useRouter, useSearchParams } from 'next/navigation';
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { getCards, getTokenByName, API_BASE_URL, getGeminiResponse, getCardComments, addComment, deleteComment, addCardHistory } from '@/lib/api';
+import { getCards, getTokenByName, API_BASE_URL, getGeminiResponse, getCardComments, addComment, deleteComment, addCardHistory, getCardHistory } from '@/lib/api';
 import { FaRobot, FaTrash, FaHistory, FaPlus, FaSave } from 'react-icons/fa';
 import { Card, Token, Comment } from '@/types/types';
 import { useAuth } from '@/contexts/AuthContext';
@@ -37,6 +37,7 @@ export default function CardDetailPage() {
   const [historySuccess, setHistorySuccess] = useState<string | null>(null);
   const [customCardData, setCustomCardData] = useState<Partial<Card> | null>(null);
   const [useCustomData, setUseCustomData] = useState(false);
+  const [hasHistory, setHasHistory] = useState<boolean>(false);
   
   // Comments state
   const [comments, setComments] = useState<Comment[]>([]);
@@ -240,32 +241,68 @@ export default function CardDetailPage() {
 
   useEffect(() => {
     if (params.id) {
-      // Fetch card data from API using name search
-      const fetchCard = async () => {
-        try {
-          const cardName = decodeURIComponent(params.id as string);
-          const exactSearchResults = await getCards({ search: `"${cardName}"`, limit: 10, include_facedown: true });
-          
-          // If we don't get an exact match, try a broader search
-          let searchResults = exactSearchResults;
-          if (exactSearchResults.cards.length === 0) {
-            searchResults = await getCards({ search: cardName, limit: 10, include_facedown: true });
-          }
-          
-          // Look for cards in the results
-          const cards = searchResults.cards;
-          
-          // First, try to find an exact name match (case insensitive)
-          const exactMatch = cards.find(c => 
-            c.name.toLowerCase() === cardName.toLowerCase()
-          );
-          
-          // Determine the card to use - exact match, first result, or facedown card
-          let cardToUse: Card | null = null;
-          
-          if (exactMatch) {
-            cardToUse = exactMatch;
-          }
+      // Check if a card has history
+  const checkCardHistory = async (cardId: string) => {
+    if (!cardId) {
+      console.log('No card ID provided for history check');
+      setHasHistory(false);
+      return;
+    }
+    
+    try {
+      console.log('Checking history for card ID:', cardId);
+      const history = await getCardHistory(cardId, 1, 1);
+      console.log('History response:', history);
+      const hasHistory = history.total > 0;
+      console.log('Has history:', hasHistory);
+      setHasHistory(hasHistory);
+      
+      // If no history found, log the exact request URL for debugging
+      if (!hasHistory) {
+        console.log(`No history found for card ID: ${cardId}`);
+        console.log(`History endpoint: ${API_BASE_URL}/cards/${cardId}/history?page=1&limit=1`);
+      }
+    } catch (error) {
+      console.error('Error checking card history:', error);
+      // Log the full error for debugging
+      if (error instanceof Error) {
+        console.error('Error details:', {
+          message: error.message,
+          name: error.name,
+          stack: error.stack
+        });
+      }
+      // Don't set hasHistory to false here as it might be a temporary error
+      // The button will still be hidden by default
+    }
+  };
+
+  // Fetch card data from API using name search
+  const fetchCard = async () => {
+    try {
+      const cardName = decodeURIComponent(params.id as string);
+      const exactSearchResults = await getCards({ search: `"${cardName}"`, limit: 10, include_facedown: true });
+      
+      // If we don't get an exact match, try a broader search
+      let searchResults = exactSearchResults;
+      if (exactSearchResults.cards.length === 0) {
+        searchResults = await getCards({ search: cardName, limit: 10, include_facedown: true });
+      }
+      
+      // Look for cards in the results
+      const cards = searchResults.cards;
+      
+      // First, try to find an exact name match (case insensitive)
+      const exactMatch = cards.find(c => 
+        c.name.toLowerCase() === cardName.toLowerCase()
+      );
+      
+      // Determine the card to use - exact match, first result, or facedown card
+      let cardToUse: Card | null = null;
+      
+      if (exactMatch) {
+        cardToUse = exactMatch;
+      }
           
           setCard(cardToUse);
             
@@ -286,9 +323,22 @@ export default function CardDetailPage() {
             }
           }
           
-          // Fetch comments for the card if we have a valid card ID
+          // Fetch comments and check history for the card if we have a valid card ID
           if (cardToUse && cardToUse.id) {
             fetchComments(cardToUse.id);
+            console.log('Card data:', {
+              id: cardToUse.id,
+              name: cardToUse.name,
+              // @ts-ignore - _id might exist on the object
+              _id: cardToUse._id
+            });
+            // Try with both possible ID fields
+            checkCardHistory(cardToUse.id);
+            // @ts-ignore - _id might exist on the object
+            if (cardToUse._id && cardToUse._id !== cardToUse.id) {
+              console.log('Trying with _id field as well');
+              checkCardHistory(cardToUse._id);
+            }
           }
           
           // We don't automatically analyze with AI anymore - user must click the button
@@ -639,14 +689,16 @@ export default function CardDetailPage() {
                 <span>AI Analysis</span>
               </button>
               
-              {/* Card History Button */}
-              <button
-                onClick={() => setShowHistoryModal(true)}
-                className="px-4 py-2 bg-purple-600 hover:bg-purple-700 text-white rounded-lg flex items-center space-x-2 transition-colors"
-              >
-                <FaHistory className="text-white" />
-                <span>View History</span>
-              </button>
+              {/* Card History Button - Only show if card has history */}
+              {hasHistory && (
+                <button
+                  onClick={() => setShowHistoryModal(true)}
+                  className="px-4 py-2 bg-purple-600 hover:bg-purple-700 text-white rounded-lg flex items-center space-x-2 transition-colors"
+                >
+                  <FaHistory className="text-white" />
+                  <span>View History</span>
+                </button>
+              )}
               
               {/* Add History Button (Admin Only) */}
               {isAdmin && (
