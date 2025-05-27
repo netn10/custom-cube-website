@@ -201,21 +201,36 @@ export async function getCardById(id: string): Promise<Card> {
 // Get card history (past iterations)
 export async function getCardHistory(cardId: string, page: number = 1, limit: number = 10): Promise<CardHistoryResponse> {
   try {
-    const response = await fetch(`${API_BASE_URL}/cards/${cardId}/history?page=${page}&limit=${limit}`, {
+    // Ensure the URL is constructed correctly whether API_BASE_URL ends with /api or not
+    const baseUrl = API_BASE_URL.endsWith('/') ? API_BASE_URL.slice(0, -1) : API_BASE_URL;
+    const endpoint = baseUrl.endsWith('/api') 
+      ? `${baseUrl}/cards/${cardId}/history` 
+      : `${baseUrl}/api/cards/${cardId}/history`;
+      
+    const response = await fetch(`${endpoint}?page=${page}&limit=${limit}`, {
       headers: {
         'Content-Type': 'application/json',
       },
+      credentials: 'include', // Include cookies for authentication if needed
     });
     
     if (!response.ok) {
       const errorText = await response.text();
       console.error(`API error response: ${errorText}`);
+      console.error(`Request URL: ${endpoint}?page=${page}&limit=${limit}`);
       throw new Error(`API error: ${response.status} - ${errorText}`);
     }
     
     return await response.json();
   } catch (error) {
     console.error('Error fetching card history:', error);
+    console.error('Error details:', {
+      cardId,
+      page,
+      limit,
+      API_BASE_URL,
+      error: error instanceof Error ? error.message : 'Unknown error'
+    });
     throw error;
   }
 }
