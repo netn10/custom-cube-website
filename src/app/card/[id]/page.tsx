@@ -120,62 +120,6 @@ export default function CardDetailPage() {
     }
   }, [searchParams]);
   
-  // Check if card has history when component mounts or card changes
-  useEffect(() => {
-    const checkCardHistory = async (cardId: string) => {
-      if (!cardId) {
-        console.log('No card ID provided for history check');
-        setHasHistory(false);
-        return;
-      }
-      
-      try {
-        console.log('Checking history for card ID:', cardId);
-        console.log('Using API URL:', API_BASE_URL);
-        
-        // Make a test request to the API to check connectivity
-        const testResponse = await fetch(`${API_BASE_URL}/health`).catch(e => {
-          console.error('API health check failed:', e);
-          throw new Error(`API connection failed: ${e.message}`);
-        });
-        
-        if (!testResponse.ok) {
-          throw new Error(`API health check failed with status ${testResponse.status}`);
-        }
-        
-        // Now check the card history
-        const history = await getCardHistory(cardId, 1, 1);
-        console.log('History response:', history);
-        const hasHistory = history && history.total > 0;
-        console.log('Has history:', hasHistory);
-        setHasHistory(hasHistory);
-        
-        // If no history found, log the exact request URL for debugging
-        if (!hasHistory) {
-          console.log(`No history found for card ID: ${cardId}`);
-          console.log(`History endpoint: ${API_BASE_URL}/cards/${cardId}/history?page=1&limit=1`);
-        }
-      } catch (error) {
-        console.error('Error checking card history:', error);
-        // Log the full error for debugging
-        if (error instanceof Error) {
-          console.error('Error details:', {
-            message: error.message,
-            name: error.name,
-            stack: error.stack
-          });
-        }
-        // Set to true to show the button even if there's an error
-        // This ensures the button is visible in case of temporary API issues
-        setHasHistory(true);
-      }
-    };
-    
-    if (card?.id) {
-      checkCardHistory(card.id);
-    }
-  }, [card?.id]);
-  
   // Function to fetch comments for the current card
   const fetchComments = async (cardId: string) => {
     try {
