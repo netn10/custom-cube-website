@@ -188,15 +188,7 @@ export default function CardHistoryModal({ cardId, isOpen, onClose }: CardHistor
   const handleVersionSelect = (version: Card, isCurrentCard: boolean = false) => {
     // Create unique ID for this version
     const versionUniqueId = getCardUniqueId(version, isCurrentCard);
-    
-    // Create unique ID for selected version if it exists
-    const selectedVersionUniqueId = selectedVersion ? 
-      getCardUniqueId(selectedVersion, currentCard && selectedVersion.id === currentCard.id) : null;
-    
-    // Create unique ID for comparison version if it exists
-    const comparisonVersionUniqueId = comparisonVersion ? 
-      getCardUniqueId(comparisonVersion, currentCard && comparisonVersion.id === currentCard.id) : null;
-    
+  
     if (compareMode) {
       // In compare mode
       if (!selectedVersion) {
