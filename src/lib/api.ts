@@ -206,32 +206,81 @@ export async function getCardHistory(cardId: string, page: number = 1, limit: nu
     const endpoint = baseUrl.endsWith('/api') 
       ? `${baseUrl}/cards/${cardId}/history` 
       : `${baseUrl}/api/cards/${cardId}/history`;
-      
-    const response = await fetch(`${endpoint}?page=${page}&limit=${limit}`, {
+    
+    const url = `${endpoint}?page=${page}&limit=${limit}`;
+    console.log('Fetching card history from:', url);
+    
+    const response = await fetch(url, {
+      method: 'GET',
       headers: {
         'Content-Type': 'application/json',
+        'Accept': 'application/json',
       },
-      credentials: 'include', // Include cookies for authentication if needed
+      mode: 'cors',
+      credentials: 'same-origin',
+      cache: 'no-cache',
+      redirect: 'follow',
+      referrerPolicy: 'no-referrer',
+    }).catch(error => {
+      console.error('Network error during fetch:', error);
+      throw new Error(`Network error: ${error.message}`);
     });
     
-    if (!response.ok) {
-      const errorText = await response.text();
-      console.error(`API error response: ${errorText}`);
-      console.error(`Request URL: ${endpoint}?page=${page}&limit=${limit}`);
-      throw new Error(`API error: ${response.status} - ${errorText}`);
+    if (!response) {
+      throw new Error('No response received from server');
     }
     
-    return await response.json();
+    // Try to parse the response as JSON, but handle non-JSON responses
+    let responseData;
+    const contentType = response.headers.get('content-type');
+    
+    try {
+      responseData = contentType?.includes('application/json') 
+        ? await response.json() 
+        : { error: 'Invalid content type', contentType };
+    } catch (jsonError) {
+      console.error('Error parsing JSON response:', jsonError);
+      const text = await response.text();
+      console.error('Response text:', text);
+      throw new Error(`Invalid JSON response: ${text}`);
+    }
+    
+    if (!response.ok) {
+      console.error('API error response:', {
+        status: response.status,
+        statusText: response.statusText,
+        url: response.url,
+        headers: Object.fromEntries(response.headers.entries()),
+        data: responseData
+      });
+      
+      throw new Error(
+        responseData?.message || 
+        responseData?.error || 
+        `HTTP error! status: ${response.status} ${response.statusText}`
+      );
+    }
+    
+    return responseData;
   } catch (error) {
-    console.error('Error fetching card history:', error);
-    console.error('Error details:', {
+    console.error('Error in getCardHistory:', {
       cardId,
       page,
       limit,
       API_BASE_URL,
-      error: error instanceof Error ? error.message : 'Unknown error'
+      error: {
+        name: error instanceof Error ? error.name : 'UnknownError',
+        message: error instanceof Error ? error.message : String(error),
+        stack: error instanceof Error ? error.stack : undefined,
+      }
     });
-    throw error;
+    
+    // Rethrow with a more user-friendly message
+    const errorMessage = error instanceof Error 
+      ? error.message 
+      : 'An unknown error occurred while fetching card history';
+      
+    throw new Error(errorMessage);
   }
 }
 
