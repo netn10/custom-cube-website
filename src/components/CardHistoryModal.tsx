@@ -374,6 +374,11 @@ export default function CardHistoryModal({ cardId, isOpen, onClose }: CardHistor
                           )}
                           <div className="text-xs text-gray-500 dark:text-gray-400 mt-1">
                             {formatDate(item.timestamp)}
+                            {item.version_data.set && (
+                              <span className="ml-2 text-gray-400 dark:text-gray-500">
+                                • Set: {item.version_data.set}
+                              </span>
+                            )}
                           </div>
                         </div>
                       </div>
@@ -607,11 +612,6 @@ export default function CardHistoryModal({ cardId, isOpen, onClose }: CardHistor
                       <li className="text-amber-600 dark:text-amber-400">
                         <div className="font-semibold mb-1">Facedown status changed:</div>
                         From {comparisonVersion.facedown ? 'Facedown' : 'Normal'} to {selectedVersion.facedown ? 'Facedown' : 'Normal'}
-                      </li>
-                    )}
-                    {selectedVersion.imageUrl !== comparisonVersion.imageUrl && (
-                      <li className="text-amber-600 dark:text-amber-400">
-                        <div className="font-semibold mb-1">Card image changed</div>
                       </li>
                     )}
                     {selectedVersion.artist !== comparisonVersion.artist && (
