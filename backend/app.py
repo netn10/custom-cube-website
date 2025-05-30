@@ -304,6 +304,7 @@ def index():
                 "/api/gemini/response",
                 "/api/image-proxy",
                 "/api/random-pack",
+                "/api/health",
             ],
         }
     )
