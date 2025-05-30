@@ -201,13 +201,8 @@ export async function getCardById(id: string): Promise<Card> {
 // Get card history (past iterations)
 export async function getCardHistory(cardId: string, page: number = 1, limit: number = 10): Promise<CardHistoryResponse> {
   try {
-    // Normalize the base URL to ensure it doesn't end with a slash
-    const baseUrl = API_BASE_URL.endsWith('/') ? API_BASE_URL.slice(0, -1) : API_BASE_URL;
-    
-    // Always construct the endpoint with /api/cards/ to ensure consistency
-    const endpoint = `${baseUrl}${baseUrl.includes('/api') ? '' : '/api'}/cards/${cardId}/history`;
-    
-    const url = `${endpoint}?page=${page}&limit=${limit}`;
+    // Always use the base URL with /api path
+    const url = `${API_BASE_URL}/cards/${cardId}/history?page=${page}&limit=${limit}`;
     console.log('Fetching card history from:', url); // This will help with debugging
     
     const response = await fetch(url, {
@@ -216,18 +211,33 @@ export async function getCardHistory(cardId: string, page: number = 1, limit: nu
         'Content-Type': 'application/json',
         'Accept': 'application/json',
       },
-      // Remove mode and credentials to use default browser behavior
-      cache: 'no-cache',
+      // Use no-store cache to prevent caching issues
+      cache: 'no-store',
       redirect: 'follow',
       referrerPolicy: 'no-referrer',
     });
 
     if (!response.ok) {
-      const errorData = await response.json().catch(() => ({}));
-      throw new Error(errorData.message || `HTTP error! status: ${response.status}`);
+      const errorData = await response.json().catch(() => ({
+        message: 'Failed to fetch card history',
+        status: response.status
+      }));
+      
+      console.error('Card history fetch failed:', {
+        url,
+        status: response.status,
+        error: errorData.message
+      });
+      
+      // Always return a default response with total 0 if fetch fails
+      return {
+        total: 0,
+        history: []
+      };
     }
 
-    return await response.json();
+    const data = await response.json();
+    return data;
   } catch (error) {
     console.error('Error in getCardHistory:', {
       cardId,
@@ -237,7 +247,11 @@ export async function getCardHistory(cardId: string, page: number = 1, limit: nu
       error: error instanceof Error ? error.message : String(error)
     });
     
-    throw error;
+    // Return a default response on error instead of throwing
+    return {
+      total: 0,
+      history: []
+    };
   }
 }
 
