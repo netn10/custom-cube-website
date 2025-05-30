@@ -1,6 +1,6 @@
 from flask import Flask, jsonify, request, Response, session
 import logging
-from flask_cors import CORS
+from flask_cors import CORS, cross_origin
 from pymongo import MongoClient
 import os
 from bson import ObjectId
@@ -30,7 +30,10 @@ except Exception as e:
 
 logging.basicConfig(level=logging.INFO)
 
+# Initialize Flask app
 app = Flask(__name__)
+
+
 app.config["SECRET_KEY"] = os.getenv(
     "SECRET_KEY", "dev_secret_key_change_in_production"
 )
@@ -39,12 +42,21 @@ app.config["JWT_SECRET_KEY"] = os.getenv(
 )
 app.config["JWT_ACCESS_TOKEN_EXPIRES"] = timedelta(hours=24)
 
-# Configure CORS to allow credentials
+# Configure CORS to allow specific origins and credentials
 CORS(
     app,
-    resources={r"/api/*": {"origins": "*"}},
-    supports_credentials=True,
-    expose_headers=["Authorization"],
+    resources={
+        r"/api/*": {
+            "origins": [
+                "https://netn10-custom-cube-885947dcd6aa.herokuapp.com",
+                "http://localhost:3000"  # For local development
+            ],
+            "methods": ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+            "allow_headers": ["Content-Type", "Authorization"],
+            "supports_credentials": True,
+            "expose_headers": ["Authorization"]
+        }
+    }
 )
 
 
