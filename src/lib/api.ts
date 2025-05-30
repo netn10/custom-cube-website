@@ -1,8 +1,9 @@
 // API service for fetching data from the Flask backend
 import { Card, Archetype, Token, Suggestion, User, LoginCredentials, RegisterFormData, Comment, CommentFormData, CardHistoryEntry, CardHistoryResponse } from '@/types/types';
 
-// Always add /api path to the base URL
-export const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL ? `${process.env.NEXT_PUBLIC_API_URL}/api` : 'http://127.0.0.1:5000/api';
+// In development, we use localhost with /api path
+// In production, the URL from env already includes the /api path
+export const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL ? process.env.NEXT_PUBLIC_API_URL : 'http://127.0.0.1:5000/api';
 
 
 // Authentication API
