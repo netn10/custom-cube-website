@@ -293,7 +293,7 @@ export default function Home() {
                       {/* Bottom info area */}
                       <div className="w-full bg-gray-900/60 dark:bg-black/60 rounded-lg p-2 border-t-2 border-mtg-gold flex flex-col items-center">
                         <div className="text-white text-sm font-bold">15 RANDOM CARDS</div>
-                        <div className="text-mtg-gold text-lg mt-1 animate-pulse font-bold">CLICK TO OPEN</div>
+                        <div className="text-mtg-gold text-lg mt-1 animate-pulse font-bold">CLICK TO OPEN!!!!</div>
                       </div>
                     </div>
                     
