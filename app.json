@@ -1,0 +1,11 @@
+{
+  "name": "custom-cube-website",
+  "description": "MTG Custom Cube Website",
+  "repository": "https://github.com/netn10/custom-cube-website",
+  "keywords": ["node", "nextjs", "react"],
+  "buildpacks": [
+    {
+      "url": "heroku/nodejs"
+    }
+  ]
+}
