@@ -146,6 +146,11 @@ def get_default_image_for_colors(colors):
     return "https://i.imgur.com/MNDyDPT.png"  # Generic multicolor placeholder
 
 
+# Health check
+@app.route("/api/health", methods=["GET"])
+def health_check():
+    return jsonify({"status": "ok"}), 200
+
 # Auth routes
 @app.route("/api/auth/register", methods=["POST"])
 def register():
