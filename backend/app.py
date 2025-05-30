@@ -1969,6 +1969,11 @@ def add_card_history(card_id):
         # logging.info(f"History entry added successfully for card ID: {card_id}") # Misplaced message
         return jsonify({"error": str(e)}), 500
 
+# Health check endpoint
+@app.route('/health', methods=['GET'])
+def health():
+    return jsonify({"status": "healthy"}), 200
+
 if __name__ == "__main__":
     # Consider using Gunicorn or another WSGI server for production
     app.run(debug=True, host="0.0.0.0", port=int(os.environ.get("PORT", 5000)))
