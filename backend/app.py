@@ -1831,6 +1831,12 @@ def get_card_history(card_id):
         limit = int(request.args.get('limit', 10))
         skip = (page - 1) * limit
         
+        # Try to convert card_id to ObjectId if it's a string
+        try:
+            card_id = ObjectId(card_id)
+        except:
+            pass  # If conversion fails, keep as string
+        
         # Query the card_history collection
         history_entries = list(db.card_history.find(
             {"card_id": card_id}

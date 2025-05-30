@@ -244,15 +244,27 @@ export default function CardDetailPage() {
       // Check if a card has history
   const checkCardHistory = async (cardId: string) => {
     if (!cardId) {
-      console.log('No card ID provided for history check');
+      console.error('No card ID provided for history check');
       setHasHistory(false);
       return;
     }
     
     try {
       console.log('Checking history for card ID:', cardId);
+      console.log('API Base URL:', API_BASE_URL);
+      
       const history = await getCardHistory(cardId, 1, 1);
-      console.log('History response:', history);
+      console.log('History response:', {
+        total: history.total,
+        history: history.history.map(h => ({
+          id: h._id,
+          timestamp: h.timestamp,
+          version_data: {
+            name: h.version_data.name,
+            type: h.version_data.type
+          }
+        }))
+      });
       const hasHistory = history.total > 0;
       console.log('Has history:', hasHistory);
       setHasHistory(hasHistory);
@@ -261,6 +273,7 @@ export default function CardDetailPage() {
       if (!hasHistory) {
         console.log(`No history found for card ID: ${cardId}`);
         console.log(`History endpoint: ${API_BASE_URL}/cards/${cardId}/history?page=1&limit=1`);
+        console.log('Card ID format:', typeof cardId);
       }
     } catch (error) {
       console.error('Error checking card history:', error);
