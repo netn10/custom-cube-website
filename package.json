@@ -4,10 +4,10 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build && next export -o out",
+    "build": "next build && next export",
     "start": "node server.js",
     "lint": "next lint",
-    "export": "next export -o out",
+    "export": "next export",
     "heroku-postbuild": "npm run build"
   },
   "engines": {
