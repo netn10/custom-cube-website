@@ -30,6 +30,9 @@ function CubeListContent() {
   const [filterCustom, setFilterCustom] = useState<boolean | null>(
     searchParams.has('custom') ? searchParams.get('custom') === 'true' : null
   );
+  const [historicMode, setHistoricMode] = useState(
+    searchParams.get('historicMode') === 'true'
+  );
   const [currentPage, setCurrentPage] = useState(
     parseInt(searchParams.get('page') || '1')
   );
@@ -62,6 +65,7 @@ function CubeListContent() {
     if (filterCustom !== null) params.set('custom', filterCustom.toString());
     if (currentPage !== 1) params.set('page', currentPage.toString());
     if (cardsPerPage !== 50) params.set('limit', cardsPerPage.toString());
+    if (historicMode) params.set('historicMode', 'true');
     
     // Add sort fields
     if (sortFields.length > 0 && !(sortFields.length === 1 && sortFields[0].field === 'name' && sortFields[0].direction === 'asc')) {
@@ -73,6 +77,19 @@ function CubeListContent() {
     const newUrl = `${window.location.pathname}?${params.toString()}`;
     window.history.replaceState({ path: newUrl }, '', newUrl);
   };
+
+  // Apply historic mode class to the document body when historic mode changes
+  useEffect(() => {
+    // Store the current background color before changing
+    document.documentElement.style.setProperty('--bg-color-current', 
+      window.getComputedStyle(document.body).backgroundColor);
+    
+    if (historicMode) {
+      document.body.classList.add('historic-mode');
+    } else {
+      document.body.classList.remove('historic-mode');
+    }
+  }, [historicMode]);
 
   // Fetch cards when component mounts or filters change
   useEffect(() => {
@@ -91,7 +108,8 @@ function CubeListContent() {
     colorMatchType,
     filterType,
     filterSet,
-    filterCustom
+    filterCustom,
+    historicMode
   ]);
 
   // Fetch cards with current filters
@@ -112,12 +130,14 @@ function CubeListContent() {
         sort_by?: string;
         sort_dir?: string;
         facedown?: string;
+        historic_mode?: string;
       } = {
         page: currentPage,
         limit: cardsPerPage,
         sort_by: sortFields.map(sort => sort.field).join(','),
         sort_dir: sortFields.map(sort => sort.direction).join(','),
-        facedown: 'false' // Always exclude facedown cards
+        facedown: 'false', // Always exclude facedown cards
+        historic_mode: historicMode ? 'true' : 'false'
       };
       
       // Special handling for "colorless" search term
@@ -383,11 +403,48 @@ function CubeListContent() {
   };
 
   return (
-    <div className="space-y-6">
+    <div className={`space-y-6 ${historicMode ? 'historic-mode-content' : ''}`}>
       <h1 className="text-3xl font-bold text-center dark:text-white">Cube Card List</h1>
       
       <div className="bg-white dark:bg-gray-800 p-4 rounded-lg shadow">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          {/* Historic Mode Toggle - only enabled when a set is selected */}
+          <div className="md:col-span-3 flex items-center justify-end mb-2">
+            <div className="flex items-center bg-gray-100 dark:bg-gray-700 p-2 rounded-md">
+              <input
+                type="checkbox"
+                id="historicModeToggle"
+                className="form-checkbox h-5 w-5 text-blue-600 transition duration-150 ease-in-out mr-2"
+                checked={historicMode}
+                onChange={() => {
+                  // Store the current background color before changing
+                  document.documentElement.style.setProperty('--bg-color-current', 
+                    window.getComputedStyle(document.body).backgroundColor);
+                  setHistoricMode(!historicMode);
+                  resetPage();
+                }}
+                disabled={!filterSet} // Only enable when a set is selected
+              />
+              <label 
+                htmlFor="historicModeToggle" 
+                className={`text-sm font-medium ${!filterSet ? 'text-gray-400 dark:text-gray-500' : 'text-gray-700 dark:text-gray-300'}`}
+                title={!filterSet ? 'Select a set to enable Historic Mode' : 'View cards as they appeared in this set'}
+              >
+                Historic Mode
+                {historicMode && filterSet && <span className="ml-2 text-xs bg-blue-500 text-white px-2 py-0.5 rounded-full">ON</span>}
+              </label>
+              <div className="ml-2">
+                <span 
+                  className="inline-block text-gray-600 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-200 cursor-help"
+                  title="Historic Mode shows cards as they appeared in the selected set, including cards that were later moved to other sets"
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                </span>
+              </div>
+            </div>
+          </div>
           <div>
             <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
               Search by Name

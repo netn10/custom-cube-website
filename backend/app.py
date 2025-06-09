@@ -13,6 +13,7 @@ import requests
 import jwt
 from functools import wraps
 from werkzeug.security import generate_password_hash, check_password_hash
+import time
 
 # Load environment variables
 load_dotenv()
@@ -28,7 +29,83 @@ except Exception as e:
     logging.error(f"Failed to connect to MongoDB: {e}")
     exit(1)
 
+# Simple in-memory cache for historical data
+# Cache structure: {cache_key: {'data': result, 'timestamp': time.time()}}
+historical_cache = {}
+CACHE_TTL = 300  # 5 minutes cache TTL
+
+def get_cached_or_query(cache_key, query_func):
+    """Get data from cache or execute query and cache result"""
+    current_time = time.time()
+    
+    # Check if we have cached data that's still valid
+    if cache_key in historical_cache:
+        cached_item = historical_cache[cache_key]
+        if current_time - cached_item['timestamp'] < CACHE_TTL:
+            return cached_item['data']
+        else:
+            # Remove expired cache entry
+            del historical_cache[cache_key]
+    
+    # Execute query and cache result
+    result = query_func()
+    historical_cache[cache_key] = {
+        'data': result,
+        'timestamp': current_time
+    }
+    
+    # Clean up old cache entries periodically (simple cleanup)
+    if len(historical_cache) > 100:  # Arbitrary limit
+        expired_keys = [
+            key for key, value in historical_cache.items()
+            if current_time - value['timestamp'] > CACHE_TTL
+        ]
+        for key in expired_keys:
+            del historical_cache[key]
+    
+    return result
+
 logging.basicConfig(level=logging.INFO)
+
+# Function to create necessary indexes for performance
+def create_indexes():
+    """Create database indexes for better performance"""
+    try:
+        # Indexes for cards collection
+        db.cards.create_index([("name", 1)])
+        db.cards.create_index([("set", 1)])
+        db.cards.create_index([("colors", 1)])
+        db.cards.create_index([("type", 1)])
+        db.cards.create_index([("facedown", 1)])
+        db.cards.create_index([("archetypes", 1)])
+        db.cards.create_index([("custom", 1)])
+        
+        # Compound indexes for common queries
+        db.cards.create_index([("set", 1), ("facedown", 1)])
+        db.cards.create_index([("colors", 1), ("facedown", 1)])
+        db.cards.create_index([("name", "text"), ("text", "text")])  # Text search index
+        
+        # Indexes for card_history collection (critical for historic mode performance)
+        db.card_history.create_index([("card_id", 1)])
+        db.card_history.create_index([("timestamp", -1)])
+        db.card_history.create_index([("version_data.set", 1)])
+        
+        # Compound indexes for card_history
+        db.card_history.create_index([("card_id", 1), ("timestamp", -1)])
+        db.card_history.create_index([("card_id", 1), ("version_data.set", 1), ("timestamp", -1)])
+        db.card_history.create_index([("version_data.set", 1), ("timestamp", -1)])
+        
+        # Indexes for other collections
+        db.tokens.create_index([("name", 1)])
+        db.tokens.create_index([("colors", 1)])
+        db.archetypes.create_index([("name", 1)])
+        db.comments.create_index([("cardId", 1)])
+        db.comments.create_index([("createdAt", -1)])
+        db.users.create_index([("username", 1)], unique=True)
+        
+        logging.info("Database indexes created successfully")
+    except Exception as e:
+        logging.error(f"Error creating database indexes: {e}")
 
 # Initialize Flask app
 app = Flask(__name__)
@@ -305,7 +382,7 @@ def index():
                 "/api/image-proxy",
                 "/api/random-pack",
                 "/api/health",
-            ],
+            ]
         }
     )
 
@@ -332,9 +409,12 @@ def get_cards():
     limit = int(request.args.get("limit", 50))
     sort_by = request.args.get("sort_by", "name")
     sort_dir = request.args.get("sort_dir", "asc")
+    # New parameter for historic mode
+    historic_mode = request.args.get("historic_mode", "").lower() == "true"
 
     # Build query using a simple approach that's less error-prone
     query = {}
+    cards_to_include = set()  # For tracking additional card IDs to include from historic mode
 
     # Basic filter for facedown cards - exclude them unless include_facedown is true
     if not include_facedown:
@@ -367,7 +447,7 @@ def get_cards():
                 query[key] = value
 
     if colors and colors[0]:  # Check if colors is not empty
-        color_query_conditions = [] # Renamed to avoid conflict with outer `color_query` if it existed
+        color_query_conditions = [] 
 
         # Handle special color filters
         if "colorless" in colors:
@@ -398,58 +478,323 @@ def get_cards():
 
         # Combine all color queries with OR if there are conditions
         if color_query_conditions:
-            if "$or" in query: # If $or already exists, add to it with $and
-                 query["$and"] = query.get("$and", []) + [{"$or": color_query_conditions}]
+            # If we have multiple color conditions, we need to use $or to combine them
+            if len(color_query_conditions) > 1:
+                if "$or" in query:
+                    # If there's already an $or, we need to use $and to combine with our new $or
+                    existing_or = query.pop("$or")
+                    query["$and"] = query.get("$and", []) + [{"$or": existing_or}, {"$or": color_query_conditions}]
+                else:
+                    # No existing $or, just add our color conditions as $or
+                    query["$or"] = color_query_conditions
             else:
-                 query["$or"] = color_query_conditions
-
+                # Only one color condition, add it directly to the query
+                query.update(color_query_conditions[0])
 
     if card_type:
         # For all card types, including "Creature", just do a simple case-insensitive search
         # This will match any card that has the type string anywhere in its type field
         query["type"] = {"$regex": card_type, "$options": "i"}
 
-    if card_set:
+    # Handle Set filtering with historic mode if enabled
+    if card_set and historic_mode:
+        # In historic mode, we need to fetch cards based on their historical versions too
+        # For Set 1, we show all cards currently in Set 1 plus any cards that have a historical version in Set 1
+        # For Set 2, we show all cards from Set 1 and Set 2, plus cards with historical versions in Set 1 or Set 2
+
+        # First, create a list of sets to include based on the selected set
+        sets_to_include = []
+        if card_set == "Set 1":
+            sets_to_include = ["Set 1"]
+        elif card_set == "Set 2":
+            sets_to_include = ["Set 1", "Set 2"]
+        elif card_set == "Set 3":
+            sets_to_include = ["Set 1", "Set 2", "Set 3"]
+        
+        # Apply the filter to show cards from the included sets
+        if sets_to_include:
+            query["set"] = {"$in": sets_to_include}
+            
+            # If we're looking at an earlier set (i.e., not showing all sets), get cards from later sets with historical versions
+            if card_set != "Set 3":  # Don't need to do this for Set 3 as it already includes everything
+                # Find all card_history entries for cards that have versions in the sets we're interested in
+                history_query = {"version_data.set": {"$in": sets_to_include}}
+                history_cards = db.card_history.find(history_query)
+                
+                # Collect card_ids from history that match our criteria
+                for history_card in history_cards:
+                    # Convert ObjectId to string if needed
+                    card_id = history_card["card_id"]
+                    cards_to_include.add(card_id)
+    elif card_set:  # Regular set filtering (non-historic mode)
         query["set"] = card_set
 
     if custom:
         query["custom"] = custom.lower() == "true"
 
+    # Prepare final query - either use the original query or expand it to include historic cards
+    final_query = query.copy()
+    if cards_to_include and historic_mode:
+        # Create a query that gets either the cards matching our original criteria
+        # OR cards whose IDs are in our list of historical cards to include
+        object_ids = []
+        string_ids = []
+        
+        # Separate ObjectIds and string IDs
+        for card_id in cards_to_include:
+            if isinstance(card_id, ObjectId):
+                object_ids.append(card_id)
+            elif isinstance(card_id, str):
+                try:
+                    # Try to convert string to ObjectId
+                    object_ids.append(ObjectId(card_id))
+                except:
+                    # If conversion fails, keep as string
+                    string_ids.append(card_id)
+        
+        # Build the combined query
+        or_conditions = [query]
+        
+        # Add ObjectId query if we have any
+        if object_ids:
+            or_conditions.append({"_id": {"$in": object_ids}})
+            
+        # Add string ID query if we have any
+        if string_ids:
+            or_conditions.append({"_id": {"$in": string_ids}})
+            
+        # Combine with OR
+        final_query = {"$or": or_conditions}
+
     # Get total count - this will exclude facedown cards due to the query
     # Make sure we're counting with the exact same query used for fetching
-    total = db.cards.count_documents(query)
+    total = db.cards.count_documents(final_query)
 
     # Calculate skip for pagination
     skip = (page - 1) * limit
 
-    # Handle multiple sort fields
-    sort_fields = sort_by.split(",") if sort_by else ["name"]
-    sort_directions = sort_dir.split(",") if sort_dir else ["asc"]
+    # If using historic mode with a set filter, we need a different approach
+    # because we need to apply filtering and sorting AFTER replacing with historical data
+    if historic_mode and card_set:
+        # OPTIMIZED APPROACH: Use aggregation pipeline for better performance
+        
+        # Build aggregation pipeline for historical data
+        pipeline = []
+        
+        # First stage: Match current cards with basic filters (excluding set filter for now)
+        match_stage = {}
+        if not include_facedown:
+            match_stage["facedown"] = {"$ne": True}
+        if search:
+            match_stage["name"] = {"$regex": search, "$options": "i"}
+        if body_search:
+            match_stage["$or"] = [
+                {"name": {"$regex": body_search, "$options": "i"}},
+                {"text": {"$regex": body_search, "$options": "i"}}
+            ]
+        if custom:
+            match_stage["custom"] = custom.lower() == "true"
+        if card_type:
+            match_stage["type"] = {"$regex": card_type, "$options": "i"}
+            
+        if match_stage:
+            pipeline.append({"$match": match_stage})
+        
+        # Add lookup stage to get historical data in a single query
+        pipeline.extend([
+            # Convert _id to string for lookup
+            {"$addFields": {"card_id_str": {"$toString": "$_id"}}},
+            
+            # Lookup historical versions
+            {"$lookup": {
+                "from": "card_history",
+                "let": {"card_id": "$card_id_str"},
+                "pipeline": [
+                    {"$match": {
+                        "$expr": {"$eq": ["$card_id", "$$card_id"]},
+                        "version_data.set": {"$in": sets_to_include}
+                    }},
+                    {"$sort": {"timestamp": -1}},
+                    {"$limit": 1}
+                ],
+                "as": "history"
+            }},
+            
+            # Replace card data with historical version if available
+            {"$addFields": {
+                "final_data": {
+                    "$cond": {
+                        "if": {"$gt": [{"$size": "$history"}, 0]},
+                        "then": {"$mergeObjects": [
+                            {"$arrayElemAt": ["$history.version_data", 0]},
+                            {"id": "$card_id_str", "historical_version": True}
+                        ]},
+                        "else": {"$mergeObjects": ["$$ROOT", {"id": "$card_id_str"}]}
+                    }
+                }
+            }},
+            
+            # Replace root with final_data
+            {"$replaceRoot": {"newRoot": "$final_data"}},
+            
+            # Remove the _id field and history field
+            {"$project": {"_id": 0, "history": 0, "card_id_str": 0}}
+        ])
+        
+        # Apply set filter and other post-historical filters
+        post_filters = {}
+        if sets_to_include:
+            post_filters["set"] = {"$in": sets_to_include}
+            
+        # Apply color filters
+        if colors and colors[0]:
+            color_conditions = []
+            
+            if "colorless" in colors:
+                color_conditions.append({"colors": {"$size": 0}})
+                colors = [c for c in colors if c != "colorless"]
+                
+            if "multicolor" in colors:
+                color_conditions.append({"colors": {"$exists": True, "$not": {"$size": 1}}})
+                colors = [c for c in colors if c != "multicolor"]
+                
+            if colors:
+                if color_match == "exact":
+                    color_conditions.append({"colors": {"$all": colors, "$size": len(colors)}})
+                elif color_match == "includes":
+                    color_conditions.append({"colors": {"$all": colors}})
+                elif color_match == "at-most":
+                    color_conditions.append({"colors": {"$not": {"$elemMatch": {"$nin": colors}}}})
+                else:
+                    color_conditions.append({"colors": {"$all": colors}})
+                    
+            if color_conditions:
+                if len(color_conditions) > 1:
+                    post_filters["$or"] = color_conditions
+                else:
+                    post_filters.update(color_conditions[0])
+        
+        if post_filters:
+            pipeline.append({"$match": post_filters})
+        
+        # Get total count with a separate pipeline
+        count_pipeline = pipeline + [{"$count": "total"}]
+        count_result = list(db.cards.aggregate(count_pipeline))
+        total = count_result[0]["total"] if count_result else 0
+        
+        # Add sorting and pagination
+        sort_spec = []
+        sort_fields = sort_by.split(",") if sort_by else ["name"]
+        sort_directions = sort_dir.split(",") if sort_dir else ["asc"]
+        
+        while len(sort_directions) < len(sort_fields):
+            sort_directions.append("asc")
+            
+        for i, field in enumerate(sort_fields):
+            if field:
+                direction = 1 if sort_directions[i].lower() == "asc" else -1
+                sort_spec.append((field, direction))
+                
+        if sort_spec:
+            pipeline.append({"$sort": dict(sort_spec)})
+            
+        # Add pagination
+        pipeline.extend([
+            {"$skip": skip},
+            {"$limit": limit}
+        ])
+        
+        # Execute the optimized aggregation
+        cards = list(db.cards.aggregate(pipeline))
+        
+        # Also get history-only cards that don't exist in current collection
+        # (This is a smaller, separate query for cards that were completely removed)
+        if total < limit:  # Only do this if we have space for more cards
+            history_only_pipeline = [
+                {"$match": {"version_data.set": {"$in": sets_to_include}}},
+                {"$sort": {"card_id": 1, "timestamp": -1}},
+                {"$group": {
+                    "_id": "$card_id",
+                    "latest_history": {"$first": "$$ROOT"}
+                }},
+                {"$lookup": {
+                    "from": "cards",
+                    "let": {"card_id_str": "$_id"},
+                    "pipeline": [
+                        {"$match": {"$expr": {"$eq": [{"$toString": "$_id"}, "$$card_id_str"]}}}
+                    ],
+                    "as": "current_card"
+                }},
+                {"$match": {"current_card": {"$size": 0}}},  # Only cards not in current collection
+                {"$replaceRoot": {
+                    "newRoot": {"$mergeObjects": [
+                        "$latest_history.version_data",
+                        {"id": "$_id", "historical_version": True}
+                    ]}
+                }},
+                {"$project": {"_id": 0}},
+                {"$limit": limit - len(cards)}  # Only get what we need
+            ]
+            
+            # Apply the same post-filters to history-only cards
+            if post_filters:
+                history_only_pipeline.insert(-1, {"$match": post_filters})
+                
+            history_only_cards = list(db.card_history.aggregate(history_only_pipeline))
+            cards.extend(history_only_cards)
+            
+            # Update total count to include history-only cards
+            if history_only_cards:
+                history_only_count_pipeline = history_only_pipeline[:-1] + [{"$count": "total"}]
+                history_count_result = list(db.card_history.aggregate(history_only_count_pipeline))
+                if history_count_result:
+                    total += history_count_result[0]["total"]
+    else:
+        # Standard flow for non-historic mode
+        
+        # Define sort fields and directions (same as in historic mode)
+        sort_fields = sort_by.split(",") if sort_by else ["name"]
+        sort_directions = sort_dir.split(",") if sort_dir else ["asc"]
+        
+        # Create sort specification
+        sort_spec = []
+        for i, field in enumerate(sort_fields):
+            # Skip empty fields
+            if not field:
+                continue
+                
+            # Get corresponding direction or default to asc
+            direction = (
+                1
+                if i >= len(sort_directions) or sort_directions[i].lower() == "asc"
+                else -1
+            )
+            sort_spec.append((field, direction))
 
-    # Ensure we have a direction for each field
-    while len(sort_directions) < len(sort_fields):
-        sort_directions.append("asc")
+        # Execute query with sorting
+        try:
+            # Make sure we have a valid sort specification
+            if sort_spec:
+                cursor = db.cards.find(final_query).sort(sort_spec).skip(skip).limit(limit)
+            else:
+                # Default sort by name if no valid sort fields
+                cursor = db.cards.find(final_query).sort([("name", 1)]).skip(skip).limit(limit)
+            cards = list(cursor)
+        except Exception as e:
+            # Log the error and fall back to a simple query without sorting
+            print(f"Error executing MongoDB query with sorting: {e}")
+            cursor = db.cards.find(final_query).skip(skip).limit(limit)
+            cards = list(cursor)
 
-    # Create sort specification
-    sort_spec = []
-    for i, field in enumerate(sort_fields):
-        # Get corresponding direction or default to asc
-        direction = (
-            1
-            if i >= len(sort_directions) or sort_directions[i].lower() == "asc"
-            else -1
-        )
-        sort_spec.append((field, direction))
-
-    # Execute query with sorting
-    cursor = db.cards.find(query).sort(sort_spec).skip(skip).limit(limit)
-    cards = list(cursor)
-
-    # Convert ObjectId to string for each card
-    for card in cards:
-        card["id"] = str(card.pop("_id"))
-
-    return jsonify({"cards": cards, "total": total})
+        # Convert ObjectId to string for each card
+        for card in cards:
+            card["id"] = str(card.pop("_id"))
+    
+    # Return the cards with pagination info
+    return jsonify({
+        "cards": cards,
+        "total": total
+    })
 
 
 @app.route("/api/cards/<card_id>", methods=["GET"])
@@ -742,13 +1087,16 @@ def get_tokens():
 
         # Combine all color queries with OR
         if color_query_conditions:
-            if "$or" in query: # If $or already exists from body_search, nest it
-                existing_or = query["$or"]
-                query["$and"] = query.get("$and", []) + [{"$or": existing_or}]
-                query["$or"] = color_query_conditions # This new $or is for colors
+            # Create a color filter condition that combines all color conditions with OR
+            color_filter = {"$or": color_query_conditions}
+            
+            # If there are existing query conditions, combine them with the color filter using AND
+            if query:
+                # Create a new AND condition that includes both the existing query and the color filter
+                query = {"$and": [query, color_filter]}
             else:
-                query["$or"] = color_query_conditions
-
+                # If no other conditions, just use the color filter
+                query = color_filter
 
     # Get total count
     total = db.tokens.count_documents(query)
@@ -1975,5 +2323,8 @@ def health():
     return jsonify({"status": "healthy"}), 200
 
 if __name__ == "__main__":
+    # Create database indexes for better performance
+    create_indexes()
+    
     # Consider using Gunicorn or another WSGI server for production
     app.run(debug=True, host="0.0.0.0", port=int(os.environ.get("PORT", 5000)))

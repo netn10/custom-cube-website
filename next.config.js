@@ -18,6 +18,10 @@ const nextConfig = {
   images: {
     domains: ['i.imgur.com', 'imgur.com', 'gatherer.wizards.com', 'cards.scryfall.io', 'c1.scryfall.com'],
   },
+  // Enable server components
+  experimental: {
+    serverActions: true,
+  },
 };
 
 module.exports = nextConfig;

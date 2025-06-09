@@ -122,6 +122,7 @@ export async function getCards(params?: {
   sort_by?: string;
   sort_dir?: string;
   include_facedown?: boolean;
+  historic_mode?: string;
 }): Promise<{cards: Card[], total: number}> {
   let queryParams = new URLSearchParams();
   
@@ -171,6 +172,10 @@ export async function getCards(params?: {
   
   if (params?.include_facedown) {
     queryParams.append('include_facedown', params.include_facedown ? 'true' : 'false');
+  }
+  
+  if (params?.historic_mode) {
+    queryParams.append('historic_mode', params.historic_mode);
   }
   
   const queryString = queryParams.toString() ? `?${queryParams.toString()}` : '';
