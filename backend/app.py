@@ -2317,6 +2317,260 @@ def add_card_history(card_id):
         # logging.info(f"History entry added successfully for card ID: {card_id}") # Misplaced message
         return jsonify({"error": str(e)}), 500
 
+# Deck Builder Utility Functions
+def build_deck(card_pool, draft_id=None, bot_id=None):
+    """
+    Convert a 45-card pool into a playable 40-card deck.
+    Returns: {
+        'bot_id': str,
+        'lands': List[Card],
+        'non_lands': List[Card], 
+        'full_deck': List[Card]
+    }
+    """
+    if len(card_pool) != 45:
+        raise ValueError(f"Expected 45 cards in pool, got {len(card_pool)}")
+    
+    # Set deterministic seed for reproducible results
+    seed_value = hash(f"{draft_id}_{bot_id}_{len(card_pool)}") % (2**32)
+    random.seed(seed_value)
+    
+    # Separate lands and non-lands
+    lands = [card for card in card_pool if is_land(card)]
+    non_lands = [card for card in card_pool if not is_land(card)]
+    non_basic_lands = [card for card in lands if not is_basic_land(card)]
+    
+    # Determine primary colors from non-land cards
+    color_counts = {}
+    for card in non_lands:
+        for color in card.get('colors', []):
+            color_counts[color] = color_counts.get(color, 0) + 1
+    
+    # Get top 2 colors, or single color if mono-color
+    sorted_colors = sorted(color_counts.items(), key=lambda x: x[1], reverse=True)
+    primary_colors = [color for color, count in sorted_colors[:2] if count > 0]
+    
+    # If no clear colors, default to most common
+    if not primary_colors and sorted_colors:
+        primary_colors = [sorted_colors[0][0]]
+    
+    # Select 22-24 non-land cards (prefer cards in primary colors)
+    selected_non_lands = select_deck_spells(non_lands, primary_colors, non_basic_lands)
+    
+    # Calculate lands needed (aim for 40 total cards)
+    lands_needed = 40 - len(selected_non_lands)
+    
+    # Generate basic lands based on color requirements
+    basic_lands = generate_basic_lands(selected_non_lands, primary_colors, lands_needed - len(non_basic_lands))
+    
+    # Combine all lands
+    deck_lands = non_basic_lands + basic_lands
+    
+    # Return structured deck
+    full_deck = selected_non_lands + deck_lands
+    
+    # Calculate sideboard (cards not in the main deck)
+    all_non_lands = [card for card in card_pool if not is_land(card)]
+    sideboard = [card for card in all_non_lands if card not in selected_non_lands]
+    
+    return {
+        'bot_id': str(bot_id) if bot_id else 'unknown',
+        'lands': deck_lands,
+        'non_lands': selected_non_lands,
+        'full_deck': full_deck,
+        'sideboard': sideboard,
+        'colors': primary_colors
+    }
+
+def is_land(card):
+    """Check if a card is a land"""
+    type_line = card.get('type', '').lower()
+    return 'land' in type_line
+
+def is_basic_land(card):
+    """Check if a card is a basic land"""
+    type_line = card.get('type', '').lower()
+    name = card.get('name', '').lower()
+    basic_names = ['plains', 'island', 'swamp', 'mountain', 'forest']
+    return 'basic' in type_line or any(basic in name for basic in basic_names)
+
+def select_deck_spells(non_lands, primary_colors, non_basic_lands):
+    """Select 22-24 non-land cards for the deck"""
+    target_spells = min(24, max(22, 40 - 16 - len(non_basic_lands)))
+    
+    # Score cards based on color matching and power level
+    scored_cards = []
+    for card in non_lands:
+        score = calculate_card_score(card, primary_colors)
+        scored_cards.append((card, score))
+    
+    # Sort by score and select top cards
+    scored_cards.sort(key=lambda x: x[1], reverse=True)
+    selected = [card for card, score in scored_cards[:target_spells]]
+    
+    return selected
+
+def calculate_card_score(card, primary_colors):
+    """Calculate a score for how good a card is for the deck"""
+    score = 0
+    card_colors = card.get('colors', [])
+    
+    # Base score from power level (placeholder - could be enhanced)
+    score += 50
+    
+    # Color matching bonus
+    if not card_colors:  # Colorless cards
+        score += 10
+    else:
+        matching_colors = len(set(card_colors) & set(primary_colors))
+        off_colors = len(set(card_colors) - set(primary_colors))
+        
+        score += matching_colors * 30  # Bonus for on-color
+        score -= off_colors * 20       # Penalty for off-color
+    
+    # CMC curve considerations (prefer 2-4 mana cards)
+    cmc = card.get('cmc', 0)
+    if 2 <= cmc <= 4:
+        score += 10
+    elif cmc == 1 or cmc == 5:
+        score += 5
+    elif cmc >= 6:
+        score -= 5
+    
+    return score
+
+def generate_basic_lands(non_lands, primary_colors, basic_lands_needed):
+    """Generate appropriate basic lands for the deck"""
+    if basic_lands_needed <= 0:
+        return []
+    
+    if not primary_colors:
+        # Default to Plains if no colors
+        primary_colors = ['W']
+    
+    # Calculate color requirements from selected spells
+    color_requirements = {}
+    for card in non_lands:
+        for color in card.get('colors', []):
+            color_requirements[color] = color_requirements.get(color, 0) + 1
+    
+    # Distribute basic lands proportionally
+    total_requirements = sum(color_requirements.values()) or 1
+    basic_lands = []
+    
+    for color in primary_colors:
+        if color in color_requirements:
+            proportion = color_requirements[color] / total_requirements
+            lands_for_color = max(1, int(basic_lands_needed * proportion))
+            
+            # Create basic land cards
+            land_name = get_basic_land_name(color)
+            for _ in range(min(lands_for_color, basic_lands_needed - len(basic_lands))):
+                basic_land = create_basic_land_card(land_name, color)
+                basic_lands.append(basic_land)
+    
+    # Fill remaining slots with the primary color
+    while len(basic_lands) < basic_lands_needed and primary_colors:
+        main_color = primary_colors[0]
+        land_name = get_basic_land_name(main_color)
+        basic_land = create_basic_land_card(land_name, main_color)
+        basic_lands.append(basic_land)
+    
+    return basic_lands
+
+def get_basic_land_name(color):
+    """Get the basic land name for a color"""
+    land_names = {
+        'W': 'Plains',
+        'U': 'Island', 
+        'B': 'Swamp',
+        'R': 'Mountain',
+        'G': 'Forest'
+    }
+    return land_names.get(color, 'Plains')
+
+def create_basic_land_card(name, color):
+    """Create a basic land card object"""
+    # High-quality Scryfall images for basic lands - using well-known stable URLs
+    scryfall_basic_land_images = {
+        'Plains': 'https://cards.scryfall.io/large/front/9/d/9dd2d666-7c6b-48ce-93dc-c004ebdd1fe9.jpg?1748706876',
+        'Island': 'https://cards.scryfall.io/large/front/b/9/b92ec9f6-a56d-40c6-aee2-7d5e1524c985.jpg?1749278110',
+        'Swamp': 'https://cards.scryfall.io/large/front/1/1/1176ebbf-4130-4e4e-ad49-65101a7357b4.jpg?1748707608',
+        'Mountain': 'https://cards.scryfall.io/large/front/a/1/a18ef64b-a9de-4548-b4d5-168758442db7.jpg?1748706910',
+        'Forest': 'https://cards.scryfall.io/large/front/2/0/2036f825-ef57-4a40-b45f-0668d9c8ec6a.jpg?1748707608'
+    }
+    
+    image_url = scryfall_basic_land_images.get(name, scryfall_basic_land_images['Plains'])
+    logging.info(f"Creating basic land {name} with imageUrl: {image_url}")
+    
+    return {
+        'id': f"basic_{name.lower()}_{random.randint(1000, 9999)}",
+        'name': name,
+        'type': f'Basic Land — {name}',
+        'colors': [],
+        'cmc': 0,
+        'imageUrl': image_url,
+        'isBasicLand': True
+    }
+
+# Show Decks API Endpoint
+@app.route("/api/show-decks", methods=["POST"])
+def show_decks():
+    """
+    Build and return 40-card decks for all bots from their 45-card pools.
+    Expects: {
+        'draft_id': str,
+        'bots': [{'id': int, 'name': str, 'picks': [Card]}]
+    }
+    """
+    try:
+        data = request.get_json()
+        if not data:
+            return jsonify({"error": "No data provided"}), 400
+        
+        draft_id = data.get('draft_id', 'unknown')
+        bots = data.get('bots', [])
+        
+        if not bots:
+            return jsonify({"error": "No bots provided"}), 400
+        
+        constructed_decks = []
+        
+        for bot in bots:
+            bot_id = bot.get('id')
+            bot_name = bot.get('name', f'Bot {bot_id}')
+            picks = bot.get('picks', [])
+            
+            try:
+                # Build deck for this bot
+                deck = build_deck(picks, draft_id, bot_id)
+                deck['bot_name'] = bot_name
+                constructed_decks.append(deck)
+                
+                logging.info(f"Built deck for {bot_name}: {len(deck['full_deck'])} cards")
+                
+            except Exception as e:
+                logging.error(f"Error building deck for bot {bot_name}: {str(e)}")
+                # Return error deck for this bot
+                constructed_decks.append({
+                    'bot_id': str(bot_id),
+                    'bot_name': bot_name,
+                    'error': str(e),
+                    'lands': [],
+                    'non_lands': picks[:24] if len(picks) >= 24 else picks,
+                    'full_deck': picks[:40] if len(picks) >= 40 else picks,
+                    'colors': []
+                })
+        
+        return jsonify({
+            'draft_id': draft_id,
+            'decks': constructed_decks
+        }), 200
+        
+    except Exception as e:
+        logging.error(f"Error in show_decks endpoint: {str(e)}")
+        return jsonify({"error": str(e)}), 500
+
 # Health check endpoint
 @app.route('/health', methods=['GET'])
 def health():

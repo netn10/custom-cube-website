@@ -237,7 +237,9 @@ export async function getCardHistory(cardId: string, page: number = 1, limit: nu
       // Always return a default response with total 0 if fetch fails
       return {
         total: 0,
-        history: []
+        history: [],
+        page: page,
+        limit: limit
       };
     }
 
@@ -255,7 +257,9 @@ export async function getCardHistory(cardId: string, page: number = 1, limit: nu
     // Return a default response on error instead of throwing
     return {
       total: 0,
-      history: []
+      history: [],
+      page: page,
+      limit: limit
     };
   }
 }
@@ -662,5 +666,28 @@ export async function deleteComment(commentId: string, token: string): Promise<{
     headers: {
       'Authorization': `Bearer ${token}`
     },
+  });
+}
+
+// Show Decks API
+export async function getShowDecks(draftId: string, bots: any[]): Promise<{
+  draft_id: string;
+  decks: Array<{
+    bot_id: string;
+    bot_name: string;
+    lands: any[];
+    non_lands: any[];
+    full_deck: any[];
+    sideboard: any[];
+    colors: string[];
+    error?: string;
+  }>;
+}> {
+  return fetchFromAPI('/show-decks', {
+    method: 'POST',
+    body: JSON.stringify({
+      draft_id: draftId,
+      bots: bots
+    }),
   });
 }

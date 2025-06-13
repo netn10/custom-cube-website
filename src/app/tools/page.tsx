@@ -3,7 +3,7 @@
 import React from 'react';
 import { useState, useRef, useEffect } from 'react';
 import { FaDice, FaRandom, FaCalculator, FaSearch, FaPlusCircle, FaList, FaRobot } from 'react-icons/fa';
-import { getBotDraftPick, getDraftPack, getMultipleDraftPacks, getSuggestions, addSuggestion, uploadSuggestionImage, getChatGPTCards, getChatGPTResponse, getGeminiResponse, getRandomPack, API_BASE_URL } from '@/lib/api';
+import { getBotDraftPick, getDraftPack, getMultipleDraftPacks, getSuggestions, addSuggestion, uploadSuggestionImage, getChatGPTCards, getChatGPTResponse, getGeminiResponse, getRandomPack, getShowDecks, API_BASE_URL } from '@/lib/api';
 
 type Tool = {
   id: string;
@@ -137,6 +137,9 @@ function DraftSimulator() {
   const [totalCardsPerPack] = useState(15); // Standard MTG pack size
   const [allPacks, setAllPacks] = useState<any[][]>([]);
   const [draftDirection, setDraftDirection] = useState<'left' | 'right'>('left');
+  const [constructedDecks, setConstructedDecks] = useState<any[]>([]);
+  const [decksVisible, setDecksVisible] = useState(false);
+  const [deckBuildingLoading, setDeckBuildingLoading] = useState(false);
 
   const toggleBotTab = (botId: number) => {
     setOpenBotTabs(prev => {
@@ -647,13 +650,67 @@ function DraftSimulator() {
     }
   };
 
-  const toggleBotPicks = () => {
+    const toggleBotPicks = () => {
     setBotPicksVisible(!botPicksVisible);
+    // Hide constructed decks when showing bot picks
+    if (!botPicksVisible) {
+      setDecksVisible(false);
+    }
   };
-  
+
   // Function to organize bot picks by bot ID
   const getBotPicksById = (botId: number) => {
     return botPicks.filter(pick => pick.botId === botId);
+  };
+
+  // Function to show constructed decks
+  const showDecks = async () => {
+    console.log('showDecks called');
+    console.log('draftComplete:', draftComplete);
+    console.log('bots:', bots);
+    
+    if (!draftComplete) {
+      setError("Draft must be completed before building decks.");
+      return;
+    }
+
+    setDeckBuildingLoading(true);
+    setError(null);
+
+    try {
+      // Check if all bots have 45 cards
+      const invalidBots = bots.filter(bot => bot.picks.length !== 45);
+      console.log('invalidBots:', invalidBots);
+      
+      if (invalidBots.length > 0) {
+        setError(`Some bots don't have exactly 45 cards: ${invalidBots.map(bot => `${bot.name} (${bot.picks.length})`).join(', ')}`);
+        setDeckBuildingLoading(false);
+        return;
+      }
+
+      // Generate a unique draft ID for reproducible results
+      const draftId = `draft_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
+      console.log('Calling API with draftId:', draftId);
+
+      // Call the API to build decks
+      const response = await getShowDecks(draftId, bots);
+      console.log('API response:', response);
+      
+      setConstructedDecks(response.decks);
+      setDecksVisible(true);
+      // Hide bot picks when showing constructed decks
+      setBotPicksVisible(false);
+
+    } catch (err) {
+      console.error('Error building decks:', err);
+      setError(`Failed to build decks: ${err instanceof Error ? err.message : String(err)}`);
+    } finally {
+      setDeckBuildingLoading(false);
+    }
+  };
+
+  const toggleDecksVisible = () => {
+    setDecksVisible(!decksVisible);
   };
 
   // Local strategy for bot picks when API is unavailable
@@ -898,12 +955,22 @@ function DraftSimulator() {
                 New Draft
               </button>
               
-              <button 
-                className="btn-secondary"
-                onClick={toggleBotPicks}
-              >
-                {botPicksVisible ? 'Hide Bot Decks' : 'Show Bot Decks'}
-              </button>
+              <div className="flex space-x-2">
+                <button 
+                  className="btn-secondary"
+                  onClick={toggleBotPicks}
+                >
+                  {botPicksVisible ? 'Hide Bot Picks' : 'Show Bot Picks'}
+                </button>
+                
+                <button 
+                  className="btn-secondary"
+                  onClick={decksVisible ? toggleDecksVisible : showDecks}
+                  disabled={!draftComplete || deckBuildingLoading}
+                >
+                  {deckBuildingLoading ? 'Building Decks...' : (decksVisible ? 'Hide Decks' : 'Show Decks')}
+                </button>
+              </div>
             </div>
           </div>
           
@@ -1063,6 +1130,265 @@ function DraftSimulator() {
               </div>
             </div>
           )}
+          
+          {decksVisible && (
+            <div className="mt-6 bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
+              <div className="flex justify-between items-center mb-4">
+                <h4 className="text-lg font-medium dark:text-white">Constructed 40-Card Decks</h4>
+              </div>
+              
+              <div className="space-y-4">
+                {constructedDecks.map((deck, index) => (
+                  <div key={`deck-${deck.bot_id}-${index}`} className="bg-gray-100 dark:bg-gray-700 p-4 rounded-lg">
+                    <div 
+                      className="flex items-center justify-between cursor-pointer" 
+                      onClick={() => toggleBotTab(parseInt(deck.bot_id))}
+                    >
+                      <div className="flex items-center">
+                        <h5 className="font-medium text-lg dark:text-white">{deck.bot_name}</h5>
+                        <div className="flex ml-3">
+                          {deck.colors && deck.colors.map((color: string) => (
+                            <span 
+                              key={color} 
+                              className={`w-5 h-5 rounded-full mx-0.5 ${getCardColorClasses([color])}`}
+                            />
+                          ))}
+                        </div>
+                      </div>
+                      <div className="flex items-center">
+                        <span className="text-sm text-gray-600 dark:text-gray-400 mr-3">
+                          {deck.full_deck ? deck.full_deck.length : 0} cards
+                          {deck.error && (
+                            <span className="text-red-500 ml-2">ERROR</span>
+                          )}
+                        </span>
+                        <svg 
+                          className={`w-5 h-5 transition-transform duration-200 ${openBotTabs.includes(parseInt(deck.bot_id)) ? 'transform rotate-180' : ''}`} 
+                          fill="none" 
+                          stroke="currentColor" 
+                          viewBox="0 0 24 24" 
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                        </svg>
+                      </div>
+                    </div>
+                    
+                    {openBotTabs.includes(parseInt(deck.bot_id)) && (
+                      <div className="mt-3">
+                        {deck.error ? (
+                          <div className="bg-red-100 dark:bg-red-900 text-red-800 dark:text-red-200 p-3 rounded-lg">
+                            <p className="font-medium">Error building deck:</p>
+                            <p>{deck.error}</p>
+                          </div>
+                        ) : (
+                          <>
+                            <div className="flex items-end justify-between mb-3">
+                              <h6 className="font-medium text-sm dark:text-white">
+                                40-Card Constructed Deck
+                              </h6>
+                                                             <div className="flex flex-col items-end">
+                                 <span className="text-sm font-medium text-gray-700 dark:text-gray-300">
+                                   {deck.non_lands ? deck.non_lands.length : 0} spells + {deck.lands ? deck.lands.length : 0} lands
+                                 </span>
+                                 <span className="text-xs text-gray-500 dark:text-gray-400">
+                                   Sideboard: {deck.sideboard ? deck.sideboard.length : 0} cards
+                                 </span>
+                                <div className="flex items-center mt-1">
+                                  {deck.lands && deck.lands.filter((land: any) => land.isBasicLand).reduce((acc: any, land: any) => {
+                                    const landType = land.name || 'Unknown';
+                                    acc[landType] = (acc[landType] || 0) + 1;
+                                    return acc;
+                                  }, {}) && Object.entries(deck.lands.filter((land: any) => land.isBasicLand).reduce((acc: any, land: any) => {
+                                    const landType = land.name || 'Unknown';
+                                    acc[landType] = (acc[landType] || 0) + 1;
+                                    return acc;
+                                  }, {})).map(([landType, count]) => (
+                                    <div key={landType} className="flex items-center mx-1" title={`${count} ${landType}`}>
+                                      <span className={`w-4 h-4 rounded-full mr-1 ${
+                                        landType === 'Plains' ? 'bg-yellow-200' :
+                                        landType === 'Island' ? 'bg-blue-500' :
+                                        landType === 'Swamp' ? 'bg-gray-800' :
+                                        landType === 'Mountain' ? 'bg-red-500' :
+                                        landType === 'Forest' ? 'bg-green-500' :
+                                        'bg-gray-400'
+                                      }`} />
+                                      <span className="text-xs">{count}</span>
+                                    </div>
+                                  ))}
+                                </div>
+                              </div>
+                            </div>
+                            
+                            <div className="space-y-3">
+                              {/* Non-land cards */}
+                              {deck.non_lands && deck.non_lands.length > 0 && (
+                                <div>
+                                  <h6 className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                                    Spells ({deck.non_lands.length})
+                                  </h6>
+                                  <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-3">
+                                    {deck.non_lands.map((card: any, cardIndex: number) => (
+                                      <div 
+                                        key={`${card.id}-nonland-${cardIndex}`} 
+                                        className="relative group"
+                                      >
+                                        {card.imageUrl ? (
+                                          <div className="relative w-full aspect-[2.5/3.5] overflow-hidden rounded shadow-md hover:shadow-lg transition-shadow duration-200">
+                                            <img 
+                                              src={card.imageUrl.startsWith('data:') ? card.imageUrl : `${API_BASE_URL}/image-proxy?url=${encodeURIComponent(card.imageUrl)}`} 
+                                              alt={card.name} 
+                                              className="w-full h-full object-cover"
+                                              onError={(e) => {
+                                                console.error('Error loading image:', card.imageUrl);
+                                                e.currentTarget.src = 'data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22100%22%20height%3D%22140%22%20viewBox%3D%220%200%20100%20140%22%20preserveAspectRatio%3D%22none%22%3E%3Crect%20width%3D%22100%22%20height%3D%22140%22%20fill%3D%22%23eee%22%3E%3C%2Frect%3E%3Ctext%20text-anchor%3D%22middle%22%20x%3D%2250%22%20y%3D%2270%22%20style%3D%22fill%3A%23aaa%3Bfont-weight%3Abold%3Bfont-size%3A12px%3Bfont-family%3AArial%2C%20Helvetica%2C%20sans-serif%3Bdominant-baseline%3Acentral%22%3EImage%20Not%20Found%3C%2Ftext%3E%3C%2Fsvg%3E';
+                                              }}
+                                            />
+                                            <CardHoverPreview card={card} />
+                                          </div>
+                                        ) : (
+                                          <div className={`aspect-[2.5/3.5] ${getCardColorClasses(card.colors)} bg-opacity-20 dark:bg-opacity-30 flex flex-col justify-between rounded p-2 shadow-md hover:shadow-lg transition-shadow duration-200`}>
+                                            <p className="text-sm truncate font-medium dark:text-white">{card.name}</p>
+                                            <div className="flex justify-center">
+                                              {card.colors && card.colors.map((color: string) => (
+                                                <span 
+                                                  key={color} 
+                                                  className="w-3 h-3 rounded-full mx-0.5"
+                                                  style={{ 
+                                                    backgroundColor: 
+                                                      color === 'W' ? '#F9FAF4' : 
+                                                      color === 'U' ? '#0E68AB' : 
+                                                      color === 'B' ? '#150B00' : 
+                                                      color === 'R' ? '#D3202A' : 
+                                                      '#00733E'
+                                                  }}
+                                                />
+                                              ))}
+                                            </div>
+                                            <div className="flex justify-between items-center">
+                                              <span className="text-xs dark:text-gray-300">{card.type?.split(' ')[0]}</span>
+                                              <span className="text-xs dark:text-white">{card.cmc || 0}</span>
+                                            </div>
+                                          </div>
+                                        )}
+                                      </div>
+                                    ))}
+                                  </div>
+                                </div>
+                              )}
+                              
+                              {/* Land cards */}
+                              {deck.lands && deck.lands.length > 0 && (
+                                <div>
+                                  <h6 className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                                    Lands ({deck.lands.length})
+                                  </h6>
+                                  <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-3">
+                                    {deck.lands.map((card: any, cardIndex: number) => {
+                                      // Debug logging for basic lands
+                                      if (card.isBasicLand) {
+                                        console.log('Basic land card:', card.name, 'imageUrl:', card.imageUrl, 'isBasicLand:', card.isBasicLand);
+                                      }
+                                      return (
+                                        <div 
+                                          key={`${card.id}-land-${cardIndex}`} 
+                                          className="relative group"
+                                        >
+                                          {card.imageUrl ? (
+                                            <div className="relative w-full aspect-[2.5/3.5] overflow-hidden rounded shadow-md hover:shadow-lg transition-shadow duration-200">
+                                              <img 
+                                                src={card.imageUrl.startsWith('data:') ? card.imageUrl : `${API_BASE_URL}/image-proxy?url=${encodeURIComponent(card.imageUrl)}`} 
+                                                alt={card.name} 
+                                                className="w-full h-full object-cover"
+                                              />
+                                              <CardHoverPreview card={card} />
+                                            </div>
+                                          ) : (
+                                            <div className={`aspect-[2.5/3.5] ${card.isBasicLand ? 'bg-amber-100 dark:bg-amber-900' : getCardColorClasses(card.colors)} bg-opacity-20 dark:bg-opacity-30 flex flex-col justify-center items-center rounded p-2 shadow-md hover:shadow-lg transition-shadow duration-200`}>
+                                              <p className="text-sm font-medium dark:text-white text-center">{card.name}</p>
+                                              {card.isBasicLand && (
+                                                <span className="text-xs text-gray-500 dark:text-gray-400 mt-1">Basic Land</span>
+                                              )}
+                                            </div>
+                                          )}
+                                        </div>
+                                      );
+                                    })}
+                                  </div>
+                                                                 </div>
+                               )}
+                               
+                               {/* Sideboard cards */}
+                               {deck.sideboard && deck.sideboard.length > 0 && (
+                                 <div>
+                                   <h6 className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                                     Sideboard ({deck.sideboard.length})
+                                   </h6>
+                                   <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-3">
+                                     {deck.sideboard.map((card: any, cardIndex: number) => (
+                                       <div 
+                                         key={`${card.id}-sideboard-${cardIndex}`} 
+                                         className="relative group"
+                                       >
+                                         {card.imageUrl ? (
+                                           <div className="relative w-full aspect-[2.5/3.5] overflow-hidden rounded shadow-md hover:shadow-lg transition-shadow duration-200 opacity-75">
+                                             <img 
+                                               src={card.imageUrl.startsWith('data:') ? card.imageUrl : `${API_BASE_URL}/image-proxy?url=${encodeURIComponent(card.imageUrl)}`} 
+                                               alt={card.name} 
+                                               className="w-full h-full object-cover"
+                                               onError={(e) => {
+                                                 console.error('Error loading image:', card.imageUrl);
+                                                 e.currentTarget.src = 'data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22100%22%20height%3D%22140%22%20viewBox%3D%220%200%20100%20140%22%20preserveAspectRatio%3D%22none%22%3E%3Crect%20width%3D%22100%22%20height%3D%22140%22%20fill%3D%22%23eee%22%3E%3C%2Frect%3E%3Ctext%20text-anchor%3D%22middle%22%20x%3D%2250%22%20y%3D%2270%22%20style%3D%22fill%3A%23aaa%3Bfont-weight%3Abold%3Bfont-size%3A12px%3Bfont-family%3AArial%2C%20Helvetica%2C%20sans-serif%3Bdominant-baseline%3Acentral%22%3EImage%20Not%20Found%3C%2Ftext%3E%3C%2Fsvg%3E';
+                                               }}
+                                             />
+                                             <div className="absolute top-0 right-0 bg-orange-500 text-white text-xs px-1 rounded-bl">
+                                               SB
+                                             </div>
+                                             <CardHoverPreview card={card} />
+                                           </div>
+                                         ) : (
+                                           <div className={`aspect-[2.5/3.5] ${getCardColorClasses(card.colors)} bg-opacity-20 dark:bg-opacity-30 flex flex-col justify-between rounded p-2 shadow-md hover:shadow-lg transition-shadow duration-200 opacity-75`}>
+                                             <p className="text-sm truncate font-medium dark:text-white">{card.name}</p>
+                                             <div className="flex justify-center">
+                                               {card.colors && card.colors.map((color: string) => (
+                                                 <span 
+                                                   key={color} 
+                                                   className="w-3 h-3 rounded-full mx-0.5"
+                                                   style={{ 
+                                                     backgroundColor: 
+                                                       color === 'W' ? '#F9FAF4' : 
+                                                       color === 'U' ? '#0E68AB' : 
+                                                       color === 'B' ? '#150B00' : 
+                                                       color === 'R' ? '#D3202A' : 
+                                                       '#00733E'
+                                                   }}
+                                                 />
+                                               ))}
+                                             </div>
+                                             <div className="flex justify-between items-center">
+                                               <span className="text-xs dark:text-gray-300">{card.type?.split(' ')[0]}</span>
+                                               <span className="text-xs dark:text-white">{card.cmc || 0}</span>
+                                             </div>
+                                             <div className="absolute top-0 right-0 bg-orange-500 text-white text-xs px-1 rounded-bl">
+                                               SB
+                                             </div>
+                                           </div>
+                                         )}
+                                       </div>
+                                     ))}
+                                   </div>
+                                 </div>
+                               )}
+                             </div>
+                           </>
+                         )}
+                       </div>
+                     )}
+                   </div>
+                 ))}
+               </div>
+             </div>
+           )}
         </div>
       ) : (
         <div>
@@ -1104,7 +1430,7 @@ function DraftSimulator() {
                           e.currentTarget.src = 'data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22100%22%20height%3D%22140%22%20viewBox%3D%220%200%20100%20140%22%20preserveAspectRatio%3D%22none%22%3E%3Crect%20width%3D%22100%22%20height%3D%22140%22%20fill%3D%22%23eee%22%3E%3C%2Frect%3E%3Ctext%20text-anchor%3D%22middle%22%20x%3D%2250%22%20y%3D%2270%22%20style%3D%22fill%3A%23aaa%3Bfont-weight%3Abold%3Bfont-size%3A12px%3Bfont-family%3AArial%2C%20Helvetica%2C%20sans-serif%3Bdominant-baseline%3Acentral%22%3EImage%20Not%20Found%3C%2Ftext%3E%3C%2Fsvg%3E';
                         }}
                       />
-                      <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-80 p-1 sm:p-2">
+                      {/* <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-80 p-1 sm:p-2">
                         <p className="font-medium text-white text-xs sm:text-sm truncate">{card.name}</p>
                         <div className="flex justify-between items-center mt-1">
                           <div className="flex">
@@ -1125,7 +1451,7 @@ function DraftSimulator() {
                           </div>
                           <span className="text-xs text-white hidden sm:inline">{card.type}</span>
                         </div>
-                      </div>
+                      </div> */}
                     </div>
                   ) : (
                     <div className={`h-full ${getCardColorClasses(card.colors)} bg-opacity-20 dark:bg-opacity-30 flex flex-col justify-between p-3`}>
@@ -1160,12 +1486,14 @@ function DraftSimulator() {
             <div>
               <div className="flex justify-between items-center mb-2">
                 <h3 className="text-lg font-semibold dark:text-white">Your Picks:</h3>
-                <button 
-                  className="text-sm text-blue-600 dark:text-blue-400 hover:underline"
-                  onClick={toggleBotPicks}
-                >
-                  {botPicksVisible ? 'Hide Bot Picks' : 'Show Bot Picks'}
-                </button>
+                <div className="flex space-x-2">
+                  <button 
+                    className="text-sm text-blue-600 dark:text-blue-400 hover:underline"
+                    onClick={toggleBotPicks}
+                  >
+                    {botPicksVisible ? 'Hide Bot Picks' : 'Show Bot Picks'}
+                  </button>
+                </div>
               </div>
               
               <div className="flex flex-wrap">
