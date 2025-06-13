@@ -212,12 +212,11 @@ export default function Home() {
         
         <div className="relative z-10 py-20 px-4 bg-gradient-to-r from-gray-100/80 via-transparent to-gray-100/80 dark:from-black/70 dark:via-transparent dark:to-black/70 text-center">
           <h1 className="text-6xl font-extrabold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-mtg-blue via-mtg-red to-mtg-green">
-            Custom MTG Cube
+            Welcome to the Weird Side of Magic: The Gathering
           </h1>
           
           <p className="text-xl max-w-3xl mx-auto mb-8 text-gray-800 dark:text-white drop-shadow-lg">
-            A 480-card cube featuring mostly custom cards with "weird" archetypes. Discover unique gameplay experiences 
-            that push the boundaries of traditional Magic.
+            Here, we redefine what Magic: The Gathering is, and what it could be.
           </p>
           
           <div className="flex justify-center gap-4 mt-8">
@@ -264,7 +263,7 @@ export default function Home() {
                     <div className="absolute inset-0 flex flex-col items-center justify-between p-4">
                       {/* Top logo area */}
                       <div className="w-full bg-gray-900/60 dark:bg-black/60 rounded-lg p-2 border-b-2 border-mtg-gold">
-                        <div className="text-mtg-gold font-extrabold text-3xl text-center drop-shadow-lg tracking-wider">CUSTOM CUBE</div>
+                        <div className="text-mtg-gold font-extrabold text-3xl text-center drop-shadow-lg tracking-wider">Certified Chaos Within</div>
                       </div>
                       
                       {/* Center artwork */}
@@ -949,7 +948,7 @@ export default function Home() {
                                 />
                               )}
                               <div className="absolute bottom-0 left-0 right-0 bg-black/60 p-1 text-white text-xs font-semibold truncate">
-                                {randomCard.name}
+                                {/*{randomCard.name}*/}
                                 {randomCard.relatedFace && (
                                   <span className="ml-1 text-blue-300" title="Has related face">↔</span>
                                 )}
@@ -1003,7 +1002,7 @@ export default function Home() {
                   The cube is designed to be drafted with 8 players, but works well with any number.
                 </p>
                 <p className="text-lg leading-relaxed">
-                  The cube contains 360 cards, with a focus on synergy over raw power. Each color pair has a distinct 
+                  The cube contains 480 cards, with a focus on synergy over raw power. Each color pair has a distinct 
                   archetype that plays differently from traditional Magic.
                 </p>
                 <div className="pt-4">
