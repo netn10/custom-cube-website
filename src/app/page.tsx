@@ -105,10 +105,9 @@ export default function Home() {
           const randomPackData = await getRandomPack(15);
           if (randomPackData && randomPackData.pack) {
             // Process the cards
-            const processedPack = randomPackData.pack.map(card => ({
+            const processedPack = randomPackData.pack.map((card, index) => ({
               ...card,
-              id: card.id || card._id || `card-${Math.random().toString(36).substr(2, 9)}`,
-              _id: card._id || card.id || `card-${Math.random().toString(36).substr(2, 9)}`
+              id: card.id || `card-${Math.random().toString(36).substr(2, 9)}`,
             }));
             
             // Ensure exactly 15 cards
@@ -116,7 +115,6 @@ export default function Home() {
             while (fullPack.length < 15) {
               fullPack.push({
                 id: `placeholder-${fullPack.length}`,
-                _id: `placeholder-${fullPack.length}`,
                 name: 'Mystery Card',
                 manaCost: '{?}',
                 type: 'Card',
@@ -212,7 +210,7 @@ export default function Home() {
         
         <div className="relative z-10 py-20 px-4 bg-gradient-to-r from-gray-100/80 via-transparent to-gray-100/80 dark:from-black/70 dark:via-transparent dark:to-black/70 text-center">
           <h1 className="text-6xl font-extrabold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-mtg-blue via-mtg-red to-mtg-green">
-            Welcome to the Weird Side of Magic: The Gathering
+            Welcome to the Weird Side of<br />Magic: The Gathering
           </h1>
           
           <p className="text-xl max-w-3xl mx-auto mb-8 text-gray-800 dark:text-white drop-shadow-lg">
@@ -309,369 +307,118 @@ export default function Home() {
               </div>
             ) : isBoosterOpening ? (
               <div className="fixed inset-0 z-50 flex items-center justify-center">
-                {/* Dark overlay with magical background */}
-                <div className="absolute inset-0 bg-black/90 backdrop-blur-sm">
-                  {/* Animated magical background */}
+                {/* Clean dark overlay */}
+                <div className="absolute inset-0 bg-gradient-to-br from-black/95 via-gray-900/95 to-black/95 backdrop-blur-md">
+                  {/* Subtle background energy */}
                   <div className="absolute inset-0 overflow-hidden">
-                    {/* Magical energy waves */}
-                    <div className="absolute inset-0 bg-gradient-to-r from-mtg-red/10 via-mtg-blue/10 to-mtg-green/10 animate-[pulse_4s_ease-in-out_infinite]"></div>
-                    
-                    {/* Magical circles */}
-                    <div className="absolute left-1/2 top-1/2 w-[200vw] h-[200vh] -translate-x-1/2 -translate-y-1/2 rounded-full border-8 border-mtg-gold/10 animate-[spin_60s_linear_infinite]"></div>
-                    <div className="absolute left-1/2 top-1/2 w-[150vw] h-[150vh] -translate-x-1/2 -translate-y-1/2 rounded-full border-4 border-mtg-blue/10 animate-[spin_40s_linear_infinite_reverse]"></div>
-                    <div className="absolute left-1/2 top-1/2 w-[100vw] h-[100vh] -translate-x-1/2 -translate-y-1/2 rounded-full border-2 border-mtg-red/10 animate-[spin_20s_linear_infinite]"></div>
-                    
-                    {/* Magical particles */}
-                    {[...Array(30)].map((_, i) => (
-                      <div 
-                        key={i}
-                        className={`absolute rounded-full ${i % 5 === 0 ? 'bg-mtg-red/60' : i % 5 === 1 ? 'bg-mtg-blue/60' : i % 5 === 2 ? 'bg-mtg-green/60' : i % 5 === 3 ? 'bg-mtg-gold/60' : 'bg-white/60'}`}
-                        style={{
-                          width: `${3 + Math.random() * 6}px`,
-                          height: `${3 + Math.random() * 6}px`,
-                          top: `${Math.random() * 100}%`,
-                          left: `${Math.random() * 100}%`,
-                          animation: `float${(i % 3) + 1} ${3 + Math.random() * 5}s ease-in-out infinite`,
-                          opacity: 0.2 + Math.random() * 0.6,
-                          filter: `blur(${Math.random() * 2}px)`,
-                          boxShadow: `0 0 ${5 + Math.random() * 10}px ${i % 5 === 0 ? 'rgba(255,50,50,0.8)' : i % 5 === 1 ? 'rgba(50,50,255,0.8)' : i % 5 === 2 ? 'rgba(50,255,50,0.8)' : i % 5 === 3 ? 'rgba(255,215,0,0.8)' : 'rgba(255,255,255,0.8)'}`
-                        }}
-                      ></div>
-                    ))}
+                    <div className="absolute left-1/2 top-1/2 w-96 h-96 -translate-x-1/2 -translate-y-1/2 rounded-full bg-gradient-to-r from-mtg-gold/5 via-transparent to-mtg-gold/5 animate-pulse" />
+                    <div className="absolute left-1/2 top-1/2 w-[600px] h-[600px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-mtg-gold/10 animate-spin" style={{ animationDuration: '20s' }} />
                   </div>
                 </div>
                 
                 {/* Main animation container */}
-                <div className="relative w-96 h-[500px] perspective-1000">
-                  {/* Initial pack shake animation */}
-                  <div 
-                    className="absolute inset-0 animate-[shake_0.8s_ease-in-out]"
-                    style={{ animationIterationCount: 4, animationDelay: '0.2s' }}
-                  >
-                    {/* 3D Booster Pack */}
-                    <div className="relative w-full h-full" style={{ transformStyle: 'preserve-3d' }}>
-                      {/* Main pack body - starts as a closed pack */}
-                      <div 
-                        className="absolute inset-0 bg-black rounded-lg overflow-hidden border-4 border-mtg-gold"
-                        style={{ 
-                          boxShadow: '0 0 30px 10px rgba(255, 215, 0, 0.4)',
-                          animation: 'packGlow 1s ease-in-out infinite',
-                        }}
-                      >
-                        {/* Pack background with MTG style */}
-                        <div className="absolute inset-0 bg-gradient-to-br from-mtg-red via-mtg-blue to-mtg-green opacity-80"></div>
-                        
-                        {/* Pack artwork and design */}
-                        <div className="absolute inset-0 flex flex-col items-center justify-between p-4">
-                          {/* Pack title */}
-                          <div className="w-full bg-black/60 rounded-lg p-2 border-b-2 border-mtg-gold">
-                            <div className="text-mtg-gold font-extrabold text-3xl text-center drop-shadow-lg tracking-wider animate-[pulse_1s_ease-in-out_infinite]">CUSTOM CUBE</div>
+                <div className="relative w-80 h-[500px]" style={{ perspective: '1000px' }}>
+                  {/* Booster Pack Container */}
+                  <div className="absolute inset-0" style={{ transformStyle: 'preserve-3d' }}>
+                    {/* Pack Body */}
+                    <div 
+                      className="absolute inset-0 bg-gradient-to-br from-gray-900 via-black to-gray-900 rounded-xl border-2 border-mtg-gold shadow-2xl"
+                      style={{ 
+                        animation: 'packShake 0.6s ease-in-out 3, packGlow 2s ease-in-out infinite',
+                        boxShadow: '0 0 40px 10px rgba(255, 215, 0, 0.3), inset 0 0 30px rgba(255, 215, 0, 0.1)',
+                      }}
+                    >
+                      {/* Pack Background Gradient */}
+                      <div className="absolute inset-0 bg-gradient-to-br from-mtg-red/20 via-mtg-blue/20 to-mtg-green/20 rounded-xl" />
+                      
+                      {/* Pack Content - keeping text and cube SVG as requested */}
+                      <div className="absolute inset-0 flex flex-col items-center justify-between p-6">
+                        {/* Top Section */}
+                        <div className="w-full bg-black/60 rounded-lg p-3 border-b-2 border-mtg-gold backdrop-blur-sm">
+                          <div className="text-mtg-gold font-extrabold text-2xl text-center drop-shadow-lg tracking-wider">
+                            Certified Chaos Within
                           </div>
                         </div>
                         
-                        {/* Corner decorations */}
-                        <div className="absolute top-0 left-0 w-8 h-8 border-t-2 border-l-2 border-mtg-gold/70 rounded-tl-lg"></div>
-                        <div className="absolute top-0 right-0 w-8 h-8 border-t-2 border-r-2 border-mtg-gold/70 rounded-tr-lg"></div>
-                        <div className="absolute bottom-0 left-0 w-8 h-8 border-b-2 border-l-2 border-mtg-gold/70 rounded-bl-lg"></div>
-                        <div className="absolute bottom-0 right-0 w-8 h-8 border-b-2 border-r-2 border-mtg-gold/70 rounded-br-lg"></div>
+                        {/* Center - Cube SVG */}
+                        <div className="relative flex-1 flex items-center justify-center">
+                          <div className="w-32 h-32 bg-black/60 rounded-full flex items-center justify-center border-2 border-mtg-gold shadow-lg backdrop-blur-sm">
+                            <img 
+                              src="https://i.imgur.com/hkGysU7.png" 
+                              alt="Cube Symbol"
+                              className="w-24 h-24 object-contain animate-pulse"
+                            />
+                          </div>
+                        </div>
+                        
+                        {/* Bottom Section */}
+                        <div className="w-full bg-black/60 rounded-lg p-3 border-t-2 border-mtg-gold backdrop-blur-sm">
+                          <div className="text-white text-sm font-bold text-center">15 RANDOM CARDS</div>
+                          <div className="text-mtg-gold text-lg mt-1 font-bold text-center animate-pulse">
+                            OPENING...
+                          </div>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                  
-                  {/* Pack opening animation elements */}
-                  <div className="relative w-full h-full" style={{ transformStyle: 'preserve-3d' }}>
-                    {/* Top flap with tearing effect */}
-                    <div 
-                      className="absolute w-full h-1/4 bg-gradient-to-r from-mtg-red via-mtg-gold to-mtg-green rounded-t-lg shadow-lg overflow-hidden"
-                      style={{ 
-                        top: 0,
-                        animation: 'packTopOpen 1s ease-in-out forwards',
-                        animationDelay: '1.0s',
-                        transformStyle: 'preserve-3d',
-                        backfaceVisibility: 'hidden',
-                        zIndex: 20,
-                        boxShadow: '0 0 15px 2px rgba(255, 215, 0, 0.3)',
-                        transformOrigin: 'top center'
-                      }}
-                    >
-                      {/* Torn paper effect overlay */}
-                      <div className="absolute inset-0 bg-gradient-to-b from-white/10 to-transparent"></div>
+                    
+                    {/* Pack Opening Elements */}
+                    <div className="absolute inset-0" style={{ transformStyle: 'preserve-3d' }}>
                       
-                      {/* Torn edges */}
-                      {[...Array(8)].map((_, i) => (
-                        <div 
-                          key={`torn-edge-${i}`}
-                          className="absolute bottom-0 bg-white/20"
-                          style={{
-                            left: `${i * 12.5}%`,
-                            height: `${5 + Math.random() * 15}px`,
-                            width: `${8 + Math.random() * 10}px`,
-                            clipPath: 'polygon(0 100%, 50% 0, 100% 100%)',
-                            opacity: 0.7 + Math.random() * 0.3
-                          }}
-                        ></div>
-                      ))}
-                      
-                      <div className="absolute inset-0 flex items-center justify-center">
-                        <div className="text-white font-extrabold text-2xl tracking-wider drop-shadow-lg">CUSTOM</div>
-                      </div>
-                      <div className="absolute inset-0 bg-black/20 rounded-t-lg"></div>
-                    </div>
-                    
-                    {/* Bottom flap */}
-                    <div 
-                      className="absolute w-full h-1/4 bg-gradient-to-r from-mtg-red via-mtg-gold to-mtg-green rounded-b-lg shadow-lg"
-                      style={{ 
-                        bottom: 0,
-                        animation: 'packBottomOpen 0.8s ease-in-out forwards',
-                        animationDelay: '1.2s',
-                        transformStyle: 'preserve-3d',
-                        backfaceVisibility: 'hidden',
-                        zIndex: 20,
-                        boxShadow: '0 0 15px 2px rgba(255, 215, 0, 0.3)'
-                      }}
-                    >
-                      <div className="absolute inset-0 flex items-center justify-center">
-                        <div className="text-white font-extrabold text-2xl tracking-wider drop-shadow-lg">CUBE</div>
-                      </div>
-                      <div className="absolute inset-0 bg-black/20 rounded-b-lg"></div>
-                    </div>
-                    
-                    {/* Left side flap */}
-                    <div 
-                      className="absolute h-1/2 w-1/6 bg-gradient-to-r from-mtg-red to-mtg-gold shadow-lg"
-                      style={{ 
-                        left: 0,
-                        top: '25%',
-                        animation: 'packSideLeftOpen 0.6s ease-in-out forwards',
-                        animationDelay: '1.4s',
-                        transformStyle: 'preserve-3d',
-                        backfaceVisibility: 'hidden',
-                        zIndex: 15,
-                        boxShadow: '0 0 10px 1px rgba(255, 215, 0, 0.3)'
-                      }}
-                    >
-                      <div className="absolute inset-0 bg-black/20"></div>
-                    </div>
-                    
-                    {/* Right side flap */}
-                    <div 
-                      className="absolute h-1/2 w-1/6 bg-gradient-to-l from-mtg-red to-mtg-gold shadow-lg"
-                      style={{ 
-                        right: 0,
-                        top: '25%',
-                        animation: 'packSideRightOpen 0.6s ease-in-out forwards',
-                        animationDelay: '1.4s',
-                        transformStyle: 'preserve-3d',
-                        backfaceVisibility: 'hidden',
-                        zIndex: 15,
-                        boxShadow: '0 0 10px 1px rgba(255, 215, 0, 0.3)'
-                      }}
-                    >
-                      <div className="absolute inset-0 bg-black/20"></div>
-                    </div>
-                    
-                    {/* Enhanced explosion effect when pack opens */}
-                    <div 
-                      className="absolute left-1/2 top-1/2 w-full h-full -translate-x-1/2 -translate-y-1/2 rounded-lg overflow-hidden"
-                      style={{ 
-                        animation: 'packExplosion 1.2s cubic-bezier(0.22, 0.61, 0.36, 1) forwards',
-                        animationDelay: '1.4s',
-                        zIndex: 25,
-                        background: 'radial-gradient(circle, rgba(255,255,255,0.95) 0%, rgba(255,215,0,0.9) 15%, rgba(255,150,0,0.7) 35%, rgba(255,50,0,0.5) 65%, transparent 100%)',
-                        boxShadow: '0 0 150px 80px rgba(255, 215, 0, 0.9)',
-                        transformOrigin: 'center center'
-                      }}
-                    >
-                      {/* Inner explosion glow */}
+                      {/* Light Burst Effect */}
                       <div 
-                        className="absolute inset-0 rounded-full"
-                        style={{
-                          background: 'radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(255,255,255,0.8) 20%, rgba(255,215,0,0.6) 40%, transparent 70%)',
-                          animation: 'packLightBurst 0.8s ease-out forwards',
-                          animationDelay: '1.45s',
+                        className="absolute left-1/2 top-1/2 w-0 h-0 -translate-x-1/2 -translate-y-1/2 rounded-full bg-white"
+                        style={{ 
+                          animation: 'lightBurst 1s ease-out forwards',
+                          animationDelay: '1.5s',
+                          zIndex: 25,
+                          boxShadow: '0 0 100px 50px rgba(255, 255, 255, 0.8)'
                         }}
-                      ></div>
-                    </div>
-                    
-                    {/* Secondary explosion wave */}
-                    <div 
-                      className="absolute left-1/2 top-1/2 w-0 h-0 -translate-x-1/2 -translate-y-1/2 rounded-full"
-                      style={{ 
-                        animation: 'packLightBurst 1s ease-out forwards',
-                        animationDelay: '1.5s',
-                        zIndex: 24,
-                        background: 'radial-gradient(circle, rgba(255,255,255,0.95) 0%, rgba(255,100,0,0.8) 30%, rgba(255,0,0,0.6) 60%, transparent 100%)',
-                        boxShadow: '0 0 120px 60px rgba(255, 100, 0, 0.9)'
-                      }}
-                    ></div>
-                    
-                    {/* Tertiary explosion wave */}
-                    <div 
-                      className="absolute left-1/2 top-1/2 w-0 h-0 -translate-x-1/2 -translate-y-1/2 rounded-full"
-                      style={{ 
-                        animation: 'packLightBurst 1.2s ease-out forwards',
-                        animationDelay: '1.6s',
-                        zIndex: 23,
-                        background: 'radial-gradient(circle, rgba(255,215,0,0.9) 0%, rgba(255,165,0,0.7) 40%, rgba(255,69,0,0.5) 70%, transparent 100%)',
-                        boxShadow: '0 0 100px 50px rgba(255, 165, 0, 0.8)'
-                      }}
-                    ></div>
-                    
-                    {/* Enhanced explosion fragments */}
-                    {[...Array(30)].map((_, i) => {
-                      const randomX = (Math.random() * 2 - 1) * 400; // -400px to 400px
-                      const randomY = (Math.random() * 2 - 1) * 400; // -400px to 400px
-                      const randomRotate = Math.random() * 720 - 360; // -360deg to 360deg
-                      const randomDelay = 1.4 + Math.random() * 0.3; // 1.4s to 1.7s
-                      const randomSize = 6 + Math.random() * 12; // 6px to 18px
-                      const randomOpacity = 0.7 + Math.random() * 0.3; // 0.7 to 1.0
+                      />
                       
-                      // More fragment shapes for variety
-                      const fragmentShapes = [
-                        'polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%)', // diamond
-                        'polygon(0 0, 100% 0, 100% 100%, 0 100%)', // square
-                        'polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%)', // pentagon
-                        'polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%)', // hexagon
-                        'polygon(20% 0%, 80% 0%, 100% 20%, 100% 80%, 80% 100%, 20% 100%, 0% 80%, 0% 20%)', // octagon
-                        'polygon(0% 20%, 60% 20%, 60% 0%, 100% 50%, 60% 100%, 60% 80%, 0% 80%)', // arrow
-                        'polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%)', // star
-                        'polygon(40% 0%, 40% 40%, 0% 40%, 0% 60%, 40% 60%, 40% 100%, 60% 100%, 60% 60%, 100% 60%, 100% 40%, 60% 40%, 60% 0%)', // plus
-                      ];
-                      
-                      // More gradient color combinations
-                      const fragmentColors = [
-                        'linear-gradient(to right, #ff0000, #ff6600)', // red to orange
-                        'linear-gradient(to right, #ffd700, #ffaa00)', // gold to amber
-                        'linear-gradient(to right, #0066ff, #00ccff)', // blue to cyan
-                        'linear-gradient(to right, #00cc00, #66ff66)', // green to light green
-                        'linear-gradient(to right, #cc00cc, #ff66ff)', // purple to pink
-                        'linear-gradient(to right, #ff3300, #ff9966)', // bright orange
-                        'linear-gradient(to right, #ffcc00, #ffff66)', // yellow
-                        'linear-gradient(to right, #9900cc, #cc66ff)', // violet
-                        'linear-gradient(to right, #ff0066, #ff99cc)', // hot pink
-                        'linear-gradient(to right, #00ffcc, #99ffee)', // turquoise
-                      ];
-                      
-                      return (
-                        <div 
-                          key={i}
-                          className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
-                          style={{ 
-                            '--x': `${randomX}px`,
-                            '--y': `${randomY}px`,
-                            '--r': `${randomRotate}deg`,
-                            width: `${randomSize}px`,
-                            height: `${randomSize}px`,
-                            animation: 'packFragment 1s cubic-bezier(0.22, 0.61, 0.36, 1) forwards',
-                            animationDelay: `${randomDelay}s`,
-                            zIndex: 26,
-                            background: fragmentColors[i % fragmentColors.length],
-                            clipPath: fragmentShapes[i % fragmentShapes.length],
-                            boxShadow: `0 0 ${randomSize/2}px ${randomSize/4}px rgba(255, 255, 255, ${randomOpacity})`,
-                            opacity: randomOpacity
-                          }}
-                        ></div>
-                      );
-                    })}
-                    
-                    {/* Enhanced magical light burst when pack opens */}
-                    <div 
-                      className="absolute left-1/2 top-1/2 w-0 h-0 -translate-x-1/2 -translate-y-1/2 rounded-full bg-white"
-                      style={{ 
-                        animation: 'packLightBurst 0.8s cubic-bezier(0.22, 0.61, 0.36, 1) forwards',
-                        animationDelay: '1.45s',
-                        zIndex: 27,
-                        boxShadow: '0 0 70px 40px rgba(255, 255, 255, 0.9)'
-                      }}
-                    ></div>
-                    
-                    {/* Glowing particles */}
-                    {[...Array(15)].map((_, i) => {
-                      const angle = (i / 15) * 2 * Math.PI;
-                      const distance = 100 + Math.random() * 150;
-                      const x = Math.cos(angle) * distance;
-                      const y = Math.sin(angle) * distance;
-                      const size = 3 + Math.random() * 5;
-                      const delay = 1.5 + Math.random() * 0.3;
-                      
-                      return (
-                        <div 
-                          key={`particle-${i}`}
-                          className="absolute left-1/2 top-1/2 rounded-full bg-white"
-                          style={{
-                            width: `${size}px`,
-                            height: `${size}px`,
-                            transform: `translate(-50%, -50%) translate(${x}px, ${y}px)`,
-                            opacity: 0,
-                            boxShadow: `0 0 ${size * 2}px ${size}px rgba(255, 255, 255, 0.8)`,
-                            animation: 'fadeInOut 1s ease-out forwards',
-                            animationDelay: `${delay}s`,
-                            zIndex: 28
-                          }}
-                        ></div>
-                      );
-                    })}
-                    
-                    {/* Cards inside pack */}
-                    <div 
-                      className="absolute w-2/3 h-1/2 rounded-lg"
-                      style={{ 
-                        left: '16.5%',
-                        top: '25%',
-                        zIndex: 10,
-                      }}
-                    >
-                      <div className="w-full h-full relative overflow-hidden">
-                        {/* Card stack effect - cards fly out one by one */}
-                        {[...Array(7)].map((_, i) => (
+                      {/* Energy Particles */}
+                      {[...Array(12)].map((_, i) => {
+                        const angle = (i / 12) * 2 * Math.PI;
+                        const distance = 80 + Math.random() * 40;
+                        const x = Math.cos(angle) * distance;
+                        const y = Math.sin(angle) * distance;
+                        
+                        return (
                           <div 
                             key={i}
-                            className="absolute w-full h-full bg-gradient-to-br from-gray-200 to-gray-300 rounded-lg shadow-xl"
-                            style={{ 
-                              animation: `cardFlyOut 0.7s ease-out forwards, cardGlow 1s ease-in-out infinite`,
-                              animationDelay: `${2.0 + i * 0.15}s, ${2.0 + i * 0.15}s`,
+                            className="absolute left-1/2 top-1/2 w-2 h-2 rounded-full bg-mtg-gold"
+                            style={{
+                              transform: `translate(-50%, -50%) translate(${x}px, ${y}px)`,
+                              animation: 'particleFloat 1.5s ease-out forwards',
+                              animationDelay: `${1.6 + i * 0.05}s`,
                               opacity: 0,
-                              transform: 'scale(0.8) translateY(0) rotate(0deg)',
-                              transformOrigin: 'center center',
-                              boxShadow: '0 0 20px 5px rgba(255, 255, 255, 0.4)',
-                              zIndex: 30 + i
+                              boxShadow: '0 0 6px 2px rgba(255, 215, 0, 0.8)',
+                              zIndex: 24
+                            }}
+                          />
+                        );
+                      })}
+                      
+                      {/* Card Preview Stack */}
+                      <div 
+                        className="absolute left-1/2 top-1/2 w-20 h-28 -translate-x-1/2 -translate-y-1/2"
+                        style={{ zIndex: 15 }}
+                      >
+                        {[...Array(5)].map((_, i) => (
+                          <div 
+                            key={i}
+                            className="absolute w-full h-full bg-gradient-to-br from-blue-100 to-blue-200 rounded-lg shadow-lg border border-gray-300"
+                            style={{ 
+                              animation: 'cardFan 0.8s ease-out forwards',
+                              animationDelay: `${1.8 + i * 0.1}s`,
+                              transform: `translateZ(${i * 2}px) rotate(0deg)`,
+                              opacity: 0,
+                              zIndex: 15 + i
                             }}
                           >
-                            <div className="absolute inset-0 flex items-center justify-center">
-                              <img 
-                                src="/card-back.jpg" 
-                                alt="Card Back"
-                                className="w-full h-full object-cover rounded-lg"
-                              />
-                            </div>
+                            <div className="absolute inset-1 bg-white rounded border border-gray-200" />
                           </div>
                         ))}
                       </div>
-                    </div>
-                    
-                    {/* Magical energy burst when cards appear */}
-                    <div 
-                      className="absolute left-1/2 top-1/2 w-0 h-0 -translate-x-1/2 -translate-y-1/2 rounded-full"
-                      style={{ 
-                        animation: 'magicalEnergyBurst 1s ease-out forwards',
-                        animationDelay: '1.7s',
-                        zIndex: 5,
-                        background: 'radial-gradient(circle, rgba(255,215,0,0.8) 0%, rgba(255,255,255,0.4) 50%, transparent 70%)'
-                      }}
-                    ></div>
-                    
-                    {/* Pack wrapper that fades away */}
-                    <div 
-                      className="absolute inset-0 bg-gradient-to-br from-mtg-red via-mtg-gold to-mtg-green rounded-lg shadow-2xl"
-                      style={{ 
-                        animation: 'packFadeOut 0.5s ease-in-out forwards',
-                        animationDelay: '1.6s',
-                        zIndex: 5,
-                        boxShadow: '0 0 20px 5px rgba(255, 215, 0, 0.4)'
-                      }}
-                    >
-                      <div className="absolute inset-0 bg-black/20 rounded-lg"></div>
                     </div>
                   </div>
                 </div>
@@ -1073,15 +820,61 @@ export default function Home() {
           0%, 100% { transform: translateY(0px) rotate(5deg); }
           50% { transform: translateY(-8px) rotate(5deg); }
         }
-        @keyframes booster-opening {
-          0% { transform: scale(1); }
-          50% { transform: scale(1.2); opacity: 0.8; }
-          100% { transform: scale(0.1); opacity: 0; }
+        
+        /* Professional Booster Pack Animations */
+        @keyframes packShake {
+          0%, 100% { transform: translateX(0) scale(1); }
+          25% { transform: translateX(-2px) scale(1.01); }
+          75% { transform: translateX(2px) scale(1.01); }
         }
+        
+        @keyframes packGlow {
+          0%, 100% { box-shadow: 0 0 40px 10px rgba(255, 215, 0, 0.3), inset 0 0 30px rgba(255, 215, 0, 0.1); }
+          50% { box-shadow: 0 0 60px 15px rgba(255, 215, 0, 0.5), inset 0 0 40px rgba(255, 215, 0, 0.2); }
+        }
+        
+        @keyframes sealPeel {
+          0% { transform: rotateX(0deg) translateY(0); opacity: 1; }
+          50% { transform: rotateX(15deg) translateY(-10px); opacity: 0.8; }
+          100% { transform: rotateX(90deg) translateY(-30px); opacity: 0; }
+        }
+        
+        @keyframes lightBurst {
+          0% { width: 0; height: 0; opacity: 1; }
+          50% { width: 200px; height: 200px; opacity: 0.8; }
+          100% { width: 400px; height: 400px; opacity: 0; }
+        }
+        
+        @keyframes particleFloat {
+          0% { opacity: 0; transform: translate(-50%, -50%) translate(0, 0) scale(0); }
+          50% { opacity: 1; transform: translate(-50%, -50%) translate(var(--particle-x, 0), var(--particle-y, 0)) scale(1.5); }
+          100% { opacity: 0; transform: translate(-50%, -50%) translate(var(--particle-x, 0), var(--particle-y, 0)) scale(0); }
+        }
+        
+        @keyframes cardFan {
+          0% { 
+            transform: translateZ(0px) rotate(0deg) scale(0.8); 
+            opacity: 0; 
+          }
+          50% { 
+            transform: translateZ(${(i: number) => i * 2}px) rotate(${(i: number) => (i - 2) * 15}deg) scale(1.1); 
+            opacity: 0.9; 
+          }
+          100% { 
+            transform: translateZ(${(i: number) => i * 3}px) rotate(${(i: number) => (i - 2) * 20}deg) scale(1); 
+            opacity: 1; 
+          }
+        }
+        
         @keyframes cardReveal {
           0% { transform: scale(0.1); opacity: 0; }
           70% { transform: scale(1.1); }
           100% { transform: scale(1); opacity: 1; }
+        }
+        
+        @keyframes packShine {
+          0% { background-position: -200% 0; }
+          100% { background-position: 200% 0; }
         }
       `}</style>
     </div>
