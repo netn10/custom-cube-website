@@ -1110,6 +1110,287 @@ function DraftSimulator() {
     setSideboard(prev => [...prev, card]);
   };
 
+  // Function to download bot pool as TXT
+  const downloadBotPoolAsTxt = (bot: any) => {
+    if (!bot.picks.length) return;
+
+    const sortedCards = [...bot.picks].sort((a, b) => a.name.localeCompare(b.name));
+    const creatures = sortedCards.filter(card => card.type?.includes('Creature'));
+    const spells = sortedCards.filter(card => !card.type?.includes('Creature') && !card.type?.includes('Land'));
+    const lands = sortedCards.filter(card => card.type?.includes('Land'));
+    
+    let deckContent = `${bot.name} Draft Pool - ${new Date().toLocaleDateString()}\n`;
+    deckContent += `Total Cards: ${bot.picks.length}\n`;
+    deckContent += `Colors: ${bot.colors.join(', ') || 'Colorless'}\n\n`;
+    
+    if (creatures.length > 0) {
+      deckContent += `CREATURES (${creatures.length}):\n`;
+      creatures.forEach(card => {
+        const colors = card.colors?.join('') || '';
+        const mana = card.manaCost || '';
+        const pt = card.power && card.toughness ? ` (${card.power}/${card.toughness})` : '';
+        deckContent += `1 ${card.name}${colors ? ` [${colors}]` : ''}${mana ? ` ${mana}` : ''}${pt}\n`;
+      });
+      deckContent += '\n';
+    }
+    
+    if (spells.length > 0) {
+      deckContent += `SPELLS (${spells.length}):\n`;
+      spells.forEach(card => {
+        const colors = card.colors?.join('') || '';
+        const mana = card.manaCost || '';
+        deckContent += `1 ${card.name}${colors ? ` [${colors}]` : ''}${mana ? ` ${mana}` : ''}\n`;
+      });
+      deckContent += '\n';
+    }
+    
+    if (lands.length > 0) {
+      deckContent += `LANDS (${lands.length}):\n`;
+      lands.forEach(card => {
+        deckContent += `1 ${card.name}\n`;
+      });
+      deckContent += '\n';
+    }
+    
+    deckContent += `\nDRAFT ORDER:\n`;
+    bot.picks.forEach((card: any) => {
+      deckContent += `P${card.packNumber}P${card.pickNumber}: ${card.name}\n`;
+    });
+
+    const blob = new Blob([deckContent], { type: 'text/plain' });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement('a');
+    link.href = url;
+    link.download = `${bot.name.toLowerCase().replace(' ', '-')}-pool-${new Date().toISOString().split('T')[0]}.txt`;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    URL.revokeObjectURL(url);
+  };
+
+  // Helper function to find constructed deck for a bot
+  const findConstructedDeckForBot = (botId: number) => {
+    return constructedDecks.find(deck => parseInt(deck.bot_id) === botId);
+  };
+
+  // Function to download bot deck as TXT
+  const downloadBotDeckAsTxt = (bot: any) => {
+    const constructedDeck = findConstructedDeckForBot(bot.id);
+    if (!constructedDeck || (!constructedDeck.non_lands?.length && !constructedDeck.lands?.length)) return;
+
+    // Combine non-lands and lands for sorting
+    const allCards = [...(constructedDeck.non_lands || []), ...(constructedDeck.lands || [])];
+    const sortedCards = allCards.sort((a, b) => a.name.localeCompare(b.name));
+    const creatures = sortedCards.filter(card => card.type?.includes('Creature'));
+    const spells = sortedCards.filter(card => !card.type?.includes('Creature') && !card.type?.includes('Land'));
+    const lands = sortedCards.filter(card => card.type?.includes('Land'));
+    
+    let deckContent = `${bot.name} Constructed Deck - ${new Date().toLocaleDateString()}\n`;
+    deckContent += `Total Cards: ${(constructedDeck.non_lands?.length || 0)} spells + ${(constructedDeck.lands?.length || 0)} lands = ${allCards.length} total\n`;
+    deckContent += `Colors: ${constructedDeck.colors?.join(', ') || 'Colorless'}\n`;
+    if (constructedDeck.sideboard && constructedDeck.sideboard.length > 0) {
+      deckContent += `Sideboard: ${constructedDeck.sideboard.length} cards\n`;
+    }
+    deckContent += '\n';
+    
+    if (creatures.length > 0) {
+      deckContent += `CREATURES (${creatures.length}):\n`;
+      creatures.forEach(card => {
+        const colors = card.colors?.join('') || '';
+        const mana = card.manaCost || '';
+        const pt = card.power && card.toughness ? ` (${card.power}/${card.toughness})` : '';
+        deckContent += `1 ${card.name}${colors ? ` [${colors}]` : ''}${mana ? ` ${mana}` : ''}${pt}\n`;
+      });
+      deckContent += '\n';
+    }
+    
+    if (spells.length > 0) {
+      deckContent += `SPELLS (${spells.length}):\n`;
+      spells.forEach(card => {
+        const colors = card.colors?.join('') || '';
+        const mana = card.manaCost || '';
+        deckContent += `1 ${card.name}${colors ? ` [${colors}]` : ''}${mana ? ` ${mana}` : ''}\n`;
+      });
+      deckContent += '\n';
+    }
+    
+    if (lands.length > 0) {
+      deckContent += `LANDS (${lands.length}):\n`;
+      lands.forEach(card => {
+        deckContent += `1 ${card.name}${card.isBasicLand ? ' (Basic)' : ''}\n`;
+      });
+      deckContent += '\n';
+    }
+    
+    // Add sideboard if present
+    if (constructedDeck.sideboard && constructedDeck.sideboard.length > 0) {
+      const sortedSideboard = [...constructedDeck.sideboard].sort((a, b) => a.name.localeCompare(b.name));
+      deckContent += `SIDEBOARD (${constructedDeck.sideboard.length}):\n`;
+      sortedSideboard.forEach(card => {
+        const colors = card.colors?.join('') || '';
+        const mana = card.manaCost || '';
+        const pt = card.power && card.toughness ? ` (${card.power}/${card.toughness})` : '';
+        deckContent += `1 ${card.name}${colors ? ` [${colors}]` : ''}${mana ? ` ${mana}` : ''}${pt}\n`;
+      });
+      deckContent += '\n';
+    }
+
+    const blob = new Blob([deckContent], { type: 'text/plain' });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement('a');
+    link.href = url;
+    link.download = `${bot.name.toLowerCase().replace(' ', '-')}-deck-${new Date().toISOString().split('T')[0]}.txt`;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    URL.revokeObjectURL(url);
+  };
+
+  // Function to download all bot pools as one TXT file
+  const downloadAllBotPoolsAsTxt = () => {
+    if (!bots.length) return;
+
+    let allPoolsContent = `All Bot Draft Pools - ${new Date().toLocaleDateString()}\n`;
+    allPoolsContent += `Total Bots: ${bots.length}\n\n`;
+    allPoolsContent += '='.repeat(80) + '\n\n';
+
+    bots.forEach((bot, botIndex) => {
+      const sortedCards = [...bot.picks].sort((a, b) => a.name.localeCompare(b.name));
+      const creatures = sortedCards.filter(card => card.type?.includes('Creature'));
+      const spells = sortedCards.filter(card => !card.type?.includes('Creature') && !card.type?.includes('Land'));
+      const lands = sortedCards.filter(card => card.type?.includes('Land'));
+      
+      allPoolsContent += `${bot.name.toUpperCase()}\n`;
+      allPoolsContent += `Colors: ${bot.colors.join(', ') || 'Colorless'}\n`;
+      allPoolsContent += `Total Cards: ${bot.picks.length}\n\n`;
+      
+      if (creatures.length > 0) {
+        allPoolsContent += `CREATURES (${creatures.length}):\n`;
+        creatures.forEach(card => {
+          const colors = card.colors?.join('') || '';
+          const mana = card.manaCost || '';
+          const pt = card.power && card.toughness ? ` (${card.power}/${card.toughness})` : '';
+          allPoolsContent += `1 ${card.name}${colors ? ` [${colors}]` : ''}${mana ? ` ${mana}` : ''}${pt}\n`;
+        });
+        allPoolsContent += '\n';
+      }
+      
+      if (spells.length > 0) {
+        allPoolsContent += `SPELLS (${spells.length}):\n`;
+        spells.forEach(card => {
+          const colors = card.colors?.join('') || '';
+          const mana = card.manaCost || '';
+          allPoolsContent += `1 ${card.name}${colors ? ` [${colors}]` : ''}${mana ? ` ${mana}` : ''}\n`;
+        });
+        allPoolsContent += '\n';
+      }
+      
+      if (lands.length > 0) {
+        allPoolsContent += `LANDS (${lands.length}):\n`;
+        lands.forEach(card => {
+          allPoolsContent += `1 ${card.name}\n`;
+        });
+        allPoolsContent += '\n';
+      }
+      
+      if (botIndex < bots.length - 1) {
+        allPoolsContent += '='.repeat(80) + '\n\n';
+      }
+    });
+
+    const blob = new Blob([allPoolsContent], { type: 'text/plain' });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement('a');
+    link.href = url;
+    link.download = `all-bot-pools-${new Date().toISOString().split('T')[0]}.txt`;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    URL.revokeObjectURL(url);
+  };
+
+  // Function to download all bot decks as one TXT file
+  const downloadAllBotDecksAsTxt = () => {
+    if (!constructedDecks.length) return;
+
+    let allDecksContent = `All Bot Constructed Decks - ${new Date().toLocaleDateString()}\n`;
+    allDecksContent += `Total Decks: ${constructedDecks.length}\n\n`;
+    allDecksContent += '='.repeat(80) + '\n\n';
+
+    constructedDecks.forEach((deck, deckIndex) => {
+      // Combine non-lands and lands for sorting
+      const allCards = [...(deck.non_lands || []), ...(deck.lands || [])];
+      const sortedCards = allCards.sort((a, b) => a.name.localeCompare(b.name));
+      const creatures = sortedCards.filter(card => card.type?.includes('Creature'));
+      const spells = sortedCards.filter(card => !card.type?.includes('Creature') && !card.type?.includes('Land'));
+      const lands = sortedCards.filter(card => card.type?.includes('Land'));
+      
+      allDecksContent += `${deck.bot_name.toUpperCase()}\n`;
+      allDecksContent += `Colors: ${deck.colors?.join(', ') || 'Colorless'}\n`;
+      allDecksContent += `Total Cards: ${(deck.non_lands?.length || 0)} spells + ${(deck.lands?.length || 0)} lands = ${allCards.length} total\n`;
+      if (deck.sideboard && deck.sideboard.length > 0) {
+        allDecksContent += `Sideboard: ${deck.sideboard.length} cards\n`;
+      }
+      allDecksContent += '\n';
+      
+      if (creatures.length > 0) {
+        allDecksContent += `CREATURES (${creatures.length}):\n`;
+        creatures.forEach(card => {
+          const colors = card.colors?.join('') || '';
+          const mana = card.manaCost || '';
+          const pt = card.power && card.toughness ? ` (${card.power}/${card.toughness})` : '';
+          allDecksContent += `1 ${card.name}${colors ? ` [${colors}]` : ''}${mana ? ` ${mana}` : ''}${pt}\n`;
+        });
+        allDecksContent += '\n';
+      }
+      
+      if (spells.length > 0) {
+        allDecksContent += `SPELLS (${spells.length}):\n`;
+        spells.forEach(card => {
+          const colors = card.colors?.join('') || '';
+          const mana = card.manaCost || '';
+          allDecksContent += `1 ${card.name}${colors ? ` [${colors}]` : ''}${mana ? ` ${mana}` : ''}\n`;
+        });
+        allDecksContent += '\n';
+      }
+      
+      if (lands.length > 0) {
+        allDecksContent += `LANDS (${lands.length}):\n`;
+        lands.forEach(card => {
+          allDecksContent += `1 ${card.name}${card.isBasicLand ? ' (Basic)' : ''}\n`;
+        });
+        allDecksContent += '\n';
+      }
+      
+      // Add sideboard if present
+      if (deck.sideboard && deck.sideboard.length > 0) {
+        const sortedSideboard = [...deck.sideboard].sort((a, b) => a.name.localeCompare(b.name));
+        allDecksContent += `SIDEBOARD (${deck.sideboard.length}):\n`;
+        sortedSideboard.forEach(card => {
+          const colors = card.colors?.join('') || '';
+          const mana = card.manaCost || '';
+          const pt = card.power && card.toughness ? ` (${card.power}/${card.toughness})` : '';
+          allDecksContent += `1 ${card.name}${colors ? ` [${colors}]` : ''}${mana ? ` ${mana}` : ''}${pt}\n`;
+        });
+        allDecksContent += '\n';
+      }
+      
+      if (deckIndex < constructedDecks.length - 1) {
+        allDecksContent += '='.repeat(80) + '\n\n';
+      }
+    });
+
+    const blob = new Blob([allDecksContent], { type: 'text/plain' });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement('a');
+    link.href = url;
+    link.download = `all-bot-decks-${new Date().toISOString().split('T')[0]}.txt`;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    URL.revokeObjectURL(url);
+  };
+
   // Function to download deck as PDF with card images
   const downloadDeckAsPdf = async () => {
     const cardsToExport = deckBuildingMode ? mainDeck : pickedCards;
@@ -1662,7 +1943,7 @@ function DraftSimulator() {
                   New Draft
                 </button>
                 
-                <div className="flex space-x-2">
+                <div className="flex flex-wrap gap-2">
                   <button 
                     className="btn-secondary"
                     onClick={toggleBotPicks}
@@ -1677,6 +1958,23 @@ function DraftSimulator() {
                   >
                     {deckBuildingLoading ? 'Building Decks...' : (decksVisible ? 'Hide Decks' : 'Show Decks')}
                   </button>
+                  
+                  <button 
+                    className="bg-blue-600 hover:bg-blue-700 text-white px-3 py-1 rounded text-sm transition-colors"
+                    onClick={downloadAllBotPoolsAsTxt}
+                    title="Download all bot draft pools in one file"
+                  >
+                    All Pools TXT
+                  </button>
+                  
+                  <button 
+                    className="bg-orange-600 hover:bg-orange-700 text-white px-3 py-1 rounded text-sm transition-colors"
+                    onClick={downloadAllBotDecksAsTxt}
+                    title="Download all bot constructed decks in one file"
+                    disabled={constructedDecks.length === 0}
+                  >
+                    All Decks TXT
+                  </button>
                 </div>
               </div>
             </div>
@@ -1689,34 +1987,63 @@ function DraftSimulator() {
               <div className="space-y-4">
                 {bots.map(bot => (
                   <div key={bot.id} className="bg-gray-100 dark:bg-gray-700 p-4 rounded-lg">
-                    <div 
-                      className="flex items-center justify-between cursor-pointer" 
-                      onClick={() => toggleBotTab(bot.id)}
-                    >
-                      <div className="flex items-center">
-                        <h5 className="font-medium text-lg dark:text-white">{bot.name}</h5>
-                        <div className="flex ml-3">
-                          {bot.colors.map((color: string) => (
-                            <span 
-                              key={color} 
-                              className={`w-5 h-5 rounded-full mx-0.5 ${getCardColorClasses([color])}`}
-                            />
-                          ))}
+                    <div className="flex items-center justify-between">
+                      <div 
+                        className="flex items-center cursor-pointer flex-grow" 
+                        onClick={() => toggleBotTab(bot.id)}
+                      >
+                        <div className="flex items-center">
+                          <h5 className="font-medium text-lg dark:text-white">{bot.name}</h5>
+                          <div className="flex ml-3">
+                            {bot.colors.map((color: string) => (
+                              <span 
+                                key={color} 
+                                className={`w-5 h-5 rounded-full mx-0.5 ${getCardColorClasses([color])}`}
+                              />
+                            ))}
+                          </div>
+                        </div>
+                        <div className="flex items-center ml-auto mr-4">
+                          <span className="text-sm text-gray-600 dark:text-gray-400 mr-3">
+                            {bot.picks.length} cards picked
+                          </span>
+                          <svg 
+                            className={`w-5 h-5 transition-transform duration-200 ${openBotTabs.includes(bot.id) ? 'transform rotate-180' : ''}`} 
+                            fill="none" 
+                            stroke="currentColor" 
+                            viewBox="0 0 24 24" 
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                          </svg>
                         </div>
                       </div>
-                      <div className="flex items-center">
-                        <span className="text-sm text-gray-600 dark:text-gray-400 mr-3">
-                          {bot.picks.length} cards picked
-                        </span>
-                        <svg 
-                          className={`w-5 h-5 transition-transform duration-200 ${openBotTabs.includes(bot.id) ? 'transform rotate-180' : ''}`} 
-                          fill="none" 
-                          stroke="currentColor" 
-                          viewBox="0 0 24 24" 
-                          xmlns="http://www.w3.org/2000/svg"
+                      
+                      {/* Individual download buttons */}
+                      <div className="flex space-x-2">
+                        <button
+                          className="bg-blue-500 hover:bg-blue-600 text-white px-2 py-1 rounded text-xs transition-colors"
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            downloadBotPoolAsTxt(bot);
+                          }}
+                          title={`Download ${bot.name}'s draft pool`}
                         >
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                        </svg>
+                          Pool
+                        </button>
+                        
+                        {findConstructedDeckForBot(bot.id) && (
+                          <button
+                            className="bg-orange-500 hover:bg-orange-600 text-white px-2 py-1 rounded text-xs transition-colors"
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              downloadBotDeckAsTxt(bot);
+                            }}
+                            title={`Download ${bot.name}'s constructed deck`}
+                          >
+                            Deck
+                          </button>
+                        )}
                       </div>
                     </div>
                     
@@ -1848,38 +2175,61 @@ function DraftSimulator() {
               <div className="space-y-4">
                 {constructedDecks.map((deck, index) => (
                   <div key={`deck-${deck.bot_id}-${index}`} className="bg-gray-100 dark:bg-gray-700 p-4 rounded-lg">
-                    <div 
-                      className="flex items-center justify-between cursor-pointer" 
-                      onClick={() => toggleBotTab(parseInt(deck.bot_id))}
-                    >
-                      <div className="flex items-center">
-                        <h5 className="font-medium text-lg dark:text-white">{deck.bot_name}</h5>
-                        <div className="flex ml-3">
-                          {deck.colors && deck.colors.map((color: string) => (
-                            <span 
-                              key={color} 
-                              className={`w-5 h-5 rounded-full mx-0.5 ${getCardColorClasses([color])}`}
-                            />
-                          ))}
+                    <div className="flex items-center justify-between">
+                      <div 
+                        className="flex items-center cursor-pointer flex-grow" 
+                        onClick={() => toggleBotTab(parseInt(deck.bot_id))}
+                      >
+                        <div className="flex items-center">
+                          <h5 className="font-medium text-lg dark:text-white">{deck.bot_name}</h5>
+                          <div className="flex ml-3">
+                            {deck.colors && deck.colors.map((color: string) => (
+                              <span 
+                                key={color} 
+                                className={`w-5 h-5 rounded-full mx-0.5 ${getCardColorClasses([color])}`}
+                              />
+                            ))}
+                          </div>
+                        </div>
+                        <div className="flex items-center ml-auto mr-4">
+                          <span className="text-sm text-gray-600 dark:text-gray-400 mr-3">
+                            {deck.full_deck ? deck.full_deck.length : 0} cards
+                            {deck.error && (
+                              <span className="text-red-500 ml-2">ERROR</span>
+                            )}
+                          </span>
+                          <svg 
+                            className={`w-5 h-5 transition-transform duration-200 ${openBotTabs.includes(parseInt(deck.bot_id)) ? 'transform rotate-180' : ''}`} 
+                            fill="none" 
+                            stroke="currentColor" 
+                            viewBox="0 0 24 24" 
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                          </svg>
                         </div>
                       </div>
-                      <div className="flex items-center">
-                        <span className="text-sm text-gray-600 dark:text-gray-400 mr-3">
-                          {deck.full_deck ? deck.full_deck.length : 0} cards
-                          {deck.error && (
-                            <span className="text-red-500 ml-2">ERROR</span>
-                          )}
-                        </span>
-                        <svg 
-                          className={`w-5 h-5 transition-transform duration-200 ${openBotTabs.includes(parseInt(deck.bot_id)) ? 'transform rotate-180' : ''}`} 
-                          fill="none" 
-                          stroke="currentColor" 
-                          viewBox="0 0 24 24" 
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                        </svg>
-                      </div>
+                      
+                      {/* Individual download buttons for constructed decks */}
+                      {!deck.error && (
+                        <div className="flex space-x-2">
+                          <button
+                            className="bg-orange-500 hover:bg-orange-600 text-white px-2 py-1 rounded text-xs transition-colors"
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              // Create a bot-like object for the download function
+                              const botForDownload = { 
+                                id: parseInt(deck.bot_id), 
+                                name: deck.bot_name 
+                              };
+                              downloadBotDeckAsTxt(botForDownload);
+                            }}
+                            title={`Download ${deck.bot_name}'s constructed deck`}
+                          >
+                            Deck
+                          </button>
+                        </div>
+                      )}
                     </div>
                     
                     {openBotTabs.includes(parseInt(deck.bot_id)) && (
