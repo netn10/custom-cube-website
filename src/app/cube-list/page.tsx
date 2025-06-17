@@ -78,18 +78,8 @@ function CubeListContent() {
     window.history.replaceState({ path: newUrl }, '', newUrl);
   };
 
-  // Apply historic mode class to the document body when historic mode changes
-  useEffect(() => {
-    // Store the current background color before changing
-    document.documentElement.style.setProperty('--bg-color-current', 
-      window.getComputedStyle(document.body).backgroundColor);
-    
-    if (historicMode) {
-      document.body.classList.add('historic-mode');
-    } else {
-      document.body.classList.remove('historic-mode');
-    }
-  }, [historicMode]);
+  // Historic mode background is now applied directly to the page container
+  // No need to modify the document body, keeping historic mode scoped to this page
 
   // Fetch cards when component mounts or filters change
   useEffect(() => {
@@ -122,6 +112,8 @@ function CubeListContent() {
         search?: string;
         body_search?: string;
         colors?: string[];
+        color_match?: 'exact' | 'includes' | 'at-most';
+        exclude_colorless?: string;
         type?: string;
         set?: string;
         custom?: boolean | null;
@@ -403,7 +395,7 @@ function CubeListContent() {
   };
 
   return (
-    <div className={`space-y-6 ${historicMode ? 'historic-mode-content' : ''}`}>
+    <div className={`min-h-screen space-y-6 ${historicMode ? 'historic-mode-page' : ''}`}>
       <h1 className="text-3xl font-bold text-center dark:text-white">Cube Card List</h1>
       
       <div className="bg-white dark:bg-gray-800 p-4 rounded-lg shadow">
@@ -417,9 +409,6 @@ function CubeListContent() {
                 className="form-checkbox h-5 w-5 text-blue-600 transition duration-150 ease-in-out mr-2"
                 checked={historicMode}
                 onChange={() => {
-                  // Store the current background color before changing
-                  document.documentElement.style.setProperty('--bg-color-current', 
-                    window.getComputedStyle(document.body).backgroundColor);
                   setHistoricMode(!historicMode);
                   resetPage();
                 }}

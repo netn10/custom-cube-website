@@ -394,6 +394,19 @@ body {
   background-color: var(--ancient-brown-color);
 }
 
+/* Page-specific historic mode that only affects the cube list page */
+.historic-mode-page {
+  animation: fadeToAncientBrown 0.5s ease-in-out forwards;
+  background-color: var(--ancient-brown-color);
+  padding: 1rem;
+  margin: -1rem;
+}
+
+.dark .historic-mode-page {
+  animation: fadeToAncientBrown 0.5s ease-in-out forwards;
+  background-color: var(--ancient-brown-color);
+}
+
 @layer components {
   .card-hover {
     @apply transition-transform duration-300 hover:scale-105 hover:shadow-md cursor-pointer;
