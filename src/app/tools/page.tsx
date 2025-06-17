@@ -846,6 +846,268 @@ function DraftSimulator() {
     );
   };
 
+  // Function to download deck as TXT
+  const downloadDeckAsTxt = () => {
+    if (!pickedCards.length) return;
+
+    // Sort cards by name for better organization
+    const sortedCards = [...pickedCards].sort((a, b) => a.name.localeCompare(b.name));
+    
+    // Group cards by type
+    const creatures = sortedCards.filter(card => card.type?.includes('Creature'));
+    const spells = sortedCards.filter(card => !card.type?.includes('Creature') && !card.type?.includes('Land'));
+    const lands = sortedCards.filter(card => card.type?.includes('Land'));
+    
+    let deckContent = `Draft Deck - ${new Date().toLocaleDateString()}\n`;
+    deckContent += `Total Cards: ${pickedCards.length}\n\n`;
+    
+    if (creatures.length > 0) {
+      deckContent += `CREATURES (${creatures.length}):\n`;
+      creatures.forEach(card => {
+        const colors = card.colors?.join('') || '';
+        const mana = card.manaCost || '';
+        const pt = card.power && card.toughness ? ` (${card.power}/${card.toughness})` : '';
+        deckContent += `1 ${card.name}${colors ? ` [${colors}]` : ''}${mana ? ` ${mana}` : ''}${pt}\n`;
+      });
+      deckContent += '\n';
+    }
+    
+    if (spells.length > 0) {
+      deckContent += `SPELLS (${spells.length}):\n`;
+      spells.forEach(card => {
+        const colors = card.colors?.join('') || '';  
+        const mana = card.manaCost || '';
+        deckContent += `1 ${card.name}${colors ? ` [${colors}]` : ''}${mana ? ` ${mana}` : ''}\n`;
+      });
+      deckContent += '\n';
+    }
+    
+    if (lands.length > 0) {
+      deckContent += `LANDS (${lands.length}):\n`;
+      lands.forEach(card => {
+        deckContent += `1 ${card.name}\n`;
+      });
+      deckContent += '\n';
+    }
+    
+    deckContent += `\nDRAFT ORDER:\n`;
+    pickedCards.forEach((card, index) => {
+      deckContent += `P${card.packNumber}P${card.pickNumber}: ${card.name}\n`;
+    });
+
+    // Create and download the file
+    const blob = new Blob([deckContent], { type: 'text/plain' });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement('a');
+    link.href = url;
+    link.download = `draft-deck-${new Date().toISOString().split('T')[0]}.txt`;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    URL.revokeObjectURL(url);
+  };
+
+    // Function to download deck as PDF with card images
+  const downloadDeckAsPdf = async () => {
+    if (!pickedCards.length) return;
+
+    try {
+      // Dynamically import jsPDF
+      const { jsPDF } = await import('jspdf');
+      const doc = new jsPDF();
+
+      // Configuration for card layout
+      const pageWidth = doc.internal.pageSize.width;
+      const pageHeight = doc.internal.pageSize.height;
+      const margin = 10;
+      const cardsPerRow = 3;
+      const cardsPerPage = 9; // 3x3 grid
+      const cardWidth = (pageWidth - margin * 2 - (cardsPerRow - 1) * 5) / cardsPerRow;
+      const cardHeight = cardWidth * 1.4; // MTG card aspect ratio
+      const cardSpacing = 5;
+
+      // Title page
+      doc.setFontSize(20);
+      doc.text('Draft Deck', pageWidth / 2, 30, { align: 'center' });
+      
+      doc.setFontSize(12);
+      doc.text(`Date: ${new Date().toLocaleDateString()}`, pageWidth / 2, 45, { align: 'center' });
+      doc.text(`Total Cards: ${pickedCards.length}`, pageWidth / 2, 55, { align: 'center' });
+
+      // Add a new page for cards
+      doc.addPage();
+
+      // Function to load image as base64
+      const loadImageAsBase64 = (url: string): Promise<string> => {
+        return new Promise((resolve, reject) => {
+          const img = new Image();
+          img.crossOrigin = 'anonymous';
+          
+          img.onload = () => {
+            const canvas = document.createElement('canvas');
+            const ctx = canvas.getContext('2d');
+            if (!ctx) {
+              reject(new Error('Failed to get canvas context'));
+              return;
+            }
+            
+            canvas.width = img.width;
+            canvas.height = img.height;
+            ctx.drawImage(img, 0, 0);
+            
+            try {
+              const dataURL = canvas.toDataURL('image/jpeg', 0.8);
+              resolve(dataURL);
+            } catch (error) {
+              reject(error);
+            }
+          };
+          
+          img.onerror = () => reject(new Error('Failed to load image'));
+          
+          // Use the proxy URL for external images
+          if (url.startsWith('data:')) {
+            img.src = url;
+          } else {
+            img.src = `${API_BASE_URL}/image-proxy?url=${encodeURIComponent(url)}`;
+          }
+        });
+      };
+
+      // Function to create a placeholder image
+      const createPlaceholderImage = (cardName: string, colors: string[] = []): string => {
+        const canvas = document.createElement('canvas');
+        const ctx = canvas.getContext('2d');
+        if (!ctx) return '';
+        
+        canvas.width = 200;
+        canvas.height = 280;
+        
+        // Background color based on card colors
+        let bgColor = '#f0f0f0';
+        if (colors.length === 1) {
+          const colorMap: { [key: string]: string } = {
+            'W': '#fffbd5',
+            'U': '#0e68ab',
+            'B': '#150b00',
+            'R': '#d3202a',
+            'G': '#00733e'
+          };
+          bgColor = colorMap[colors[0]] || bgColor;
+        } else if (colors.length > 1) {
+          bgColor = '#ffd700'; // Gold for multicolor
+        }
+        
+        ctx.fillStyle = bgColor;
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+        
+        // Border
+        ctx.strokeStyle = '#333';
+        ctx.lineWidth = 2;
+        ctx.strokeRect(0, 0, canvas.width, canvas.height);
+        
+        // Card name
+        ctx.fillStyle = colors.length === 1 && colors[0] === 'W' ? '#000' : '#fff';
+        ctx.font = 'bold 16px Arial';
+        ctx.textAlign = 'center';
+        ctx.textBaseline = 'middle';
+        
+        // Wrap text if too long
+        const maxWidth = canvas.width - 20;
+        const words = cardName.split(' ');
+        let line = '';
+        let y = canvas.height / 2;
+        
+        for (let n = 0; n < words.length; n++) {
+          const testLine = line + words[n] + ' ';
+          const metrics = ctx.measureText(testLine);
+          const testWidth = metrics.width;
+          
+          if (testWidth > maxWidth && n > 0) {
+            ctx.fillText(line, canvas.width / 2, y);
+            line = words[n] + ' ';
+            y += 20;
+          } else {
+            line = testLine;
+          }
+        }
+        ctx.fillText(line, canvas.width / 2, y);
+        
+        return canvas.toDataURL('image/jpeg', 0.8);
+      };
+
+      // Process cards in batches to avoid overwhelming the browser
+      let currentPage = 1;
+      let cardIndex = 0;
+      
+      for (let i = 0; i < pickedCards.length; i++) {
+        const card = pickedCards[i];
+        const row = Math.floor(cardIndex / cardsPerRow);
+        const col = cardIndex % cardsPerRow;
+        const x = margin + col * (cardWidth + cardSpacing);
+        const y = margin + row * (cardHeight + cardSpacing);
+        
+        try {
+          let imageData;
+          
+          if (card.imageUrl) {
+            try {
+              imageData = await loadImageAsBase64(card.imageUrl);
+            } catch (error) {
+              console.warn(`Failed to load image for ${card.name}, using placeholder:`, error);
+              imageData = createPlaceholderImage(card.name, card.colors);
+            }
+          } else {
+            imageData = createPlaceholderImage(card.name, card.colors);
+          }
+          
+          if (imageData) {
+            doc.addImage(imageData, 'JPEG', x, y, cardWidth, cardHeight);
+            
+            // Add card name below the image
+            doc.setFontSize(8);
+            doc.setFont('helvetica', 'normal');
+            doc.text(card.name, x + cardWidth / 2, y + cardHeight + 5, { align: 'center' });
+            
+            // Add pick order
+            doc.setFontSize(6);
+            doc.text(`P${card.packNumber}P${card.pickNumber}`, x + cardWidth / 2, y + cardHeight + 10, { align: 'center' });
+          }
+        } catch (error) {
+          console.error(`Error processing card ${card.name}:`, error);
+          // Add text fallback
+          doc.setFontSize(10);
+          doc.text(card.name, x + cardWidth / 2, y + cardHeight / 2, { align: 'center' });
+        }
+        
+        cardIndex++;
+        
+        // Check if we need a new page
+        if (cardIndex >= cardsPerPage) {
+          if (i < pickedCards.length - 1) {
+            doc.addPage();
+            cardIndex = 0;
+            currentPage++;
+          }
+        }
+      }
+
+      // Save the PDF - generate blob and trigger download
+      const pdfBlob = doc.output('blob');
+      const url = URL.createObjectURL(pdfBlob);
+      const link = document.createElement('a');
+      link.href = url;
+      link.download = `draft-deck-with-images-${new Date().toISOString().split('T')[0]}.pdf`;
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      URL.revokeObjectURL(url);
+    } catch (error) {
+      console.error('Error creating PDF:', error);
+      alert('Error creating PDF with images. This might be due to image loading issues. Please try again or use the TXT download instead.');
+    }
+  };
+
   return (
     <div className="space-y-4">
       {!draftStarted && !draftComplete ? (
@@ -947,29 +1209,56 @@ function DraftSimulator() {
             </div>
             
             
-            <div className="flex justify-between">
-              <button 
-                className="btn-primary"
-                onClick={startDraft}
-              >
-                New Draft
-              </button>
-              
-              <div className="flex space-x-2">
+            <div className="flex flex-col space-y-4">
+              {/* Download Options */}
+              <div className="flex justify-center space-x-4">
                 <button 
-                  className="btn-secondary"
-                  onClick={toggleBotPicks}
+                  className="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-md transition-colors flex items-center"
+                  onClick={downloadDeckAsTxt}
+                  title="Download your draft deck as a text file"
                 >
-                  {botPicksVisible ? 'Hide Bot Picks' : 'Show Bot Picks'}
+                  <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                  </svg>
+                  Download as TXT
                 </button>
                 
                 <button 
-                  className="btn-secondary"
-                  onClick={decksVisible ? toggleDecksVisible : showDecks}
-                  disabled={!draftComplete || deckBuildingLoading}
+                  className="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-md transition-colors flex items-center"
+                  onClick={downloadDeckAsPdf}
+                  title="Download your draft deck as a PDF file"
                 >
-                  {deckBuildingLoading ? 'Building Decks...' : (decksVisible ? 'Hide Decks' : 'Show Decks')}
+                  <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                  </svg>
+                  Download as PDF
                 </button>
+              </div>
+
+              <div className="flex justify-between">
+                <button 
+                  className="btn-primary"
+                  onClick={startDraft}
+                >
+                  New Draft
+                </button>
+                
+                <div className="flex space-x-2">
+                  <button 
+                    className="btn-secondary"
+                    onClick={toggleBotPicks}
+                  >
+                    {botPicksVisible ? 'Hide Bot Picks' : 'Show Bot Picks'}
+                  </button>
+                  
+                  <button 
+                    className="btn-secondary"
+                    onClick={decksVisible ? toggleDecksVisible : showDecks}
+                    disabled={!draftComplete || deckBuildingLoading}
+                  >
+                    {deckBuildingLoading ? 'Building Decks...' : (decksVisible ? 'Hide Decks' : 'Show Decks')}
+                  </button>
+                </div>
               </div>
             </div>
           </div>

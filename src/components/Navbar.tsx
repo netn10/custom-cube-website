@@ -115,7 +115,7 @@ export default function Navbar() {
           </div>
 
           {/* Mobile Navigation Button */}
-          <div className="md:hidden flex items-center -mr-20">
+          <div className="md:hidden flex items-center">
             <button
               onClick={toggleTheme}
               className="p-2 rounded-full hover:bg-gray-700 transition-colors duration-200 mr-2"
