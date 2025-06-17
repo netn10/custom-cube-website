@@ -140,6 +140,66 @@ function DraftSimulator() {
   const [constructedDecks, setConstructedDecks] = useState<any[]>([]);
   const [decksVisible, setDecksVisible] = useState(false);
   const [deckBuildingLoading, setDeckBuildingLoading] = useState(false);
+  const [deckBuildingMode, setDeckBuildingMode] = useState(false);
+  const [mainDeck, setMainDeck] = useState<any[]>([]);
+  const [sideboard, setSideboard] = useState<any[]>([]);
+  const [basicLands, setBasicLands] = useState({
+    Plains: 0,
+    Island: 0,
+    Swamp: 0,
+    Mountain: 0,
+    Forest: 0
+  });
+
+  // Basic land card data with Scryfall images
+  const basicLandCards = {
+    Plains: {
+      id: 'basic-plains',
+      name: 'Plains',
+      type: 'Basic Land — Plains',
+      colors: ['W'],
+      imageUrl: 'https://cards.scryfall.io/large/front/9/d/9dd2d666-7c6b-48ce-93dc-c004ebdd1fe9.jpg?1748706876',
+      manaCost: '',
+      rarity: 'Basic'
+    },
+    Island: {
+      id: 'basic-island',
+      name: 'Island',
+      type: 'Basic Land — Island',
+      colors: ['U'],
+      imageUrl: 'https://cards.scryfall.io/large/front/b/9/b92ec9f6-a56d-40c6-aee2-7d5e1524c985.jpg?1749278110',
+      manaCost: '',
+      rarity: 'Basic'
+    },
+    Swamp: {
+      id: 'basic-swamp',
+      name: 'Swamp',
+      type: 'Basic Land — Swamp',
+      colors: ['B'],
+      imageUrl: 'https://cards.scryfall.io/large/front/1/1/1176ebbf-4130-4e4e-ad49-65101a7357b4.jpg?1748707608',
+      manaCost: '',
+      rarity: 'Basic'
+    },
+    Mountain: {
+      id: 'basic-mountain',
+      name: 'Mountain',
+      type: 'Basic Land — Mountain',
+      colors: ['R'],
+      imageUrl: 'https://cards.scryfall.io/large/front/a/1/a18ef64b-a9de-4548-b4d5-168758442db7.jpg?1748706910',
+      manaCost: '',
+      rarity: 'Basic'
+    },
+    Forest: {
+      id: 'basic-forest',
+      name: 'Forest',
+      type: 'Basic Land — Forest',
+      colors: ['G'],
+      imageUrl: 'https://cards.scryfall.io/large/front/2/0/2036f825-ef57-4a40-b45f-0668d9c8ec6a.jpg?1748707608',
+      manaCost: '',
+      rarity: 'Basic'
+    }
+  };
+  const [draggedCard, setDraggedCard] = useState<any>(null);
 
   const toggleBotTab = (botId: number) => {
     setOpenBotTabs(prev => {
@@ -848,18 +908,26 @@ function DraftSimulator() {
 
   // Function to download deck as TXT
   const downloadDeckAsTxt = () => {
-    if (!pickedCards.length) return;
+    const cardsToExport = deckBuildingMode ? mainDeck : pickedCards;
+    if (!cardsToExport.length) return;
 
     // Sort cards by name for better organization
-    const sortedCards = [...pickedCards].sort((a, b) => a.name.localeCompare(b.name));
+    const sortedCards = [...cardsToExport].sort((a, b) => a.name.localeCompare(b.name));
     
     // Group cards by type
     const creatures = sortedCards.filter(card => card.type?.includes('Creature'));
     const spells = sortedCards.filter(card => !card.type?.includes('Creature') && !card.type?.includes('Land'));
     const lands = sortedCards.filter(card => card.type?.includes('Land'));
     
-    let deckContent = `Draft Deck - ${new Date().toLocaleDateString()}\n`;
-    deckContent += `Total Cards: ${pickedCards.length}\n\n`;
+    let deckContent = `${deckBuildingMode ? 'Main Deck' : 'Draft Pool'} - ${new Date().toLocaleDateString()}\n`;
+    deckContent += `Total Cards: ${cardsToExport.length}`;
+    
+    if (deckBuildingMode) {
+      const totalLands = getTotalLands();
+      deckContent += ` + ${totalLands} lands = ${cardsToExport.length + totalLands} total\n\n`;
+    } else {
+      deckContent += '\n\n';
+    }
     
     if (creatures.length > 0) {
       deckContent += `CREATURES (${creatures.length}):\n`;
@@ -890,10 +958,33 @@ function DraftSimulator() {
       deckContent += '\n';
     }
     
-    deckContent += `\nDRAFT ORDER:\n`;
-    pickedCards.forEach((card, index) => {
-      deckContent += `P${card.packNumber}P${card.pickNumber}: ${card.name}\n`;
-    });
+    // Add basic lands if in deck building mode
+    if (deckBuildingMode && getTotalLands() > 0) {
+      deckContent += `BASIC LANDS (${getTotalLands()}):\n`;
+      Object.entries(basicLands).forEach(([landType, count]) => {
+        if (count > 0) {
+          deckContent += `${count} ${landType}\n`;
+        }
+      });
+      deckContent += '\n';
+      
+      // Add sideboard info
+      if (sideboard.length > 0) {
+        deckContent += `\nSIDEBOARD (${sideboard.length}):\n`;
+        const sortedSideboard = [...sideboard].sort((a, b) => a.name.localeCompare(b.name));
+        sortedSideboard.forEach(card => {
+          deckContent += `1 ${card.name}\n`;
+        });
+        deckContent += '\n';
+      }
+    }
+    
+    if (!deckBuildingMode) {
+      deckContent += `\nDRAFT ORDER:\n`;
+      pickedCards.forEach((card, index) => {
+        deckContent += `P${card.packNumber}P${card.pickNumber}: ${card.name}\n`;
+      });
+    }
 
     // Create and download the file
     const blob = new Blob([deckContent], { type: 'text/plain' });
@@ -904,12 +995,128 @@ function DraftSimulator() {
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
-    URL.revokeObjectURL(url);
+        URL.revokeObjectURL(url);
   };
 
-    // Function to download deck as PDF with card images
+  // Deck building functions
+  const startDeckBuilding = () => {
+    setDeckBuildingMode(true);
+    // Initially, all cards go to sideboard
+    setSideboard([...pickedCards]);
+    setMainDeck([]);
+    setBasicLands({
+      Plains: 0,
+      Island: 0,
+      Swamp: 0,
+      Mountain: 0,
+      Forest: 0
+    });
+  };
+
+  const exitDeckBuilding = () => {
+    setDeckBuildingMode(false);
+  };
+
+  const updateBasicLands = (landType: string, count: number) => {
+    setBasicLands(prev => ({
+      ...prev,
+      [landType]: Math.max(0, count)
+    }));
+  };
+
+  const getTotalLands = () => {
+    return Object.values(basicLands).reduce((sum, count) => sum + count, 0);
+  };
+
+  const getTotalDeckSize = () => {
+    return mainDeck.length + getTotalLands();
+  };
+
+  // Get basic land cards as an array for display and PDF
+  const getBasicLandCards = () => {
+    const landCards: any[] = [];
+    Object.entries(basicLands).forEach(([landType, count]) => {
+      if (count > 0) {
+        const landCard = basicLandCards[landType as keyof typeof basicLandCards];
+        for (let i = 0; i < count; i++) {
+          landCards.push({
+            ...landCard,
+            id: `${landCard.id}-${i}` // Unique ID for each copy
+          });
+        }
+      }
+    });
+    return landCards;
+  };
+
+  // Drag and drop functions
+  const handleDragStart = (e: React.DragEvent, card: any, source: 'main' | 'sideboard') => {
+    setDraggedCard({ ...card, source });
+    e.dataTransfer.effectAllowed = 'move';
+  };
+
+  const handleDragOver = (e: React.DragEvent) => {
+    e.preventDefault();
+    e.dataTransfer.dropEffect = 'move';
+  };
+
+  const handleDrop = (e: React.DragEvent, target: 'main' | 'sideboard') => {
+    e.preventDefault();
+    
+    if (!draggedCard) return;
+
+    const sourceList = draggedCard.source === 'main' ? mainDeck : sideboard;
+    const targetList = target === 'main' ? mainDeck : sideboard;
+    
+    // Don't allow more than 40 cards in main deck (excluding lands)
+    if (target === 'main' && mainDeck.length >= 40) {
+      alert('Main deck cannot have more than 40 cards (excluding basic lands)');
+      return;
+    }
+
+    // Remove from source
+    const newSourceList = sourceList.filter(card => card.id !== draggedCard.id);
+    
+    // Add to target
+    const newTargetList = [...targetList, draggedCard];
+
+    if (draggedCard.source === 'main') {
+      setMainDeck(newSourceList);
+      if (target === 'sideboard') {
+        setSideboard(newTargetList);
+      }
+    } else {
+      setSideboard(newSourceList);
+      if (target === 'main') {
+        setMainDeck(newTargetList);
+      }
+    }
+
+    setDraggedCard(null);
+  };
+
+  const moveCardToMain = (card: any) => {
+    if (mainDeck.length >= 40) {
+      alert('Main deck cannot have more than 40 cards (excluding basic lands)');
+      return;
+    }
+    
+    setSideboard(prev => prev.filter(c => c.id !== card.id));
+    setMainDeck(prev => [...prev, card]);
+  };
+
+  const moveCardToSideboard = (card: any) => {
+    setMainDeck(prev => prev.filter(c => c.id !== card.id));
+    setSideboard(prev => [...prev, card]);
+  };
+
+  // Function to download deck as PDF with card images
   const downloadDeckAsPdf = async () => {
-    if (!pickedCards.length) return;
+    const cardsToExport = deckBuildingMode ? mainDeck : pickedCards;
+    const basicLandCardsForPdf = deckBuildingMode ? getBasicLandCards() : [];
+    const allCardsForPdf = [...cardsToExport, ...basicLandCardsForPdf];
+    
+    if (!allCardsForPdf.length) return;
 
     try {
       // Dynamically import jsPDF
@@ -928,11 +1135,17 @@ function DraftSimulator() {
 
       // Title page
       doc.setFontSize(20);
-      doc.text('Draft Deck', pageWidth / 2, 30, { align: 'center' });
+      doc.text(deckBuildingMode ? 'Main Deck' : 'Draft Pool', pageWidth / 2, 30, { align: 'center' });
       
       doc.setFontSize(12);
       doc.text(`Date: ${new Date().toLocaleDateString()}`, pageWidth / 2, 45, { align: 'center' });
-      doc.text(`Total Cards: ${pickedCards.length}`, pageWidth / 2, 55, { align: 'center' });
+      
+      if (deckBuildingMode) {
+        const totalLands = getTotalLands();
+        doc.text(`Cards: ${cardsToExport.length} + ${totalLands} lands = ${allCardsForPdf.length} total`, pageWidth / 2, 55, { align: 'center' });
+      } else {
+        doc.text(`Total Cards: ${allCardsForPdf.length}`, pageWidth / 2, 55, { align: 'center' });
+      }
 
       // Add a new page for cards
       doc.addPage();
@@ -1040,8 +1253,8 @@ function DraftSimulator() {
       let currentPage = 1;
       let cardIndex = 0;
       
-      for (let i = 0; i < pickedCards.length; i++) {
-        const card = pickedCards[i];
+      for (let i = 0; i < allCardsForPdf.length; i++) {
+        const card = allCardsForPdf[i];
         const row = Math.floor(cardIndex / cardsPerRow);
         const col = cardIndex % cardsPerRow;
         const x = margin + col * (cardWidth + cardSpacing);
@@ -1069,9 +1282,13 @@ function DraftSimulator() {
             doc.setFont('helvetica', 'normal');
             doc.text(card.name, x + cardWidth / 2, y + cardHeight + 5, { align: 'center' });
             
-            // Add pick order
+            // Add pick order or land indicator
             doc.setFontSize(6);
-            doc.text(`P${card.packNumber}P${card.pickNumber}`, x + cardWidth / 2, y + cardHeight + 10, { align: 'center' });
+            if (card.packNumber && card.pickNumber) {
+              doc.text(`P${card.packNumber}P${card.pickNumber}`, x + cardWidth / 2, y + cardHeight + 10, { align: 'center' });
+            } else if (card.rarity === 'Basic') {
+              doc.text('Basic Land', x + cardWidth / 2, y + cardHeight + 10, { align: 'center' });
+            }
           }
         } catch (error) {
           console.error(`Error processing card ${card.name}:`, error);
@@ -1084,7 +1301,7 @@ function DraftSimulator() {
         
         // Check if we need a new page
         if (cardIndex >= cardsPerPage) {
-          if (i < pickedCards.length - 1) {
+          if (i < allCardsForPdf.length - 1) {
             doc.addPage();
             cardIndex = 0;
             currentPage++;
@@ -1155,84 +1372,286 @@ function DraftSimulator() {
               )}
             </div>
             
-            <div className="mb-6">
-              <h4 className="text-lg font-medium mb-2 dark:text-white">Your Draft Pool ({pickedCards.length} cards)</h4>
-              
-              <div className="flex flex-wrap">
-                {pickedCards.map((card, index) => (
-                  <div 
-                    key={index} 
-                    className="inline-block mr-3 mb-3 group relative"
-                  >
-                    {card.imageUrl ? (
-                      <div className="relative w-32 h-44 overflow-hidden rounded shadow-md hover:shadow-lg transition-shadow duration-200">
-                        <img 
-                          src={card.imageUrl.startsWith('data:') ? card.imageUrl : `${API_BASE_URL}/image-proxy?url=${encodeURIComponent(card.imageUrl)}`} 
-                          alt={card.name} 
-                          className="w-full h-full object-cover"
-                          onError={(e) => {
-                            console.error('Error loading image:', card.imageUrl);
-                            e.currentTarget.src = 'data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22100%22%20height%3D%22140%22%20viewBox%3D%220%200%20100%20140%22%20preserveAspectRatio%3D%22none%22%3E%3Crect%20width%3D%22100%22%20height%3D%22140%22%20fill%3D%22%23eee%22%3E%3C%2Frect%3E%3Ctext%20text-anchor%3D%22middle%22%20x%3D%2250%22%20y%3D%2270%22%20style%3D%22fill%3A%23aaa%3Bfont-weight%3Abold%3Bfont-size%3A12px%3Bfont-family%3AArial%2C%20Helvetica%2C%20sans-serif%3Bdominant-baseline%3Acentral%22%3EImage%20Not%20Found%3C%2Ftext%3E%3C%2Fsvg%3E';
-                          }}
-                        />
-                        <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-80 p-1">
-                          <p className="text-white text-xs truncate">{card.name}</p>
-                          <p className="text-xs text-gray-300 text-center">P{card.packNumber}-P{card.pickNumber}</p>
+            {!deckBuildingMode ? (
+              <div className="mb-6">
+                <h4 className="text-lg font-medium mb-2 dark:text-white">Your Draft Pool ({pickedCards.length} cards)</h4>
+                
+                <div className="flex flex-wrap">
+                  {pickedCards.map((card, index) => (
+                    <div 
+                      key={index} 
+                      className="inline-block mr-3 mb-3 group relative"
+                    >
+                      {card.imageUrl ? (
+                        <div className="relative w-32 h-44 overflow-hidden rounded shadow-md hover:shadow-lg transition-shadow duration-200">
+                          <img 
+                            src={card.imageUrl.startsWith('data:') ? card.imageUrl : `${API_BASE_URL}/image-proxy?url=${encodeURIComponent(card.imageUrl)}`} 
+                            alt={card.name} 
+                            className="w-full h-full object-cover"
+                            onError={(e) => {
+                              console.error('Error loading image:', card.imageUrl);
+                              e.currentTarget.src = 'data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22100%22%20height%3D%22140%22%20viewBox%3D%220%200%20100%20140%22%20preserveAspectRatio%3D%22none%22%3E%3Crect%20width%3D%22100%22%20height%3D%22140%22%20fill%3D%22%23eee%22%3E%3C%2Frect%3E%3Ctext%20text-anchor%3D%22middle%22%20x%3D%2250%22%20y%3D%2270%22%20style%3D%22fill%3A%23aaa%3Bfont-weight%3Abold%3Bfont-size%3A12px%3Bfont-family%3AArial%2C%20Helvetica%2C%20sans-serif%3Bdominant-baseline%3Acentral%22%3EImage%20Not%20Found%3C%2Ftext%3E%3C%2Fsvg%3E';
+                            }}
+                          />
+                          <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-80 p-1">
+                            <p className="text-white text-xs truncate">{card.name}</p>
+                            <p className="text-xs text-gray-300 text-center">P{card.packNumber}-P{card.pickNumber}</p>
+                          </div>
+                          <CardHoverPreview card={card} />
                         </div>
-                        <CardHoverPreview card={card} />
-                      </div>
-                    ) : (
-                      <div className={`w-40 h-56 ${getCardColorClasses(card.colors)} bg-opacity-20 dark:bg-opacity-30 flex flex-col justify-between rounded p-2 shadow-md hover:shadow-lg transition-shadow duration-200`}>
-                        <p className="text-sm truncate font-medium dark:text-white">{card.name}</p>
-                        <div className="flex justify-center">
-                          {card.colors.map((color: string) => (
-                            <span 
-                              key={color} 
-                              className="w-3 h-3 rounded-full mx-0.5"
-                              style={{ 
-                                backgroundColor: 
-                                  color === 'W' ? '#F9FAF4' : 
-                                  color === 'U' ? '#0E68AB' : 
-                                  color === 'B' ? '#150B00' : 
-                                  color === 'R' ? '#D3202A' : 
-                                  '#00733E'
-                              }}
-                            />
-                          ))}
+                      ) : (
+                        <div className={`w-40 h-56 ${getCardColorClasses(card.colors)} bg-opacity-20 dark:bg-opacity-30 flex flex-col justify-between rounded p-2 shadow-md hover:shadow-lg transition-shadow duration-200`}>
+                          <p className="text-sm truncate font-medium dark:text-white">{card.name}</p>
+                          <div className="flex justify-center">
+                            {card.colors.map((color: string) => (
+                              <span 
+                                key={color} 
+                                className="w-3 h-3 rounded-full mx-0.5"
+                                style={{ 
+                                  backgroundColor: 
+                                    color === 'W' ? '#F9FAF4' : 
+                                    color === 'U' ? '#0E68AB' : 
+                                    color === 'B' ? '#150B00' : 
+                                    color === 'R' ? '#D3202A' : 
+                                    '#00733E'
+                                }}
+                              />
+                            ))}
+                          </div>
+                          <p className="text-xs text-center dark:text-white">P{card.packNumber}-P{card.pickNumber}</p>
                         </div>
-                        <p className="text-xs text-center dark:text-white">P{card.packNumber}-P{card.pickNumber}</p>
-                      </div>
-                    )}
-                  </div>
-                ))}
+                      )}
+                    </div>
+                  ))}
+                </div>
               </div>
-            </div>
+            ) : (
+              <div className="mb-6">
+                <div className="grid lg:grid-cols-2 gap-6">
+                  {/* Main Deck */}
+                  <div className="bg-gray-50 dark:bg-gray-700 p-4 rounded-lg">
+                    <div className="flex justify-between items-center mb-4">
+                      <h4 className="text-lg font-medium dark:text-white">Main Deck ({getTotalDeckSize()}/60)</h4>
+                      <div className="text-sm dark:text-gray-300">
+                        {mainDeck.length} cards + {getTotalLands()} lands
+                      </div>
+                    </div>
+                    
+                    {/* Basic Lands Section */}
+                    <div className="mb-4 p-3 bg-white dark:bg-gray-600 rounded">
+                      <h5 className="font-medium mb-2 dark:text-white">Basic Lands</h5>
+                      <div className="grid grid-cols-5 gap-2">
+                        {Object.entries(basicLands).map(([landType, count]) => {
+                          const colorMap: { [key: string]: string } = {
+                            'Plains': 'W',
+                            'Island': 'U', 
+                            'Swamp': 'B',
+                            'Mountain': 'R',
+                            'Forest': 'G'
+                          };
+                          return (
+                            <div key={landType} className="text-center">
+                              <div className={`w-8 h-8 rounded-full mx-auto mb-1 ${getCardColorClasses([colorMap[landType]])}`}></div>
+                              <div className="flex items-center justify-center space-x-1">
+                                <button 
+                                  onClick={() => updateBasicLands(landType, count - 1)}
+                                  className="w-6 h-6 text-xs bg-gray-300 hover:bg-gray-400 rounded"
+                                  disabled={count === 0}
+                                >
+                                  -
+                                </button>
+                                <span className="w-6 text-center text-sm dark:text-white">{count}</span>
+                                <button 
+                                  onClick={() => updateBasicLands(landType, count + 1)}
+                                  className="w-6 h-6 text-xs bg-gray-300 hover:bg-gray-400 rounded"
+                                >
+                                  +
+                                </button>
+                              </div>
+                              <div className="text-xs dark:text-gray-300">{landType}</div>
+                            </div>
+                          );
+                        })}
+                      </div>
+                    </div>
+                    
+                    {/* Main Deck Cards */}
+                    <div 
+                      className="min-h-32 border-2 border-dashed border-gray-300 dark:border-gray-500 rounded p-2"
+                      onDragOver={handleDragOver}
+                      onDrop={(e) => handleDrop(e, 'main')}
+                    >
+                      <div className="flex flex-wrap">
+                        {/* Non-land cards */}
+                        {mainDeck.map((card, index) => (
+                          <div 
+                            key={`main-${card.id}-${index}`}
+                            className="inline-block mr-2 mb-2 cursor-move"
+                            draggable
+                            onDragStart={(e) => handleDragStart(e, card, 'main')}
+                            onClick={() => moveCardToSideboard(card)}
+                            title="Click or drag to move to sideboard"
+                          >
+                            {card.imageUrl ? (
+                              <img 
+                                src={card.imageUrl.startsWith('data:') ? card.imageUrl : `${API_BASE_URL}/image-proxy?url=${encodeURIComponent(card.imageUrl)}`} 
+                                alt={card.name} 
+                                className="w-20 h-28 object-cover rounded shadow-sm hover:shadow-md transition-shadow"
+                              />
+                            ) : (
+                              <div className={`w-20 h-28 ${getCardColorClasses(card.colors)} bg-opacity-20 dark:bg-opacity-30 rounded p-1 shadow-sm hover:shadow-md transition-shadow`}>
+                                <p className="text-xs truncate font-medium dark:text-white">{card.name}</p>
+                              </div>
+                            )}
+                          </div>
+                        ))}
+                        
+                        {/* Basic land cards */}
+                        {getBasicLandCards().map((landCard, index) => (
+                          <div 
+                            key={`land-${landCard.id}-${index}`}
+                            className="inline-block mr-2 mb-2 relative"
+                            title={`${landCard.name} - Basic Land`}
+                          >
+                            <img 
+                              src={`${API_BASE_URL}/image-proxy?url=${encodeURIComponent(landCard.imageUrl)}`} 
+                              alt={landCard.name} 
+                              className="w-20 h-28 object-cover rounded shadow-sm"
+                            />
+                            <div className="absolute top-0 right-0 bg-blue-500 text-white text-xs px-1 rounded-bl">
+                              Land
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                      {mainDeck.length === 0 && getTotalLands() === 0 && (
+                        <p className="text-gray-500 dark:text-gray-400 text-center py-8">
+                          Drag cards here to build your main deck (max 40 cards)
+                        </p>
+                      )}
+                    </div>
+                  </div>
+                  
+                  {/* Sideboard */}
+                  <div className="bg-gray-50 dark:bg-gray-700 p-4 rounded-lg">
+                    <h4 className="text-lg font-medium mb-4 dark:text-white">Sideboard ({sideboard.length} cards)</h4>
+                    <div 
+                      className="min-h-32 border-2 border-dashed border-gray-300 dark:border-gray-500 rounded p-2"
+                      onDragOver={handleDragOver}
+                      onDrop={(e) => handleDrop(e, 'sideboard')}
+                    >
+                      <div className="flex flex-wrap">
+                        {sideboard.map((card, index) => (
+                          <div 
+                            key={`sideboard-${card.id}-${index}`}
+                            className="inline-block mr-2 mb-2 cursor-move"
+                            draggable
+                            onDragStart={(e) => handleDragStart(e, card, 'sideboard')}
+                            onClick={() => moveCardToMain(card)}
+                            title="Click or drag to move to main deck"
+                          >
+                            {card.imageUrl ? (
+                              <img 
+                                src={card.imageUrl.startsWith('data:') ? card.imageUrl : `${API_BASE_URL}/image-proxy?url=${encodeURIComponent(card.imageUrl)}`} 
+                                alt={card.name} 
+                                className="w-20 h-28 object-cover rounded shadow-sm hover:shadow-md transition-shadow"
+                              />
+                            ) : (
+                              <div className={`w-20 h-28 ${getCardColorClasses(card.colors)} bg-opacity-20 dark:bg-opacity-30 rounded p-1 shadow-sm hover:shadow-md transition-shadow`}>
+                                <p className="text-xs truncate font-medium dark:text-white">{card.name}</p>
+                              </div>
+                            )}
+                          </div>
+                        ))}
+                      </div>
+                      {sideboard.length === 0 && (
+                        <p className="text-gray-500 dark:text-gray-400 text-center py-8">
+                          All cards are in your main deck
+                        </p>
+                      )}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            )}
             
             
             <div className="flex flex-col space-y-4">
               {/* Download Options */}
               <div className="flex justify-center space-x-4">
-                <button 
-                  className="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-md transition-colors flex items-center"
-                  onClick={downloadDeckAsTxt}
-                  title="Download your draft deck as a text file"
-                >
-                  <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                  </svg>
-                  Download as TXT
-                </button>
-                
-                <button 
-                  className="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-md transition-colors flex items-center"
-                  onClick={downloadDeckAsPdf}
-                  title="Download your draft deck as a PDF file"
-                >
-                  <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                  </svg>
-                  Download as PDF
-                </button>
+                {!deckBuildingMode ? (
+                  <>
+                    <button 
+                      className="bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded-md transition-colors flex items-center"
+                      onClick={startDeckBuilding}
+                      title="Build a 40-card deck from your draft pool"
+                    >
+                      <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+                      </svg>
+                      Build Deck
+                    </button>
+                    
+                    <button 
+                      className="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-md transition-colors flex items-center"
+                      onClick={downloadDeckAsTxt}
+                      title="Download your draft pool as a text file"
+                    >
+                      <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                      </svg>
+                      Download as TXT
+                    </button>
+                    
+                    <button 
+                      className="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-md transition-colors flex items-center"
+                      onClick={downloadDeckAsPdf}
+                      title="Download your draft pool as a PDF file"
+                    >
+                      <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                      </svg>
+                      Download as PDF
+                    </button>
+                  </>
+                ) : (
+                  <>
+                    <button 
+                      className="bg-gray-600 hover:bg-gray-700 text-white px-4 py-2 rounded-md transition-colors flex items-center"
+                      onClick={exitDeckBuilding}
+                      title="Exit deck building mode"
+                    >
+                      <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+                      </svg>
+                      Exit Deck Building
+                    </button>
+                    
+                    <button 
+                      className="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-md transition-colors flex items-center"
+                      onClick={downloadDeckAsTxt}
+                      title="Download your constructed deck as a text file"
+                      disabled={mainDeck.length === 0}
+                    >
+                      <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                      </svg>
+                      Download Deck TXT
+                    </button>
+                    
+                    <button 
+                      className="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-md transition-colors flex items-center"
+                      onClick={downloadDeckAsPdf}
+                      title="Download your constructed deck as a PDF file"
+                      disabled={mainDeck.length === 0}
+                    >
+                      <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                      </svg>
+                      Download Deck PDF
+                    </button>
+                  </>
+                )}
               </div>
 
               <div className="flex justify-between">
