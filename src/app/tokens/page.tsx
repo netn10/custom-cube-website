@@ -538,7 +538,7 @@ export default function TokensPage() {
               <Link href={`/token/${encodeURIComponent(token.name)}`} key={token.id}>
                 <div className="mtg-card card-hover">
                 {token.imageUrl ? (
-                  <div className="relative h-full w-full overflow-hidden">
+                  <div className="relative w-full overflow-hidden flex items-center justify-center bg-gray-100 dark:bg-gray-800">
                     <img 
                       src={token.imageUrl}
                       alt={token.name}

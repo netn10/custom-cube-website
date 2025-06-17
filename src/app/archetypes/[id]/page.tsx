@@ -147,7 +147,7 @@ export default function ArchetypePage() {
             <Link href={`/card/${encodeURIComponent(card.name)}`} key={card.id}>
               <div className="mtg-card card-hover">
                 {card.imageUrl ? (
-                  <div className="relative h-full w-full overflow-hidden">
+                  <div className="relative w-full overflow-hidden flex items-center justify-center bg-gray-100 dark:bg-gray-800">
                     <img 
                       src={card.imageUrl}
                       alt={card.name}

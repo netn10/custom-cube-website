@@ -441,8 +441,7 @@ body {
   }
 
   .mtg-card-image {
-    @apply w-full h-full object-cover;
-    aspect-ratio: 2.5/3.5;
+    @apply w-full h-auto object-contain;
   }
 
   .mtg-card-grid {

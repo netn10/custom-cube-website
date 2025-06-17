@@ -770,14 +770,14 @@ function CubeListContent() {
               <Link href={`/card/${encodeURIComponent(card.name)}`} key={card.id}>
                 <div className="mtg-card card-hover">
                   {card.imageUrl ? (
-                    <div className="relative h-full w-full overflow-hidden">
+                    <div className="relative w-full overflow-hidden flex items-center justify-center bg-gray-100 dark:bg-gray-800">
                       {card.relatedFace ? (
                         <RelatedFaceCard card={card} className="w-full h-full" />
                       ) : (
                         <img 
                           src={card.imageUrl}
                           alt={card.name}
-                          className="mtg-card-image"
+                          className="w-full h-auto object-contain"
                           onError={(e) => {
                             console.error('Error loading image:', card.imageUrl);
                             // Try the proxy if direct loading fails
