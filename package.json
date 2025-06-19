@@ -8,7 +8,7 @@
     "start": "next start",
     "lint": "next lint",
     "export": "next export",
-    "heroku-postbuild": "npm run build && npm run export"
+    "heroku-postbuild": "npm run build"
   },
   "engines": {
     "node": "18.x"
