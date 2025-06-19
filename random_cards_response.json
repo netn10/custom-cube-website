@@ -1,0 +1,34 @@
+
+
+StatusCode        : 200
+StatusDescription : OK
+Content           : [
+                      {
+                        "archetype": {
+                          "colors": [
+                            "W",
+                            "U"
+                          ],
+                          "description": "Cast multiple spells in a turn to trigger powerful effects.",
+                          "id": "wu-storm",
+                          "name": "...
+RawContent        : HTTP/1.1 200 OK
+                    Access-Control-Allow-Origin: *
+                    Connection: close
+                    Content-Length: 8475
+                    Content-Type: application/json
+                    Date: Sat, 19 Apr 2025 18:21:16 GMT
+                    Server: Werkzeug/3.1.3 Python/3.11.5
+                    
+                    [...
+Forms             : {}
+Headers           : {[Access-Control-Allow-Origin, *], [Connection, close], [Content-Length, 8475], [Content-Type, 
+                    application/json]...}
+Images            : {}
+InputFields       : {}
+Links             : {}
+ParsedHtml        : System.__ComObject
+RawContentLength  : 8475
+
+
+

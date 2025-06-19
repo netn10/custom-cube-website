@@ -978,7 +978,7 @@ def get_random_archetype_cards():
         return jsonify({"error": str(e)}), 500
 
 
-@app.route("/api/tokens", methods=["GET"]) # This is the first /api/tokens GET route
+@app.route("/api/tokens", methods=["GET"])
 def get_tokens():
     """Get all tokens with optional filtering"""
     # Get query parameters
