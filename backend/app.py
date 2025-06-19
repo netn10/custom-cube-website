@@ -1,4 +1,4 @@
-from flask import Flask, jsonify, request, Response, session
+from flask import Flask, jsonify, request, Response, session, send_from_directory, send_file
 import logging
 from flask_cors import CORS, cross_origin
 from pymongo import MongoClient
@@ -354,37 +354,64 @@ def get_profile():
         return jsonify({"error": "Invalid token!"}), 401
 
 
-@app.route("/", methods=["GET"])
-def index():
-    """Root route that provides API information"""
-    return jsonify(
-        {
+# Serve Next.js static files
+@app.route('/')
+def serve_index():
+    """Serve the main index page"""
+    static_folder = os.path.join(os.path.dirname(__file__), '..', 'out')
+    index_path = os.path.join(static_folder, 'index.html')
+    
+    if os.path.exists(index_path):
+        return send_file(index_path)
+    else:
+        # Fallback API info if Next.js build doesn't exist
+        return jsonify({
             "name": "Custom Cube API",
             "version": "1.0.0",
             "description": "API for Custom Cube website",
-            "endpoints": [
-                "/api/auth/register",
-                "/api/auth/login",
-                "/api/auth/profile",
-                "/api/cards",
-                "/api/cards/<card_id>",
-                "/api/archetypes",
-                "/api/archetypes/<archetype_id>",
-                "/api/archetypes/<archetype_id>/cards",
-                "/api/archetypes/random-cards",
-                "/api/tokens",
-                "/api/draft/pack",
-                "/api/draft/bot-pick",
-                "/api/suggestions",
-                "/api/chatgpt/cards",
-                "/api/chatgpt/response",
-                "/api/gemini/response",
-                "/api/image-proxy",
-                "/api/random-pack",
-                "/api/health",
-            ]
-        }
-    )
+            "note": "Next.js frontend not built. Run 'npm run build && npm run export' first.",
+            "status": "Backend running - Frontend needs to be built"
+        })
+
+# Serve static assets (CSS, JS, images)
+@app.route('/_next/<path:path>')
+def serve_next_assets(path):
+    """Serve Next.js static assets"""
+    static_folder = os.path.join(os.path.dirname(__file__), '..', 'out')
+    return send_from_directory(os.path.join(static_folder, '_next'), path)
+
+# Serve other static files
+@app.route('/<path:filename>')
+def serve_static_files(filename):
+    """Serve static files from out directory"""
+    static_folder = os.path.join(os.path.dirname(__file__), '..', 'out')
+    
+    # Check if it's a static file (has extension)
+    if '.' in filename and not filename.startswith('api/'):
+        try:
+            return send_from_directory(static_folder, filename)
+        except:
+            pass
+    
+    # Check if it's a Next.js route (directory with index.html)
+    route_folder = os.path.join(static_folder, filename)
+    if os.path.isdir(route_folder):
+        index_file = os.path.join(route_folder, 'index.html')
+        if os.path.exists(index_file):
+            return send_file(index_file)
+    
+    # Check if there's an HTML file for this route
+    html_file = os.path.join(static_folder, f"{filename}.html")
+    if os.path.exists(html_file):
+        return send_file(html_file)
+    
+    # Default fallback - serve main index.html for SPA routing
+    main_index = os.path.join(static_folder, 'index.html')
+    if os.path.exists(main_index):
+        return send_file(main_index)
+    
+    # If nothing found, return 404
+    return jsonify({"error": "Not found"}), 404
 
 
 @app.route("/api/cards", methods=["GET"])

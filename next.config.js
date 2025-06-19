@@ -17,7 +17,12 @@ const nextConfig = {
   // Configure allowed image domains
   images: {
     domains: ['i.imgur.com', 'imgur.com', 'gatherer.wizards.com', 'cards.scryfall.io', 'c1.scryfall.com'],
+    unoptimized: true, // Required for static export
   },
+  // Configure for static export
+  output: 'export',
+  distDir: 'out',
+  trailingSlash: true,
   // Enable server components
   experimental: {
     serverActions: true,
