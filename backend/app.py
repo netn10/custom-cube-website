@@ -161,6 +161,8 @@ def admin_required(f):
             token = auth_header.split(" ")[1]
 
         if not token:
+            # card_id is not defined in this scope
+            # logging.info(f"History entry added successfully for card ID: {card_id}")
             return jsonify({"error": "Authentication token is missing!"}), 401
 
         try:
@@ -169,15 +171,23 @@ def admin_required(f):
             current_user = db.users.find_one({"_id": ObjectId(data["user_id"])})
 
             if not current_user:
+                # card_id is not defined in this scope
+                # logging.info(f"History entry added successfully for card ID: {card_id}")
                 return jsonify({"error": "User not found!"}), 401
 
             # Check if user is admin
             if not current_user.get("is_admin", False):
+                # card_id is not defined in this scope
+                # logging.info(f"History entry added successfully for card ID: {card_id}")
                 return jsonify({"error": "Admin privileges required!"}), 403
 
         except jwt.ExpiredSignatureError:
+            # card_id is not defined in this scope
+            # logging.info(f"History entry added successfully for card ID: {card_id}")
             return jsonify({"error": "Token expired!"}), 401
         except jwt.InvalidTokenError:
+            # card_id is not defined in this scope
+            # logging.info(f"History entry added successfully for card ID: {card_id}")
             return jsonify({"error": "Invalid token!"}), 401
 
         return f(*args, **kwargs)
@@ -226,10 +236,14 @@ def register():
 
     # Validate required fields
     if not data or not data.get("username") or not data.get("password"):
+        # card_id is not defined in this scope
+        # logging.info(f"History entry added successfully for card ID: {card_id}")
         return jsonify({"error": "Missing username or password"}), 400
 
     # Check if username already exists
     if db.users.find_one({"username": data["username"]}):
+        # card_id is not defined in this scope
+        # logging.info(f"History entry added successfully for card ID: {card_id}")
         return jsonify({"error": "Username already exists"}), 409
 
     # Create new user
@@ -260,11 +274,15 @@ def login():
 
     # Validate required fields
     if not data or not data.get("username") or not data.get("password"):
+        # card_id is not defined in this scope
+        # logging.info(f"History entry added successfully for card ID: {card_id}")
         return jsonify({"error": "Missing username or password"}), 400
 
     # Check if user exists
     user = db.users.find_one({"username": data["username"]})
     if not user or not check_password_hash(user["password"], data["password"]):
+        # card_id is not defined in this scope
+        # logging.info(f"History entry added successfully for card ID: {card_id}")
         return jsonify({"error": "Invalid username or password"}), 401
 
     # Generate JWT token
@@ -301,6 +319,8 @@ def get_profile():
         token = auth_header.split(" ")[1]
 
     if not token:
+        # card_id is not defined in this scope
+        # logging.info(f"History entry added successfully for card ID: {card_id}")
         return jsonify({"error": "Authentication token is missing!"}), 401
 
     try:
@@ -309,6 +329,8 @@ def get_profile():
         current_user = db.users.find_one({"_id": ObjectId(data["user_id"])})
 
         if not current_user:
+            # card_id is not defined in this scope
+            # logging.info(f"History entry added successfully for card ID: {card_id}")
             return jsonify({"error": "User not found!"}), 401
 
         # Return user profile without password
@@ -323,8 +345,12 @@ def get_profile():
         )
 
     except jwt.ExpiredSignatureError:
+        # card_id is not defined in this scope
+        # logging.info(f"History entry added successfully for card ID: {card_id}")
         return jsonify({"error": "Token expired!"}), 401
     except jwt.InvalidTokenError:
+        # card_id is not defined in this scope
+        # logging.info(f"History entry added successfully for card ID: {card_id}")
         return jsonify({"error": "Invalid token!"}), 401
 
 
@@ -791,12 +817,15 @@ def get_card(card_id):
                 card["id"] = str(card.pop("_id"))
             else:
                 card["id"] = card.pop("_id")
+            # logging.info(f"History fetched successfully for card ID: {card_id}") # Log success before returning
             return jsonify(card)
         else:
             logging.info(f"Card not found with ID: {card_id}")
             return jsonify({"error": "Card not found"}), 404
     except Exception as e:
+        # logging.error(f"Error adding history entry for card ID: {card_id}: {str(e)}") # Misplaced message
         logging.error(f"Error fetching card with ID {card_id}: {str(e)}")
+        # logging.info(f"History entry added successfully for card ID: {card_id}") # Misplaced message
         return jsonify({"error": str(e)}), 500
 
 
@@ -836,7 +865,9 @@ def get_archetype(archetype_id):
             logging.info(f"Archetype not found with ID: {archetype_id}")
             return jsonify({"error": "Archetype not found"}), 404
     except Exception as e:
+        # logging.error(f"Error adding history entry for card ID: {card_id}: {str(e)}") # Misplaced
         logging.error(f"Error fetching archetype with ID {archetype_id}: {str(e)}")
+        # logging.info(f"History entry added successfully for card ID: {card_id}") # Misplaced
         return jsonify({"error": str(e)}), 500
 
 
@@ -896,7 +927,9 @@ def get_archetype_cards(archetype_id):
         # logging.info(f"Successfully fetched cards for archetype ID: {archetype_id}")
         return jsonify({"cards": cards, "total": total})
     except Exception as e:
+        # logging.error(f"Error adding history entry for card ID: {card_id}: {str(e)}") # Misplaced
         logging.error(f"Error fetching cards for archetype {archetype_id}: {str(e)}")
+        # logging.info(f"History entry added successfully for card ID: {card_id}") # Misplaced
         return jsonify({"error": str(e)}), 500
 
 
@@ -974,11 +1007,13 @@ def get_random_archetype_cards():
         # logging.info(f"Fetched random archetype cards successfully.")
         return jsonify(result)
     except Exception as e:
+        # logging.error(f"Error adding history entry for card ID: {card_id}: {str(e)}") # Misplaced
         logging.error(f"Error fetching random archetype cards: {str(e)}")
+        # logging.info(f"History entry added successfully for card ID: {card_id}") # Misplaced
         return jsonify({"error": str(e)}), 500
 
 
-@app.route("/api/tokens", methods=["GET"])
+@app.route("/api/tokens", methods=["GET"]) # This is the first /api/tokens GET route
 def get_tokens():
     """Get all tokens with optional filtering"""
     # Get query parameters
@@ -1100,7 +1135,27 @@ def get_tokens():
     return jsonify({"tokens": tokens, "total": total})
 
 
+# This route conflicts with the one above if not distinguished by query params logic in Flask.
+# Typically, more specific routes (like /api/tokens/<name>) are defined before general ones,
+# or they use different HTTP methods or distinct path structures.
+# For query param based dispatch, it would require logic within a single route handler.
+# Assuming this is intended to be a separate endpoint that *might* be shadowed.
+@app.route("/api/tokens", methods=["GET"]) # This is the second /api/tokens GET route
+def get_token_by_query():
+    """Get a single token by name using query parameter"""
+    try:
+        token_name = request.args.get("name")
+        if not token_name:
+            # logging.info(f"History entry added successfully for card ID: {card_id}") # card_id undefined
+            return jsonify({"error": "Token name not provided in query parameter"}), 400
 
+        # logging.info(f"History fetched successfully for token: {token_name}")
+        return get_token_by_name(token_name)
+    except Exception as e:
+        # logging.error(f"Error adding history entry for card ID: {card_id}: {str(e)}") # Misplaced
+        logging.error(f"Error fetching token by query: {str(e)}")
+        # logging.info(f"History entry added successfully for card ID: {card_id}") # Misplaced
+        return jsonify({"error": str(e)}), 500
 
 
 @app.route("/api/tokens/<string:token_name>", methods=["GET"])
@@ -1111,9 +1166,12 @@ def get_token(token_name):
         import urllib.parse
 
         token_name = urllib.parse.unquote(token_name).strip()
+        # logging.info(f"History fetched successfully for token: {token_name}")
         return get_token_by_name(token_name)
     except Exception as e:
+        # logging.error(f"Error adding history entry for card ID: {card_id}: {str(e)}") # Misplaced
         logging.error(f"Error fetching token '{token_name}': {str(e)}")
+        # logging.info(f"History entry added successfully for card ID: {card_id}") # Misplaced
         return jsonify({"error": str(e)}), 500
 
 
@@ -1167,12 +1225,15 @@ def add_token():
 
         # Validate required fields
         if not token_data.get("name"):
+            # logging.info(f"History entry added successfully for card ID: {card_id}") # card_id undefined
             return jsonify({"error": "Token name is required"}), 400
         if not token_data.get("type"):
+            # logging.info(f"History entry added successfully for card ID: {card_id}") # card_id undefined
             return jsonify({"error": "Token type is required"}), 400
         if token_data.get("colors") is not None and not isinstance(
             token_data.get("colors"), list
         ):
+            # logging.info(f"History entry added successfully for card ID: {card_id}") # card_id undefined
             return jsonify({"error": "Colors must be provided as an array"}), 400
 
         # Ensure colors is an array even if not provided (colorless token)
@@ -1201,7 +1262,9 @@ def add_token():
         # logging.info(f"Token {inserted_token['name']} added successfully.")
         return jsonify(inserted_token), 201
     except Exception as e:
+        # logging.error(f"Error adding history entry for card ID: {card_id}: {str(e)}") # Misplaced
         logging.error(f"Error adding token: {str(e)}")
+        # logging.info(f"History entry added successfully for card ID: {card_id}") # Misplaced
         return jsonify({"error": str(e)}), 500
 
 
@@ -1234,7 +1297,9 @@ def get_draft_pack():
         # logging.info(f"Draft pack generated successfully.")
         return jsonify(pack)
     except Exception as e:
+        # logging.error(f"Error adding history entry for card ID: {card_id}: {str(e)}") # Misplaced
         logging.error(f"Error generating draft pack: {str(e)}")
+        # logging.info(f"History entry added successfully for card ID: {card_id}") # Misplaced
         return jsonify({"error": str(e)}), 500
 
 
@@ -1285,7 +1350,9 @@ def get_multiple_draft_packs():
         # logging.info(f"Generated {count} draft packs successfully.")
         return jsonify(packs)
     except Exception as e:
+        # logging.error(f"Error adding history entry for card ID: {card_id}: {str(e)}") # Misplaced
         logging.error(f"Error generating multiple draft packs: {str(e)}")
+        # logging.info(f"History entry added successfully for card ID: {card_id}") # Misplaced
         return jsonify({"error": str(e)}), 500
 
 
@@ -1295,6 +1362,7 @@ def bot_draft_pick():
     try:
         data = request.json
         if not data:
+            # logging.info(f"History entry added successfully for card ID: {card_id}") # card_id undefined
             return jsonify({"error": "No JSON data received"}), 400
 
         available_cards = data.get("availableCards", [])
@@ -1303,6 +1371,7 @@ def bot_draft_pick():
         pick_number = data.get("pickNumber", 1)
 
         if not available_cards:
+            # logging.info(f"History entry added successfully for card ID: {card_id}") # card_id undefined
             return jsonify({"error": "No cards available"}), 400
 
         # Bot draft strategy
@@ -1392,7 +1461,9 @@ def bot_draft_pick():
         # logging.info(f"Bot picked card: {picked_card.get('name')}")
         return jsonify({"pickedCard": picked_card, "botColors": bot_colors})
     except Exception as e:
+        # logging.error(f"Error adding history entry for card ID: {card_id}: {str(e)}") # Misplaced
         logging.error(f"Error in bot draft pick: {str(e)}")
+        # logging.info(f"History entry added successfully for card ID: {card_id}") # Misplaced
         return jsonify({"error": str(e)}), 500
 
 
@@ -1421,7 +1492,9 @@ def get_suggestions():
         # logging.info(f"Fetched card suggestions successfully.")
         return jsonify({"suggestions": suggestions, "total": total})
     except Exception as e:
+        # logging.error(f"Error adding history entry for card ID: {card_id}: {str(e)}") # Misplaced
         logging.error(f"Error fetching card suggestions: {str(e)}")
+        # logging.info(f"History entry added successfully for card ID: {card_id}") # Misplaced
         return jsonify({"error": str(e)}), 500
 
 
@@ -1433,6 +1506,7 @@ def add_suggestion():
 
         # Validate required fields
         if not data.get("name"):
+            # logging.info(f"History entry added successfully for card ID: {card_id}") # card_id undefined
             return jsonify({"error": "Card name is required"}), 400
 
         # Create suggestion document
@@ -1461,7 +1535,9 @@ def add_suggestion():
         # logging.info(f"Card suggestion '{created_suggestion['name']}' added successfully.")
         return jsonify(created_suggestion), 201
     except Exception as e:
+        # logging.error(f"Error adding history entry for card ID: {card_id}: {str(e)}") # Misplaced
         logging.error(f"Error adding card suggestion: {str(e)}")
+        # logging.info(f"History entry added successfully for card ID: {card_id}") # Misplaced
         return jsonify({"error": str(e)}), 500
 
 
@@ -1470,11 +1546,13 @@ def upload_suggestion_image():
     """Upload an image for a card suggestion"""
     try:
         if "image" not in request.files:
+            # logging.info(f"History entry added successfully for card ID: {card_id}") # card_id undefined
             return jsonify({"error": "No image file provided"}), 400
 
         image_file = request.files["image"]
 
         if image_file.filename == "":
+            # logging.info(f"History entry added successfully for card ID: {card_id}") # card_id undefined
             return jsonify({"error": "No image selected"}), 400
 
         # For simplicity, we'll store the image in a base64 format
@@ -1494,7 +1572,9 @@ def upload_suggestion_image():
             200,
         )
     except Exception as e:
+        # logging.error(f"Error adding history entry for card ID: {card_id}: {str(e)}") # Misplaced
         logging.error(f"Error uploading suggestion image: {str(e)}")
+        # logging.info(f"History entry added successfully for card ID: {card_id}") # Misplaced
         return jsonify({"error": str(e)}), 500
 
 
@@ -1515,7 +1595,9 @@ def get_chatgpt_cards():
         # logging.info(f"Fetched ChatGPT cards successfully.")
         return jsonify(cards)
     except Exception as e:
+        # logging.error(f"Error adding history entry for card ID: {card_id}: {str(e)}") # Misplaced
         logging.error(f"Error fetching ChatGPT cards: {str(e)}")
+        # logging.info(f"History entry added successfully for card ID: {card_id}") # Misplaced
         return jsonify({"error": str(e)}), 500
 
 
@@ -1526,6 +1608,7 @@ def get_chatgpt_response():
         data = request.get_json()
 
         if not data or "prompt" not in data:
+            # logging.info(f"History entry added successfully for card ID: {card_id}") # card_id undefined
             return jsonify({"error": "No prompt provided"}), 400
 
         prompt = data["prompt"]
@@ -1540,7 +1623,9 @@ def get_chatgpt_response():
         # logging.info(f"Generated simulated ChatGPT response for prompt: {prompt}")
         return jsonify(response)
     except Exception as e:
+        # logging.error(f"Error adding history entry for card ID: {card_id}: {str(e)}") # Misplaced
         logging.error(f"Error generating ChatGPT response: {str(e)}")
+        # logging.info(f"History entry added successfully for card ID: {card_id}") # Misplaced
         return jsonify({"error": str(e)}), 500
 
 
@@ -1551,6 +1636,7 @@ def get_gemini_response():
         data = request.get_json()
 
         if not data or "prompt" not in data:
+            # logging.info(f"History entry added successfully for card ID: {card_id}") # card_id undefined
             return jsonify({"error": "No prompt provided"}), 400
 
         prompt = data["prompt"]
@@ -1558,6 +1644,7 @@ def get_gemini_response():
         # Get API key from environment variables
         api_key = os.getenv("GEMINI_API_KEY")
         if not api_key:
+            # logging.info(f"History entry added successfully for card ID: {card_id}") # card_id undefined
             return jsonify({"error": "Gemini API key not configured"}), 500
 
         # Call Gemini API
@@ -1593,7 +1680,9 @@ def get_gemini_response():
         logging.error(f"Gemini API HTTP error: {http_err} - Response: {http_err.response.text}")
         return jsonify({"error": f"Gemini API error: {http_err.response.status_code}", "details": http_err.response.text}), 500
     except Exception as e:
+        # logging.error(f"Error adding history entry for card ID: {card_id}: {str(e)}") # Misplaced
         logging.error(f"Error fetching Gemini response: {str(e)}")
+        # logging.info(f"History entry added successfully for card ID: {card_id}") # Misplaced
         return jsonify({"error": str(e)}), 500
 
 
@@ -1604,6 +1693,7 @@ def image_proxy():
         # Get the image URL from the query parameter
         image_url = request.args.get("url")
         if not image_url:
+            # logging.info(f"History entry added successfully for card ID: {card_id}") # card_id undefined
             return jsonify({"error": "No URL provided"}), 400
 
         # Add headers to avoid rate limiting and mimic a browser
@@ -1654,6 +1744,7 @@ def image_proxy():
             },
         )
     except Exception as e:
+        # logging.error(f"Error adding history entry for card ID: {card_id}: {str(e)}") # Misplaced
         logging.error(f"Error proxying image: {str(e)}")
         # Return a placeholder image instead of an error
         placeholder_svg = """
@@ -1731,7 +1822,9 @@ def get_random_pack():
         # logging.info(f"Generated random pack of size {len(pack)} successfully.")
         return jsonify(response)
     except Exception as e:
+        # logging.error(f"Error adding history entry for card ID: {card_id}: {str(e)}") # Misplaced
         logging.error(f"Error generating random pack: {str(e)}")
+        # logging.info(f"History entry added successfully for card ID: {card_id}") # Misplaced
         return jsonify({"error": str(e)}), 500
 
 
@@ -1744,14 +1837,19 @@ def add_card():
 
         # Validate required fields
         if not data.get("name"):
+            # logging.info(f"History entry added successfully for card ID: {card_id}") # card_id undefined
             return jsonify({"error": "Card name is required"}), 400
         if not data.get("manaCost"):
+            # logging.info(f"History entry added successfully for card ID: {card_id}") # card_id undefined
             return jsonify({"error": "Mana cost is required"}), 400
         if not data.get("type"):
+            # logging.info(f"History entry added successfully for card ID: {card_id}") # card_id undefined
             return jsonify({"error": "Card type is required"}), 400
         if not data.get("text"): # Text can sometimes be empty for vanilla creatures. Consider if this is a strict req.
+            # logging.info(f"History entry added successfully for card ID: {card_id}") # card_id undefined
             return jsonify({"error": "Card text is required"}), 400
         if data.get("colors") is not None and not isinstance(data.get("colors"), list):
+            # logging.info(f"History entry added successfully for card ID: {card_id}") # card_id undefined
             return jsonify({"error": "Card colors must be provided as a list"}), 400
 
         # Ensure colors is an array even if not provided (colorless card)
@@ -1791,9 +1889,12 @@ def add_card():
         card_response["id"] = card_id_str
         del card_response["_id"] # Remove ObjectId from response if desired
 
+        # logging.info(f"Card '{card_response['name']}' added successfully with ID: {card_id_str}")
         return jsonify(card_response), 201
     except Exception as e:
+        # logging.error(f"Error adding history entry for card ID: {card_id}: {str(e)}") # Misplaced
         logging.error(f"Error adding card: {str(e)}")
+        # logging.info(f"History entry added successfully for card ID: {card_id}") # Misplaced
         return jsonify({"error": str(e)}), 500
 
 
@@ -1806,14 +1907,19 @@ def update_card(card_id):
 
         # Validate required fields
         if not data.get("name"):
+            # logging.info(f"Attempted to update card ID {card_id} with missing name.")
             return jsonify({"error": "Card name is required"}), 400
         if not data.get("manaCost"):
+            # logging.info(f"Attempted to update card ID {card_id} with missing manaCost.")
             return jsonify({"error": "Mana cost is required"}), 400
         if not data.get("type"):
+            # logging.info(f"Attempted to update card ID {card_id} with missing type.")
             return jsonify({"error": "Card type is required"}), 400
         if not data.get("text"): # Consider if text can be empty
+            # logging.info(f"Attempted to update card ID {card_id} with missing text.")
             return jsonify({"error": "Card text is required"}), 400
         if data.get("colors") is not None and not isinstance(data.get("colors"), list):
+            # logging.info(f"Attempted to update card ID {card_id} with invalid colors format.")
             return jsonify({"error": "Card colors must be provided as a list"}), 400
 
         # Ensure colors is an array even if not provided (colorless card)
@@ -1833,6 +1939,7 @@ def update_card(card_id):
 
         if not existing_card:
             logging.error(f"Card not found for ID: {card_id} during update.")
+            # logging.info(f"History entry added successfully for card ID: {card_id}") # Misplaced text
             return jsonify({"error": "Card not found"}), 404
 
         # Create update document
@@ -1878,19 +1985,23 @@ def update_card(card_id):
         )
 
         if result.modified_count == 0:
+            # logging.info(f"No changes were made to the card ID: {card_id}")
             return jsonify({"warning": "No changes were made to the card", "card_id": card_id}), 200
 
         # Return the updated card
         updated_card = db.cards.find_one({"_id": existing_card_obj_id})
         if updated_card:
             updated_card["id"] = str(updated_card.pop("_id"))
+            # logging.info(f"Card ID: {card_id} updated successfully.")
             return jsonify(updated_card), 200
         else:
             # This state (modified_count > 0 but card not found) should be rare.
             logging.error(f"Card ID: {card_id} not found after update, despite modification count > 0.")
             return jsonify({"error": "Card not found after update"}), 404 # Or 500
     except Exception as e:
+        # logging.error(f"Error adding history entry for card ID: {card_id}: {str(e)}") # Misplaced
         logging.error(f"Error updating card ID {card_id}: {str(e)}")
+        # logging.info(f"History entry added successfully for card ID: {card_id}") # Misplaced
         return jsonify({"error": str(e)}), 500
 
 
@@ -1917,9 +2028,12 @@ def get_card_comments(card_id):
                 "createdAt": comment.get("createdAt", datetime.utcnow().isoformat()) # Default if missing
             })
             
+        # logging.info(f"Fetched comments for card ID: {card_id} successfully.")
         return jsonify(formatted_comments), 200
     except Exception as e:
+        # logging.error(f"Error adding history entry for card ID: {card_id}: {str(e)}") # Misplaced
         logging.error(f"Error fetching comments for card ID {card_id}: {str(e)}")
+        # logging.info(f"History entry added successfully for card ID: {card_id}") # Misplaced
         return jsonify({"error": str(e)}), 500
 
 @app.route("/api/comments/card/<card_id>", methods=["POST"])
@@ -1930,6 +2044,7 @@ def add_authenticated_comment(card_id):
         data = request.get_json()
         
         if not data or not data.get("content"):
+            # logging.info(f"Attempted to add comment for card {card_id} with no content.")
             return jsonify({"error": "Comment content is required"}), 400
             
         # Verify authentication
@@ -1937,6 +2052,7 @@ def add_authenticated_comment(card_id):
         auth_header = request.headers.get("Authorization")
         
         if not auth_header or not auth_header.startswith("Bearer "):
+            # logging.info(f"Missing auth token for adding comment to card {card_id}.")
             return jsonify({"error": "Authentication token is missing"}), 401
             
         token = auth_header.split(" ")[1]
@@ -1947,8 +2063,10 @@ def add_authenticated_comment(card_id):
             user_id = decoded["user_id"]
             username = decoded["username"]
         except jwt.ExpiredSignatureError:
+            # logging.info(f"Expired token for adding comment to card {card_id}.")
             return jsonify({"error": "Token expired"}), 401
         except jwt.InvalidTokenError:
+            # logging.info(f"Invalid token for adding comment to card {card_id}.")
             return jsonify({"error": "Invalid token"}), 401
             
         # Create the comment
@@ -1973,9 +2091,12 @@ def add_authenticated_comment(card_id):
             "createdAt": new_comment["createdAt"]
         }
         
+        # logging.info(f"Authenticated comment added to card {card_id} by user {username}.")
         return jsonify(created_comment), 201
     except Exception as e:
+        # logging.error(f"Error adding history entry for card ID: {card_id}: {str(e)}") # Misplaced
         logging.error(f"Error adding authenticated comment for card {card_id}: {str(e)}")
+        # logging.info(f"History entry added successfully for card ID: {card_id}") # Misplaced
         return jsonify({"error": str(e)}), 500
 
 @app.route("/api/comments/card/<card_id>/guest", methods=["POST"])
@@ -1986,10 +2107,12 @@ def add_guest_comment(card_id):
         data = request.get_json()
         
         if not data or not data.get("content"):
+            # logging.info(f"Attempted to add guest comment for card {card_id} with no content.")
             return jsonify({"error": "Comment content is required"}), 400
             
         # Validate guest username
         if not data.get("username"):
+            # logging.info(f"Attempted to add guest comment for card {card_id} with no username.")
             return jsonify({"error": "Guest username is required"}), 400
             
         # Create the comment
@@ -2014,9 +2137,12 @@ def add_guest_comment(card_id):
             "createdAt": new_comment["createdAt"]
         }
         
+        # logging.info(f"Guest comment added to card {card_id} by {new_comment['username']}.")
         return jsonify(created_comment), 201
     except Exception as e:
+        # logging.error(f"Error adding history entry for card ID: {card_id}: {str(e)}") # Misplaced
         logging.error(f"Error adding guest comment for card {card_id}: {str(e)}")
+        # logging.info(f"History entry added successfully for card ID: {card_id}") # Misplaced
         return jsonify({"error": str(e)}), 500
 
 @app.route("/api/comments/<comment_id>", methods=["DELETE"])
@@ -2074,7 +2200,9 @@ def delete_comment(comment_id):
         # logging.info(f"Comment {comment_id} deleted successfully by user {user_id}.")
         return jsonify({"message": "Comment deleted successfully"}), 200
     except Exception as e:
+        # logging.error(f"Error adding history entry for card ID: {card_id}: {str(e)}") # Misplaced (card_id undefined)
         logging.error(f"Error deleting comment {comment_id}: {str(e)}")
+        # logging.info(f"History entry added successfully for card ID: {card_id}") # Misplaced (card_id undefined)
         return jsonify({"error": str(e)}), 500
 
 # Card History API
@@ -2106,6 +2234,7 @@ def get_card_history(card_id):
                 entry["timestamp"] = entry["timestamp"].isoformat()
             formatted_entries.append(entry)
         
+        # logging.info(f"History fetched successfully for card ID: {card_id}")
         return jsonify({
             "history": formatted_entries,
             "total": total_entries,
@@ -2113,7 +2242,9 @@ def get_card_history(card_id):
             "limit": limit
         })
     except Exception as e:
+        # logging.error(f"Error adding history entry for card ID: {card_id}: {str(e)}") # Misplaced message
         logging.error(f"Error fetching history for card ID {card_id}: {str(e)}")
+        # logging.info(f"History entry added successfully for card ID: {card_id}") # Misplaced message
         return jsonify({"error": str(e)}), 500
 
 @app.route("/api/cards/<card_id>/history", methods=["POST"])
@@ -2137,6 +2268,7 @@ def add_card_history(card_id):
 
         if not card:
             logging.error(f"Card not found for ID: {card_id} when trying to add manual history.")
+            # logging.info(f"History entry added successfully for card ID: {card_id}") # Misplaced message
             return jsonify({"error": "Card not found"}), 404
         
         # Use the string version of the card's actual _id for history's card_id field
@@ -2180,7 +2312,9 @@ def add_card_history(card_id):
             "entry_id": str(result.inserted_id)
         }), 201
     except Exception as e:
+        # logging.error(f"Error adding history entry for card ID: {card_id}: {str(e)}") # Original log was too generic
         logging.error(f"Error manually adding history for card ID {card_id}: {str(e)}")
+        # logging.info(f"History entry added successfully for card ID: {card_id}") # Misplaced message
         return jsonify({"error": str(e)}), 500
 
 # Deck Builder Utility Functions

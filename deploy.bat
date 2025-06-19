@@ -13,3 +13,4 @@ if errorlevel 1 (
 
 echo Successfully pushed to GitHub!
 pause
+
