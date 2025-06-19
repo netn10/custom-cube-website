@@ -125,7 +125,7 @@ CORS(
     resources={
         r"/api/*": {
             "origins": [
-                "https://netn10-custom-cube-885947dcd6aa.herokuapp.com",
+                "https://netn10-custom-cube.herokuapp.com",
                 "http://localhost:3000"  # For local development
             ],
             "methods": ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
