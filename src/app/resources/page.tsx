@@ -1,95 +1,74 @@
 'use client';
 
-import { useState, useEffect } from 'react';
-import Link from 'next/link';
-import { FaFilePdf, FaDownload } from 'react-icons/fa';
+import { FaFilePdf, FaDownload, FaExternalLinkAlt, FaLayerGroup } from 'react-icons/fa';
 
 export default function ResourcesPage() {
-  const [cardsLastUpdated, setCardsLastUpdated] = useState<string>('');
-  const [tokensLastUpdated, setTokensLastUpdated] = useState<string>('');
-
-  useEffect(() => {
-    // In a real implementation, you might fetch this information from an API
-    // For now, we'll use static dates or could be updated when PDFs are generated
-    const fetchLastUpdated = async () => {
-      try {
-        // This could be replaced with an actual API call to get the last updated dates
-        setCardsLastUpdated(new Date().toLocaleDateString());
-        setTokensLastUpdated(new Date().toLocaleDateString());
-      } catch (error) {
-        console.error('Error fetching last updated dates:', error);
-      }
-    };
-
-    fetchLastUpdated();
-  }, []);
+  const resources = [
+    {
+      title: 'All Cards PDF',
+      description: 'Download a complete PDF containing images of all cards in the cube.',
+      href: 'https://www.dropbox.com/scl/fi/03jns9bvjryvt3tb8z5we/all_cards.pdf?rlkey=vj2oz2frut3aqpx28cx9rgfmy&st=3833iohz&dl=0',
+      icon: <FaFilePdf className="text-red-500 text-4xl" aria-label="PDF icon" />,
+      buttonLabel: 'Download Cards PDF',
+      buttonColor: 'bg-blue-600 hover:bg-blue-700',
+      external: false,
+    },
+    {
+      title: 'All Tokens PDF',
+      description: 'Download a complete PDF containing images of all tokens used in the cube.',
+      href: '/resources/my_tokens.pdf',
+      icon: <FaFilePdf className="text-red-500 text-4xl" aria-label="PDF icon" />,
+      buttonLabel: 'Download Tokens PDF',
+      buttonColor: 'bg-green-600 hover:bg-green-700',
+      external: false,
+    },
+    {
+      title: 'Printable Archetypes Printout',
+      description: 'An easy way to reference all the archetypes in the cube.',
+      href: 'https://imgur.com/a/LKg5DDS',
+      icon: <FaLayerGroup className="text-blue-500 text-4xl" aria-label="Layer icon" />,
+      buttonLabel: 'View Printable Cards',
+      buttonColor: 'bg-purple-600 hover:bg-purple-700',
+      external: true,
+    },
+  ];
 
   return (
-    <div className="max-w-4xl mx-auto">
-      <h1 className="text-3xl font-bold mb-6">Resources</h1>
-      
-      <div className="grid md:grid-cols-2 gap-6">
-        {/* Cards PDF */}
-        <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 border border-gray-200 dark:border-gray-700">
-          <div className="flex items-center mb-4">
-            <FaFilePdf className="text-red-500 text-4xl mr-4" />
-            <div>
-              <h2 className="text-xl font-semibold">All Cards PDF</h2>
-              <p className="text-gray-600 dark:text-gray-400 text-sm">
-                Last updated: {cardsLastUpdated}
-              </p>
-            </div>
-          </div>
-          
-          <p className="mb-4">
-            Download a complete PDF containing images of all cards in the cube. 
-            Perfect for offline reference or printing.
-          </p>
-          
-          <Link 
-            href="/resources/all_cards.pdf" 
-            className="inline-flex items-center px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-md transition-colors"
+    <main className="max-w-5xl mx-auto px-4 py-10">
+      <h1 className="text-4xl font-bold mb-8 text-center">Resources</h1>
+      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {resources.map((res, idx) => (
+          <div
+            key={idx}
+            className="bg-white dark:bg-gray-800 rounded-2xl shadow-md p-6 border border-gray-200 dark:border-gray-700 flex flex-col h-full"
           >
-            <FaDownload className="mr-2" />
-            Download Cards PDF
-          </Link>
-        </div>
-        
-        {/* Tokens PDF */}
-        <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 border border-gray-200 dark:border-gray-700">
-          <div className="flex items-center mb-4">
-            <FaFilePdf className="text-red-500 text-4xl mr-4" />
-            <div>
-              <h2 className="text-xl font-semibold">All Tokens PDF</h2>
-              <p className="text-gray-600 dark:text-gray-400 text-sm">
-                Last updated: {tokensLastUpdated}
-              </p>
-            </div>
+                         <div className="flex flex-col items-center mb-4">
+               <div className="w-16 h-16 flex items-center justify-center mb-3">{res.icon}</div>
+               <div className="text-center min-h-[3.5rem] flex items-center">
+                 <h2 className="text-xl font-semibold">{res.title}</h2>
+               </div>
+             </div>
+
+                         <p className="text-sm text-gray-700 dark:text-gray-300 mb-4 flex-grow text-center">
+               {res.description}
+             </p>
+
+                         <a
+               href={res.href}
+               target={res.href.startsWith('http') ? '_blank' : '_self'}
+               rel={res.href.startsWith('http') ? 'noopener noreferrer' : undefined}
+               className={`inline-flex items-center justify-center px-4 py-2 ${res.buttonColor} text-white rounded-md transition-colors mt-auto`}
+             >
+               {res.href.startsWith('http') ? (
+                 <FaExternalLinkAlt className="mr-2" aria-hidden="true" />
+               ) : (
+                 <FaDownload className="mr-2" aria-hidden="true" />
+               )}
+               {res.buttonLabel}
+             </a>
           </div>
-          
-          <p className="mb-4">
-            Download a complete PDF containing images of all tokens used in the cube.
-            Essential for representing token creatures during gameplay.
-          </p>
-          
-          <Link 
-            href="/resources/my_tokens.pdf" 
-            className="inline-flex items-center px-4 py-2 bg-green-600 hover:bg-green-700 text-white rounded-md transition-colors"
-          >
-            <FaDownload className="mr-2" />
-            Download Tokens PDF
-          </Link>
-        </div>
+        ))}
       </div>
-      
-      <div className="mt-8 p-4 bg-gray-100 dark:bg-gray-700 rounded-lg">
-        <h3 className="text-lg font-semibold mb-2">About These Resources</h3>
-        <p>
-          These PDFs are automatically generated from the latest card and token data in our database.
-          They contain high-quality images arranged in a printable format, perfect for reference during gameplay
-          or for creating physical proxies of the cards.
-        </p>
-      </div>
-    </div>
+    </main>
   );
 }
