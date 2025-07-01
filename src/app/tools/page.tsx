@@ -2824,37 +2824,125 @@ function ManaCalculator() {
   const [greenSymbols, setGreenSymbols] = useState(0);
   const [totalLands, setTotalLands] = useState(17);
   const [results, setResults] = useState<Record<string, number> | null>(null);
+  const [suggestions, setSuggestions] = useState<string[]>([]);
+  const [calculatorError, setCalculatorError] = useState<string | null>(null);
 
   const calculateManaBase = () => {
     const totalSymbols = whiteSymbols + blueSymbols + blackSymbols + redSymbols + greenSymbols;
     
     if (totalSymbols === 0) {
+      setCalculatorError('Please enter at least one mana symbol to calculate your mana base.');
+      setResults(null);
+      setSuggestions([]);
       return;
     }
     
+    // Clear any previous error
+    setCalculatorError(null);
+    
+    // Analyze mana distribution for suggestions
+    const symbols = [
+      { color: 'White', count: whiteSymbols, name: 'Plains' },
+      { color: 'Blue', count: blueSymbols, name: 'Island' },
+      { color: 'Black', count: blackSymbols, name: 'Swamp' },
+      { color: 'Red', count: redSymbols, name: 'Mountain' },
+      { color: 'Green', count: greenSymbols, name: 'Forest' }
+    ].filter(s => s.count > 0).sort((a, b) => b.count - a.count);
+    
+    let suggestions = [];
+    
+    if (symbols.length === 1) {
+      suggestions.push(`Mono-${symbols[0].color} deck - Consider running 16-17 lands for consistency.`);
+    } else if (symbols.length === 2) {
+      const [primary, secondary] = symbols;
+      const ratio = primary.count / secondary.count;
+      if (ratio >= 2) {
+        suggestions.push(`Heavy ${primary.color} with ${secondary.color} splash - Consider ${primary.name}-heavy mana base.`);
+      } else if (ratio >= 1.5) {
+        suggestions.push(`${primary.color}-focused two-color deck - Slightly favor ${primary.name} in your mana base.`);
+      } else {
+        suggestions.push(`Balanced two-color deck - Even split between ${primary.name} and ${secondary.name} recommended.`);
+      }
+    } else if (symbols.length >= 3) {
+      const [primary, secondary, tertiary] = symbols;
+      const primaryRatio = primary.count / totalSymbols;
+      const secondaryRatio = secondary.count / totalSymbols;
+      
+      if (primaryRatio >= 0.5) {
+        suggestions.push(`${primary.color}-heavy multicolor deck - Consider making ${primary.color} your main color.`);
+        suggestions.push(`Warning: Three+ colors require excellent mana fixing. Consider dual lands or artifacts.`);
+      } else if (primaryRatio >= 0.4) {
+        suggestions.push(`${primary.color}-focused multicolor deck with ${secondary.color} and ${tertiary.color} support.`);
+        suggestions.push(`Recommendation: 18+ lands recommended for three-color decks.`);
+      } else {
+        suggestions.push(`Evenly distributed multicolor deck - Very demanding mana base required.`);
+        suggestions.push(`Strong recommendation: Prioritize mana fixing and consider 18+ lands.`);
+      }
+    }
+    
+    // Calculate initial distribution
+    const colorData = [
+      { name: 'Plains', symbols: whiteSymbols },
+      { name: 'Island', symbols: blueSymbols },
+      { name: 'Swamp', symbols: blackSymbols },
+      { name: 'Mountain', symbols: redSymbols },
+      { name: 'Forest', symbols: greenSymbols }
+    ];
+    
+    // Filter to only colors with symbols
+    const activeColors = colorData.filter(color => color.symbols > 0);
+    
     const manaBase: Record<string, number> = {
-      'Plains': Math.round((whiteSymbols / totalSymbols) * totalLands),
-      'Island': Math.round((blueSymbols / totalSymbols) * totalLands),
-      'Swamp': Math.round((blackSymbols / totalSymbols) * totalLands),
-      'Mountain': Math.round((redSymbols / totalSymbols) * totalLands),
-      'Forest': Math.round((greenSymbols / totalSymbols) * totalLands),
+      'Plains': 0,
+      'Island': 0,
+      'Swamp': 0,
+      'Mountain': 0,
+      'Forest': 0
     };
     
-    // Adjust to match total lands
-    let calculatedTotal = Object.values(manaBase).reduce((sum, count) => sum + count, 0);
+    if (activeColors.length === 1) {
+      // Mono-color: all lands go to that color
+      manaBase[activeColors[0].name] = totalLands;
+    } else {
+      // Multi-color: ensure each active color gets at least 1 land
+      let remainingLands = totalLands;
+      
+      // Give each active color at least 1 land
+      activeColors.forEach(color => {
+        manaBase[color.name] = 1;
+        remainingLands--;
+      });
+      
+      // Distribute remaining lands proportionally
+      if (remainingLands > 0) {
+        activeColors.forEach(color => {
+          const proportion = color.symbols / totalSymbols;
+          const additionalLands = Math.floor(proportion * remainingLands);
+          manaBase[color.name] += additionalLands;
+          remainingLands -= additionalLands;
+        });
+        
+        // Distribute any leftover lands to the most dominant color
+        if (remainingLands > 0) {
+          const dominantColor = activeColors.reduce((prev, current) => 
+            current.symbols > prev.symbols ? current : prev
+          );
+          manaBase[dominantColor.name] += remainingLands;
+        }
+      }
+    }
     
-    if (calculatedTotal !== totalLands) {
-      const diff = totalLands - calculatedTotal;
-      
-      // Find the color with the most symbols to adjust
-      const colors = ['Plains', 'Island', 'Swamp', 'Mountain', 'Forest'];
-      const symbolCounts = [whiteSymbols, blueSymbols, blackSymbols, redSymbols, greenSymbols];
-      
-      const maxIndex = symbolCounts.indexOf(Math.max(...symbolCounts.filter(count => count > 0)));
-      manaBase[colors[maxIndex]] += diff;
+    // Check for impossible mana requirements
+    const impossibleColors = activeColors.filter(color => color.symbols > totalLands);
+    if (impossibleColors.length > 0) {
+      impossibleColors.forEach(color => {
+        const colorName = color.name.replace('Plains', 'White').replace('Island', 'Blue').replace('Swamp', 'Black').replace('Mountain', 'Red').replace('Forest', 'Green');
+        suggestions.unshift(`⚠️ CRITICAL: You have ${color.symbols} ${colorName} symbols but only ${totalLands} total lands! Increase land count or reduce ${colorName} cards.`);
+      });
     }
     
     setResults(manaBase);
+    setSuggestions(suggestions);
   };
 
   return (
@@ -2873,11 +2961,31 @@ function ManaCalculator() {
                 White Symbols
               </label>
               <input
-                type="number"
+                type="text"
+                inputMode="numeric"
+                pattern="[0-9]*"
                 min="0"
                 className="w-full p-2 border border-gray-300 dark:border-gray-600 rounded-md dark:bg-gray-700 dark:text-white"
                 value={whiteSymbols}
-                onChange={(e) => setWhiteSymbols(parseInt(e.target.value) || 0)}
+                onChange={(e) => {
+                  const value = e.target.value;
+                  // Only allow digits
+                  if (!/^\d*$/.test(value)) return;
+                  // If current value is "0" and user types a digit, replace the "0"
+                  if (whiteSymbols === 0 && value.startsWith('0') && value.length > 1) {
+                    const newValue = value.substring(1);
+                    setWhiteSymbols(parseInt(newValue) || 0);
+                    setCalculatorError(null);
+                    setSuggestions([]);
+                    return;
+                  }
+                  // Prevent leading zeros (allow single "0" but not "01", "001", etc.)
+                  if (value.length > 1 && value.startsWith('0')) return;
+                  const numValue = parseInt(value) || 0;
+                  setWhiteSymbols(numValue);
+                  setCalculatorError(null);
+                  setSuggestions([]);
+                }}
               />
             </div>
             
@@ -2886,11 +2994,31 @@ function ManaCalculator() {
                 Blue Symbols
               </label>
               <input
-                type="number"
+                type="text"
+                inputMode="numeric"
+                pattern="[0-9]*"
                 min="0"
                 className="w-full p-2 border border-gray-300 dark:border-gray-600 rounded-md dark:bg-gray-700 dark:text-white"
                 value={blueSymbols}
-                onChange={(e) => setBlueSymbols(parseInt(e.target.value) || 0)}
+                onChange={(e) => {
+                  const value = e.target.value;
+                  // Only allow digits
+                  if (!/^\d*$/.test(value)) return;
+                  // If current value is "0" and user types a digit, replace the "0"
+                  if (blueSymbols === 0 && value.startsWith('0') && value.length > 1) {
+                    const newValue = value.substring(1);
+                    setBlueSymbols(parseInt(newValue) || 0);
+                    setCalculatorError(null);
+                    setSuggestions([]);
+                    return;
+                  }
+                  // Prevent leading zeros (allow single "0" but not "01", "001", etc.)
+                  if (value.length > 1 && value.startsWith('0')) return;
+                  const numValue = parseInt(value) || 0;
+                  setBlueSymbols(numValue);
+                  setCalculatorError(null);
+                  setSuggestions([]);
+                }}
               />
             </div>
             
@@ -2899,11 +3027,31 @@ function ManaCalculator() {
                 Black Symbols
               </label>
               <input
-                type="number"
+                type="text"
+                inputMode="numeric"
+                pattern="[0-9]*"
                 min="0"
                 className="w-full p-2 border border-gray-300 dark:border-gray-600 rounded-md dark:bg-gray-700 dark:text-white"
                 value={blackSymbols}
-                onChange={(e) => setBlackSymbols(parseInt(e.target.value) || 0)}
+                onChange={(e) => {
+                  const value = e.target.value;
+                  // Only allow digits
+                  if (!/^\d*$/.test(value)) return;
+                  // If current value is "0" and user types a digit, replace the "0"
+                  if (blackSymbols === 0 && value.startsWith('0') && value.length > 1) {
+                    const newValue = value.substring(1);
+                    setBlackSymbols(parseInt(newValue) || 0);
+                    setCalculatorError(null);
+                    setSuggestions([]);
+                    return;
+                  }
+                  // Prevent leading zeros (allow single "0" but not "01", "001", etc.)
+                  if (value.length > 1 && value.startsWith('0')) return;
+                  const numValue = parseInt(value) || 0;
+                  setBlackSymbols(numValue);
+                  setCalculatorError(null);
+                  setSuggestions([]);
+                }}
               />
             </div>
             
@@ -2912,11 +3060,31 @@ function ManaCalculator() {
                 Red Symbols
               </label>
               <input
-                type="number"
+                type="text"
+                inputMode="numeric"
+                pattern="[0-9]*"
                 min="0"
                 className="w-full p-2 border border-gray-300 dark:border-gray-600 rounded-md dark:bg-gray-700 dark:text-white"
                 value={redSymbols}
-                onChange={(e) => setRedSymbols(parseInt(e.target.value) || 0)}
+                onChange={(e) => {
+                  const value = e.target.value;
+                  // Only allow digits
+                  if (!/^\d*$/.test(value)) return;
+                  // If current value is "0" and user types a digit, replace the "0"
+                  if (redSymbols === 0 && value.startsWith('0') && value.length > 1) {
+                    const newValue = value.substring(1);
+                    setRedSymbols(parseInt(newValue) || 0);
+                    setCalculatorError(null);
+                    setSuggestions([]);
+                    return;
+                  }
+                  // Prevent leading zeros (allow single "0" but not "01", "001", etc.)
+                  if (value.length > 1 && value.startsWith('0')) return;
+                  const numValue = parseInt(value) || 0;
+                  setRedSymbols(numValue);
+                  setCalculatorError(null);
+                  setSuggestions([]);
+                }}
               />
             </div>
             
@@ -2925,11 +3093,31 @@ function ManaCalculator() {
                 Green Symbols
               </label>
               <input
-                type="number"
+                type="text"
+                inputMode="numeric"
+                pattern="[0-9]*"
                 min="0"
                 className="w-full p-2 border border-gray-300 dark:border-gray-600 rounded-md dark:bg-gray-700 dark:text-white"
                 value={greenSymbols}
-                onChange={(e) => setGreenSymbols(parseInt(e.target.value) || 0)}
+                onChange={(e) => {
+                  const value = e.target.value;
+                  // Only allow digits
+                  if (!/^\d*$/.test(value)) return;
+                  // If current value is "0" and user types a digit, replace the "0"
+                  if (greenSymbols === 0 && value.startsWith('0') && value.length > 1) {
+                    const newValue = value.substring(1);
+                    setGreenSymbols(parseInt(newValue) || 0);
+                    setCalculatorError(null);
+                    setSuggestions([]);
+                    return;
+                  }
+                  // Prevent leading zeros (allow single "0" but not "01", "001", etc.)
+                  if (value.length > 1 && value.startsWith('0')) return;
+                  const numValue = parseInt(value) || 0;
+                  setGreenSymbols(numValue);
+                  setCalculatorError(null);
+                  setSuggestions([]);
+                }}
               />
             </div>
             
@@ -2938,11 +3126,33 @@ function ManaCalculator() {
                 Total Lands
               </label>
               <input
-                type="number"
-                min="1"
+                type="text"
+                inputMode="numeric"
+                pattern="[0-9]*"
+                min="0"
                 className="w-full p-2 border border-gray-300 dark:border-gray-600 rounded-md dark:bg-gray-700 dark:text-white"
                 value={totalLands}
-                onChange={(e) => setTotalLands(parseInt(e.target.value) || 17)}
+                onChange={(e) => {
+                  const value = e.target.value;
+                  if (value === '') {
+                    setTotalLands(0);
+                    return;
+                  }
+                  // Only allow digits
+                  if (!/^\d*$/.test(value)) return;
+                  // If current value is "0" and user types a digit, replace the "0"
+                  if (totalLands === 0 && value.startsWith('0') && value.length > 1) {
+                    const newValue = value.substring(1);
+                    setTotalLands(parseInt(newValue) || 0);
+                    setSuggestions([]);
+                    return;
+                  }
+                  // Prevent leading zeros (allow single "0" but not "01", "001", etc.)
+                  if (value.length > 1 && value.startsWith('0')) return;
+                  const numValue = parseInt(value) || 0;
+                  setTotalLands(numValue);
+                  setSuggestions([]);
+                }}
               />
             </div>
             
@@ -2952,6 +3162,12 @@ function ManaCalculator() {
             >
               Calculate Mana Base
             </button>
+            
+            {calculatorError && (
+              <div className="mt-3 p-3 bg-yellow-100 dark:bg-yellow-900 text-yellow-800 dark:text-yellow-200 rounded-md">
+                {calculatorError}
+              </div>
+            )}
           </div>
         </div>
         
@@ -2974,6 +3190,50 @@ function ManaCalculator() {
                 <span className="dark:text-white">{totalLands}</span>
               </div>
             </div>
+            
+            {suggestions.length > 0 && (
+              <div className="mt-4">
+                <h4 className="text-md font-semibold mb-2 dark:text-white">Recommendations</h4>
+                <div className="space-y-2">
+                  {suggestions.map((suggestion, index) => {
+                    const isCritical = suggestion.includes('CRITICAL:');
+                    const isWarning = suggestion.startsWith('Warning:') || suggestion.startsWith('Strong recommendation:') || (suggestion.startsWith('⚠️') && !isCritical);
+                    const isRecommendation = suggestion.startsWith('Recommendation:');
+                    
+                    let bgColor, textColor;
+                    if (isCritical) {
+                      bgColor = 'bg-red-50 dark:bg-red-900/50';
+                      textColor = 'text-red-800 dark:text-red-200';
+                    } else if (isWarning) {
+                      bgColor = 'bg-orange-50 dark:bg-orange-900/50';
+                      textColor = 'text-orange-800 dark:text-orange-200';
+                    } else if (isRecommendation) {
+                      bgColor = 'bg-blue-50 dark:bg-blue-900';
+                      textColor = 'text-blue-800 dark:text-blue-200';
+                    } else {
+                      bgColor = 'bg-blue-50 dark:bg-blue-900';
+                      textColor = 'text-blue-800 dark:text-blue-200';
+                    }
+                    
+                    return (
+                      <div key={index} className={`${bgColor} p-3 rounded-lg`}>
+                        <p className={`text-sm ${textColor}`}>
+                          {isCritical ? (
+                            <span className="font-bold">{suggestion}</span>
+                          ) : isWarning ? (
+                            <span className="font-semibold">{suggestion}</span>
+                          ) : isRecommendation ? (
+                            <span className="font-medium">💡 {suggestion}</span>
+                          ) : (
+                            <span>📊 {suggestion}</span>
+                          )}
+                        </p>
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
+            )}
           </div>
         )}
       </div>
