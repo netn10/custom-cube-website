@@ -4,7 +4,7 @@ import { useParams, useRouter, useSearchParams } from 'next/navigation';
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { getCards, getTokenByName, API_BASE_URL, getGeminiResponse, getCardComments, addComment, deleteComment, addCardHistory, getCardHistory } from '@/lib/api';
-import { FaRobot, FaTrash, FaHistory, FaPlus, FaSave } from 'react-icons/fa';
+import { FaRobot, FaTrash, FaHistory, FaPlus, FaSave, FaCopy } from 'react-icons/fa';
 import { Card, Token, Comment } from '@/types/types';
 import { useAuth } from '@/contexts/AuthContext';
 import CardPreview from '@/components/CardPreview';
@@ -38,6 +38,9 @@ export default function CardDetailPage() {
   const [customCardData, setCustomCardData] = useState<Partial<Card> | null>(null);
   const [useCustomData, setUseCustomData] = useState(false);
   const [hasHistory, setHasHistory] = useState<boolean>(false);
+  
+  // Copy feedback state
+  const [copyMessage, setCopyMessage] = useState<string | null>(null);
   
   // Comments state
   const [comments, setComments] = useState<Comment[]>([]);
@@ -628,6 +631,92 @@ export default function CardDetailPage() {
     return processedText.replace(/\n/g, '<br />');
   };
 
+  // Function to convert formatted card text back to plain text for copying
+  const getPlainCardText = (text: string) => {
+    if (!text) return '';
+    
+    // Convert HTML back to plain text
+    let plainText = text
+      // Replace <br /> tags with newlines
+      .replace(/<br\s*\/?>/gi, '\n')
+      // Remove all HTML tags
+      .replace(/<[^>]*>/g, '')
+      // Decode HTML entities
+      .replace(/&amp;/g, '&')
+      .replace(/&lt;/g, '<')
+      .replace(/&gt;/g, '>')
+      .replace(/&quot;/g, '"')
+      .replace(/&#39;/g, "'")
+      .replace(/&nbsp;/g, ' ');
+    
+    return plainText;
+  };
+
+  // Function to copy text to clipboard
+  const copyToClipboard = async (text: string, successMessage: string = 'Copied to clipboard!') => {
+    try {
+      await navigator.clipboard.writeText(text);
+      setCopyMessage(successMessage);
+      // Clear message after 2 seconds
+      setTimeout(() => setCopyMessage(null), 2000);
+    } catch (err) {
+      console.error('Failed to copy text: ', err);
+      // Fallback for older browsers
+      const textArea = document.createElement('textarea');
+      textArea.value = text;
+      document.body.appendChild(textArea);
+      textArea.select();
+      try {
+        document.execCommand('copy');
+        setCopyMessage(successMessage);
+        setTimeout(() => setCopyMessage(null), 2000);
+      } catch (fallbackErr) {
+        console.error('Fallback copy failed: ', fallbackErr);
+        setCopyMessage('Failed to copy text');
+        setTimeout(() => setCopyMessage(null), 2000);
+      }
+      document.body.removeChild(textArea);
+    }
+  };
+
+  // Function to copy just the card text
+  const copyCardText = () => {
+    if (!card?.text) return;
+    const plainText = getPlainCardText(card.text);
+    copyToClipboard(plainText, 'Card text copied to clipboard!');
+  };
+
+  // Function to copy complete card information
+  const copyFullCard = () => {
+    if (!card) return;
+    
+    const plainText = getPlainCardText(card.text);
+    const flavorText = card.flavorText ? getPlainCardText(card.flavorText) : '';
+    
+    let fullCardText = `${card.name}\n`;
+    if (card.manaCost) {
+      fullCardText += `${card.manaCost}\n`;
+    }
+    fullCardText += `${card.type}\n`;
+    if (plainText) {
+      fullCardText += `\n${plainText}\n`;
+    }
+    if (card.power && card.toughness) {
+      fullCardText += `\n${card.power}/${card.toughness}\n`;
+    }
+    if (flavorText) {
+      fullCardText += `\n${flavorText}\n`;
+    }
+    if (card.artist) {
+      fullCardText += `\nIllustrated by ${card.artist}`;
+    }
+    if (card.set) {
+      fullCardText += `\nSet: ${card.set}`;
+    }
+    
+    copyToClipboard(fullCardText, 'Full card information copied to clipboard!');
+  };
+
   return (
     <div className="max-w-4xl mx-auto">
       <div className="mb-4">
@@ -1049,6 +1138,32 @@ export default function CardDetailPage() {
             )}
             
             <div className="bg-gray-100 dark:bg-gray-700 p-4 rounded-lg mb-4">
+              <div className="flex justify-between items-start mb-2">
+                <h3 className="text-sm font-semibold dark:text-white">Card Text</h3>
+                <div className="flex space-x-2">
+                  <button
+                    onClick={copyCardText}
+                    className="px-2 py-1 bg-blue-500 hover:bg-blue-600 text-white rounded text-xs flex items-center space-x-1 transition-colors"
+                    title="Copy card text only"
+                  >
+                    <FaCopy className="w-3 h-3" />
+                    <span>Copy Text</span>
+                  </button>
+                  <button
+                    onClick={copyFullCard}
+                    className="px-2 py-1 bg-green-500 hover:bg-green-600 text-white rounded text-xs flex items-center space-x-1 transition-colors"
+                    title="Copy complete card information"
+                  >
+                    <FaCopy className="w-3 h-3" />
+                    <span>Copy Full Card</span>
+                  </button>
+                </div>
+              </div>
+              {copyMessage && (
+                <div className="mb-2 p-2 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 rounded text-xs">
+                  {copyMessage}
+                </div>
+              )}
               <p className="dark:text-white text-base leading-relaxed" 
                  style={{ lineHeight: '1.6em' }}
                  dangerouslySetInnerHTML={{ __html: formatCardText(card.text) }} />
