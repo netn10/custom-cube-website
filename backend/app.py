@@ -14,6 +14,7 @@ import jwt
 from functools import wraps
 from werkzeug.security import generate_password_hash, check_password_hash
 import time
+from urllib.parse import unquote
 
 # Load environment variables
 load_dotenv()
@@ -33,6 +34,10 @@ except Exception as e:
 # Cache structure: {cache_key: {'data': result, 'timestamp': time.time()}}
 historical_cache = {}
 CACHE_TTL = 300  # 5 minutes cache TTL
+
+# Add card cache for frequently accessed cards
+card_cache = {}
+CARD_CACHE_TTL = 60  # 1 minute cache TTL for individual cards
 
 def get_cached_or_query(cache_key, query_func):
     """Get data from cache or execute query and cache result"""
@@ -62,6 +67,38 @@ def get_cached_or_query(cache_key, query_func):
         ]
         for key in expired_keys:
             del historical_cache[key]
+    
+    return result
+
+def get_cached_card(card_name, query_func):
+    """Get card from cache or execute query and cache result"""
+    current_time = time.time()
+    cache_key = f"card_{card_name.lower()}"
+    
+    # Check if we have cached data that's still valid
+    if cache_key in card_cache:
+        cached_item = card_cache[cache_key]
+        if current_time - cached_item['timestamp'] < CARD_CACHE_TTL:
+            return cached_item['data']
+        else:
+            # Remove expired cache entry
+            del card_cache[cache_key]
+    
+    # Execute query and cache result
+    result = query_func()
+    card_cache[cache_key] = {
+        'data': result,
+        'timestamp': current_time
+    }
+    
+    # Clean up old cache entries periodically
+    if len(card_cache) > 200:  # Higher limit for card cache
+        expired_keys = [
+            key for key, value in card_cache.items()
+            if current_time - value['timestamp'] > CARD_CACHE_TTL
+        ]
+        for key in expired_keys:
+            del card_cache[key]
     
     return result
 
@@ -411,6 +448,28 @@ def get_cards():
     sort_dir = request.args.get("sort_dir", "asc")
     # New parameter for historic mode
     historic_mode = request.args.get("historic_mode", "").lower() == "true"
+    
+    # Optimize for single card lookups (common case for card detail pages)
+    if search and search.startswith('"') and search.endswith('"') and limit <= 10:
+        # This is likely a single card lookup, use caching
+        card_name = search[1:-1]  # Remove quotes
+        return get_cached_card(card_name, lambda: get_cards_internal(
+            search, body_search, colors, color_match, exclude_colorless,
+            card_type, card_set, custom, facedown, include_facedown,
+            page, limit, sort_by, sort_dir, historic_mode
+        ))
+    
+    # For other queries, use the internal function directly
+    return get_cards_internal(
+        search, body_search, colors, color_match, exclude_colorless,
+        card_type, card_set, custom, facedown, include_facedown,
+        page, limit, sort_by, sort_dir, historic_mode
+    )
+
+def get_cards_internal(search, body_search, colors, color_match, exclude_colorless,
+                      card_type, card_set, custom, facedown, include_facedown,
+                      page, limit, sort_by, sort_dir, historic_mode):
+    """Internal function for getting cards with all the logic"""
 
     # Build query using a simple approach that's less error-prone
     query = {}
@@ -799,32 +858,53 @@ def get_cards():
 
 @app.route("/api/cards/<card_id>", methods=["GET"])
 def get_card(card_id):
-    """Get a single card by ID"""
+    """Get a single card by ID or name"""
     try:
-        # First try to find by string ID
-        card = db.cards.find_one({"_id": card_id})
+        # Use caching for better performance
+        def query_card():
+            # First try to find by string ID
+            card = db.cards.find_one({"_id": card_id})
 
-        # If not found, try with ObjectId
-        if not card:
-            try:
-                card = db.cards.find_one({"_id": ObjectId(card_id)})
-            except:
-                pass
+            # If not found, try with ObjectId
+            if not card:
+                try:
+                    card = db.cards.find_one({"_id": ObjectId(card_id)})
+                except:
+                    pass
+
+            # If still not found, try to find by name (case-insensitive)
+            if not card:
+                # URL decode the card_id in case it's an encoded card name
+                decoded_name = unquote(card_id)
+                # Try exact match first
+                card = db.cards.find_one({"name": decoded_name})
+                
+                # If still not found, try case-insensitive search
+                if not card:
+                    card = db.cards.find_one({"name": {"$regex": f"^{re.escape(decoded_name)}$", "$options": "i"}})
+
+            if card:
+                # Convert ObjectId to string if needed
+                if isinstance(card.get("_id"), ObjectId):
+                    card["id"] = str(card.pop("_id"))
+                else:
+                    card["id"] = card.pop("_id")
+                return card
+            else:
+                return None
+
+        # Use cached lookup or execute query
+        card = get_cached_card(card_id, query_card)
 
         if card:
-            # Convert ObjectId to string if needed
-            if isinstance(card.get("_id"), ObjectId):
-                card["id"] = str(card.pop("_id"))
-            else:
-                card["id"] = card.pop("_id")
-            # logging.info(f"History fetched successfully for card ID: {card_id}") # Log success before returning
+            # logging.info(f"Card found successfully for ID/name: {card_id}") # Log success before returning
             return jsonify(card)
         else:
-            logging.info(f"Card not found with ID: {card_id}")
+            logging.info(f"Card not found with ID/name: {card_id}")
             return jsonify({"error": "Card not found"}), 404
     except Exception as e:
         # logging.error(f"Error adding history entry for card ID: {card_id}: {str(e)}") # Misplaced message
-        logging.error(f"Error fetching card with ID {card_id}: {str(e)}")
+        logging.error(f"Error fetching card with ID/name {card_id}: {str(e)}")
         # logging.info(f"History entry added successfully for card ID: {card_id}") # Misplaced message
         return jsonify({"error": str(e)}), 500
 
@@ -2010,6 +2090,16 @@ def update_card(card_id):
 def get_card_comments(card_id):
     """Get all comments for a specific card"""
     try:
+        # Use caching for comments
+        cache_key = f"comments_{card_id}"
+        return get_cached_or_query(cache_key, lambda: get_card_comments_internal(card_id))
+    except Exception as e:
+        logging.error(f"Error fetching comments for card ID {card_id}: {str(e)}")
+        return jsonify({"error": str(e)}), 500
+
+def get_card_comments_internal(card_id):
+    """Internal function for getting card comments"""
+    try:
         # Get comments for the card
         comments = list(db.comments.find({"cardId": card_id}).sort("createdAt", -1))
         
@@ -2028,12 +2118,9 @@ def get_card_comments(card_id):
                 "createdAt": comment.get("createdAt", datetime.utcnow().isoformat()) # Default if missing
             })
             
-        # logging.info(f"Fetched comments for card ID: {card_id} successfully.")
         return jsonify(formatted_comments), 200
     except Exception as e:
-        # logging.error(f"Error adding history entry for card ID: {card_id}: {str(e)}") # Misplaced
-        logging.error(f"Error fetching comments for card ID {card_id}: {str(e)}")
-        # logging.info(f"History entry added successfully for card ID: {card_id}") # Misplaced
+        logging.error(f"Error in get_card_comments_internal for card ID {card_id}: {str(e)}")
         return jsonify({"error": str(e)}), 500
 
 @app.route("/api/comments/card/<card_id>", methods=["POST"])
@@ -2208,8 +2295,17 @@ def delete_comment(comment_id):
 # Card History API
 @app.route("/api/cards/<card_id>/history", methods=["GET"])
 def get_card_history(card_id):
-    logging.info(f"Fetching history for card ID: {card_id}")
     """Get the history of a card's iterations"""
+    try:
+        # Use caching for history (shorter TTL since history changes less frequently)
+        cache_key = f"history_{card_id}_{request.args.get('page', 1)}_{request.args.get('limit', 10)}"
+        return get_cached_or_query(cache_key, lambda: get_card_history_internal(card_id))
+    except Exception as e:
+        logging.error(f"Error fetching history for card ID {card_id}: {str(e)}")
+        return jsonify({"error": str(e)}), 500
+
+def get_card_history_internal(card_id):
+    """Internal function for getting card history"""
     try:
         # Get pagination parameters
         page = int(request.args.get('page', 1))
@@ -2234,7 +2330,6 @@ def get_card_history(card_id):
                 entry["timestamp"] = entry["timestamp"].isoformat()
             formatted_entries.append(entry)
         
-        # logging.info(f"History fetched successfully for card ID: {card_id}")
         return jsonify({
             "history": formatted_entries,
             "total": total_entries,
@@ -2242,9 +2337,7 @@ def get_card_history(card_id):
             "limit": limit
         })
     except Exception as e:
-        # logging.error(f"Error adding history entry for card ID: {card_id}: {str(e)}") # Misplaced message
-        logging.error(f"Error fetching history for card ID {card_id}: {str(e)}")
-        # logging.info(f"History entry added successfully for card ID: {card_id}") # Misplaced message
+        logging.error(f"Error in get_card_history_internal for card ID {card_id}: {str(e)}")
         return jsonify({"error": str(e)}), 500
 
 @app.route("/api/cards/<card_id>/history", methods=["POST"])

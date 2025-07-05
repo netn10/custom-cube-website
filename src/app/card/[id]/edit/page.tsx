@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 import { useParams, useRouter } from 'next/navigation';
 import Link from 'next/link';
-import { getCards, updateCard } from '@/lib/api';
+import { getCards, updateCard, getCardById } from '@/lib/api';
 import { Card } from '@/types/types';
 import { useAuth } from '@/contexts/AuthContext';
 
@@ -59,6 +59,20 @@ export default function EditCardPage(): JSX.Element {
       const fetchCard = async () => {
         try {
           const cardName = decodeURIComponent(params.id as string);
+          
+          // Try direct card lookup first (more efficient for exact matches)
+          try {
+            const cardData = await getCardById(cardName);
+            if (cardData) {
+              setFormData(cardData);
+              setJsonInput(JSON.stringify(cardData, null, 2));
+              return; // Exit early if direct lookup succeeded
+            }
+          } catch (directError) {
+            console.log('Direct card lookup failed, falling back to search:', directError);
+          }
+          
+          // Fallback to search if direct lookup fails
           const searchResults = await getCards({ search: cardName, limit: 1 });
           
           if (searchResults.cards.length > 0) {

@@ -17,7 +17,7 @@ A web application for managing and exploring a custom Magic: The Gathering cube 
   - RW Self-mill
   - GU Prowess
 - **Cube list section** with advanced filtering options (by name, color, type, and source)
-- **Card detail pages** with full card information
+- **Card detail pages** with full card information and hover tooltips for tokens and related cards
 - **Archetype detail pages** showing strategy and key cards
 - **Tokens section** for browsing all tokens in the cube
 - **About page** with information about the cube
@@ -26,6 +26,10 @@ A web application for managing and exploring a custom Magic: The Gathering cube 
   - Random Pack Generator
   - Mana Calculator
   - Archetype Finder
+- **Interactive hover tooltips** on card detail pages that show images when hovering over:
+  - Related tokens (with token images)
+  - Related face cards (with card images)
+  - Efficient lazy loading to prevent page slowdown
 
 ## Technology Stack
 

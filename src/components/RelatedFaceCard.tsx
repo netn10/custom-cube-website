@@ -26,7 +26,22 @@ export default function RelatedFaceCard({ card, className = '', children }: Rela
       try {
         setIsLoading(true);
         
-        // Make API call to get the related face card
+        // Try direct card lookup first (more efficient for exact matches)
+        try {
+          const response = await fetch(`${API_BASE_URL}/cards/${encodeURIComponent(card.relatedFace)}`);
+          
+          if (response.ok) {
+            const relatedCard = await response.json();
+            if (relatedCard.imageUrl && isMounted.current) {
+              setRelatedFaceImageUrl(relatedCard.imageUrl);
+              return; // Exit early if direct lookup succeeded
+            }
+          }
+        } catch (directError) {
+          console.log('Direct related face lookup failed, falling back to search:', directError);
+        }
+        
+        // Fallback to search if direct lookup fails
         const response = await fetch(`${API_BASE_URL}/cards?search=${encodeURIComponent(card.relatedFace)}&include_facedown=true`);
         
         if (!response.ok) {

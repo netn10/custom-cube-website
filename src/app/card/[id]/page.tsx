@@ -3,13 +3,19 @@
 import { useParams, useRouter, useSearchParams } from 'next/navigation';
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { getCards, getTokenByName, API_BASE_URL, getGeminiResponse, getCardComments, addComment, deleteComment, addCardHistory, getCardHistory } from '@/lib/api';
+import { getCards, getTokenByName, API_BASE_URL, getGeminiResponse, getCardComments, addComment, deleteComment, addCardHistory, getCardHistory, getArchetypes, getCardById } from '@/lib/api';
 import { FaRobot, FaTrash, FaHistory, FaPlus, FaSave, FaCopy } from 'react-icons/fa';
-import { Card, Token, Comment } from '@/types/types';
+import { Card, Token, Comment, CommentFormData, Archetype } from '@/types/types';
 import { useAuth } from '@/contexts/AuthContext';
 import CardPreview from '@/components/CardPreview';
 import RelatedFaceCardDetail from '@/components/RelatedFaceCardDetail';
 import CardHistoryModal from '@/components/CardHistoryModal';
+import HoverTooltip from '@/components/HoverTooltip';
+import CardSkeleton from '@/components/CardSkeleton';
+
+// Simple client-side cache for API responses
+const cardCache = new Map<string, Card>();
+const tokenCache = new Map<string, Token>();
 
 export default function CardDetailPage() {
   const params = useParams();
@@ -21,6 +27,8 @@ export default function CardDetailPage() {
   const [tokenImages, setTokenImages] = useState<{[name: string]: string}>({});
   // Store related face image URL
   const [relatedFaceImage, setRelatedFaceImage] = useState<string>('');
+  // Store related card data for tooltip
+  const [relatedCardData, setRelatedCardData] = useState<Card | null>(null);
   // AI Archetype Analysis
   const [aiLoading, setAiLoading] = useState(false);
   const [aiResponse, setAiResponse] = useState<string | null>(null);
@@ -49,19 +57,17 @@ export default function CardDetailPage() {
   const [isSubmittingComment, setIsSubmittingComment] = useState(false);
   const [commentError, setCommentError] = useState<string | null>(null);
   
-  // Archetype data
-  const archetypes = [
-    { id: 'wu-storm', name: 'Storm', colors: ['W', 'U'], description: 'Cast multiple spells in a turn to trigger powerful effects.' },
-    { id: 'ub-broken-cipher', name: 'Broken Cipher', colors: ['U', 'B'], description: 'Encode secrets onto creatures and gain value when they deal combat damage.' },
-    { id: 'br-token-collection', name: 'Token Collection', colors: ['B', 'R'], description: 'Create and collect various token types for different synergies.' },
-    { id: 'rg-control', name: 'Control', colors: ['R', 'G'], description: 'An unusual take on control using red and green to dominate the board.' },
-    { id: 'gw-vehicles', name: 'Vehicles', colors: ['G', 'W'], description: 'Crew powerful artifact vehicles with your creatures for strong attacks.' },
-    { id: 'wb-blink', name: 'Blink/ETB/Value', colors: ['W', 'B'], description: 'Flicker creatures in and out of the battlefield to accumulate triggers.' },
-    { id: 'bg-artifacts', name: 'Artifacts', colors: ['B', 'G'], description: 'Leverage artifacts for value and synergy in an unusual color combination.' },
-    { id: 'ur-enchantments', name: 'Enchantments', colors: ['U', 'R'], description: 'Use enchantments to control the game and generate value over time.' },
-    { id: 'rw-self-mill', name: 'Self-mill', colors: ['R', 'W'], description: 'Put cards from your library into your graveyard for value and synergy.' },
-    { id: 'gu-prowess', name: 'Prowess', colors: ['G', 'U'], description: 'Cast non-creature spells to trigger bonuses on your creatures.' },
-  ];
+  // Loading states for better UX
+  const [loadingStates, setLoadingStates] = useState({
+    card: true,
+    comments: false,
+    history: false,
+    tokens: false,
+    relatedFace: false
+  });
+  
+  // Archetype data - will be fetched from API
+  const [archetypes, setArchetypes] = useState<Archetype[]>([]);
 
   // Get the current URL parameters to preserve when going back to the cube list
   const getBackToCubeListURL = () => {
@@ -126,11 +132,80 @@ export default function CardDetailPage() {
   // Function to fetch comments for the current card
   const fetchComments = async (cardId: string) => {
     try {
+      setLoadingStates(prev => ({ ...prev, comments: true }));
       const commentsData = await getCardComments(cardId);
       setComments(commentsData);
     } catch (error) {
       console.error('Error fetching comments:', error);
       setCommentError('Failed to load comments. Please try again later.');
+    } finally {
+      setLoadingStates(prev => ({ ...prev, comments: false }));
+    }
+  };
+
+  // Function to fetch token image efficiently (only when needed)
+  const fetchTokenImage = async (tokenName: string) => {
+    // Don't fetch if we already have the image or if we're already fetching
+    if (tokenImages[tokenName] || tokenImages[tokenName] === '') {
+      return;
+    }
+
+    // Check cache first
+    const cacheKey = tokenName.toLowerCase();
+    if (tokenCache.has(cacheKey)) {
+      const cachedToken = tokenCache.get(cacheKey)!;
+      if (cachedToken.imageUrl) {
+        setTokenImages(prev => ({ ...prev, [tokenName]: cachedToken.imageUrl! }));
+      } else {
+        setTokenImages(prev => ({ ...prev, [tokenName]: 'no-image' }));
+      }
+      return;
+    }
+
+    // Mark as fetching to prevent duplicate requests
+    setTokenImages(prev => ({ ...prev, [tokenName]: '' }));
+
+    try {
+      const token = await getTokenByName(tokenName);
+      tokenCache.set(cacheKey, token); // Cache the token
+      
+      if (token.imageUrl) {
+        setTokenImages(prev => ({ ...prev, [tokenName]: token.imageUrl! }));
+      } else {
+        // Mark as no image available
+        setTokenImages(prev => ({ ...prev, [tokenName]: 'no-image' }));
+      }
+    } catch (error) {
+      console.error(`Error fetching token image for ${tokenName}:`, error);
+      // Mark as no image available on error
+      setTokenImages(prev => ({ ...prev, [tokenName]: 'no-image' }));
+    }
+  };
+
+  // Function to fetch related card data efficiently (only when needed)
+  const fetchRelatedCardData = async (cardName: string) => {
+    // Don't fetch if we already have the data
+    if (relatedCardData?.name === cardName) {
+      return;
+    }
+
+    // Check cache first
+    const cacheKey = cardName.toLowerCase();
+    if (cardCache.has(cacheKey)) {
+      setRelatedCardData(cardCache.get(cacheKey)!);
+      return;
+    }
+
+    try {
+      const card = await getCardById(cardName);
+      cardCache.set(cacheKey, card); // Cache the card
+      setRelatedCardData(card);
+    } catch (error) {
+      console.error(`Error fetching related card data for ${cardName}:`, error);
+      // Set empty data to prevent repeated failed requests
+      const emptyCard = { id: '', name: cardName, manaCost: '', type: '', rarity: '', text: '', colors: [], custom: false, archetypes: [] };
+      cardCache.set(cacheKey, emptyCard);
+      setRelatedCardData(emptyCard);
     }
   };
 
@@ -198,218 +273,259 @@ export default function CardDetailPage() {
       try {
         const newComment = await addComment(card.id, commentData, token || undefined);
         
-        // Replace the temporary comment with the real one from the server
-        setComments(prevComments => {
-          return prevComments.map(comment => 
+        // Replace the temporary comment with the real one
+        setComments(prevComments => 
+          prevComments.map(comment => 
             comment.id === tempId ? newComment : comment
-          );
-        });
+          )
+        );
       } catch (error) {
-        // If the server request fails, keep the temporary comment but mark it as failed
-        console.error('Error submitting comment to server:', error);
-        setComments(prevComments => {
-          return prevComments.map(comment => 
-            comment.id === tempId ? {
-              ...comment,
-              content: comment.content + ' [Failed to save - please try again]',
-            } : comment
-          );
-        });
-        setCommentError('Comment displayed locally but failed to save to server. Please try again.');
+        console.error('Error submitting comment:', error);
+        // Remove the temporary comment if submission failed
+        setComments(prevComments => 
+          prevComments.filter(comment => comment.id !== tempId)
+        );
+        setCommentError('Failed to submit comment. Please try again.');
+        // Restore the comment content
+        setCommentContent(commentContent);
       }
     } catch (error) {
-      console.error('Error in comment submission process:', error);
-      setCommentError('Failed to submit comment. Please try again later.');
+      console.error('Error in comment submission:', error);
+      setCommentError('An unexpected error occurred. Please try again.');
     } finally {
       setIsSubmittingComment(false);
     }
   };
-  
+
   // Function to handle comment deletion
   const handleDeleteComment = async (commentId: string) => {
-    try {
-      const token = localStorage.getItem('auth_token');
-      if (!token) {
-        setCommentError('Authentication token is missing. Please log in again.');
-        return;
-      }
-      
-      await deleteComment(commentId, token);
-      setComments(prevComments => prevComments.filter(comment => comment.id !== commentId));
-    } catch (error) {
-      console.error('Error deleting comment:', error);
-      setCommentError('Failed to delete comment. Please try again later.');
-    }
-  };
-
-  useEffect(() => {
-    if (params.id) {
-      // Check if a card has history
-  const checkCardHistory = async (cardId: string) => {
-    if (!cardId) {
-      console.error('No card ID provided for history check');
-      setHasHistory(false);
+    if (!isAuthenticated) {
+      setCommentError('You must be logged in to delete comments.');
       return;
     }
     
     try {
-      console.log('Checking history for card ID:', cardId);
-      console.log('API Base URL:', API_BASE_URL);
-      
-      const history = await getCardHistory(cardId, 1, 1);
-      console.log('History response:', {
-        total: history.total,
-        history: history.history.map(h => ({
-          id: h._id,
-          timestamp: h.timestamp,
-          version_data: {
-            name: h.version_data.name,
-            type: h.version_data.type
-          }
-        }))
-      });
-      const hasHistory = history.total > 0;
-      console.log('Has history:', hasHistory);
-      setHasHistory(hasHistory);
-      
-      // If no history found, log the exact request URL for debugging
-      if (!hasHistory) {
-        console.log(`No history found for card ID: ${cardId}`);
-        console.log(`History endpoint: ${API_BASE_URL}/cards/${cardId}/history?page=1&limit=1`);
-        console.log('Card ID format:', typeof cardId);
+      const token = localStorage.getItem('auth_token');
+      if (!token) {
+        setCommentError('Authentication token is missing.');
+        return;
       }
+      
+      await deleteComment(commentId, token);
+      
+      // Remove the comment from the UI
+      setComments(prevComments => 
+        prevComments.filter(comment => comment.id !== commentId)
+      );
     } catch (error) {
-      console.error('Error checking card history:', error);
-      // Log the full error for debugging
-      if (error instanceof Error) {
-        console.error('Error details:', {
-          message: error.message,
-          name: error.name,
-          stack: error.stack
-        });
-      }
-      // Don't set hasHistory to false here as it might be a temporary error
-      // The button will still be hidden by default
+      console.error('Error deleting comment:', error);
+      setCommentError('Failed to delete comment. Please try again.');
     }
   };
 
-  // Fetch card data from API using name search
+  // Function to check if card has history
+  const checkCardHistory = async (cardId: string) => {
+    try {
+      setLoadingStates(prev => ({ ...prev, history: true }));
+      const historyResponse = await getCardHistory(cardId, 1, 1);
+      setHasHistory(historyResponse.total > 0);
+    } catch (error) {
+      console.error('Error checking card history:', error);
+      setHasHistory(false);
+    } finally {
+      setLoadingStates(prev => ({ ...prev, history: false }));
+    }
+  };
+
+  // Optimized card fetching with improved performance
   const fetchCard = async () => {
     try {
       const cardName = decodeURIComponent(params.id as string);
-      const exactSearchResults = await getCards({ search: `"${cardName}"`, limit: 10, include_facedown: true });
       
-      // If we don't get an exact match, try a broader search
-      let searchResults = exactSearchResults;
-      if (exactSearchResults.cards.length === 0) {
-        searchResults = await getCards({ search: cardName, limit: 10, include_facedown: true });
+      // 1. Fetch main card data with caching and optimized lookup strategy
+      const cardToUse = await (async () => {
+        // Check cache first
+        const cacheKey = cardName.toLowerCase();
+        if (cardCache.has(cacheKey)) {
+          return cardCache.get(cacheKey)!;
+        }
+        
+        // Try direct card lookup first (most efficient for exact matches)
+        try {
+          const directCard = await getCardById(cardName);
+          if (directCard) {
+            cardCache.set(cacheKey, directCard);
+            return directCard;
+          }
+        } catch (error) {
+          // If direct lookup fails, fall back to search
+          console.log('Direct card lookup failed, falling back to search:', error);
+        }
+        
+        // Try exact match search (most common case)
+        const exactSearchResults = await getCards({ 
+          search: `"${cardName}"`, 
+          limit: 1, // Only need one result for exact match
+          include_facedown: true 
+        });
+        
+        if (exactSearchResults.cards.length > 0) {
+          const card = exactSearchResults.cards[0];
+          cardCache.set(cacheKey, card);
+          return card;
+        }
+        
+        // Fallback to broader search only if exact match fails
+        const searchResults = await getCards({ 
+          search: cardName, 
+          limit: 5, // Reduced limit for faster response
+          include_facedown: true 
+        });
+        
+        if (searchResults.cards.length === 0) {
+          return null;
+        }
+        
+        // Find exact name match (case insensitive)
+        const exactMatch = searchResults.cards.find((c: Card) => 
+          c.name.toLowerCase() === cardName.toLowerCase()
+        );
+        
+        const result = exactMatch || searchResults.cards[0];
+        if (result) {
+          cardCache.set(cacheKey, result);
+        }
+        return result;
+      })();
+      
+      if (!cardToUse) {
+        throw new Error('Card not found');
       }
       
-      // Look for cards in the results
-      const cards = searchResults.cards;
+      // Set card immediately for faster UI response
+      setCard(cardToUse);
+      setLoadingStates(prev => ({ ...prev, card: false }));
       
-      // First, try to find an exact name match (case insensitive)
-      const exactMatch = cards.find(c => 
-        c.name.toLowerCase() === cardName.toLowerCase()
-      );
+      // 2. Start non-blocking parallel operations for secondary data
+      const secondaryPromises = [];
       
-      // Determine the card to use - exact match, first result, or facedown card
-      let cardToUse: Card | null = null;
-      
-      if (exactMatch) {
-        cardToUse = exactMatch;
+      // Fetch comments (non-blocking)
+      if (cardToUse.id) {
+        secondaryPromises.push(
+          fetchComments(cardToUse.id).catch(err => 
+            console.error('Error fetching comments:', err)
+          )
+        );
+        
+        // Check history (non-blocking)
+        secondaryPromises.push(
+          checkCardHistory(cardToUse.id).catch(err => 
+            console.error('Error checking history:', err)
+          )
+        );
       }
-          
-          setCard(cardToUse);
-            
-          // If the card has a related face, fetch that card
-          if (cardToUse && cardToUse.relatedFace) {
+      
+      // Fetch related face card (non-blocking)
+      if (cardToUse.relatedFace) {
+        secondaryPromises.push(
+          (async () => {
             try {
-              // Search for the card by name
-              const relatedCardResults = await getCards({ search: cardToUse.relatedFace, include_facedown: true });
+              setLoadingStates(prev => ({ ...prev, relatedFace: true }));
+              // Try direct card lookup first (more efficient for exact matches)
+              try {
+                const relatedCardDirect = await getCardById(cardToUse.relatedFace!);
+                if (relatedCardDirect) {
+                  setRelatedCard(relatedCardDirect);
+                  if (relatedCardDirect.imageUrl) {
+                    setRelatedFaceImage(relatedCardDirect.imageUrl);
+                  }
+                  return; // Exit early if direct lookup succeeded
+                }
+              } catch (directError) {
+                console.log('Direct related card lookup failed, falling back to search:', directError);
+              }
+              
+              // Fallback to search if direct lookup fails
+              const relatedCardResults = await getCards({ 
+                search: `"${cardToUse.relatedFace}"`, 
+                limit: 1, 
+                include_facedown: true 
+              });
               if (relatedCardResults.cards.length > 0) {
                 setRelatedCard(relatedCardResults.cards[0]);
-                // Save the related face image URL if available
                 if (relatedCardResults.cards[0].imageUrl) {
                   setRelatedFaceImage(relatedCardResults.cards[0].imageUrl);
                 }
               }
             } catch (err) {
               console.error('Error fetching related card:', err);
+            } finally {
+              setLoadingStates(prev => ({ ...prev, relatedFace: false }));
             }
-          }
-          
-          // Fetch comments and check history for the card if we have a valid card ID
-          if (cardToUse && cardToUse.id) {
-            fetchComments(cardToUse.id);
-            console.log('Card data:', {
-              id: cardToUse.id,
-              name: cardToUse.name,
-              // @ts-ignore - _id might exist on the object
-              _id: cardToUse._id
-            });
-            // Try with both possible ID fields
-            checkCardHistory(cardToUse.id);
-            // @ts-ignore - _id might exist on the object
-            if (cardToUse._id && cardToUse._id !== cardToUse.id) {
-              console.log('Trying with _id field as well');
-              checkCardHistory(cardToUse._id);
-            }
-          }
-          
-          // We don't automatically analyze with AI anymore - user must click the button
-          
-          // If card has related tokens, fetch their images using the token API
-          if (cardToUse && cardToUse.relatedTokens && cardToUse.relatedTokens.length > 0) {
-            try {
-              
-              // Create a batch request to fetch all token data using the token API
-              const tokenPromises = cardToUse.relatedTokens.map(async (tokenName: string) => {
-                try {
-                  // Use the token-specific API endpoint
-                  const token = await getTokenByName(tokenName);
-                  
-                  if (token && token.imageUrl) {
-                    return { name: tokenName, imageUrl: token.imageUrl };
-                  }
-                } catch (tokenError) {
-                  const tokenResults = await getCards({ search: `"${tokenName}"`, include_facedown: true });
-                  
-                  if (tokenResults.cards.length > 0) {
-                    const tokenCard = tokenResults.cards[0];                    
-                    if (tokenCard.imageUrl) {
-                      return { name: tokenName, imageUrl: tokenCard.imageUrl };
-                    }
-                  }
-                }
-                
-                return { name: tokenName, imageUrl: '' };
-              });
-              
-              const tokenData = await Promise.all(tokenPromises);
-              const tokenImageMap = tokenData.reduce((acc, token) => {
-                if (token.imageUrl) {
-                  acc[token.name] = token.imageUrl;
-                }
-                return acc;
-              }, {} as {[name: string]: string});
-              
-              setTokenImages(tokenImageMap);
-            } catch (err) {
-              console.error('Error fetching token images:', err);
-            }
-          }
-        } catch (err) {
-          console.error('Error fetching card:', err);
-          setError('Failed to load card details. Please try again later.');
-        } finally {
-          setLoading(false);
-        }
-      };
+          })()
+        );
+      }
       
+      // Don't pre-fetch token images - let hover tooltips handle them lazily
+      // This significantly improves initial load time
+      if (cardToUse.relatedTokens && cardToUse.relatedTokens.length > 0) {
+        setLoadingStates(prev => ({ ...prev, tokens: false }));
+      }
+      
+             // Execute secondary operations in background without blocking
+       Promise.all(secondaryPromises).catch(err => 
+         console.error('Error in secondary operations:', err)
+       );
+       
+       // Prefetch related cards for faster navigation (non-blocking)
+       if (cardToUse.relatedFace && !cardCache.has(cardToUse.relatedFace.toLowerCase())) {
+         setTimeout(() => {
+           fetchRelatedCardData(cardToUse.relatedFace!);
+         }, 1000); // Delay to avoid interfering with main loading
+       }
+      
+    } catch (err) {
+      console.error('Error fetching card:', err);
+      setError('Failed to load card details. Please try again later.');
+    } finally {
+      setLoading(false);
+    }
+  };
+  
+  // Fetch card data when component mounts or card ID changes
+  useEffect(() => {
+    if (params.id) {
       fetchCard();
     }
   }, [params.id]);
+
+  // Fetch archetypes data when component mounts
+  useEffect(() => {
+    const fetchArchetypes = async () => {
+      try {
+        const archetypesData = await getArchetypes();
+        setArchetypes(archetypesData);
+      } catch (error) {
+        console.error('Error fetching archetypes:', error);
+        // Don't set error state for archetypes as it's not critical for card display
+      }
+    };
+    
+    fetchArchetypes();
+  }, []);
+
+  // Timeout mechanism to prevent loading states from getting stuck
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      setLoadingStates(prev => ({
+        ...prev,
+        relatedFace: false,
+        tokens: false
+      }));
+    }, 10000); // 10 second timeout
+
+    return () => clearTimeout(timeout);
+  }, []);
   
   const getAIAnalysis = async () => {
     // Check if card exists
@@ -471,11 +587,7 @@ export default function CardDetailPage() {
   };
 
   if (loading) {
-    return (
-      <div className="flex justify-center items-center h-64">
-        <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-blue-500"></div>
-      </div>
-    );
+    return <CardSkeleton />;
   }
 
   if (error) {
@@ -495,8 +607,7 @@ export default function CardDetailPage() {
   if (!card) {
     return (
       <div className="text-center py-12">
-        <h2 className="text-2xl font-bold mb-4 dark:text-white">Card Not Found</h2>
-        <p className="mb-6 dark:text-gray-300">The card you're looking for with name "{decodeURIComponent(params.id as string)}" doesn't exist or has been removed.</p>
+        <h2 className="text-2xl font-bold mb-4 dark:text-white">Card not found</h2>
         <button 
           onClick={() => router.push(getBackToCubeListURL())} 
           className="btn-primary"
@@ -544,7 +655,7 @@ export default function CardDetailPage() {
       if (symbol.includes('/')) {
         const colors = symbol.split('/');
         // First check if both are colors
-        if (colors.length === 2 && colors.every(c => 'WUBRG'.includes(c))) {
+        if (colors.length === 2 && colors.every((c: string) => 'WUBRG'.includes(c))) {
           return createSymbolSpan(`bg-gradient-to-br from-mtg-${colors[0].toLowerCase()} to-mtg-${colors[1].toLowerCase()}`, symbol, `${colors[0]}/${colors[1]}`, 'w-6 h-6');
         }
       }
@@ -602,7 +713,7 @@ export default function CardDetailPage() {
       if (symbol.includes('/')) {
         const colors = symbol.split('/');
         // First check if both are colors
-        if (colors.length === 2 && colors.every(c => 'WUBRG'.includes(c))) {
+        if (colors.length === 2 && colors.every((c: string) => 'WUBRG'.includes(c))) {
           return createSymbolSpan(`bg-gradient-to-br from-mtg-${colors[0].toLowerCase()} to-mtg-${colors[1].toLowerCase()}`, symbol, `${colors[0]}/${colors[1]}`);
         }
       }
@@ -841,8 +952,7 @@ export default function CardDetailPage() {
                           // Initialize with current card data
                           setCustomCardData({
                             ...card,
-                            id: card.id,
-                            _id: card.id
+                            id: card.id
                           });
                         }
                       }}
@@ -1201,28 +1311,28 @@ export default function CardDetailPage() {
               <div className="mb-4">
                 <p className="text-sm font-semibold dark:text-white">Related Tokens:</p>
                 <div className="flex flex-wrap gap-2 mt-1">
-                  {card.relatedTokens.map((token: string) => {
-                    return (
-                      <CardPreview 
-                        key={token} 
-                        cardName={token} 
-                        imageUrl={tokenImages[token] || ''}
+                  {loadingStates.tokens ? (
+                    <div className="flex items-center space-x-2">
+                      <div className="animate-spin rounded-full h-4 w-4 border-t-2 border-b-2 border-blue-500"></div>
+                      <span className="text-sm text-gray-500 dark:text-gray-400">Loading tokens...</span>
+                    </div>
+                  ) : (
+                    card.relatedTokens.map((token: string) => (
+                      <HoverTooltip
+                        key={token}
+                        imageUrl={tokenImages[token]}
+                        title={token}
+                        onShow={() => fetchTokenImage(token)}
                       >
                         <Link 
                           href={`/token/${encodeURIComponent(token)}`}
-                          className="px-2 py-1 bg-amber-100 dark:bg-amber-900 text-amber-800 dark:text-amber-200 rounded-full text-xs"
-                          onClick={(e) => {
-                            // Prevent navigation if token images are still loading
-                            if (!tokenImages[token]) {
-                              e.preventDefault();
-                            }
-                          }}
+                          className="px-2 py-1 bg-amber-100 dark:bg-amber-900 text-amber-800 dark:text-amber-200 rounded-full text-xs hover:bg-amber-200 dark:hover:bg-amber-800 transition-colors"
                         >
                           {token}
                         </Link>
-                      </CardPreview>
-                    );
-                  })}
+                      </HoverTooltip>
+                    ))
+                  )}
                 </div>
               </div>
             )}
@@ -1230,14 +1340,25 @@ export default function CardDetailPage() {
             {card.relatedFace && (
               <div className="mb-4">
                 <p className="text-sm font-semibold dark:text-white">Related Face: 
-                  <CardPreview cardName={card.relatedFace} imageUrl={relatedFaceImage || undefined}>
-                    <Link 
-                      href={`/card/${encodeURIComponent(card.relatedFace)}`}
-                      className="ml-2 text-blue-500 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300"
+                  {loadingStates.relatedFace ? (
+                    <span className="ml-2 flex items-center space-x-2">
+                      <div className="animate-spin rounded-full h-4 w-4 border-t-2 border-b-2 border-blue-500"></div>
+                      <span className="text-sm text-gray-500 dark:text-gray-400">Loading...</span>
+                    </span>
+                  ) : (
+                    <HoverTooltip
+                      imageUrl={relatedCardData?.imageUrl}
+                      title={card.relatedFace}
+                      onShow={() => fetchRelatedCardData(card.relatedFace!)}
                     >
-                      {card.relatedFace}
-                    </Link>
-                  </CardPreview>
+                      <Link 
+                        href={`/card/${encodeURIComponent(card.relatedFace)}`}
+                        className="ml-2 text-blue-500 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300"
+                      >
+                        {card.relatedFace}
+                      </Link>
+                    </HoverTooltip>
+                  )}
                 </p>
               </div>
             )}
@@ -1265,15 +1386,26 @@ export default function CardDetailPage() {
                 {card.rarity}
               </span>
               
-              {card.archetypes.map((archetype: string) => {
-                const archetypeName = archetype.split('-').pop() || archetype;
+              {card.archetypes.map((archetypeName: string) => {
+                // Find the archetype by name to get its ID
+                // Try exact match first, then try to match by partial name
+                const archetype = archetypes.find(a => 
+                  a.name === archetypeName || 
+                  archetypeName.includes(a.name) ||
+                  a.name.includes(archetypeName)
+                );
+                
+                // Use the archetype name from the database if found, otherwise use the card's archetype name
+                const displayName = archetype?.name || archetypeName;
+                const formattedDisplayName = displayName.charAt(0).toUpperCase() + displayName.slice(1);
+                
                 return (
                   <Link 
-                    key={archetype} 
-                    href={`/archetypes/${archetype}`}
+                    key={archetypeName} 
+                    href={`/archetypes/${archetype?.id || archetypeName}`}
                     className="px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded-full text-sm"
                   >
-                    {archetypeName.charAt(0).toUpperCase() + archetypeName.slice(1)} Archetype
+                    {formattedDisplayName} Archetype
                   </Link>
                 );
               })}
