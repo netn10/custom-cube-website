@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import { addCard } from '@/lib/api';
@@ -50,6 +50,13 @@ export default function AddCard(): JSX.Element {
   const colorOptions = ['W', 'U', 'B', 'R', 'G'];
   const rarityOptions = ['Common', 'Uncommon', 'Rare', 'Mythic'];
   
+  // Add state for image upload and Gemini result
+  const [uploadedImage, setUploadedImage] = useState<File | null>(null);
+  const [analyzing, setAnalyzing] = useState(false);
+  const [geminiJson, setGeminiJson] = useState<string>('');
+  const [geminiError, setGeminiError] = useState('');
+  const fileInputRef = useRef<HTMLInputElement>(null);
+
   // Handle input changes
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
@@ -122,6 +129,56 @@ export default function AddCard(): JSX.Element {
     } catch (error) {
       console.error('Error parsing JSON:', error);
       setJsonError(error instanceof Error ? error.message : 'Invalid JSON format');
+    }
+  };
+
+  // Handle drag-and-drop
+  const handleDrop = async (e: React.DragEvent<HTMLDivElement>) => {
+    e.preventDefault();
+    setGeminiError('');
+    const file = e.dataTransfer.files[0];
+    if (!file) return;
+    setUploadedImage(file);
+    await analyzeImageWithGemini(file);
+  };
+
+  const handleFileChange = async (e: React.ChangeEvent<HTMLInputElement>) => {
+    setGeminiError('');
+    const file = e.target.files?.[0];
+    if (!file) return;
+    setUploadedImage(file);
+    await analyzeImageWithGemini(file);
+  };
+
+  const analyzeImageWithGemini = async (file: File) => {
+    setAnalyzing(true);
+    setGeminiJson('');
+    try {
+      const formData = new FormData();
+      formData.append('image', file);
+      const res = await fetch('http://localhost:5000/api/gemini-analyze-card', {
+        method: 'POST',
+        body: formData,
+      });
+      if (!res.ok) throw new Error('Failed to analyze image');
+      const data = await res.json();
+      setGeminiJson(JSON.stringify(data, null, 2));
+    } catch (err: any) {
+      setGeminiError(err.message || 'Error analyzing image');
+    } finally {
+      setAnalyzing(false);
+    }
+  };
+
+  const handleDragOver = (e: React.DragEvent<HTMLDivElement>) => {
+    e.preventDefault();
+  };
+
+  const handleJsonUse = () => {
+    if (geminiJson) {
+      setJsonInput(geminiJson);
+      setInputMethod('json');
+      setSuccessMessage('Gemini JSON loaded! You can review/edit it below.');
     }
   };
 
@@ -231,11 +288,11 @@ export default function AddCard(): JSX.Element {
     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
       {/* Card Name */}
       <div className="mb-4">
-        <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="name">
+        <label className="block text-gray-700 dark:text-gray-300 text-sm font-bold mb-2" htmlFor="name">
           Card Name *
         </label>
         <input
-          className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+          className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 dark:text-gray-100 bg-white dark:bg-gray-800 border-gray-300 dark:border-gray-600 leading-tight focus:outline-none focus:shadow-outline focus:border-blue-500 dark:focus:border-blue-400"
           id="name"
           type="text"
           name="name"
@@ -247,11 +304,11 @@ export default function AddCard(): JSX.Element {
       
       {/* Mana Cost */}
       <div className="mb-4">
-        <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="manaCost">
+        <label className="block text-gray-700 dark:text-gray-300 text-sm font-bold mb-2" htmlFor="manaCost">
           Mana Cost *
         </label>
         <input
-          className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+          className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 dark:text-gray-100 bg-white dark:bg-gray-800 border-gray-300 dark:border-gray-600 leading-tight focus:outline-none focus:shadow-outline focus:border-blue-500 dark:focus:border-blue-400"
           id="manaCost"
           type="text"
           name="manaCost"
@@ -260,16 +317,16 @@ export default function AddCard(): JSX.Element {
           onChange={handleChange}
           required
         />
-        <p className="text-xs italic mt-1">Format: {"{W}"}, {"{2}{G}"}, etc.</p>
+        <p className="text-xs italic mt-1 text-gray-600 dark:text-gray-400">Format: {"{W}"}, {"{2}{G}"}, etc.</p>
       </div>
       
       {/* Card Type */}
       <div className="mb-4">
-        <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="type">
+        <label className="block text-gray-700 dark:text-gray-300 text-sm font-bold mb-2" htmlFor="type">
           Card Type *
         </label>
         <input
-          className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+          className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 dark:text-gray-100 bg-white dark:bg-gray-800 border-gray-300 dark:border-gray-600 leading-tight focus:outline-none focus:shadow-outline focus:border-blue-500 dark:focus:border-blue-400"
           id="type"
           type="text"
           name="type"
@@ -282,11 +339,11 @@ export default function AddCard(): JSX.Element {
       
       {/* Rarity */}
       <div className="mb-4">
-        <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="rarity">
+        <label className="block text-gray-700 dark:text-gray-300 text-sm font-bold mb-2" htmlFor="rarity">
           Rarity *
         </label>
         <select
-          className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+          className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 dark:text-gray-100 bg-white dark:bg-gray-800 border-gray-300 dark:border-gray-600 leading-tight focus:outline-none focus:shadow-outline focus:border-blue-500 dark:focus:border-blue-400"
           id="rarity"
           name="rarity"
           value={formData.rarity}
@@ -301,11 +358,11 @@ export default function AddCard(): JSX.Element {
       
       {/* Card Text */}
       <div className="mb-4 md:col-span-2">
-        <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="text">
+        <label className="block text-gray-700 dark:text-gray-300 text-sm font-bold mb-2" htmlFor="text">
           Card Text *
         </label>
         <textarea
-          className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+          className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 dark:text-gray-100 bg-white dark:bg-gray-800 border-gray-300 dark:border-gray-600 leading-tight focus:outline-none focus:shadow-outline focus:border-blue-500 dark:focus:border-blue-400"
           id="text"
           name="text"
           rows={4}
@@ -317,11 +374,11 @@ export default function AddCard(): JSX.Element {
       
       {/* Power/Toughness (for creatures) */}
       <div className="mb-4">
-        <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="power">
+        <label className="block text-gray-700 dark:text-gray-300 text-sm font-bold mb-2" htmlFor="power">
           Power
         </label>
         <input
-          className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+          className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 dark:text-gray-100 bg-white dark:bg-gray-800 border-gray-300 dark:border-gray-600 leading-tight focus:outline-none focus:shadow-outline focus:border-blue-500 dark:focus:border-blue-400"
           id="power"
           type="text"
           name="power"
@@ -332,11 +389,11 @@ export default function AddCard(): JSX.Element {
       </div>
       
       <div className="mb-4">
-        <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="toughness">
+        <label className="block text-gray-700 dark:text-gray-300 text-sm font-bold mb-2" htmlFor="toughness">
           Toughness
         </label>
         <input
-          className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+          className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 dark:text-gray-100 bg-white dark:bg-gray-800 border-gray-300 dark:border-gray-600 leading-tight focus:outline-none focus:shadow-outline focus:border-blue-500 dark:focus:border-blue-400"
           id="toughness"
           type="text"
           name="toughness"
@@ -348,11 +405,11 @@ export default function AddCard(): JSX.Element {
       
       {/* Loyalty (for planeswalkers) */}
       <div className="mb-4">
-        <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="loyalty">
+        <label className="block text-gray-700 dark:text-gray-300 text-sm font-bold mb-2" htmlFor="loyalty">
           Loyalty
         </label>
         <input
-          className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+          className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 dark:text-gray-100 bg-white dark:bg-gray-800 border-gray-300 dark:border-gray-600 leading-tight focus:outline-none focus:shadow-outline focus:border-blue-500 dark:focus:border-blue-400"
           id="loyalty"
           type="number"
           name="loyalty"
@@ -371,15 +428,15 @@ export default function AddCard(): JSX.Element {
       
       {/* Colors */}
       <div className="mb-4">
-        <label className="block text-gray-700 text-sm font-bold mb-2">
+        <label className="block text-gray-700 dark:text-gray-300 text-sm font-bold mb-2">
           Colors *
         </label>
         <div className="flex flex-wrap gap-4">
           {colorOptions.map(color => (
-            <label key={color} className="inline-flex items-center">
+            <label key={color} className="inline-flex items-center text-gray-700 dark:text-gray-300">
               <input
                 type="checkbox"
-                className="form-checkbox h-5 w-5"
+                className="form-checkbox h-5 w-5 text-blue-600 bg-gray-100 dark:bg-gray-800 border-gray-300 dark:border-gray-600 rounded focus:ring-blue-500 dark:focus:ring-blue-400"
                 checked={formData.colors.includes(color)}
                 onChange={() => handleColorChange(color)}
               />
@@ -396,11 +453,11 @@ export default function AddCard(): JSX.Element {
       
       {/* Archetypes */}
       <div className="mb-4">
-        <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="archetypes">
+        <label className="block text-gray-700 dark:text-gray-300 text-sm font-bold mb-2" htmlFor="archetypes">
           Archetypes
         </label>
         <input
-          className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+          className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 dark:text-gray-100 bg-white dark:bg-gray-800 border-gray-300 dark:border-gray-600 leading-tight focus:outline-none focus:shadow-outline focus:border-blue-500 dark:focus:border-blue-400"
           id="archetypes"
           type="text"
           name="archetypes"
@@ -408,16 +465,16 @@ export default function AddCard(): JSX.Element {
           value={formData.archetypes.join(', ')}
           onChange={handleArchetypesChange}
         />
-        <p className="text-xs italic mt-1">E.g. "Storm, Control, Aggro"</p>
+        <p className="text-xs italic mt-1 text-gray-600 dark:text-gray-400">E.g. "Storm, Control, Aggro"</p>
       </div>
       
       {/* Image URL */}
       <div className="mb-4 md:col-span-2">
-        <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="imageUrl">
+        <label className="block text-gray-700 dark:text-gray-300 text-sm font-bold mb-2" htmlFor="imageUrl">
           Card Image URL
         </label>
         <input
-          className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+          className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 dark:text-gray-100 bg-white dark:bg-gray-800 border-gray-300 dark:border-gray-600 leading-tight focus:outline-none focus:shadow-outline focus:border-blue-500 dark:focus:border-blue-400"
           id="imageUrl"
           type="url"
           name="imageUrl"
@@ -429,11 +486,11 @@ export default function AddCard(): JSX.Element {
       
       {/* Flavor Text */}
       <div className="mb-4 md:col-span-2">
-        <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="flavorText">
+        <label className="block text-gray-700 dark:text-gray-300 text-sm font-bold mb-2" htmlFor="flavorText">
           Flavor Text
         </label>
         <textarea
-          className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+          className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 dark:text-gray-100 bg-white dark:bg-gray-800 border-gray-300 dark:border-gray-600 leading-tight focus:outline-none focus:shadow-outline focus:border-blue-500 dark:focus:border-blue-400"
           id="flavorText"
           name="flavorText"
           rows={2}
@@ -444,11 +501,11 @@ export default function AddCard(): JSX.Element {
       
       {/* Artist */}
       <div className="mb-4">
-        <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="artist">
+        <label className="block text-gray-700 dark:text-gray-300 text-sm font-bold mb-2" htmlFor="artist">
           Artist
         </label>
         <input
-          className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+          className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 dark:text-gray-100 bg-white dark:bg-gray-800 border-gray-300 dark:border-gray-600 leading-tight focus:outline-none focus:shadow-outline focus:border-blue-500 dark:focus:border-blue-400"
           id="artist"
           type="text"
           name="artist"
@@ -459,11 +516,11 @@ export default function AddCard(): JSX.Element {
       
       {/* Set */}
       <div className="mb-4">
-        <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="set">
+        <label className="block text-gray-700 dark:text-gray-300 text-sm font-bold mb-2" htmlFor="set">
           Set
         </label>
         <input
-          className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+          className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 dark:text-gray-100 bg-white dark:bg-gray-800 border-gray-300 dark:border-gray-600 leading-tight focus:outline-none focus:shadow-outline focus:border-blue-500 dark:focus:border-blue-400"
           id="set"
           type="text"
           name="set"
@@ -474,11 +531,11 @@ export default function AddCard(): JSX.Element {
       
       {/* Notes */}
       <div className="mb-4 md:col-span-2">
-        <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="notes">
+        <label className="block text-gray-700 dark:text-gray-300 text-sm font-bold mb-2" htmlFor="notes">
           Design Notes
         </label>
         <textarea
-          className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+          className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 dark:text-gray-100 bg-white dark:bg-gray-800 border-gray-300 dark:border-gray-600 leading-tight focus:outline-none focus:shadow-outline focus:border-blue-500 dark:focus:border-blue-400"
           id="notes"
           name="notes"
           rows={3}
@@ -490,11 +547,11 @@ export default function AddCard(): JSX.Element {
       
       {/* Related Tokens */}
       <div className="mb-4 md:col-span-2">
-        <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="relatedTokens">
+        <label className="block text-gray-700 dark:text-gray-300 text-sm font-bold mb-2" htmlFor="relatedTokens">
           Related Tokens
         </label>
         <input
-          className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+          className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 dark:text-gray-100 bg-white dark:bg-gray-800 border-gray-300 dark:border-gray-600 leading-tight focus:outline-none focus:shadow-outline focus:border-blue-500 dark:focus:border-blue-400"
           id="relatedTokens"
           type="text"
           name="relatedTokens"
@@ -502,12 +559,12 @@ export default function AddCard(): JSX.Element {
           value={formData.relatedTokens?.join(', ') || ''}
           onChange={handleTokensChange}
         />
-        <p className="text-xs italic mt-1">E.g. "Goblin, Treasure, Clue"</p>
+        <p className="text-xs italic mt-1 text-gray-600 dark:text-gray-400">E.g. "Goblin, Treasure, Clue"</p>
       </div>
       
       {/* Submit Button for Form */}
       <div className="flex items-center justify-between mt-6 md:col-span-2">
-        <Link href="/" className="text-blue-500 hover:text-blue-700">
+        <Link href="/" className="text-blue-500 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300">
           Cancel
         </Link>
         <button
@@ -524,11 +581,11 @@ export default function AddCard(): JSX.Element {
   // Render JSON input
   const renderJsonInput = () => (
     <div className="mb-4">
-      <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="jsonInput">
+      <label className="block text-gray-700 dark:text-gray-300 text-sm font-bold mb-2" htmlFor="jsonInput">
         Paste Card JSON
       </label>
       <textarea
-        className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline font-mono"
+        className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 dark:text-gray-100 bg-white dark:bg-gray-800 border-gray-300 dark:border-gray-600 leading-tight focus:outline-none focus:shadow-outline focus:border-blue-500 dark:focus:border-blue-400 font-mono"
         id="jsonInput"
         rows={20}
         value={jsonInput}
@@ -624,7 +681,52 @@ export default function AddCard(): JSX.Element {
         </button>
       </div>
       
-      <form onSubmit={handleSubmit} className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+      {/* Gemini AI Drag-and-Drop Section */}
+      <div className="mb-6">
+        <h2 className="text-lg font-semibold mb-2">Analyze Card Image (Gemini AI)</h2>
+        <div
+          onDrop={handleDrop}
+          onDragOver={handleDragOver}
+          className="border-2 border-dashed border-gray-400 rounded-md p-6 text-center cursor-pointer bg-gray-200 dark:bg-gray-800 hover:bg-gray-300 dark:hover:bg-gray-700"
+          onClick={() => fileInputRef.current?.click()}
+        >
+          {uploadedImage ? (
+            <div>
+              <p className="mb-2">Uploaded: {uploadedImage.name}</p>
+              <img
+                src={URL.createObjectURL(uploadedImage)}
+                alt="Uploaded card"
+                className="mx-auto mb-2 max-h-48"
+              />
+            </div>
+          ) : (
+            <p>Drag and drop a card image here, or click to select a file</p>
+          )}
+          <input
+            type="file"
+            accept="image/*"
+            ref={fileInputRef}
+            style={{ display: 'none' }}
+            onChange={handleFileChange}
+          />
+        </div>
+        {analyzing && <p className="text-blue-600 mt-2">Analyzing image with Gemini AI...</p>}
+        {geminiError && <p className="text-red-600 mt-2">{geminiError}</p>}
+        {geminiJson && (
+          <div className="mt-4">
+            <h3 className="font-semibold mb-1">Generated Card JSON:</h3>
+            <pre className="bg-gray-100 dark:bg-gray-800 p-2 rounded text-xs overflow-x-auto max-h-64 text-gray-900 dark:text-gray-100 border border-gray-300 dark:border-gray-600">{geminiJson}</pre>
+            <button
+              className="mt-2 px-3 py-1 bg-blue-600 text-white rounded hover:bg-blue-700"
+              onClick={handleJsonUse}
+            >
+              Use this JSON
+            </button>
+          </div>
+        )}
+      </div>
+
+      <form onSubmit={handleSubmit} className="bg-gray-100 dark:bg-gray-900 shadow-md rounded px-8 pt-6 pb-8 mb-4">
         {inputMethod === 'json' ? renderJsonInput() : renderFormFields()}
       </form>
     </div>

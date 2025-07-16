@@ -11,7 +11,7 @@ A web application for managing and exploring a custom Magic: The Gathering cube 
   - BR Token Collection
   - RG Control
   - GW Vehicles
-  - WB Blink/ETB/Value
+  - WB ETB/Death Value
   - BG Artifacts
   - UR Enchantments
   - RW Self-mill

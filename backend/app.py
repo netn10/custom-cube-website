@@ -15,6 +15,7 @@ from functools import wraps
 from werkzeug.security import generate_password_hash, check_password_hash
 import time
 from urllib.parse import unquote
+import base64
 
 # Load environment variables
 load_dotenv()
@@ -2582,6 +2583,87 @@ def show_decks():
 @app.route('/health', methods=['GET'])
 def health():
     return jsonify({"status": "healthy"}), 200
+
+@app.route("/api/gemini-analyze-card", methods=["POST"])
+def gemini_analyze_card():
+    """Analyze a card image using Gemini AI and return generated card JSON."""
+    try:
+        if 'image' not in request.files:
+            return jsonify({"error": "No image file provided"}), 400
+        image_file = request.files['image']
+        image_bytes = image_file.read()
+
+        api_key = os.getenv("GEMINI_API_KEY")
+        if not api_key:
+            return jsonify({"error": "Gemini API key not configured"}), 500
+
+        # Gemini multimodal endpoint (v1beta)
+        url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key={api_key}"
+        headers = {"Content-Type": "application/json"}
+
+        # Encode image as base64
+        import base64
+        image_b64 = base64.b64encode(image_bytes).decode('utf-8')
+
+        # Prompt for card extraction
+        prompt = (
+            "You are an expert at extracting Magic: The Gathering card data from images. "
+            "Given the following card image, extract all relevant card information and return it as a JSON object with fields: "
+            "name, manaCost, type, rarity, text, power, toughness, loyalty, colors, flavorText, artist, set, imageUrl, archetypes. "
+            "For colors, use the standard Magic: The Gathering color codes: W (White), U (Blue), B (Black), R (Red), G (Green). "
+            "Return colors as an array of these single-letter codes (e.g., ['W', 'U'] for Azorius). "
+            "For archetypes, try to match the card to one of these cube archetypes based on the card's abilities and colors: "
+            "WU Storm, UB Broken Cipher, BR Token Collection, RG Control, GW Vehicles, WB ETB/Death Value, BG Artifacts, UR Enchantments, RW Self-mill, GU Prowess. "
+            "Return archetypes as an array of matching archetype names. "
+            "Set imageUrl to an empty string (it will be filled later). "
+            "If a field is not present, use an empty string or null."
+        )
+
+        payload = {
+            "contents": [
+                {
+                    "parts": [
+                        {"text": prompt},
+                        {
+                            "inline_data": {
+                                "mime_type": image_file.mimetype,
+                                "data": image_b64
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+
+        response = requests.post(url, headers=headers, json=payload)
+        response.raise_for_status()
+        data = response.json()
+
+        # Extract the JSON from Gemini's response (assume it's in the text)
+        card_json = None
+        if data.get("candidates") and len(data["candidates"]) > 0:
+            candidate = data["candidates"][0]
+            if candidate.get("content") and candidate["content"].get("parts") and len(candidate["content"]["parts"]) > 0:
+                text = candidate["content"]["parts"][0].get("text", "")
+                # Try to extract JSON from the text
+                import re, json as pyjson
+                match = re.search(r'\{[\s\S]*\}', text)
+                if match:
+                    try:
+                        card_json = pyjson.loads(match.group(0))
+                    except Exception:
+                        card_json = text  # fallback: return raw text
+                else:
+                    card_json = text
+        if card_json is None:
+            return jsonify({"error": "Could not extract card JSON from Gemini response."}), 500
+        return jsonify(card_json)
+    except requests.exceptions.HTTPError as http_err:
+        logging.error(f"Gemini API HTTP error: {http_err} - Response: {http_err.response.text}")
+        return jsonify({"error": f"Gemini API error: {http_err.response.status_code}", "details": http_err.response.text}), 500
+    except Exception as e:
+        logging.error(f"Error in gemini_analyze_card: {str(e)}")
+        return jsonify({"error": str(e)}), 500
 
 if __name__ == "__main__":
     # Create database indexes for better performance
