@@ -2613,7 +2613,7 @@ def gemini_analyze_card():
             "For colors, use the standard Magic: The Gathering color codes: W (White), U (Blue), B (Black), R (Red), G (Green). "
             "Return colors as an array of these single-letter codes (e.g., ['W', 'U'] for Azorius). "
             "For archetypes, try to match the card to one of these cube archetypes based on the card's abilities and colors: "
-            "WU Storm, UB Broken Cipher, BR Token Collection, RG Control, GW Vehicles, WB ETB/Death Value, BG Artifacts, UR Enchantments, RW Self-mill, GU Prowess. "
+            "WU Storm, UB Cipher, BR Token Collection, RG Control, GW Vehicles, WB ETB/Death Value, BG Artifacts, UR Enchantments, RW Self-mill, GU Prowess. "
             "Return archetypes as an array of matching archetype names. "
             "Set imageUrl to an empty string (it will be filled later). "
             "If a field is not present, use an empty string or null."

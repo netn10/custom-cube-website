@@ -88,7 +88,7 @@ const CardPreview = memo(({
       if (symbol.includes('/')) {
         const colors = symbol.split('/');
         if (colors.length === 2 && colors.every((c: string) => 'WUBRG'.includes(c))) {
-          return `<span class="inline-block w-4 h-4 bg-gradient-to-br from-mtg-${colors[0].toLowerCase()} to-mtg-${colors[1].toLowerCase()} rounded-full flex items-center justify-center text-xs font-bold mx-0.5">${symbol}</span>`;
+          return `<span class="inline-block w-4 h-4 bg-gradient-to-r from-mtg-${colors[0].toLowerCase()} to-mtg-${colors[1].toLowerCase()} rounded-full flex items-center justify-center text-xs font-bold mx-0.5">${symbol}</span>`;
         }
       }
       

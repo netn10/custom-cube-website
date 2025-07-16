@@ -1,9 +1,9 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
+import { FaTimes, FaHistory, FaEye, FaEyeSlash, FaChevronLeft, FaChevronRight, FaCopy, FaCheck } from 'react-icons/fa';
 import { Card, CardHistoryEntry, CardHistoryResponse } from '@/types/types';
 import { getCardHistory, getCardById, API_BASE_URL } from '@/lib/api';
-import { FaChevronLeft, FaChevronRight, FaTimes, FaCalendarAlt, FaExchangeAlt } from 'react-icons/fa';
 import * as Diff from 'diff';
 
 interface CardHistoryModalProps {
@@ -24,6 +24,80 @@ export default function CardHistoryModal({ cardId, isOpen, onClose }: CardHistor
   const [selectedVersion, setSelectedVersion] = useState<Card | null>(null);
   const [compareMode, setCompareMode] = useState(false);
   const [comparisonVersion, setComparisonVersion] = useState<Card | null>(null);
+  const [copiedField, setCopiedField] = useState<string | null>(null);
+
+  // Color mapping for visual representation
+  const colorMap: Record<string, string> = {
+    W: 'bg-mtg-white text-black',
+    U: 'bg-mtg-blue text-white',
+    B: 'bg-mtg-black text-white',
+    R: 'bg-mtg-red text-white',
+    G: 'bg-mtg-green text-white',
+  };
+
+  // Create a general helper function for symbol spans
+  const createSymbolSpan = (color: string, content: string, title?: string, size: string = 'w-4 h-4') => {
+    const titleAttr = title ? ` title="${title}"` : '';
+    return `<span style="display:inline-flex;vertical-align:middle" class="mx-0.5"><span class="inline-block ${size} ${color} rounded-full flex items-center justify-center text-xs font-bold"${titleAttr}>${content}</span></span>`;
+  };
+
+  // Function to format mana cost with colored symbols
+  const formatManaCost = (manaCost: string) => {
+    if (!manaCost) return '';
+    
+    return manaCost.replace(/\{([^}]+)\}/g, (match, symbol) => {
+      // Handle Phyrexian mana symbols in either U/P or P/U format
+      if (symbol.includes('/P')) {
+        const color = symbol.split('/')[0];
+        const colorClass = 'WUBRG'.includes(color) ? colorMap[color] : 'bg-mtg-colorless text-black';
+        return createSymbolSpan(colorClass, `${color}/P`, `Phyrexian ${color}`, 'w-4 h-4');
+      }
+      
+      if (symbol.includes('P/')) {
+        const color = symbol.split('/')[1];
+        const colorClass = 'WUBRG'.includes(color) ? colorMap[color] : 'bg-mtg-colorless text-black';
+        return createSymbolSpan(colorClass, `P/${color}`, `Phyrexian ${color}`, 'w-4 h-4');
+      }
+      
+      // Handle hybrid mana symbols
+      if (symbol.includes('/')) {
+        const colors = symbol.split('/');
+        // First check if both are colors
+        if (colors.length === 2 && colors.every((c: string) => 'WUBRG'.includes(c))) {
+          return createSymbolSpan(`bg-gradient-to-br from-mtg-${colors[0].toLowerCase()} to-mtg-${colors[1].toLowerCase()}`, symbol, `${colors[0]}/${colors[1]}`, 'w-4 h-4');
+        }
+      }
+      
+      // Handle regular mana symbols
+      if (symbol.length === 1 && 'WUBRG'.includes(symbol)) {
+        return createSymbolSpan(colorMap[symbol], symbol, undefined, 'w-4 h-4');
+      }
+      
+      // Handle colorless mana
+      if (/^[0-9]+$/.test(symbol)) {
+        return createSymbolSpan('bg-mtg-colorless text-black', symbol, undefined, 'w-4 h-4');
+      }
+      
+      // Handle variable mana X
+      if (symbol === 'X') {
+        return createSymbolSpan('bg-mtg-colorless text-black', 'X', 'Variable Mana', 'w-4 h-4');
+      }
+      
+      // Return the original match if no specific formatting applies
+      return `<span class="inline-block w-4 h-4 bg-mtg-colorless text-black rounded-full flex items-center justify-center text-xs font-bold mx-0.5">${symbol}</span>`;
+    });
+  };
+
+  // Function to copy text to clipboard
+  const copyToClipboard = async (text: string, fieldName: string) => {
+    try {
+      await navigator.clipboard.writeText(text);
+      setCopiedField(fieldName);
+      setTimeout(() => setCopiedField(null), 2000);
+    } catch (err) {
+      console.error('Failed to copy text: ', err);
+    }
+  };
 
   useEffect(() => {
     if (!isOpen || !cardId) return;
@@ -230,7 +304,7 @@ export default function CardHistoryModal({ cardId, isOpen, onClose }: CardHistor
               className={`flex items-center space-x-1 px-3 py-1 rounded-md ${compareMode ? 'bg-blue-600 text-white font-bold' : 'bg-blue-200 dark:bg-blue-700 hover:bg-blue-300 dark:hover:bg-blue-600 text-blue-800 dark:text-blue-200'}`}
               title={compareMode ? 'Exit comparison mode' : 'Compare versions'}
             >
-              <FaExchangeAlt size={14} />
+              <FaChevronLeft size={14} />
               <span className="text-sm">{compareMode ? 'Exit Compare Mode' : 'Compare Versions'}</span>
             </button>
             <button 
@@ -292,7 +366,7 @@ export default function CardHistoryModal({ cardId, isOpen, onClose }: CardHistor
                     <div className="flex-grow">
                       <div className="font-medium">{currentCard.name}</div>
                       <div className="text-xs text-gray-600 dark:text-gray-300">
-                        {currentCard.manaCost}
+                        <span dangerouslySetInnerHTML={{ __html: formatManaCost(currentCard.manaCost) }} />
                       </div>
                       <div className="text-xs text-gray-600 dark:text-gray-300 truncate max-w-[180px]">
                         {currentCard.type}
@@ -354,7 +428,7 @@ export default function CardHistoryModal({ cardId, isOpen, onClose }: CardHistor
                         <div className="flex-grow">
                           <div className="font-medium">{item.version_data.name}</div>
                           <div className="text-xs text-gray-600 dark:text-gray-300">
-                            {item.version_data.manaCost}
+                            <span dangerouslySetInnerHTML={{ __html: formatManaCost(item.version_data.manaCost) }} />
                           </div>
                           <div className="text-xs text-gray-600 dark:text-gray-300 truncate max-w-[180px]">
                             {item.version_data.type}
@@ -436,7 +510,7 @@ export default function CardHistoryModal({ cardId, isOpen, onClose }: CardHistor
                       <div className="w-full space-y-2">
                         <h3 className="text-base font-bold">{selectedVersion.name}</h3>
                         <div className="text-sm text-gray-600 dark:text-gray-300">
-                          {selectedVersion.manaCost}
+                          <span dangerouslySetInnerHTML={{ __html: formatManaCost(selectedVersion.manaCost) }} />
                         </div>
                         <div className="text-sm text-gray-600 dark:text-gray-300">
                           {selectedVersion.type}
@@ -480,7 +554,7 @@ export default function CardHistoryModal({ cardId, isOpen, onClose }: CardHistor
                       <div className="w-full space-y-2">
                         <h3 className="text-base font-bold">{comparisonVersion.name}</h3>
                         <div className="text-sm text-gray-600 dark:text-gray-300">
-                          {comparisonVersion.manaCost}
+                          <span dangerouslySetInnerHTML={{ __html: formatManaCost(comparisonVersion.manaCost) }} />
                         </div>
                         <div className="text-sm text-gray-600 dark:text-gray-300">
                           {comparisonVersion.type}
@@ -638,7 +712,7 @@ export default function CardHistoryModal({ cardId, isOpen, onClose }: CardHistor
                 <div className="w-full md:w-1/2 space-y-3">
                   <h3 className="text-xl font-bold">{selectedVersion.name}</h3>
                   <div className="text-sm text-gray-600 dark:text-gray-300">
-                    {selectedVersion.manaCost}
+                    <span dangerouslySetInnerHTML={{ __html: formatManaCost(selectedVersion.manaCost) }} />
                   </div>
                   <div className="text-sm text-gray-600 dark:text-gray-300">
                     {selectedVersion.type}

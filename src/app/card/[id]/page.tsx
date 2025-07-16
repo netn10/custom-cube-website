@@ -1389,9 +1389,13 @@ export default function CardDetailPage() {
             )}
             
             <div className="flex flex-wrap gap-2 mt-4">
-              {card.custom && (
+              {card.custom ? (
                 <span className="px-3 py-1 bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 rounded-full text-sm">
                   Custom Card
+                </span>
+              ) : (
+                <span className="px-3 py-1 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 rounded-full text-sm">
+                  Official Card
                 </span>
               )}
               

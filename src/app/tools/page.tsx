@@ -13,6 +13,68 @@ type Tool = {
   component: React.ReactNode;
 };
 
+// Color mapping for visual representation
+const colorMap: Record<string, string> = {
+  W: 'bg-mtg-white text-black',
+  U: 'bg-mtg-blue text-white',
+  B: 'bg-mtg-black text-white',
+  R: 'bg-mtg-red text-white',
+  G: 'bg-mtg-green text-white',
+};
+
+// Create a general helper function for symbol spans
+const createSymbolSpan = (color: string, content: string, title?: string, size: string = 'w-4 h-4') => {
+  const titleAttr = title ? ` title="${title}"` : '';
+  return `<span style="display:inline-flex;vertical-align:middle" class="mx-0.5"><span class="inline-block ${size} ${color} rounded-full flex items-center justify-center text-xs font-bold"${titleAttr}>${content}</span></span>`;
+};
+
+// Function to format mana cost with colored symbols
+const formatManaCost = (manaCost: string) => {
+  if (!manaCost) return '';
+  
+  return manaCost.replace(/\{([^}]+)\}/g, (match, symbol) => {
+    // Handle Phyrexian mana symbols in either U/P or P/U format
+    if (symbol.includes('/P')) {
+      const color = symbol.split('/')[0];
+      const colorClass = 'WUBRG'.includes(color) ? colorMap[color] : 'bg-mtg-colorless text-black';
+      return createSymbolSpan(colorClass, `${color}/P`, `Phyrexian ${color}`, 'w-4 h-4');
+    }
+    
+    if (symbol.includes('P/')) {
+      const color = symbol.split('/')[1];
+      const colorClass = 'WUBRG'.includes(color) ? colorMap[color] : 'bg-mtg-colorless text-black';
+      return createSymbolSpan(colorClass, `P/${color}`, `Phyrexian ${color}`, 'w-4 h-4');
+    }
+    
+    // Handle hybrid mana symbols
+    if (symbol.includes('/')) {
+      const colors = symbol.split('/');
+      // First check if both are colors
+      if (colors.length === 2 && colors.every((c: string) => 'WUBRG'.includes(c))) {
+        return createSymbolSpan(`bg-gradient-to-br from-mtg-${colors[0].toLowerCase()} to-mtg-${colors[1].toLowerCase()}`, symbol, `${colors[0]}/${colors[1]}`, 'w-4 h-4');
+      }
+    }
+    
+    // Handle regular mana symbols
+    if (symbol.length === 1 && 'WUBRG'.includes(symbol)) {
+      return createSymbolSpan(colorMap[symbol], symbol, undefined, 'w-4 h-4');
+    }
+    
+    // Handle colorless mana
+    if (/^[0-9]+$/.test(symbol)) {
+      return createSymbolSpan('bg-mtg-colorless text-black', symbol, undefined, 'w-4 h-4');
+    }
+    
+    // Handle variable mana X
+    if (symbol === 'X') {
+      return createSymbolSpan('bg-mtg-colorless text-black', 'X', 'Variable Mana', 'w-4 h-4');
+    }
+    
+    // Return the original match if no specific formatting applies
+    return `<span class="inline-block w-4 h-4 bg-mtg-colorless text-black rounded-full flex items-center justify-center text-xs font-bold mx-0.5">${symbol}</span>`;
+  });
+};
+
 export default function ToolsPage() {
   const [activeTool, setActiveTool] = useState<string | null>(null);
   const toolContentRef = useRef<HTMLDivElement>(null);
@@ -2774,7 +2836,9 @@ function RandomPackGenerator() {
                     <>
                       <div>
                         <p className="font-medium dark:text-white">{card.name}</p>
-                        <p className="text-xs text-gray-500 dark:text-gray-400">{card.manaCost}</p>
+                        <p className="text-xs text-gray-500 dark:text-gray-400">
+                          <span dangerouslySetInnerHTML={{ __html: formatManaCost(card.manaCost) }} />
+                        </p>
                       </div>
                       <div>
                         <p className="text-sm text-gray-600 dark:text-gray-400">{card.type}</p>
