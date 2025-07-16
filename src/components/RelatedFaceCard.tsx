@@ -23,33 +23,31 @@ export default function RelatedFaceCard({ card, className = '', children }: Rela
     const fetchRelatedFaceImage = async () => {
       if (!card.relatedFace) return;
       
+      // Support both string and array
+      const relatedFaces = Array.isArray(card.relatedFace) ? card.relatedFace : [card.relatedFace];
+      if (relatedFaces.length === 0) return;
+      const firstRelated = relatedFaces[0];
       try {
         setIsLoading(true);
-        
-        // Try direct card lookup first (more efficient for exact matches)
+        // Try direct card lookup first
         try {
-          const response = await fetch(`${API_BASE_URL}/cards/${encodeURIComponent(card.relatedFace)}`);
-          
+          const response = await fetch(`${API_BASE_URL}/cards/${encodeURIComponent(firstRelated)}`);
           if (response.ok) {
             const relatedCard = await response.json();
             if (relatedCard.imageUrl && isMounted.current) {
               setRelatedFaceImageUrl(relatedCard.imageUrl);
-              return; // Exit early if direct lookup succeeded
+              return;
             }
           }
         } catch (directError) {
           console.log('Direct related face lookup failed, falling back to search:', directError);
         }
-        
         // Fallback to search if direct lookup fails
-        const response = await fetch(`${API_BASE_URL}/cards?search=${encodeURIComponent(card.relatedFace)}&include_facedown=true`);
-        
+        const response = await fetch(`${API_BASE_URL}/cards?search=${encodeURIComponent(firstRelated)}&include_facedown=true`);
         if (!response.ok) {
           throw new Error('Failed to fetch related face card');
         }
-        
         const data = await response.json();
-        
         if (data.cards && data.cards.length > 0 && data.cards[0].imageUrl) {
           if (isMounted.current) {
             setRelatedFaceImageUrl(data.cards[0].imageUrl);
@@ -80,17 +78,13 @@ export default function RelatedFaceCard({ card, className = '', children }: Rela
   };
 
   const handleMouseEnter = () => {
-    if (!card.relatedFace || !relatedFaceImageUrl) return;
-    
+    // Support both string and array
+    const hasRelated = card.relatedFace && (Array.isArray(card.relatedFace) ? card.relatedFace.length > 0 : true);
+    if (!hasRelated || !relatedFaceImageUrl) return;
     setIsHovering(true);
-    
-    // Find the image element and change its src
     const imgElement = imgRef.current || document.querySelector('img');
     if (imgElement) {
-      // Store the original src
       originalSrcRef.current = imgElement.src;
-      
-      // Change to related face image
       imgElement.src = processImageUrl(relatedFaceImageUrl);
     }
   };
@@ -124,7 +118,8 @@ export default function RelatedFaceCard({ card, className = '', children }: Rela
         />
       )}
       
-      {card.relatedFace && (
+      {/* Show indicator if any related face exists */}
+      {(Array.isArray(card.relatedFace) ? card.relatedFace.length > 0 : !!card.relatedFace) && (
         <div className="absolute top-2 right-2 bg-black bg-opacity-50 text-white rounded-full w-6 h-6 flex items-center justify-center">
           <span className="text-xs">↔</span>
         </div>

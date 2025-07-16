@@ -196,6 +196,12 @@ export default function Home() {
     }
   }, [archetypeCards]);
 
+  // Helper to get related faces as array
+  const getRelatedFaces = (relatedFace: string | string[] | undefined) => {
+    if (!relatedFace) return [];
+    return Array.isArray(relatedFace) ? relatedFace : [relatedFace];
+  };
+
   return (
     <div className="space-y-12">
       {/* Hero Section with Animated Background */}
@@ -439,7 +445,7 @@ export default function Home() {
                   >
                     <Link href={`/card/${encodeURIComponent(card.name)}`} passHref>
                       <div className="relative w-full h-full">
-                        {card.relatedFace ? (
+                        {getRelatedFaces(card.relatedFace).length > 0 ? (
                           <RelatedFaceCard card={card} className="w-full h-full" />
                         ) : (
                           <img 
@@ -454,7 +460,7 @@ export default function Home() {
                         <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-1 rounded-b-lg">
                           <p className="text-white text-xs font-bold truncate">
                             {card.name}
-                            {card.relatedFace && (
+                            {getRelatedFaces(card.relatedFace).length > 0 && (
                               <span className="ml-1 text-blue-300" title="Has related face">↔</span>
                             )}
                           </p>
@@ -649,7 +655,7 @@ export default function Home() {
                         >
                           {randomCard.imageUrl ? (
                             <>
-                              {randomCard.relatedFace ? (
+                              {getRelatedFaces(randomCard.relatedFace).length > 0 ? (
                                 <RelatedFaceCard card={randomCard} className="w-full h-full" />
                               ) : (
                                 <img 
@@ -696,7 +702,7 @@ export default function Home() {
                               )}
                               <div className="absolute bottom-0 left-0 right-0 bg-black/60 p-1 text-white text-xs font-semibold truncate">
                                 {/*{randomCard.name}*/}
-                                {randomCard.relatedFace && (
+                                {getRelatedFaces(randomCard.relatedFace).length > 0 && (
                                   <span className="ml-1 text-blue-300" title="Has related face">↔</span>
                                 )}
                               </div>
@@ -777,7 +783,7 @@ export default function Home() {
                         style={{ transform: `rotate(${(index % 2 === 0 ? -5 : 5)}deg)` }}
                       >
                         <div className="relative">
-                          {card.relatedFace ? (
+                          {getRelatedFaces(card.relatedFace).length > 0 ? (
                             <RelatedFaceCard card={card} className="w-full h-full" />
                           ) : (
                             <img 
@@ -791,7 +797,7 @@ export default function Home() {
                           )}
                           <div className="absolute bottom-0 left-0 right-0 bg-black/60 p-1 text-white text-xs font-semibold truncate">
                             {card.name}
-                            {card.relatedFace && (
+                            {getRelatedFaces(card.relatedFace).length > 0 && (
                               <span className="ml-1 text-blue-300" title="Has related face">↔</span>
                             )}
                           </div>

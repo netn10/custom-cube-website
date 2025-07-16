@@ -394,6 +394,12 @@ function CubeListContent() {
     );
   };
 
+  // Helper to get related faces as array
+  const getRelatedFaces = (relatedFace: string | string[] | undefined) => {
+    if (!relatedFace) return [];
+    return Array.isArray(relatedFace) ? relatedFace : [relatedFace];
+  };
+
   return (
     <div className={`min-h-screen space-y-6 ${historicMode ? 'historic-mode-page' : ''}`}>
       <h1 className="text-3xl font-bold text-center dark:text-white">Cube Card List</h1>
@@ -760,7 +766,7 @@ function CubeListContent() {
                 <div className="mtg-card card-hover">
                   {card.imageUrl ? (
                     <div className="relative w-full overflow-hidden flex items-center justify-center bg-gray-100 dark:bg-gray-800">
-                      {card.relatedFace ? (
+                      {getRelatedFaces(card.relatedFace).length > 0 ? (
                         <RelatedFaceCard card={card} className="w-full h-full" />
                       ) : (
                         <img 
@@ -811,7 +817,7 @@ function CubeListContent() {
                                 Custom
                               </span>
                             )}
-                            {card.relatedFace && (
+                            {getRelatedFaces(card.relatedFace).length > 0 && (
                               <span className="text-xs px-1 py-0.5 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded-full" title="Has related face">
                                 ↔
                               </span>

@@ -14,6 +14,10 @@ export default function RelatedFaceCardDetail({ card, relatedCard, className = '
   const [isHovering, setIsHovering] = useState(false);
   const imgRef = useRef<HTMLImageElement>(null);
   const originalSrcRef = useRef<string | null>(null);
+  // Support both string and array for indicator
+  const hasRelated = card.relatedFace && (Array.isArray(card.relatedFace) ? card.relatedFace.length > 0 : true);
+  // For hover, use the first related face if array
+  const relatedFaceName = Array.isArray(card.relatedFace) ? card.relatedFace[0] : card.relatedFace;
   const relatedFaceImageUrl = relatedCard?.imageUrl || '';
 
   const handleMouseEnter = () => {
@@ -54,7 +58,8 @@ export default function RelatedFaceCardDetail({ card, relatedCard, className = '
           }}
         />
         
-        {card.relatedFace && (
+        {/* Show indicator if any related face exists */}
+        {hasRelated && (
           <div className="absolute top-2 right-2 bg-black bg-opacity-50 text-white rounded-full w-6 h-6 flex items-center justify-center">
             <span className="text-xs">↔</span>
           </div>

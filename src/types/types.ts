@@ -25,7 +25,7 @@ export type Card = {
   set?: string;
   notes?: string;
   relatedTokens?: string[];
-  relatedFace?: string;
+  relatedFace?: string | string[];
   facedown?: boolean;
 };
 

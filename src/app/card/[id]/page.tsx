@@ -337,6 +337,12 @@ export default function CardDetailPage() {
     }
   };
 
+  // Helper to get related faces as array
+  const getRelatedFaces = (relatedFace: string | string[] | undefined) => {
+    if (!relatedFace) return [];
+    return Array.isArray(relatedFace) ? relatedFace : [relatedFace];
+  };
+
   // Optimized card fetching with improved performance
   const fetchCard = async () => {
     try {
@@ -425,38 +431,40 @@ export default function CardDetailPage() {
         );
       }
       
-      // Fetch related face card (non-blocking)
-      if (cardToUse.relatedFace) {
+      // Fetch related face card(s) (non-blocking)
+      const relatedFaces = getRelatedFaces(cardToUse.relatedFace);
+      if (relatedFaces.length > 0) {
         secondaryPromises.push(
           (async () => {
             try {
               setLoadingStates(prev => ({ ...prev, relatedFace: true }));
-              // Try direct card lookup first (more efficient for exact matches)
-              try {
-                const relatedCardDirect = await getCardById(cardToUse.relatedFace!);
-                if (relatedCardDirect) {
-                  setRelatedCard(relatedCardDirect);
-                  if (relatedCardDirect.imageUrl) {
-                    setRelatedFaceImage(relatedCardDirect.imageUrl);
+              // Fetch all related cards
+              const relatedCards: Card[] = [];
+              for (const face of relatedFaces) {
+                try {
+                  const relatedCardDirect = await getCardById(face);
+                  if (relatedCardDirect) {
+                    relatedCards.push(relatedCardDirect);
                   }
-                  return; // Exit early if direct lookup succeeded
-                }
-              } catch (directError) {
-                console.log('Direct related card lookup failed, falling back to search:', directError);
-              }
-              
-              // Fallback to search if direct lookup fails
-              const relatedCardResults = await getCards({ 
-                search: `"${cardToUse.relatedFace}"`, 
-                limit: 1, 
-                include_facedown: true 
-              });
-              if (relatedCardResults.cards.length > 0) {
-                setRelatedCard(relatedCardResults.cards[0]);
-                if (relatedCardResults.cards[0].imageUrl) {
-                  setRelatedFaceImage(relatedCardResults.cards[0].imageUrl);
+                } catch (directError) {
+                  // Fallback to search if direct lookup fails
+                  const relatedCardResults = await getCards({ 
+                    search: `"${face}"`, 
+                    limit: 1, 
+                    include_facedown: true 
+                  });
+                  if (relatedCardResults.cards.length > 0) {
+                    relatedCards.push(relatedCardResults.cards[0]);
+                  }
                 }
               }
+              // For backward compatibility, set the first as relatedCard
+              if (relatedCards.length > 0) {
+                setRelatedCard(relatedCards[0]);
+                setRelatedFaceImage(relatedCards[0].imageUrl || '');
+              }
+              // Store all for tooltip rendering
+              setRelatedCardData(relatedCards[0] || null);
             } catch (err) {
               console.error('Error fetching related card:', err);
             } finally {
@@ -478,9 +486,10 @@ export default function CardDetailPage() {
        );
        
        // Prefetch related cards for faster navigation (non-blocking)
-       if (cardToUse.relatedFace && !cardCache.has(cardToUse.relatedFace.toLowerCase())) {
+       const firstRelatedFace = getRelatedFaces(cardToUse.relatedFace)[0];
+       if (firstRelatedFace && !cardCache.has(firstRelatedFace.toLowerCase())) {
          setTimeout(() => {
-           fetchRelatedCardData(cardToUse.relatedFace!);
+           fetchRelatedCardData(firstRelatedFace);
          }, 1000); // Delay to avoid interfering with main loading
        }
       
@@ -846,7 +855,7 @@ export default function CardDetailPage() {
         <div className="md:flex">
           <div className="md:w-1/3 p-4 flex justify-center">
             {card.imageUrl ? (
-              card.relatedFace && relatedCard ? (
+              getRelatedFaces(card.relatedFace).length > 0 && relatedCard ? (
                 <RelatedFaceCardDetail 
                   card={card} 
                   relatedCard={relatedCard} 
@@ -1317,7 +1326,7 @@ export default function CardDetailPage() {
                       <span className="text-sm text-gray-500 dark:text-gray-400">Loading tokens...</span>
                     </div>
                   ) : (
-                    card.relatedTokens.map((token: string) => (
+                    Array.isArray(card.relatedTokens) ? card.relatedTokens.map((token: string) => (
                       <HoverTooltip
                         key={token}
                         imageUrl={tokenImages[token]}
@@ -1331,35 +1340,39 @@ export default function CardDetailPage() {
                           {token}
                         </Link>
                       </HoverTooltip>
-                    ))
+                    )) : null
                   )}
                 </div>
               </div>
             )}
             
-            {card.relatedFace && (
+            {getRelatedFaces(card.relatedFace).length > 0 && (
               <div className="mb-4">
-                <p className="text-sm font-semibold dark:text-white">Related Face: 
+                <p className="text-sm font-semibold dark:text-white">Related Face{getRelatedFaces(card.relatedFace).length > 1 ? 's' : ''}:</p>
+                <div className="flex flex-wrap gap-2 mt-1">
                   {loadingStates.relatedFace ? (
-                    <span className="ml-2 flex items-center space-x-2">
+                    <span className="flex items-center space-x-2">
                       <div className="animate-spin rounded-full h-4 w-4 border-t-2 border-b-2 border-blue-500"></div>
                       <span className="text-sm text-gray-500 dark:text-gray-400">Loading...</span>
                     </span>
                   ) : (
-                    <HoverTooltip
-                      imageUrl={relatedCardData?.imageUrl}
-                      title={card.relatedFace}
-                      onShow={() => fetchRelatedCardData(card.relatedFace!)}
-                    >
-                      <Link 
-                        href={`/card/${encodeURIComponent(card.relatedFace)}`}
-                        className="ml-2 text-blue-500 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300"
+                    getRelatedFaces(card.relatedFace).map((face, idx) => (
+                      <HoverTooltip
+                        key={face + idx}
+                        imageUrl={relatedCardData?.imageUrl}
+                        title={face}
+                        onShow={() => fetchRelatedCardData(face)}
                       >
-                        {card.relatedFace}
-                      </Link>
-                    </HoverTooltip>
+                        <Link 
+                          href={`/card/${encodeURIComponent(face)}`}
+                          className="ml-2 text-blue-500 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300"
+                        >
+                          {face}
+                        </Link>
+                      </HoverTooltip>
+                    ))
                   )}
-                </p>
+                </div>
               </div>
             )}
             
