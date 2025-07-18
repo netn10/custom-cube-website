@@ -1920,19 +1920,14 @@ def update_card(card_id):
 
         # Validate required fields
         if not data.get("name"):
-            # logging.info(f"Attempted to update card ID {card_id} with missing name.")
             return jsonify({"error": "Card name is required"}), 400
         if not data.get("manaCost"):
-            # logging.info(f"Attempted to update card ID {card_id} with missing manaCost.")
             return jsonify({"error": "Mana cost is required"}), 400
         if not data.get("type"):
-            # logging.info(f"Attempted to update card ID {card_id} with missing type.")
             return jsonify({"error": "Card type is required"}), 400
         if not data.get("text"): # Consider if text can be empty
-            # logging.info(f"Attempted to update card ID {card_id} with missing text.")
             return jsonify({"error": "Card text is required"}), 400
         if data.get("colors") is not None and not isinstance(data.get("colors"), list):
-            # logging.info(f"Attempted to update card ID {card_id} with invalid colors format.")
             return jsonify({"error": "Card colors must be provided as a list"}), 400
 
         # Ensure colors is an array even if not provided (colorless card)
@@ -1946,16 +1941,13 @@ def update_card(card_id):
             existing_card = db.cards.find_one({"_id": existing_card_obj_id})
         except: # Invalid ObjectId format
             existing_card = db.cards.find_one({"_id": card_id}) # Try as string
-            if existing_card: # if found as string, its _id is a string
+            if existing_card:
                 existing_card_obj_id = card_id
-
 
         if not existing_card:
             logging.error(f"Card not found for ID: {card_id} during update.")
-            # logging.info(f"History entry added successfully for card ID: {card_id}") # Misplaced text
             return jsonify({"error": "Card not found"}), 404
 
-        # Create update document
         update_data = {
             "name": data.get("name"),
             "manaCost": data.get("manaCost"),
@@ -1977,40 +1969,39 @@ def update_card(card_id):
             "relatedFace": data.get("relatedFace"),
         }
 
-        # Store the current version in card_history before updating
-        history_version_data = existing_card.copy()
-        # Ensure _id in history_version_data is a string for consistency if it's ObjectId
-        if isinstance(history_version_data.get("_id"), ObjectId):
-             history_version_data["_id"] = str(history_version_data["_id"])
+        # Check for noHistory param in query string
+        no_history = request.args.get('noHistory') == '1'
 
-        history_entry = {
-            "card_id": str(existing_card["_id"]), # Use the string version of the card's actual _id
-            "timestamp": datetime.utcnow(),
-            "version_data": history_version_data
-        }
-        
-        db.card_history.insert_one(history_entry)
+        # Store the current version in card_history before updating, unless noHistory is set
+        if not no_history:
+            history_version_data = existing_card.copy()
+            if isinstance(history_version_data.get("_id"), ObjectId):
+                history_version_data["_id"] = str(history_version_data["_id"])
+            history_entry = {
+                "card_id": str(existing_card["_id"]),
+                "timestamp": datetime.utcnow(),
+                "version_data": history_version_data
+            }
+            db.card_history.insert_one(history_entry)
 
-        # Update in database using the determined existing_card_obj_id
         result = db.cards.update_one(
             {"_id": existing_card_obj_id},
             {"$set": update_data},
         )
 
         if result.modified_count == 0:
-            # logging.info(f"No changes were made to the card ID: {card_id}")
             return jsonify({"warning": "No changes were made to the card", "card_id": card_id}), 200
 
-        # Return the updated card
         updated_card = db.cards.find_one({"_id": existing_card_obj_id})
         if updated_card:
             updated_card["id"] = str(updated_card.pop("_id"))
-            # logging.info(f"Card ID: {card_id} updated successfully.")
+            cache_key = f"card_{updated_card['name'].lower()}"
+            if cache_key in card_cache:
+                del card_cache[cache_key]
             return jsonify(updated_card), 200
         else:
-            # This state (modified_count > 0 but card not found) should be rare.
             logging.error(f"Card ID: {card_id} not found after update, despite modification count > 0.")
-            return jsonify({"error": "Card not found after update"}), 404 # Or 500
+            return jsonify({"error": "Card not found after update"}), 404
     except Exception as e:
         logging.error(f"Error updating card ID {card_id}: {str(e)}")
         return jsonify({"error": str(e)}), 500

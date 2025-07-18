@@ -83,10 +83,13 @@ export async function addCard(cardData: Partial<Card>, token: string): Promise<C
 }
 
 // Update an existing card
-export async function updateCard(id: string, cardData: Partial<Card>, token: string): Promise<Card> {
+export async function updateCard(id: string, cardData: Partial<Card>, token: string, noHistory?: boolean): Promise<Card> {
   try {
     // Check if the API URL already includes /api to avoid duplication
-    const endpoint = `/cards/update/${id}`;
+    let endpoint = `/cards/update/${id}`;
+    if (noHistory) {
+      endpoint += '?noHistory=1';
+    }
     const response = await fetch(`${API_BASE_URL}${endpoint}`, {
       method: 'PUT',
       headers: {

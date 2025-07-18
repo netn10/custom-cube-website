@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { useParams, useRouter } from 'next/navigation';
+import { useSearchParams } from 'next/navigation';
 import Link from 'next/link';
 import { getCards, updateCard, getCardById } from '@/lib/api';
 import { Card } from '@/types/types';
@@ -10,6 +11,7 @@ import { useAuth } from '@/contexts/AuthContext';
 export default function EditCardPage(): JSX.Element {
   const params = useParams();
   const router = useRouter();
+  const searchParams = useSearchParams();
   const { isAuthenticated, isAdmin, token } = useAuth();
   const [loading, setLoading] = useState(true);
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -232,17 +234,15 @@ export default function EditCardPage(): JSX.Element {
       if (!token) {
         throw new Error('You must be logged in as an admin to update cards');
       }
-      
-      // Use the updateCard function with the card ID and auth token
-      const updatedCard = await updateCard(cardData.id, cardData, token);
-      
+      // Check for noHistory param
+      const noHistory = searchParams.get('noHistory') === '1';
+      // Use the updateCard function with the card ID and auth token, passing noHistory as an extra param
+      const updatedCard = await updateCard(cardData.id, cardData, token, noHistory);
       setSuccessMessage('Card updated successfully!');
-      
-      // Redirect to the card view page after a delay
+      // Redirect to the card view page after a delay, forcing a reload to ensure fresh data
       setTimeout(() => {
-        router.push(`/card/${encodeURIComponent(cardData.name)}`);
+        router.replace(`/card/${encodeURIComponent(cardData.name)}`);
       }, 1500);
-      
     } catch (error) {
       console.error('Error updating card:', error);
       setErrorMessage(error instanceof Error ? error.message : 'An unknown error occurred');

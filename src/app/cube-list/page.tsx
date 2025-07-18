@@ -675,7 +675,7 @@ function CubeListContent() {
                 const colorClasses: Record<string, string> = {
                   W: 'bg-mtg-white text-black',
                   U: 'bg-mtg-blue text-white',
-                  B: 'bg-mtg-black text-black',
+                  B: 'bg-mtg-black text-white',
                   R: 'bg-mtg-red text-white',
                   G: 'bg-mtg-green text-white',
                 };
@@ -797,7 +797,7 @@ function CubeListContent() {
                               const colorClasses: Record<string, string> = {
                                 W: 'bg-mtg-white text-black',
                                 U: 'bg-mtg-blue text-white',
-                                B: 'bg-mtg-black text-black',
+                                B: 'bg-mtg-black text-white',
                                 R: 'bg-mtg-red text-white',
                                 G: 'bg-mtg-green text-white',
                               };

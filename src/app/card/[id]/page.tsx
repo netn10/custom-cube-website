@@ -348,67 +348,49 @@ export default function CardDetailPage() {
     try {
       const cardName = decodeURIComponent(params.id as string);
       
-      // 1. Fetch main card data with caching and optimized lookup strategy
-      const cardToUse = await (async () => {
-        // Check cache first
-        const cacheKey = cardName.toLowerCase();
-        if (cardCache.has(cacheKey)) {
-          return cardCache.get(cacheKey)!;
+      // 1. Fetch main card data directly from API, bypassing cache
+      let cardToUse = null;
+      try {
+        const directCard = await getCardById(cardName);
+        if (directCard) {
+          cardToUse = directCard;
         }
-        
-        // Try direct card lookup first (most efficient for exact matches)
-        try {
-          const directCard = await getCardById(cardName);
-          if (directCard) {
-            cardCache.set(cacheKey, directCard);
-            return directCard;
-          }
-        } catch (error) {
-          // If direct lookup fails, fall back to search
-          console.log('Direct card lookup failed, falling back to search:', error);
-        }
-        
+      } catch (error) {
+        console.log('Direct card lookup failed, falling back to search:', error);
+      }
+      
+      if (!cardToUse) {
         // Try exact match search (most common case)
         const exactSearchResults = await getCards({ 
           search: `"${cardName}"`, 
           limit: 1, // Only need one result for exact match
           include_facedown: true 
         });
-        
         if (exactSearchResults.cards.length > 0) {
-          const card = exactSearchResults.cards[0];
-          cardCache.set(cacheKey, card);
-          return card;
+          cardToUse = exactSearchResults.cards[0];
         }
-        
+      }
+      
+      if (!cardToUse) {
         // Fallback to broader search only if exact match fails
         const searchResults = await getCards({ 
           search: cardName, 
           limit: 5, // Reduced limit for faster response
           include_facedown: true 
         });
-        
-        if (searchResults.cards.length === 0) {
-          return null;
+        if (searchResults.cards.length > 0) {
+          // Find exact name match (case insensitive)
+          const exactMatch = searchResults.cards.find((c: Card) => 
+            c.name.toLowerCase() === cardName.toLowerCase()
+          );
+          cardToUse = exactMatch || searchResults.cards[0];
         }
-        
-        // Find exact name match (case insensitive)
-        const exactMatch = searchResults.cards.find((c: Card) => 
-          c.name.toLowerCase() === cardName.toLowerCase()
-        );
-        
-        const result = exactMatch || searchResults.cards[0];
-        if (result) {
-          cardCache.set(cacheKey, result);
-        }
-        return result;
-      })();
+      }
       
       if (!cardToUse) {
         throw new Error('Card not found');
       }
       
-      // Set card immediately for faster UI response
       setCard(cardToUse);
       setLoadingStates(prev => ({ ...prev, card: false }));
       
@@ -1378,12 +1360,18 @@ export default function CardDetailPage() {
             
             {/* Edit Card Button - Only shown for authenticated admins */}
             {isAuthenticated && isAdmin && (
-              <div className="mt-6 mb-4">
+              <div className="mt-6 mb-4 flex flex-col gap-2">
                 <Link href={`/card/${encodeURIComponent(card.name)}/edit`} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline inline-flex items-center">
                   <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path>
                   </svg>
                   Edit Card
+                </Link>
+                <Link href={`/card/${encodeURIComponent(card.name)}/edit?noHistory=1`} className="bg-yellow-500 hover:bg-yellow-600 text-black font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline inline-flex items-center">
+                  <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path>
+                  </svg>
+                  Edit Card (No History)
                 </Link>
               </div>
             )}
