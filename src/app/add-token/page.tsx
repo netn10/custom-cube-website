@@ -62,7 +62,7 @@ export default function AddToken(): JSX.Element {
   
   // Handle abilities input (comma-separated)
   const handleAbilitiesChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
-    const abilities = e.target.value.split('\n').map(a => a.trim()).filter(a => a);
+    const abilities = e.target.value.split('\n').filter(a => a);
     setFormData({ ...formData, abilities });
   };
 
