@@ -179,10 +179,12 @@ export default function AddToken(): JSX.Element {
       });
       setJsonInput('');
       
-      // Redirect to the tokens page after a delay
-      setTimeout(() => {
-        router.push('/tokens');
-      }, 1500);
+      // Redirect to the new token's detail page immediately
+      if (data && data.name) {
+        router.push(`/token/${encodeURIComponent(data.name)}`);
+      } else {
+        router.push('/tokens'); // fallback
+      }
       
     } catch (error) {
       console.error('Error adding token:', error);

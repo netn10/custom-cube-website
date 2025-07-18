@@ -39,6 +39,7 @@ export type Token = {
   abilities?: string[];
   imageUrl?: string;
   artist?: string;
+  creatorCards?: any[]; // Optional, matches usage in token detail page
 };
 
 export type Tool = {

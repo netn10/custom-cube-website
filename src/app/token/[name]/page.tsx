@@ -41,11 +41,66 @@ export default function TokenDetailPage() {
     const colorClasses: Record<string, string> = {
       W: 'bg-mtg-white text-black',
       U: 'bg-mtg-blue text-white',
-      B: 'bg-mtg-black text-black',
+      B: 'bg-mtg-black text-white', // changed from text-black to text-white
       R: 'bg-mtg-red text-white',
       G: 'bg-mtg-green text-white',
     };
     return colorClasses[color] || 'bg-gray-300 text-black';
+  };
+
+  // Color map for mana symbol formatting (copied from card page)
+  const colorMap: Record<string, string> = {
+    W: 'bg-mtg-white text-black',
+    U: 'bg-mtg-blue text-white',
+    B: 'bg-mtg-black text-white',
+    R: 'bg-mtg-red text-white',
+    G: 'bg-mtg-green text-white',
+  };
+
+  // Helper for mana/card symbol spans (copied from card page)
+  const createSymbolSpan = (color: string, content: string, title?: string, size: string = 'w-5 h-5') => {
+    const titleAttr = title ? ` title="${title}"` : '';
+    return `<span style="display:inline-flex;vertical-align:middle" class="mx-0.5"><span class="inline-block ${size} ${color} rounded-full flex items-center justify-center text-xs font-bold"${titleAttr}>${content}</span></span>`;
+  };
+
+  // Format card text/abilities with mana and action icons (copied from card page)
+  const formatCardText = (text: string) => {
+    if (!text) return '';
+    const processedText = text.replace(/\{([^}]+)\}/g, (match, symbol) => {
+      if (symbol === 'T') {
+        return createSymbolSpan('bg-gray-300 dark:bg-gray-600', 'T', 'Tap');
+      }
+      if (symbol === 'Q') {
+        return createSymbolSpan('bg-gray-300 dark:bg-gray-600', 'Q', 'Untap');
+      }
+      if (symbol.includes('/P')) {
+        const color = symbol.split('/')[0];
+        const colorClass = 'WUBRG'.includes(color) ? colorMap[color] : 'bg-mtg-colorless text-black';
+        return createSymbolSpan(colorClass, `${color}/P`, `Phyrexian ${color}`);
+      }
+      if (symbol.includes('P/')) {
+        const color = symbol.split('/')[1];
+        const colorClass = 'WUBRG'.includes(color) ? colorMap[color] : 'bg-mtg-colorless text-black';
+        return createSymbolSpan(colorClass, `P/${color}`, `Phyrexian ${color}`);
+      }
+      if (symbol.includes('/')) {
+        const colors = symbol.split('/');
+        if (colors.length === 2 && colors.every((c: string) => 'WUBRG'.includes(c))) {
+          return createSymbolSpan(`bg-gradient-to-br from-mtg-${colors[0].toLowerCase()} to-mtg-${colors[1].toLowerCase()}`, symbol, `${colors[0]}/${colors[1]}`);
+        }
+      }
+      if (symbol.length === 1 && 'WUBRG'.includes(symbol)) {
+        return createSymbolSpan(colorMap[symbol], symbol);
+      }
+      if (/^[0-9]+$/.test(symbol)) {
+        return createSymbolSpan('bg-mtg-colorless text-black', symbol);
+      }
+      if (symbol === 'X') {
+        return createSymbolSpan('bg-mtg-colorless text-black', 'X', 'Variable Mana');
+      }
+      return match;
+    });
+    return processedText.replace(/\n/g, '<br />');
   };
 
   // Function to sort colors in the correct order: WU, UB, BR, RG, GW, WB, BG, GU, UR, RW
@@ -188,7 +243,7 @@ export default function TokenDetailPage() {
             <div className="mb-4">
               <h2 className="text-lg font-semibold mb-1 dark:text-white">Abilities:</h2>
               {token.abilities.map((ability, index) => (
-                <p key={index} className="mb-1">{ability}</p>
+                <p key={index} className="mb-1" dangerouslySetInnerHTML={{ __html: formatCardText(ability) }} />
               ))}
             </div>
           )}
