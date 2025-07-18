@@ -199,11 +199,11 @@ export default function AddToken(): JSX.Element {
     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
       {/* Token Name */}
       <div className="mb-4">
-        <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="name">
+        <label className="block text-gray-700 dark:text-gray-100 text-sm font-bold mb-2" htmlFor="name">
           Token Name *
         </label>
         <input
-          className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+          className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 dark:text-white dark:bg-gray-900 leading-tight focus:outline-none focus:shadow-outline"
           id="name"
           type="text"
           name="name"
@@ -215,11 +215,11 @@ export default function AddToken(): JSX.Element {
       
       {/* Token Type */}
       <div className="mb-4">
-        <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="type">
+        <label className="block text-gray-700 dark:text-gray-100 text-sm font-bold mb-2" htmlFor="type">
           Token Type *
         </label>
         <input
-          className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+          className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 dark:text-white dark:bg-gray-900 leading-tight focus:outline-none focus:shadow-outline"
           id="type"
           type="text"
           name="type"
@@ -232,11 +232,11 @@ export default function AddToken(): JSX.Element {
       
       {/* Power/Toughness (for creature tokens) */}
       <div className="mb-4">
-        <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="power">
+        <label className="block text-gray-700 dark:text-gray-100 text-sm font-bold mb-2" htmlFor="power">
           Power
         </label>
         <input
-          className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+          className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 dark:text-white dark:bg-gray-900 leading-tight focus:outline-none focus:shadow-outline"
           id="power"
           type="text"
           name="power"
@@ -247,11 +247,11 @@ export default function AddToken(): JSX.Element {
       </div>
       
       <div className="mb-4">
-        <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="toughness">
+        <label className="block text-gray-700 dark:text-gray-100 text-sm font-bold mb-2" htmlFor="toughness">
           Toughness
         </label>
         <input
-          className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+          className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 dark:text-white dark:bg-gray-900 leading-tight focus:outline-none focus:shadow-outline"
           id="toughness"
           type="text"
           name="toughness"
@@ -263,16 +263,16 @@ export default function AddToken(): JSX.Element {
       
       {/* Colors */}
       <div className="mb-4 md:col-span-2">
-        <label className="block text-gray-700 text-sm font-bold mb-2">
+        <label className="block text-gray-700 dark:text-gray-100 text-sm font-bold mb-2">
           Colors
         </label>
-        <p className="text-xs italic mb-2">Select colors for the token or leave empty for colorless tokens</p>
+        <p className="text-xs italic mb-2 dark:text-gray-300">Select colors for the token or leave empty for colorless tokens</p>
         <div className="flex flex-wrap gap-4">
           {colorOptions.map(color => (
-            <label key={color} className="inline-flex items-center">
+            <label key={color} className="inline-flex items-center dark:text-gray-100">
               <input
                 type="checkbox"
-                className="form-checkbox h-5 w-5"
+                className="form-checkbox h-5 w-5 dark:bg-gray-900 dark:border-gray-600"
                 checked={formData.colors.includes(color)}
                 onChange={() => handleColorChange(color)}
               />
@@ -289,11 +289,11 @@ export default function AddToken(): JSX.Element {
       
       {/* Abilities */}
       <div className="mb-4 md:col-span-2">
-        <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="abilities">
+        <label className="block text-gray-700 dark:text-gray-100 text-sm font-bold mb-2" htmlFor="abilities">
           Abilities
         </label>
         <textarea
-          className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+          className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 dark:text-white dark:bg-gray-900 leading-tight focus:outline-none focus:shadow-outline"
           id="abilities"
           name="abilities"
           rows={4}
@@ -301,16 +301,16 @@ export default function AddToken(): JSX.Element {
           value={formData.abilities?.join('\n') || ''}
           onChange={handleAbilitiesChange}
         />
-        <p className="text-xs italic mt-1">Enter each ability on a new line, e.g. "Flying", "Lifelink"</p>
+        <p className="text-xs italic mt-1 dark:text-gray-300">Enter each ability on a new line, e.g. "Flying", "Lifelink"</p>
       </div>
       
       {/* Artist */}
       <div className="mb-4">
-        <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="artist">
+        <label className="block text-gray-700 dark:text-gray-100 text-sm font-bold mb-2" htmlFor="artist">
           Artist
         </label>
         <input
-          className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+          className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 dark:text-white dark:bg-gray-900 leading-tight focus:outline-none focus:shadow-outline"
           id="artist"
           type="text"
           name="artist"
@@ -321,11 +321,11 @@ export default function AddToken(): JSX.Element {
 
       {/* Image URL */}
       <div className="mb-4 md:col-span-2">
-        <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="imageUrl">
+        <label className="block text-gray-700 dark:text-gray-100 text-sm font-bold mb-2" htmlFor="imageUrl">
           Token Image URL
         </label>
         <input
-          className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+          className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 dark:text-white dark:bg-gray-900 leading-tight focus:outline-none focus:shadow-outline"
           id="imageUrl"
           type="url"
           name="imageUrl"
@@ -337,7 +337,7 @@ export default function AddToken(): JSX.Element {
       
       {/* Submit Button for Form */}
       <div className="flex items-center justify-between mt-6 md:col-span-2">
-        <Link href="/tokens" className="text-blue-500 hover:text-blue-700">
+        <Link href="/tokens" className="text-blue-500 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300">
           Cancel
         </Link>
         <button
@@ -354,11 +354,11 @@ export default function AddToken(): JSX.Element {
   // Render JSON input
   const renderJsonInput = () => (
     <div className="mb-4">
-      <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="jsonInput">
+      <label className="block text-gray-700 dark:text-gray-100 text-sm font-bold mb-2" htmlFor="jsonInput">
         Paste Token JSON
       </label>
       <textarea
-        className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline font-mono"
+        className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 dark:text-white dark:bg-gray-900 leading-tight focus:outline-none focus:shadow-outline font-mono"
         id="jsonInput"
         rows={15}
         value={jsonInput}
@@ -376,7 +376,7 @@ export default function AddToken(): JSX.Element {
         required
       />
       {jsonError && (
-        <p className="text-red-500 text-xs italic mt-2">{jsonError}</p>
+        <p className="text-red-500 dark:text-red-300 text-xs italic mt-2">{jsonError}</p>
       )}
       <div className="mt-4 flex">
         <button
@@ -419,16 +419,16 @@ export default function AddToken(): JSX.Element {
   
   return (
     <div className="container mx-auto px-4 py-8">
-      <h1 className="text-3xl font-bold mb-6">Add New Token</h1>
+      <h1 className="text-3xl font-bold mb-6 dark:text-white">Add New Token</h1>
       
       {errorMessage && (
-        <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded mb-4">
+        <div className="bg-red-100 dark:bg-red-900 border border-red-400 dark:border-red-700 text-red-700 dark:text-red-200 px-4 py-3 rounded mb-4">
           {errorMessage}
         </div>
       )}
       
       {successMessage && (
-        <div className="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded mb-4">
+        <div className="bg-green-100 dark:bg-green-900 border border-green-400 dark:border-green-700 text-green-700 dark:text-green-200 px-4 py-3 rounded mb-4">
           {successMessage}
         </div>
       )}
@@ -437,21 +437,21 @@ export default function AddToken(): JSX.Element {
       <div className="flex border-b mb-4">
         <button
           type="button"
-          className={`py-2 px-4 ${inputMethod === 'form' ? 'border-b-2 border-blue-500 font-medium text-blue-600' : 'text-gray-500 hover:text-blue-500'}`}
+          className={`py-2 px-4 ${inputMethod === 'form' ? 'border-b-2 border-blue-500 font-medium text-blue-600 dark:text-blue-400' : 'text-gray-500 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400'}`}
           onClick={() => setInputMethod('form')}
         >
           Form Input
         </button>
         <button
           type="button"
-          className={`py-2 px-4 ${inputMethod === 'json' ? 'border-b-2 border-blue-500 font-medium text-blue-600' : 'text-gray-500 hover:text-blue-500'}`}
+          className={`py-2 px-4 ${inputMethod === 'json' ? 'border-b-2 border-blue-500 font-medium text-blue-600 dark:text-blue-400' : 'text-gray-500 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400'}`}
           onClick={() => setInputMethod('json')}
         >
           JSON Input
         </button>
       </div>
       
-      <form onSubmit={handleSubmit} className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+      <form onSubmit={handleSubmit} className="bg-white dark:bg-gray-800 shadow-md rounded px-8 pt-6 pb-8 mb-4">
         {inputMethod === 'json' ? renderJsonInput() : renderFormFields()}
       </form>
     </div>

@@ -1268,6 +1268,12 @@ export default function CardDetailPage() {
               <p className="dark:text-white text-base leading-relaxed" 
                  style={{ lineHeight: '1.6em' }}
                  dangerouslySetInnerHTML={{ __html: formatCardText(card.text) }} />
+              {/* Show loyalty if planeswalker, after card text */}
+              {card.type && card.type.includes('Planeswalker') && card.loyalty !== undefined && (
+                <div className="mt-4 text-lg font-semibold text-purple-700 dark:text-purple-300">
+                  Loyalty: {card.loyalty}
+                </div>
+              )}
             </div>
             
             {(card.power && card.toughness) && (
