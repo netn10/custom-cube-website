@@ -22,8 +22,8 @@ export default function CardHistoryModal({ cardId, isOpen, onClose }: CardHistor
   const [currentCard, setCurrentCard] = useState<Card | null>(null);
   const [loadingCurrentCard, setLoadingCurrentCard] = useState(true);
   const [selectedVersion, setSelectedVersion] = useState<Card | null>(null);
-  const [compareMode, setCompareMode] = useState(false);
   const [comparisonVersion, setComparisonVersion] = useState<Card | null>(null);
+  const [compareMode, setCompareMode] = useState(false);
   const [copiedField, setCopiedField] = useState<string | null>(null);
 
   // Color mapping for visual representation
@@ -219,8 +219,8 @@ export default function CardHistoryModal({ cardId, isOpen, onClose }: CardHistor
     
     // Create unique IDs for comparison
     const versionUniqueId = getCardUniqueId(version, isCurrentCard);
-    const selectedVersionUniqueId = selectedVersion ? getCardUniqueId(selectedVersion, currentCard && selectedVersion.id === currentCard.id) : null;
-    const comparisonVersionUniqueId = comparisonVersion ? getCardUniqueId(comparisonVersion, currentCard && comparisonVersion.id === currentCard.id) : null;
+    const selectedVersionUniqueId = selectedVersion ? getCardUniqueId(selectedVersion, !!(currentCard && selectedVersion.id === currentCard?.id)) : null;
+    const comparisonVersionUniqueId = comparisonVersion ? getCardUniqueId(comparisonVersion, !!(currentCard && comparisonVersion.id === currentCard?.id)) : null;
     
     // Check if this card is the first selected card
     if (selectedVersion && versionUniqueId === selectedVersionUniqueId) {
@@ -262,7 +262,10 @@ export default function CardHistoryModal({ cardId, isOpen, onClose }: CardHistor
   const handleVersionSelect = (version: Card, isCurrentCard: boolean = false) => {
     // Create unique ID for this version
     const versionUniqueId = getCardUniqueId(version, isCurrentCard);
-  
+    // Define unique IDs for selected and comparison versions (fixes ReferenceError)
+    const selectedVersionUniqueId = selectedVersion ? getCardUniqueId(selectedVersion, !!(currentCard && selectedVersion.id === currentCard?.id)) : null;
+    const comparisonVersionUniqueId = comparisonVersion ? getCardUniqueId(comparisonVersion, !!(currentCard && comparisonVersion.id === currentCard?.id)) : null;
+
     if (compareMode) {
       // In compare mode
       if (!selectedVersion) {
@@ -671,7 +674,14 @@ export default function CardHistoryModal({ cardId, isOpen, onClose }: CardHistor
                     {selectedVersion.relatedFace !== comparisonVersion.relatedFace && (
                       <li className="text-amber-600 dark:text-amber-400">
                         <div className="font-semibold mb-1">Related face changed:</div>
-                        {getTextDiff(comparisonVersion.relatedFace || 'None', selectedVersion.relatedFace || 'None')}
+                        {getTextDiff(
+                          Array.isArray(comparisonVersion.relatedFace)
+                            ? comparisonVersion.relatedFace.join(', ')
+                            : comparisonVersion.relatedFace || 'None',
+                          Array.isArray(selectedVersion.relatedFace)
+                            ? selectedVersion.relatedFace.join(', ')
+                            : selectedVersion.relatedFace || 'None'
+                        )}
                       </li>
                     )}
                     {selectedVersion.facedown !== comparisonVersion.facedown && (

@@ -533,6 +533,8 @@ def get_cards_internal(search, body_search, colors, color_match, exclude_colorle
         # In historic mode, we need to fetch cards based on their historical versions too
         # For Set 1, we show all cards currently in Set 1 plus any cards that have a historical version in Set 1
         # For Set 2, we show all cards from Set 1 and Set 2, plus cards with historical versions in Set 1 or Set 2
+        # For Set 3, we show all cards from Set 1, Set 2, and Set 3, plus cards with historical versions in Set 1, Set 2, or Set 3
+        # For Set 4, we show all cards from Set 1, Set 2, Set 3, and Set 4, plus cards with historical versions in Set 1, Set 2, Set 3, or Set 4
 
         # First, create a list of sets to include based on the selected set
         sets_to_include = []
@@ -542,13 +544,15 @@ def get_cards_internal(search, body_search, colors, color_match, exclude_colorle
             sets_to_include = ["Set 1", "Set 2"]
         elif card_set == "Set 3":
             sets_to_include = ["Set 1", "Set 2", "Set 3"]
+        elif card_set == "Set 4":
+            sets_to_include = ["Set 1", "Set 2", "Set 3", "Set 4"]
         
         # Apply the filter to show cards from the included sets
         if sets_to_include:
             query["set"] = {"$in": sets_to_include}
             
             # If we're looking at an earlier set (i.e., not showing all sets), get cards from later sets with historical versions
-            if card_set != "Set 3":  # Don't need to do this for Set 3 as it already includes everything
+            if card_set != "Set 4":  # Don't need to do this for Set 4 as it already includes everything
                 # Find all card_history entries for cards that have versions in the sets we're interested in
                 history_query = {"version_data.set": {"$in": sets_to_include}}
                 history_cards = db.card_history.find(history_query)
@@ -2613,9 +2617,11 @@ def gemini_analyze_card():
             "For colors, use the standard Magic: The Gathering color codes: W (White), U (Blue), B (Black), R (Red), G (Green). "
             "Return colors as an array of these single-letter codes (e.g., ['W', 'U'] for Azorius). "
             "For archetypes, try to match the card to one of these cube archetypes based on the card's abilities and colors: "
-            "WU Storm, UB Cipher, BR Token Collection, RG Control, GW Vehicles, WB ETB/Death Value, BG Artifacts, UR Enchantments, RW Self-mill, GU Prowess. "
+            "WU Storm, UB Cipher, BR Token Collection, RG Control, GW Vehicles, WB ETB/Death Value, BG Artifacts, UR Enchantments, RW Self-Mill, GU Prowess. "
             "Return archetypes as an array of matching archetype names. "
             "Set imageUrl to an empty string (it will be filled later). "
+            "set 'set' to 'Set 4', always. "
+            "Try to figure out if the card is custom or not. The field name is 'custom' and should be set to true or false. "
             "If a field is not present, use an empty string or null."
         )
 
