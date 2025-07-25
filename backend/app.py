@@ -20,6 +20,14 @@ import base64
 # Load environment variables
 load_dotenv()
 
+# Helper function to escape regex special characters
+def escape_regex_pattern(pattern):
+    """Escape special regex characters in a search pattern to make it safe for MongoDB $regex"""
+    if not pattern:
+        return pattern
+    # Escape all regex special characters: . ^ $ * + ? { } [ ] \ | ( )
+    return re.escape(pattern)
+
 # MongoDB connection
 MONGO_URI = os.getenv(
     "MONGO_URI", "mongodb+srv://username:password@cluster.mongodb.net/mtgcube"
@@ -454,15 +462,15 @@ def get_cards_internal(search, body_search, colors, color_match, exclude_colorle
 
     # Add name search if provided
     if search:
-        query["name"] = {"$regex": search, "$options": "i"}
+        query["name"] = {"$regex": escape_regex_pattern(search), "$options": "i"}
 
     # Add body text search if provided
     if body_search:
         # We need to search in both name and text fields
         body_query = {
             "$or": [
-                {"name": {"$regex": body_search, "$options": "i"}},
-                {"text": {"$regex": body_search, "$options": "i"}},
+                {"name": {"$regex": escape_regex_pattern(body_search), "$options": "i"}},
+                {"text": {"$regex": escape_regex_pattern(body_search), "$options": "i"}},
             ]
         }
 
@@ -526,7 +534,7 @@ def get_cards_internal(search, body_search, colors, color_match, exclude_colorle
     if card_type:
         # For all card types, including "Creature", just do a simple case-insensitive search
         # This will match any card that has the type string anywhere in its type field
-        query["type"] = {"$regex": card_type, "$options": "i"}
+        query["type"] = {"$regex": escape_regex_pattern(card_type), "$options": "i"}
 
     # Handle Set filtering with historic mode if enabled
     if card_set and historic_mode:
@@ -622,16 +630,16 @@ def get_cards_internal(search, body_search, colors, color_match, exclude_colorle
         if not include_facedown:
             match_stage["facedown"] = {"$ne": True}
         if search:
-            match_stage["name"] = {"$regex": search, "$options": "i"}
+            match_stage["name"] = {"$regex": escape_regex_pattern(search), "$options": "i"}
         if body_search:
             match_stage["$or"] = [
-                {"name": {"$regex": body_search, "$options": "i"}},
-                {"text": {"$regex": body_search, "$options": "i"}}
+                {"name": {"$regex": escape_regex_pattern(body_search), "$options": "i"}},
+                {"text": {"$regex": escape_regex_pattern(body_search), "$options": "i"}}
             ]
         if custom:
             match_stage["custom"] = custom.lower() == "true"
         if card_type:
-            match_stage["type"] = {"$regex": card_type, "$options": "i"}
+            match_stage["type"] = {"$regex": escape_regex_pattern(card_type), "$options": "i"}
             
         if match_stage:
             pipeline.append({"$match": match_stage})
@@ -1080,12 +1088,12 @@ def get_tokens():
 
     if search:
         # Ensure partial matching for card names
-        query["name"] = {"$regex": search, "$options": "i"}
+        query["name"] = {"$regex": escape_regex_pattern(search), "$options": "i"}
 
     if body_search:
         # Search in both name and text fields
-        name_query = {"name": {"$regex": body_search, "$options": "i"}}
-        text_query = {"text": {"$regex": body_search, "$options": "i"}}
+        name_query = {"name": {"$regex": escape_regex_pattern(body_search), "$options": "i"}}
+        text_query = {"text": {"$regex": escape_regex_pattern(body_search), "$options": "i"}}
 
         # Use $or to match either field
         if "name" in query:
