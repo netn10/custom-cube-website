@@ -3,11 +3,7 @@
 import React from 'react';
 import { useState, useRef, useEffect } from 'react';
 import { FaDice, FaRandom, FaCalculator, FaSearch, FaPlusCircle, FaList, FaRobot } from 'react-icons/fa';
-<<<<<<< HEAD
-import { getBotDraftPick, getDraftPack, getMultipleDraftPacks, getSuggestions, addSuggestion, uploadSuggestionImage, getChatGPTCards, getChatGPTResponse, getGeminiResponse, getRandomPack, getShowDecks, API_BASE_URL } from '@/lib/api';
-=======
 import { getBotDraftPick, getDraftPack, getMultipleDraftPacks, getSuggestions, addSuggestion, uploadSuggestionImage, getChatGPTCards, getChatGPTResponse, getChatGPTResponseAlt, getRandomPack, getShowDecks, API_BASE_URL } from '@/lib/api';
->>>>>>> fe30096 (Deployment Tue 09/02/2025 10:47:06.76)
 
 type Tool = {
   id: string;
@@ -124,13 +120,8 @@ export default function ToolsPage() {
     },
     {
       id: 'ask-chatgpt',
-<<<<<<< HEAD
-      name: 'Ask Gemini',
-      description: 'View cards that instruct you to ask Gemini for something and get AI-generated responses.',
-=======
       name: 'Ask ChatGPT',
       description: 'View cards that instruct you to ask ChatGPT for something and get AI-generated responses.',
->>>>>>> fe30096 (Deployment Tue 09/02/2025 10:47:06.76)
       icon: <FaRobot className="h-6 w-6" />,
       component: <AskChatGPT />,
     },
@@ -3740,11 +3731,7 @@ function AskChatGPT() {
         const data = await getChatGPTCards();
         setCards(data);
       } catch (err) {
-<<<<<<< HEAD
-        setError('Failed to load cards with Gemini prompts');
-=======
         setError('Failed to load cards with ChatGPT prompts');
->>>>>>> fe30096 (Deployment Tue 09/02/2025 10:47:06.76)
       } finally {
         setIsLoading(false);
       }
@@ -3753,11 +3740,7 @@ function AskChatGPT() {
     fetchChatGPTCards();
   }, []);
 
-<<<<<<< HEAD
-  // Handle card click to generate Gemini response
-=======
   // Handle card click to generate ChatGPT response
->>>>>>> fe30096 (Deployment Tue 09/02/2025 10:47:06.76)
   const handleCardClick = async (card: any) => {
     setSelectedCard(card);
     setChatGPTResponse(null);
@@ -3770,21 +3753,12 @@ function AskChatGPT() {
     try {
       setIsGenerating(true);
       
-<<<<<<< HEAD
-      // Get response from Gemini API using the card's prompt field
-      const response = await getGeminiResponse(card.prompt);
-      setChatGPTResponse(response.response);
-      
-    } catch (err) {
-      console.error('Error getting Gemini response:', err);
-=======
       // Get response from ChatGPT API using the card's prompt field
       const response = await getChatGPTResponseAlt(card.prompt);
       setChatGPTResponse(response.response);
       
     } catch (err) {
       console.error('Error getting ChatGPT response:', err);
->>>>>>> fe30096 (Deployment Tue 09/02/2025 10:47:06.76)
       setChatGPTResponse('Sorry, there was an error generating a response. Please try again.');
     } finally {
       setIsGenerating(false);
@@ -3795,13 +3769,8 @@ function AskChatGPT() {
     <div className="space-y-8">
       <div className="prose dark:prose-invert max-w-none">
         <p>
-<<<<<<< HEAD
-          Some cards in the cube have special prompts for Gemini. Click on any card below to automatically
-          prompt Gemini and see the response.
-=======
           Some cards in the cube have special prompts for ChatGPT. Click on any card below to automatically
           prompt ChatGPT and see the response.
->>>>>>> fe30096 (Deployment Tue 09/02/2025 10:47:06.76)
         </p>
       </div>
       
@@ -3815,11 +3784,7 @@ function AskChatGPT() {
         </div>
       ) : cards.length === 0 ? (
         <div className="text-center py-8 bg-gray-100 dark:bg-gray-700 rounded-lg">
-<<<<<<< HEAD
-          <p className="text-gray-500 dark:text-gray-400">No cards with Gemini prompts found in the database.</p>
-=======
           <p className="text-gray-500 dark:text-gray-400">No cards with ChatGPT prompts found in the database.</p>
->>>>>>> fe30096 (Deployment Tue 09/02/2025 10:47:06.76)
         </div>
       ) : (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -3862,11 +3827,7 @@ function AskChatGPT() {
             }
           }}>
           <h3 className="text-xl font-bold mb-4 dark:text-white">
-<<<<<<< HEAD
-            Gemini Response for {selectedCard.name}
-=======
             ChatGPT Response for {selectedCard.name}
->>>>>>> fe30096 (Deployment Tue 09/02/2025 10:47:06.76)
           </h3>
           
           {isGenerating ? (
