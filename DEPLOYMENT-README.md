@@ -41,7 +41,7 @@ custom-cube-website/
 ## 🎯 Heroku Applications
 
 - **Frontend**: [netn10-custom-cube-885947dcd6aa.herokuapp.com](https://netn10-custom-cube-885947dcd6aa.herokuapp.com/)
-- **Backend**: [netn10-custom-cube-backend-31fb1edb5cb3.herokuapp.com](https://netn10-custom-cube-backend-31fb1edb5cb3.herokuapp.com/)
+- **Backend**: [netn10-custom-cube-885947dcd6aa.herokuapp.com](https://netn10-custom-cube-885947dcd6aa.herokuapp.com/)
 
 ## 🔧 First-Time Setup
 
@@ -95,7 +95,7 @@ The deployment script performs the following steps:
   
   # For backend (in backend/ directory)
   cd backend
-  heroku git:remote -a netn10-custom-cube-backend-31fb1edb5cb3
+  heroku git:remote -a netn10-custom-cube-885947dcd6aa
   ```
 
 **4. "Failed to push to Heroku"**
@@ -133,7 +133,7 @@ If your applications require environment variables, set them via Heroku CLI:
 heroku config:set VARIABLE_NAME=value -a netn10-custom-cube-885947dcd6aa
 
 # For backend
-heroku config:set VARIABLE_NAME=value -a netn10-custom-cube-backend-31fb1edb5cb3
+heroku config:set VARIABLE_NAME=value -a netn10-custom-cube-885947dcd6aa
 ```
 
 ## 🔗 Useful Commands
@@ -141,22 +141,22 @@ heroku config:set VARIABLE_NAME=value -a netn10-custom-cube-backend-31fb1edb5cb3
 ```bash
 # View app logs
 heroku logs --tail -a netn10-custom-cube-885947dcd6aa
-heroku logs --tail -a netn10-custom-cube-backend-31fb1edb5cb3
+heroku logs --tail -a netn10-custom-cube-885947dcd6aa
 
 # Open apps in browser
 heroku open -a netn10-custom-cube-885947dcd6aa
-heroku open -a netn10-custom-cube-backend-31fb1edb5cb3
+heroku open -a netn10-custom-cube-885947dcd6aa
 
 # Check app status
 heroku ps -a netn10-custom-cube-885947dcd6aa
-heroku ps -a netn10-custom-cube-backend-31fb1edb5cb3
+heroku ps -a netn10-custom-cube-885947dcd6aa
 ```
 
 ## 🎉 Success!
 
 After successful deployment, your applications will be available at:
 - Frontend: https://netn10-custom-cube-885947dcd6aa.herokuapp.com/
-- Backend: https://netn10-custom-cube-backend-31fb1edb5cb3.herokuapp.com/
+- Backend: https://netn10-custom-cube-885947dcd6aa.herokuapp.com/
 
 The deployment script will automatically open both URLs in your browser.
 

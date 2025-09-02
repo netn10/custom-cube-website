@@ -7,12 +7,12 @@ Write-Host "===========================================" -ForegroundColor Cyan
 Write-Host ""
 Write-Host "This script will deploy:" -ForegroundColor Yellow
 Write-Host "- Frontend (Next.js) to: https://netn10-custom-cube-885947dcd6aa.herokuapp.com/" -ForegroundColor Green
-Write-Host "- Backend (Python Flask) to: https://netn10-custom-cube-backend-31fb1edb5cb3.herokuapp.com/" -ForegroundColor Green
+Write-Host "- Backend (Python Flask) to: https://netn10-custom-cube-885947dcd6aa.herokuapp.com/" -ForegroundColor Green
 Write-Host ""
 
 # Set Heroku app names
 $FRONTEND_APP = "netn10-custom-cube-885947dcd6aa"
-$BACKEND_APP = "netn10-custom-cube-backend-31fb1edb5cb3"
+$BACKEND_APP = "netn10-custom-cube-885947dcd6aa"
 
 # Check if Heroku CLI is installed
 try {
@@ -127,7 +127,7 @@ Write-Host "   DEPLOYMENT COMPLETE!" -ForegroundColor Cyan
 Write-Host "===========================================" -ForegroundColor Cyan
 Write-Host ""
 Write-Host "✅ Frontend: https://netn10-custom-cube-885947dcd6aa.herokuapp.com/" -ForegroundColor Green
-Write-Host "✅ Backend:  https://netn10-custom-cube-backend-31fb1edb5cb3.herokuapp.com/" -ForegroundColor Green
+Write-Host "✅ Backend:  https://netn10-custom-cube-885947dcd6aa.herokuapp.com/" -ForegroundColor Green
 Write-Host ""
 Write-Host "Both applications have been deployed successfully!" -ForegroundColor Yellow
 Write-Host ""
@@ -136,7 +136,7 @@ Write-Host ""
 Write-Host "Opening deployed applications..." -ForegroundColor Yellow
 Start-Process "https://netn10-custom-cube-885947dcd6aa.herokuapp.com/"
 Start-Sleep -Seconds 2
-Start-Process "https://netn10-custom-cube-backend-31fb1edb5cb3.herokuapp.com/"
+Start-Process "https://netn10-custom-cube-885947dcd6aa.herokuapp.com/"
 
 Write-Host ""
 Write-Host "Deployment script completed!" -ForegroundColor Green

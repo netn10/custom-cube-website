@@ -7,7 +7,7 @@ echo ===========================================
 echo.
 echo This script will deploy:
 echo - Frontend (Next.js) to: https://netn10-custom-cube-885947dcd6aa.herokuapp.com/
-echo - Backend (Python Flask) to: https://netn10-custom-cube-backend-31fb1edb5cb3.herokuapp.com/
+echo - Backend (Python Flask) to: https://netn10-custom-cube-885947dcd6aa.herokuapp.com/
 echo.
 
 :: Check if Heroku CLI is installed
@@ -21,7 +21,7 @@ if errorlevel 1 (
 
 :: Set Heroku app names
 set FRONTEND_APP=netn10-custom-cube-885947dcd6aa
-set BACKEND_APP=netn10-custom-cube-backend-31fb1edb5cb3
+set BACKEND_APP=netn10-custom-cube-885947dcd6aa
 
 echo ===========================================
 echo    STEP 1: DEPLOYING FRONTEND
@@ -111,7 +111,7 @@ echo    DEPLOYMENT COMPLETE!
 echo ===========================================
 echo.
 echo ✅ Frontend: https://netn10-custom-cube-885947dcd6aa.herokuapp.com/
-echo ✅ Backend:  https://netn10-custom-cube-backend-31fb1edb5cb3.herokuapp.com/
+echo ✅ Backend:  https://netn10-custom-cube-885947dcd6aa.herokuapp.com/
 echo.
 echo Both applications have been deployed successfully!
 echo.
@@ -120,7 +120,7 @@ echo.
 echo Opening deployed applications...
 start https://netn10-custom-cube-885947dcd6aa.herokuapp.com/
 timeout /t 2 /nobreak >nul
-start https://netn10-custom-cube-backend-31fb1edb5cb3.herokuapp.com/
+start https://netn10-custom-cube-885947dcd6aa.herokuapp.com/
 
 echo.
 echo Deployment script completed!
