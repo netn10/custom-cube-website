@@ -22,6 +22,15 @@ const nextConfig = {
   experimental: {
     serverActions: true,
   },
+  // Configure reverse proxy for API routes
+  async rewrites() {
+    return [
+      {
+        source: '/api/:path*',
+        destination: 'https://netn10-custom-cube-backend-31fb1edb5cb3.herokuapp.com/api/:path*',
+      },
+    ];
+  },
 };
 
 module.exports = nextConfig;
