@@ -21,7 +21,8 @@
       "Bash(heroku apps:*)",
       "WebFetch(domain:netn10-custom-cube-885947dcd6aa.herokuapp.com)",
       "Bash(dir src)",
-      "Bash(dir srcapp)"
+      "Bash(dir srcapp)",
+      "WebFetch(domain:netn10-custom-cube-backend-31fb1edb5cb3.herokuapp.com)"
     ],
     "deny": [],
     "ask": []
