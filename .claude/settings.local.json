@@ -6,7 +6,13 @@
       "Bash(./deploy.bat)",
       "Bash(git init:*)",
       "Bash(git remote add:*)",
-      "Bash(git remote set-url:*)"
+      "Bash(git remote set-url:*)",
+      "Bash(git commit:*)",
+      "Bash(git add:*)",
+      "Bash(git push:*)",
+      "Bash(heroku git:remote:*)",
+      "Bash(heroku releases:*)",
+      "Bash(heroku config:*)"
     ],
     "deny": [],
     "ask": []
