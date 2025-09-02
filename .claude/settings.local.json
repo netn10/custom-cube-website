@@ -16,7 +16,12 @@
       "Bash(./deploy-heroku.bat)",
       "Bash(curl:*)",
       "Bash(python:*)",
-      "Bash(heroku login:*)"
+      "Bash(heroku login:*)",
+      "Bash(heroku auth:whoami:*)",
+      "Bash(heroku apps:*)",
+      "WebFetch(domain:netn10-custom-cube-885947dcd6aa.herokuapp.com)",
+      "Bash(dir src)",
+      "Bash(dir srcapp)"
     ],
     "deny": [],
     "ask": []

@@ -7,7 +7,7 @@ echo ===========================================
 echo.
 echo This script will configure Heroku git remotes for:
 echo - Frontend: netn10-custom-cube-885947dcd6aa
-echo - Backend:  netn10-custom-cube-backend-31fb1edb5cb3
+echo - Backend:  netn10-custom-cube-885947dcd6aa
 echo.
 
 :: Check if Heroku CLI is installed
@@ -66,10 +66,10 @@ if errorlevel 1 (
 
 :: Setup backend remote
 echo Setting up Heroku remote for backend...
-heroku git:remote -a netn10-custom-cube-backend-31fb1edb5cb3
+heroku git:remote -a netn10-custom-cube-885947dcd6aa
 if errorlevel 1 (
     echo ERROR: Failed to setup backend Heroku remote
-    echo Make sure you have access to the Heroku app: netn10-custom-cube-backend-31fb1edb5cb3
+    echo Make sure you have access to the Heroku app: netn10-custom-cube-885947dcd6aa
     cd ..
     pause
     exit /b 1
@@ -86,7 +86,7 @@ echo    SETUP COMPLETE!
 echo ===========================================
 echo.
 echo ✅ Frontend remote: netn10-custom-cube-885947dcd6aa
-echo ✅ Backend remote:  netn10-custom-cube-backend-31fb1edb5cb3
+echo ✅ Backend remote:  netn10-custom-cube-885947dcd6aa
 echo.
 echo You can now run the deployment script!
 echo.

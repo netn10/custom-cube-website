@@ -160,7 +160,7 @@ A web application for managing and exploring a custom Magic: The Gathering cube 
 The application is set up with two separate Heroku apps:
 
 1. **Frontend (Next.js)**: https://netn10-custom-cube-885947dcd6aa.herokuapp.com/
-2. **Backend (Flask)**: https://netn10-custom-cube-backend-81f01bd8d4c4.herokuapp.com/
+2. **Backend (Flask)**: https://netn10-custom-cube-885947dcd6aa.herokuapp.com/
 
 This two-repository setup allows for independent deployment and scaling of frontend and backend components.
 
@@ -199,7 +199,7 @@ git push heroku master
 Make sure to set these environment variables in your Heroku apps:
 
 1. **Frontend (Next.js) Environment Variables**:
-   - `NEXT_PUBLIC_API_URL`: URL of your backend API (e.g., https://netn10-custom-cube-backend-81f01bd8d4c4.herokuapp.com/api)
+   - `NEXT_PUBLIC_API_URL`: URL of your backend API (e.g., https://netn10-custom-cube-885947dcd6aa.herokuapp.com/api)
    - `OPENAI_API_KEY`: (If using OpenAI's ChatGPT API)
 
 2. **Backend (Flask) Environment Variables**:
