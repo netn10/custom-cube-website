@@ -13,7 +13,9 @@
       "Bash(heroku git:remote:*)",
       "Bash(heroku releases:*)",
       "Bash(heroku config:*)",
-      "Bash(./deploy-heroku.bat)"
+      "Bash(./deploy-heroku.bat)",
+      "Bash(curl:*)",
+      "Bash(python:*)"
     ],
     "deny": [],
     "ask": []
