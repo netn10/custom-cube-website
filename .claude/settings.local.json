@@ -15,7 +15,8 @@
       "Bash(heroku config:*)",
       "Bash(./deploy-heroku.bat)",
       "Bash(curl:*)",
-      "Bash(python:*)"
+      "Bash(python:*)",
+      "Bash(heroku login:*)"
     ],
     "deny": [],
     "ask": []
