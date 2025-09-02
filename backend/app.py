@@ -175,9 +175,12 @@ CORS(
                 "http://localhost:3000",  # For local development
             ],
             "methods": ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
-            "allow_headers": ["Content-Type", "Authorization"],
+            "allow_headers": ["Content-Type", "Authorization", "X-Requested-With"],
             "supports_credentials": True,
-            "expose_headers": ["Authorization"]
+            "expose_headers": ["Authorization"],
+            "send_wildcard": False,
+            "always_send": True,
+            "automatic_options": True
         }
     }
 )

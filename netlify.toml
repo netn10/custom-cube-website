@@ -4,7 +4,7 @@
 
 [build.environment]
   NODE_VERSION = "18"
-  NEXT_PUBLIC_API_URL = "https://netn10-custom-cube-885947dcd6aa.herokuapp.com/api"
+  NEXT_PUBLIC_API_URL = "https://netn10-custom-cube-backend-31fb1edb5cb3.herokuapp.com/api"
 
 [[plugins]]
   package = "@netlify/plugin-nextjs"
