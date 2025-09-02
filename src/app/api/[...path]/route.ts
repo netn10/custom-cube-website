@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 
-const BACKEND_URL = 'https://netn10-custom-cube-backend-31fb1edb5cb3.herokuapp.com';
+const BACKEND_URL = 'https://netn10-custom-cube-885947dcd6aa.herokuapp.com';
 
 export async function GET(
   request: NextRequest,
