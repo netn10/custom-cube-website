@@ -3,7 +3,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
-import { addCard } from '@/lib/api';
+import { addCard, API_BASE_URL } from '@/lib/api';
 import { Card } from '@/types/types';
 import { useAuth } from '@/contexts/AuthContext';
 
@@ -156,7 +156,7 @@ export default function AddCard(): JSX.Element {
     try {
       const formData = new FormData();
       formData.append('image', file);
-      const res = await fetch('http://localhost:5000/api/chatgpt-analyze-card', {
+      const res = await fetch(`${API_BASE_URL}/chatgpt-analyze-card`, {
         method: 'POST',
         body: formData,
       });
