@@ -274,24 +274,14 @@ CORS(
         r"/api/*": {
             "origins": [
                 "https://netn10-custom-cube-885947dcd6aa.herokuapp.com",
-<<<<<<< HEAD
-                "http://localhost:3000"  # For local development
-=======
                 "http://localhost:3000",  # For local development
->>>>>>> fe30096 (Deployment Tue 09/02/2025 10:47:06.76)
             ],
             "methods": ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
             "allow_headers": ["Content-Type", "Authorization"],
             "supports_credentials": True,
-<<<<<<< HEAD
             "expose_headers": ["Authorization"]
         }
     }
-=======
-            "expose_headers": ["Authorization"],
-        }
-    },
->>>>>>> fe30096 (Deployment Tue 09/02/2025 10:47:06.76)
 )
 
 
