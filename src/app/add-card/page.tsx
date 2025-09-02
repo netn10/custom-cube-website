@@ -50,11 +50,11 @@ export default function AddCard(): JSX.Element {
   const colorOptions = ['W', 'U', 'B', 'R', 'G'];
   const rarityOptions = ['Common', 'Uncommon', 'Rare', 'Mythic'];
   
-  // Add state for image upload and Gemini result
+  // Add state for image upload and ChatGPT result
   const [uploadedImage, setUploadedImage] = useState<File | null>(null);
   const [analyzing, setAnalyzing] = useState(false);
-  const [geminiJson, setGeminiJson] = useState<string>('');
-  const [geminiError, setGeminiError] = useState('');
+  const [chatgptJson, setChatGPTJson] = useState<string>('');
+  const [chatgptError, setChatGPTError] = useState('');
   const fileInputRef = useRef<HTMLInputElement>(null);
 
   // Handle input changes
@@ -135,36 +135,36 @@ export default function AddCard(): JSX.Element {
   // Handle drag-and-drop
   const handleDrop = async (e: React.DragEvent<HTMLDivElement>) => {
     e.preventDefault();
-    setGeminiError('');
+    setChatGPTError('');
     const file = e.dataTransfer.files[0];
     if (!file) return;
     setUploadedImage(file);
-    await analyzeImageWithGemini(file);
+    await analyzeImageWithChatGPT(file);
   };
 
   const handleFileChange = async (e: React.ChangeEvent<HTMLInputElement>) => {
-    setGeminiError('');
+    setChatGPTError('');
     const file = e.target.files?.[0];
     if (!file) return;
     setUploadedImage(file);
-    await analyzeImageWithGemini(file);
+    await analyzeImageWithChatGPT(file);
   };
 
-  const analyzeImageWithGemini = async (file: File) => {
+  const analyzeImageWithChatGPT = async (file: File) => {
     setAnalyzing(true);
-    setGeminiJson('');
+    setChatGPTJson('');
     try {
       const formData = new FormData();
       formData.append('image', file);
-      const res = await fetch('http://localhost:5000/api/gemini-analyze-card', {
+      const res = await fetch('http://localhost:5000/api/chatgpt-analyze-card', {
         method: 'POST',
         body: formData,
       });
       if (!res.ok) throw new Error('Failed to analyze image');
       const data = await res.json();
-      setGeminiJson(JSON.stringify(data, null, 2));
+      setChatGPTJson(JSON.stringify(data, null, 2));
     } catch (err: any) {
-      setGeminiError(err.message || 'Error analyzing image');
+      setChatGPTError(err.message || 'Error analyzing image');
     } finally {
       setAnalyzing(false);
     }
@@ -175,10 +175,10 @@ export default function AddCard(): JSX.Element {
   };
 
   const handleJsonUse = () => {
-    if (geminiJson) {
-      setJsonInput(geminiJson);
+    if (chatgptJson) {
+      setJsonInput(chatgptJson);
       setInputMethod('json');
-      setSuccessMessage('Gemini JSON loaded! You can review/edit it below.');
+      setSuccessMessage('ChatGPT JSON loaded! You can review/edit it below.');
     }
   };
 
@@ -681,9 +681,9 @@ export default function AddCard(): JSX.Element {
         </button>
       </div>
       
-      {/* Gemini AI Drag-and-Drop Section */}
+      {/* ChatGPT AI Drag-and-Drop Section */}
       <div className="mb-6">
-        <h2 className="text-lg font-semibold mb-2">Analyze Card Image (Gemini AI)</h2>
+        <h2 className="text-lg font-semibold mb-2">Analyze Card Image (ChatGPT AI)</h2>
         <div
           onDrop={handleDrop}
           onDragOver={handleDragOver}
@@ -710,12 +710,12 @@ export default function AddCard(): JSX.Element {
             onChange={handleFileChange}
           />
         </div>
-        {analyzing && <p className="text-blue-600 mt-2">Analyzing image with Gemini AI...</p>}
-        {geminiError && <p className="text-red-600 mt-2">{geminiError}</p>}
-        {geminiJson && (
+        {analyzing && <p className="text-blue-600 mt-2">Analyzing image with ChatGPT AI...</p>}
+        {chatgptError && <p className="text-red-600 mt-2">{chatgptError}</p>}
+        {chatgptJson && (
           <div className="mt-4">
             <h3 className="font-semibold mb-1">Generated Card JSON:</h3>
-            <pre className="bg-gray-100 dark:bg-gray-800 p-2 rounded text-xs overflow-x-auto max-h-64 text-gray-900 dark:text-gray-100 border border-gray-300 dark:border-gray-600">{geminiJson}</pre>
+            <pre className="bg-gray-100 dark:bg-gray-800 p-2 rounded text-xs overflow-x-auto max-h-64 text-gray-900 dark:text-gray-100 border border-gray-300 dark:border-gray-600">{chatgptJson}</pre>
             <button
               className="mt-2 px-3 py-1 bg-blue-600 text-white rounded hover:bg-blue-700"
               onClick={handleJsonUse}

@@ -3,7 +3,7 @@
 import { useParams, useRouter, useSearchParams } from 'next/navigation';
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { getCards, getTokenByName, API_BASE_URL, getGeminiResponse, getCardComments, addComment, deleteComment, addCardHistory, getCardHistory, getArchetypes, getCardById } from '@/lib/api';
+import { getCards, getTokenByName, API_BASE_URL, getChatGPTResponseAlt, getCardComments, addComment, deleteComment, addCardHistory, getCardHistory, getArchetypes, getCardById } from '@/lib/api';
 import { FaRobot, FaTrash, FaHistory, FaPlus, FaSave, FaCopy } from 'react-icons/fa';
 import { Card, Token, Comment, CommentFormData, Archetype } from '@/types/types';
 import { useAuth } from '@/contexts/AuthContext';
@@ -559,8 +559,8 @@ export default function CardDetailPage() {
       
       const prompt = `You are an expert Magic: The Gathering card analyst. Based on the following card description, determine which archetype(s) from our custom cube would be the best fit for this card. Explain why the card fits into these archetypes and how it could be used strategically. Be specific and detailed in your analysis.\n\nCard: "${cardDescription}"\n\nAvailable archetypes in our cube:\n${archetypeDescriptions}\n\nProvide your analysis in a concise format with clear recommendations.`;
       
-      // Call the Gemini API
-      const response = await getGeminiResponse(prompt);
+      // Call the ChatGPT API
+      const response = await getChatGPTResponseAlt(prompt);
       setAiResponse(response.response);
     } catch (error) {
       console.error('Error getting AI analysis:', error);

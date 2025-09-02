@@ -65,11 +65,40 @@ A web application for managing and exploring a custom Magic: The Gathering cube 
    ```
 
 4. Set up environment variables:
-   - Create a `.env` file in the backend directory with your MongoDB connection string:
-     ```
-     MONGO_URI=your_mongodb_connection_string
+
+   **Quick Setup (Recommended):**
+   - Run one of the setup scripts to create environment files automatically:
+     ```bash
+     # Windows
+     setup-env.bat
+     
+     # Unix/Linux/macOS
+     ./setup-env.sh
+     
+     # Cross-platform (Python)
+     python setup-env.py
      ```
 
+   **Manual Setup:**
+   - **Frontend Setup:**
+     - Copy `env.example` to `.env.local` in the root directory
+     - Update the API URL if needed:
+       ```
+       NEXT_PUBLIC_API_URL=http://127.0.0.1:5000/api
+       ```
+
+   - **Backend Setup:**
+     - Copy `backend/env.example` to `backend/.env`
+     - Fill in your actual values:
+       ```
+       MONGO_URI=your_mongodb_connection_string
+       SECRET_KEY=your_secret_key_here
+       JWT_SECRET_KEY=your_jwt_secret_key_here
+       OPENAI_API_KEY=your_openai_api_key_here
+       ```
+
+   - **Python Scripts Setup (Optional):**
+     - Copy `python_scripts/env.example` to `python_scripts/.env` if using the Python scripts
 5. Seed the database:
    ```
    python seed_db.py
@@ -90,6 +119,40 @@ A web application for managing and exploring a custom Magic: The Gathering cube 
 
 3. Open your browser and navigate to `http://localhost:3000`
 
+## Environment Variables
+
+### Frontend (.env.local)
+| Variable | Description | Default |
+|----------|-------------|---------|
+| `NEXT_PUBLIC_API_URL` | URL of the backend API | `http://127.0.0.1:5000/api` |
+| `PORT` | Frontend server port (optional) | `3000` |
+| `NODE_ENV` | Node environment (optional) | `development` |
+
+### Backend (.env)
+| Variable | Description | Required | Default |
+|----------|-------------|----------|---------|
+| `MONGO_URI` | MongoDB connection string | Yes | `mongodb+srv://username:password@cluster.mongodb.net/mtgcube` |
+| `SECRET_KEY` | Flask secret key for sessions | Yes | `dev_secret_key_change_in_production` |
+| `JWT_SECRET_KEY` | JWT secret key for authentication | Yes | `jwt_secret_key_change_in_production` |
+| `OPENAI_API_KEY` | OpenAI API key for ChatGPT features | Yes | None |
+| `PORT` | Backend server port (optional) | No | `5000` |
+
+### Python Scripts (.env)
+| Variable | Description | Required | Default |
+|----------|-------------|----------|---------|
+| `MONGO_URI` | MongoDB connection string | Yes | `mongodb+srv://username:password@cluster.mongodb.net/mtgcube` |
+
+### Getting API Keys
+
+1. **OpenAI API Key**: 
+   - Visit [OpenAI Platform](https://platform.openai.com/api-keys)
+   - Create a new API key
+   - Add it to your backend `.env` file as `OPENAI_API_KEY`
+
+2. **MongoDB Connection String**:
+   - Create a MongoDB Atlas account or use a local MongoDB instance
+   - Get your connection string from MongoDB Atlas dashboard
+   - Add it to your backend `.env` file as `MONGO_URI`
 ## Deployment
 
 ### Heroku Deployment Setup
@@ -137,11 +200,11 @@ Make sure to set these environment variables in your Heroku apps:
 
 1. **Frontend (Next.js) Environment Variables**:
    - `NEXT_PUBLIC_API_URL`: URL of your backend API (e.g., https://netn10-custom-cube-backend-81f01bd8d4c4.herokuapp.com/api)
-   - `GEMINI_API_KEY`: (If using Google's Gemini API)
+   - `OPENAI_API_KEY`: (If using OpenAI's ChatGPT API)
 
 2. **Backend (Flask) Environment Variables**:
    - `MONGO_URI`: Your MongoDB connection string
-   - `GEMINI_API_KEY`: (If using Google's Gemini API)
+   - `OPENAI_API_KEY`: (If using OpenAI's ChatGPT API)
 
 #### Setting Environment Variables on Heroku
 

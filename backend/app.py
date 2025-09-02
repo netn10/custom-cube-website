@@ -20,6 +20,10 @@ import base64
 # Load environment variables
 load_dotenv()
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> fe30096 (Deployment Tue 09/02/2025 10:47:06.76)
 # Helper function to escape regex special characters
 def escape_regex_pattern(pattern):
     """Escape special regex characters in a search pattern to make it safe for MongoDB $regex"""
@@ -28,6 +32,10 @@ def escape_regex_pattern(pattern):
     # Escape all regex special characters: . ^ $ * + ? { } [ ] \ | ( )
     return re.escape(pattern)
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> fe30096 (Deployment Tue 09/02/2025 10:47:06.76)
 # MongoDB connection
 MONGO_URI = os.getenv(
     "MONGO_URI", "mongodb+srv://username:password@cluster.mongodb.net/mtgcube"
@@ -48,6 +56,7 @@ CACHE_TTL = 300  # 5 minutes cache TTL
 card_cache = {}
 CARD_CACHE_TTL = 60  # 1 minute cache TTL for individual cards
 
+<<<<<<< HEAD
 def get_cached_or_query(cache_key, query_func):
     """Get data from cache or execute query and cache result"""
     current_time = time.time()
@@ -79,10 +88,44 @@ def get_cached_or_query(cache_key, query_func):
     
     return result
 
+=======
+
+def get_cached_or_query(cache_key, query_func):
+    """Get data from cache or execute query and cache result"""
+    current_time = time.time()
+
+    # Check if we have cached data that's still valid
+    if cache_key in historical_cache:
+        cached_item = historical_cache[cache_key]
+        if current_time - cached_item["timestamp"] < CACHE_TTL:
+            return cached_item["data"]
+        else:
+            # Remove expired cache entry
+            del historical_cache[cache_key]
+
+    # Execute query and cache result
+    result = query_func()
+    historical_cache[cache_key] = {"data": result, "timestamp": current_time}
+
+    # Clean up old cache entries periodically (simple cleanup)
+    if len(historical_cache) > 100:  # Arbitrary limit
+        expired_keys = [
+            key
+            for key, value in historical_cache.items()
+            if current_time - value["timestamp"] > CACHE_TTL
+        ]
+        for key in expired_keys:
+            del historical_cache[key]
+
+    return result
+
+
+>>>>>>> fe30096 (Deployment Tue 09/02/2025 10:47:06.76)
 def get_cached_card(card_name, query_func):
     """Get card from cache or execute query and cache result"""
     current_time = time.time()
     cache_key = f"card_{card_name.lower()}"
+<<<<<<< HEAD
     
     # Check if we have cached data that's still valid
     if cache_key in card_cache:
@@ -113,6 +156,38 @@ def get_cached_card(card_name, query_func):
 
 logging.basicConfig(level=logging.INFO)
 
+=======
+
+    # Check if we have cached data that's still valid
+    if cache_key in card_cache:
+        cached_item = card_cache[cache_key]
+        if current_time - cached_item["timestamp"] < CARD_CACHE_TTL:
+            return cached_item["data"]
+        else:
+            # Remove expired cache entry
+            del card_cache[cache_key]
+
+    # Execute query and cache result
+    result = query_func()
+    card_cache[cache_key] = {"data": result, "timestamp": current_time}
+
+    # Clean up old cache entries periodically
+    if len(card_cache) > 200:  # Higher limit for card cache
+        expired_keys = [
+            key
+            for key, value in card_cache.items()
+            if current_time - value["timestamp"] > CARD_CACHE_TTL
+        ]
+        for key in expired_keys:
+            del card_cache[key]
+
+    return result
+
+
+logging.basicConfig(level=logging.INFO)
+
+
+>>>>>>> fe30096 (Deployment Tue 09/02/2025 10:47:06.76)
 # Function to create necessary indexes for performance
 def create_indexes():
     """Create database indexes for better performance"""
@@ -125,22 +200,41 @@ def create_indexes():
         db.cards.create_index([("facedown", 1)])
         db.cards.create_index([("archetypes", 1)])
         db.cards.create_index([("custom", 1)])
+<<<<<<< HEAD
         
+=======
+
+>>>>>>> fe30096 (Deployment Tue 09/02/2025 10:47:06.76)
         # Compound indexes for common queries
         db.cards.create_index([("set", 1), ("facedown", 1)])
         db.cards.create_index([("colors", 1), ("facedown", 1)])
         db.cards.create_index([("name", "text"), ("text", "text")])  # Text search index
+<<<<<<< HEAD
         
+=======
+
+>>>>>>> fe30096 (Deployment Tue 09/02/2025 10:47:06.76)
         # Indexes for card_history collection (critical for historic mode performance)
         db.card_history.create_index([("card_id", 1)])
         db.card_history.create_index([("timestamp", -1)])
         db.card_history.create_index([("version_data.set", 1)])
+<<<<<<< HEAD
         
         # Compound indexes for card_history
         db.card_history.create_index([("card_id", 1), ("timestamp", -1)])
         db.card_history.create_index([("card_id", 1), ("version_data.set", 1), ("timestamp", -1)])
         db.card_history.create_index([("version_data.set", 1), ("timestamp", -1)])
         
+=======
+
+        # Compound indexes for card_history
+        db.card_history.create_index([("card_id", 1), ("timestamp", -1)])
+        db.card_history.create_index(
+            [("card_id", 1), ("version_data.set", 1), ("timestamp", -1)]
+        )
+        db.card_history.create_index([("version_data.set", 1), ("timestamp", -1)])
+
+>>>>>>> fe30096 (Deployment Tue 09/02/2025 10:47:06.76)
         # Indexes for other collections
         db.tokens.create_index([("name", 1)])
         db.tokens.create_index([("colors", 1)])
@@ -148,11 +242,19 @@ def create_indexes():
         db.comments.create_index([("cardId", 1)])
         db.comments.create_index([("createdAt", -1)])
         db.users.create_index([("username", 1)], unique=True)
+<<<<<<< HEAD
         
+=======
+
+>>>>>>> fe30096 (Deployment Tue 09/02/2025 10:47:06.76)
         logging.info("Database indexes created successfully")
     except Exception as e:
         logging.error(f"Error creating database indexes: {e}")
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> fe30096 (Deployment Tue 09/02/2025 10:47:06.76)
 # Initialize Flask app
 app = Flask(__name__)
 
@@ -172,14 +274,24 @@ CORS(
         r"/api/*": {
             "origins": [
                 "https://netn10-custom-cube-885947dcd6aa.herokuapp.com",
+<<<<<<< HEAD
                 "http://localhost:3000"  # For local development
+=======
+                "http://localhost:3000",  # For local development
+>>>>>>> fe30096 (Deployment Tue 09/02/2025 10:47:06.76)
             ],
             "methods": ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
             "allow_headers": ["Content-Type", "Authorization"],
             "supports_credentials": True,
+<<<<<<< HEAD
             "expose_headers": ["Authorization"]
         }
     }
+=======
+            "expose_headers": ["Authorization"],
+        }
+    },
+>>>>>>> fe30096 (Deployment Tue 09/02/2025 10:47:06.76)
 )
 
 
@@ -264,6 +376,10 @@ def get_default_image_for_colors(colors):
 def health_check():
     return jsonify({"status": "ok"}), 200
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> fe30096 (Deployment Tue 09/02/2025 10:47:06.76)
 # Auth routes
 @app.route("/api/auth/register", methods=["POST"])
 def register():
@@ -398,11 +514,19 @@ def index():
                 "/api/suggestions",
                 "/api/chatgpt/cards",
                 "/api/chatgpt/response",
+<<<<<<< HEAD
                 "/api/gemini/response",
                 "/api/image-proxy",
                 "/api/random-pack",
                 "/api/health",
             ]
+=======
+                "/api/chatgpt-analyze-card",
+                "/api/image-proxy",
+                "/api/random-pack",
+                "/api/health",
+            ],
+>>>>>>> fe30096 (Deployment Tue 09/02/2025 10:47:06.76)
         }
     )
 
@@ -416,9 +540,13 @@ def get_cards():
     colors = (
         request.args.get("colors", "").split(",") if request.args.get("colors") else []
     )
+<<<<<<< HEAD
     color_match = request.args.get(
         "color_match", "includes"
     )
+=======
+    color_match = request.args.get("color_match", "includes")
+>>>>>>> fe30096 (Deployment Tue 09/02/2025 10:47:06.76)
     exclude_colorless = request.args.get("exclude_colorless", "").lower() == "true"
     card_type = request.args.get("type", "")
     card_set = request.args.get("set", "")
@@ -430,11 +558,16 @@ def get_cards():
     sort_by = request.args.get("sort_by", "name")
     sort_dir = request.args.get("sort_dir", "asc")
     historic_mode = request.args.get("historic_mode", "").lower() == "true"
+<<<<<<< HEAD
     
+=======
+
+>>>>>>> fe30096 (Deployment Tue 09/02/2025 10:47:06.76)
     # Optimize for single card lookups (common case for card detail pages)
     if search and search.startswith('"') and search.endswith('"') and limit <= 10:
         # This is likely a single card lookup, use caching
         card_name = search[1:-1]  # Remove quotes
+<<<<<<< HEAD
         return get_cached_card(card_name, lambda: get_cards_internal(
             search, body_search, colors, color_match, exclude_colorless,
             card_type, card_set, custom, facedown, include_facedown,
@@ -451,6 +584,66 @@ def get_cards():
 def get_cards_internal(search, body_search, colors, color_match, exclude_colorless,
                       card_type, card_set, custom, facedown, include_facedown,
                       page, limit, sort_by, sort_dir, historic_mode):
+=======
+        return get_cached_card(
+            card_name,
+            lambda: get_cards_internal(
+                search,
+                body_search,
+                colors,
+                color_match,
+                exclude_colorless,
+                card_type,
+                card_set,
+                custom,
+                facedown,
+                include_facedown,
+                page,
+                limit,
+                sort_by,
+                sort_dir,
+                historic_mode,
+            ),
+        )
+
+    # For other queries, use the internal function directly
+    return get_cards_internal(
+        search,
+        body_search,
+        colors,
+        color_match,
+        exclude_colorless,
+        card_type,
+        card_set,
+        custom,
+        facedown,
+        include_facedown,
+        page,
+        limit,
+        sort_by,
+        sort_dir,
+        historic_mode,
+    )
+
+
+def get_cards_internal(
+    search,
+    body_search,
+    colors,
+    color_match,
+    exclude_colorless,
+    card_type,
+    card_set,
+    custom,
+    facedown,
+    include_facedown,
+    page,
+    limit,
+    sort_by,
+    sort_dir,
+    historic_mode,
+):
+>>>>>>> fe30096 (Deployment Tue 09/02/2025 10:47:06.76)
     """Internal function for getting cards with all the logic"""
 
     query = {}
@@ -469,8 +662,23 @@ def get_cards_internal(search, body_search, colors, color_match, exclude_colorle
         # We need to search in both name and text fields
         body_query = {
             "$or": [
+<<<<<<< HEAD
                 {"name": {"$regex": escape_regex_pattern(body_search), "$options": "i"}},
                 {"text": {"$regex": escape_regex_pattern(body_search), "$options": "i"}},
+=======
+                {
+                    "name": {
+                        "$regex": escape_regex_pattern(body_search),
+                        "$options": "i",
+                    }
+                },
+                {
+                    "text": {
+                        "$regex": escape_regex_pattern(body_search),
+                        "$options": "i",
+                    }
+                },
+>>>>>>> fe30096 (Deployment Tue 09/02/2025 10:47:06.76)
             ]
         }
 
@@ -487,7 +695,11 @@ def get_cards_internal(search, body_search, colors, color_match, exclude_colorle
                 query[key] = value
 
     if colors and colors[0]:  # Check if colors is not empty
+<<<<<<< HEAD
         color_query_conditions = [] 
+=======
+        color_query_conditions = []
+>>>>>>> fe30096 (Deployment Tue 09/02/2025 10:47:06.76)
 
         # Handle special color filters
         if "colorless" in colors:
@@ -498,14 +710,26 @@ def get_cards_internal(search, body_search, colors, color_match, exclude_colorle
 
         if "multicolor" in colors:
             # Multicolor means the colors array has more than one color
+<<<<<<< HEAD
             color_query_conditions.append({"colors": {"$exists": True, "$not": {"$size": 1}}})
+=======
+            color_query_conditions.append(
+                {"colors": {"$exists": True, "$not": {"$size": 1}}}
+            )
+>>>>>>> fe30096 (Deployment Tue 09/02/2025 10:47:06.76)
             # Remove 'multicolor' from the colors array to avoid confusion
             colors = [c for c in colors if c != "multicolor"]
 
         # Add regular color filters if any remain
         if colors:
             if color_match == "exact":
+<<<<<<< HEAD
                 color_query_conditions.append({"colors": {"$all": colors, "$size": len(colors)}})
+=======
+                color_query_conditions.append(
+                    {"colors": {"$all": colors, "$size": len(colors)}}
+                )
+>>>>>>> fe30096 (Deployment Tue 09/02/2025 10:47:06.76)
             elif color_match == "includes":
                 color_query_conditions.append({"colors": {"$all": colors}})
             elif color_match == "at-most":
@@ -523,7 +747,14 @@ def get_cards_internal(search, body_search, colors, color_match, exclude_colorle
                 if "$or" in query:
                     # If there's already an $or, we need to use $and to combine with our new $or
                     existing_or = query.pop("$or")
+<<<<<<< HEAD
                     query["$and"] = query.get("$and", []) + [{"$or": existing_or}, {"$or": color_query_conditions}]
+=======
+                    query["$and"] = query.get("$and", []) + [
+                        {"$or": existing_or},
+                        {"$or": color_query_conditions},
+                    ]
+>>>>>>> fe30096 (Deployment Tue 09/02/2025 10:47:06.76)
                 else:
                     # No existing $or, just add our color conditions as $or
                     query["$or"] = color_query_conditions
@@ -554,6 +785,7 @@ def get_cards_internal(search, body_search, colors, color_match, exclude_colorle
             sets_to_include = ["Set 1", "Set 2", "Set 3"]
         elif card_set == "Set 4":
             sets_to_include = ["Set 1", "Set 2", "Set 3", "Set 4"]
+<<<<<<< HEAD
         
         # Apply the filter to show cards from the included sets
         if sets_to_include:
@@ -565,6 +797,21 @@ def get_cards_internal(search, body_search, colors, color_match, exclude_colorle
                 history_query = {"version_data.set": {"$in": sets_to_include}}
                 history_cards = db.card_history.find(history_query)
                 
+=======
+
+        # Apply the filter to show cards from the included sets
+        if sets_to_include:
+            query["set"] = {"$in": sets_to_include}
+
+            # If we're looking at an earlier set (i.e., not showing all sets), get cards from later sets with historical versions
+            if (
+                card_set != "Set 4"
+            ):  # Don't need to do this for Set 4 as it already includes everything
+                # Find all card_history entries for cards that have versions in the sets we're interested in
+                history_query = {"version_data.set": {"$in": sets_to_include}}
+                history_cards = db.card_history.find(history_query)
+
+>>>>>>> fe30096 (Deployment Tue 09/02/2025 10:47:06.76)
                 # Collect card_ids from history that match our criteria
                 for history_card in history_cards:
                     # Convert ObjectId to string if needed
@@ -583,7 +830,11 @@ def get_cards_internal(search, body_search, colors, color_match, exclude_colorle
         # OR cards whose IDs are in our list of historical cards to include
         object_ids = []
         string_ids = []
+<<<<<<< HEAD
         
+=======
+
+>>>>>>> fe30096 (Deployment Tue 09/02/2025 10:47:06.76)
         # Separate ObjectIds and string IDs
         for card_id in cards_to_include:
             if isinstance(card_id, ObjectId):
@@ -595,6 +846,7 @@ def get_cards_internal(search, body_search, colors, color_match, exclude_colorle
                 except:
                     # If conversion fails, keep as string
                     string_ids.append(card_id)
+<<<<<<< HEAD
         
         # Build the combined query
         or_conditions = [query]
@@ -607,6 +859,20 @@ def get_cards_internal(search, body_search, colors, color_match, exclude_colorle
         if string_ids:
             or_conditions.append({"_id": {"$in": string_ids}})
             
+=======
+
+        # Build the combined query
+        or_conditions = [query]
+
+        # Add ObjectId query if we have any
+        if object_ids:
+            or_conditions.append({"_id": {"$in": object_ids}})
+
+        # Add string ID query if we have any
+        if string_ids:
+            or_conditions.append({"_id": {"$in": string_ids}})
+
+>>>>>>> fe30096 (Deployment Tue 09/02/2025 10:47:06.76)
         # Combine with OR
         final_query = {"$or": or_conditions}
 
@@ -621,24 +887,53 @@ def get_cards_internal(search, body_search, colors, color_match, exclude_colorle
     # because we need to apply filtering and sorting AFTER replacing with historical data
     if historic_mode and card_set:
         # OPTIMIZED APPROACH: Use aggregation pipeline for better performance
+<<<<<<< HEAD
         
         # Build aggregation pipeline for historical data
         pipeline = []
         
+=======
+
+        # Build aggregation pipeline for historical data
+        pipeline = []
+
+>>>>>>> fe30096 (Deployment Tue 09/02/2025 10:47:06.76)
         # First stage: Match current cards with basic filters (excluding set filter for now)
         match_stage = {}
         if not include_facedown:
             match_stage["facedown"] = {"$ne": True}
         if search:
+<<<<<<< HEAD
             match_stage["name"] = {"$regex": escape_regex_pattern(search), "$options": "i"}
         if body_search:
             match_stage["$or"] = [
                 {"name": {"$regex": escape_regex_pattern(body_search), "$options": "i"}},
                 {"text": {"$regex": escape_regex_pattern(body_search), "$options": "i"}}
+=======
+            match_stage["name"] = {
+                "$regex": escape_regex_pattern(search),
+                "$options": "i",
+            }
+        if body_search:
+            match_stage["$or"] = [
+                {
+                    "name": {
+                        "$regex": escape_regex_pattern(body_search),
+                        "$options": "i",
+                    }
+                },
+                {
+                    "text": {
+                        "$regex": escape_regex_pattern(body_search),
+                        "$options": "i",
+                    }
+                },
+>>>>>>> fe30096 (Deployment Tue 09/02/2025 10:47:06.76)
             ]
         if custom:
             match_stage["custom"] = custom.lower() == "true"
         if card_type:
+<<<<<<< HEAD
             match_stage["type"] = {"$regex": escape_regex_pattern(card_type), "$options": "i"}
             
         if match_stage:
@@ -685,10 +980,73 @@ def get_cards_internal(search, body_search, colors, color_match, exclude_colorle
             {"$project": {"_id": 0, "history": 0, "card_id_str": 0}}
         ])
         
+=======
+            match_stage["type"] = {
+                "$regex": escape_regex_pattern(card_type),
+                "$options": "i",
+            }
+
+        if match_stage:
+            pipeline.append({"$match": match_stage})
+
+        # Add lookup stage to get historical data in a single query
+        pipeline.extend(
+            [
+                # Convert _id to string for lookup
+                {"$addFields": {"card_id_str": {"$toString": "$_id"}}},
+                # Lookup historical versions
+                {
+                    "$lookup": {
+                        "from": "card_history",
+                        "let": {"card_id": "$card_id_str"},
+                        "pipeline": [
+                            {
+                                "$match": {
+                                    "$expr": {"$eq": ["$card_id", "$$card_id"]},
+                                    "version_data.set": {"$in": sets_to_include},
+                                }
+                            },
+                            {"$sort": {"timestamp": -1}},
+                            {"$limit": 1},
+                        ],
+                        "as": "history",
+                    }
+                },
+                # Replace card data with historical version if available
+                {
+                    "$addFields": {
+                        "final_data": {
+                            "$cond": {
+                                "if": {"$gt": [{"$size": "$history"}, 0]},
+                                "then": {
+                                    "$mergeObjects": [
+                                        {"$arrayElemAt": ["$history.version_data", 0]},
+                                        {
+                                            "id": "$card_id_str",
+                                            "historical_version": True,
+                                        },
+                                    ]
+                                },
+                                "else": {
+                                    "$mergeObjects": ["$$ROOT", {"id": "$card_id_str"}]
+                                },
+                            }
+                        }
+                    }
+                },
+                # Replace root with final_data
+                {"$replaceRoot": {"newRoot": "$final_data"}},
+                # Remove the _id field and history field
+                {"$project": {"_id": 0, "history": 0, "card_id_str": 0}},
+            ]
+        )
+
+>>>>>>> fe30096 (Deployment Tue 09/02/2025 10:47:06.76)
         # Apply set filter and other post-historical filters
         post_filters = {}
         if sets_to_include:
             post_filters["set"] = {"$in": sets_to_include}
+<<<<<<< HEAD
             
         # Apply color filters
         if colors and colors[0]:
@@ -712,32 +1070,82 @@ def get_cards_internal(search, body_search, colors, color_match, exclude_colorle
                 else:
                     color_conditions.append({"colors": {"$all": colors}})
                     
+=======
+
+        # Apply color filters
+        if colors and colors[0]:
+            color_conditions = []
+
+            if "colorless" in colors:
+                color_conditions.append({"colors": {"$size": 0}})
+                colors = [c for c in colors if c != "colorless"]
+
+            if "multicolor" in colors:
+                color_conditions.append(
+                    {"colors": {"$exists": True, "$not": {"$size": 1}}}
+                )
+                colors = [c for c in colors if c != "multicolor"]
+
+            if colors:
+                if color_match == "exact":
+                    color_conditions.append(
+                        {"colors": {"$all": colors, "$size": len(colors)}}
+                    )
+                elif color_match == "includes":
+                    color_conditions.append({"colors": {"$all": colors}})
+                elif color_match == "at-most":
+                    color_conditions.append(
+                        {"colors": {"$not": {"$elemMatch": {"$nin": colors}}}}
+                    )
+                else:
+                    color_conditions.append({"colors": {"$all": colors}})
+
+>>>>>>> fe30096 (Deployment Tue 09/02/2025 10:47:06.76)
             if color_conditions:
                 if len(color_conditions) > 1:
                     post_filters["$or"] = color_conditions
                 else:
                     post_filters.update(color_conditions[0])
+<<<<<<< HEAD
         
         if post_filters:
             pipeline.append({"$match": post_filters})
         
+=======
+
+        if post_filters:
+            pipeline.append({"$match": post_filters})
+
+>>>>>>> fe30096 (Deployment Tue 09/02/2025 10:47:06.76)
         # Get total count with a separate pipeline
         count_pipeline = pipeline + [{"$count": "total"}]
         count_result = list(db.cards.aggregate(count_pipeline))
         total = count_result[0]["total"] if count_result else 0
+<<<<<<< HEAD
         
+=======
+
+>>>>>>> fe30096 (Deployment Tue 09/02/2025 10:47:06.76)
         # Add sorting and pagination
         sort_spec = []
         sort_fields = sort_by.split(",") if sort_by else ["name"]
         sort_directions = sort_dir.split(",") if sort_dir else ["asc"]
+<<<<<<< HEAD
         
         while len(sort_directions) < len(sort_fields):
             sort_directions.append("asc")
             
+=======
+
+        while len(sort_directions) < len(sort_fields):
+            sort_directions.append("asc")
+
+>>>>>>> fe30096 (Deployment Tue 09/02/2025 10:47:06.76)
         for i, field in enumerate(sort_fields):
             if field:
                 direction = 1 if sort_directions[i].lower() == "asc" else -1
                 sort_spec.append((field, direction))
+<<<<<<< HEAD
                 
         if sort_spec:
             pipeline.append({"$sort": dict(sort_spec)})
@@ -751,12 +1159,25 @@ def get_cards_internal(search, body_search, colors, color_match, exclude_colorle
         # Execute the optimized aggregation
         cards = list(db.cards.aggregate(pipeline))
         
+=======
+
+        if sort_spec:
+            pipeline.append({"$sort": dict(sort_spec)})
+
+        # Add pagination
+        pipeline.extend([{"$skip": skip}, {"$limit": limit}])
+
+        # Execute the optimized aggregation
+        cards = list(db.cards.aggregate(pipeline))
+
+>>>>>>> fe30096 (Deployment Tue 09/02/2025 10:47:06.76)
         # Also get history-only cards that don't exist in current collection
         # (This is a smaller, separate query for cards that were completely removed)
         if total < limit:  # Only do this if we have space for more cards
             history_only_pipeline = [
                 {"$match": {"version_data.set": {"$in": sets_to_include}}},
                 {"$sort": {"card_id": 1, "timestamp": -1}},
+<<<<<<< HEAD
                 {"$group": {
                     "_id": "$card_id",
                     "latest_history": {"$first": "$$ROOT"}
@@ -791,22 +1212,85 @@ def get_cards_internal(search, body_search, colors, color_match, exclude_colorle
             if history_only_cards:
                 history_only_count_pipeline = history_only_pipeline[:-1] + [{"$count": "total"}]
                 history_count_result = list(db.card_history.aggregate(history_only_count_pipeline))
+=======
+                {"$group": {"_id": "$card_id", "latest_history": {"$first": "$$ROOT"}}},
+                {
+                    "$lookup": {
+                        "from": "cards",
+                        "let": {"card_id_str": "$_id"},
+                        "pipeline": [
+                            {
+                                "$match": {
+                                    "$expr": {
+                                        "$eq": [{"$toString": "$_id"}, "$$card_id_str"]
+                                    }
+                                }
+                            }
+                        ],
+                        "as": "current_card",
+                    }
+                },
+                {
+                    "$match": {"current_card": {"$size": 0}}
+                },  # Only cards not in current collection
+                {
+                    "$replaceRoot": {
+                        "newRoot": {
+                            "$mergeObjects": [
+                                "$latest_history.version_data",
+                                {"id": "$_id", "historical_version": True},
+                            ]
+                        }
+                    }
+                },
+                {"$project": {"_id": 0}},
+                {"$limit": limit - len(cards)},  # Only get what we need
+            ]
+
+            # Apply the same post-filters to history-only cards
+            if post_filters:
+                history_only_pipeline.insert(-1, {"$match": post_filters})
+
+            history_only_cards = list(db.card_history.aggregate(history_only_pipeline))
+            cards.extend(history_only_cards)
+
+            # Update total count to include history-only cards
+            if history_only_cards:
+                history_only_count_pipeline = history_only_pipeline[:-1] + [
+                    {"$count": "total"}
+                ]
+                history_count_result = list(
+                    db.card_history.aggregate(history_only_count_pipeline)
+                )
+>>>>>>> fe30096 (Deployment Tue 09/02/2025 10:47:06.76)
                 if history_count_result:
                     total += history_count_result[0]["total"]
     else:
         # Standard flow for non-historic mode
+<<<<<<< HEAD
         
         # Define sort fields and directions (same as in historic mode)
         sort_fields = sort_by.split(",") if sort_by else ["name"]
         sort_directions = sort_dir.split(",") if sort_dir else ["asc"]
         
+=======
+
+        # Define sort fields and directions (same as in historic mode)
+        sort_fields = sort_by.split(",") if sort_by else ["name"]
+        sort_directions = sort_dir.split(",") if sort_dir else ["asc"]
+
+>>>>>>> fe30096 (Deployment Tue 09/02/2025 10:47:06.76)
         # Create sort specification
         sort_spec = []
         for i, field in enumerate(sort_fields):
             # Skip empty fields
             if not field:
                 continue
+<<<<<<< HEAD
                 
+=======
+
+>>>>>>> fe30096 (Deployment Tue 09/02/2025 10:47:06.76)
             # Get corresponding direction or default to asc
             direction = (
                 1
@@ -819,10 +1303,24 @@ def get_cards_internal(search, body_search, colors, color_match, exclude_colorle
         try:
             # Make sure we have a valid sort specification
             if sort_spec:
+<<<<<<< HEAD
                 cursor = db.cards.find(final_query).sort(sort_spec).skip(skip).limit(limit)
             else:
                 # Default sort by name if no valid sort fields
                 cursor = db.cards.find(final_query).sort([("name", 1)]).skip(skip).limit(limit)
+=======
+                cursor = (
+                    db.cards.find(final_query).sort(sort_spec).skip(skip).limit(limit)
+                )
+            else:
+                # Default sort by name if no valid sort fields
+                cursor = (
+                    db.cards.find(final_query)
+                    .sort([("name", 1)])
+                    .skip(skip)
+                    .limit(limit)
+                )
+>>>>>>> fe30096 (Deployment Tue 09/02/2025 10:47:06.76)
             cards = list(cursor)
         except Exception as e:
             # Log the error and fall back to a simple query without sorting
@@ -833,12 +1331,18 @@ def get_cards_internal(search, body_search, colors, color_match, exclude_colorle
         # Convert ObjectId to string for each card
         for card in cards:
             card["id"] = str(card.pop("_id"))
+<<<<<<< HEAD
     
     # Return the cards with pagination info
     return jsonify({
         "cards": cards,
         "total": total
     })
+=======
+
+    # Return the cards with pagination info
+    return jsonify({"cards": cards, "total": total})
+>>>>>>> fe30096 (Deployment Tue 09/02/2025 10:47:06.76)
 
 
 @app.route("/api/cards/<card_id>", methods=["GET"])
@@ -863,10 +1367,24 @@ def get_card(card_id):
                 decoded_name = unquote(card_id)
                 # Try exact match first
                 card = db.cards.find_one({"name": decoded_name})
+<<<<<<< HEAD
                 
                 # If still not found, try case-insensitive search
                 if not card:
                     card = db.cards.find_one({"name": {"$regex": f"^{re.escape(decoded_name)}$", "$options": "i"}})
+=======
+
+                # If still not found, try case-insensitive search
+                if not card:
+                    card = db.cards.find_one(
+                        {
+                            "name": {
+                                "$regex": f"^{re.escape(decoded_name)}$",
+                                "$options": "i",
+                            }
+                        }
+                    )
+>>>>>>> fe30096 (Deployment Tue 09/02/2025 10:47:06.76)
 
             if card:
                 # Convert ObjectId to string if needed
@@ -966,6 +1484,7 @@ def get_archetype_cards(archetype_id):
             # This logic for re-fetching seems complex and might be simplified or rethought
             # For now, preserving original logic, just fixing indentation if any.
             # skip += len(cards) # This skip adjustment was inside the loop condition in original thought, but should be based on already fetched
+<<<<<<< HEAD
             current_fetched_count = len(cards) # Number of cards fetched in the current iteration
             skip += current_fetched_count # Adjust skip for the next fetch
             
@@ -974,11 +1493,28 @@ def get_archetype_cards(archetype_id):
                  break # Avoid potential infinite loop
 
             if len(cards) < limit : # Only fetch more if needed
+=======
+            current_fetched_count = len(
+                cards
+            )  # Number of cards fetched in the current iteration
+            skip += current_fetched_count  # Adjust skip for the next fetch
+
+            # Check if we actually fetched any cards in the previous step to avoid infinite loop if DB is slow or query is stuck
+            if (
+                current_fetched_count == 0 and (limit - len(cards)) > 0
+            ):  # if we fetched 0 but still need cards
+                break  # Avoid potential infinite loop
+
+            if len(cards) < limit:  # Only fetch more if needed
+>>>>>>> fe30096 (Deployment Tue 09/02/2025 10:47:06.76)
                 remaining_to_fetch = limit - len(cards)
                 cursor = db.cards.find(query).skip(skip).limit(remaining_to_fetch)
                 cards.extend(list(cursor))
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> fe30096 (Deployment Tue 09/02/2025 10:47:06.76)
         # Convert ObjectId to string for each card
         for card in cards:
             card["id"] = str(card.pop("_id"))
@@ -1059,14 +1595,22 @@ def get_random_archetype_cards():
                     random_card["archetypes"] = [archetype_id]
 
                 result.append(random_card)
+<<<<<<< HEAD
         
+=======
+
+>>>>>>> fe30096 (Deployment Tue 09/02/2025 10:47:06.76)
         return jsonify(result)
     except Exception as e:
         logging.error(f"Error fetching random archetype cards: {str(e)}")
         return jsonify({"error": str(e)}), 500
 
 
+<<<<<<< HEAD
 @app.route("/api/tokens", methods=["GET"]) # This is the first /api/tokens GET route
+=======
+@app.route("/api/tokens", methods=["GET"])  # This is the first /api/tokens GET route
+>>>>>>> fe30096 (Deployment Tue 09/02/2025 10:47:06.76)
 def get_tokens():
     """Get all tokens with optional filtering"""
     # Get query parameters
@@ -1092,8 +1636,17 @@ def get_tokens():
 
     if body_search:
         # Search in both name and text fields
+<<<<<<< HEAD
         name_query = {"name": {"$regex": escape_regex_pattern(body_search), "$options": "i"}}
         text_query = {"text": {"$regex": escape_regex_pattern(body_search), "$options": "i"}}
+=======
+        name_query = {
+            "name": {"$regex": escape_regex_pattern(body_search), "$options": "i"}
+        }
+        text_query = {
+            "text": {"$regex": escape_regex_pattern(body_search), "$options": "i"}
+        }
+>>>>>>> fe30096 (Deployment Tue 09/02/2025 10:47:06.76)
 
         # Use $or to match either field
         if "name" in query:
@@ -1109,7 +1662,11 @@ def get_tokens():
             query["$or"] = [name_query, text_query]
 
     if colors and colors[0]:  # Check if colors is not empty
+<<<<<<< HEAD
         color_query_conditions = [] # Renamed
+=======
+        color_query_conditions = []  # Renamed
+>>>>>>> fe30096 (Deployment Tue 09/02/2025 10:47:06.76)
 
         # Handle special color filters
         if "colorless" in colors:
@@ -1120,14 +1677,26 @@ def get_tokens():
 
         if "multicolor" in colors:
             # Multicolor means the colors array has more than one color
+<<<<<<< HEAD
             color_query_conditions.append({"colors": {"$exists": True, "$not": {"$size": 1}}})
+=======
+            color_query_conditions.append(
+                {"colors": {"$exists": True, "$not": {"$size": 1}}}
+            )
+>>>>>>> fe30096 (Deployment Tue 09/02/2025 10:47:06.76)
             # Remove 'multicolor' from the colors array to avoid confusion
             colors = [c for c in colors if c != "multicolor"]
 
         # Add regular color filters if any remain
         if colors:
             if color_match == "exact":
+<<<<<<< HEAD
                 color_query_conditions.append({"colors": {"$all": colors, "$size": len(colors)}})
+=======
+                color_query_conditions.append(
+                    {"colors": {"$all": colors, "$size": len(colors)}}
+                )
+>>>>>>> fe30096 (Deployment Tue 09/02/2025 10:47:06.76)
             elif color_match == "includes":
                 color_query_conditions.append({"colors": {"$all": colors}})
             elif color_match == "at-most":
@@ -1142,7 +1711,11 @@ def get_tokens():
         if color_query_conditions:
             # Create a color filter condition that combines all color conditions with OR
             color_filter = {"$or": color_query_conditions}
+<<<<<<< HEAD
             
+=======
+
+>>>>>>> fe30096 (Deployment Tue 09/02/2025 10:47:06.76)
             # If there are existing query conditions, combine them with the color filter using AND
             if query:
                 # Create a new AND condition that includes both the existing query and the color filter
@@ -1188,7 +1761,11 @@ def get_tokens():
     return jsonify({"tokens": tokens, "total": total})
 
 
+<<<<<<< HEAD
 @app.route("/api/tokens", methods=["GET"]) # This is the second /api/tokens GET route
+=======
+@app.route("/api/tokens", methods=["GET"])  # This is the second /api/tokens GET route
+>>>>>>> fe30096 (Deployment Tue 09/02/2025 10:47:06.76)
 def get_token_by_query():
     """Get a single token by name using query parameter"""
     try:
@@ -1388,6 +1965,7 @@ def get_multiple_draft_packs():
 def _parse_power_toughness(power_val, toughness_val):
     """Parse power and toughness values, handling special cases like '*'"""
     try:
+<<<<<<< HEAD
         power = int(power_val) if power_val and power_val != '*' else 0
     except (ValueError, TypeError):
         power = 0
@@ -1399,10 +1977,25 @@ def _parse_power_toughness(power_val, toughness_val):
         
     return power, toughness
 
+=======
+        power = int(power_val) if power_val and power_val != "*" else 0
+    except (ValueError, TypeError):
+        power = 0
+
+    try:
+        toughness = int(toughness_val) if toughness_val and toughness_val != "*" else 0
+    except (ValueError, TypeError):
+        toughness = 0
+
+    return power, toughness
+
+
+>>>>>>> fe30096 (Deployment Tue 09/02/2025 10:47:06.76)
 def _calculate_base_score(card):
     """Calculate base score for a card based on type and stats"""
     score = 0
     card_type = card.get("type", "")
+<<<<<<< HEAD
     
     if "Creature" in card_type:
         score += 5  # Creatures are important
@@ -1426,16 +2019,51 @@ def _calculate_base_score(card):
     
     return score
 
+=======
+
+    if "Creature" in card_type:
+        score += 5  # Creatures are important
+
+        power_val = card.get("power", "0")
+        toughness_val = card.get("toughness", "0")
+        power, toughness = _parse_power_toughness(power_val, toughness_val)
+
+        # Cards with '*' in power/toughness are often powerful
+        if power_val == "*" or toughness_val == "*":
+            score += 3
+        else:
+            score += min(power + toughness, 8) / 2
+
+    elif "Instant" in card_type or "Sorcery" in card_type:
+        score += 4  # Spells are good but not as essential as creatures
+
+    # Bonus for rarity
+    rarity_bonus = {"Common": 0, "Uncommon": 1, "Rare": 2, "Mythic Rare": 3}
+    score += rarity_bonus.get(card.get("rarity", "Common"), 0)
+
+    return score
+
+
+>>>>>>> fe30096 (Deployment Tue 09/02/2025 10:47:06.76)
 def _calculate_color_score(card, bot_colors, pick_number):
     """Calculate color preference score for a card"""
     score = 0
     card_colors = card.get("colors", [])
+<<<<<<< HEAD
     
     if not bot_colors:
         return score
     
     matching_colors = len(set(card_colors) & set(bot_colors))
     
+=======
+
+    if not bot_colors:
+        return score
+
+    matching_colors = len(set(card_colors) & set(bot_colors))
+
+>>>>>>> fe30096 (Deployment Tue 09/02/2025 10:47:06.76)
     if matching_colors > 0:
         # Bonus for color match, higher in later picks
         color_bonus = matching_colors * (1 + (pick_number / 5))
@@ -1446,13 +2074,21 @@ def _calculate_color_score(card, bot_colors, pick_number):
     else:
         # Penalty for off-color cards, higher in later picks
         score -= min(pick_number / 3, 3)
+<<<<<<< HEAD
     
     return score
 
+=======
+
+    return score
+
+
+>>>>>>> fe30096 (Deployment Tue 09/02/2025 10:47:06.76)
 def _score_card(card, bot_colors, pack_number, pick_number):
     """Score a single card for bot drafting"""
     score = _calculate_base_score(card)
     score += _calculate_color_score(card, bot_colors, pick_number)
+<<<<<<< HEAD
     
     # Early picks favor strong cards regardless of color
     if pack_number == 1 and pick_number <= 3:
@@ -1463,6 +2099,19 @@ def _score_card(card, bot_colors, pack_number, pick_number):
     
     return score
 
+=======
+
+    # Early picks favor strong cards regardless of color
+    if pack_number == 1 and pick_number <= 3:
+        score += 2
+
+    # Add some randomness to simulate different bot preferences
+    score += random.uniform(0, 2)
+
+    return score
+
+
+>>>>>>> fe30096 (Deployment Tue 09/02/2025 10:47:06.76)
 @app.route("/api/draft/bot-pick", methods=["POST"])
 def bot_draft_pick():
     """Make a bot draft pick based on card evaluation and color preferences"""
@@ -1481,7 +2130,14 @@ def bot_draft_pick():
 
         # Score all available cards
         scored_cards = [
+<<<<<<< HEAD
             {"card": card, "score": _score_card(card, bot_colors, pack_number, pick_number)}
+=======
+            {
+                "card": card,
+                "score": _score_card(card, bot_colors, pack_number, pick_number),
+            }
+>>>>>>> fe30096 (Deployment Tue 09/02/2025 10:47:06.76)
             for card in available_cards
         ]
 
@@ -1490,8 +2146,17 @@ def bot_draft_pick():
         picked_card = scored_cards[0]["card"]
 
         # Set bot colors based on early picks if not already set
+<<<<<<< HEAD
         if (not bot_colors and pack_number == 1 and pick_number <= 2 
             and picked_card.get("colors")):
+=======
+        if (
+            not bot_colors
+            and pack_number == 1
+            and pick_number <= 2
+            and picked_card.get("colors")
+        ):
+>>>>>>> fe30096 (Deployment Tue 09/02/2025 10:47:06.76)
             bot_colors = picked_card.get("colors")
 
         return jsonify({"pickedCard": picked_card, "botColors": bot_colors})
@@ -1613,7 +2278,11 @@ def get_chatgpt_cards():
         # Convert ObjectId to string for each card
         for card in cards:
             card["id"] = str(card.pop("_id"))
+<<<<<<< HEAD
         
+=======
+
+>>>>>>> fe30096 (Deployment Tue 09/02/2025 10:47:06.76)
         return jsonify(cards)
     except Exception as e:
         logging.error(f"Error fetching ChatGPT cards: {str(e)}")
@@ -1622,6 +2291,7 @@ def get_chatgpt_cards():
 
 @app.route("/api/chatgpt_response", methods=["POST"])
 def get_chatgpt_response():
+<<<<<<< HEAD
     """Simulate a ChatGPT response for a given prompt"""
     try:
         data = request.get_json()
@@ -1647,6 +2317,9 @@ def get_chatgpt_response():
 @app.route("/api/gemini/response", methods=["POST"])
 def get_gemini_response():
     """Get a response from Google's Gemini API for a given prompt"""
+=======
+    """Get a response from OpenAI's ChatGPT API for a given prompt"""
+>>>>>>> fe30096 (Deployment Tue 09/02/2025 10:47:06.76)
     try:
         data = request.get_json()
 
@@ -1656,6 +2329,7 @@ def get_gemini_response():
         prompt = data["prompt"]
 
         # Get API key from environment variables
+<<<<<<< HEAD
         api_key = os.getenv("GEMINI_API_KEY")
         if not api_key:
             return jsonify({"error": "Gemini API key not configured"}), 500
@@ -1689,6 +2363,119 @@ def get_gemini_response():
         return jsonify({"error": f"Gemini API error: {http_err.response.status_code}", "details": http_err.response.text}), 500
     except Exception as e:
         logging.error(f"Error fetching Gemini response: {str(e)}")
+=======
+        api_key = os.getenv("OPENAI_API_KEY")
+        if not api_key:
+            return jsonify({"error": "OpenAI API key not configured"}), 500
+
+        # Call OpenAI ChatGPT API
+        url = "https://api.openai.com/v1/chat/completions"
+        headers = {
+            "Content-Type": "application/json",
+            "Authorization": f"Bearer {api_key}",
+        }
+
+        payload = {
+            "model": "gpt-4o-mini",
+            "messages": [{"role": "user", "content": prompt}],
+            "max_tokens": 1000,
+            "temperature": 0.7,
+        }
+
+        response = requests.post(url, headers=headers, json=payload)
+        response.raise_for_status()
+
+        data = response.json()
+
+        # Extract the text from the response
+        chatgpt_response = "Error: Could not parse ChatGPT response."
+        if data.get("choices") and len(data["choices"]) > 0:
+            choice = data["choices"][0]
+            if choice.get("message") and choice["message"].get("content"):
+                chatgpt_response = choice["message"]["content"]
+
+        result = {"response": chatgpt_response, "timestamp": datetime.now().isoformat()}
+
+        return jsonify(result)
+    except requests.exceptions.HTTPError as http_err:
+        logging.error(
+            f"ChatGPT API HTTP error: {http_err} - Response: {http_err.response.text}"
+        )
+        return (
+            jsonify(
+                {
+                    "error": f"ChatGPT API error: {http_err.response.status_code}",
+                    "details": http_err.response.text,
+                }
+            ),
+            500,
+        )
+    except Exception as e:
+        logging.error(f"Error fetching ChatGPT response: {str(e)}")
+        return jsonify({"error": str(e)}), 500
+
+
+@app.route("/api/chatgpt/response", methods=["POST"])
+def get_chatgpt_response_alt():
+    """Get a response from OpenAI's ChatGPT API for a given prompt (alternative endpoint)"""
+    try:
+        data = request.get_json()
+
+        if not data or "prompt" not in data:
+            return jsonify({"error": "No prompt provided"}), 400
+
+        prompt = data["prompt"]
+
+        # Get API key from environment variables
+        api_key = os.getenv("OPENAI_API_KEY")
+        if not api_key:
+            return jsonify({"error": "OpenAI API key not configured"}), 500
+
+        # Call OpenAI ChatGPT API
+        url = "https://api.openai.com/v1/chat/completions"
+        headers = {
+            "Content-Type": "application/json",
+            "Authorization": f"Bearer {api_key}",
+        }
+
+        payload = {
+            "model": "gpt-4o-mini",
+            "messages": [{"role": "user", "content": prompt}],
+            "max_tokens": 1000,
+            "temperature": 0.7,
+        }
+
+        response = requests.post(url, headers=headers, json=payload)
+        response.raise_for_status()
+
+        data = response.json()
+
+        # Extract the text from the response
+        chatgpt_response = "Error: Could not parse ChatGPT response."
+        if data.get("choices") and len(data["choices"]) > 0:
+            choice = data["choices"][0]
+            if choice.get("message") and choice["message"].get("content"):
+                chatgpt_response = choice["message"]["content"]
+
+        result = {"response": chatgpt_response, "timestamp": datetime.now().isoformat()}
+
+        return jsonify(result)
+    except requests.exceptions.HTTPError as http_err:
+        logging.error(
+            f"ChatGPT API HTTP error: {http_err} - Response: {http_err.response.text}"
+        )
+        return (
+            jsonify(
+                {
+                    "error": f"ChatGPT API error: {http_err.response.status_code}",
+                    "details": http_err.response.text,
+                }
+            ),
+            500,
+        )
+    except Exception as e:
+        logging.error(f"Error fetching ChatGPT response: {str(e)}")
+>>>>>>> fe30096 (Deployment Tue 09/02/2025 10:47:06.76)
         return jsonify({"error": str(e)}), 500
 
 
@@ -1706,12 +2493,24 @@ def image_proxy():
             "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36",
             "Accept": "image/webp,image/apng,image/*,*/*;q=0.8",
             "Accept-Language": "en-US,en;q=0.9",
+<<<<<<< HEAD
             "Referer": "https://scryfall.com/", # Example referer
+=======
+            "Referer": "https://scryfall.com/",  # Example referer
+>>>>>>> fe30096 (Deployment Tue 09/02/2025 10:47:06.76)
         }
 
         # Make a request to the image URL with a longer timeout
         response = requests.get(
+<<<<<<< HEAD
             image_url, stream=True, headers=headers, timeout=15, verify=True # verify=True is default, good practice
+=======
+            image_url,
+            stream=True,
+            headers=headers,
+            timeout=15,
+            verify=True,  # verify=True is default, good practice
+>>>>>>> fe30096 (Deployment Tue 09/02/2025 10:47:06.76)
         )
 
         # Check if the request was successful
@@ -1731,7 +2530,11 @@ def image_proxy():
                 headers={
                     "Access-Control-Allow-Origin": "*",
                     "Access-Control-Allow-Credentials": "true",
+<<<<<<< HEAD
                     "Cache-Control": "public, max-age=86400", # Cache for 1 day
+=======
+                    "Cache-Control": "public, max-age=86400",  # Cache for 1 day
+>>>>>>> fe30096 (Deployment Tue 09/02/2025 10:47:06.76)
                 },
             )
 
@@ -1739,12 +2542,20 @@ def image_proxy():
         content_type = response.headers.get("Content-Type", "image/jpeg")
         # Return the image with the correct content type
         return Response(
+<<<<<<< HEAD
             response.content, # Use response.content for non-streamed complete data or iterate response.iter_content for stream=True
+=======
+            response.content,  # Use response.content for non-streamed complete data or iterate response.iter_content for stream=True
+>>>>>>> fe30096 (Deployment Tue 09/02/2025 10:47:06.76)
             content_type=content_type,
             headers={
                 "Access-Control-Allow-Origin": "*",
                 "Access-Control-Allow-Credentials": "true",
+<<<<<<< HEAD
                 "Cache-Control": "public, max-age=86400", # Cache for 1 day
+=======
+                "Cache-Control": "public, max-age=86400",  # Cache for 1 day
+>>>>>>> fe30096 (Deployment Tue 09/02/2025 10:47:06.76)
             },
         )
     except Exception as e:
@@ -1764,7 +2575,11 @@ def image_proxy():
             headers={
                 "Access-Control-Allow-Origin": "*",
                 "Access-Control-Allow-Credentials": "true",
+<<<<<<< HEAD
                 "Cache-Control": "public, max-age=86400", # Cache placeholder too
+=======
+                "Cache-Control": "public, max-age=86400",  # Cache placeholder too
+>>>>>>> fe30096 (Deployment Tue 09/02/2025 10:47:06.76)
             },
         )
 
@@ -1788,9 +2603,17 @@ def get_random_pack():
         if total_cards < pack_size:
             if total_cards < min_size:
                 return (
+<<<<<<< HEAD
                     jsonify({
                         "error": f"Not enough cards in database. Found {total_cards}, minimum required is {min_size}"
                     }),
+=======
+                    jsonify(
+                        {
+                            "error": f"Not enough cards in database. Found {total_cards}, minimum required is {min_size}"
+                        }
+                    ),
+>>>>>>> fe30096 (Deployment Tue 09/02/2025 10:47:06.76)
                     400,
                 )
             pack_size = total_cards
@@ -1798,10 +2621,20 @@ def get_random_pack():
         # Helper to get color identity
         def card_colors(card):
             return card.get("colors", []) or []
+<<<<<<< HEAD
         def is_land(card):
             return "land" in card.get("type", "").lower()
         def is_multicolor(card):
             return len(card_colors(card)) > 1
+=======
+
+        def is_land(card):
+            return "land" in card.get("type", "").lower()
+
+        def is_multicolor(card):
+            return len(card_colors(card)) > 1
+
+>>>>>>> fe30096 (Deployment Tue 09/02/2025 10:47:06.76)
         def is_colorless(card):
             return len(card_colors(card)) == 0
 
@@ -1812,7 +2645,15 @@ def get_random_pack():
         rng = random.Random()
         # 1. Pick 2 cards of each color
         for color in color_codes:
+<<<<<<< HEAD
             color_pool = [c for c in all_cards if color in card_colors(c) and len(card_colors(c)) == 1]
+=======
+            color_pool = [
+                c
+                for c in all_cards
+                if color in card_colors(c) and len(card_colors(c)) == 1
+            ]
+>>>>>>> fe30096 (Deployment Tue 09/02/2025 10:47:06.76)
             rng.shuffle(color_pool)
             selected = []
             for card in color_pool:
@@ -1824,17 +2665,34 @@ def get_random_pack():
             pack.extend(selected)
         # 2. Fill the rest with multicolor, colorless, or lands
         needed = pack_size - len(pack)
+<<<<<<< HEAD
         # Exclude already chosen
         def not_chosen(card):
             return card.get("_id") not in chosen_ids
         multi_color_pool = [c for c in all_cards if (is_multicolor(c) or is_colorless(c) or is_land(c)) and not_chosen(c)]
+=======
+
+        # Exclude already chosen
+        def not_chosen(card):
+            return card.get("_id") not in chosen_ids
+
+        multi_color_pool = [
+            c
+            for c in all_cards
+            if (is_multicolor(c) or is_colorless(c) or is_land(c)) and not_chosen(c)
+        ]
+>>>>>>> fe30096 (Deployment Tue 09/02/2025 10:47:06.76)
         rng.shuffle(multi_color_pool)
         pack.extend(multi_color_pool[:needed])
         # 3. If still not enough, fill with any remaining not-chosen cards
         if len(pack) < pack_size:
             leftovers = [c for c in all_cards if not_chosen(c)]
             rng.shuffle(leftovers)
+<<<<<<< HEAD
             pack.extend(leftovers[:(pack_size - len(pack))])
+=======
+            pack.extend(leftovers[: (pack_size - len(pack))])
+>>>>>>> fe30096 (Deployment Tue 09/02/2025 10:47:06.76)
         # 4. Shuffle final pack
         rng.shuffle(pack)
         # 5. Convert ObjectIds to strings for JSON serialization
@@ -1870,7 +2728,13 @@ def add_card():
             return jsonify({"error": "Mana cost is required"}), 400
         if not data.get("type"):
             return jsonify({"error": "Card type is required"}), 400
+<<<<<<< HEAD
         if not data.get("text"): # Text can sometimes be empty for vanilla creatures. Consider if this is a strict req.
+=======
+        if not data.get(
+            "text"
+        ):  # Text can sometimes be empty for vanilla creatures. Consider if this is a strict req.
+>>>>>>> fe30096 (Deployment Tue 09/02/2025 10:47:06.76)
             return jsonify({"error": "Card text is required"}), 400
         if data.get("colors") is not None and not isinstance(data.get("colors"), list):
             return jsonify({"error": "Card colors must be provided as a list"}), 400
@@ -1881,7 +2745,11 @@ def add_card():
 
         # Create card document with MongoDB ObjectId
         card = {
+<<<<<<< HEAD
             "_id": ObjectId(), # Generate new ObjectId
+=======
+            "_id": ObjectId(),  # Generate new ObjectId
+>>>>>>> fe30096 (Deployment Tue 09/02/2025 10:47:06.76)
             "name": data.get("name"),
             "manaCost": data.get("manaCost"),
             "type": data.get("type"),
@@ -1906,11 +2774,19 @@ def add_card():
         db.cards.insert_one(card)
 
         # Return the created card with properly serialized ID
+<<<<<<< HEAD
         card_id_str = str(card["_id"]) # Use a different variable name
         # card.pop("_id") # No need to pop, just add 'id' field for response
         card_response = card.copy()
         card_response["id"] = card_id_str
         del card_response["_id"] # Remove ObjectId from response if desired
+=======
+        card_id_str = str(card["_id"])  # Use a different variable name
+        # card.pop("_id") # No need to pop, just add 'id' field for response
+        card_response = card.copy()
+        card_response["id"] = card_id_str
+        del card_response["_id"]  # Remove ObjectId from response if desired
+>>>>>>> fe30096 (Deployment Tue 09/02/2025 10:47:06.76)
 
         # logging.info(f"Card '{card_response['name']}' added successfully with ID: {card_id_str}")
         return jsonify(card_response), 201
@@ -1933,7 +2809,11 @@ def update_card(card_id):
             return jsonify({"error": "Mana cost is required"}), 400
         if not data.get("type"):
             return jsonify({"error": "Card type is required"}), 400
+<<<<<<< HEAD
         if not data.get("text"): # Consider if text can be empty
+=======
+        if not data.get("text"):  # Consider if text can be empty
+>>>>>>> fe30096 (Deployment Tue 09/02/2025 10:47:06.76)
             return jsonify({"error": "Card text is required"}), 400
         if data.get("colors") is not None and not isinstance(data.get("colors"), list):
             return jsonify({"error": "Card colors must be provided as a list"}), 400
@@ -1947,8 +2827,13 @@ def update_card(card_id):
         try:
             existing_card_obj_id = ObjectId(card_id)
             existing_card = db.cards.find_one({"_id": existing_card_obj_id})
+<<<<<<< HEAD
         except: # Invalid ObjectId format
             existing_card = db.cards.find_one({"_id": card_id}) # Try as string
+=======
+        except:  # Invalid ObjectId format
+            existing_card = db.cards.find_one({"_id": card_id})  # Try as string
+>>>>>>> fe30096 (Deployment Tue 09/02/2025 10:47:06.76)
             if existing_card:
                 existing_card_obj_id = card_id
 
@@ -1978,7 +2863,11 @@ def update_card(card_id):
         }
 
         # Check for noHistory param in query string
+<<<<<<< HEAD
         no_history = request.args.get('noHistory') == '1'
+=======
+        no_history = request.args.get("noHistory") == "1"
+>>>>>>> fe30096 (Deployment Tue 09/02/2025 10:47:06.76)
 
         # Store the current version in card_history before updating, unless noHistory is set
         if not no_history:
@@ -1988,7 +2877,11 @@ def update_card(card_id):
             history_entry = {
                 "card_id": str(existing_card["_id"]),
                 "timestamp": datetime.utcnow(),
+<<<<<<< HEAD
                 "version_data": history_version_data
+=======
+                "version_data": history_version_data,
+>>>>>>> fe30096 (Deployment Tue 09/02/2025 10:47:06.76)
             }
             db.card_history.insert_one(history_entry)
 
@@ -1998,7 +2891,16 @@ def update_card(card_id):
         )
 
         if result.modified_count == 0:
+<<<<<<< HEAD
             return jsonify({"warning": "No changes were made to the card", "card_id": card_id}), 200
+=======
+            return (
+                jsonify(
+                    {"warning": "No changes were made to the card", "card_id": card_id}
+                ),
+                200,
+            )
+>>>>>>> fe30096 (Deployment Tue 09/02/2025 10:47:06.76)
 
         updated_card = db.cards.find_one({"_id": existing_card_obj_id})
         if updated_card:
@@ -2008,7 +2910,13 @@ def update_card(card_id):
                 del card_cache[cache_key]
             return jsonify(updated_card), 200
         else:
+<<<<<<< HEAD
             logging.error(f"Card ID: {card_id} not found after update, despite modification count > 0.")
+=======
+            logging.error(
+                f"Card ID: {card_id} not found after update, despite modification count > 0."
+            )
+>>>>>>> fe30096 (Deployment Tue 09/02/2025 10:47:06.76)
             return jsonify({"error": "Card not found after update"}), 404
     except Exception as e:
         logging.error(f"Error updating card ID {card_id}: {str(e)}")
@@ -2022,16 +2930,27 @@ def get_card_comments(card_id):
     try:
         # Use caching for comments
         cache_key = f"comments_{card_id}"
+<<<<<<< HEAD
         return get_cached_or_query(cache_key, lambda: get_card_comments_internal(card_id))
+=======
+        return get_cached_or_query(
+            cache_key, lambda: get_card_comments_internal(card_id)
+        )
+>>>>>>> fe30096 (Deployment Tue 09/02/2025 10:47:06.76)
     except Exception as e:
         logging.error(f"Error fetching comments for card ID {card_id}: {str(e)}")
         return jsonify({"error": str(e)}), 500
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> fe30096 (Deployment Tue 09/02/2025 10:47:06.76)
 def get_card_comments_internal(card_id):
     """Internal function for getting card comments"""
     try:
         # Get comments for the card
         comments = list(db.comments.find({"cardId": card_id}).sort("createdAt", -1))
+<<<<<<< HEAD
         
         if not comments:
             return jsonify([]), 200
@@ -2053,12 +2972,43 @@ def get_card_comments_internal(card_id):
         logging.error(f"Error in get_card_comments_internal for card ID {card_id}: {str(e)}")
         return jsonify({"error": str(e)}), 500
 
+=======
+
+        if not comments:
+            return jsonify([]), 200
+
+        # Format the comments for the response
+        formatted_comments = []
+        for comment in comments:
+            formatted_comments.append(
+                {
+                    "id": str(comment["_id"]),
+                    "cardId": comment["cardId"],
+                    "userId": comment.get("userId", "guest"),
+                    "username": comment.get("username", "Guest"),
+                    "content": comment["content"],
+                    "createdAt": comment.get(
+                        "createdAt", datetime.utcnow().isoformat()
+                    ),  # Default if missing
+                }
+            )
+
+        return jsonify(formatted_comments), 200
+    except Exception as e:
+        logging.error(
+            f"Error in get_card_comments_internal for card ID {card_id}: {str(e)}"
+        )
+        return jsonify({"error": str(e)}), 500
+
+
+>>>>>>> fe30096 (Deployment Tue 09/02/2025 10:47:06.76)
 @app.route("/api/comments/card/<card_id>", methods=["POST"])
 def add_authenticated_comment(card_id):
     """Add a new comment for a card (authenticated user)"""
     try:
         # Get the comment data from the request
         data = request.get_json()
+<<<<<<< HEAD
         
         if not data or not data.get("content"):
             # logging.info(f"Attempted to add comment for card {card_id} with no content.")
@@ -2077,6 +3027,28 @@ def add_authenticated_comment(card_id):
         try:
             # Decode token
             decoded = jwt.decode(token, app.config["JWT_SECRET_KEY"], algorithms=["HS256"])
+=======
+
+        if not data or not data.get("content"):
+            # logging.info(f"Attempted to add comment for card {card_id} with no content.")
+            return jsonify({"error": "Comment content is required"}), 400
+
+        # Verify authentication
+        token = None
+        auth_header = request.headers.get("Authorization")
+
+        if not auth_header or not auth_header.startswith("Bearer "):
+            # logging.info(f"Missing auth token for adding comment to card {card_id}.")
+            return jsonify({"error": "Authentication token is missing"}), 401
+
+        token = auth_header.split(" ")[1]
+
+        try:
+            # Decode token
+            decoded = jwt.decode(
+                token, app.config["JWT_SECRET_KEY"], algorithms=["HS256"]
+            )
+>>>>>>> fe30096 (Deployment Tue 09/02/2025 10:47:06.76)
             user_id = decoded["user_id"]
             username = decoded["username"]
         except jwt.ExpiredSignatureError:
@@ -2085,19 +3057,32 @@ def add_authenticated_comment(card_id):
         except jwt.InvalidTokenError:
             # logging.info(f"Invalid token for adding comment to card {card_id}.")
             return jsonify({"error": "Invalid token"}), 401
+<<<<<<< HEAD
             
+=======
+
+>>>>>>> fe30096 (Deployment Tue 09/02/2025 10:47:06.76)
         # Create the comment
         new_comment = {
             "cardId": card_id,
             "userId": user_id,
             "username": username,
             "content": data["content"],
+<<<<<<< HEAD
             "createdAt": datetime.utcnow().isoformat()
         }
         
         # Insert the comment into the database
         result = db.comments.insert_one(new_comment)
         
+=======
+            "createdAt": datetime.utcnow().isoformat(),
+        }
+
+        # Insert the comment into the database
+        result = db.comments.insert_one(new_comment)
+
+>>>>>>> fe30096 (Deployment Tue 09/02/2025 10:47:06.76)
         # Return the created comment
         created_comment = {
             "id": str(result.inserted_id),
@@ -2105,6 +3090,7 @@ def add_authenticated_comment(card_id):
             "userId": new_comment["userId"],
             "username": new_comment["username"],
             "content": new_comment["content"],
+<<<<<<< HEAD
             "createdAt": new_comment["createdAt"]
         }
         
@@ -2114,21 +3100,44 @@ def add_authenticated_comment(card_id):
         logging.error(f"Error adding authenticated comment for card {card_id}: {str(e)}")
         return jsonify({"error": str(e)}), 500
 
+=======
+            "createdAt": new_comment["createdAt"],
+        }
+
+        # logging.info(f"Authenticated comment added to card {card_id} by user {username}.")
+        return jsonify(created_comment), 201
+    except Exception as e:
+        logging.error(
+            f"Error adding authenticated comment for card {card_id}: {str(e)}"
+        )
+        return jsonify({"error": str(e)}), 500
+
+
+>>>>>>> fe30096 (Deployment Tue 09/02/2025 10:47:06.76)
 @app.route("/api/comments/card/<card_id>/guest", methods=["POST"])
 def add_guest_comment(card_id):
     """Add a new comment for a card (guest user)"""
     try:
         # Get the comment data from the request
         data = request.get_json()
+<<<<<<< HEAD
         
         if not data or not data.get("content"):
             # logging.info(f"Attempted to add guest comment for card {card_id} with no content.")
             return jsonify({"error": "Comment content is required"}), 400
             
+=======
+
+        if not data or not data.get("content"):
+            # logging.info(f"Attempted to add guest comment for card {card_id} with no content.")
+            return jsonify({"error": "Comment content is required"}), 400
+
+>>>>>>> fe30096 (Deployment Tue 09/02/2025 10:47:06.76)
         # Validate guest username
         if not data.get("username"):
             # logging.info(f"Attempted to add guest comment for card {card_id} with no username.")
             return jsonify({"error": "Guest username is required"}), 400
+<<<<<<< HEAD
             
         # Create the comment
         new_comment = {
@@ -2142,6 +3151,21 @@ def add_guest_comment(card_id):
         # Insert the comment into the database
         result = db.comments.insert_one(new_comment)
         
+=======
+
+        # Create the comment
+        new_comment = {
+            "cardId": card_id,
+            "userId": "guest",  # Specific ID for guest
+            "username": data["username"],
+            "content": data["content"],
+            "createdAt": datetime.utcnow().isoformat(),
+        }
+
+        # Insert the comment into the database
+        result = db.comments.insert_one(new_comment)
+
+>>>>>>> fe30096 (Deployment Tue 09/02/2025 10:47:06.76)
         # Return the created comment
         created_comment = {
             "id": str(result.inserted_id),
@@ -2149,15 +3173,25 @@ def add_guest_comment(card_id):
             "userId": new_comment["userId"],
             "username": new_comment["username"],
             "content": new_comment["content"],
+<<<<<<< HEAD
             "createdAt": new_comment["createdAt"]
         }
         
+=======
+            "createdAt": new_comment["createdAt"],
+        }
+
+>>>>>>> fe30096 (Deployment Tue 09/02/2025 10:47:06.76)
         # logging.info(f"Guest comment added to card {card_id} by {new_comment['username']}.")
         return jsonify(created_comment), 201
     except Exception as e:
         logging.error(f"Error adding guest comment for card {card_id}: {str(e)}")
         return jsonify({"error": str(e)}), 500
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> fe30096 (Deployment Tue 09/02/2025 10:47:06.76)
 @app.route("/api/comments/<comment_id>", methods=["DELETE"])
 def delete_comment(comment_id):
     """Delete a comment (only for comment owner or admin)"""
@@ -2165,6 +3199,7 @@ def delete_comment(comment_id):
         # Verify authentication
         token = None
         auth_header = request.headers.get("Authorization")
+<<<<<<< HEAD
         
         if not auth_header or not auth_header.startswith("Bearer "):
             # logging.info(f"Missing auth token for deleting comment {comment_id}.")
@@ -2175,6 +3210,20 @@ def delete_comment(comment_id):
         try:
             # Decode token
             decoded = jwt.decode(token, app.config["JWT_SECRET_KEY"], algorithms=["HS256"])
+=======
+
+        if not auth_header or not auth_header.startswith("Bearer "):
+            # logging.info(f"Missing auth token for deleting comment {comment_id}.")
+            return jsonify({"error": "Authentication token is missing"}), 401
+
+        token = auth_header.split(" ")[1]
+
+        try:
+            # Decode token
+            decoded = jwt.decode(
+                token, app.config["JWT_SECRET_KEY"], algorithms=["HS256"]
+            )
+>>>>>>> fe30096 (Deployment Tue 09/02/2025 10:47:06.76)
             user_id = decoded["user_id"]
             is_admin = decoded.get("is_admin", False)
         except jwt.ExpiredSignatureError:
@@ -2183,13 +3232,18 @@ def delete_comment(comment_id):
         except jwt.InvalidTokenError:
             # logging.info(f"Invalid token for deleting comment {comment_id}.")
             return jsonify({"error": "Invalid token"}), 401
+<<<<<<< HEAD
             
+=======
+
+>>>>>>> fe30096 (Deployment Tue 09/02/2025 10:47:06.76)
         # Find the comment
         comment_obj_id = None
         try:
             comment_obj_id = ObjectId(comment_id)
             comment = db.comments.find_one({"_id": comment_obj_id})
         except Exception as e:
+<<<<<<< HEAD
             logging.error(f"Error converting comment ID {comment_id} to ObjectId: {str(e)}")
             return jsonify({"error": "Invalid comment ID format"}), 400
             
@@ -2207,11 +3261,39 @@ def delete_comment(comment_id):
             # This case should be rare if find_one succeeded unless a race condition.
             return jsonify({"error": "Failed to delete comment"}), 500
             
+=======
+            logging.error(
+                f"Error converting comment ID {comment_id} to ObjectId: {str(e)}"
+            )
+            return jsonify({"error": "Invalid comment ID format"}), 400
+
+        if not comment:
+            return jsonify({"error": "Comment not found"}), 404
+
+        # Check if user is the comment owner or an admin
+        if comment.get("userId") != user_id and not is_admin:
+            return (
+                jsonify({"error": "You are not authorized to delete this comment"}),
+                403,
+            )
+
+        # Delete the comment
+        result = db.comments.delete_one({"_id": comment_obj_id})
+
+        if result.deleted_count == 0:
+            # This case should be rare if find_one succeeded unless a race condition.
+            return jsonify({"error": "Failed to delete comment"}), 500
+
+>>>>>>> fe30096 (Deployment Tue 09/02/2025 10:47:06.76)
         return jsonify({"message": "Comment deleted successfully"}), 200
     except Exception as e:
         logging.error(f"Error deleting comment {comment_id}: {str(e)}")
         return jsonify({"error": str(e)}), 500
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> fe30096 (Deployment Tue 09/02/2025 10:47:06.76)
 # Card History API
 @app.route("/api/cards/<card_id>/history", methods=["GET"])
 def get_card_history(card_id):
@@ -2219,15 +3301,26 @@ def get_card_history(card_id):
     try:
         # Use caching for history (shorter TTL since history changes less frequently)
         cache_key = f"history_{card_id}_{request.args.get('page', 1)}_{request.args.get('limit', 10)}"
+<<<<<<< HEAD
         return get_cached_or_query(cache_key, lambda: get_card_history_internal(card_id))
+=======
+        return get_cached_or_query(
+            cache_key, lambda: get_card_history_internal(card_id)
+        )
+>>>>>>> fe30096 (Deployment Tue 09/02/2025 10:47:06.76)
     except Exception as e:
         logging.error(f"Error fetching history for card ID {card_id}: {str(e)}")
         return jsonify({"error": str(e)}), 500
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> fe30096 (Deployment Tue 09/02/2025 10:47:06.76)
 def get_card_history_internal(card_id):
     """Internal function for getting card history"""
     try:
         # Get pagination parameters
+<<<<<<< HEAD
         page = int(request.args.get('page', 1))
         limit = int(request.args.get('limit', 10))
         skip = (page - 1) * limit
@@ -2240,6 +3333,27 @@ def get_card_history_internal(card_id):
         # Count total entries for pagination
         total_entries = db.card_history.count_documents({"card_id": card_id})
         
+=======
+        page = int(request.args.get("page", 1))
+        limit = int(request.args.get("limit", 10))
+        skip = (page - 1) * limit
+
+        # Query the card_history collection - card_id in history is stored as string
+        history_entries = list(
+            db.card_history.find(
+                {
+                    "card_id": card_id
+                }  # Assuming card_id param is string, and history stores it as string
+            )
+            .sort("timestamp", -1)
+            .skip(skip)
+            .limit(limit)
+        )
+
+        # Count total entries for pagination
+        total_entries = db.card_history.count_documents({"card_id": card_id})
+
+>>>>>>> fe30096 (Deployment Tue 09/02/2025 10:47:06.76)
         # Format the response
         formatted_entries = []
         for entry in history_entries:
@@ -2249,6 +3363,7 @@ def get_card_history_internal(card_id):
             if isinstance(entry.get("timestamp"), datetime):
                 entry["timestamp"] = entry["timestamp"].isoformat()
             formatted_entries.append(entry)
+<<<<<<< HEAD
         
         return jsonify({
             "history": formatted_entries,
@@ -2260,6 +3375,24 @@ def get_card_history_internal(card_id):
         logging.error(f"Error in get_card_history_internal for card ID {card_id}: {str(e)}")
         return jsonify({"error": str(e)}), 500
 
+=======
+
+        return jsonify(
+            {
+                "history": formatted_entries,
+                "total": total_entries,
+                "page": page,
+                "limit": limit,
+            }
+        )
+    except Exception as e:
+        logging.error(
+            f"Error in get_card_history_internal for card ID {card_id}: {str(e)}"
+        )
+        return jsonify({"error": str(e)}), 500
+
+
+>>>>>>> fe30096 (Deployment Tue 09/02/2025 10:47:06.76)
 @app.route("/api/cards/<card_id>/history", methods=["POST"])
 @admin_required
 def add_card_history(card_id):
@@ -2275,6 +3408,7 @@ def add_card_history(card_id):
             card = db.cards.find_one({"_id": card_obj_id_to_find})
         except Exception as e:
             logging.error(f"Error converting card ID {card_id} to ObjectId: {str(e)}")
+<<<<<<< HEAD
              # Try as string ID if ObjectId conversion failed
             card = db.cards.find_one({"_id": card_id})
             if card:
@@ -2284,6 +3418,19 @@ def add_card_history(card_id):
             logging.error(f"Card not found for ID: {card_id} when trying to add manual history.")
             return jsonify({"error": "Card not found"}), 404
         
+=======
+            # Try as string ID if ObjectId conversion failed
+            card = db.cards.find_one({"_id": card_id})
+            if card:
+                card_obj_id_to_find = card_id  # card_id is already the string _id
+
+        if not card:
+            logging.error(
+                f"Card not found for ID: {card_id} when trying to add manual history."
+            )
+            return jsonify({"error": "Card not found"}), 404
+
+>>>>>>> fe30096 (Deployment Tue 09/02/2025 10:47:06.76)
         # Use the string version of the card's actual _id for history's card_id field
         actual_card_id_str = str(card["_id"])
 
@@ -2292,9 +3439,15 @@ def add_card_history(card_id):
             # Use the provided custom card data
             version_data = request.json.get("custom_card_data")
             # Ensure the ID in version_data matches the card's actual ID (as string)
+<<<<<<< HEAD
             version_data["_id"] = actual_card_id_str 
             # 'id' field is often used for frontend, so add it too if not present or make it consistent
             version_data["id"] = actual_card_id_str 
+=======
+            version_data["_id"] = actual_card_id_str
+            # 'id' field is often used for frontend, so add it too if not present or make it consistent
+            version_data["id"] = actual_card_id_str
+>>>>>>> fe30096 (Deployment Tue 09/02/2025 10:47:06.76)
         else:
             # Get the current card data to use as version data
             version_data = card.copy()
@@ -2303,6 +3456,7 @@ def add_card_history(card_id):
                 version_data["_id"] = str(version_data["_id"])
             # Add 'id' field if it's not present
             if "id" not in version_data:
+<<<<<<< HEAD
                  version_data["id"] = str(version_data["_id"])
 
         
@@ -2324,10 +3478,47 @@ def add_card_history(card_id):
             "message": "History entry added successfully",
             "entry_id": str(result.inserted_id)
         }), 201
+=======
+                version_data["id"] = str(version_data["_id"])
+
+        # Create history entry
+        history_entry = {
+            "card_id": actual_card_id_str,  # Store the string ID of the card
+            "timestamp": datetime.utcnow(),
+            "version_data": version_data,
+            "note": (
+                request.json.get("note", "Manual history entry")
+                if request.json
+                else "Manual history entry"
+            ),
+            "manual_entry": True,
+        }
+
+        # Insert into card_history collection
+        result = db.card_history.insert_one(history_entry)
+
+        # Return success response
+        logging.info(
+            f"Manual history entry added successfully for card ID: {actual_card_id_str}"
+        )
+        return (
+            jsonify(
+                {
+                    "message": "History entry added successfully",
+                    "entry_id": str(result.inserted_id),
+                }
+            ),
+            201,
+        )
+>>>>>>> fe30096 (Deployment Tue 09/02/2025 10:47:06.76)
     except Exception as e:
         logging.error(f"Error manually adding history for card ID {card_id}: {str(e)}")
         return jsonify({"error": str(e)}), 500
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> fe30096 (Deployment Tue 09/02/2025 10:47:06.76)
 # Deck Builder Utility Functions
 def build_deck(card_pool, draft_id=None, bot_id=None):
     """
@@ -2335,21 +3526,34 @@ def build_deck(card_pool, draft_id=None, bot_id=None):
     Returns: {
         'bot_id': str,
         'lands': List[Card],
+<<<<<<< HEAD
         'non_lands': List[Card], 
+=======
+        'non_lands': List[Card],
+>>>>>>> fe30096 (Deployment Tue 09/02/2025 10:47:06.76)
         'full_deck': List[Card]
     }
     """
     if len(card_pool) != 45:
         raise ValueError(f"Expected 45 cards in pool, got {len(card_pool)}")
+<<<<<<< HEAD
     
     # Set deterministic seed for reproducible results
     seed_value = hash(f"{draft_id}_{bot_id}_{len(card_pool)}") % (2**32)
     random.seed(seed_value)
     
+=======
+
+    # Set deterministic seed for reproducible results
+    seed_value = hash(f"{draft_id}_{bot_id}_{len(card_pool)}") % (2**32)
+    random.seed(seed_value)
+
+>>>>>>> fe30096 (Deployment Tue 09/02/2025 10:47:06.76)
     # Separate lands and non-lands
     lands = [card for card in card_pool if is_land(card)]
     non_lands = [card for card in card_pool if not is_land(card)]
     non_basic_lands = [card for card in lands if not is_basic_land(card)]
+<<<<<<< HEAD
     
     # Determine primary colors from non-land cards
     color_counts = {}
@@ -2404,16 +3608,82 @@ def is_basic_land(card):
     name = card.get('name', '').lower()
     basic_names = ['plains', 'island', 'swamp', 'mountain', 'forest']
     return 'basic' in type_line or any(basic in name for basic in basic_names)
+=======
+
+    # Determine primary colors from non-land cards
+    color_counts = {}
+    for card in non_lands:
+        for color in card.get("colors", []):
+            color_counts[color] = color_counts.get(color, 0) + 1
+
+    # Get top 2 colors, or single color if mono-color
+    sorted_colors = sorted(color_counts.items(), key=lambda x: x[1], reverse=True)
+    primary_colors = [color for color, count in sorted_colors[:2] if count > 0]
+
+    # If no clear colors, default to most common
+    if not primary_colors and sorted_colors:
+        primary_colors = [sorted_colors[0][0]]
+
+    # Select 22-24 non-land cards (prefer cards in primary colors)
+    selected_non_lands = select_deck_spells(non_lands, primary_colors, non_basic_lands)
+
+    # Calculate lands needed (aim for 40 total cards)
+    lands_needed = 40 - len(selected_non_lands)
+
+    # Generate basic lands based on color requirements
+    basic_lands = generate_basic_lands(
+        selected_non_lands, primary_colors, lands_needed - len(non_basic_lands)
+    )
+
+    # Combine all lands
+    deck_lands = non_basic_lands + basic_lands
+
+    # Return structured deck
+    full_deck = selected_non_lands + deck_lands
+
+    # Calculate sideboard (cards not in the main deck)
+    all_non_lands = [card for card in card_pool if not is_land(card)]
+    sideboard = [card for card in all_non_lands if card not in selected_non_lands]
+
+    return {
+        "bot_id": str(bot_id) if bot_id else "unknown",
+        "lands": deck_lands,
+        "non_lands": selected_non_lands,
+        "full_deck": full_deck,
+        "sideboard": sideboard,
+        "colors": primary_colors,
+    }
+
+
+def is_land(card):
+    """Check if a card is a land"""
+    type_line = card.get("type", "").lower()
+    return "land" in type_line
+
+
+def is_basic_land(card):
+    """Check if a card is a basic land"""
+    type_line = card.get("type", "").lower()
+    name = card.get("name", "").lower()
+    basic_names = ["plains", "island", "swamp", "mountain", "forest"]
+    return "basic" in type_line or any(basic in name for basic in basic_names)
+
+>>>>>>> fe30096 (Deployment Tue 09/02/2025 10:47:06.76)
 
 def select_deck_spells(non_lands, primary_colors, non_basic_lands):
     """Select 22-24 non-land cards for the deck"""
     target_spells = min(24, max(22, 40 - 16 - len(non_basic_lands)))
+<<<<<<< HEAD
     
+=======
+
+>>>>>>> fe30096 (Deployment Tue 09/02/2025 10:47:06.76)
     # Score cards based on color matching and power level
     scored_cards = []
     for card in non_lands:
         score = calculate_card_score(card, primary_colors)
         scored_cards.append((card, score))
+<<<<<<< HEAD
     
     # Sort by score and select top cards
     scored_cards.sort(key=lambda x: x[1], reverse=True)
@@ -2429,31 +3699,66 @@ def calculate_card_score(card, primary_colors):
     # Base score from power level (placeholder - could be enhanced)
     score += 50
     
+=======
+
+    # Sort by score and select top cards
+    scored_cards.sort(key=lambda x: x[1], reverse=True)
+    selected = [card for card, score in scored_cards[:target_spells]]
+
+    return selected
+
+
+def calculate_card_score(card, primary_colors):
+    """Calculate a score for how good a card is for the deck"""
+    score = 0
+    card_colors = card.get("colors", [])
+
+    # Base score from power level (placeholder - could be enhanced)
+    score += 50
+
+>>>>>>> fe30096 (Deployment Tue 09/02/2025 10:47:06.76)
     # Color matching bonus
     if not card_colors:  # Colorless cards
         score += 10
     else:
         matching_colors = len(set(card_colors) & set(primary_colors))
         off_colors = len(set(card_colors) - set(primary_colors))
+<<<<<<< HEAD
         
         score += matching_colors * 30  # Bonus for on-color
         score -= off_colors * 20       # Penalty for off-color
     
     # CMC curve considerations (prefer 2-4 mana cards)
     cmc = card.get('cmc', 0)
+=======
+
+        score += matching_colors * 30  # Bonus for on-color
+        score -= off_colors * 20  # Penalty for off-color
+
+    # CMC curve considerations (prefer 2-4 mana cards)
+    cmc = card.get("cmc", 0)
+>>>>>>> fe30096 (Deployment Tue 09/02/2025 10:47:06.76)
     if 2 <= cmc <= 4:
         score += 10
     elif cmc == 1 or cmc == 5:
         score += 5
     elif cmc >= 6:
         score -= 5
+<<<<<<< HEAD
     
     return score
 
+=======
+
+    return score
+
+
+>>>>>>> fe30096 (Deployment Tue 09/02/2025 10:47:06.76)
 def generate_basic_lands(non_lands, primary_colors, basic_lands_needed):
     """Generate appropriate basic lands for the deck"""
     if basic_lands_needed <= 0:
         return []
+<<<<<<< HEAD
     
     if not primary_colors:
         # Default to Plains if no colors
@@ -2469,23 +3774,49 @@ def generate_basic_lands(non_lands, primary_colors, basic_lands_needed):
     total_requirements = sum(color_requirements.values()) or 1
     basic_lands = []
     
+=======
+
+    if not primary_colors:
+        # Default to Plains if no colors
+        primary_colors = ["W"]
+
+    # Calculate color requirements from selected spells
+    color_requirements = {}
+    for card in non_lands:
+        for color in card.get("colors", []):
+            color_requirements[color] = color_requirements.get(color, 0) + 1
+
+    # Distribute basic lands proportionally
+    total_requirements = sum(color_requirements.values()) or 1
+    basic_lands = []
+
+>>>>>>> fe30096 (Deployment Tue 09/02/2025 10:47:06.76)
     for color in primary_colors:
         if color in color_requirements:
             proportion = color_requirements[color] / total_requirements
             lands_for_color = max(1, int(basic_lands_needed * proportion))
+<<<<<<< HEAD
             
+=======
+
+>>>>>>> fe30096 (Deployment Tue 09/02/2025 10:47:06.76)
             # Create basic land cards
             land_name = get_basic_land_name(color)
             for _ in range(min(lands_for_color, basic_lands_needed - len(basic_lands))):
                 basic_land = create_basic_land_card(land_name, color)
                 basic_lands.append(basic_land)
+<<<<<<< HEAD
     
+=======
+
+>>>>>>> fe30096 (Deployment Tue 09/02/2025 10:47:06.76)
     # Fill remaining slots with the primary color
     while len(basic_lands) < basic_lands_needed and primary_colors:
         main_color = primary_colors[0]
         land_name = get_basic_land_name(main_color)
         basic_land = create_basic_land_card(land_name, main_color)
         basic_lands.append(basic_land)
+<<<<<<< HEAD
     
     return basic_lands
 
@@ -2499,11 +3830,29 @@ def get_basic_land_name(color):
         'G': 'Forest'
     }
     return land_names.get(color, 'Plains')
+=======
+
+    return basic_lands
+
+
+def get_basic_land_name(color):
+    """Get the basic land name for a color"""
+    land_names = {
+        "W": "Plains",
+        "U": "Island",
+        "B": "Swamp",
+        "R": "Mountain",
+        "G": "Forest",
+    }
+    return land_names.get(color, "Plains")
+
+>>>>>>> fe30096 (Deployment Tue 09/02/2025 10:47:06.76)
 
 def create_basic_land_card(name, color):
     """Create a basic land card object"""
     # High-quality Scryfall images for basic lands - using well-known stable URLs
     scryfall_basic_land_images = {
+<<<<<<< HEAD
         'Plains': 'https://cards.scryfall.io/large/front/9/d/9dd2d666-7c6b-48ce-93dc-c004ebdd1fe9.jpg?1748706876',
         'Island': 'https://cards.scryfall.io/large/front/b/9/b92ec9f6-a56d-40c6-aee2-7d5e1524c985.jpg?1749278110',
         'Swamp': 'https://cards.scryfall.io/large/front/1/1/1176ebbf-4130-4e4e-ad49-65101a7357b4.jpg?1748707608',
@@ -2524,6 +3873,31 @@ def create_basic_land_card(name, color):
         'isBasicLand': True
     }
 
+=======
+        "Plains": "https://cards.scryfall.io/large/front/9/d/9dd2d666-7c6b-48ce-93dc-c004ebdd1fe9.jpg?1748706876",
+        "Island": "https://cards.scryfall.io/large/front/b/9/b92ec9f6-a56d-40c6-aee2-7d5e1524c985.jpg?1749278110",
+        "Swamp": "https://cards.scryfall.io/large/front/1/1/1176ebbf-4130-4e4e-ad49-65101a7357b4.jpg?1748707608",
+        "Mountain": "https://cards.scryfall.io/large/front/a/1/a18ef64b-a9de-4548-b4d5-168758442db7.jpg?1748706910",
+        "Forest": "https://cards.scryfall.io/large/front/2/0/2036f825-ef57-4a40-b45f-0668d9c8ec6a.jpg?1748707608",
+    }
+
+    image_url = scryfall_basic_land_images.get(
+        name, scryfall_basic_land_images["Plains"]
+    )
+    logging.info(f"Creating basic land {name} with imageUrl: {image_url}")
+
+    return {
+        "id": f"basic_{name.lower()}_{random.randint(1000, 9999)}",
+        "name": name,
+        "type": f"Basic Land — {name}",
+        "colors": [],
+        "cmc": 0,
+        "imageUrl": image_url,
+        "isBasicLand": True,
+    }
+
+
+>>>>>>> fe30096 (Deployment Tue 09/02/2025 10:47:06.76)
 # Show Decks API Endpoint
 @app.route("/api/show-decks", methods=["POST"])
 def show_decks():
@@ -2538,6 +3912,7 @@ def show_decks():
         data = request.get_json()
         if not data:
             return jsonify({"error": "No data provided"}), 400
+<<<<<<< HEAD
         
         draft_id = data.get('draft_id', 'unknown')
         bots = data.get('bots', [])
@@ -2578,10 +3953,54 @@ def show_decks():
             'decks': constructed_decks
         }), 200
         
+=======
+
+        draft_id = data.get("draft_id", "unknown")
+        bots = data.get("bots", [])
+
+        if not bots:
+            return jsonify({"error": "No bots provided"}), 400
+
+        constructed_decks = []
+
+        for bot in bots:
+            bot_id = bot.get("id")
+            bot_name = bot.get("name", f"Bot {bot_id}")
+            picks = bot.get("picks", [])
+
+            try:
+                # Build deck for this bot
+                deck = build_deck(picks, draft_id, bot_id)
+                deck["bot_name"] = bot_name
+                constructed_decks.append(deck)
+
+                logging.info(
+                    f"Built deck for {bot_name}: {len(deck['full_deck'])} cards"
+                )
+
+            except Exception as e:
+                logging.error(f"Error building deck for bot {bot_name}: {str(e)}")
+                # Return error deck for this bot
+                constructed_decks.append(
+                    {
+                        "bot_id": str(bot_id),
+                        "bot_name": bot_name,
+                        "error": str(e),
+                        "lands": [],
+                        "non_lands": picks[:24] if len(picks) >= 24 else picks,
+                        "full_deck": picks[:40] if len(picks) >= 40 else picks,
+                        "colors": [],
+                    }
+                )
+
+        return jsonify({"draft_id": draft_id, "decks": constructed_decks}), 200
+
+>>>>>>> fe30096 (Deployment Tue 09/02/2025 10:47:06.76)
     except Exception as e:
         logging.error(f"Error in show_decks endpoint: {str(e)}")
         return jsonify({"error": str(e)}), 500
 
+<<<<<<< HEAD
 # Health check endpoint
 @app.route('/health', methods=['GET'])
 def health():
@@ -2607,6 +4026,39 @@ def gemini_analyze_card():
         # Encode image as base64
         import base64
         image_b64 = base64.b64encode(image_bytes).decode('utf-8')
+=======
+
+# Health check endpoint
+@app.route("/health", methods=["GET"])
+def health():
+    return jsonify({"status": "healthy"}), 200
+
+
+@app.route("/api/chatgpt-analyze-card", methods=["POST"])
+def chatgpt_analyze_card():
+    """Analyze a card image using OpenAI's GPT-4 Vision API and return generated card JSON."""
+    try:
+        if "image" not in request.files:
+            return jsonify({"error": "No image file provided"}), 400
+        image_file = request.files["image"]
+        image_bytes = image_file.read()
+
+        api_key = os.getenv("OPENAI_API_KEY")
+        if not api_key:
+            return jsonify({"error": "OpenAI API key not configured"}), 500
+
+        # OpenAI GPT-4 Vision API endpoint
+        url = "https://api.openai.com/v1/chat/completions"
+        headers = {
+            "Content-Type": "application/json",
+            "Authorization": f"Bearer {api_key}",
+        }
+
+        # Encode image as base64
+        import base64
+
+        image_b64 = base64.b64encode(image_bytes).decode("utf-8")
+>>>>>>> fe30096 (Deployment Tue 09/02/2025 10:47:06.76)
 
         # Prompt for card extraction
         prompt = (
@@ -2621,6 +4073,7 @@ def gemini_analyze_card():
             "Set imageUrl to an empty string (it will be filled later). "
             "set 'set' to 'Set 4', always. "
             "Try to figure out if the card is custom or not. The field name is 'custom' and should be set to true or false. "
+<<<<<<< HEAD
             "If a field is not present, use an empty string or null."
         )
 
@@ -2638,12 +4091,37 @@ def gemini_analyze_card():
                     ]
                 }
             ]
+=======
+            "If a field is not present, use an empty string or null. "
+            "Return ONLY the JSON object, no additional text or explanation."
+        )
+
+        payload = {
+            "model": "gpt-4o",
+            "messages": [
+                {
+                    "role": "user",
+                    "content": [
+                        {"type": "text", "text": prompt},
+                        {
+                            "type": "image_url",
+                            "image_url": {
+                                "url": f"data:{image_file.mimetype};base64,{image_b64}"
+                            },
+                        },
+                    ],
+                }
+            ],
+            "max_tokens": 2000,
+            "temperature": 0.1,
+>>>>>>> fe30096 (Deployment Tue 09/02/2025 10:47:06.76)
         }
 
         response = requests.post(url, headers=headers, json=payload)
         response.raise_for_status()
         data = response.json()
 
+<<<<<<< HEAD
         # Extract the JSON from Gemini's response (assume it's in the text)
         card_json = None
         if data.get("candidates") and len(data["candidates"]) > 0:
@@ -2653,6 +4131,18 @@ def gemini_analyze_card():
                 # Try to extract JSON from the text
                 import re, json as pyjson
                 match = re.search(r'\{[\s\S]*\}', text)
+=======
+        # Extract the JSON from ChatGPT's response
+        card_json = None
+        if data.get("choices") and len(data["choices"]) > 0:
+            choice = data["choices"][0]
+            if choice.get("message") and choice["message"].get("content"):
+                text = choice["message"]["content"]
+                # Try to extract JSON from the text
+                import re, json as pyjson
+
+                match = re.search(r"\{[\s\S]*\}", text)
+>>>>>>> fe30096 (Deployment Tue 09/02/2025 10:47:06.76)
                 if match:
                     try:
                         card_json = pyjson.loads(match.group(0))
@@ -2661,6 +4151,7 @@ def gemini_analyze_card():
                 else:
                     card_json = text
         if card_json is None:
+<<<<<<< HEAD
             return jsonify({"error": "Could not extract card JSON from Gemini response."}), 500
         return jsonify(card_json)
     except requests.exceptions.HTTPError as http_err:
@@ -2676,3 +4167,36 @@ if __name__ == "__main__":
     
     # Consider using Gunicorn or another WSGI server for production
     app.run(debug=True, host="0.0.0.0", port=int(os.environ.get("PORT", 5000)))
+=======
+            return (
+                jsonify(
+                    {"error": "Could not extract card JSON from ChatGPT response."}
+                ),
+                500,
+            )
+        return jsonify(card_json)
+    except requests.exceptions.HTTPError as http_err:
+        logging.error(
+            f"ChatGPT API HTTP error: {http_err} - Response: {http_err.response.text}"
+        )
+        return (
+            jsonify(
+                {
+                    "error": f"ChatGPT API error: {http_err.response.status_code}",
+                    "details": http_err.response.text,
+                }
+            ),
+            500,
+        )
+    except Exception as e:
+        logging.error(f"Error in chatgpt_analyze_card: {str(e)}")
+        return jsonify({"error": str(e)}), 500
+
+
+if __name__ == "__main__":
+    # Create database indexes for better performance
+    create_indexes()
+
+    # Consider using Gunicorn or another WSGI server for production
+    app.run(debug=True, host="0.0.0.0", port=int(os.environ.get("PORT", 5000)))
+>>>>>>> fe30096 (Deployment Tue 09/02/2025 10:47:06.76)

@@ -614,8 +614,8 @@ export async function getChatGPTResponse(prompt: string): Promise<any> {
   });
 }
 
-export async function getGeminiResponse(prompt: string): Promise<any> {
-  return fetchFromAPI('/gemini/response', {
+export async function getChatGPTResponseAlt(prompt: string): Promise<any> {
+  return fetchFromAPI('/chatgpt/response', {
     method: 'POST',
     body: JSON.stringify({ prompt }),
   });
