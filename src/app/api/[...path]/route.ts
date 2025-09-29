@@ -10,7 +10,13 @@ export async function GET(
   const searchParams = request.nextUrl.searchParams;
   const queryString = searchParams.toString();
   
+  // Debug logging
+  console.log('Original URL:', request.url);
+  console.log('Path segments:', params.path);
+  console.log('Joined path:', path);
+  
   const url = `${BACKEND_URL}/api/${path}${queryString ? '?' + queryString : ''}`;
+  console.log('Final backend URL:', url);
   
   try {
     const response = await fetch(url, {

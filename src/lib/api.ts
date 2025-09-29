@@ -397,9 +397,14 @@ export async function getTokens(params?: {
 // Get a single token by name
 export async function getTokenByName(name: string): Promise<Token> {
   try {
-    // Double-encode slashes and other special characters to ensure proper URL handling
+    // Double-encode slashes and other special characters to ensure proper URL handling with Flask
     const safeTokenName = name.replace(/\//g, '%2F');
-    const response = await fetch(`${API_BASE_URL}/tokens/${encodeURIComponent(safeTokenName)}`, {
+    const url = `/api/tokens/${encodeURIComponent(safeTokenName)}`;
+    console.log('getTokenByName - original name:', name);
+    console.log('getTokenByName - safeTokenName:', safeTokenName);
+    console.log('getTokenByName - final URL:', url);
+    
+    const response = await fetch(url, {
       headers: {
         'Content-Type': 'application/json',
       },

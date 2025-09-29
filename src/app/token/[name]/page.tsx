@@ -23,6 +23,8 @@ export default function TokenDetailPage() {
 
       try {
         const tokenName = decodeURIComponent(params.name as string);
+        console.log('Token page - params.name:', params.name);
+        console.log('Token page - decoded tokenName:', tokenName);
         const data = await getTokenByName(tokenName);
         setToken(data);
       } catch (err) {
