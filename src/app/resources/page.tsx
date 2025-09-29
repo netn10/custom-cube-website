@@ -27,7 +27,7 @@ export default function ResourcesPage() {
       description: 'An easy way to reference all the archetypes in the cube.',
       href: 'https://imgur.com/a/LKg5DDS',
       icon: <FaLayerGroup className="text-blue-500 text-4xl" aria-label="Layer icon" />,
-      buttonLabel: 'View Printable Cards',
+      buttonLabel: 'View Archetypes Printout',
       buttonColor: 'bg-purple-600 hover:bg-purple-700',
       external: true,
     },

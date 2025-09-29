@@ -755,7 +755,7 @@ export default function Home() {
                   The cube is designed to be drafted with 8 players, but works well with any number.
                 </p>
                 <p className="text-lg leading-relaxed">
-                  The cube contains 480 cards, with a focus on synergy over raw power. Each color pair has a distinct 
+                  The cube contains 900 cards, with a focus on synergy over raw power. Each color pair has a distinct 
                   archetype that plays differently from traditional Magic.
                 </p>
                 <div className="pt-4">
