@@ -120,6 +120,7 @@ export async function getCards(params?: {
   type?: string;
   set?: string;
   custom?: boolean | null;
+  has_history?: boolean;
   page?: number;
   limit?: number;
   sort_by?: string;
@@ -155,6 +156,10 @@ export async function getCards(params?: {
   
   if (params?.custom !== undefined && params?.custom !== null) {
     queryParams.append('custom', params.custom ? 'true' : 'false');
+  }
+  
+  if (params?.has_history) {
+    queryParams.append('has_history', 'true');
   }
   
   if (params?.page !== undefined) {

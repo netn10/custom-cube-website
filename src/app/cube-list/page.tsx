@@ -30,6 +30,9 @@ function CubeListContent() {
   const [filterCustom, setFilterCustom] = useState<boolean | null>(
     searchParams.has('custom') ? searchParams.get('custom') === 'true' : null
   );
+  const [filterHasHistory, setFilterHasHistory] = useState(
+    searchParams.get('hasHistory') === 'true'
+  );
   const [historicMode, setHistoricMode] = useState(
     searchParams.get('historicMode') === 'true'
   );
@@ -63,6 +66,7 @@ function CubeListContent() {
     if (filterType) params.set('type', filterType);
     if (filterSet) params.set('set', filterSet);
     if (filterCustom !== null) params.set('custom', filterCustom.toString());
+    if (filterHasHistory) params.set('hasHistory', 'true');
     if (currentPage !== 1) params.set('page', currentPage.toString());
     if (cardsPerPage !== 50) params.set('limit', cardsPerPage.toString());
     if (historicMode) params.set('historicMode', 'true');
@@ -99,6 +103,7 @@ function CubeListContent() {
     filterType,
     filterSet,
     filterCustom,
+    filterHasHistory,
     historicMode
   ]);
 
@@ -117,6 +122,7 @@ function CubeListContent() {
         type?: string;
         set?: string;
         custom?: boolean | null;
+        has_history?: boolean;
         page?: number;
         limit?: number;
         sort_by?: string;
@@ -186,6 +192,10 @@ function CubeListContent() {
       
       if (filterCustom !== null) {
         params.custom = filterCustom;
+      }
+      
+      if (filterHasHistory) {
+        params.has_history = true;
       }
       
       const response = await getCards(params);
@@ -531,6 +541,23 @@ function CubeListContent() {
               <option value="custom">Custom Cards</option>
               <option value="reprint">Reprints</option>
             </select>
+            
+            <div className="mt-3">
+              <label className="flex items-center cursor-pointer">
+                <input
+                  type="checkbox"
+                  className="form-checkbox h-4 w-4 text-blue-600"
+                  checked={filterHasHistory}
+                  onChange={(e) => {
+                    setFilterHasHistory(e.target.checked);
+                    resetPage();
+                  }}
+                />
+                <span className="ml-2 text-sm text-gray-700 dark:text-gray-300">
+                  Only cards with history versions
+                </span>
+              </label>
+            </div>
           </div>
           
           <div>

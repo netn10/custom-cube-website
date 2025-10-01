@@ -198,8 +198,41 @@ class MongoJSONEncoder(json.JSONEncoder):
 app.json_encoder = MongoJSONEncoder
 
 
-# Authentication decorator
+# Authentication decorators
+def token_required(f):
+    """Decorator for endpoints that require authentication (any logged-in user)"""
+    @wraps(f)
+    def decorated(*args, **kwargs):
+        token = None
+
+        # Check if token is in headers
+        auth_header = request.headers.get("Authorization")
+        if auth_header and auth_header.startswith("Bearer "):
+            token = auth_header.split(" ")[1]
+
+        if not token:
+            return jsonify({"error": "Authentication token is missing!"}), 401
+
+        try:
+            # Decode token
+            data = jwt.decode(token, app.config["JWT_SECRET_KEY"], algorithms=["HS256"])
+            current_user = db.users.find_one({"_id": ObjectId(data["user_id"])})
+
+            if not current_user:
+                return jsonify({"error": "User not found!"}), 401
+
+        except jwt.ExpiredSignatureError:
+            return jsonify({"error": "Token expired!"}), 401
+        except jwt.InvalidTokenError:
+            return jsonify({"error": "Invalid token!"}), 401
+
+        return f(*args, **kwargs)
+
+    return decorated
+
+
 def admin_required(f):
+    """Decorator for endpoints that require admin privileges"""
     @wraps(f)
     def decorated(*args, **kwargs):
         token = None
@@ -428,6 +461,7 @@ def get_cards():
     custom = request.args.get("custom", "")
     facedown = request.args.get("facedown", "")
     include_facedown = request.args.get("include_facedown", "").lower() == "true"
+    has_history = request.args.get("has_history", "").lower() == "true"
     page = int(request.args.get("page", 1))
     limit = int(request.args.get("limit", 50))
     sort_by = request.args.get("sort_by", "name")
@@ -440,19 +474,19 @@ def get_cards():
         card_name = search[1:-1]  # Remove quotes
         return get_cached_card(card_name, lambda: get_cards_internal(
             search, body_search, colors, color_match, exclude_colorless,
-            card_type, card_set, custom, facedown, include_facedown,
+            card_type, card_set, custom, facedown, include_facedown, has_history,
             page, limit, sort_by, sort_dir, historic_mode
         ))
     
     # For other queries, use the internal function directly
     return get_cards_internal(
         search, body_search, colors, color_match, exclude_colorless,
-        card_type, card_set, custom, facedown, include_facedown,
+        card_type, card_set, custom, facedown, include_facedown, has_history,
         page, limit, sort_by, sort_dir, historic_mode
     )
 
 def get_cards_internal(search, body_search, colors, color_match, exclude_colorless,
-                      card_type, card_set, custom, facedown, include_facedown,
+                      card_type, card_set, custom, facedown, include_facedown, has_history,
                       page, limit, sort_by, sort_dir, historic_mode):
     """Internal function for getting cards with all the logic"""
 
@@ -582,6 +616,27 @@ def get_cards_internal(search, body_search, colors, color_match, exclude_colorle
     if custom:
         query["custom"] = custom.lower() == "true"
 
+    # Filter cards that have history entries if requested
+    if has_history:
+        # Get all card IDs that have history entries
+        history_card_ids = db.card_history.distinct("card_id")
+        
+        # Convert string IDs to ObjectIds where possible
+        card_ids_with_history = []
+        for card_id in history_card_ids:
+            if isinstance(card_id, str):
+                try:
+                    # Try to convert to ObjectId
+                    card_ids_with_history.append(ObjectId(card_id))
+                except:
+                    # If it's already an ObjectId or conversion fails, add as is
+                    card_ids_with_history.append(card_id)
+            else:
+                card_ids_with_history.append(card_id)
+        
+        # Add to query - only include cards whose _id is in the history list
+        query["_id"] = {"$in": card_ids_with_history}
+
     # Prepare final query - either use the original query or expand it to include historic cards
     final_query = query.copy()
     if cards_to_include and historic_mode:
@@ -646,6 +701,20 @@ def get_cards_internal(search, body_search, colors, color_match, exclude_colorle
             match_stage["custom"] = custom.lower() == "true"
         if card_type:
             match_stage["type"] = {"$regex": escape_regex_pattern(card_type), "$options": "i"}
+        
+        # Filter cards that have history entries if requested
+        if has_history:
+            history_card_ids = db.card_history.distinct("card_id")
+            card_ids_with_history = []
+            for card_id in history_card_ids:
+                if isinstance(card_id, str):
+                    try:
+                        card_ids_with_history.append(ObjectId(card_id))
+                    except:
+                        card_ids_with_history.append(card_id)
+                else:
+                    card_ids_with_history.append(card_id)
+            match_stage["_id"] = {"$in": card_ids_with_history}
             
         if match_stage:
             pipeline.append({"$match": match_stage})
@@ -2372,9 +2441,9 @@ def add_card_history(card_id):
         return jsonify({"error": str(e)}), 500
 
 @app.route("/api/cards/<card_id>/history/<history_entry_id>", methods=["DELETE"])
-@admin_required
+@token_required
 def delete_card_history_entry(card_id, history_entry_id):
-    """Delete a specific history entry for a card (admin only)"""
+    """Delete a specific history entry for a card (requires authentication)"""
     try:
         # Verify the card exists
         card = None

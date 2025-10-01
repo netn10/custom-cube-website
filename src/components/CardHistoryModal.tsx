@@ -424,6 +424,11 @@ export default function CardHistoryModal({ cardId, isOpen, onClose }: CardHistor
                   </div>
                 </div>
                 <h3 className="text-sm font-semibold text-gray-600 dark:text-gray-300 mb-2">History Versions</h3>
+                {!token && (
+                  <div className="mb-2 p-2 bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded text-xs text-blue-700 dark:text-blue-300">
+                    🔒 Login to delete history entries
+                  </div>
+                )}
               </div>
             ) : null}
             {loading ? (
@@ -467,25 +472,29 @@ export default function CardHistoryModal({ cardId, isOpen, onClose }: CardHistor
                           </div>
                         </div>
                         <div className="flex-grow">
-                          <div className="flex justify-between items-start">
-                            <div className="font-medium">{item.version_data.name}</div>
-                            {/* Delete button for admin users */}
-                            {isAdmin && (
+                          <div className="flex justify-between items-start gap-2">
+                            <div className="font-medium flex-grow">{item.version_data.name}</div>
+                            {/* Delete button for authenticated users */}
+                            {token ? (
                               <button
                                 onClick={(e) => {
                                   e.stopPropagation();
                                   setShowDeleteConfirm(item._id);
                                 }}
-                                className="text-red-500 hover:text-red-700 dark:text-red-400 dark:hover:text-red-300 p-1 rounded transition-colors"
-                                title="Delete history entry"
+                                className="text-red-600 hover:text-white bg-red-50 hover:bg-red-600 dark:bg-red-900/30 dark:hover:bg-red-600 p-2 rounded-md transition-all duration-200 flex-shrink-0 border border-red-200 dark:border-red-800 hover:border-red-600"
+                                title="Delete this history version"
                                 disabled={deletingEntry === item._id}
                               >
                                 {deletingEntry === item._id ? (
                                   <div className="animate-spin rounded-full h-4 w-4 border-t-2 border-b-2 border-red-500"></div>
                                 ) : (
-                                  <FaTrash size={12} />
+                                  <FaTrash size={14} />
                                 )}
                               </button>
+                            ) : (
+                              <div className="text-xs text-gray-400 dark:text-gray-500 italic flex-shrink-0" title="Login to delete">
+                                🔒
+                              </div>
                             )}
                           </div>
                           <div className="text-xs text-gray-600 dark:text-gray-300">
