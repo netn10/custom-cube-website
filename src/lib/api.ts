@@ -304,6 +304,34 @@ export async function addCardHistory(
   }
 }
 
+// Delete a specific card history entry (admin only)
+export async function deleteCardHistoryEntry(
+  cardId: string,
+  historyEntryId: string,
+  token: string
+): Promise<{ message: string, deleted_entry_id: string }> {
+  try {
+    const response = await fetch(`${API_BASE_URL}/cards/${cardId}/history/${historyEntryId}`, {
+      method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${token}`
+      }
+    });
+    
+    if (!response.ok) {
+      const errorText = await response.text();
+      console.error(`API error response: ${errorText}`);
+      throw new Error(`API error: ${response.status} - ${errorText}`);
+    }
+    
+    return await response.json();
+  } catch (error) {
+    console.error('Error deleting card history entry:', error);
+    throw error;
+  }
+}
+
 // Archetypes API
 export async function getArchetypes(): Promise<Archetype[]> {
   return fetchFromAPI<Archetype[]>('/archetypes');

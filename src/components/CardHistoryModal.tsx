@@ -1,9 +1,10 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import { FaTimes, FaHistory, FaEye, FaEyeSlash, FaChevronLeft, FaChevronRight, FaCopy, FaCheck } from 'react-icons/fa';
+import { FaTimes, FaHistory, FaEye, FaEyeSlash, FaChevronLeft, FaChevronRight, FaCopy, FaCheck, FaTrash } from 'react-icons/fa';
 import { Card, CardHistoryEntry, CardHistoryResponse } from '@/types/types';
-import { getCardHistory, getCardById, API_BASE_URL } from '@/lib/api';
+import { getCardHistory, getCardById, API_BASE_URL, deleteCardHistoryEntry } from '@/lib/api';
+import { useAuth } from '@/contexts/AuthContext';
 import * as Diff from 'diff';
 
 interface CardHistoryModalProps {
@@ -25,6 +26,11 @@ export default function CardHistoryModal({ cardId, isOpen, onClose }: CardHistor
   const [comparisonVersion, setComparisonVersion] = useState<Card | null>(null);
   const [compareMode, setCompareMode] = useState(false);
   const [copiedField, setCopiedField] = useState<string | null>(null);
+  const [deletingEntry, setDeletingEntry] = useState<string | null>(null);
+  const [showDeleteConfirm, setShowDeleteConfirm] = useState<string | null>(null);
+  
+  // Get authentication context
+  const { isAdmin, token } = useAuth();
 
   // Color mapping for visual representation
   const colorMap: Record<string, string> = {
@@ -99,6 +105,38 @@ export default function CardHistoryModal({ cardId, isOpen, onClose }: CardHistor
     }
   };
 
+  // Function to delete a history entry
+  const handleDeleteHistoryEntry = async (entryId: string) => {
+    if (!token) {
+      setError('Authentication required to delete history entries');
+      return;
+    }
+
+    try {
+      setDeletingEntry(entryId);
+      await deleteCardHistoryEntry(cardId, entryId, token);
+      
+      // Remove the deleted entry from the current history list
+      setHistory(prevHistory => prevHistory.filter(entry => entry._id !== entryId));
+      setTotal(prevTotal => prevTotal - 1);
+      
+      // Clear selection if the deleted entry was selected
+      if (selectedVersion && history.find(entry => entry._id === entryId)?.version_data.id === selectedVersion.id) {
+        setSelectedVersion(null);
+      }
+      if (comparisonVersion && history.find(entry => entry._id === entryId)?.version_data.id === comparisonVersion.id) {
+        setComparisonVersion(null);
+      }
+      
+      setShowDeleteConfirm(null);
+    } catch (error) {
+      console.error('Error deleting history entry:', error);
+      setError('Failed to delete history entry. Please try again.');
+    } finally {
+      setDeletingEntry(null);
+    }
+  };
+
   useEffect(() => {
     if (!isOpen || !cardId) return;
     
@@ -136,7 +174,7 @@ export default function CardHistoryModal({ cardId, isOpen, onClose }: CardHistor
     
     fetchHistory();
     fetchCurrentCard();
-  }, [cardId, isOpen, page, limit, selectedVersion, compareMode]);
+  }, [cardId, isOpen, page, limit]);
   
   const handlePreviousPage = () => {
     if (page > 1) {
@@ -429,7 +467,27 @@ export default function CardHistoryModal({ cardId, isOpen, onClose }: CardHistor
                           </div>
                         </div>
                         <div className="flex-grow">
-                          <div className="font-medium">{item.version_data.name}</div>
+                          <div className="flex justify-between items-start">
+                            <div className="font-medium">{item.version_data.name}</div>
+                            {/* Delete button for admin users */}
+                            {isAdmin && (
+                              <button
+                                onClick={(e) => {
+                                  e.stopPropagation();
+                                  setShowDeleteConfirm(item._id);
+                                }}
+                                className="text-red-500 hover:text-red-700 dark:text-red-400 dark:hover:text-red-300 p-1 rounded transition-colors"
+                                title="Delete history entry"
+                                disabled={deletingEntry === item._id}
+                              >
+                                {deletingEntry === item._id ? (
+                                  <div className="animate-spin rounded-full h-4 w-4 border-t-2 border-b-2 border-red-500"></div>
+                                ) : (
+                                  <FaTrash size={12} />
+                                )}
+                              </button>
+                            )}
+                          </div>
                           <div className="text-xs text-gray-600 dark:text-gray-300">
                             <span dangerouslySetInnerHTML={{ __html: formatManaCost(item.version_data.manaCost) }} />
                           </div>
@@ -765,6 +823,44 @@ export default function CardHistoryModal({ cardId, isOpen, onClose }: CardHistor
             )}
           </div>
         </div>
+        
+        {/* Delete Confirmation Dialog */}
+        {showDeleteConfirm && (
+          <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-60 p-4">
+            <div className="bg-white dark:bg-gray-800 rounded-lg shadow-xl max-w-md w-full p-6">
+              <div className="flex items-center mb-4">
+                <div className="flex-shrink-0">
+                  <FaTrash className="h-6 w-6 text-red-600" />
+                </div>
+                <div className="ml-3">
+                  <h3 className="text-lg font-medium text-gray-900 dark:text-white">
+                    Delete History Entry
+                  </h3>
+                </div>
+              </div>
+              <div className="mb-6">
+                <p className="text-sm text-gray-500 dark:text-gray-400">
+                  Are you sure you want to delete this history entry? This action cannot be undone.
+                </p>
+              </div>
+              <div className="flex justify-end space-x-3">
+                <button
+                  onClick={() => setShowDeleteConfirm(null)}
+                  className="px-4 py-2 text-sm font-medium text-gray-700 dark:text-gray-300 bg-gray-100 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-md hover:bg-gray-200 dark:hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500"
+                >
+                  Cancel
+                </button>
+                <button
+                  onClick={() => handleDeleteHistoryEntry(showDeleteConfirm)}
+                  disabled={deletingEntry === showDeleteConfirm}
+                  className="px-4 py-2 text-sm font-medium text-white bg-red-600 border border-transparent rounded-md hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 disabled:opacity-50 disabled:cursor-not-allowed"
+                >
+                  {deletingEntry === showDeleteConfirm ? 'Deleting...' : 'Delete'}
+                </button>
+              </div>
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );

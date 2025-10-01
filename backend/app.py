@@ -2371,6 +2371,71 @@ def add_card_history(card_id):
         logging.error(f"Error manually adding history for card ID {card_id}: {str(e)}")
         return jsonify({"error": str(e)}), 500
 
+@app.route("/api/cards/<card_id>/history/<history_entry_id>", methods=["DELETE"])
+@admin_required
+def delete_card_history_entry(card_id, history_entry_id):
+    """Delete a specific history entry for a card (admin only)"""
+    try:
+        # Verify the card exists
+        card = None
+        try:
+            # Try as ObjectId first
+            card_obj_id_to_find = ObjectId(card_id)
+            card = db.cards.find_one({"_id": card_obj_id_to_find})
+        except Exception as e:
+            logging.error(f"Error converting card ID {card_id} to ObjectId: {str(e)}")
+            # Try as string ID if ObjectId conversion failed
+            card = db.cards.find_one({"_id": card_id})
+
+        if not card:
+            logging.error(f"Card not found for ID: {card_id} when trying to delete history entry.")
+            return jsonify({"error": "Card not found"}), 404
+
+        # Convert history_entry_id to ObjectId for query
+        try:
+            history_obj_id = ObjectId(history_entry_id)
+            logging.info(f"Attempting to delete history entry with _id: {history_obj_id} for card {card_id}")
+        except Exception as e:
+            logging.error(f"Error converting history entry ID {history_entry_id} to ObjectId: {str(e)}")
+            return jsonify({"error": "Invalid history entry ID"}), 400
+
+        # Log the query being used
+        card_id_for_query = str(card["_id"])
+        logging.info(f"Delete query: _id={history_obj_id}, card_id={card_id_for_query}")
+        
+        # Count how many entries exist before deletion
+        count_before = db.card_history.count_documents({"card_id": card_id_for_query})
+        logging.info(f"History entries for card {card_id} before deletion: {count_before}")
+        
+        # Find and delete the history entry
+        result = db.card_history.delete_one({
+            "_id": history_obj_id,
+            "card_id": card_id_for_query  # Ensure it belongs to the correct card
+        })
+        
+        # Count how many entries exist after deletion
+        count_after = db.card_history.count_documents({"card_id": card_id_for_query})
+        logging.info(f"History entries for card {card_id} after deletion: {count_after}, deleted: {result.deleted_count}")
+
+        if result.deleted_count == 0:
+            logging.warning(f"History entry {history_entry_id} not found for card {card_id}")
+            return jsonify({"error": "History entry not found"}), 404
+
+        # Clear cache for this card's history
+        # Note: Cache clearing not needed as we don't have a persistent cache for history entries
+        # cache_key_pattern = f"history_{card_id}_*"
+        # clear_cache_pattern(cache_key_pattern)
+
+        logging.info(f"History entry {history_entry_id} deleted successfully for card {card_id}")
+        return jsonify({
+            "message": "History entry deleted successfully",
+            "deleted_entry_id": history_entry_id
+        }), 200
+
+    except Exception as e:
+        logging.error(f"Error deleting history entry {history_entry_id} for card ID {card_id}: {str(e)}")
+        return jsonify({"error": str(e)}), 500
+
 # Deck Builder Utility Functions
 def build_deck(card_pool, draft_id=None, bot_id=None):
     """
