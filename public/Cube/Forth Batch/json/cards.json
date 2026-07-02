@@ -1,0 +1,5119 @@
+[
+  {
+    "id": "al-bhed-salvagers-fin",
+    "name": "Al Bhed Salvagers",
+    "manaCost": "{2}{B}",
+    "type": "Creature — Human Artificer Warrior",
+    "rarity": "Uncommon",
+    "text": "Whenever this creature or another creature or artifact you control dies, target opponent loses 1 life and you gain 1 life.",
+    "colors": [
+      "B"
+    ],
+    "custom": false,
+    "archetypes": [
+      "Artifacts"
+    ],
+    "flavorText": "\"We found the airship! The records were right.\"",
+    "artist": "Masateru Ikeda",
+    "power": "2",
+    "toughness": "3",
+    "set": "Set 4",
+    "imageUrl": "/Cube/RealCards/al-bhed-salvagers-fin.jpg"
+  },
+  {
+    "id": "demonic-junker-dft",
+    "name": "Demonic Junker",
+    "manaCost": "{6}{B}",
+    "type": "Artifact — Vehicle",
+    "rarity": "Rare",
+    "text": "Affinity for artifacts (This spell costs {1} less to cast for each artifact you control.)\nWhen this Vehicle enters, for each player, destroy up to one target creature that player controls. If a creature you controlled was destroyed this way, put two +1/+1 counters on this Vehicle.\nCrew 2",
+    "colors": [
+      "B"
+    ],
+    "custom": false,
+    "archetypes": [
+      "Vehicles",
+      "Artifacts"
+    ],
+    "artist": "Stephan Martiniere",
+    "power": "4",
+    "toughness": "3",
+    "set": "Set 4",
+    "imageUrl": "/Cube/RealCards/demonic-junker-dft.jpg"
+  },
+  {
+    "id": "disciple-of-the-vault-2xm",
+    "name": "Disciple of the Vault",
+    "manaCost": "{B}",
+    "type": "Creature — Human Cleric",
+    "rarity": "Uncommon",
+    "text": "Whenever an artifact is put into a graveyard from the battlefield, you may have target opponent lose 1 life.",
+    "colors": [
+      "B"
+    ],
+    "custom": false,
+    "archetypes": [
+      "Artifacts"
+    ],
+    "flavorText": "He stands in the shadow of his lord, Geth, drinking in the dark energies of the Vault.",
+    "artist": "Matt Thompson",
+    "power": "1",
+    "toughness": "1",
+    "set": "Set 4",
+    "imageUrl": "/Cube/RealCards/disciple-of-the-vault-2xm.jpg"
+  },
+  {
+    "id": "dockside-chef-neo",
+    "name": "Dockside Chef",
+    "manaCost": "{B}",
+    "type": "Enchantment Creature — Human Citizen",
+    "rarity": "Uncommon",
+    "text": "{1}{B}, Sacrifice an artifact or creature: Draw a card.",
+    "colors": [
+      "B"
+    ],
+    "custom": false,
+    "archetypes": [
+      "Artifacts"
+    ],
+    "flavorText": "The squirming is how you know it's fresh.",
+    "artist": "Steven Belledin",
+    "power": "1",
+    "toughness": "2",
+    "set": "Set 4",
+    "imageUrl": "/Cube/RealCards/dockside-chef-neo.jpg"
+  },
+  {
+    "id": "grim-bauble-dft",
+    "name": "Grim Bauble",
+    "manaCost": "{B}",
+    "type": "Artifact",
+    "rarity": "Common",
+    "text": "When this artifact enters, target creature an opponent controls gets -2/-2 until end of turn.\n{2}{B}, {T}, Sacrifice this artifact: Surveil 2. (Look at the top two cards of your library, then put any number of them into your graveyard and the rest on top of your library in any order.)",
+    "colors": [
+      "B"
+    ],
+    "custom": false,
+    "archetypes": [
+      "Self-mill"
+    ],
+    "artist": "Wero Gallo",
+    "set": "Set 4",
+    "imageUrl": "/Cube/RealCards/grim-bauble-dft.jpg"
+  },
+  {
+    "id": "saw-in-half-unf",
+    "name": "Saw in Half",
+    "manaCost": "{2}{B}",
+    "type": "Instant",
+    "rarity": "Rare",
+    "text": "Destroy target creature. If that creature dies this way, its controller creates two tokens that are copies of that creature, except their power is half that creature's power and their toughness is half that creature's toughness. Round up each time.",
+    "colors": [
+      "B"
+    ],
+    "custom": false,
+    "archetypes": [
+      "Token Collection"
+    ],
+    "flavorText": "The audience always loves it, but volunteers are divided.",
+    "artist": "Sebastian Giacobino",
+    "set": "Set 4",
+    "imageUrl": "/Cube/RealCards/saw-in-half-unf.jpg"
+  },
+  {
+    "id": "tendrils-of-agony-vma",
+    "name": "Tendrils of Agony",
+    "manaCost": "{2}{B}{B}",
+    "type": "Sorcery",
+    "rarity": "Uncommon",
+    "text": "Target player loses 2 life and you gain 2 life.\nStorm (When you cast this spell, copy it for each spell cast before it this turn. You may choose new targets for the copies.)",
+    "colors": [
+      "B"
+    ],
+    "custom": false,
+    "archetypes": [
+      "Storm"
+    ],
+    "artist": "Volkan Baǵa",
+    "set": "Set 4",
+    "imageUrl": "/Cube/RealCards/tendrils-of-agony-vma.jpg"
+  },
+  {
+    "id": "unearth-2x2",
+    "name": "Unearth",
+    "manaCost": "{B}",
+    "type": "Sorcery",
+    "rarity": "Common",
+    "text": "Return target creature card with mana value 3 or less from your graveyard to the battlefield.\nCycling {2} ({2}, Discard this card: Draw a card.)",
+    "colors": [
+      "B"
+    ],
+    "custom": false,
+    "archetypes": [
+      "Self-mill"
+    ],
+    "flavorText": "No matter how deep you bury it, some evil refuses to stay dead.",
+    "artist": "Jehan Choo",
+    "set": "Set 4",
+    "imageUrl": "/Cube/RealCards/unearth-2x2.jpg"
+  },
+  {
+    "id": "brain-freeze-vma",
+    "name": "Brain Freeze",
+    "manaCost": "{1}{U}",
+    "type": "Instant",
+    "rarity": "Uncommon",
+    "text": "Target player mills three cards.\nStorm (When you cast this spell, copy it for each spell cast before it this turn. You may choose new targets for the copies.)",
+    "colors": [
+      "U"
+    ],
+    "custom": false,
+    "archetypes": [
+      "Storm"
+    ],
+    "artist": "Tim Hildebrandt",
+    "set": "Set 4",
+    "imageUrl": "/Cube/RealCards/brain-freeze-vma.jpg"
+  },
+  {
+    "id": "dramatic-reversal-tle",
+    "name": "Dramatic Reversal",
+    "manaCost": "{1}{U}",
+    "type": "Instant",
+    "rarity": "Common",
+    "text": "Untap all nonland permanents you control.",
+    "colors": [
+      "U"
+    ],
+    "custom": false,
+    "archetypes": [
+      "Storm"
+    ],
+    "flavorText": "\"I beat you all before and I'll do it again!\"\n—Toph",
+    "artist": "Maël Ollivier-Henry",
+    "set": "Set 4",
+    "imageUrl": "/Cube/RealCards/dramatic-reversal-tle.jpg"
+  },
+  {
+    "id": "witness-protection-fdn",
+    "name": "Witness Protection",
+    "manaCost": "{U}",
+    "type": "Enchantment — Aura",
+    "rarity": "Common",
+    "text": "Enchant creature\nEnchanted creature loses all abilities and is a green and white Citizen creature with base power and toughness 1/1 named Legitimate Businessperson. (It loses all other colors, card types, creature types, and names.)",
+    "colors": [
+      "U"
+    ],
+    "custom": false,
+    "archetypes": [],
+    "artist": "Dominik Mayer",
+    "set": "Set 4",
+    "imageUrl": "/Cube/RealCards/witness-protection-fdn.jpg"
+  },
+  {
+    "id": "agatha-s-soul-cauldron-woe",
+    "name": "Agatha's Soul Cauldron",
+    "manaCost": "{2}",
+    "type": "Legendary Artifact",
+    "rarity": "Mythic Rare",
+    "text": "You may spend mana as though it were mana of any color to activate abilities of creatures you control.\nCreatures you control with +1/+1 counters on them have all activated abilities of all creature cards exiled with Agatha's Soul Cauldron.\n{T}: Exile target card from a graveyard. When a creature card is exiled this way, put a +1/+1 counter on target creature you control.",
+    "colors": [],
+    "custom": false,
+    "archetypes": [
+      "Self-mill"
+    ],
+    "artist": "Jason A. Engle",
+    "set": "Set 4",
+    "imageUrl": "/Cube/RealCards/agatha-s-soul-cauldron-woe.jpg"
+  },
+  {
+    "id": "birthing-pod-nph",
+    "name": "Birthing Pod",
+    "manaCost": "{3}{G/P}",
+    "type": "Artifact",
+    "rarity": "Rare",
+    "text": "({G/P} can be paid with either {G} or 2 life.)\n{1}{G/P}, {T}, Sacrifice a creature: Search your library for a creature card with mana value equal to 1 plus the sacrificed creature's mana value, put that card onto the battlefield, then shuffle. Activate only as a sorcery.",
+    "colors": [
+      "G"
+    ],
+    "custom": false,
+    "archetypes": [],
+    "artist": "Daarken",
+    "set": "Set 4",
+    "imageUrl": "/Cube/RealCards/birthing-pod-nph.jpg"
+  },
+  {
+    "id": "assassin-s-trophy-soc",
+    "name": "Assassin's Trophy",
+    "manaCost": "{B}{G}",
+    "type": "Instant",
+    "rarity": "Rare",
+    "text": "Destroy target permanent an opponent controls. Its controller may search their library for a basic land card, put it onto the battlefield, then shuffle.",
+    "colors": [
+      "B",
+      "G"
+    ],
+    "custom": false,
+    "archetypes": [
+      "Control"
+    ],
+    "flavorText": "\"Not just any floriculturist can grow this caliber of nightbloom. We're looking for a rooftop hothouse with quite particular conditions.\"\n—Dr. A of the Foundway Associates",
+    "artist": "Dmitry Burmak",
+    "set": "Set 4",
+    "imageUrl": "/Cube/RealCards/assassin-s-trophy-soc.jpg"
+  },
+  {
+    "id": "grusilda-monster-masher-ust",
+    "name": "Grusilda, Monster Masher",
+    "manaCost": "{3}{B}{R}",
+    "type": "Legendary Creature — Zombie Villain",
+    "rarity": "Rare",
+    "text": "Combined, enchanted, and equipped creatures you control have menace.\n{3}{B}{R}, {T}: Put two target creature cards from graveyards onto the battlefield combined into one creature under your control. (Its power is equal to their total power, its toughness is equal to their total toughness, and it has their names, mana costs, types, text boxes, etc.)",
+    "colors": [
+      "B",
+      "R"
+    ],
+    "custom": false,
+    "archetypes": [
+      "Self-mill"
+    ],
+    "artist": "Mathias Kollros",
+    "power": "4",
+    "toughness": "4",
+    "set": "Set 4",
+    "imageUrl": "/Cube/RealCards/grusilda-monster-masher-ust.jpg"
+  },
+  {
+    "id": "juri-master-of-the-revue-eoc",
+    "name": "Juri, Master of the Revue",
+    "manaCost": "{B}{R}",
+    "type": "Legendary Creature — Human Shaman",
+    "rarity": "Uncommon",
+    "text": "Whenever you sacrifice a permanent, put a +1/+1 counter on Juri.\nWhen Juri dies, it deals damage equal to its power to any target.",
+    "colors": [
+      "B",
+      "R"
+    ],
+    "custom": false,
+    "archetypes": [
+      "Token Collection"
+    ],
+    "flavorText": "\"What a show! We're going to make a killing tonight.\"",
+    "artist": "Dmitry Burmak",
+    "power": "1",
+    "toughness": "1",
+    "set": "Set 4",
+    "imageUrl": "/Cube/RealCards/juri-master-of-the-revue-eoc.jpg"
+  },
+  {
+    "id": "edric-spymaster-of-trest-otc",
+    "name": "Edric, Spymaster of Trest",
+    "manaCost": "{1}{G}{U}",
+    "type": "Legendary Creature — Elf Rogue",
+    "rarity": "Rare",
+    "text": "Whenever a creature deals combat damage to one of your opponents, its controller may draw a card.",
+    "colors": [
+      "G",
+      "U"
+    ],
+    "custom": false,
+    "archetypes": [
+      "Broken Cipher"
+    ],
+    "flavorText": "\"I am not at liberty to reveal my sources, but I can assure you, the price on your head is high.\"",
+    "artist": "Volkan Baǵa",
+    "power": "2",
+    "toughness": "2",
+    "set": "Set 4",
+    "imageUrl": "/Cube/RealCards/edric-spymaster-of-trest-otc.jpg"
+  },
+  {
+    "id": "it-came-from-planet-glurg-unf",
+    "name": "It Came from Planet Glurg",
+    "manaCost": "{X}{X}{G}{U}",
+    "type": "Legendary Creature — Alien Ooze",
+    "rarity": "Mythic Rare",
+    "text": "You may have It Came from Planet Glurg enter as a copy of X different creatures on the battlefield. (It has their total power, total toughness, combined mana costs, all text boxes, names, art, and so on.)",
+    "colors": [
+      "G",
+      "U"
+    ],
+    "custom": false,
+    "archetypes": [],
+    "flavorText": "A sludge with a grudge.",
+    "artist": "Marco Bucci",
+    "power": "0",
+    "toughness": "0",
+    "set": "Set 4",
+    "imageUrl": "/Cube/RealCards/it-came-from-planet-glurg-unf.jpg"
+  },
+  {
+    "id": "rip-spawn-hunter-dsk",
+    "name": "Rip, Spawn Hunter",
+    "manaCost": "{2}{G}{W}",
+    "type": "Legendary Creature — Human Survivor",
+    "rarity": "Rare",
+    "text": "Survival — At the beginning of your second main phase, if Rip is tapped, reveal the top X cards of your library, where X is its power. Put any number of creature and/or Vehicle cards with different powers from among them into your hand. Put the rest on the bottom of your library in a random order.",
+    "colors": [
+      "G",
+      "W"
+    ],
+    "custom": false,
+    "archetypes": [],
+    "artist": "Justine Cruz",
+    "power": "4",
+    "toughness": "4",
+    "set": "Set 4",
+    "imageUrl": "/Cube/RealCards/rip-spawn-hunter-dsk.jpg"
+  },
+  {
+    "id": "yotian-dissident-bro",
+    "name": "Yotian Dissident",
+    "manaCost": "{G}{W}",
+    "type": "Creature — Human Artificer",
+    "rarity": "Uncommon",
+    "text": "Whenever an artifact you control enters, put a +1/+1 counter on target creature you control.",
+    "colors": [
+      "G",
+      "W"
+    ],
+    "custom": false,
+    "archetypes": [
+      "Artifacts"
+    ],
+    "flavorText": "\"I joined this war to protect my homeland, not to destroy someone else's.\"",
+    "artist": "Steve Prescott",
+    "power": "1",
+    "toughness": "1",
+    "set": "Set 4",
+    "imageUrl": "/Cube/RealCards/yotian-dissident-bro.jpg"
+  },
+  {
+    "id": "phlage-titan-of-fire-s-fury-mh3",
+    "name": "Phlage, Titan of Fire's Fury",
+    "manaCost": "{1}{R}{W}",
+    "type": "Legendary Creature — Elder Giant",
+    "rarity": "Mythic Rare",
+    "text": "When Phlage enters, sacrifice it unless it escaped.\nWhenever Phlage enters or attacks, it deals 3 damage to any target and you gain 3 life.\nEscape—{R}{R}{W}{W}, Exile five other cards from your graveyard. (You may cast this card from your graveyard for its escape cost.)",
+    "colors": [
+      "R",
+      "W"
+    ],
+    "custom": false,
+    "archetypes": [
+      "Self-mill"
+    ],
+    "artist": "Lucas Graciano",
+    "power": "6",
+    "toughness": "6",
+    "set": "Set 4",
+    "imageUrl": "/Cube/RealCards/phlage-titan-of-fire-s-fury-mh3.jpg"
+  },
+  {
+    "id": "fallen-shinobi-otc",
+    "name": "Fallen Shinobi",
+    "manaCost": "{3}{U}{B}",
+    "type": "Creature — Zombie Ninja",
+    "rarity": "Rare",
+    "text": "Ninjutsu {2}{U}{B} ({2}{U}{B}, Return an unblocked attacker you control to hand: Put this card onto the battlefield from your hand tapped and attacking.)\nWhenever this creature deals combat damage to a player, that player exiles the top two cards of their library. Until end of turn, you may play those cards without paying their mana costs.",
+    "colors": [
+      "B",
+      "U"
+    ],
+    "custom": false,
+    "archetypes": [
+      "Broken Cipher"
+    ],
+    "artist": "Dmitry Burmak",
+    "power": "5",
+    "toughness": "4",
+    "set": "Set 4",
+    "imageUrl": "/Cube/RealCards/fallen-shinobi-otc.jpg"
+  },
+  {
+    "id": "phoebe-head-of-s-n-e-a-k-ust",
+    "name": "Phoebe, Head of S.N.E.A.K.",
+    "manaCost": "{1}{U}{B}",
+    "type": "Legendary Creature — Human Spy",
+    "rarity": "Mythic Rare",
+    "text": "Phoebe can't be blocked by creatures with flavor text.\n{2}{U}{B}: Phoebe permanently steals target creature's text box. (That creature loses all rules text, flavor text, and watermarks. This creature gains them.)",
+    "colors": [
+      "B",
+      "U"
+    ],
+    "custom": false,
+    "archetypes": [],
+    "flavorText": "This space intentionally left blank.",
+    "artist": "Ralph Horsley",
+    "power": "2",
+    "toughness": "3",
+    "set": "Set 4",
+    "imageUrl": "/Cube/RealCards/phoebe-head-of-s-n-e-a-k-ust.jpg"
+  },
+  {
+    "id": "bohn-beguiling-balladeer-slx",
+    "name": "Bohn, Beguiling Balladeer",
+    "manaCost": "{1}{U}{R}",
+    "type": "Legendary Creature — Human Bard",
+    "rarity": "Rare",
+    "text": "Each nonland card in your hand without foretell has foretell. Its foretell cost is equal to its mana cost reduced by {2}. (During your turn, you may pay {2} and exile it from your hand face down. Cast it on a later turn for its foretell cost.)\nWhenever you cast your second spell each turn, goad target creature an opponent controls.",
+    "colors": [
+      "R",
+      "U"
+    ],
+    "custom": false,
+    "archetypes": [
+      "Storm"
+    ],
+    "artist": "Alix Branwyn",
+    "power": "3",
+    "toughness": "3",
+    "set": "Set 4",
+    "imageUrl": "/Cube/RealCards/bohn-beguiling-balladeer-slx.jpg"
+  },
+  {
+    "id": "athreos-god-of-passage-jou",
+    "name": "Athreos, God of Passage",
+    "manaCost": "{1}{W}{B}",
+    "type": "Legendary Enchantment Creature — God",
+    "rarity": "Mythic Rare",
+    "text": "Indestructible\nAs long as your devotion to white and black is less than seven, Athreos isn't a creature.\nWhenever another creature you own dies, return it to your hand unless target opponent pays 3 life.",
+    "colors": [
+      "B",
+      "W"
+    ],
+    "custom": false,
+    "archetypes": [],
+    "artist": "Ryan Barger",
+    "power": "5",
+    "toughness": "4",
+    "set": "Set 4",
+    "imageUrl": "/Cube/RealCards/athreos-god-of-passage-jou.jpg"
+  },
+  {
+    "id": "urza-lord-protector-bro",
+    "name": "Urza, Lord Protector",
+    "manaCost": "{1}{W}{U}",
+    "type": "Legendary Creature — Human Artificer",
+    "rarity": "Mythic Rare",
+    "text": "Artifact, instant, and sorcery spells you cast cost {1} less to cast.\n{7}: If you both own and control Urza, Lord Protector and an artifact named The Mightstone and Weakstone, exile them, then meld them into Urza, Planeswalker. Activate only as a sorcery.",
+    "colors": [
+      "U",
+      "W"
+    ],
+    "custom": false,
+    "archetypes": [
+      "Storm"
+    ],
+    "artist": "Ryan Pancoast",
+    "power": "2",
+    "toughness": "4",
+    "set": "Set 4",
+    "imageUrl": "/Cube/RealCards/urza-lord-protector-bro.jpg"
+  },
+  {
+    "id": "alloy-animist-bro",
+    "name": "Alloy Animist",
+    "manaCost": "{G}",
+    "type": "Creature — Human Druid",
+    "rarity": "Uncommon",
+    "text": "{2}{G}: Until end of turn, target noncreature artifact you control becomes a 4/4 artifact creature.",
+    "colors": [
+      "G"
+    ],
+    "custom": false,
+    "archetypes": [
+      "Artifacts"
+    ],
+    "flavorText": "\"This metal belonged to Argoth before it was ripped from the ground. Now it belongs to Argoth again.\"",
+    "artist": "Kim Sokol",
+    "power": "1",
+    "toughness": "1",
+    "set": "Set 4",
+    "imageUrl": "/Cube/RealCards/alloy-animist-bro.jpg"
+  },
+  {
+    "id": "bane-of-progress-ecc",
+    "name": "Bane of Progress",
+    "manaCost": "{4}{G}{G}",
+    "type": "Creature — Elemental",
+    "rarity": "Rare",
+    "text": "When this creature enters, destroy all artifacts and enchantments. Put a +1/+1 counter on this creature for each permanent destroyed this way.",
+    "colors": [
+      "G"
+    ],
+    "custom": false,
+    "archetypes": [],
+    "flavorText": "It sees shaped stone and carved wood as mutilations.",
+    "artist": "Lars Grant-West",
+    "power": "2",
+    "toughness": "2",
+    "set": "Set 4",
+    "imageUrl": "/Cube/RealCards/bane-of-progress-ecc.jpg"
+  },
+  {
+    "id": "biorhythm-9ed",
+    "name": "Biorhythm",
+    "manaCost": "{6}{G}{G}",
+    "type": "Sorcery",
+    "rarity": "Rare",
+    "text": "Each player's life total becomes the number of creatures they control.",
+    "colors": [
+      "G"
+    ],
+    "custom": false,
+    "archetypes": [
+      "Control"
+    ],
+    "flavorText": "\"I have seen life's purpose, and now it is my own.\"\n—Kamahl, druid acolyte",
+    "artist": "Ron Spears",
+    "set": "Set 4",
+    "imageUrl": "/Cube/RealCards/biorhythm-9ed.jpg"
+  },
+  {
+    "id": "defend-the-rider-dft",
+    "name": "Defend the Rider",
+    "manaCost": "{G}",
+    "type": "Instant",
+    "rarity": "Uncommon",
+    "text": "Choose one —\n• Target permanent you control gains hexproof and indestructible until end of turn.\n• Create a 1/1 colorless Pilot creature token with \"This token saddles Mounts and crews Vehicles as though its power were 2 greater.\"",
+    "colors": [
+      "G"
+    ],
+    "custom": false,
+    "archetypes": [
+      "Vehicles"
+    ],
+    "flavorText": "Lagorin would not lose another.",
+    "artist": "Raph Lomotan",
+    "set": "Set 4",
+    "imageUrl": "/Cube/RealCards/defend-the-rider-dft.jpg",
+    "relatedTokens": [
+      "1/1 colorless Pilot"
+    ]
+  },
+  {
+    "id": "thunderous-velocipede-dft",
+    "name": "Thunderous Velocipede",
+    "manaCost": "{1}{G}{G}",
+    "type": "Artifact — Vehicle",
+    "rarity": "Mythic Rare",
+    "text": "Trample\nEach other Vehicle and creature you control enters with an additional +1/+1 counter on it if its mana value is 4 or less. Otherwise, it enters with three additional +1/+1 counters on it.\nCrew 3",
+    "colors": [
+      "G"
+    ],
+    "custom": false,
+    "archetypes": [
+      "Vehicles"
+    ],
+    "artist": "Adrián Rodríguez Pérez",
+    "power": "5",
+    "toughness": "5",
+    "set": "Set 4",
+    "imageUrl": "/Cube/RealCards/thunderous-velocipede-dft.jpg"
+  },
+  {
+    "id": "titania-s-song-me4",
+    "name": "Titania's Song",
+    "manaCost": "{3}{G}",
+    "type": "Enchantment",
+    "rarity": "Rare",
+    "text": "Each noncreature artifact loses all abilities and becomes an artifact creature with power and toughness each equal to its mana value. If this enchantment leaves the battlefield, this effect continues until end of turn.",
+    "colors": [
+      "G"
+    ],
+    "custom": false,
+    "archetypes": [
+      "Artifacts"
+    ],
+    "artist": "Kerstin Kaman",
+    "set": "Set 4",
+    "imageUrl": "/Cube/RealCards/titania-s-song-me4.jpg"
+  },
+  {
+    "id": "canyon-slough-msc",
+    "name": "Canyon Slough",
+    "manaCost": "",
+    "type": "Land — Swamp Mountain",
+    "rarity": "Rare",
+    "text": "({T}: Add {B} or {R}.)\nThis land enters tapped.\nCycling {2} ({2}, Discard this card: Draw a card.)",
+    "colors": [],
+    "custom": false,
+    "archetypes": [],
+    "flavorText": "Gamma radiation destroys all it touches, save for an unlucky few.",
+    "artist": "Arthur Yuan",
+    "set": "Set 4",
+    "imageUrl": "/Cube/RealCards/canyon-slough-msc.jpg"
+  },
+  {
+    "id": "darkmoss-bridge-dsc",
+    "name": "Darkmoss Bridge",
+    "manaCost": "",
+    "type": "Artifact Land",
+    "rarity": "Common",
+    "text": "This land enters tapped.\nIndestructible\n{T}: Add {B} or {G}.",
+    "colors": [],
+    "custom": false,
+    "archetypes": [],
+    "flavorText": "The path to power is forged in ruthlessness.",
+    "artist": "Raoul Vitale",
+    "set": "Set 4",
+    "imageUrl": "/Cube/RealCards/darkmoss-bridge-dsc.jpg"
+  },
+  {
+    "id": "fetid-pools-msc",
+    "name": "Fetid Pools",
+    "manaCost": "",
+    "type": "Land — Island Swamp",
+    "rarity": "Rare",
+    "text": "({T}: Add {U} or {B}.)\nThis land enters tapped.\nCycling {2} ({2}, Discard this card: Draw a card.)",
+    "colors": [],
+    "custom": false,
+    "archetypes": [],
+    "flavorText": "\"I was baptized in gamma radiation and reborn into greatness.\"\n—Leader, Samuel Sterns",
+    "artist": "Jonas De Ro",
+    "set": "Set 4",
+    "imageUrl": "/Cube/RealCards/fetid-pools-msc.jpg"
+  },
+  {
+    "id": "irrigated-farmland-msc",
+    "name": "Irrigated Farmland",
+    "manaCost": "",
+    "type": "Land — Plains Island",
+    "rarity": "Rare",
+    "text": "({T}: Add {W} or {U}.)\nThis land enters tapped.\nCycling {2} ({2}, Discard this card: Draw a card.)",
+    "colors": [],
+    "custom": false,
+    "archetypes": [],
+    "flavorText": "\"O beautiful for spacious skies, for amber waves of grain.\"\n—\"America the Beautiful\"",
+    "artist": "Milivoj Ćeran",
+    "set": "Set 4",
+    "imageUrl": "/Cube/RealCards/irrigated-farmland-msc.jpg"
+  },
+  {
+    "id": "scattered-groves-msc",
+    "name": "Scattered Groves",
+    "manaCost": "",
+    "type": "Land — Forest Plains",
+    "rarity": "Rare",
+    "text": "({T}: Add {G} or {W}.)\nThis land enters tapped.\nCycling {2} ({2}, Discard this card: Draw a card.)",
+    "colors": [],
+    "custom": false,
+    "archetypes": [],
+    "flavorText": "\"Just because you have ravaged your natural resources and paved over your forests, do not think we have made the same mistake.\"\n—King T'Chaka, to the United Nations",
+    "artist": "Josu Hernaiz",
+    "set": "Set 4",
+    "imageUrl": "/Cube/RealCards/scattered-groves-msc.jpg"
+  },
+  {
+    "id": "sheltered-thicket-ecc",
+    "name": "Sheltered Thicket",
+    "manaCost": "",
+    "type": "Land — Mountain Forest",
+    "rarity": "Rare",
+    "text": "({T}: Add {R} or {G}.)\nThis land enters tapped.\nCycling {2} ({2}, Discard this card: Draw a card.)",
+    "colors": [],
+    "custom": false,
+    "archetypes": [],
+    "artist": "Sung Choi",
+    "set": "Set 4",
+    "imageUrl": "/Cube/RealCards/sheltered-thicket-ecc.jpg"
+  },
+  {
+    "id": "artist-s-talent-blb",
+    "name": "Artist's Talent",
+    "manaCost": "{1}{R}",
+    "type": "Enchantment — Class",
+    "rarity": "Rare",
+    "text": "(Gain the next level as a sorcery to add its ability.)\nWhenever you cast a noncreature spell, you may discard a card. If you do, draw a card.\n{2}{R}: Level 2\nNoncreature spells you cast cost {1} less to cast.\n{2}{R}: Level 3\nIf a source you control would deal noncombat damage to an opponent or a permanent an opponent controls, it deals that much damage plus 2 instead.",
+    "colors": [
+      "R"
+    ],
+    "custom": false,
+    "archetypes": [
+      "Storm",
+      "Prowess"
+    ],
+    "artist": "Lars Grant-West",
+    "set": "Set 4",
+    "imageUrl": "/Cube/RealCards/artist-s-talent-blb.jpg"
+  },
+  {
+    "id": "pyroclasm-dsk",
+    "name": "Pyroclasm",
+    "manaCost": "{1}{R}",
+    "type": "Sorcery",
+    "rarity": "Uncommon",
+    "text": "Pyroclasm deals 2 damage to each creature.",
+    "colors": [
+      "R"
+    ],
+    "custom": false,
+    "archetypes": [
+      "Control"
+    ],
+    "flavorText": "\"In my younger days, I would meticulously catalog all the terrors I encountered. These days, I mostly just kill them with fire.\"\n—Rip, spawn hunter",
+    "artist": "Néstor Ossandón Leal",
+    "set": "Set 4",
+    "imageUrl": "/Cube/RealCards/pyroclasm-dsk.jpg"
+  },
+  {
+    "id": "trigger-happy-unf",
+    "name": "Trigger Happy",
+    "manaCost": "{1}{R}",
+    "type": "Instant",
+    "rarity": "Uncommon",
+    "text": "Choose a triggered ability of target permanent. It triggers. You control that ability.",
+    "colors": [
+      "R"
+    ],
+    "custom": false,
+    "archetypes": [],
+    "flavorText": "Whenever you copy a triggered ability, you may do a little dance.",
+    "artist": "Jamroz Gary",
+    "set": "Set 4",
+    "imageUrl": "/Cube/RealCards/trigger-happy-unf.jpg"
+  },
+  {
+    "id": "spectacular-pileup-dft",
+    "name": "Spectacular Pileup",
+    "manaCost": "{3}{W}{W}",
+    "type": "Sorcery",
+    "rarity": "Rare",
+    "text": "All creatures and Vehicles lose indestructible until end of turn, then destroy all creatures and Vehicles.\nCycling {2} ({2}, Discard this card: Draw a card.)",
+    "colors": [
+      "W"
+    ],
+    "custom": false,
+    "archetypes": [],
+    "flavorText": "The first four crashes were accidental. Then the Endriders joined the fun.",
+    "artist": "Zezhou Chen",
+    "set": "Set 4",
+    "imageUrl": "/Cube/RealCards/spectacular-pileup-dft.jpg"
+  },
+  {
+    "id": "tempest-technique-tdc",
+    "name": "Tempest Technique",
+    "manaCost": "{3}{W}",
+    "type": "Enchantment — Aura",
+    "rarity": "Rare",
+    "text": "Storm (When you cast this spell, copy it for each spell cast before it this turn. You may choose new targets for the copies. Copies become tokens.)\nEnchant creature you control\nEnchanted creature gets +1/+1 for each enchantment you control.",
+    "colors": [
+      "W"
+    ],
+    "custom": false,
+    "archetypes": [
+      "Enchantments",
+      "Storm"
+    ],
+    "artist": "Nino Vecia",
+    "set": "Set 4",
+    "imageUrl": "/Cube/RealCards/tempest-technique-tdc.jpg"
+  },
+  {
+    "id": "voyager-glidecar-dft",
+    "name": "Voyager Glidecar",
+    "manaCost": "{W}",
+    "type": "Artifact — Vehicle",
+    "rarity": "Rare",
+    "text": "When this Vehicle enters, scry 1.\nTap three other untapped creatures you control: Until end of turn, this Vehicle becomes an artifact creature and gains flying. Put a +1/+1 counter on it.\nCrew 1",
+    "colors": [
+      "W"
+    ],
+    "custom": false,
+    "archetypes": [
+      "Vehicles"
+    ],
+    "flavorText": "\"Exclamatory: Hang on to something.\"",
+    "artist": "Eduardo Francisco",
+    "power": "2",
+    "toughness": "3",
+    "set": "Set 4",
+    "imageUrl": "/Cube/RealCards/voyager-glidecar-dft.jpg"
+  },
+  {
+    "id": "bloodtithe-watcher-fb4",
+    "name": "Bloodtithe Watcher",
+    "manaCost": "{1}{B}",
+    "type": "Creature — Vampire Cleric",
+    "rarity": "Uncommon",
+    "text": "Debtouch (Keep reading.)\nWhen this creature enters or dies, create a 1/1 white Vampire Cleric creature token with \"Whenever this creature deals combat damage to a player, they get that many debt counters. Basically debtouch.\" (At the beginning of that player's end step, they may pay {1} for each debt counter they have. They remove that many counters, then lose 1 life for each debt counter they have.)",
+    "colors": [
+      "B"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "power": "1",
+    "toughness": "1",
+    "artist": "Henrique Lindner",
+    "relatedTokens": [
+      "1/1 white Vampire Cleric"
+    ],
+    "set": "Set 4",
+    "imageUrl": "/Cube/Forth Batch/Black/Bloodtithe%20Watcher.png"
+  },
+  {
+    "id": "cleanser-of-imperfections-fb4",
+    "name": "Cleanser of Imperfections",
+    "manaCost": "{4}{B}",
+    "type": "Artifact Creature — Horror Cleric",
+    "rarity": "Rare",
+    "text": "{2}{B}, {T}: Choose target nonartifact creature and target noncreature artifact you control, from the battlefield and/or from your graveyard. Combine them into one artifact creature. Activate only as a sorcery. (It has their names, mana costs, types, text boxes, etc.)",
+    "colors": [
+      "B"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Artifacts"
+    ],
+    "power": "4",
+    "toughness": "4",
+    "artist": "Dmitry Brushray",
+    "set": "Set 4",
+    "imageUrl": "/Cube/Forth Batch/Black/Cleanser%20of%20Imperfections.png"
+  },
+  {
+    "id": "conjure-from-blood-fb4",
+    "name": "Conjure From Blood",
+    "manaCost": "{B}",
+    "type": "Sorcery",
+    "rarity": "Rare",
+    "text": "Populate twice. You lose life equal to the total power of creature tokens created this way. (To populate, create a token that's a copy of a creature token you control.)",
+    "colors": [
+      "B"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Token Collection"
+    ],
+    "flavorText": "\"Blood is thicker than water, and much more useful.\"\n—Tiany, Aspiring Bloodmage",
+    "artist": "ChatGPT o4",
+    "set": "Set 4",
+    "imageUrl": "/Cube/Forth Batch/Black/Conjure%20From%20Blood.png"
+  },
+  {
+    "id": "deep-sea-horrors-fb4",
+    "name": "Deep-Sea Horrors",
+    "manaCost": "{1}{B}",
+    "type": "Enchantment Creature — Horror",
+    "rarity": "Rare",
+    "text": "Squad {1}{U} (As an additional cost to cast this spell, you may pay {1}{U} any number of times. When this creature enters, create that many tokens that are copies of it.)\nWhen this creature enters, exile a card from your graveyard.\nWhenever this creature deals combat damage to a player, you may cast a card exiled with it without paying its mana cost.",
+    "colors": [
+      "B"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Broken Cipher"
+    ],
+    "power": "1",
+    "toughness": "1",
+    "artist": "Sam Manley",
+    "set": "Set 4",
+    "imageUrl": "/Cube/Forth Batch/Black/Deep-Sea%20Horrors.png"
+  },
+  {
+    "id": "force-of-greed-fb4",
+    "name": "Force of Greed",
+    "manaCost": "{3}{B}{B}",
+    "type": "Instant",
+    "rarity": "Mythic Rare",
+    "text": "You may pay 1 life and exile a black card from your hand rather than pay this spell's mana cost.\nSearch your library for a card, reveal it, put it into your hand, then shuffle. You lose life equal to its mana value if you didn't pay mana to cast this spell.",
+    "colors": [
+      "B"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "artist": "FallenNeophyteDesign",
+    "set": "Set 4",
+    "imageUrl": "/Cube/Forth Batch/Black/Force%20of%20Greed.png"
+  },
+  {
+    "id": "gonti-s-nexus-fb4",
+    "name": "Gonti's Nexus",
+    "type": "Artifact Battle — Nexus",
+    "rarity": "Rare",
+    "text": "(All players protect Nexuses. You and others can attack it. When it's defeated, the player that defeated it exiles it, then puts it onto the battlefield transformed.)\nAt the beginning of each player's upkeep, that player loses 1 life and exiles the top card of your library with a prize counter on it.",
+    "colors": [
+      "B"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "artist": "ChatGPT o4",
+    "relatedFace": "Inside Gonti's Nexus",
+    "set": "Set 4",
+    "imageUrl": "/Cube/Forth Batch/Black/Gonti%E2%80%99s%20Nexus.png"
+  },
+  {
+    "id": "greater-bad-fb4",
+    "name": "Greater Bad",
+    "manaCost": "{2}{B}{B}",
+    "type": "Enchantment",
+    "rarity": "Rare",
+    "text": "Sacrifice a creature: Draw cards equal to the sacrificed creature's power, then discard three cards.",
+    "colors": [
+      "B"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "flavorText": "\"I did it for me. I liked it. I was good at it. And I was really… I was alive.\"\n—Walter White, to Skyler White",
+    "artist": "After Darkness Art",
+    "set": "Set 4",
+    "imageUrl": "/Cube/Forth Batch/Black/Greater%20Bad.png"
+  },
+  {
+    "id": "grimacing-grackle-fb4",
+    "name": "Grimacing Grackle",
+    "manaCost": "{1}{B}",
+    "type": "Creature — Bird",
+    "rarity": "Rare",
+    "text": "Flying\nWhenever this creature deals combat damage to a player, create a Blood token.\n{B}, Sacrifice X tokens: Return target artifact or creature card with mana value X or less from your graveyard to the battlefield.",
+    "colors": [
+      "B"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Token Collection"
+    ],
+    "power": "1",
+    "toughness": "1",
+    "artist": "weirdorangecat",
+    "relatedTokens": [
+      "Blood"
+    ],
+    "set": "Set 4",
+    "imageUrl": "/Cube/Forth Batch/Black/Grimacing%20Grackle.png"
+  },
+  {
+    "id": "inside-gonti-s-nexus-fb4",
+    "name": "Inside Gonti's Nexus",
+    "type": "Artifact Land",
+    "rarity": "Rare",
+    "text": "Indestructible\nYou may play cards from exile with a prize counter on them.\n{T}: Add one mana of any color for each card in exile with a prize counter on it.",
+    "colors": [
+      "B"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "facedown": true,
+    "flavorText": "The Ghirapur Grand Prix was a front for a far more thrilling competition with an even greater prize.",
+    "artist": "ChatGPT o4",
+    "relatedFace": "Gonti's Nexus",
+    "set": "Set 4",
+    "imageUrl": "/Cube/Forth Batch/Black/Inside%20Gonti%E2%80%99s%20Nexus.png"
+  },
+  {
+    "id": "lost-in-the-sauce-fb4",
+    "name": "Lost in the Sauce",
+    "manaCost": "{X}{X}{B}",
+    "type": "Instant",
+    "rarity": "Uncommon",
+    "text": "Target player creates X Food tokens, then up to one target creature gets -1/-1 for each token you control.",
+    "colors": [
+      "B"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Token Collection"
+    ],
+    "flavorText": "Every wise witch will always sob,\n\"If you get baked, you'll lose the job!\"",
+    "artist": "ChatGPT o4",
+    "relatedTokens": [
+      "Food"
+    ],
+    "set": "Set 4",
+    "imageUrl": "/Cube/Forth Batch/Black/Lost%20in%20the%20Sauce.png"
+  },
+  {
+    "id": "loyalty-exploiter-fb4",
+    "name": "Loyalty Exploiter",
+    "manaCost": "{B}",
+    "type": "Creature — Dog Warrior",
+    "rarity": "Rare",
+    "text": "This creature can't block.\nMobilize 1 (Whenever this creature attacks, create a tapped and attacking 1/1 red Warrior creature token. Sacrifice it at the beginning of the next end step.)\n{1}{B}, Sacrifice a token: Return this card from your graveyard to the battlefield.",
+    "colors": [
+      "B"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Token Collection"
+    ],
+    "power": "2",
+    "toughness": "2",
+    "flavorText": "\"They are desperate to find a cause to die for—I will become that cause.\"",
+    "artist": "ChatGPT o4",
+    "relatedTokens": [
+      "1/1 red Warrior"
+    ],
+    "set": "Set 4",
+    "imageUrl": "/Cube/Forth Batch/Black/Loyalty%20Exploiter.png"
+  },
+  {
+    "id": "lying-by-omission-fb4",
+    "name": "Lying By Omission",
+    "manaCost": "{B}",
+    "type": "Sorcery",
+    "rarity": "Rare",
+    "text": "Target player reveals their hand except two cards of their choice. You choose a nonland card from it. That player discards that card.",
+    "colors": [
+      "B"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "flavorText": "The truth always sits comfortably between two lies.",
+    "artist": "ChatGPT o4",
+    "set": "Set 4",
+    "imageUrl": "/Cube/Forth Batch/Black/Lying%20By%20Omission.png"
+  },
+  {
+    "id": "makub-the-dealer-fb4",
+    "name": "Makub, the Dealer",
+    "manaCost": "{1}{B}{B}",
+    "type": "Creature — Wraith Mercenery",
+    "rarity": "Rare",
+    "text": "Decayed (This creature can't block. When it attacks, sacrifice it at end of combat.)\nWhen this creature enters or dies, sacrifice any number of nonland permanents, then draw that many cards.",
+    "colors": [
+      "B"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Blink/ETB/Value"
+    ],
+    "power": "6",
+    "toughness": "6",
+    "artist": "FazzRaven (A.I)",
+    "set": "Set 4",
+    "imageUrl": "/Cube/Forth Batch/Black/Makub%2C%20the%20Dealer.png"
+  },
+  {
+    "id": "monster-mash-fb4",
+    "name": "Monster Mash",
+    "manaCost": "{3}{B}",
+    "type": "Sorcery",
+    "rarity": "Rare",
+    "text": "Put target custom creature card and target noncustom creature card from your graveyard onto the battlefield combined into one creature. (Its power is equal to their total power, its toughness is equal to their total toughness, and it has their names, mana costs, types, text boxes, etc.)",
+    "colors": [
+      "B"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Self-mill"
+    ],
+    "artist": "Francine Bridge",
+    "set": "Set 4",
+    "imageUrl": "/Cube/Forth Batch/Black/Monster%20Mash.png"
+  },
+  {
+    "id": "problematic-trolley-fb4",
+    "name": "Problematic Trolley",
+    "manaCost": "{2}{B}",
+    "type": "Artifact — Vehicle",
+    "rarity": "Rare",
+    "text": "Whenever this Vehicle attacks, choose target creature defending player controls, then that player faces a villainous choice — That player sacrifices that creature, or they sacrifice each other creature they control.\nCrew 1",
+    "colors": [
+      "B"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Vehicles"
+    ],
+    "power": "4",
+    "toughness": "3",
+    "artist": "L. Lullabi & K. Turovec",
+    "set": "Set 4",
+    "imageUrl": "/Cube/Forth Batch/Black/Problematic%20Trolley.png"
+  },
+  {
+    "id": "ran-by-the-numbers-fb4",
+    "name": "Ran by the Numbers",
+    "manaCost": "{B}",
+    "type": "Instant — Lesson",
+    "rarity": "Uncommon",
+    "text": "Destroy target creature if its power plus toughness plus mana value equals a prime number. (2, 3, 5, 7, 11, 13, 17, 19, 23, 29, and 31 are prime numbers.)",
+    "colors": [
+      "B"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "flavorText": "No matter how dull the lesson or dubious the instructor, a Silverquill student will always embrace the opportunity to learn a forbidden spell.",
+    "artist": "ChatGPT o4",
+    "set": "Set 4",
+    "imageUrl": "/Cube/Forth Batch/Black/Ran%20by%20the%20Numbers.png"
+  },
+  {
+    "id": "stargazer-s-tutor-fb4",
+    "name": "Stargazer's Tutor",
+    "manaCost": "{1}{B}",
+    "type": "Sorcery",
+    "rarity": "Rare",
+    "text": "Search your library for a card with mana value less than or equal to the amount of life you've gained and lost this turn, reveal it, put it into your hand, then shuffle.",
+    "colors": [
+      "B"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "flavorText": "\"Absorb the wisdom of success and failure alike, but above all, find truths in the moments that lie between.\"\n—Warion, scholar of the Cosmos",
+    "artist": "EKHIRN",
+    "set": "Set 4",
+    "imageUrl": "/Cube/Forth Batch/Black/Stargazer%E2%80%99s%20Tutor.png"
+  },
+  {
+    "id": "submerge-into-darkness-fb4",
+    "name": "Submerge into Darkness",
+    "manaCost": "{2}{B}",
+    "type": "Sorcery",
+    "rarity": "Uncommon",
+    "text": "Search target player's library for up to four cards and exile them. Then, that player shuffles that many Confusion cards into their library. (Confusion is a colorless sorcery card with no mana cost that has cycling {2}.)",
+    "colors": [
+      "B"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "artist": "Nad N",
+    "set": "Set 4",
+    "imageUrl": "/Cube/Forth Batch/Black/Submerge%20into%20Darkness.png"
+  },
+  {
+    "id": "thalia-rebelious-heretic-fb4",
+    "name": "Thalia, Rebellious Heretic",
+    "manaCost": "{1}{B}",
+    "type": "Legendary Creature — Human Soldier",
+    "rarity": "Rare",
+    "text": "Deathtouch\nNoncreature spells cost 2 life more to cast.",
+    "colors": [
+      "B"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "power": "1",
+    "toughness": "3",
+    "flavorText": "\"It's not just a phase, Avacyn — it's the beginning of the end phase.\"",
+    "artist": "ChatGPT o4",
+    "set": "Set 4",
+    "imageUrl": "/Cube/Forth Batch/Black/Thalia%2C%20Rebelious%20Heretic.png"
+  },
+  {
+    "id": "the-road-to-fenara-fb4",
+    "name": "The Road to Fenara",
+    "manaCost": "{2}{B}",
+    "type": "Enchantment",
+    "rarity": "Rare",
+    "text": "This enchantment enters from your graveyard with a lifelink counter and a finality counter on it.\nAt the beginning of your upkeep, put target creature card from your graveyard onto the battlefield with a finality counter on it. This enchantment deals damage to you equal to its mana value.\n{3}{W}{W}: Return this card from your graveyard to the battlefield.",
+    "colors": [
+      "B"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Self-mill"
+    ],
+    "flavorText": "Even after life, the citizens and the outsiders crave to be in Fenara.",
+    "artist": "PixelRealms",
+    "set": "Set 4",
+    "imageUrl": "/Cube/Forth Batch/Black/The%20Road%20to%20Fenara.png"
+  },
+  {
+    "id": "tormenting-decision-fb4",
+    "name": "Tormenting Decision",
+    "manaCost": "{2}{B}",
+    "type": "Sorcery",
+    "rarity": "Uncommon",
+    "text": "Each opponent loses 3 life unless they discard a card or sacrifice a nonland permanent.\nCipher (Then you may exile this spell card encoded on a creature you control. Whenever that creature deals combat damage to a player, its controller may cast a copy of the encoded card without paying its mana cost.)",
+    "colors": [
+      "B"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Broken Cipher"
+    ],
+    "artist": "Andrew Paranavitana",
+    "set": "Set 4",
+    "imageUrl": "/Cube/Forth Batch/Black/Tormenting%20Decision.png"
+  },
+  {
+    "id": "total-annihilation-fb4",
+    "name": "Total Annihilation",
+    "manaCost": "{3}{B}{B}",
+    "type": "Sorcery",
+    "rarity": "Rare",
+    "text": "Destroy all creatures, enchantments, and Vehicles.",
+    "colors": [
+      "B"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Control"
+    ],
+    "artist": "Peakpx",
+    "set": "Set 4",
+    "imageUrl": "/Cube/Forth Batch/Black/Total%20Annihilation.png"
+  },
+  {
+    "id": "vessel-of-the-cycle-fb4",
+    "name": "Vessel of the Cycle",
+    "manaCost": "{1}{B}",
+    "type": "Creature — Human Druid",
+    "rarity": "Rare",
+    "text": "{T}: If this permanent is a creature, sacrifice a creature. Then, add {B}{B}.\nPetrify from your graveyard {5}{G} ({5}{G}, Exile this card from your graveyard: Create a copy of it, except it's an artifact. Activate only as a sorcery.)",
+    "colors": [
+      "B"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Self-mill"
+    ],
+    "power": "1",
+    "toughness": "1",
+    "artist": "JAGA",
+    "set": "Set 4",
+    "imageUrl": "/Cube/Forth Batch/Black/Vessel%20of%20the%20Cycle.png"
+  },
+  {
+    "id": "begone-fb4",
+    "name": "Begone",
+    "manaCost": "{2}{U}",
+    "type": "Sorcery",
+    "rarity": "Rare",
+    "text": "Choose one —\n• Put target creature on top of its owner's library.\n• Target player puts a Confusion card on top of their library. (Confusion is a colorless sorcery card with no mana cost that has cycling {2}.)\nEntwine {B} (Choose both if you pay the entwine cost.)",
+    "colors": [
+      "U"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "artist": "Matt Forsyth",
+    "set": "Set 4",
+    "imageUrl": "/Cube/Forth Batch/Blue/Begone.png"
+  },
+  {
+    "id": "blend-in-fb4",
+    "name": "Blend In",
+    "manaCost": "{1}{U}",
+    "type": "Enchantment — Aura",
+    "rarity": "Uncommon",
+    "text": "Enchant creature\nEnchanted creature loses all abilities, has hexproof, it can't be blocked and is a green and white Citizen creature with base power and toughness 1/1 named Face in the Crowd.\n{3}: This Aura phases out. Any player may activate this ability.",
+    "colors": [
+      "U"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "artist": "ChatGPT 4o",
+    "set": "Set 4",
+    "imageUrl": "/Cube/Forth Batch/Blue/Blend%20In.png"
+  },
+  {
+    "id": "decorated-sibsig-fb4",
+    "name": "Decorated Sibsig",
+    "manaCost": "{2}{U}",
+    "type": "Creature — Zombie Druid",
+    "rarity": "Rare",
+    "text": "{U}, {T}: Move all counters from another target creature onto this creature. Gain control of all permanents attached to that creature and attach them to this creature.\nRenew — {3}{U}, Exile this card from your graveyard: Put a +1/+1 counter on target creature you control. Move all counters from other creatures onto that creature. Gain control of all permanents attached to those creatures and attach them to that creature. Activate only as a sorcery.",
+    "colors": [
+      "U"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Self-mill"
+    ],
+    "power": "2",
+    "toughness": "2",
+    "artist": "IllustrationsBySam",
+    "set": "Set 4",
+    "imageUrl": "/Cube/Forth Batch/Blue/Decorated%20Sibsig.png"
+  },
+  {
+    "id": "dreams-can-travel-tonight-fb4",
+    "name": "Dreams Can Travel Tonight",
+    "manaCost": "{U}",
+    "type": "Sorcery",
+    "rarity": "Uncommon",
+    "text": "Put up to three land cards from your hand onto the battlefield. Return them to your hand at the beginning of the next end step.",
+    "colors": [
+      "U"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "flavorText": "\"You may drift through endless dreamscapes, but waking always brings you back to where your heart calls home…\"",
+    "artist": "Peter Ryan",
+    "set": "Set 4",
+    "imageUrl": "/Cube/Forth Batch/Blue/Dreams%20Can%20Travel%20Tonight.png"
+  },
+  {
+    "id": "frog-leap-fb4",
+    "name": "Frog Leap",
+    "manaCost": "{U}",
+    "type": "Instant",
+    "rarity": "Uncommon",
+    "text": "Buyback {2}{G} (You may pay an additional {2}{G} as you cast this spell. If you do, put this card into your hand as it resolves.)\nTarget creature gets +3/+3 and gains flying until end of turn. At the end of turn, return it to its owner's hand unless this spell was buybacked.",
+    "colors": [
+      "U"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "flavorText": "With the weight of the whole village resting behind her knees, Helga let go of fear, felt the raindrops—and leapt.",
+    "artist": "ChatGPT o4",
+    "set": "Set 4",
+    "imageUrl": "/Cube/Forth Batch/Blue/Frog%20Leap.png"
+  },
+  {
+    "id": "gifts-unwrapped-fb4",
+    "name": "Gifts Unwrapped",
+    "manaCost": "{3}{U}",
+    "type": "Instant",
+    "rarity": "Rare",
+    "text": "Open four boosters. An opponent chooses two of them. Shuffle the chosen boosters into your library and that opponent shuffles the other two boosters into their library.",
+    "colors": [
+      "U"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "artist": "Dall-E 3 (I hope D. Alexander Gregory is going to sue you holy f)",
+    "set": "Set 4",
+    "imageUrl": "/Cube/Forth Batch/Blue/Gifts%20Unwrapped.png"
+  },
+  {
+    "id": "how-cold-of-you-fb4",
+    "name": "How Cold of You",
+    "manaCost": "{2}{U}",
+    "type": "Sorcery",
+    "rarity": "Uncommon",
+    "text": "This spell costs {2} less to cast if it targets a creature you control.\nTap up to two target creatures and put a stun counter on each of those creatures.\nCipher (Then you may exile this spell card encoded on a creature you control. Whenever that creature deals combat damage to a player, its controller may cast a copy of the encoded card without paying its mana cost.)",
+    "colors": [
+      "U"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Broken Cipher"
+    ],
+    "artist": "DavidMahl",
+    "set": "Set 4",
+    "imageUrl": "/Cube/Forth Batch/Blue/How%20Cold%20of%20You.png"
+  },
+  {
+    "id": "identity-theft-fb4",
+    "name": "Identity Theft",
+    "manaCost": "{1}{U}",
+    "type": "Sorcery",
+    "rarity": "Rare",
+    "text": "Populate (Create a token that's a copy of a creature token you control.)\nCipher (Then you may exile this spell card encoded on a creature you control. Whenever that creature deals combat damage to a player, its controller may cast a copy of the encoded card without paying its mana cost.)",
+    "colors": [
+      "U"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Broken Cipher"
+    ],
+    "artist": "ChatGPT o4",
+    "set": "Set 4",
+    "imageUrl": "/Cube/Forth Batch/Blue/Identity%20Theft.png"
+  },
+  {
+    "id": "magecaster-page-fb4",
+    "name": "Magecaster Page",
+    "manaCost": "{2}{U}",
+    "type": "Artifact",
+    "rarity": "Rare",
+    "text": "Flash\n{1}{U}, {T}, Discard a card: Create a Snapcaster Mage token. (It's a 2/1 {1}{U} Human Wizard with \"When this creature enters, target instant or sorcery card in your graveyard gains flashback until end of turn. The flashback cost is equal to its mana cost.\")",
+    "colors": [
+      "U"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Self-mill"
+    ],
+    "artist": "ChatGPT o4",
+    "relatedTokens": [
+      "Snapcaster Mage"
+    ],
+    "set": "Set 4",
+    "imageUrl": "/Cube/Forth Batch/Blue/Magecaster%20Page.png"
+  },
+  {
+    "id": "mental-breakdown-fb4",
+    "name": "Mental Breakdown",
+    "manaCost": "{1}{U}{U}",
+    "type": "Battle Enchantment — Aura State",
+    "rarity": "Rare",
+    "text": "(Enchanted creature's controller defends this State. When it's defeated, the owner of enchanted creature exiles this State, then cast it transformed.)\nEnchant creature you don't own\nYou control enchanted creature.",
+    "colors": [
+      "U"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "artist": "ChatGPT o4",
+    "relatedFace": "Not Myself Lately",
+    "set": "Set 4",
+    "imageUrl": "/Cube/Forth Batch/Blue/Mental%20Breakdown.png"
+  },
+  {
+    "id": "muddle-with-existance-fb4",
+    "name": "Muddle with Existence",
+    "manaCost": "{U}",
+    "type": "Instant",
+    "rarity": "Uncommon",
+    "text": "Choose one —\n• Until end of turn, cards can't leave exile.\n• Exile target artifact or enchantment, then return that card to the battlefield under its owner's control.\nEntwine {1}{W} (Choose both if you pay the entwine cost.)",
+    "colors": [
+      "U"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "artist": "sakimori_st30",
+    "set": "Set 4",
+    "imageUrl": "/Cube/Forth Batch/Blue/Muddle%20with%20Existance.png"
+  },
+  {
+    "id": "not-myself-lately-fb4",
+    "name": "Not Myself Lately",
+    "type": "Sorcery",
+    "rarity": "Rare",
+    "text": "You may cast this spell transformed. If you don't, draw three cards.",
+    "colors": [
+      "U"
+    ],
+    "custom": true,
+    "facedown": true,
+    "archetypes": [],
+    "flavorText": "\"Sometimes, I don't feel like myself—like something else is wearing my skin, looking through my eyes. If you're hearing this… you will understand soon enough.\"\n—Found Cassette, Covered in Oil",
+    "artist": "ChatGPT o4",
+    "relatedFace": "Mental Breakdown",
+    "set": "Set 4",
+    "imageUrl": "/Cube/Forth Batch/Blue/Not%20Myself%20Lately.png"
+  },
+  {
+    "id": "nyxification-fb4",
+    "name": "Nyxification",
+    "manaCost": "{2}{U}",
+    "type": "Enchantment",
+    "rarity": "Rare",
+    "text": "Creatures you control are enchantments in addition to their other types. The same is true for creature spells you control and creature cards you own that aren't on the battlefield.\n{2}{U}: Target enchantment becomes an enchantment creature with power and toughness each equal to its mana value until end of turn.",
+    "colors": [
+      "U"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Enchantments"
+    ],
+    "artist": "Tashi Nakia",
+    "set": "Set 4",
+    "imageUrl": "/Cube/Forth Batch/Blue/Nyxification.png"
+  },
+  {
+    "id": "orca-war-beast-fb4",
+    "name": "Orca War-Beast",
+    "manaCost": "{4}{U}{U}",
+    "type": "Creature — Leviathan Beast Mount",
+    "rarity": "Rare",
+    "text": "Ward {4}\nWhenever this creature attacks while saddled, untap all artifacts and creatures you control and tap all artifacts and creatures you don't control.\nSaddle 4 (Tap any number of other creatures you control with total power 6 or more: This Mount becomes saddled until end of turn. Saddle only as a sorcery.)",
+    "colors": [
+      "U"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "power": "6",
+    "toughness": "6",
+    "artist": "Davesrightmind",
+    "set": "Set 4",
+    "imageUrl": "/Cube/Forth Batch/Blue/Orca%20War-Beast.png"
+  },
+  {
+    "id": "pay-day-fb4",
+    "name": "Pay Day",
+    "manaCost": "{4}{U}",
+    "type": "Sorcery",
+    "rarity": "Common",
+    "text": "Tax 3 (The next spell each of your opponents cast costs {3} more to cast. This doesn't end at the end of turn.)\nDraw a card.",
+    "colors": [
+      "U"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "flavorText": "The Azorius hire tax collectors whose dedication runs so deep, they'd still do the job for free.",
+    "artist": "Based on art by RenMoraes",
+    "set": "Set 4",
+    "imageUrl": "/Cube/Forth Batch/Blue/Pay%20Day.png"
+  },
+  {
+    "id": "perish-that-thought-fb4",
+    "name": "Perish That Thought",
+    "manaCost": "{U}",
+    "type": "Sorcery",
+    "rarity": "Rare",
+    "text": "Target player reveals their hand. You choose a nonland card from it. That player exiles that card, then draws a card.",
+    "colors": [
+      "U"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "flavorText": "\"One day I imagined myself to be sad. It was a great day, for to summon sorrow from nothing is to admit it once had meaning. In pretending to ache, I remembered all that had once made me whole.\"",
+    "artist": "ChatGPT o4",
+    "set": "Set 4",
+    "imageUrl": "/Cube/Forth Batch/Blue/Perish%20That%20Thought.png"
+  },
+  {
+    "id": "plesiosplash-fb4",
+    "name": "Plesiosplash",
+    "manaCost": "{U}",
+    "type": "Enchantment Creature — Elemental",
+    "rarity": "Rare",
+    "text": "Whenever this creature dies, discard a card. If you do, draw a card.\nYou may cast this card from your graveyard using its evoke ability.\nEvoke {2}{R} (You may cast this spell for its evoke cost. If you do, it's sacrificed when it enters.)",
+    "colors": [
+      "U"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Self-mill"
+    ],
+    "power": "1",
+    "toughness": "1",
+    "artist": "Hurca!",
+    "set": "Set 4",
+    "imageUrl": "/Cube/Forth Batch/Blue/Plesiosplash.png"
+  },
+  {
+    "id": "point-and-laugh-fb4",
+    "name": "Point and Laugh",
+    "manaCost": "{U}",
+    "type": "Instant",
+    "rarity": "Common",
+    "text": "Create a Cursed Role token attached to target creature. (If you control another Role on it, put that one into the graveyard. Enchanted creature is 1/1.)\nDraw a card.",
+    "colors": [
+      "U"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "flavorText": "Most tales of Eldraine are epic tales of heroism and grandeur. This one… barely croaks.",
+    "artist": "ChatGPT o4",
+    "relatedTokens": [
+      "Cursed Role"
+    ],
+    "set": "Set 4",
+    "imageUrl": "/Cube/Forth Batch/Blue/Point%20and%20Laugh.png"
+  },
+  {
+    "id": "protective-custody-fb4",
+    "name": "Protective Custody",
+    "manaCost": "{1}{U}{U}",
+    "type": "Enchantment — Aura",
+    "rarity": "Rare",
+    "text": "Enchant creature\nYou control enchanted creature.\nEnchanted creature loses all abilities and is a green and white Citizen creature with base power and toughness 1/1 named Familiar Stranger. (It loses all other colors, card types, creature types, and names.)",
+    "colors": [
+      "U"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "artist": "ChatGPT o4",
+    "set": "Set 4",
+    "imageUrl": "/Cube/Forth Batch/Blue/Protective%20Custody.png"
+  },
+  {
+    "id": "savvy-seagull-fb4",
+    "name": "Savvy Seagull",
+    "manaCost": "{2}{U}",
+    "type": "Creature — Bird",
+    "rarity": "Rare",
+    "text": "Flying, prowess\nWhenever this creature attacks, you may cast target noncreature spell from your graveyard this turn. If you don't, create a Shard token. (It's an enchantment with \"{2}, Sacrifice this token: Scry 1, then draw a card.\")",
+    "colors": [
+      "U"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Prowess",
+      "Self-mill"
+    ],
+    "power": "2",
+    "toughness": "2",
+    "artist": "Elisabeth Lucas",
+    "relatedTokens": [
+      "Shard"
+    ],
+    "set": "Set 4",
+    "imageUrl": "/Cube/Forth Batch/Blue/Savvy%20Seagull.png"
+  },
+  {
+    "id": "soul-encoder-fb4",
+    "name": "Soul Encoder",
+    "manaCost": "{1}{U}{U}",
+    "type": "Creature — Spirit Ninja",
+    "rarity": "Rare",
+    "text": "Cipherjitsu {2}{U}{U} ({2}{U}{U}, Exile an unblocked attacker you control: Put this creature onto the battlefield tapped and attacking, then encode the exiled creature to it. Whenever this creature deals combat damage to a player, you may cast a copy of the encoded card without paying its mana cost.)\nFlying",
+    "colors": [
+      "U"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Broken Cipher"
+    ],
+    "power": "3",
+    "toughness": "3",
+    "artist": "ChatGPT o4",
+    "set": "Set 4",
+    "imageUrl": "/Cube/Forth Batch/Blue/Soul%20Encoder.png"
+  },
+  {
+    "id": "swarm-of-night-s-sky-fb4",
+    "name": "Swarm of Night's Sky",
+    "manaCost": "{1}{U}",
+    "type": "Enchantment Creature — Insect",
+    "rarity": "Rare",
+    "text": "Bestow {2}{U} (If you cast this card for its bestow cost, it's an Aura spell with enchant creature. It becomes a creature again if it's not attached to a creature.)\nFlying\nEnchanted creature gets +1/+1 and has flying.\nStorm",
+    "colors": [
+      "U"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Storm"
+    ],
+    "power": "1",
+    "toughness": "1",
+    "artist": "NightCafe",
+    "set": "Set 4",
+    "imageUrl": "/Cube/Forth Batch/Blue/Swarm%20of%20Night%E2%80%99s%20Sky%20.png"
+  },
+  {
+    "id": "taukai-spellstainer-fb4",
+    "name": "Taukai Spellstainer",
+    "manaCost": "{1}{U}",
+    "type": "Creature — Shark Shaman",
+    "rarity": "Uncommon",
+    "text": "Noncreature spells you cast cost {1} less to cast if you've gained life this turn and {1} less to cast if you've lost life this turn.",
+    "colors": [
+      "U"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Storm"
+    ],
+    "power": "2",
+    "toughness": "1",
+    "flavorText": "Most sharkfolk of the Lost Isles of Ulak'thaar follow the Vow of Humanity, forsaking their hunger to live peacefully with humans—except for the Taukai, whose thirst for violence deepens with each passing tide.",
+    "artist": "Arcane Wonders",
+    "set": "Set 4",
+    "imageUrl": "/Cube/Forth Batch/Blue/Taukai%20Spellstainer.png"
+  },
+  {
+    "id": "terai-ghost-writer-fb4",
+    "name": "Terai, Ghost Writer",
+    "manaCost": "{2}{U}{U}",
+    "type": "Legendary Creature — Spirit Detective",
+    "rarity": "Rare",
+    "text": "Flying\nWhen Terai enters, you may search your graveyard, hand and/or library for a card named Blend In, Protective Custody and/or Witness Protection and put them into your hand. If you search your library this way, shuffle.\nWhenever you cast a spell that targets a creature, draw a card.",
+    "colors": [
+      "U"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "power": "3",
+    "toughness": "3",
+    "flavorText": "\"Based on true story… trust me.\"",
+    "artist": "ChatGPT o4",
+    "set": "Set 4",
+    "imageUrl": "/Cube/Forth Batch/Blue/Terai%2C%20Ghost%20Writer.png"
+  },
+  {
+    "id": "the-pretender-fb4",
+    "name": "The Pretender",
+    "manaCost": "{3}{U}",
+    "type": "Legendary Creature — Mutant Shapeshifter",
+    "rarity": "Rare",
+    "text": "You may have The Pretender enter as a copy of any creature on the battlefield, except it has all the abilities of The Experiment. When it does, its name becomes The Experiment and you experiment 4. (You get four {experiment} counters. If you don't control The Experiment, create one. Then, spend any amount of {experiment} on it.)",
+    "colors": [
+      "U"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "power": "0",
+    "toughness": "0",
+    "artist": "ChatGPT 4o",
+    "set": "Set 4",
+    "imageUrl": "/Cube/Forth Batch/Blue/The%20Pretender.png"
+  },
+  {
+    "id": "traditional-futurist-fb4",
+    "name": "Traditional Futurist",
+    "manaCost": "{U}",
+    "type": "Enchantment Artifact Creature — Moonfolk Artificer",
+    "rarity": "Rare",
+    "text": "Custom spells you cast cost {1} less to cast as long as you control two or more noncustom, nonland, nontoken permanents.\nNoncustom spells you cast cost {1} less to cast as long as you control two or more other noncustom, nonland, nontoken permanents.",
+    "colors": [
+      "U"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Storm"
+    ],
+    "power": "1",
+    "toughness": "2",
+    "artist": "ChatGPT o4",
+    "set": "Set 4",
+    "imageUrl": "/Cube/Forth Batch/Blue/Traditional%20Futurist.png"
+  },
+  {
+    "id": "train-of-thought-not-the-guildpact-one-fb4",
+    "name": "Train of Thought (Not the Guildpact One)",
+    "manaCost": "{1}{U}",
+    "type": "Artifact — Vehicle",
+    "rarity": "Uncommon",
+    "text": "Replicate {1}{U} (When you cast this spell, copy it for each time you paid its replicate cost. A copy of a permanent spell becomes a token.)\nWhen this Vehicle enters, draw a card.\nCrew 1",
+    "colors": [
+      "U"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Vehicles"
+    ],
+    "power": "3",
+    "toughness": "2",
+    "flavorText": "Obviously.",
+    "artist": "ChatGPT o4",
+    "set": "Set 4",
+    "imageUrl": "/Cube/Forth Batch/Blue/Train%20of%20Thought%20%28Not%20the%20Guildpact%20One%29%20%20%20%20%20%20%20%20%20%20.png"
+  },
+  {
+    "id": "wall-of-questions-fb4",
+    "name": "Wall of Questions",
+    "manaCost": "{1}{U}",
+    "type": "Enchantment Creature — Wall",
+    "rarity": "Uncommon",
+    "text": "Defender\nWhen this creature enters, draw a card.",
+    "colors": [
+      "U"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "power": "0",
+    "toughness": "4",
+    "flavorText": "The sphinx adores it, for within lies a paradox: To enter, one must abandon the desire to solve it.",
+    "artist": "ChatGPT o4",
+    "set": "Set 4",
+    "imageUrl": "/Cube/Forth Batch/Blue/Wall%20of%20Questions.png"
+  },
+  {
+    "id": "sticker-collector-fb4",
+    "name": "Sticker Collector",
+    "manaCost": "{8}",
+    "type": "Artifact Creature — Robot",
+    "rarity": "Rare",
+    "text": "{T}: Untap another target permanent.\nWhenever this creature deals combat damage to a player, exile target creature you control, then return it to the battlefield under its owner's control.\nProtection from odd mana values\nSacrifice this permanent: Draw two cards.\n{T}: The next time target player would roll one or more dice this turn, instead they roll that many dice plus one, then you choose one of those rolls to ignore.\nWhenever this creature attacks, proliferate.\nStickers are not removed from this card after the game ends. Yap.",
+    "colors": [],
+    "custom": true,
+    "archetypes": [
+      "Blink/ETB/Value"
+    ],
+    "power": "8",
+    "toughness": "7",
+    "artist": "DALL-E 3",
+    "_supersedes": "sticker-collector-tb3",
+    "set": "Set 4",
+    "imageUrl": "/Cube/Forth Batch/Changes/Total/Sticker%20Collector.jpg"
+  },
+  {
+    "id": "blessed-be-the-fruition-fb4",
+    "name": "Blessed Be the Fruition",
+    "manaCost": "{3}{W}{W}",
+    "type": "Sorcery",
+    "rarity": "Mythic Rare",
+    "text": "Each player gets an emblem with \"You have no maximum hand size.\"\nEach opponent draws three cards.\nYou may draw up to three cards.\nStorm",
+    "colors": [
+      "W"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Storm"
+    ],
+    "artist": "Rosie A",
+    "_supersedes": "blessed-be-the-fruition-sb2",
+    "set": "Set 4",
+    "imageUrl": "/Cube/Forth Batch/Changes/Buff/Blessed%20Be%20the%20Fruition.png"
+  },
+  {
+    "id": "brightspark-collector-fb4",
+    "name": "Brightspark Collector",
+    "manaCost": "{R}",
+    "type": "Creature — Lizard Artificer",
+    "rarity": "Rare",
+    "text": "Offspring {1}{B} (You may pay an additional {1}{B} as you cast this spell. If you do, when this creature enters, create a 1/1 token copy of it.)\nWhenever a token you control enters, this creature deals 1 damage to each opponent.",
+    "colors": [
+      "R"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Token Collection"
+    ],
+    "power": "2",
+    "toughness": "1",
+    "flavorText": "\"Everything has a beautiful shine; you just have to look at it from the right perspective.\"",
+    "artist": "Dall-E 3",
+    "_supersedes": "brightspark-collector-fb1",
+    "set": "Set 4",
+    "imageUrl": "/Cube/Forth Batch/Changes/Nerf/Brightspark%20Collector.png"
+  },
+  {
+    "id": "creeping-incubator-fb4",
+    "name": "Creeping Incubator",
+    "manaCost": "{3}{B}",
+    "type": "Artifact — Incubator",
+    "rarity": "Uncommon",
+    "text": "This enters the battlefield with three +1/+1 counters on it. When it does, target opponent loses 3 life unless they sacrifice a nonland permanent or discard a card.\n{2}: Transform this artifact.\n{3}{B}{B}: Return this card from your graveyard to the battlefield with an additional +1/+1 counter on it.",
+    "colors": [
+      "B"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "power": "0",
+    "toughness": "0",
+    "artist": "Dall-E 3",
+    "relatedFace": "Creeping Monstrosity",
+    "_supersedes": "creeping-incubator-fb1",
+    "set": "Set 4",
+    "imageUrl": "/Cube/Forth Batch/Changes/Nerf/Creeping%20Incubator.png"
+  },
+  {
+    "id": "creeping-monstrosity-fb4",
+    "name": "Creeping Monstrosity",
+    "type": "Artifact Creature — Phyrexian Horror",
+    "rarity": "Uncommon",
+    "text": "Menace\nWhen this creature deals combat damage to a player, that player loses 3 life unless they sacrifice a nonland permanent or discard a card.",
+    "colors": [
+      "B"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Broken Cipher"
+    ],
+    "power": "0",
+    "toughness": "0",
+    "artist": "Dall-E 3",
+    "relatedFace": "Creeping Incubator",
+    "facedown": true,
+    "set": "Set 4",
+    "imageUrl": "/Cube/Forth Batch/Changes/Nerf/Creeping%20Monstrosity.png"
+  },
+  {
+    "id": "escape-from-the-underworld-fb4",
+    "name": "Escape from the Underworld",
+    "manaCost": "{1}{B}",
+    "type": "Sorcery",
+    "rarity": "Rare",
+    "text": "Create a Map token or a 0/1 white Goat creature token.\nReturn target creature card with mana value X or less from your graveyard to the battlefield, where X is the number of differently named tokens you control.\nEscape—{1}{B}, Exile four other cards from your graveyard. (You may cast this card from your graveyard for its escape cost.)",
+    "colors": [
+      "B"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Self-mill",
+      "Token Collection"
+    ],
+    "relatedTokens": [
+      "Map",
+      "0/1 white Goat"
+    ],
+    "artist": "Dall-E 3",
+    "_supersedes": "escape-from-the-underworld-tb3",
+    "set": "Set 4",
+    "imageUrl": "/Cube/Forth Batch/Changes/Nerf/Escape%20from%20the%20Underworld.png"
+  },
+  {
+    "id": "escaping-bolt-fb4",
+    "name": "Escaping Bolt",
+    "manaCost": "{1}{R}",
+    "type": "Sorcery",
+    "rarity": "Rare",
+    "text": "Escaping Bolt deals 3 damage to any target.\nIf a card left your graveyard this turn, copy this spell. You may choose a new target for the copy.\nEscape—{4}{R}{R}, Exile six other cards from your graveyard. (You may cast this card from your graveyard for its escape cost.)",
+    "colors": [
+      "R"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Self-mill"
+    ],
+    "artist": "Cobaltplasma",
+    "_supersedes": "escaping-bolt-tb3",
+    "set": "Set 4",
+    "imageUrl": "/Cube/Forth Batch/Changes/Nerf/Escaping%20Bolt.png"
+  },
+  {
+    "id": "fear-of-the-apocalypse-fb4",
+    "name": "Fear of the Apocalypse",
+    "manaCost": "{4}{R}{W}",
+    "type": "Enchantment Creature — Nightmare",
+    "rarity": "Mythic Rare",
+    "text": "When this creature enters, each player discards their hand, then draws a card for each card type among cards in their graveyard.\nDelirium — Whenever this creature attacks, if there are four or more card types among cards in your graveyard, destroy each other creature.",
+    "colors": [
+      "R",
+      "W"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Self-mill"
+    ],
+    "power": "6",
+    "toughness": "4",
+    "flavorText": "Worlds end, yet it persists.",
+    "artist": "Dall-E 3",
+    "_supersedes": "fear-of-the-apocalypse-fb1",
+    "set": "Set 4",
+    "imageUrl": "/Cube/Forth Batch/Changes/Nerf/Fear%20of%20the%20Apocalypse.png"
+  },
+  {
+    "id": "gnawing-in-the-deep-fb4",
+    "name": "Gnawing in the Deep",
+    "manaCost": "{B}",
+    "type": "Sorcery — Lesson",
+    "rarity": "Rare",
+    "text": "Exile target card from a graveyard. If a creature card was exiled this way, create a 1/1 black and green Pest creature token with \"When this creature dies, you gain 1 life.\"\nAt the beginning of your end step, if this card is in your graveyard, you may pay {2}{B/G}. If you do, cast it without paying its mana cost.",
+    "colors": [
+      "B"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "relatedTokens": [
+      "1/1 black and green Pest"
+    ],
+    "artist": "Dexistor371",
+    "_supersedes": "gnawing-in-the-deep-fb1",
+    "set": "Set 4",
+    "imageUrl": "/Cube/Forth Batch/Changes/Nerf/Gnawing%20in%20the%20Deep.png"
+  },
+  {
+    "id": "keranos-gift-to-mankind-fb4",
+    "name": "Keranos' Gift to Mankind",
+    "manaCost": "{5}",
+    "type": "Legendary Artifact Enchantment Creature — Demigod",
+    "rarity": "Mythic Rare",
+    "text": "Vigilance, haste\nAt the beginning of your upkeep and whenever Keranos' Gift to Mankind attacks or blocks, reveal the top card of your library. If it's a land card, scry X. If it's a nonland card, Keranos' Gift to Mankind deals X damage to any target. X is the number of enchantments you control.\n{5}{U/R}: If it's your turn, after this step, you get an additional upkeep followed by an additional combat step.",
+    "colors": [],
+    "custom": true,
+    "archetypes": [
+      "Enchantments"
+    ],
+    "power": "3",
+    "toughness": "3",
+    "artist": "Dall-E 3",
+    "_supersedes": "keranos-gift-to-mankind-fb1",
+    "set": "Set 4",
+    "imageUrl": "/Cube/Forth Batch/Changes/Nerf/Keranos%E2%80%99%20Gift%20to%20Mankind.png"
+  },
+  {
+    "id": "no-rose-without-thorns-fb4",
+    "name": "No Rose Without Thorns",
+    "manaCost": "{1}{B}",
+    "type": "Enchantment",
+    "rarity": "Mythic Rare",
+    "text": "At the beginning of your upkeep, you lose 1 life and you create the next token from the following list. If you can't, you lose the game.\n[Blood, Clue, Food, Junk, Map, Scroll, Spike, Treasure]",
+    "colors": [
+      "B"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Token Collection"
+    ],
+    "artist": "Dall-E 3",
+    "_supersedes": "no-rose-without-thorns-tb3",
+    "relatedTokens": [
+      "Blood",
+      "Clue",
+      "Food",
+      "Junk",
+      "Map",
+      "Scroll",
+      "Spike",
+      "Treasure"
+    ],
+    "set": "Set 4",
+    "imageUrl": "/Cube/Forth Batch/Changes/Nerf/No%20Rose%20Without%20Thorns.png"
+  },
+  {
+    "id": "pyrotechnical-cauldron-fb4",
+    "name": "Pyrotechnical Cauldron",
+    "manaCost": "{B}{R}",
+    "type": "Artifact",
+    "rarity": "Rare",
+    "text": "{T}, Pay 1 life: Create a tapped Firework token of a color of your choice.\n{T}, Sacrifice X tokens with different names, Sacrifice this artifact: You may cast a spell with mana value X or less from your hand or graveyard without paying its mana cost.",
+    "colors": [
+      "B",
+      "R"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Token Collection"
+    ],
+    "relatedTokens": [
+      "Firework"
+    ],
+    "artist": "Dall-E 3",
+    "_supersedes": "pyrotechnical-cauldron-fb1",
+    "set": "Set 4",
+    "imageUrl": "/Cube/Forth Batch/Changes/Nerf/Pyrotechnical%20Cauldron.png"
+  },
+  {
+    "id": "untold-prosperity-fb4",
+    "name": "Untold Prosperity",
+    "manaCost": "{4}{G}{W}{U}",
+    "type": "Enchantment",
+    "rarity": "Mythic Rare",
+    "text": "At the beginning of your upkeep, draw a card.\nYou may play an additional land on each of your turns.\nLandfall — Whenever a land you control enters, you gain 2 life.\nStorm",
+    "colors": [
+      "G",
+      "W",
+      "U"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Storm"
+    ],
+    "artist": "Angela Perrin",
+    "_supersedes": "untold-prosperity-fb1",
+    "set": "Set 4",
+    "imageUrl": "/Cube/Forth Batch/Changes/Nerf/Untold%20Prosperity.png"
+  },
+  {
+    "id": "valuable-smithing-fb4",
+    "name": "Valuable Smithing",
+    "manaCost": "{3}{R}",
+    "type": "Sorcery",
+    "rarity": "Rare",
+    "text": "Delve (Each card you exile from your graveyard while casting this spell pays for {1}.)\nCreate a tapped Treasure token for each mana spent to cast this spell.\nCreate a Clue token for each card exiled to cast this spell.\nThis spell deals 3 damage to any target.",
+    "colors": [
+      "R"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Self-mill",
+      "Token Collection"
+    ],
+    "relatedTokens": [
+      "Treasure",
+      "Clue"
+    ],
+    "artist": "Dall-E 3",
+    "_supersedes": "valuable-smithing-tb3",
+    "set": "Set 4",
+    "imageUrl": "/Cube/Forth Batch/Changes/Nerf/Valuable%20Smithing.png"
+  },
+  {
+    "id": "experimental-test-facility-fb4",
+    "name": "Experimental Test Facility",
+    "type": "Land",
+    "rarity": "Rare",
+    "text": "This land enters tapped unless you control a modified creature. (Equipment, Auras you control, and counters are modifications.)\n{T}: Add {G} or {U}.\n{X}{X}, {T}: Experiment X. X can't be 0. (You get X vial counters. If you don't control The Experiment, create one. Then, spend any amount of vial on it.)",
+    "colors": [],
+    "custom": true,
+    "archetypes": [],
+    "relatedTokens": [
+      "The Experiment"
+    ],
+    "artist": "Wasurah",
+    "_supersedes": "experimental-test-facility-tb3",
+    "set": "Set 4",
+    "imageUrl": "/Cube/Forth Batch/Changes/Total/Experimental%20Test%20Facility.png"
+  },
+  {
+    "id": "flourishing-bauble-pet-fb4",
+    "name": "Flourishing Bauble-Pet",
+    "manaCost": "{G}",
+    "type": "Creature — Saproling",
+    "rarity": "Common",
+    "text": "{1}, {T}, Sacrifice this creature: Add one mana of any color. Draw a card.\nPetrify from your graveyard {G} ({T}, Exile this card from your graveyard: Create a copy of it, except it's an artifact. Activate only as a sorcery.)",
+    "colors": [
+      "G"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "power": "1",
+    "toughness": "1",
+    "flavorText": "\"We are all vessels of nature's will. Some of us more… literally.\"\n—Calvatika, Korozda Gorgon",
+    "artist": "Dall-E 3",
+    "_supersedes": "flourishing-bauble-pet-tb3",
+    "set": "Set 4",
+    "imageUrl": "/Cube/Forth Batch/Changes/Total/Flourishing%20Bauble-Pet.png"
+  },
+  {
+    "id": "gilded-cage-fb4",
+    "name": "Gilded Cage",
+    "manaCost": "{4}",
+    "type": "Artifact",
+    "rarity": "Rare",
+    "text": "Whenever a nontoken creature dies, exile it. Its controller gets debt equal to that creature's power. (At the beginning of that player's end step, they may pay {1} for each debt counter they have. They remove that many counters, then lose 1 life for each debt counter they have.)\nWhenever a player fully pays their debt, they may put a creature card exiled with this artifact onto the battlefield under their control.",
+    "colors": [],
+    "custom": true,
+    "archetypes": [],
+    "artist": "Dall-E 3",
+    "_supersedes": "gilded-cage-tb3",
+    "set": "Set 4",
+    "imageUrl": "/Cube/Forth Batch/Changes/Total/Gilded%20Cage.png"
+  },
+  {
+    "id": "gimme-that-fb4",
+    "name": "Gimme That",
+    "manaCost": "{3}{B}",
+    "type": "Sorcery",
+    "rarity": "Rare",
+    "text": "Create a Treasure token.\nTarget opponent reveals their hand. You may choose a nonland card from it and exile it. You may cast that card for as long as it remains exiled.\nCipher",
+    "colors": [
+      "B"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Broken Cipher"
+    ],
+    "relatedTokens": [
+      "Treasure"
+    ],
+    "artist": "SirTiefling, DeviantArt",
+    "_supersedes": "gimme-that-fb1",
+    "set": "Set 4",
+    "imageUrl": "/Cube/Forth Batch/Changes/Total/Gimme%20That.png"
+  },
+  {
+    "id": "impossible-pact-fb4",
+    "name": "Impossible Pact",
+    "manaCost": "{0}",
+    "type": "Kindred Instant — Eldrazi",
+    "rarity": "Mythic Rare",
+    "text": "Type the following line into ChatGPT and put the response on the stack: \"Give me a Magic the Gathering 'Pact' price to pay next upkeep or lose the game and one ability for this instant. Nothing else.\"\nAt the beginning of your next upkeep, pay that price. If you don't, you lose the game.",
+    "colors": [],
+    "custom": true,
+    "archetypes": [],
+    "artist": "Diligent Nocturne",
+    "prompt": "Give me a Magic the Gathering 'Pact' price to pay next upkeep or lose the game and one ability for this instant. Nothing else.",
+    "set": "Set 4",
+    "imageUrl": "/Cube/Forth Batch/Changes/Total/Impossible%20Pact.png"
+  },
+  {
+    "id": "leyline-of-greed-fb4",
+    "name": "Leyline of Greed",
+    "manaCost": "{2}{B}{B}",
+    "type": "Enchantment",
+    "rarity": "Rare",
+    "text": "If this card is in your opening hand, you may begin the game with it on the battlefield.\nSpells you cast cost {1} less to cast and 1 life more to cast.\n{2}{B}{2}{B}, Pay 2 life: Draw a card.",
+    "colors": [
+      "B"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Storm"
+    ],
+    "flavorText": "Where untold power and the desire to explore it converge.",
+    "_supersedes": "leyline-of-greed-fb1",
+    "artist": "Dall-E 3",
+    "set": "Set 4",
+    "imageUrl": "/Cube/Forth Batch/Changes/Total/Leyline%20of%20Greed%202.png"
+  },
+  {
+    "id": "mana-piracy-fb4",
+    "name": "Mana Piracy",
+    "manaCost": "{2}{U}{U}",
+    "type": "Sorcery",
+    "rarity": "Mythic Rare",
+    "text": "Your opponents can't tap lands for mana as long as this spell is on the stack.\nUntil end of turn, you may tap lands you don't control for mana and your opponents can't tap lands for mana. If this is the second time you've cast a spell named Mana Piracy this turn, untap all lands your opponents control.\nCipher",
+    "colors": [
+      "U"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Broken Cipher"
+    ],
+    "artist": "Dall-E 3",
+    "_supersedes": "mana-piracy-fb1",
+    "set": "Set 4",
+    "imageUrl": "/Cube/Forth Batch/Changes/Total/Mana%20Piracy.png"
+  },
+  {
+    "id": "misinformation-spreader-fb4",
+    "name": "Misinformation Spreader",
+    "manaCost": "{2}{U}",
+    "type": "Creature — Vedalken Rogue",
+    "rarity": "Rare",
+    "text": "Flash\nAt the beginning of your upkeep, each player shuffles two Confusion cards into their deck. (They're colorless sorceries with cycling {2}.)\nAt the beginning of your end step, draw a card for each Confusion card in all graveyards.\nWhenever you surveil for the first time each turn, shuffle that many Confusion cards into target player's library.",
+    "colors": [
+      "U"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "power": "2",
+    "toughness": "4",
+    "artist": "Rhys Kim",
+    "_supersedes": "misinformation-spreader-fb1",
+    "set": "Set 4",
+    "imageUrl": "/Cube/Forth Batch/Changes/Total/Misinformation%20Spreader.png"
+  },
+  {
+    "id": "risky-game-we-run-here-fb4",
+    "name": "Risky Game We Run Here",
+    "manaCost": "{2}{U}{R}",
+    "type": "Enchantment",
+    "rarity": "Rare",
+    "text": "At the beginning of your upkeep, each player may discard any number of cards, then draw that many cards. Using the discarded nonland cards mana values and colors, the player with the best poker hand among the discarded cards creates a token that's a copy of this enchantment and this enchantment deals 2 damage to each other player. (The ranks from worst to best are High Card, Pair, Two Pairs, Three of a Kind, Straight, Flush, Full House, Four of a Kind, Straight Flush and Royal Flush.)",
+    "colors": [
+      "U",
+      "R"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "artist": "Dall-E 3",
+    "_supersedes": "risky-game-we-run-here-fb1",
+    "set": "Set 4",
+    "imageUrl": "/Cube/Forth Batch/Changes/Total/Risky%20Game%20We%20Run%20Here.png"
+  },
+  {
+    "id": "the-utopians-protocol-fb4",
+    "name": "The Utopians' Protocol",
+    "manaCost": "{U}",
+    "type": "Enchantment",
+    "rarity": "Rare",
+    "text": "When this enchantment enters, experiment 1. (You get a vial counter. If you don't control The Experiment, create one. Then, spend any amount of vial on it.)\n{3}{U}: Experiment 2.",
+    "colors": [
+      "U"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "relatedTokens": [
+      "The Experiment"
+    ],
+    "flavorText": "The Utopians' sect of the Simic Combine believes that true evolution lies in slow, constant experimentation—each mutation a step towards an ideal future, where perfection is not achieved, but continually redefined.",
+    "artist": "Dall-E 3",
+    "_supersedes": "the-utopians-protocol-fb1",
+    "set": "Set 4",
+    "imageUrl": "/Cube/Forth Batch/Changes/Total/The%20Utopians%E2%80%99%20Protocol.png"
+  },
+  {
+    "id": "your-own-story-fb4",
+    "name": "Your Own Story",
+    "manaCost": "{1}{W}",
+    "type": "Enchantment — Saga",
+    "rarity": "Mythic Rare",
+    "text": "Fill the blanks as Your Own Story enters.\nI — ___ (Surveil 3/Draw a card/You gain 6 life).\nII — If you control two or more __, destroy all __ other than this permanent. Choose the same option for both blanks. (artifacts, creatures, enchantments)\nIII — At the end of turn, return ___ from your graveyard to your hand. (a card named Your Own Story/each other permanent card with mana value 2 or less.)",
+    "colors": [
+      "W"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "artist": "Iris Rodriguez",
+    "_supersedes": "your-own-story-fb1",
+    "set": "Set 4",
+    "imageUrl": "/Cube/Forth Batch/Changes/Total/Your%20Own%20Story.png"
+  },
+  {
+    "id": "cogwork-redeemer-fb4",
+    "name": "Cogwork Redeemer",
+    "manaCost": "{6}",
+    "type": "Artifact Creature — Angel Construct",
+    "rarity": "Rare",
+    "text": "Draft this card face up.\nAs you draft the last card of a booster pack, you may reveal it and note its name.\nFlying, vigilance\nYou may cast spells with names noted by this creature without paying their mana cost.",
+    "colors": [],
+    "custom": true,
+    "archetypes": [],
+    "power": "4",
+    "toughness": "4",
+    "artist": "ChatGPT o4",
+    "set": "Set 4",
+    "imageUrl": "/Cube/Forth Batch/Colorless/Cogwork%20Redeemer.png"
+  },
+  {
+    "id": "duel-masters-fb4",
+    "name": "Duel Masters",
+    "type": "Conspiracy",
+    "rarity": "Mythic Rare",
+    "text": "(Start the game with this conspiracy face up in the command zone.)\nYou don't have a life total.\nAt the start of the game, put the top five cards of your library face-down in front of you as shields.\nIf you would lose life, instead put one of your shields into your hand. If you can't, you lose the game.",
+    "colors": [],
+    "custom": true,
+    "archetypes": [],
+    "artist": "タカヤマトシアキ",
+    "set": "Set 4",
+    "imageUrl": "/Cube/Forth Batch/Colorless/Duel%20Masters.png"
+  },
+  {
+    "id": "emrakul-disturbing-reality-fb4",
+    "name": "Emrakul, Disturbing Reality",
+    "manaCost": "{12}",
+    "type": "Legendary Creature — Eldrazi",
+    "rarity": "Mythic Rare",
+    "text": "Partner with Kozilek, Unfathomable Truth and Ulamog, Eternal Consumer\nWhenever you cast this spell, target opponent shuffles thirty confusion cards into their library.\nAt the beginning of your end step, if you both own and control this creature and a creature named Kozilek, Unfathomable Truth and a creature named Ulamog, Eternal Consumer, exile them, then meld them into The Three.",
+    "colors": [],
+    "custom": true,
+    "archetypes": [],
+    "power": "15",
+    "toughness": "15",
+    "artist": "ZEBES",
+    "relatedFace": [
+      "Kozilek, Unfathomable Truth",
+      "Ulamog, Eternal Consumer"
+    ],
+    "set": "Set 4",
+    "imageUrl": "/Cube/Forth Batch/Colorless/Emrakul%2C%20Disturbing%20Reality.png"
+  },
+  {
+    "id": "everything-is-a-conspiricy-fb4",
+    "name": "Everything is a Conspiracy",
+    "type": "Conspiracy",
+    "rarity": "Rare",
+    "text": "(Start the game with this conspiracy face up in the command zone.)\nYou can't cast more than one spell each turn.\nNoncreature spells you cast have conspire. (As you cast the spell, you may tap two untapped creatures you control that share a color with it. When you do, copy it and you may choose new targets for the copy. A copy of a permanent spell becomes a token.)",
+    "colors": [],
+    "custom": true,
+    "archetypes": [],
+    "artist": "Sergiu Roman",
+    "set": "Set 4",
+    "imageUrl": "/Cube/Forth Batch/Colorless/Everything%20is%20a%20Conspiricy.png"
+  },
+  {
+    "id": "fresh-start-fb4",
+    "name": "Fresh Start",
+    "type": "Conspiracy",
+    "rarity": "Rare",
+    "text": "(Start the game with this conspiracy face up in the command zone.)\nWhenever you take a mulligan, you may exile your hand instead of shuffling your hand into your library.",
+    "colors": [],
+    "custom": true,
+    "archetypes": [],
+    "flavorText": "Another chance to do it right.",
+    "artist": "Charley Daveler",
+    "set": "Set 4",
+    "imageUrl": "/Cube/Forth Batch/Colorless/Fresh%20Start.png"
+  },
+  {
+    "id": "gooser-cruiser-fb4",
+    "name": "Gooser-Cruiser",
+    "manaCost": "{1}",
+    "type": "Artifact — Vehicle Mount",
+    "rarity": "Rare",
+    "text": "Whenever this Vehicle attacks, create a Golden Egg token. If this creature is saddled, instead create two of those tokens.\nCrew 1\nSaddle 1 (Tap any number of other creatures you control with total power 3 or more: This Mount becomes saddled until end of turn. Saddle only as a sorcery.)",
+    "colors": [],
+    "custom": true,
+    "archetypes": [
+      "Vehicles"
+    ],
+    "power": "2",
+    "toughness": "3",
+    "artist": "ChatGPT o4",
+    "relatedTokens": [
+      "Golden Egg"
+    ],
+    "set": "Set 4",
+    "imageUrl": "/Cube/Forth Batch/Colorless/Gooser-Cruiser.png"
+  },
+  {
+    "id": "height-advantage-fb4",
+    "name": "Height Advantage",
+    "type": "Conspiracy",
+    "rarity": "Rare",
+    "text": "(Start the game with this conspiracy face up in the command zone.)\nLethal damage dealt to creatures you control is determined by their power rather than their toughness.",
+    "colors": [],
+    "custom": true,
+    "archetypes": [],
+    "flavorText": "It's better to stand aside than to stand out.",
+    "artist": "ChatGPT o4",
+    "set": "Set 4",
+    "imageUrl": "/Cube/Forth Batch/Colorless/Height%20Advantage.png"
+  },
+  {
+    "id": "karametra-s-beloved-fb4",
+    "name": "Karametra's Beloved",
+    "manaCost": "{0}",
+    "type": "Enchantment Artifact Creature — Ferret",
+    "rarity": "Uncommon",
+    "text": "",
+    "colors": [],
+    "custom": true,
+    "archetypes": [],
+    "power": "0",
+    "toughness": "1",
+    "flavorText": "Forged by Purphoros and shaped by Nylea, this gift from her two former lovers stands as a reminder that even hands hardened and stained by violence, though they may alter nature's perfection, can still craft beauty beyond imagination.",
+    "artist": "ChatGPT o4",
+    "set": "Set 4",
+    "imageUrl": "/Cube/Forth Batch/Colorless/Karametra%E2%80%99s%20Beloved.png"
+  },
+  {
+    "id": "kozilek-unfathomable-truth-fb4",
+    "name": "Kozilek, Unfathomable Truth",
+    "manaCost": "{10}",
+    "type": "Legendary Creature — Eldrazi",
+    "rarity": "Mythic Rare",
+    "text": "Partner with Emrakul, Disturbing Reality and Ulamog, Eternal Consumer\nTrample\nWhen you cast this spell, exile five random cards from the cube pool face-down. An opponent separates those cards into a face-down pile and a face-up pile. You may cast spells from it without paying their mana cost.",
+    "colors": [],
+    "custom": true,
+    "archetypes": [],
+    "power": "12",
+    "toughness": "12",
+    "artist": "GALLARDOSE",
+    "relatedFace": [
+      "Emrakul, Disturbing Reality",
+      "Ulamog, Eternal Consumer"
+    ],
+    "set": "Set 4",
+    "imageUrl": "/Cube/Forth Batch/Colorless/Kozilek%2C%20Unfathomable%20Truth.png"
+  },
+  {
+    "id": "magus-of-the-petal-fb4",
+    "name": "Magus of the Petal",
+    "manaCost": "{0}",
+    "type": "Artifact Creature — Human Wizard",
+    "rarity": "Rare",
+    "text": "{T}, Sacrifice this creature: Add one mana of any color.",
+    "colors": [],
+    "custom": true,
+    "archetypes": [],
+    "power": "0",
+    "toughness": "1",
+    "flavorText": "To be entrusted with the petal is to be free of greed and untouched by human affairs—and even then, one must endure a rite that strips away the last traces of their humanity.",
+    "artist": "ChatGPT o4",
+    "set": "Set 4",
+    "imageUrl": "/Cube/Forth Batch/Colorless/Magus%20of%20the%20Petal.png"
+  },
+  {
+    "id": "mox-amethyst-fb4",
+    "name": "Mox Amethyst",
+    "manaCost": "{0}",
+    "type": "Legendary Enchantment Artifact",
+    "rarity": "Mythic Rare",
+    "text": "Nyxborn — {T}: Add one mana of any color. Activate only if you control three or more enchantments.",
+    "colors": [],
+    "custom": true,
+    "archetypes": [
+      "Enchantments"
+    ],
+    "flavorText": "\"Gathering the stars, fourteen gods entrusted Phorphoros to forge them into one perfect jewel, which they hurled to the earth — and from its impact, humanity emerged.\"\n—Theros' Tale of Creation",
+    "artist": "ChatGPT o4",
+    "set": "Set 4",
+    "imageUrl": "/Cube/Forth Batch/Colorless/Mox%20Amethyst.png"
+  },
+  {
+    "id": "pizza-oven-fb4",
+    "name": "Pizza Oven",
+    "manaCost": "{2}",
+    "type": "Artifact",
+    "rarity": "Rare",
+    "text": "{T}: Create a Food token named Cheese, Dough or Tomato.\n{2}{R}, {T}, Sacrifice a Cheese, a Dough and a Tomato: Create a Pizza token. (It's an artifact Food token with \"{2}, {T}, Sacrifice this token: You gain 9 life and draw three cards.)",
+    "colors": [],
+    "custom": true,
+    "archetypes": [
+      "Token Collection"
+    ],
+    "flavorText": "Asmoranomardicadaistinaculdacar got nothing on this.",
+    "artist": "ChatGPT 4o",
+    "relatedTokens": [
+      "Cheese",
+      "Dough",
+      "Tomato",
+      "Pizza"
+    ],
+    "set": "Set 4",
+    "imageUrl": "/Cube/Forth Batch/Colorless/Pizza%20Oven.png"
+  },
+  {
+    "id": "soul-ring-fb4",
+    "name": "Soul Ring",
+    "manaCost": "{1}",
+    "type": "Artifact",
+    "rarity": "Mythic Rare",
+    "text": "{T}, Exile a creature card from your graveyard: Add {C}{C}.",
+    "colors": [],
+    "custom": true,
+    "archetypes": [
+      "Self-mill"
+    ],
+    "flavorText": "It holds every final goodbye, every hidden tear, each missed moment, every forsaken dream, and lingering regret — yet within it, a light endures, not to mourn what's lost, but to transform it into something greater.",
+    "artist": "Xinoir",
+    "set": "Set 4",
+    "imageUrl": "/Cube/Forth Batch/Colorless/Soul%20Ring.png"
+  },
+  {
+    "id": "surveillance-state-fb4",
+    "name": "Surveillance State",
+    "type": "Conspiracy",
+    "rarity": "Rare",
+    "text": "(Start the game with this conspiracy face up in the command zone.)\nLands you control enter tapped.\nWhenever a land enters under your control, surveil 1.",
+    "colors": [],
+    "custom": true,
+    "archetypes": [],
+    "flavorText": "The convenience of the many must be ensured through the inconvenience of the few.",
+    "artist": "ChatGPT o4",
+    "set": "Set 4",
+    "imageUrl": "/Cube/Forth Batch/Colorless/Surveillance%20State.png"
+  },
+  {
+    "id": "the-godess-of-speed-fb4",
+    "name": "The Goddess of Speed",
+    "manaCost": "{3}",
+    "type": "Legendary Artifact — Vehicle",
+    "rarity": "Rare",
+    "text": "Haste\nYour opponents respect you. (Creatures can't attack you or block creatures you control unless their controller pays {1} for each creature they control that's attacking you or blocking a creature you control. You have ward {1}.)\nCrew 1",
+    "colors": [],
+    "custom": true,
+    "archetypes": [
+      "Vehicles"
+    ],
+    "power": "4",
+    "toughness": "3",
+    "artist": "Julie Dillon",
+    "set": "Set 4",
+    "imageUrl": "/Cube/Forth Batch/Colorless/The%20Godess%20of%20Speed.png"
+  },
+  {
+    "id": "the-oracle-provides-fb4",
+    "name": "The Oracle Provides",
+    "type": "Conspiracy",
+    "rarity": "Rare",
+    "text": "(Start the game with this conspiracy face up in the command zone.)\nBefore the game starts, type the following line into ChatGPT and this card's abilities become the response:\n\"Give my Magic the Gathering conspiracy exactly one interesting ability that can affect the game. Nothing else and nothing related to Hidden Agenda.\"",
+    "colors": [],
+    "custom": true,
+    "archetypes": [],
+    "artist": "ChatGPT o4",
+    "prompt": "Give my Magic the Gathering conspiracy exactly one interesting ability that can effect the game. Nothing else and nothing related to Hidden Agenda.",
+    "set": "Set 4",
+    "imageUrl": "/Cube/Forth Batch/Colorless/The%20Oracle%20Provides.png"
+  },
+  {
+    "id": "the-real-power-behind-the-throne-fb4",
+    "name": "The Real Power Behind the Throne",
+    "type": "Conspiracy",
+    "rarity": "Mythic Rare",
+    "text": "Hidden agenda (Start the game with this conspiracy face down in the command zone and secretly choose a card name. You may turn this conspiracy face up any time and reveal that name.)\nWhen you turn this Conspiracy face-up, search your library for a legendary creature card with the chosen name, reveal it, put it into your command zone, then shuffle. It becomes your commander. For the rest of the game, you can only cast spells that share a color with your commander.",
+    "colors": [],
+    "custom": true,
+    "archetypes": [],
+    "artist": "ChatGPT o4",
+    "set": "Set 4",
+    "imageUrl": "/Cube/Forth Batch/Colorless/The%20Real%20Power%20Behind%20the%20Throne%20%20%20%20%20.png"
+  },
+  {
+    "id": "ulamog-eternal-consumer-fb4",
+    "name": "Ulamog, Eternal Consumer",
+    "manaCost": "{12}",
+    "type": "Legendary Creature — Eldrazi",
+    "rarity": "Mythic Rare",
+    "text": "Partner with Emrakul, Disturbing Reality and Kozilek, Unfathomable Truth\nWhen you cast this spell, exile two target permanents.\nWhen Ulamog enters, combine all permanent cards from target opponent's exile onto it.\nCombinnihilator 4 (Whenever Ulamog attacks, defending player choose four permanents they control to be combined with Ulamog.)",
+    "colors": [],
+    "custom": true,
+    "archetypes": [],
+    "power": "11",
+    "toughness": "11",
+    "artist": "Gustavo Arteaga",
+    "relatedFace": [
+      "Emrakul, Disturbing Reality",
+      "Kozilek, Unfathomable Truth"
+    ],
+    "set": "Set 4",
+    "imageUrl": "/Cube/Forth Batch/Colorless/Ulamog%2C%20Eternal%20Consumer.png"
+  },
+  {
+    "id": "new-phyrexia-fb4",
+    "name": "New Phyrexia",
+    "manaCost": "{2}{B/G}{B/G}",
+    "type": "Enchantment",
+    "rarity": "Rare",
+    "text": "Lands you control are artifacts in addition to their other types.\nWhenever you tap an artifact for mana, add an additional one mana of any color, you lose 1 life and you get a poison counter. (A player with ten or more poison counters loses the game.)",
+    "colors": [
+      "B",
+      "G"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Artifacts"
+    ],
+    "flavorText": "Even the Five Suns thirsted to serve Them.",
+    "artist": "Aleksi Briclot",
+    "set": "Set 4",
+    "imageUrl": "/Cube/Forth Batch/Gold/BG/New%20Phyrexia.png"
+  },
+  {
+    "id": "pulse-blaster-fb4",
+    "name": "Pulse Blaster",
+    "manaCost": "{1}{B}{G}",
+    "type": "Artifact — Equipment",
+    "rarity": "Rare",
+    "text": "Equipped creature has infect. (It deals damage to creatures in the form of -1/-1 counters and to players in the form of poison counters.)\nWhenever equipped creature deals combat damage to a player, destroy target nonland permanent and all other permanents with the same name as that permanent.\nEquip {3}",
+    "colors": [
+      "B",
+      "G"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Broken Cipher"
+    ],
+    "artist": "Craiyon (A.I)",
+    "set": "Set 4",
+    "imageUrl": "/Cube/Forth Batch/Gold/BG/Pulse%20Blaster.png"
+  },
+  {
+    "id": "purito-vilefingers-fb4",
+    "name": "Purito “Vilefingers”",
+    "manaCost": "{1}{B}{G}",
+    "type": "Legendary Artifact Creature — Rat Artificer",
+    "rarity": "Rare",
+    "text": "Machine Intelligence (Nontoken artifacts you control have all activated abilities of all nontoken artifacts you control with Machine Intelligence.)\n{T}: Surveil 1.\n{2}{B}{G}, {T}, Sacrifice this artifact: Return target permanent card with less mana value than this artifact from your graveyard to the battlefield. Activate only as a sorcery.",
+    "colors": [
+      "B",
+      "G"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Artifacts"
+    ],
+    "power": "2",
+    "toughness": "2",
+    "artist": "Ludovico Tellatin",
+    "set": "Set 4",
+    "imageUrl": "/Cube/Forth Batch/Gold/BG/Purito%20%E2%80%9CVilefingers%E2%80%9D.png"
+  },
+  {
+    "id": "vraska-the-coiling-usurper-fb4",
+    "name": "Vraska, The Coiling Usurper",
+    "manaCost": "{5}{B}{G}",
+    "type": "Legendary Planeswalker — Vraska",
+    "rarity": "Mythic Rare",
+    "text": "Whenever a creature deals combat damage to Vraska, petrify it.\n+1: Destroy up to one target artifact. You draw X cards and each opponent loses X life, where X is that artifact's mana value.\n-X: Petrify each other nonland permanent with mana value X or less.",
+    "colors": [
+      "B",
+      "G"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Artifacts",
+      "Control"
+    ],
+    "loyalty": "5",
+    "artist": "Jaïn van Nigtevegt",
+    "set": "Set 4",
+    "imageUrl": "/Cube/Forth Batch/Gold/BG/Vraska%2C%20The%20Coiling%20Usurper.png"
+  },
+  {
+    "id": "brewer-s-troubles-fb4",
+    "name": "Brewer’s Troubles",
+    "manaCost": "{1}{B}{R}",
+    "type": "Enchantment",
+    "rarity": "Rare",
+    "text": "When this enchantment enters, for the rest of the game, tokens you own become cards that are still tokens. (They continue to exist after they leave the battlefield.)\nAt the beginning of your upkeep, return up to one target token card from your graveyard to the battlefield with a finality counter on it.\n{4}{B}{R}, Sacrifice this enchantment: Return all token cards from your graveyard to the battlefield with a finality counter on each of them.",
+    "colors": [
+      "B",
+      "R"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Token Collection"
+    ],
+    "artist": "_theine_",
+    "set": "Set 4",
+    "imageUrl": "/Cube/Forth Batch/Gold/BR/Brewer%E2%80%99s%20Troubles.png"
+  },
+  {
+    "id": "knife-to-meet-you-fb4",
+    "name": "Knife to Meet You",
+    "manaCost": "{B/R}",
+    "type": "Enchantment",
+    "rarity": "Rare",
+    "text": "{2}: Attach target noncreature token you control to target creature you don't control.\nAt the beginning of your upkeep, sacrifice each token you control that's attached to a creature you don't control. Each token sacrificed this way deals 1 damage to that creature and 1 damage to that creature's controller.",
+    "colors": [
+      "B",
+      "R"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Token Collection"
+    ],
+    "artist": "Leamis_",
+    "set": "Set 4",
+    "imageUrl": "/Cube/Forth Batch/Gold/BR/Knife%20to%20Meet%20You.png"
+  },
+  {
+    "id": "rakdos-sadism-incarnate-fb4",
+    "name": "Rakdos, Sadism Incarnate",
+    "manaCost": "{B}{B}{R}{R}",
+    "type": "Legendary Creature — Demon",
+    "rarity": "Mythic Rare",
+    "text": "Flying, trample\nWhen Rakdos enters, you get an emblem with \"Your opponents can only lose life by emblems.\"\nIf an opponent would be dealt damage, instead create that many Spike tokens. (They're artifacts with \"{2}, Sacrifice this artifact: Target opponent gains an emblem with 'At the beginning of your upkeep, you lose 1 life.'\")",
+    "colors": [
+      "B",
+      "R"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Token Collection"
+    ],
+    "power": "6",
+    "toughness": "4",
+    "artist": "adrianomoraes098",
+    "relatedTokens": [
+      "Spike"
+    ],
+    "set": "Set 4",
+    "imageUrl": "/Cube/Forth Batch/Gold/BR/Rakdos%2C%20Sadism%20Incarnate.png"
+  },
+  {
+    "id": "pact-of-abundance-fb4",
+    "name": "Pact of Abundance",
+    "manaCost": "{0}",
+    "type": "Instant",
+    "rarity": "Rare",
+    "text": "Until end of turn, whenever you cast a spell, draw a card, then may put a land card from your hand onto the battlefield.\nAt the beginning of your next upkeep, pay {4}{G}{U}. If you don't, you lose the game.",
+    "colors": [
+      "G",
+      "U"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "artist": "Kasia Zielinska",
+    "set": "Set 4",
+    "imageUrl": "/Cube/Forth Batch/Gold/GU/Pact%20of%20Abundance.png"
+  },
+  {
+    "id": "selkie-caretaker-fb4",
+    "name": "Selkie Caretaker",
+    "manaCost": "{G/U}{G/U}",
+    "type": "Creature — Merfolk Wizard",
+    "rarity": "Rare",
+    "text": "Hexproof\n{G/U}, {Q}: Until end of turn, another target creature you control gains hexproof and this creature loses hexproof. ({Q} is the untap symbol.)",
+    "colors": [
+      "G",
+      "U"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "power": "2",
+    "toughness": "2",
+    "flavorText": "“Before the first fake-gill was born, I was there, keeping watch.”",
+    "artist": "Christopher Moeller",
+    "set": "Set 4",
+    "imageUrl": "/Cube/Forth Batch/Gold/GU/Selkie%20Caretaker.png"
+  },
+  {
+    "id": "talion-the-infinite-progress-fb4",
+    "name": "Talion, the Infinite Progress",
+    "manaCost": "{1}{G}{U}",
+    "type": "Legendary Creature — Merfolk Octopus Scientist",
+    "rarity": "Mythic Rare",
+    "text": "Whenever a nontoken creature you control enters, experiment 2. (You get two experiment counters. If you don't control The Experiment, create one. Then, spend any amount of experiment counters on it.)\nCreatures you control have all the abilities that The Experiment currently has.",
+    "colors": [
+      "G",
+      "U"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "power": "2",
+    "toughness": "2",
+    "artist": "biologicalhighway",
+    "relatedTokens": [
+      "The Experiment"
+    ],
+    "set": "Set 4",
+    "imageUrl": "/Cube/Forth Batch/Gold/GU/Talion%2C%20the%20Infinite%20Progress.png"
+  },
+  {
+    "id": "blessed-neon-pulse-fb4",
+    "name": "Blessed Neon-Pulse",
+    "manaCost": "{2}{G/W}",
+    "type": "Artifact — Equipment Extension",
+    "rarity": "Rare",
+    "text": "When this Equipment enters, create a green and white artifact Vehicle token named Chariot with \"This Vehicle's power and toughness are each equal to the number of creatures you control.\" and crew 1, then attach this to it.\nExtended permanent gets +1/+1 for each creature you control.\nExtend {3} ({3}: Attach to target creature or Vehicle you control. Extend only as a sorcery.)",
+    "colors": [
+      "G",
+      "W"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Vehicles"
+    ],
+    "artist": "ChatGPT 04",
+    "relatedTokens": [
+      "Chariot"
+    ],
+    "set": "Set 4",
+    "imageUrl": "/Cube/Forth Batch/Gold/GW/Blessed%20Neon-Pulse.png"
+  },
+  {
+    "id": "mat-selesnya-fb4",
+    "name": "Mat’Selesnya",
+    "manaCost": "{G}{G}{G}{W}{W}{W}{W}",
+    "type": "Legendary Creature — Dryad Elemental",
+    "rarity": "Mythic Rare",
+    "text": "Convoke\nUnity (Token creatures you control have all activated abilities of nontoken creatures you control with unity.)\nActivated abilities you control have Convoke.\n{2}{G}{W}, {T}: Create a Vernadi Shieldmate token, then put a +1/+1 counter on each creature you control. (It's a {1}{G}{W} Human Soldier creature with vigilance.)",
+    "colors": [
+      "G",
+      "W"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "power": "6",
+    "toughness": "10",
+    "artist": "Vu Quang",
+    "relatedTokens": [
+      "Vernadi Shieldmate"
+    ],
+    "set": "Set 4",
+    "imageUrl": "/Cube/Forth Batch/Gold/GW/Mat%E2%80%99Selesnya.png"
+  },
+  {
+    "id": "vitu-ghazi-behemoth-fb4",
+    "name": "Vitu-Ghazi Behemoth",
+    "manaCost": "{3}{G}{W}",
+    "type": "Artifact — Vehicle",
+    "rarity": "Mythic Rare",
+    "text": "At the beginning of each of your postcombat main phases, choose one. If you attacked with this Vehicle this turn, choose both —\n• Creature and Vehicle spells you cast have Convoke until end of turn.\n• During this turn, you may look at the top card of your library any time, and you may cast a creature and Vehicle spells from the top of your library.\nCrew 4",
+    "colors": [
+      "G",
+      "W"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Vehicles"
+    ],
+    "power": "6",
+    "toughness": "6",
+    "artist": "ChatGPT 04",
+    "set": "Set 4",
+    "imageUrl": "/Cube/Forth Batch/Gold/GW/Vitu-Ghazi%20Behemoth.png"
+  },
+  {
+    "id": "anzrag-fb4",
+    "name": "Anzrag",
+    "manaCost": "{4}{R}{R}{G}{G}",
+    "type": "Legendary Creature — God Mole",
+    "rarity": "Mythic Rare",
+    "text": "Anzrag can't be countered.\nTrample, haste\nAll creatures able to block Anzrag do so.\nDiscard your hand: If you discarded at least one card, Anzrag gains hexproof and indestructible until end of turn. Tap it.\n{2}{R}{G}: Destroy target noncreature permanent. You gain 8 life.",
+    "colors": [
+      "R",
+      "G"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Control"
+    ],
+    "power": "12",
+    "toughness": "4",
+    "artist": "Patricio Soler",
+    "set": "Set 4",
+    "imageUrl": "/Cube/Forth Batch/Gold/RG/Anzrag.png"
+  },
+  {
+    "id": "branching-helix-fb4",
+    "name": "Branching Helix",
+    "manaCost": "{R}{G}",
+    "type": "Instant",
+    "rarity": "Uncommon",
+    "text": "Branching Helix deals 3 damage to any target and you gain 3 life.",
+    "colors": [
+      "R",
+      "G"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Control"
+    ],
+    "flavorText": "“Whispers among the Clans tell of a ritual buried for a thousand years, now unearthed. I fear our understanding was flawed—and that it may become the force that unites the Clans together.”\n—Aurix, Boros Historian",
+    "artist": "Dall-E 3",
+    "set": "Set 4",
+    "imageUrl": "/Cube/Forth Batch/Gold/RG/Branching%20Helix.png"
+  },
+  {
+    "id": "doomskar-s-aftershock-fb4",
+    "name": "Doomskar’s Aftershock",
+    "manaCost": "{2}{R}{G}",
+    "type": "Sorcery",
+    "rarity": "Rare",
+    "text": "Put a stun counter on each land you don't control and a vitality counter on each land you control. (If a permanent with a vitality counter would become tapped, remove one from it instead.)",
+    "colors": [
+      "R",
+      "G"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "flavorText": "The foretold doom struck true, yet the Doomskar's wrath brought prosperity to the Realms that embraced it.",
+    "artist": "ChatGPT 04",
+    "set": "Set 4",
+    "imageUrl": "/Cube/Forth Batch/Gold/RG/Doomskar%E2%80%99s%20Aftershock.png"
+  },
+  {
+    "id": "kuraz-the-boiling-anger-fb4",
+    "name": "Kuraz, the Boiling Anger",
+    "manaCost": "{4}{R}{G}",
+    "type": "Legendary Creature — Dragon Beast",
+    "rarity": "Mythic Rare",
+    "text": "Flying, vigilance\nBerserk (Whenever this creature attacks, you may double its power. If you do, sacrifice it at the end of turn.)\nOther creatures have berserk and attack each turn if able.\nWhenever a creature you don't control attacks, you may berserk it.",
+    "colors": [
+      "R",
+      "G"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "power": "5",
+    "toughness": "5",
+    "artist": "ChatGPT 04",
+    "set": "Set 4",
+    "imageUrl": "/Cube/Forth Batch/Gold/RG/Kuraz%2C%20the%20Boiling%20Anger.png"
+  },
+  {
+    "id": "maakian-nodorog-fb4",
+    "name": "Maakian Nodorog",
+    "manaCost": "{R/G}{R/G}",
+    "type": "Creature — Cat Dog",
+    "rarity": "Rare",
+    "text": "{T}: Add {R} or {G}.\n{1}{R/G}{R/G}: This creature fights another target creature.",
+    "colors": [
+      "R",
+      "G"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Control"
+    ],
+    "power": "3",
+    "toughness": "3",
+    "flavorText": "She escaped the cold Simic lab—hungry, sad, but lucky to find the Gruul Clans, where food was plenty and she was worshipped as she deserved.",
+    "artist": "ChatGPT 04",
+    "set": "Set 4",
+    "imageUrl": "/Cube/Forth Batch/Gold/RG/Maakian%20Nodorog.png"
+  },
+  {
+    "id": "ela-she-who-defies-destiny-fb4",
+    "name": "Ela, She Who Defies Destiny",
+    "manaCost": "{R/W}",
+    "type": "Legendary Creature — Human Hero",
+    "rarity": "Rare",
+    "text": "Requiem — Whenever a card enters or leaves your graveyard, put a level counter on this creature.\nLEVEL 1-5\nFirst strike\nSpells and abilities from your graveyard cost {1} less to cast and activate.\n2/2\nLEVEL 6+\nFlying, double strike\nSpells and abilities from your graveyard cost {3} less to cast and activate.\n3/3",
+    "colors": [
+      "R",
+      "W"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Self-mill"
+    ],
+    "power": "1",
+    "toughness": "1",
+    "artist": "ChatGPT 04",
+    "set": "Set 4",
+    "imageUrl": "/Cube/Forth Batch/Gold/RW/Ela%2C%20She%20Who%20Defies%20Destiny.png"
+  },
+  {
+    "id": "lord-of-dissociation-fb4",
+    "name": "Lord of Dissociation",
+    "manaCost": "{1}{R}{R}{W}{W}",
+    "type": "Creature — Elemental",
+    "rarity": "Mythic Rare",
+    "text": "This creature's power and toughness are each equal to the number of cards in all graveyards plus all exiles.",
+    "colors": [
+      "R",
+      "W"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Self-mill"
+    ],
+    "power": "*",
+    "toughness": "*",
+    "flavorText": "Born of a longing for a past that never was, its laughter is made of sorrow and irony.",
+    "artist": "ChatGPT 04",
+    "set": "Set 4",
+    "imageUrl": "/Cube/Forth Batch/Gold/RW/Lord%20of%20Dissociation.png"
+  },
+  {
+    "id": "odric-redeemed-cathar-fb4",
+    "name": "Odric, Redeemed Cathar",
+    "manaCost": "{1}{R}{W}",
+    "type": "Legendary Creature — Human Spirit Soldier",
+    "rarity": "Rare",
+    "text": "Whenever Odric attacks, return target creature card with flying, a card with first strike, and so on for double strike, deathtouch, haste, hexproof, indestructible, lifelink, menace, reach, trample, and vigilance from your graveyard to the battlefield tapped and attacking. Sacrifice them at the beginning of the next end step.",
+    "colors": [
+      "R",
+      "W"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Self-mill"
+    ],
+    "power": "3",
+    "toughness": "3",
+    "artist": "Rohland DeMoss",
+    "set": "Set 4",
+    "imageUrl": "/Cube/Forth Batch/Gold/RW/Odric%2C%20Redeemed%20Cathar.png"
+  },
+  {
+    "id": "yaszen-ascendant-commander-fb4",
+    "name": "Yaszen, Ascendant Commander",
+    "manaCost": "{2}{R}{W}",
+    "type": "Legendary Creature — Human Angel Soldier",
+    "rarity": "Mythic Rare",
+    "text": "Flying\nFormation (Whenever a creature with formation is dealt damage for the first time each turn, you may have it instead be dealt to another creature you control with formation.)\nWhenever another nontoken creature card is put into your graveyard from anywhere, create a 1/1 white and red Soldier creature token with formation.",
+    "colors": [
+      "R",
+      "W"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Self-mill",
+      "Token Collection"
+    ],
+    "power": "4",
+    "toughness": "2",
+    "artist": "BeaRibeiro13",
+    "relatedTokens": [
+      "1/1 white and red Soldier"
+    ],
+    "set": "Set 4",
+    "imageUrl": "/Cube/Forth Batch/Gold/RW/Yaszen%2C%20Ascendant%20Commander.png"
+  },
+  {
+    "id": "inkfathom-s-brew-fb4",
+    "name": "Inkfathom’s Brew",
+    "manaCost": "{U/B}",
+    "type": "Sorcery",
+    "rarity": "Uncommon",
+    "text": "Create an Inkfathom Role token attached to target creature you control. (If you control another Role on it, put that one into the graveyard. Enchanted creature can't block and can't be blocked.)\nCipher",
+    "colors": [
+      "U",
+      "B"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Broken Cipher"
+    ],
+    "artist": "Jesper Ejsing",
+    "relatedTokens": [
+      "Inkfathom Role"
+    ],
+    "set": "Set 4",
+    "imageUrl": "/Cube/Forth Batch/Gold/UB/Inkfathom%E2%80%99s%20Brew.png"
+  },
+  {
+    "id": "phenax-first-to-escape-fb4",
+    "name": "Phenax, First to Escape",
+    "manaCost": "{U}{B}",
+    "type": "Legendary Creature — Human Rogue",
+    "rarity": "Rare",
+    "text": "Ward {2}, Pay 2 life\nWhenever Phenax deals combat damage to a player, you may cast a copy of its adventure side (You still pay its cost.)",
+    "colors": [
+      "U",
+      "B"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Broken Cipher"
+    ],
+    "power": "2",
+    "toughness": "2",
+    "artist": "ChatGPT 04",
+    "set": "Set 4",
+    "imageUrl": "/Cube/Forth Batch/Gold/UB/Phenax%2C%20First%20to%20Escape.png"
+  },
+  {
+    "id": "szadek-ancient-madness-fb4",
+    "name": "Szadek, Ancient Madness",
+    "manaCost": "{3}{U}{U}{B}{B}",
+    "type": "Legendary Creature — Vampire Horror Elder",
+    "rarity": "Mythic Rare",
+    "text": "Szadek can't be countered.\nFlying\nWhen Szadek, Ancient Madness enters, exile target player's hand. Then, that player adds a Confusion to their hand for each card exiled this way. (Confusion is a colorless sorcery card with no mana cost that has cycling {2}.)",
+    "colors": [
+      "U",
+      "B"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "power": "7",
+    "toughness": "7",
+    "artist": "ChatGPT 04",
+    "relatedTokens": [
+      "Confusion"
+    ],
+    "set": "Set 4",
+    "imageUrl": "/Cube/Forth Batch/Gold/UB/Szadek%2C%20Ancient%20Madness.png"
+  },
+  {
+    "id": "glengal-aether-splitter-fb4",
+    "name": "Glengal, Aether-Splitter",
+    "manaCost": "{2}{U}{R}",
+    "type": "Legendary Enchantment Creature — Fox Elemental",
+    "rarity": "Rare",
+    "text": "Whenever you cast a spell that targets only Glengal, copy that spell for each other creature you control that the spell could target. Each copy targets a different one of those creatures. (A copy of an enchantment spell becomes a token.)",
+    "colors": [
+      "U",
+      "R"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "power": "3",
+    "toughness": "3",
+    "artist": "Kemonomichi",
+    "set": "Set 4",
+    "imageUrl": "/Cube/Forth Batch/Gold/UR/Glengal%2C%20Aether-Splitter.png"
+  },
+  {
+    "id": "kroliz-conspiricy-nut-fb4",
+    "name": "Kroliz, Conspiracy Nut",
+    "manaCost": "{U}{R}",
+    "type": "Legendary Creature — Squirrel Citizen",
+    "rarity": "Rare",
+    "text": "At the beginning of your upkeep, you may choose a Conspiracy card you own from outside the game or from your command zone. If you do, create a token that's a copy of it, except it's an enchantment.",
+    "colors": [
+      "U",
+      "R"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "power": "2",
+    "toughness": "3",
+    "flavorText": "“They sell us Commander so we chase Universes Beyond, while they suppress Standard. Wake up sheeple!”",
+    "artist": "ChatGPT 04",
+    "set": "Set 4",
+    "imageUrl": "/Cube/Forth Batch/Gold/UR/Kroliz%2C%20Conspiricy%20Nut.png"
+  },
+  {
+    "id": "memorydra-fb4",
+    "name": "Memorydra",
+    "manaCost": "{X}{U/R}{U/R}",
+    "type": "Enchantment Creature — Memory Hydra",
+    "rarity": "Rare",
+    "text": "When this creature enters, exile X instant and/or sorcery cards from your hand and/or graveyard with total mana value X or less.\n{2}, Sacrifice this creature: Cast a copy of each card exiled with this creature without paying its mana cost.",
+    "colors": [
+      "U",
+      "R"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Storm"
+    ],
+    "power": "0",
+    "toughness": "0",
+    "artist": "Liiga Smilshkalne",
+    "set": "Set 4",
+    "imageUrl": "/Cube/Forth Batch/Gold/UR/Memorydra.png"
+  },
+  {
+    "id": "stack-overflow-fb4",
+    "name": "Stack Overflow",
+    "manaCost": "{3}{U}{R}",
+    "type": "Instant",
+    "rarity": "Rare",
+    "text": "For each other noncreature spell, create a red and blue Potential enchantment token, then exile that spell. Each of these tokens has \"{3}, Sacrifice this token: Cast each card exiled with it without paying its mana cost.\"",
+    "colors": [
+      "U",
+      "R"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Storm"
+    ],
+    "artist": "Thomas Karlsson",
+    "relatedTokens": [
+      "Potential"
+    ],
+    "set": "Set 4",
+    "imageUrl": "/Cube/Forth Batch/Gold/UR/Stack%20Overflow.png"
+  },
+  {
+    "id": "cube-of-promised-balance-fb4",
+    "name": "Cube of Promised Balance",
+    "manaCost": "{1}{W}{B}",
+    "type": "Legendary Artifact",
+    "rarity": "Mythic Rare",
+    "text": "When Cube of Promised Balance enters, choose custom or noncustom.\nYou may cast spells only of the trait not chosen.\n{2}{W}{B}, {T}: Destroy another target nonland, nontoken permanent with the chosen trait.\n{4}{W}{B}, {T}, Sacrifice Cube of Promised Balance: Destroy all nonland, nontoken permanents with the chosen trait.",
+    "colors": [
+      "W",
+      "B"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "artist": "ChatGPT 04",
+    "set": "Set 4",
+    "imageUrl": "/Cube/Forth Batch/Gold/WB/Cube%20of%20Promised%20Balance.png"
+  },
+  {
+    "id": "dance-of-life-and-death-fb4",
+    "name": "Dance of Life and Death",
+    "manaCost": "{1}{W/B}{W/B}",
+    "type": "Sorcery",
+    "rarity": "Rare",
+    "text": "Return target creature card with mana value 3 or less from your graveyard to the battlefield. Return it to your hand at the beginning of the next end step.\nYou may put a creature card from your hand with mana value 3 or less onto the battlefield. Its controller sacrifices it at the beginning of the next end step.",
+    "colors": [
+      "W",
+      "B"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Self-mill"
+    ],
+    "artist": "Threl",
+    "set": "Set 4",
+    "imageUrl": "/Cube/Forth Batch/Gold/WB/Dance%20of%20Life%20and%20Death.png"
+  },
+  {
+    "id": "siyara-judge-of-indulgence-fb4",
+    "name": "Siyara, Judge of Indulgence",
+    "manaCost": "{2}{W}{B}",
+    "type": "Legendary Creature — Angel Cleric",
+    "rarity": "Mythic Rare",
+    "text": "Flying, lifelink\nWhenever an opponent casts a spell during your turn, draws two or more cards, and/or creates a Treasure token, they get a debt counter. (At the beginning of that player's end step, they may pay {1} for each debt counter they have. They remove that many counters, then lose 1 life for each debt counter they have.)",
+    "colors": [
+      "W",
+      "B"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "power": "3",
+    "toughness": "3",
+    "artist": "Kevfang",
+    "set": "Set 4",
+    "imageUrl": "/Cube/Forth Batch/Gold/WB/Siyara%2C%20Judge%20of%20Indulgence.png"
+  },
+  {
+    "id": "we-are-all-one-fb4",
+    "name": "We Are All One",
+    "manaCost": "{3}{W}{W}{B}{B}",
+    "type": "Sorcery",
+    "rarity": "Mythic Rare",
+    "text": "Each player exiles all creatures they control. Then, put them onto the battlefield under your control combined into one creature. (Its power is equal to their total power, its toughness is equal to their total toughness, and it has their names, mana costs, types, text boxes, etc.)",
+    "colors": [
+      "W",
+      "B"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "artist": "Sarwet46-And-SCP",
+    "set": "Set 4",
+    "imageUrl": "/Cube/Forth Batch/Gold/WB/We%20Are%20All%20One.png"
+  },
+  {
+    "id": "class-room-adventure-fb4",
+    "name": "Class Room Adventure",
+    "type": "Enchantment — Class Room",
+    "rarity": "Rare",
+    "text": "Class {1}{W/U}\nArtifact spells you cast have demonstrate.\n{3}{W/U}: Level 2\nTokens you control have exalted.\nRoom {X}{X}{W/U}\nWhen you unlock this room, create X 1/2 colorless Child creature tokens with curiosity (whenever one deals damage to an opponent, you may draw a card.)\nAdventure {2}{W/U}\nSorcery — Adventure\nLearn about artifacts (learn, but you may treat an artifact card as a lesson.)\n“Seatbelts, everyone!”",
+    "colors": [
+      "W",
+      "U"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Artifacts"
+    ],
+    "artist": "",
+    "relatedTokens": [
+      "1/2 colorless Child"
+    ],
+    "set": "Set 4",
+    "imageUrl": "/Cube/Forth Batch/Gold/WU/Class%20Room%20Adventure.png"
+  },
+  {
+    "id": "misted-away-fb4",
+    "name": "Misted Away",
+    "manaCost": "{2}{U/W}{U/W}",
+    "type": "Instant",
+    "rarity": "Rare",
+    "text": "Exile target creature. Return that card to the battlefield under its owner's control either now, or at the beginning of the next end step.\nStorm (When you cast this spell, copy it for each spell cast before it this turn.)",
+    "colors": [
+      "W",
+      "U"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Storm",
+      "Blink/ETB/Value"
+    ],
+    "artist": "Dall-E 3",
+    "set": "Set 4",
+    "imageUrl": "/Cube/Forth Batch/Gold/WU/Misted%20Away.png"
+  },
+  {
+    "id": "niro-ascetic-judge-fb4",
+    "name": "Niro, Ascetic Judge",
+    "manaCost": "{1}{W}{U}",
+    "type": "Legendary Creature — Vedalken Advisor",
+    "rarity": "Mythic Rare",
+    "text": "At the beginning of each player's upkeep, that player is taxed 1. (The next spell they cast costs {1} more to cast. This doesn't end at the end of turn.)\nWhenever a player pays tax, ward mana costs, or for cards they don't own that instruct them to pay mana, they draw cards equal to the amount paid. (Cards like Mana Leak.)",
+    "colors": [
+      "W",
+      "U"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "power": "2",
+    "toughness": "4",
+    "artist": "dndplaybook.com's A.I",
+    "set": "Set 4",
+    "imageUrl": "/Cube/Forth Batch/Gold/WU/Niro%2C%20Ascetic%20Judge.png"
+  },
+  {
+    "id": "the-calming-storm-fb4",
+    "name": "The Calming Storm",
+    "manaCost": "{W}{U}",
+    "type": "Sorcery",
+    "rarity": "Rare",
+    "text": "Create a -2/1 white and blue Human Monk creature token with prowess.\nStorm",
+    "colors": [
+      "W",
+      "U"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Storm"
+    ],
+    "flavorText": "“One must remember their innocence—the days before they became so rigid with life, before the nature of mankind did its thing.”\n—Ponderings of the One That Was",
+    "artist": "ChatGPT 04",
+    "relatedTokens": [
+      "-2/1 white and blue Human Monk"
+    ],
+    "set": "Set 4",
+    "imageUrl": "/Cube/Forth Batch/Gold/WU/The%20Calming%20Storm.png"
+  },
+  {
+    "id": "aspiring-speedbrooder-fb4",
+    "name": "Aspiring Speedbrooder",
+    "type": "Artifact — Vehicle",
+    "rarity": "Rare",
+    "text": "Level up Crew 2 (Crew 2: Put a level counter on this. Level up only as a sorcery.)\nLEVEL 2-3\n4/4\nThis Vehicle gets +1/+1 for each artifact and/or creature card in your graveyard.\nLEVEL 4+\n5/5\nEach Vehicle you control gets +1/+1 for each artifact and/or creature card in your graveyard.",
+    "colors": [],
+    "custom": true,
+    "archetypes": [
+      "Vehicles",
+      "Self-mill"
+    ],
+    "power": "3",
+    "toughness": "3",
+    "artist": "ChatGPT 04",
+    "set": "Set 4",
+    "imageUrl": "/Cube/Forth Batch/Green/Aspiring%20Speedbrooder.png"
+  },
+  {
+    "id": "berserker-s-prayer-fb4",
+    "name": "Berserker's Prayer",
+    "manaCost": "{1}{G}",
+    "type": "Instant",
+    "rarity": "Common",
+    "text": "Target creature gets +2/+2 and gains berserk until end of turn. (Whenever it attacks, you may double its power. If you do, sacrifice it at the end of turn.)",
+    "colors": [
+      "G"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "flavorText": "\"Raze-Boar, roar with me: if I die today, I die with their city in ruins!\"",
+    "artist": "Maciej Kuciara",
+    "set": "Set 4",
+    "imageUrl": "/Cube/Forth Batch/Green/Berserker%E2%80%99s%20Prayer.png"
+  },
+  {
+    "id": "boss-encounter-fb4",
+    "name": "Boss Encounter",
+    "manaCost": "{2}{G}{G}",
+    "type": "Sorcery",
+    "rarity": "Rare",
+    "text": "At the beginning of your next combat, target creature you control fights each creature you don't control, one at a time.\nSuspend 2 — {R}{R}\nThrilling Preparations — Whenever a time counter is removed from this card while it's exiled, exile the top card of your library. Until end of turn, you may play that card. If it's a creature spell, it enters with two +1/+1 counters on it.",
+    "colors": [
+      "G"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Control"
+    ],
+    "artist": "Josh Herman",
+    "set": "Set 4",
+    "imageUrl": "/Cube/Forth Batch/Green/Boss%20Encounter.png"
+  },
+  {
+    "id": "decorated-overseer-fb4",
+    "name": "Decorated Overseer",
+    "manaCost": "{2}{G}",
+    "type": "Creature — Centaur Warrior",
+    "rarity": "Rare",
+    "text": "Unity (Token creatures you control have all activated abilities of all nontoken creatures you control with unity.)\nWhenever this creature becomes a target of a spell, create a 1/1 green Human Soldier creature token with haste.\n{G}, {T}: Target creature gets +1/+1 until end of turn.",
+    "colors": [
+      "G"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "power": "3",
+    "toughness": "3",
+    "artist": "ChatGPT 04",
+    "relatedTokens": [
+      "1/1 green Human Soldier"
+    ],
+    "set": "Set 4",
+    "imageUrl": "/Cube/Forth Batch/Green/Decorated%20Overseer.png"
+  },
+  {
+    "id": "domain-expansion-fb4",
+    "name": "Domain Expansion",
+    "manaCost": "{5}{G}{G}",
+    "type": "Instant",
+    "rarity": "Mythic Rare",
+    "text": "For each basic land type, create a 1/1 green Dryad land creature token with that basic land type. (They're affected by summoning sickness, and each of them has a different name.)",
+    "colors": [
+      "G"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Token Collection"
+    ],
+    "flavorText": "United in sorrow, the dryads quietly pledged to reclaim and grow—lest human greed consume what little remained.",
+    "artist": "ChatGPT 04",
+    "relatedTokens": [
+      "1/1 green Dryad"
+    ],
+    "set": "Set 4",
+    "imageUrl": "/Cube/Forth Batch/Green/Domain%20Expansion.png"
+  },
+  {
+    "id": "el-verde-danna-s-masterpiece-fb4",
+    "name": "El-Verde, Danna's Masterpiece",
+    "manaCost": "{1}{G}",
+    "type": "Legendary Artifact — Vehicle",
+    "rarity": "Rare",
+    "text": "Haste\n{2}{W}: This Vehicle becomes an artifact creature until end of turn. Until end of turn, whenever a Vehicle you control attacks, put a +1/+1 counter on each creature you control and noncreature Vehicle you control. If a creature named Danna, Lockloft Ace crewed this Vehicle this turn, copy this ability.\nCrew 2",
+    "colors": [
+      "G"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Vehicles"
+    ],
+    "power": "4",
+    "toughness": "3",
+    "artist": "ChatGPT 04",
+    "set": "Set 4",
+    "imageUrl": "/Cube/Forth Batch/Green/El-Verde%2C%20Danna%E2%80%99s%20Masterpiece.png"
+  },
+  {
+    "id": "elves-of-civilized-facade-fb4",
+    "name": "Elves of Civilized Facade",
+    "manaCost": "{G}",
+    "type": "Creature — Elf Druid",
+    "rarity": "Common",
+    "text": "Berserk (Whenever this creature attacks, you may double its power. If you do, sacrifice it at the end of turn.)\n{T}: Add {R}.",
+    "colors": [
+      "G"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "power": "0",
+    "toughness": "1",
+    "flavorText": "Some Gruul elves leave the Clans and seek acceptance in Ravnican society, but old habits die hard.",
+    "artist": "ChatGPT 04",
+    "set": "Set 4",
+    "imageUrl": "/Cube/Forth Batch/Green/Elves%20of%20Civilized%20Facade.png"
+  },
+  {
+    "id": "essence-resonator-fb4",
+    "name": "Essence Resonator",
+    "manaCost": "{2}{G}",
+    "type": "Artifact",
+    "rarity": "Mythic Rare",
+    "text": "Whenever an artifact or creature enters under your control, you may activate one of its activated abilities without paying its mana cost and/or {T} cost.\nCreatures you control have haste.",
+    "colors": [
+      "G"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Artifacts",
+      "Blink/ETB/Value"
+    ],
+    "flavorText": "At the Edge of Eternities, it awaits—not to be understood, but to awaken what lies beyond understanding.",
+    "artist": "Gustav Schmidt",
+    "set": "Set 4",
+    "imageUrl": "/Cube/Forth Batch/Green/Essence%20Resonator.png"
+  },
+  {
+    "id": "grothama-the-final-boss-fb4",
+    "name": "Grothama, the Final Boss",
+    "manaCost": "{4}{G}{G}",
+    "type": "Legendary Battle Creature — Wurm Boss",
+    "rarity": "Mythic Rare",
+    "text": "(Any player may attack and defend Bosses. Whenever a Boss is dealt damage, remove that many defense counters from it. Bosses deal damage equal to their defense. A boss can't attack itself. When it's defeated, the player that defeated it exile it, then cast it transformed.)\nVigilance, trample, ward {3}",
+    "colors": [
+      "G"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "power": "9",
+    "artist": "Kohei Hayama",
+    "relatedFace": "Legendary Loot Drop",
+    "set": "Set 4",
+    "imageUrl": "/Cube/Forth Batch/Green/Grothama%2C%20the%20Final%20Boss.png"
+  },
+  {
+    "id": "heretic-s-capusle-fb4",
+    "name": "Heretic's Capsule",
+    "type": "Artifact",
+    "rarity": "Common",
+    "text": "{1}{G}, {T}, Sacrifice this artifact: Search your library for up to two basic land cards, reveal those cards, put one onto the battlefield tapped and the other into your hand, then shuffle.",
+    "colors": [],
+    "custom": true,
+    "archetypes": [],
+    "flavorText": "\"Nothing is more natural than nurturing the world around you while discarding your metallic impurities.\"\n—Dolomarus, Esper Heretic",
+    "artist": "ChatGPT 04",
+    "set": "Set 4",
+    "imageUrl": "/Cube/Forth Batch/Green/Heretic%E2%80%99s%20Capusle.png"
+  },
+  {
+    "id": "jungle-sanctifier-fb4",
+    "name": "Jungle Sanctifier",
+    "manaCost": "{1}{G}",
+    "type": "Creature — Koala Druid",
+    "rarity": "Rare",
+    "text": "Vigilance\n{T}: Add {G}. If this mana was spent to cast a spell that targets this creature, put a +1/+1 counter on this creature, then you may destroy target artifact or enchantment with mana value less than or equal to this creature's power.",
+    "colors": [
+      "G"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "power": "1",
+    "toughness": "1",
+    "artist": "Raini Studios",
+    "set": "Set 4",
+    "imageUrl": "/Cube/Forth Batch/Green/Jungle%20Sanctifier.png"
+  },
+  {
+    "id": "legendary-loot-drop-fb4",
+    "name": "Legendary Loot Drop",
+    "type": "Sorcery",
+    "rarity": "Mythic Rare",
+    "text": "You draw seven cards and you gain 14 life. Add {W}{W}{U}{U}{B}{B}{R}{R}{G}{G}.",
+    "colors": [
+      "G"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Control"
+    ],
+    "facedown": true,
+    "flavorText": "Kylem cheers for the showstopper, not the scaffolding crushed beneath the stage.",
+    "artist": "IllustrationBySam",
+    "relatedFace": "Grothama, the Final Boss",
+    "set": "Set 4",
+    "imageUrl": "/Cube/Forth Batch/Green/Legendary%20Loot%20Drop.png"
+  },
+  {
+    "id": "nourishment-for-the-puppet-fb4",
+    "name": "Nourishment for the Puppet",
+    "manaCost": "{3}{G}{G}",
+    "type": "Sorcery",
+    "rarity": "Rare",
+    "text": "Cleave {1}{G}{G} (You may cast this spell for its cleave cost. If you do, remove the words in square brackets.)\nCreate a [4/6] green artifact [Treefolk Horror creature] token named Nourisher with \"At the beginning of your upkeep, return target creature card from your graveyard to your hand.\"",
+    "colors": [
+      "G"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "artist": "Helge C. Balzer",
+    "relatedTokens": [
+      "Nourisher"
+    ],
+    "set": "Set 4",
+    "imageUrl": "/Cube/Forth Batch/Green/Nourishment%20for%20the%20Puppet.png"
+  },
+  {
+    "id": "overgrown-peacock-fb4",
+    "name": "Overgrown Peacock",
+    "manaCost": "{3}{G}",
+    "type": "Creature — Bird",
+    "rarity": "Rare",
+    "text": "Prowess, trample\nWhenever you cast an artifact spell, this creature fights target creature you don't control.",
+    "colors": [
+      "G"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Prowess",
+      "Artifacts"
+    ],
+    "power": "3",
+    "toughness": "3",
+    "flavorText": "\"In the Wastelands, always carry the biggest stick.\"",
+    "artist": "Marianna Kladi",
+    "set": "Set 4",
+    "imageUrl": "/Cube/Forth Batch/Green/Overgrown%20Peacock.png"
+  },
+  {
+    "id": "podium-of-the-ancestors-fb4",
+    "name": "Podium of the Ancestors",
+    "manaCost": "{3}{G}",
+    "type": "Artifact",
+    "rarity": "Mythic Rare",
+    "text": "{T}: Target creature you control endures 1. (Put a +1/+1 counter on it or create a 1/1 white Spirit creature token.)\n{T}, Remove any number of counters from among creatures you control and sacrifice any number of tokens: Search your library for a creature card with mana value less than or equal to the total number of counters removed and tokens sacrificed this way, put it onto the battlefield, then shuffle. Activate only as a sorcery.",
+    "colors": [
+      "G"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Token Collection"
+    ],
+    "artist": "ChatGPT 04",
+    "relatedTokens": [
+      "1/1 white Spirit"
+    ],
+    "set": "Set 4",
+    "imageUrl": "/Cube/Forth Batch/Green/Podium%20of%20the%20Ancestors.png"
+  },
+  {
+    "id": "road-kill-fb4",
+    "name": "Road Kill",
+    "manaCost": "{G}{G}",
+    "type": "Creature — Elk Zombie",
+    "rarity": "Rare",
+    "text": "You may begin the game with this card in your graveyard. If you do, each opponent investigates.\nRequiem — Whenever a card enters or leaves your graveyard, return this card from your graveyard to the battlefield with a finality counter on it. When it enters this way, you may destroy target Vehicle.",
+    "colors": [
+      "G"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Self-mill"
+    ],
+    "power": "3",
+    "toughness": "3",
+    "flavorText": "You might forget your little accident, but she remembers—and she never forgives.",
+    "artist": "ChatGPT 04",
+    "set": "Set 4",
+    "imageUrl": "/Cube/Forth Batch/Green/Road%20Kill.png"
+  },
+  {
+    "id": "shepard-of-the-cycle-fb4",
+    "name": "Shepherd of the Cycle",
+    "manaCost": "{3}{G}",
+    "type": "Creature — Elf Shaman",
+    "rarity": "Rare",
+    "text": "{2}, {T}: Put a +1/+1 counter on target creature for each artifact and/or creature you control. If this permanent is an artifact, also put a +1/+1 counter on that creature for each artifact and/or creature card in your graveyard.\nPetrify from your graveyard {5}{B} ({5}{B}, Exile this card from your graveyard: Create a copy of it, except it's an artifact. Activate only as a sorcery.)",
+    "colors": [
+      "G"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Artifacts"
+    ],
+    "power": "2",
+    "toughness": "2",
+    "artist": "Sydney Young",
+    "set": "Set 4",
+    "imageUrl": "/Cube/Forth Batch/Green/Shepard%20of%20the%20Cycle.png"
+  },
+  {
+    "id": "spell-fierce-fb4",
+    "name": "Spell Fierce",
+    "manaCost": "{G}",
+    "type": "Instant",
+    "rarity": "Common",
+    "text": "Target creature you control fights target creature spell. (If a creature spell is dealt enough damage, it's countered.)",
+    "colors": [
+      "G"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Control"
+    ],
+    "flavorText": "The Fleshbeasts of Iquatana are born for psychological warfare by The Masked Ones, and the only triumph that truly quenches their thirst is one over their own Memorybeast.",
+    "artist": "ChatGPT 40",
+    "set": "Set 4",
+    "imageUrl": "/Cube/Forth Batch/Green/Spell%20Fierce.png"
+  },
+  {
+    "id": "tankamutaticar-fb4",
+    "name": "Tankamutaticar",
+    "manaCost": "{3}{G}{G}",
+    "type": "Artifact — Vehicle",
+    "rarity": "Rare",
+    "text": "Whenever this Vehicle attacks, experiment X, where X is the total power of creatures that crewed it this turn. (You get X {E} counters. If you don't control The Experiment, create one. Then, spend any amount of {E} on it.)\nCrew 3. Activate only once each turn.",
+    "colors": [
+      "G"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Vehicles"
+    ],
+    "power": "7",
+    "toughness": "7",
+    "flavorText": "\"Holy shit.\"\n—Auralia, Very Confused",
+    "artist": "ChatGPT 04",
+    "relatedTokens": [
+      "The Experiment"
+    ],
+    "set": "Set 4",
+    "imageUrl": "/Cube/Forth Batch/Green/Tankamutaticar.png"
+  },
+  {
+    "id": "thaldrin-the-rune-bearer-fb4",
+    "name": "Thaldrin, the Rune-Bearer",
+    "manaCost": "{G}{G}",
+    "type": "Legendary Creature — Treefolk Shaman",
+    "rarity": "Rare",
+    "text": "Vigilance\nCreatures you control have hexproof during combat.\n{2}{U}: Put a prowess counter on target creature.",
+    "colors": [
+      "G"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Prowess"
+    ],
+    "power": "2",
+    "toughness": "4",
+    "flavorText": "\"You hide behind the artificial to imitate a fraction of our power… pitiful.\"",
+    "artist": "ChatGPT 04",
+    "set": "Set 4",
+    "imageUrl": "/Cube/Forth Batch/Green/Thaldrin%2C%20the%20Rune-Bearer.png"
+  },
+  {
+    "id": "there-are-two-wolves-inside-you-fb4",
+    "name": "There Are Two Wolves Inside You",
+    "manaCost": "{G}",
+    "type": "Sorcery",
+    "rarity": "Rare",
+    "text": "Destroy target creature. Its controller creates a 2/2 legendary white Wolf creature token and a 2/2 legendary black Wolf creature token, then they give each of them a different name.",
+    "colors": [
+      "G"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Control"
+    ],
+    "flavorText": "\"mmrffgghhhhhhmm😫\"",
+    "artist": "UNCLEFATHER",
+    "relatedTokens": [
+      "2/2 white Wolf",
+      "2/2 black Wolf"
+    ],
+    "set": "Set 4",
+    "imageUrl": "/Cube/Forth Batch/Green/There%20Are%20Two%20Wolves%20Inside%20You.png"
+  },
+  {
+    "id": "titan-of-future-promised-fb4",
+    "name": "Titan of Future Promised",
+    "manaCost": "{7}{G}{G}",
+    "type": "Artifact Creature — Giant",
+    "rarity": "Rare",
+    "text": "Affinity for artifacts (This spell costs {1} less to cast for each artifact you control.)\nTrample\nThis creature's power and toughness are each equal to twice the number of artifacts you control.",
+    "colors": [
+      "G"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Artifacts"
+    ],
+    "power": "*",
+    "toughness": "*",
+    "flavorText": "When the first man-made tool on Dominaria was crafted, he was there, watching.",
+    "artist": "ChatGPT 04",
+    "set": "Set 4",
+    "imageUrl": "/Cube/Forth Batch/Green/Titan%20of%20Future%20Promised.png"
+  },
+  {
+    "id": "unveil-the-future-fb4",
+    "name": "Unveil the Future",
+    "manaCost": "{2}{G}",
+    "type": "Instant",
+    "rarity": "Common",
+    "text": "Prevent all damage that would be dealt this turn except by sources you control with one or more counters on them.\nExperiment 3. (You get three {E} counters. If you don't control The Experiment, create one. Then, spend any amount of {E} on it.)",
+    "colors": [
+      "G"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "artist": "ChatGPT 04",
+    "relatedTokens": [
+      "The Experiment"
+    ],
+    "set": "Set 4",
+    "imageUrl": "/Cube/Forth Batch/Green/Unveil%20the%20Future.png"
+  },
+  {
+    "id": "verdentreader-fb4",
+    "name": "Verdentreader",
+    "type": "Artifact — Vehicle",
+    "rarity": "Rare",
+    "text": "Whenever this Vehicle attacks, create a 1/1 green Forest Dryad land creature token. (It's affected by summoning sickness.)\nCrew 2",
+    "colors": [],
+    "custom": true,
+    "archetypes": [
+      "Vehicles"
+    ],
+    "power": "3",
+    "toughness": "2",
+    "flavorText": "As the Brothers' War embraced modern warfare, Gaea's defenses adapted accordingly.",
+    "artist": "ChatGPT 04",
+    "relatedTokens": [
+      "1/1 green Forest Dryad"
+    ],
+    "set": "Set 4",
+    "imageUrl": "/Cube/Forth Batch/Green/Verdentreader.png"
+  },
+  {
+    "id": "vorinclex-s-garage-fb4",
+    "name": "Vorinclex's Garage",
+    "manaCost": "{2}{G}",
+    "type": "Artifact",
+    "rarity": "Rare",
+    "text": "At the beginning of combat on your turn, put an oil counter on this artifact, then create an X/X green artifact Vehicle token with trample, haste and crew 1, where X is the number of oil counters on this artifact.",
+    "colors": [
+      "G"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Vehicles"
+    ],
+    "artist": "ChatGPT 04",
+    "relatedTokens": [
+      "X/X green Vehicle"
+    ],
+    "set": "Set 4",
+    "imageUrl": "/Cube/Forth Batch/Green/Vorinclex%E2%80%99s%20Garage.png"
+  },
+  {
+    "id": "abandoned-church-fb4",
+    "name": "Abandoned Church",
+    "type": "Land — Plains Swamp",
+    "rarity": "Rare",
+    "text": "({T}: Add {W} or {B}.)\nThis land enters tapped.\nCycling {2} ({2}, Discard this card: Draw a card.)",
+    "colors": [],
+    "custom": true,
+    "archetypes": [],
+    "flavorText": "Thunder Junction is a land with no faith, yet even outlaws must always find something to believe in.",
+    "artist": "ChatGPT o4",
+    "set": "Set 4",
+    "imageUrl": "/Cube/Forth Batch/Lands/Abandoned%20Church.png"
+  },
+  {
+    "id": "architoid-s-nexus-fb4",
+    "name": "Architoid's Nexus",
+    "type": "Land",
+    "rarity": "Common",
+    "text": "This land enters tapped.\nWhen this land enters, if you've cast two or more spells this turn, draw a card.\n{T}: Add {W} or {U}.",
+    "colors": [],
+    "custom": true,
+    "archetypes": [
+      "Storm"
+    ],
+    "flavorText": "It can be anything—so long as it remains nothing.",
+    "artist": "Neople",
+    "set": "Set 4",
+    "imageUrl": "/Cube/Forth Batch/Lands/Architoid%E2%80%99s%20Nexus.png"
+  },
+  {
+    "id": "bazaar-of-the-damned-fb4",
+    "name": "Bazaar of the Damned",
+    "type": "Land",
+    "rarity": "Common",
+    "text": "This land enters tapped.\nWhen this land enters, you may sacrifice a creature. If you do, return a creature card with the same mana value from your graveyard to your hand.\n{T}: Add {W} or {B}.",
+    "colors": [],
+    "custom": true,
+    "archetypes": [],
+    "artist": "Planescape: I am the Mimir",
+    "set": "Set 4",
+    "imageUrl": "/Cube/Forth Batch/Lands/Bazaar%20of%20the%20Damned.png"
+  },
+  {
+    "id": "bountiful-oasis-fb4",
+    "name": "Bountiful Oasis",
+    "type": "Land — Forest Island",
+    "rarity": "Rare",
+    "text": "({T}: Add {G} or {U}.)\nThis land enters tapped.\nCycling {2} ({2}, Discard this card: Draw a card.)",
+    "colors": [],
+    "custom": true,
+    "archetypes": [],
+    "flavorText": "Thunder Juncture is a land with no nature, yet even outlaws must always find something to rely on.",
+    "artist": "ChatGPT o4",
+    "set": "Set 4",
+    "imageUrl": "/Cube/Forth Batch/Lands/Bountiful%20Oasis.png"
+  },
+  {
+    "id": "collectomancer-s-lab-fb4",
+    "name": "Collectomancer's Lab",
+    "type": "Land",
+    "rarity": "Common",
+    "text": "This land enters tapped.\nWhen this land enters, you may create a token that's a copy of target token you control. If you do, sacrifice it at the beginning of the next end step.\n{T}: Add {B} or {R}.",
+    "colors": [],
+    "custom": true,
+    "archetypes": [
+      "Token Collection"
+    ],
+    "artist": "Kaileigh Vincent",
+    "set": "Set 4",
+    "imageUrl": "/Cube/Forth Batch/Lands/Collectomancer%E2%80%99s%20Lab.png"
+  },
+  {
+    "id": "forgotten-town-fb4",
+    "name": "Forgotten Town",
+    "type": "Land — Swamp Forest",
+    "rarity": "Rare",
+    "text": "({T}: Add {B} or {G}.)\nThis land enters tapped.\nCycling {2} ({2}, Discard this card: Draw a card.)",
+    "colors": [],
+    "custom": true,
+    "archetypes": [],
+    "flavorText": "Thunder Juncture is a land with no history, yet even outlaws must always find something to look back on.",
+    "artist": "ChatGPT o4",
+    "set": "Set 4",
+    "imageUrl": "/Cube/Forth Batch/Lands/Forgotten%20Town.png"
+  },
+  {
+    "id": "glittermore-fb4",
+    "name": "Glittermore",
+    "type": "Enchantment Land",
+    "rarity": "Common",
+    "text": "This land enters tapped.\nIndestructible\n{T}: Add {U} or {R}.",
+    "colors": [],
+    "custom": true,
+    "archetypes": [],
+    "flavorText": "Dreams never die, as long as you know where to look.",
+    "artist": "StarryAI",
+    "set": "Set 4",
+    "imageUrl": "/Cube/Forth Batch/Lands/Glittermore.png"
+  },
+  {
+    "id": "inconspicuous-drop-site-fb4",
+    "name": "Inconspicuous Drop-Site",
+    "type": "Land",
+    "rarity": "Common",
+    "text": "This land enters tapped unless you control an encoded creature or a creature you control was dealt combat damage to a player this turn.\n{T}: Add {U} or {B}.",
+    "colors": [],
+    "custom": true,
+    "archetypes": [],
+    "flavorText": "It's hidden in plain sight, even if you know what you are looking for.",
+    "artist": "MatLatArt",
+    "set": "Set 4",
+    "imageUrl": "/Cube/Forth Batch/Lands/Inconspicuous%20Drop-Site.png"
+  },
+  {
+    "id": "industrious-frontier-fb4",
+    "name": "Industrious Frontier",
+    "type": "Land — Island Mountain",
+    "rarity": "Rare",
+    "text": "({T}: Add {U} or {R}.)\nThis land enters tapped.\nCycling {2} ({2}, Discard this card: Draw a card.)",
+    "colors": [],
+    "custom": true,
+    "archetypes": [],
+    "flavorText": "Thunder Juncture is a land with no future, yet even outlaws must always find something to leave behind.",
+    "artist": "ChatGPT o4",
+    "set": "Set 4",
+    "imageUrl": "/Cube/Forth Batch/Lands/Industrious%20Frontier.png"
+  },
+  {
+    "id": "lockloft-charge-station-fb4",
+    "name": "Lockloft Charge-Station",
+    "type": "Land",
+    "rarity": "Common",
+    "text": "This land enters tapped.\nWhen this land enters, up to one target Vehicle you control becomes an artifact creature until end of turn.\n{T}: Add {G} or {W}.",
+    "colors": [],
+    "custom": true,
+    "archetypes": [
+      "Vehicles"
+    ],
+    "flavorText": "Maximum convenience, if you know what drives the Lockloft family.",
+    "artist": "ChatGPT o4",
+    "set": "Set 4",
+    "imageUrl": "/Cube/Forth Batch/Lands/Lockloft%20Charge-Station.png"
+  },
+  {
+    "id": "lushwater-monastery-fb4",
+    "name": "Lushwater Monastery",
+    "type": "Land",
+    "rarity": "Common",
+    "text": "This land enters tapped.\n{T}: Add {G} or {U}.\nGraft Prowess 1 (This land enters with a prowess counter on it. Whenever a creature enters, you may move a prowess counter from this land onto it.)",
+    "colors": [],
+    "custom": true,
+    "archetypes": [
+      "Prowess"
+    ],
+    "artist": "Stable Diffusion",
+    "set": "Set 4",
+    "imageUrl": "/Cube/Forth Batch/Lands/Lushwater%20Monastery.png"
+  },
+  {
+    "id": "security-outpost-fb4",
+    "name": "Security Outpost",
+    "type": "Land — Mountain Plains",
+    "rarity": "Rare",
+    "text": "({T}: Add {R} or {W}.)\nThis land enters tapped.\nCycling {2} ({2}, Discard this card: Draw a card.)",
+    "colors": [],
+    "custom": true,
+    "archetypes": [],
+    "flavorText": "Thunder Juncture is a land with no law, yet even outlaws must always find something to stand for.",
+    "artist": "ChatGPT o4",
+    "set": "Set 4",
+    "imageUrl": "/Cube/Forth Batch/Lands/Security%20Outpost.png"
+  },
+  {
+    "id": "sweltering-heath-fb4",
+    "name": "Sweltering Heath",
+    "type": "Land",
+    "rarity": "Common",
+    "text": "This land enters tapped.\nWhen this land enters, mill two cards.\n{T}: Add {R} or {W}.",
+    "colors": [],
+    "custom": true,
+    "archetypes": [
+      "Self-mill"
+    ],
+    "flavorText": "Your mind won't betray you, as long as you stay hydrated.",
+    "artist": "ChanceKafkaArt",
+    "set": "Set 4",
+    "imageUrl": "/Cube/Forth Batch/Lands/Sweltering%20Heath.png"
+  },
+  {
+    "id": "titan-s-proving-grounds-fb4",
+    "name": "Titan's Proving Grounds",
+    "type": "Land",
+    "rarity": "Common",
+    "text": "This land enters tapped.\nSpells you cast with mana value 6 or more cost {1} less to cast.\n{T}: Add {R} or {G}.",
+    "colors": [],
+    "custom": true,
+    "archetypes": [],
+    "flavorText": "You've got this… just don't look up.",
+    "artist": "ChatGPT o4",
+    "set": "Set 4",
+    "imageUrl": "/Cube/Forth Batch/Lands/Titan%E2%80%99s%20Proving%20Grounds.png"
+  },
+  {
+    "id": "ad-infinitum-fb4",
+    "name": "Ad Infinitum",
+    "manaCost": "{3}{R}{R}",
+    "type": "Sorcery",
+    "rarity": "Rare",
+    "text": "Exile the top card of your library. Until the end of your next turn, you may play that card. At the end of that turn, if you didn't play it, it deals damage to you equal to its mana value. You may repeat this process any number of times.",
+    "colors": [
+      "R"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "flavorText": "\"The best part of this job is getting fired.\"",
+    "artist": "ChatGPT o4",
+    "set": "Set 4",
+    "imageUrl": "/Cube/Forth Batch/Red/Ad%20Infinitum.png"
+  },
+  {
+    "id": "artistic-strike-fb4",
+    "name": "Artistic Strike",
+    "manaCost": "{2}{R}",
+    "type": "Instant",
+    "rarity": "Common",
+    "text": "This spell deals 3 damage to any target, including a spell on the stack (If it deals enough damage to a creature or planeswalker spell, it's countered. If it's a Battle, it enters transformed.)",
+    "colors": [
+      "R"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Control"
+    ],
+    "flavorText": "A lot of Prismari students start off with a bright idea, only to be shut down by an even brighter one.",
+    "artist": "Asur Misoa",
+    "set": "Set 4",
+    "imageUrl": "/Cube/Forth Batch/Red/Artistic%20Strike.png"
+  },
+  {
+    "id": "astral-force-fb4",
+    "name": "Astral Force",
+    "manaCost": "{1}{R}",
+    "type": "Enchantment",
+    "rarity": "Rare",
+    "text": "At the beginning of combat on your turn, target creature you control gains double strike until end of turn.\n{2}{U}: Until end of turn, this enchantment becomes a 1/1 Monk creature with prowess and \"Whenever this creature deals combat damage to a player, draw a card.\" in addition to its other types until end of turn.",
+    "colors": [
+      "R"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "artist": "Harliskudo",
+    "set": "Set 4",
+    "imageUrl": "/Cube/Forth Batch/Red/Astral%20Force.png"
+  },
+  {
+    "id": "bloodrush-bellow-fb4",
+    "name": "Bloodrush Bellow",
+    "manaCost": "{3}{R}",
+    "type": "Enchantment",
+    "rarity": "Rare",
+    "text": "At the beginning of combat on your turn, target creature you control gets +1/+0 and gains haste and berserk until end of turn. (Whenever it attacks, you may double its power. If you do, sacrifice it at the end of turn.)\n{4}{R/G}{R/G}, Discard a creature card: Add the discarded creature card's power, toughness and text box to target attacking creature until end of turn.",
+    "colors": [
+      "R"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "artist": "Wisnu Tan",
+    "set": "Set 4",
+    "imageUrl": "/Cube/Forth Batch/Red/Bloodrush%20Bellow.png"
+  },
+  {
+    "id": "collectric-blast-fb4",
+    "name": "Collectric Blast",
+    "manaCost": "{R}",
+    "type": "Instant",
+    "rarity": "Common",
+    "text": "Collectric Blast deals 2 damage to any target.\nCollection — Collectric Blast deals 4 damage instead if you control three or more differently named tokens.",
+    "colors": [
+      "R"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Token Collection"
+    ],
+    "flavorText": "Collectomancy is part art, part science, and all fun.",
+    "artist": "ChatGPT o4",
+    "set": "Set 4",
+    "imageUrl": "/Cube/Forth Batch/Red/Collectric%20Blast.png"
+  },
+  {
+    "id": "crash-bandicoot-fb4",
+    "name": "Crash Bandicoot!",
+    "manaCost": "{2}{R}",
+    "type": "Legendary Creature — Bandicoot",
+    "rarity": "Rare",
+    "text": "{R}{R}{R}{R}{R}: Destroy target artifact. If an artifact is put into a graveyard this way, put a shield counter on Crash Bandicoot! Then, if Crash Bandicoot! has three or more shield counters on him, untap him and until end of turn, he must be blocked by all creatures if able. (You literally tap him 450 degrees. Make it look good.)",
+    "colors": [
+      "R"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "power": "2",
+    "toughness": "2",
+    "flavorText": "Woah!",
+    "artist": "Naughty Dog",
+    "set": "Set 4",
+    "imageUrl": "/Cube/Forth Batch/Red/Crash%20Bandicoot%21.png"
+  },
+  {
+    "id": "determined-fb4",
+    "name": "Determined",
+    "manaCost": "{R}",
+    "type": "Sorcery",
+    "rarity": "Rare",
+    "text": "Discard a nonland card. If you do, draw two cards.",
+    "colors": [
+      "R"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "artist": "BoredPanda",
+    "set": "Set 4",
+    "imageUrl": "/Cube/Forth Batch/Red/Determined.png"
+  },
+  {
+    "id": "everything-at-once-fb4",
+    "name": "Everything, at Once",
+    "type": "Sorcery",
+    "rarity": "Mythic Rare",
+    "text": "Exile your graveyard. Until the end of your next turn, you may play cards exiled this way.",
+    "colors": [
+      "R"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Self-mill"
+    ],
+    "artist": "Janne Parviainen",
+    "set": "Set 4",
+    "imageUrl": "/Cube/Forth Batch/Red/Everything%2C%20at%20Once.png"
+  },
+  {
+    "id": "go-out-with-a-bang-fb4",
+    "name": "Go Out With a Bang",
+    "manaCost": "{R}",
+    "type": "Instant",
+    "rarity": "Common",
+    "text": "Target creature gets +3/+0 until end of turn. When it dies this turn, exile it. Its controller creates a token that's a copy of it, except it's an enchantment.",
+    "colors": [
+      "R"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "flavorText": "\"Please remember me at my best, but most of all, remember me at my worst.\"\n— Judith, the Magnificent Death",
+    "artist": "Imagen 3",
+    "set": "Set 4",
+    "imageUrl": "/Cube/Forth Batch/Red/Go%20Out%20With%20a%20Bang.png"
+  },
+  {
+    "id": "guilty-gear-fb4",
+    "name": "Guilty Gear",
+    "manaCost": "{R}",
+    "type": "Sorcery",
+    "rarity": "Rare",
+    "text": "Strive — This spell costs {2}{B} more to cast for each target beyond the first.\nUntil end of turn, whenever you sacrifice a token, it deals 1 damage to each opponent.\nChoose any number of target artifact and/or creature cards with mana value 3 or less in your graveyard. For each of them, create a token that's a copy of it, except it has haste. Sacrifice those tokens at the beginning of the next end step.",
+    "colors": [
+      "R"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Token Collection",
+      "Self-mill"
+    ],
+    "artist": "Daisuke Ishiwatari",
+    "set": "Set 4",
+    "imageUrl": "/Cube/Forth Batch/Red/Guilty%20Gear.png"
+  },
+  {
+    "id": "i-want-it-all-fb4",
+    "name": "I Want It All",
+    "manaCost": "{2}{R}",
+    "type": "Sorcery",
+    "rarity": "Rare",
+    "text": "Exile your hand and the top seven cards of your library. Until end of turn, you may play cards exiled this way.",
+    "colors": [
+      "R"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "flavorText": "\"A torturous existence indeed—to taste everything, yet taste nothing.\"\n—Elspeth, to Xenagos",
+    "artist": "Easy-Peasy-AI",
+    "set": "Set 4",
+    "imageUrl": "/Cube/Forth Batch/Red/I%20Want%20It%20All.png"
+  },
+  {
+    "id": "jaxis-taxis-fb4",
+    "name": "Jaxis Taxis",
+    "manaCost": "{2}{R}",
+    "type": "Artifact — Vehicle",
+    "rarity": "Rare",
+    "text": "Whenever this Vehicle attacks, you may sacrifice X differently named tokens. If you do, you may put a creature card with mana value X or less from your hand onto the battlefield tapped and attacking. It gains \"When this creature dies, draw a card.\" Sacrifice that creature at the beginning of the next end step.\nBlitz {R} (If you cast this spell for its blitz cost, it gains haste and \"When this artifact dies, draw a card.\" Sacrifice it at the beginning of the next end step.)\nCrew 1",
+    "colors": [
+      "R"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Vehicles",
+      "Token Collection"
+    ],
+    "power": "5",
+    "toughness": "2",
+    "artist": "ChatGPT o4",
+    "set": "Set 4",
+    "imageUrl": "/Cube/Forth Batch/Red/Jaxis%20Taxis.png"
+  },
+  {
+    "id": "leave-no-turn-unstoned-fb4",
+    "name": "Leave No Turn Unstoned",
+    "manaCost": "{1}{R}",
+    "type": "Enchantment",
+    "rarity": "Rare",
+    "text": "At the beginning of your upkeep, exile a card at random from your graveyard. You may cast a copy of that card this turn.",
+    "colors": [
+      "R"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Self-mill"
+    ],
+    "flavorText": "\"All truths are seeded in your mind — your path is simply the journey of remembrance.\"\n—The Burning-Tree Sisterhood, to Judith",
+    "artist": "Natasha Chomko",
+    "set": "Set 4",
+    "imageUrl": "/Cube/Forth Batch/Red/Leave%20No%20Turn%20Unstoned.png"
+  },
+  {
+    "id": "look-for-fossils-fb4",
+    "name": "Look for Fossils",
+    "manaCost": "{1}{R}",
+    "type": "Instant",
+    "rarity": "Uncommon",
+    "text": "Return a card [at random] from your graveyard to your hand.\nFlashback-Cleave {2}{G}{G} (You may cast this card from your graveyard for its flashback-cleave cost. If you do, remove the words in square brackets. Then exile it.)",
+    "colors": [
+      "R"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Self-mill"
+    ],
+    "artist": "ChatGPT o4",
+    "set": "Set 4",
+    "imageUrl": "/Cube/Forth Batch/Red/Look%20for%20Fossils.png"
+  },
+  {
+    "id": "nightmare-halls-fb4",
+    "name": "Nightmare Halls",
+    "manaCost": "{3}{R}{R}",
+    "type": "Enchantment",
+    "rarity": "Mythic Rare",
+    "text": "Rather than pay the mana cost for a spell, its controller may discard a card that shares a color with that spell.",
+    "colors": [
+      "R"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "flavorText": "\"Madness is not a problem, Fran. It's a gift.\"",
+    "artist": "Foxtragic",
+    "set": "Set 4",
+    "imageUrl": "/Cube/Forth Batch/Red/Nightmare%20Halls.png"
+  },
+  {
+    "id": "pyromancer-s-mentor-fb4",
+    "name": "Pyromancer's Mentor",
+    "manaCost": "{3}{R}{R}",
+    "type": "Creature — Human Elder Shaman",
+    "rarity": "Mythic Rare",
+    "text": "Whenever you cast an instant or sorcery spell, create a Young Pyromancer token. (It's a {1}{R} 2/1 Human Shaman creature with \"Whenever you cast an instant or sorcery spell, create a 1/1 red Elemental creature token.\")",
+    "colors": [
+      "R"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Token Collection"
+    ],
+    "power": "4",
+    "toughness": "3",
+    "artist": "Dall-E 3",
+    "relatedTokens": [
+      "Young Pyromancer"
+    ],
+    "set": "Set 4",
+    "imageUrl": "/Cube/Forth Batch/Red/Pyromancer%E2%80%99s%20Mentor.png"
+  },
+  {
+    "id": "raga-van-nimble-pilferer-fb4",
+    "name": "Raga-Van, Nimble Pilferer",
+    "manaCost": "{R}",
+    "type": "Kindred Artifact — Vehicle Monkey Pirate",
+    "rarity": "Mythic Rare",
+    "text": "Whenever Raga-Van deals combat damage to a player, create a Treasure token and exile the top card of that player's library. Until end of turn, you may cast that card.\nDash {1}{R} (You may cast this spell for its dash cost. If you do, it gains haste, and it's returned from the battlefield to its owner's hand at the beginning of the next end step.)\nCrew 3",
+    "colors": [
+      "R"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Vehicles"
+    ],
+    "power": "6",
+    "toughness": "4",
+    "artist": "Simon Dominic and Nati",
+    "relatedTokens": [
+      "Treasure"
+    ],
+    "set": "Set 4",
+    "imageUrl": "/Cube/Forth Batch/Red/Raga-Van%2C%20Nimble%20Pilferer.png"
+  },
+  {
+    "id": "regal-rooster-fb4",
+    "name": "Regal Rooster",
+    "manaCost": "{5}{R}{R}",
+    "type": "Creature — Bird Berserker Noble",
+    "rarity": "Rare",
+    "text": "Flying, menace, haste\nWhen this creature enters, mill cards until you mill an enchantment card. Create a tapped Treasure token for each card milled this way, and put that enchantment into your hand.\n{2}{R}, Discard this card: You become the monarch.",
+    "colors": [
+      "R"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Self-mill",
+      "Token Collection"
+    ],
+    "power": "5",
+    "toughness": "5",
+    "artist": "Milan Randika (With A.I probably)",
+    "relatedTokens": [
+      "Treasure"
+    ],
+    "set": "Set 4",
+    "imageUrl": "/Cube/Forth Batch/Red/Regal%20Rooster.png"
+  },
+  {
+    "id": "shocking-revelation-fb4",
+    "name": "Shocking Revelation",
+    "manaCost": "{1}{R}",
+    "type": "Instant",
+    "rarity": "Uncommon",
+    "text": "As an additional cost to cast this spell, you may behold a card with mana value 6 or more. (You may choose a permanent you control with mana value 6 or more or reveal a card with mana value 6 or more from your hand.)\nShocking Revelation deals 2 damage to any target. If you beheld, discard any number of cards, then draw that many cards.",
+    "colors": [
+      "R"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "artist": "ChatGPT 4o",
+    "set": "Set 4",
+    "imageUrl": "/Cube/Forth Batch/Red/Shocking%20Revelation.png"
+  },
+  {
+    "id": "song-of-hero-s-past-fb4",
+    "name": "Song of Hero's Past",
+    "manaCost": "{R}",
+    "type": "Instant",
+    "rarity": "Uncommon",
+    "text": "Add {R} for each creature card in your graveyard.",
+    "colors": [
+      "R"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Self-mill"
+    ],
+    "flavorText": "\"I sing of warriors lost to night,\nTheir flames snuffed out, yet set to light.\nAcross the Realms, their names shall roar,\nThe fire wakes and burns once more.\"\n—Birgi, God of Storytelling",
+    "artist": "Shutterstock",
+    "set": "Set 4",
+    "imageUrl": "/Cube/Forth Batch/Red/Song%20of%20Hero%E2%80%99s%20Past.png"
+  },
+  {
+    "id": "sort-yourself-out-fb4",
+    "name": "Sort Yourself Out",
+    "manaCost": "{1}{R}{R}",
+    "type": "Battle — Inner Struggle",
+    "rarity": "Mythic Rare",
+    "text": "(You protect this battle. At the beginning of your upkeep, remove a defense counter from it. If you remove the last counter this way, exile it, then cast it transformed.)\nAt the beginning of your end step, discard a card, then draw a card.",
+    "colors": [
+      "R"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "loyalty": "4",
+    "artist": "Janne Parviainen",
+    "set": "Set 4",
+    "imageUrl": "/Cube/Forth Batch/Red/Sort%20Yourself%20Out.png"
+  },
+  {
+    "id": "titan-of-stars-aligned-fb4",
+    "name": "Titan of Stars Aligned",
+    "manaCost": "{7}{R}{R}",
+    "type": "Enchantment Creature — Giant",
+    "rarity": "Rare",
+    "text": "Resonance for enchantments (This spell costs {X} less to cast, where X is the total mana value of enchantments you control.)\nTrample\nThis creature's power and toughness are each equal to the total mana value of other enchantments you control.",
+    "colors": [
+      "R"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Enchantments"
+    ],
+    "power": "*",
+    "toughness": "*",
+    "flavorText": "When the skies of Theros were formed, he was there, watching.",
+    "artist": "ChatGPT o4",
+    "set": "Set 4",
+    "imageUrl": "/Cube/Forth Batch/Red/Titan%20of%20Stars%20Aligned.png"
+  },
+  {
+    "id": "unlock-creativity-fb4",
+    "name": "Unlock Creativity",
+    "manaCost": "{3}{R}",
+    "type": "Sorcery",
+    "rarity": "Rare",
+    "text": "Fill the blanks with \"custom\" and \"noncustom\". Use each word only once.\nAdd {R} for each ___, nonland, nontoken permanent you control.\nExile the top card of your library for each ___, nonland, nontoken permanent you control. You may play them this turn.",
+    "colors": [
+      "R"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "artist": "ChatGPT o4",
+    "set": "Set 4",
+    "imageUrl": "/Cube/Forth Batch/Red/Unlock%20Creativity.png"
+  },
+  {
+    "id": "unlucky-strike-fb4",
+    "name": "Unlucky Strike",
+    "manaCost": "{R}",
+    "type": "Enchantment",
+    "rarity": "Rare",
+    "text": "At the beginning of your upkeep, if you have exactly thirteen cards in your graveyard, sacrifice this enchantment and it deals 13 damage to each opponent.\n{2}{R}, Exile a card from your graveyard: This enchantment deals 1 damage to each opponent.",
+    "colors": [
+      "R"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Self-mill"
+    ],
+    "artist": "ChatGPT o4",
+    "set": "Set 4",
+    "imageUrl": "/Cube/Forth Batch/Red/Unlucky%20Strike.png"
+  },
+  {
+    "id": "visionary-of-unfathomable-sights-fb4",
+    "name": "Visionary of Unfathomable Sights",
+    "manaCost": "{2}{R}",
+    "type": "Creature — Human Horror",
+    "rarity": "Rare",
+    "text": "Devoid (This card has no color.)\nTitanform 7 (7, Exile this card from your hand: Cast a copy of it, except it's a 8/8 Eldrazi in addition to its other types. Activate only as a sorcery.)\nWhen this creature enters or attacks, discard cards equal to its toughness, then draw cards equal to its power.",
+    "colors": [],
+    "custom": true,
+    "archetypes": [],
+    "power": "3",
+    "toughness": "2",
+    "artist": "Imagen 3",
+    "set": "Set 4",
+    "imageUrl": "/Cube/Forth Batch/Red/Visionary%20of%20Unfathomable%20Sights%20%20%20%20%20%20%20%20%20.png"
+  },
+  {
+    "id": "whisper-twice-fb4",
+    "name": "Whisper Twice",
+    "manaCost": "{1}{R}",
+    "type": "Instant",
+    "rarity": "Common",
+    "text": "Add {G}{U}{R}.\nHarmonize {4}{R} (You may cast this card from your graveyard for its harmonize cost. You may tap a creature you control to reduce that cost by {X}, where X is its power. Then exile this spell.)",
+    "colors": [
+      "R"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Self-mill"
+    ],
+    "flavorText": "\"Let the Jeskai meditate in silence—a silence that will be broken as easily as their bones.\"\n—Taki, Temur Whisperer",
+    "artist": "ChatGPT o4",
+    "set": "Set 4",
+    "imageUrl": "/Cube/Forth Batch/Red/Whisper%20Twice.png"
+  },
+  {
+    "id": "wild-speculation-fb4",
+    "name": "Wild Speculation",
+    "manaCost": "{R}",
+    "type": "Instant",
+    "rarity": "Rare",
+    "text": "Buyback {2} (You may pay an additional {2} as you cast this spell. If you do, put this card into your hand as it resolves.)\nChoose a card type and name a card. Shuffle, then reveal the top card of your library. If it's the chosen type, draw it. If it's the named card, instead you may cast it without paying its mana cost.",
+    "colors": [
+      "R"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "artist": "ChatGPT o4",
+    "set": "Set 4",
+    "imageUrl": "/Cube/Forth Batch/Red/Wild%20Speculation.png"
+  },
+  {
+    "id": "yamper-fb4",
+    "name": "Yamper",
+    "manaCost": "{1}{R}",
+    "type": "Creature — Pokémon Dog",
+    "rarity": "Uncommon",
+    "text": "Pokémon (Instead of playing a land, you may exile a land card from your hand. Lands exiled this way can be tapped to activate this creature's activated abilities. They can't be activated any other way.)\nZap — !{R}!, {T}: This creature deals 1 damage to target creature. Put a stun counter on it.\nBall Fetch! — !{1}{R}!, {T}: Return target artifact card from your graveyard to your hand, then discard a card.",
+    "colors": [
+      "R"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "power": "1",
+    "toughness": "1",
+    "artist": "陰狐",
+    "set": "Set 4",
+    "imageUrl": "/Cube/Forth Batch/Red/Yamper.png"
+  },
+  {
+    "id": "anthem-of-duality-fb4",
+    "name": "Anthem of Duality",
+    "manaCost": "{W}",
+    "type": "Enchantment",
+    "rarity": "Rare",
+    "text": "Non-custom, nontoken creatures you control get +1/+1 as long as you control a custom, nontoken creature.\nCustom, nontoken creatures you control get +1/+1 as long as you control a non-custom, nontoken creature.",
+    "colors": [
+      "W"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "flavorText": "Humanity diverged, yet sang as one.",
+    "artist": "ChatGPT o4",
+    "set": "Set 4",
+    "imageUrl": "/Cube/Forth Batch/White/Anthem%20of%20Duality.png"
+  },
+  {
+    "id": "barrenton-acrobat-singer-fb4",
+    "name": "Barrenton Acrobat-Singer",
+    "manaCost": "{W}",
+    "type": "Creature — Kithkin Bard",
+    "rarity": "Uncommon",
+    "text": "Whenever this creature attacks, you may pay {2}{W}. If you do, choose one —\n• Tap target creature and put a stun counter on it.\n• Untap target creature and put a vitality counter on it.\nIf {U}{U} was spent to pay this cost, do both instead. (If a permanent with a vitality counter would tap, remove one from it instead.)",
+    "colors": [
+      "W"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "power": "2",
+    "toughness": "1",
+    "artist": "ChatGPT o4",
+    "set": "Set 4",
+    "imageUrl": "/Cube/Forth Batch/White/Barrenton%20Acrobat-Singer.png"
+  },
+  {
+    "id": "cleanse-impure-thoughts-fb4",
+    "name": "Cleanse Impure Thoughts",
+    "manaCost": "{W}",
+    "type": "Sorcery",
+    "rarity": "Rare",
+    "text": "Target opponent reveals their hand. You choose a nonland card from it. That player discards that card. Then you reveal your hand. That opponent chooses a nonland card from it. You discard that card.",
+    "colors": [
+      "W"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "flavorText": "\"Only those bound by ten winters of shared vigil may invoke the Mind Purification—for to tread the halls of another's mind is to walk barefoot upon sacred ground.\"\n—Her Holy Word, Avacyn's Book, Page 354",
+    "artist": "ChatGPT o4",
+    "set": "Set 4",
+    "imageUrl": "/Cube/Forth Batch/White/Cleanse%20Impure%20Thoughts.png"
+  },
+  {
+    "id": "count-your-grains-fb4",
+    "name": "Count Your Grains",
+    "manaCost": "{W}",
+    "type": "Sorcery",
+    "rarity": "Uncommon",
+    "text": "Choose an opponent. If they control more lands than you, untap a number of lands you control equal to the difference.\nDraw a card.",
+    "colors": [
+      "W"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "flavorText": "Warriors who shed excessive blood must tend Inys Haen for ten years under the Harvesting Sun Goddess to atone, cultivating patience, humility, and grace.",
+    "artist": "Dominik Mayer",
+    "set": "Set 4",
+    "imageUrl": "/Cube/Forth Batch/White/Count%20Your%20Grains.png"
+  },
+  {
+    "id": "day-of-awakening-fb4",
+    "name": "Day of Awakening",
+    "manaCost": "{X}{W}",
+    "type": "Sorcery",
+    "rarity": "Mythic Rare",
+    "text": "Return from your graveyard to the battlefield any number of target creature cards that each have a different mana value X or less.",
+    "colors": [
+      "W"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Self-mill"
+    ],
+    "flavorText": "\"… On that day, they shall rise as one, a legion forged from difference, for it is the clash of voices that births the mightiest chorus.\"\n—Song of All, canto 38",
+    "artist": "Fantastic-Rope-713",
+    "set": "Set 4",
+    "imageUrl": "/Cube/Forth Batch/White/Day%20of%20Awakening.png"
+  },
+  {
+    "id": "doctor-s-orders-fb4",
+    "name": "Doctor's Orders",
+    "manaCost": "{W}",
+    "type": "Sorcery",
+    "rarity": "Uncommon",
+    "text": "Destroy target creature, then return it to the battlefield.\nFlashback {2}{B}",
+    "colors": [
+      "W"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Blink/ETB/Value",
+      "Self-mill"
+    ],
+    "flavorText": "\"Side effects include: death, coughing blood, confusing medical bills…\"",
+    "artist": "Hinata Sipes",
+    "set": "Set 4",
+    "imageUrl": "/Cube/Forth Batch/White/Doctor%E2%80%99s%20Orders.png"
+  },
+  {
+    "id": "el-argint-aram-s-masterpiece-fb4",
+    "name": "El-Argint, Aram's Masterpiece",
+    "manaCost": "{2}{W}",
+    "type": "Legendary Artifact — Vehicle",
+    "rarity": "Rare",
+    "text": "Lifelink\n{3}{G}: This Vehicle becomes an artifact creature until end of turn. Until end of turn, whenever a Vehicle you control deals combat damage to a player, put that many +1/+1 counters on target creature or Vehicle you control. If a creature named Aram, Lockloft Co-Ace crewed this Vehicle this turn, copy this ability.\nCrew 3",
+    "colors": [
+      "W"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Vehicles"
+    ],
+    "power": "5",
+    "toughness": "5",
+    "artist": "ChatGPT o4",
+    "set": "Set 4",
+    "imageUrl": "/Cube/Forth Batch/White/El-Argint%2C%20Aram%E2%80%99s%20Masterpiece.png"
+  },
+  {
+    "id": "equenaut-coordinator-fb4",
+    "name": "Equenaut Coordinator",
+    "manaCost": "{3}{W}{W}",
+    "type": "Creature — Human Knight",
+    "rarity": "Rare",
+    "text": "Flying, vigilance\nUnity (Token creatures you control have all activated abilities of all nontoken creatures you control with unity.)\nAs long as this creature is on the battlefield, it has all activated abilities of all creature cards in your graveyard.",
+    "colors": [
+      "W"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Self-mill"
+    ],
+    "power": "4",
+    "toughness": "4",
+    "artist": "ChatGPT o4",
+    "set": "Set 4",
+    "imageUrl": "/Cube/Forth Batch/White/Equenaut%20Coordinator.png"
+  },
+  {
+    "id": "erayo-s-gift-fb4",
+    "name": "Erayo's Gift",
+    "manaCost": "{1}{W}",
+    "type": "Legendary Enchantment",
+    "rarity": "Rare",
+    "text": "Whenever the fourth spell of a turn is cast, each player draws four cards and flips Erayo's Gift.",
+    "colors": [
+      "W"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Storm"
+    ],
+    "artist": "ChatGPT o4",
+    "set": "Set 4",
+    "imageUrl": "/Cube/Forth Batch/White/Erayo%E2%80%99s%20Gift.png"
+  },
+  {
+    "id": "falcon-mecha-fb4",
+    "name": "Falcon Mecha",
+    "manaCost": "{W}",
+    "type": "Artifact — Vehicle",
+    "rarity": "Rare",
+    "text": "Flying, lifelink\nEscape—{2}{W}, Exile four other cards from your graveyard. (You may cast this card from your graveyard for its escape cost.)\nSacrifice this Vehicle: Surveil X, where X is the number of spells you've cast this turn.\nCrew 1",
+    "colors": [
+      "W"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Vehicles",
+      "Self-mill"
+    ],
+    "power": "2",
+    "toughness": "2",
+    "artist": "Ramza Ardyputra",
+    "set": "Set 4",
+    "imageUrl": "/Cube/Forth Batch/White/Falcon%20Mecha.png"
+  },
+  {
+    "id": "glisterchrome-elemental-fb4",
+    "name": "Glisterchrome Elemental",
+    "manaCost": "{1}{W}",
+    "type": "Creature — Elemental",
+    "rarity": "Uncommon",
+    "text": "Lifelink\nThis creature enters with a +1/+1 counter on it for each other spell cast this turn.\nStormcycling {3} ({3}, Discard this card: Search your library for a card with Storm, reveal it, put it into your hand, then shuffle.)",
+    "colors": [
+      "W"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Storm"
+    ],
+    "power": "1",
+    "toughness": "1",
+    "artist": "Tiziana Federica Ruiu",
+    "set": "Set 4",
+    "imageUrl": "/Cube/Forth Batch/White/Glisterchrome%20Elemental.png"
+  },
+  {
+    "id": "matron-of-porcelain-fb4",
+    "name": "Matron of Porcelain",
+    "manaCost": "{2}{W}",
+    "type": "Creature — Vampire Artificer",
+    "rarity": "Rare",
+    "text": "When this creature enters, create a 4/3 artifact Vehicle token with crew 1 named Sweat.\nWhen this creature dies, create a 3/4 artifact Vehicle token with crew 1 named Tears.\n{W}, Exile this card from your graveyard: Target Vehicle you control becomes an artifact creature until end of turn.",
+    "colors": [
+      "W"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Vehicles"
+    ],
+    "power": "2",
+    "toughness": "2",
+    "artist": "Craiyon",
+    "relatedTokens": [
+      "Sweat",
+      "Tears"
+    ],
+    "set": "Set 4",
+    "imageUrl": "/Cube/Forth Batch/White/Matron%20of%20Porcelain.png"
+  },
+  {
+    "id": "monastery-alarmist-fb4",
+    "name": "Monastery Alarmist",
+    "manaCost": "{W}",
+    "type": "Creature — Dog Monk",
+    "rarity": "Uncommon",
+    "text": "Flurry — Whenever you cast your second spell each turn, untap each creature you control. Scry 1.",
+    "colors": [
+      "W"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Storm"
+    ],
+    "power": "2",
+    "toughness": "1",
+    "flavorText": "From barking through the nights of his puphood to ringing his bell until dawn as an adult, his proficiency was never in question — only his methods.",
+    "artist": "ChatGPT o4",
+    "set": "Set 4",
+    "imageUrl": "/Cube/Forth Batch/White/Monastery%20Alarmist.png"
+  },
+  {
+    "id": "more-money-more-problems-fb4",
+    "name": "More Money, More Problems",
+    "manaCost": "{2}{W}",
+    "type": "Sorcery",
+    "rarity": "Rare",
+    "text": "Target player creates a tapped Treasure token with a stun counter on it and gets a debt counter. (At the beginning of that player's end step, they may pay {1} for each debt counter they have. They remove that many counters, then lose 1 life for each debt counter they have.)\nStorm (When you cast this spell, copy it for each spell cast before it this turn.)",
+    "colors": [
+      "W"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Storm"
+    ],
+    "artist": "ChatGPT o4",
+    "relatedTokens": [
+      "Treasure"
+    ],
+    "set": "Set 4",
+    "imageUrl": "/Cube/Forth Batch/White/More%20Money%2C%20More%20Problems.png"
+  },
+  {
+    "id": "nightmare-fracture-fb4",
+    "name": "Nightmare Fracture",
+    "manaCost": "{1}{W}{W}",
+    "type": "Instant",
+    "rarity": "Uncommon",
+    "text": "Counter target spell. Its controller draws a card.\nDraw a card.",
+    "colors": [
+      "W"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "flavorText": "\"Dreams are paradoxical. They offer freedom, yet trap the mind in its own desires.\"\n—Olka, Mistmeadow witch",
+    "artist": "ChatGPT o4",
+    "set": "Set 4",
+    "imageUrl": "/Cube/Forth Batch/White/Nightmare%20Fracture.png"
+  },
+  {
+    "id": "out-of-body-experience-fb4",
+    "name": "Out of Body Experience",
+    "manaCost": "{2}{W}",
+    "type": "Instant",
+    "rarity": "Rare",
+    "text": "Exile target creature. Its controller creates a token that's a copy of it, except it's 1/1, it's a Mind in addition to its other types, and it has flying. Its controller creates a colorless Body creature token with power equal to that creature's power and toughness equal to that creature's toughness.",
+    "colors": [
+      "W"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Blink/ETB/Value"
+    ],
+    "artist": "ChatGPT o4",
+    "relatedTokens": [
+      "colorless Body"
+    ],
+    "set": "Set 4",
+    "imageUrl": "/Cube/Forth Batch/White/Out%20of%20Body%20Experience.png"
+  },
+  {
+    "id": "parhelion-iii-fb4",
+    "name": "Parhelion III",
+    "type": "Legendary Artifact — Vehicle",
+    "rarity": "Mythic Rare",
+    "text": "Flying, first strike, vigilance\nWhenever Parhelion III attacks, put two Vehicle cards from your hand tapped and attacking. They become creatures until end of turn. Return them to your hand at the end of turn.\nCrew 4",
+    "colors": [
+      "W"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Vehicles"
+    ],
+    "power": "5",
+    "toughness": "5",
+    "facedown": true,
+    "artist": "ChatGPT o4",
+    "relatedFace": "Ravnica's Last Resort",
+    "set": "Set 4",
+    "imageUrl": "/Cube/Forth Batch/White/Parhelion%20III.png"
+  },
+  {
+    "id": "radiant-multi-striker-fb4",
+    "name": "Radiant Multi-Striker",
+    "manaCost": "{1}{W}",
+    "type": "Artifact — Vehicle",
+    "rarity": "Rare",
+    "text": "Start your engines! (If you have no speed, it starts at 1. It increases once on each of your turns when an opponent loses life. Max speed is 4.)\nThis Vehicle strikes equal to your speed. (Speed 1 = first strike; 2 = double strike; 3 = triple strike; 4 = quad strike.)\nCrew 1",
+    "colors": [
+      "W"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Vehicles"
+    ],
+    "power": "1",
+    "toughness": "1",
+    "artist": "kisuke_ichi",
+    "set": "Set 4",
+    "imageUrl": "/Cube/Forth Batch/White/Radiant%20Multi-Striker.png"
+  },
+  {
+    "id": "ravnica-s-last-resort-fb4",
+    "name": "Ravnica's Last Resort",
+    "manaCost": "{2}{W}{W}",
+    "type": "Battle — Siege",
+    "rarity": "Mythic Rare",
+    "text": "(As a Siege enters, choose an opponent to protect it. You and others can attack it. When it's defeated, exile it, then cast it transformed.)\nAt the beginning of your upkeep, surveil 1, then reveal the top card of your library. If it's a creature or a Vehicle card, put it into your hand.",
+    "colors": [
+      "W"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Vehicles"
+    ],
+    "loyalty": "5",
+    "artist": "ChatGPT o4",
+    "relatedFace": "Parhelion III",
+    "set": "Set 4",
+    "imageUrl": "/Cube/Forth Batch/White/Ravnica%E2%80%99s%20Last%20Resort.png"
+  },
+  {
+    "id": "sancitifier-of-lost-media-fb4",
+    "name": "Sanctifier of Lost Media",
+    "manaCost": "{1}{W}",
+    "type": "Creature — Human Cleric",
+    "rarity": "Rare",
+    "text": "Requiem — Whenever one or more cards enter or leave your graveyard, scry that many cards.\n{4}{W}: Exile target player's graveyard, then you may return it to their graveyard.",
+    "colors": [
+      "W"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Self-mill"
+    ],
+    "power": "0",
+    "toughness": "3",
+    "flavorText": "\"And to think, I once hunted for a real copy of Red Mist. The irony isn't lost on me—but I'm sure Valgavoth enjoys it more.\"",
+    "artist": "ChatGPT o4",
+    "set": "Set 4",
+    "imageUrl": "/Cube/Forth Batch/White/Sancitifier%20of%20Lost%20Media.png"
+  },
+  {
+    "id": "sharestone-fb4",
+    "name": "Sharestone",
+    "manaCost": "{1}{W}",
+    "type": "Artifact",
+    "rarity": "Common",
+    "text": "When this artifact enters, each player draws a card.\n{T}: Add {W}.",
+    "colors": [
+      "W"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "flavorText": "A relic from an alternate Fomori timeline, this stone reveals a united humanity so profoundly harmonious, its beauty could bring one to tears.",
+    "artist": "ChatGPT o4",
+    "set": "Set 4",
+    "imageUrl": "/Cube/Forth Batch/White/Sharestone.png"
+  },
+  {
+    "id": "stranded-on-a-shore-fb4",
+    "name": "Stranded on a Shore",
+    "manaCost": "{W}",
+    "type": "Enchantment — Aura",
+    "rarity": "Rare",
+    "text": "Enchant Island you control\nWhen this Aura enters, exile target creature an opponent controls until this Aura leaves the battlefield. (That creature returns under its owner's control.)",
+    "colors": [
+      "W"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "artist": "Paul Reid",
+    "set": "Set 4",
+    "imageUrl": "/Cube/Forth Batch/White/Stranded%20on%20a%20Shore.png"
+  },
+  {
+    "id": "strength-in-solitude-fb4",
+    "name": "Strength in Solitude",
+    "manaCost": "{W}",
+    "type": "Enchantment",
+    "rarity": "Uncommon",
+    "text": "Storm (When you cast this spell, copy it for each spell cast before it this turn. Copies become tokens.)\nExalted (Whenever a creature you control attacks alone, that creature gets +1/+1 until end of turn.)",
+    "colors": [
+      "W"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Storm"
+    ],
+    "flavorText": "\"I quenched my inner storm. Now, I am the storm that is approaching.\"",
+    "artist": "||Lamb||",
+    "set": "Set 4",
+    "imageUrl": "/Cube/Forth Batch/White/Strength%20in%20Solitude.png"
+  },
+  {
+    "id": "the-day-is-yours-fb4",
+    "name": "The Day is Yours",
+    "manaCost": "{1}{W}",
+    "type": "Instant",
+    "rarity": "Uncommon",
+    "text": "Target creature you own becomes a commander. (It starts with commander tax {0}.)\nDraw a card.",
+    "colors": [
+      "W"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "flavorText": "\"I never dreamt of battle, nor of banners raised in my name. But fate chose this course, and I ask you now to believe in it as I do.\"\n—The One Who Risen",
+    "artist": "Gabriel Velloso",
+    "set": "Set 4",
+    "imageUrl": "/Cube/Forth Batch/White/The%20Day%20is%20Yours.png"
+  },
+  {
+    "id": "the-paper-man-fb4",
+    "name": "The Paper Man",
+    "manaCost": "{1}{W}{W}",
+    "type": "Legendary Creature — Alien",
+    "rarity": "Rare",
+    "text": "Requiem — Whenever a card enters or leaves your graveyard, each player exiles a creature they control. If they do, they draw a card.",
+    "colors": [
+      "W"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Self-mill"
+    ],
+    "power": "3",
+    "toughness": "3",
+    "flavorText": "Wrap and wrap and wrap he goes,\nWith hands of silk delight.\nHe'll snatch you up, he'll fold you tight,\nAnd vanish you from sight.",
+    "artist": "ChatGPT o4",
+    "set": "Set 4",
+    "imageUrl": "/Cube/Forth Batch/White/The%20Paper%20Man.png"
+  },
+  {
+    "id": "vehicles-need-it-fb4",
+    "name": "Vehicles Need It",
+    "manaCost": "{3}{W}",
+    "type": "Instant",
+    "rarity": "Rare",
+    "text": "Put an artifact or creature card you own from outside the game onto the battlefield. It's a 4/4 Kindred Artifact Vehicle Angel with flying and crew 3.\nMiracle {W} (You may cast this card for its miracle cost when you draw it if it's the first card you drew this turn.)",
+    "colors": [
+      "W"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Vehicles"
+    ],
+    "artist": "ChatGPT o4",
+    "set": "Set 4",
+    "imageUrl": "/Cube/Forth Batch/White/Vehicles%20Need%20It.png"
+  },
+  {
+    "id": "vizier-of-second-glory-fb4",
+    "name": "Vizier of Second Glory",
+    "manaCost": "{1}{W}",
+    "type": "Creature — Human Cleric",
+    "rarity": "Rare",
+    "text": "When this creature enters, target creature card in your graveyard gains embalm until end of turn. The embalm cost is equal to its mana cost. (Exile that card and pay its embalm cost: Create a token that's a copy of it, except it's a white Zombie in addition to its other types and has no mana cost. Embalm only as a sorcery.)\nEmbalm {1}{W}",
+    "colors": [
+      "W"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Blink/ETB/Value",
+      "Self-mill"
+    ],
+    "power": "2",
+    "toughness": "1",
+    "artist": "ChatGPT 4o",
+    "set": "Set 4",
+    "imageUrl": "/Cube/Forth Batch/White/Vizier%20of%20Second%20Glory.png"
+  },
+  {
+    "id": "we-own-this-city-fb4",
+    "name": "We Own This City",
+    "manaCost": "{2}{W}{W}",
+    "type": "Enchantment",
+    "rarity": "Rare",
+    "text": "Ward {2}\nYour opponents respect you twice. (Creatures can't attack you or block creatures you control unless their controller pays {2} for each creature they control that's attacking you or blocking a creature you control. You have ward {2}.)",
+    "colors": [
+      "W"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "artist": "Anna Steinbauer",
+    "set": "Set 4",
+    "imageUrl": "/Cube/Forth Batch/White/We%20Own%20This%20City.png"
+  },
+  {
+    "id": "where-lies-hide-where-truth-reveals-fb4",
+    "name": "Where Lies Hide // Where Truth Reveals",
+    "type": "Enchantment — Room",
+    "rarity": "Mythic Rare",
+    "text": "Where Lies Hide {2}{W}{W}\nWhen you unlock this door, exile up to three other target creatures from the battlefield and/or creature cards from graveyards.\nWhen this Room leaves the battlefield, return the exiled cards to their owners' hands.\n//\nWhere Truth Reveals {6}{R}{R}\nYou may cast cards exiled with permanents you control, and you may spend any type of mana to cast them.\n(You may cast either half. That door unlocks on the battlefield. As a sorcery, you may pay the mana cost of a locked door to unlock it.)",
+    "colors": [
+      "W",
+      "R"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "artist": "ChatGPT o4",
+    "set": "Set 4",
+    "imageUrl": "/Cube/Forth Batch/White/Where%20Truth%20Reveals.png"
+  }
+]

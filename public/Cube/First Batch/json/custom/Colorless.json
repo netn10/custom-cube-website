@@ -1,0 +1,269 @@
+[
+  {
+    "id": "crimson-wedding-decoration-fb1",
+    "name": "Crimson-Wedding Decoration",
+    "manaCost": "{1}",
+    "type": "Artifact — Blood",
+    "rarity": "Rare",
+    "text": "{1}, {T}, Discard a card, Sacrifice this artifact: Draw a card. Add {C} for each differently named token you control.\n{1}{B}{R}, {T}: Create a token that's a copy of this artifact.",
+    "colors": [],
+    "custom": true,
+    "archetypes": [
+      "Token Collection"
+    ],
+    "flavorText": "\"It really is a wedding to die for,\" said Edgar, smiling slightly.\n\"Why, of course, darling! You should've seen the faces of the uninvited!\" said Olivia, unable to hide her glee.",
+    "_source": "Colorless/Crimson-Wedding Decoration.png",
+    "artist": "ChatGPT"
+  },
+  {
+    "id": "deathcrafter-s-puzzleknot-fb1",
+    "name": "Deathcrafter's Puzzleknot",
+    "manaCost": "{2}",
+    "type": "Artifact",
+    "rarity": "Common",
+    "text": "When Deathcrafter's Puzzleknot enters, destroy target permanent an opponent controls. Its controller may search their library for a basic land card, put it onto the battlefield, then shuffle.\n{B}{G}, Sacrifice Deathcrafter's Puzzleknot: Destroy target permanent an opponent controls. Its controller may search their library for a basic land card, put it onto the battlefield, then shuffle.",
+    "colors": [],
+    "custom": true,
+    "archetypes": [
+      "Control"
+    ],
+    "_source": "Colorless/Deathcrafter’s Puzzleknot.png",
+    "artist": "ChatGPT"
+  },
+  {
+    "id": "doubling-orb-fb1",
+    "name": "Doubling Orb",
+    "manaCost": "{3}",
+    "type": "Artifact",
+    "rarity": "Rare",
+    "text": "You don't lose unspent mana as steps and phases end.\n{T}: Add one mana of any color.\n{3}, {T}: Double the amount of each type of unspent mana you have.",
+    "colors": [],
+    "custom": true,
+    "archetypes": [],
+    "flavorText": "Artists and dreamers flock to it, becoming consumed by an obsession to double their desires again and again.",
+    "_source": "Colorless/Doubling Orb.png",
+    "artist": "ChatGPT"
+  },
+  {
+    "id": "keranos-gift-to-mankind-fb1",
+    "name": "Keranos' Gift to Mankind",
+    "manaCost": "{3}",
+    "type": "Legendary Artifact Enchantment Creature — Demigod",
+    "rarity": "Mythic Rare",
+    "text": "Vigilance, haste\nAt the beginning of your upkeep and whenever Keranos' Gift to Mankind attacks, reveal the top card of your library. If it's a land card, scry X. If it's a nonland card, Keranos' Gift to Mankind deals X damage to any target. X is the number of enchantments you control.\n{3}{U}{R}: If it's your turn, after this step, you get an additional upkeep followed by an additional combat step.",
+    "colors": [],
+    "custom": true,
+    "archetypes": [
+      "Enchantments"
+    ],
+    "power": "2",
+    "toughness": "4",
+    "_source": "Colorless/Keranos’ Gift to Mankind.png",
+    "artist": "DALL-E 3"
+  },
+  {
+    "id": "littjara-mirror-orb-fb1",
+    "name": "Littjara Mirror-Orb",
+    "manaCost": "{2}",
+    "type": "Artifact",
+    "rarity": "Rare",
+    "text": "Whenever a player casts a spell from their hand, counter that spell. If a spell is countered this way, its controller may search their library for a spell with the same mana value and a different card type, then cast it without paying its mana cost.\n{G}{U}, {T}: Target spell can't be countered.",
+    "colors": [],
+    "custom": true,
+    "archetypes": [],
+    "_source": "Colorless/Littjara Mirror-Orb.png",
+    "artist": "Artisan Fartisan"
+  },
+  {
+    "id": "map-to-the-sunken-vault-fb1",
+    "name": "Map to the Sunken Vault",
+    "manaCost": "{2}",
+    "type": "Legendary Artifact — Map",
+    "rarity": "Mythic Rare",
+    "text": "At the start of the game, you may reveal one copy of this card from your library. If you do, shuffle a \"The Sunken Vault\" token into your library.\nLandfall — Whenever a land you control enters, you may return this card from your graveyard to your hand.\n{1}, {T}, Sacrifice this artifact: Target creature you control explores. Activate only as a sorcery.",
+    "colors": [],
+    "custom": true,
+    "archetypes": [],
+    "relatedTokens": [
+      "The Sunken Vault"
+    ],
+    "_source": "Colorless/Map to the Sunken Vault.png",
+    "artist": "ChatGPT"
+  },
+  {
+    "id": "mobilizer-of-the-machines-fb1",
+    "name": "Mobilizer of the Machines",
+    "manaCost": "{1}",
+    "type": "Artifact Creature — Golem",
+    "rarity": "Uncommon",
+    "text": "{T}: Until end of turn, target noncreature artifact you control becomes an artifact creature. If it's not a Vehicle, it has base power and toughness equal to its mana value until end of turn.\n{2}{G}{W}, {T}: Until end of turn, each noncreature artifact you control becomes an artifact creature. Each one that isn't a Vehicle has base power and toughness equal to its mana value until end of turn.",
+    "colors": [],
+    "custom": true,
+    "archetypes": [
+      "Artifacts"
+    ],
+    "power": "1",
+    "toughness": "1",
+    "_source": "Colorless/Mobilizer of the Machines.png",
+    "artist": "ChatGPT"
+  },
+  {
+    "id": "moxwagen-fb1",
+    "name": "Moxwagen",
+    "manaCost": "{0}",
+    "type": "Artifact — Vehicle",
+    "rarity": "Rare",
+    "text": "Vigilance\n{T}: Add {C}. Put a stun counter on this artifact if it's not a creature.\nCrew 1",
+    "colors": [],
+    "custom": true,
+    "archetypes": [
+      "Vehicles"
+    ],
+    "flavorText": "ChatGPT is wild like that.",
+    "power": "2",
+    "toughness": "2",
+    "_source": "Colorless/Moxwagen.png",
+    "artist": "DALL-E 3"
+  },
+  {
+    "id": "obliteration-titan-fb1",
+    "name": "Obliteration Titan",
+    "manaCost": "{8}",
+    "type": "Artifact Creature — Giant Golem",
+    "rarity": "Mythic Rare",
+    "text": "{R}{G}, Reveal this card from your hand: You get an emblem with \"Spells you cast with mana value 6 or more cost {1} less to cast.\"\nThis spell can't be countered.\nWhen this creature enters or leaves the battlefield, for each permanent type, destroy target permanent of that type.",
+    "colors": [],
+    "custom": true,
+    "archetypes": [
+      "Control"
+    ],
+    "flavorText": "The ancient power that destroyed the old world is awakened by a new generation to face a new threat, and the cycle of destruction begins anew.",
+    "power": "10",
+    "toughness": "7",
+    "_source": "Colorless/Obliteration Titan.png",
+    "artist": "ChatGPT"
+  },
+  {
+    "id": "silver-lotus-fb1",
+    "name": "Silver Lotus",
+    "manaCost": "{0}",
+    "type": "Legendary Artifact",
+    "rarity": "Mythic Rare",
+    "text": "You can't cast this spell during your first, second, or third turns of the game.\n{T}, Sacrifice Silver Lotus: Add three mana of any one color.",
+    "colors": [],
+    "custom": true,
+    "archetypes": [],
+    "flavorText": "\"Be like the Lotus: let yourself grow with patience, and even if you are broken, let yourself find power in that.\"\n—Narset, to Her Students",
+    "_source": "Colorless/Silver Lotus.png",
+    "artist": "ChatGPT"
+  },
+  {
+    "id": "sticker-collector-fb1",
+    "name": "Sticker Collector",
+    "manaCost": "{2}",
+    "type": "Creature — Robot",
+    "rarity": "Rare",
+    "text": "When this creature enters, choose either power and toughness sticker or an ability sticker. Put a random sticker of that type on it.\nStickers are not removed from this card after the game ends. Yap.",
+    "colors": [],
+    "custom": true,
+    "archetypes": [],
+    "power": "2",
+    "toughness": "2",
+    "_source": "Colorless/Sticker Collector.png",
+    "artist": "Bing"
+  },
+  {
+    "id": "sword-of-pauper-and-king-fb1",
+    "name": "Sword of Pauper and King",
+    "manaCost": "{3}",
+    "type": "Artifact — Equipment",
+    "rarity": "Mythic Rare",
+    "text": "Equipped creature gets +2/+2 and has protection from colorless and from multicolored. This doesn't remove equipments.\nWhenever equipped creature deals combat damage to a player, venture into the dungeon twice and you become the monarch.\nEquip {2}",
+    "colors": [],
+    "custom": true,
+    "archetypes": [
+      "Broken Cipher"
+    ],
+    "_source": "Colorless/Sword of Pauper and King.png",
+    "artist": "ChatGPT"
+  },
+  {
+    "id": "teferi-s-globe-of-possibilities-fb1",
+    "name": "Teferi's Globe of Possibilities",
+    "manaCost": "{4}",
+    "type": "Legendary Artifact",
+    "rarity": "Mythic Rare",
+    "text": "Whenever a player casts their first spell each turn, exile that spell.\nWhenever a player casts a spell after their first spell each turn, they draw a card.\n{4}{W}{U}, Sacrifice Teferi's Globe of Possibilities: Cast each card exiled with it without paying their mana costs.",
+    "colors": [],
+    "custom": true,
+    "archetypes": [
+      "Storm"
+    ],
+    "_source": "Colorless/Teferi’s Globe of Possibilities.png",
+    "artist": "Leonardo Santes"
+  },
+  {
+    "id": "thieves-masterpiece-fb1",
+    "name": "Thieves' Masterpiece",
+    "manaCost": "{1}",
+    "type": "Artifact — Equipment",
+    "rarity": "Rare",
+    "text": "Whenever equipped creature deals combat damage to a player, you draw a card and that player discards a card.\n{U}{B}: Target instant or sorcery spell you control gains cipher. It must be encoded on equipped creature if able.\nEquip {1}",
+    "colors": [],
+    "custom": true,
+    "archetypes": [
+      "Broken Cipher"
+    ],
+    "_source": "Colorless/Thieves’ Masterpiece.png",
+    "artist": "ChatGPT"
+  },
+  {
+    "id": "threads-of-the-triad-fb1",
+    "name": "Threads of the Triad",
+    "manaCost": "{3}",
+    "type": "Artifact",
+    "rarity": "Rare",
+    "text": "Whenever a creature you control dies, return it to the battlefield with a finality counter on it. This ability triggers only once each turn.\n{1}{W}{B}, {T}: Move a finality counter from target creature you control onto another target creature, then destroy one of them.",
+    "colors": [],
+    "custom": true,
+    "archetypes": [
+      "Blink/ETB/Value"
+    ],
+    "flavorText": "Life unfolds with choices, death gives it meaning, and destiny ties it all together.",
+    "_source": "Colorless/Threads of the Triad.png",
+    "artist": "DALL-E 3"
+  },
+  {
+    "id": "titan-of-impossibility-fb1",
+    "name": "Titan of Impossibility",
+    "manaCost": "{6}",
+    "type": "Creature — Eldrazi",
+    "rarity": "Mythic Rare",
+    "text": "When this creature enters, attacks or becomes a target of a spell or an ability, type the following line into ChatGPT and put the response on the stack: \"My 6 mana Eldrazi did something. Respond with one powerful and interesting effect. Nothing else.\"",
+    "colors": [],
+    "custom": true,
+    "archetypes": [],
+    "power": "6",
+    "toughness": "6",
+    "_source": "Colorless/Titan of Impossibility.png",
+    "artist": "Alexandr Elichev",
+    "prompt": "My 6 mana Eldrazi did something. Respond with one powerful and interesting effect. Nothing else."
+  },
+  {
+    "id": "walker-of-the-finest-things-fb1",
+    "name": "Walker of the Finest Things",
+    "manaCost": "{X}{X}",
+    "type": "Artifact Creature — Construct",
+    "rarity": "Rare",
+    "text": "This creature enters with X +1/+1 counters on it.\nRemove X +1/+1 counters from this creature: Mill X cards twice, then return a permanent card with mana value X from your graveyard to the battlefield. X can't be 0.\n{R}{W}: Put a +1/+1 counter on this creature.",
+    "colors": [],
+    "custom": true,
+    "archetypes": [
+      "Self-mill"
+    ],
+    "power": "0",
+    "toughness": "0",
+    "_source": "Colorless/Walker of the Finest Things.png",
+    "artist": "Travis Anderson"
+  }
+]

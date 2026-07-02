@@ -1,0 +1,353 @@
+[
+  {
+    "id": "ad-infinitum-fb5",
+    "name": "Ad Infinitum",
+    "manaCost": "{3}{R}{R}",
+    "type": "Instant",
+    "rarity": "Rare",
+    "text": "Discard your hand, then draw seven cards, then Ad Infinitum deals 7 damage to you. You may repeat this process any number of times.",
+    "colors": [
+      "R"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "flavorText": "“The best part of this job is getting fired.”",
+    "artist": "ChatGPT 04",
+    "_supersedes": "ad-infinitum-fb4",
+    "_source": "Remake/Ad Infinitum.png"
+  },
+  {
+    "id": "everything-is-a-conspiracy-fb5",
+    "name": "Everything is a Conspiracy",
+    "type": "Conspiracy",
+    "rarity": "Rare",
+    "text": "(Start the game with this conspiracy face up in the command zone.)\nYou can't cast more than one spell each turn.\nNoncreature spells you cast have conspire. (As you cast the spell, you may tap two untapped creatures you control that share a color with it. When you do, copy it and you may choose new targets for the copy. A copy of a permanent spell becomes a token.)",
+    "colors": [],
+    "custom": true,
+    "archetypes": [],
+    "artist": "Sergiu Roman",
+    "_supersedes": "everything-is-a-conspiricy-fb4",
+    "_source": "Remake/Everything is a Conspiracy.png"
+  },
+  {
+    "id": "gooser-cruiser-fb5",
+    "name": "Gooser-Cruiser",
+    "manaCost": "{1}",
+    "type": "Artifact — Vehicle Mount",
+    "rarity": "Rare",
+    "text": "Whenever this attacks while saddled, create a Golden Egg token. (It's a {2} artifact Food with “When this artifact enters, draw a card.”, “{1}, {T}, Sacrifice this artifact: Add one mana of any color.” and “{2}, {T}, Sacrifice this artifact: You gain 3 life.”)\nCrew 1\nSaddle 1 (Tap any number of other creatures you control with total power 1 or more: This Mount becomes saddled until end of turn. Saddle only as a sorcery.)",
+    "colors": [],
+    "custom": true,
+    "archetypes": [
+      "Vehicles"
+    ],
+    "power": "3",
+    "toughness": "3",
+    "artist": "ChatGPT 04",
+    "relatedTokens": [
+      "Golden Egg"
+    ],
+    "_supersedes": "gooser-cruiser-fb4",
+    "_source": "Remake/Gooser-Cruiser.png"
+  },
+  {
+    "id": "kroliz-conspiracy-nut-fb5",
+    "name": "Kroliz, Conspiracy Nut",
+    "manaCost": "{U}{R}",
+    "type": "Legendary Creature — Squirrel Citizen",
+    "rarity": "Rare",
+    "text": "At the beginning of your upkeep, you may choose a Conspiracy card you own from outside the game or from your command zone. If you do, create a token that's a copy of it, except it's an enchantment.",
+    "colors": [
+      "U",
+      "R"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "power": "2",
+    "toughness": "3",
+    "flavorText": "“They sell us Commander so we chase Universes Beyond, while they suppress Standard. Wake up sheeple!”",
+    "artist": "ChatGPT 04",
+    "_supersedes": "kroliz-conspiricy-nut-fb4",
+    "_source": "Remake/Kroliz, Conspiracy Nut.png"
+  },
+  {
+    "id": "l-l-m-genius-prompter-fb5",
+    "name": "L.L.M, Genius Prompter",
+    "manaCost": "{1}{U}{R}",
+    "type": "Legendary Creature — Cyborg Rogue",
+    "rarity": "Rare",
+    "text": "Companion — When you pick this card in a limited event, ask ChatGPT with “Give my companion from Magic the Gathering exactly one custom companion condition“. Otherwise, ask ChatGPT while deck building.\nAt the beginning of your end step, create an enchantment token named Prompt. It has “When this enchantment enters, ask ChatGPT with ‘Give my Prompt enchantment token exactly one ability.’”",
+    "colors": [
+      "U",
+      "R"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "power": "2",
+    "toughness": "2",
+    "artist": "Artful Journey",
+    "relatedTokens": [
+      "Prompt"
+    ],
+    "_supersedes": "llm-genius-prompter-sb2",
+    "_source": "Remake/L.L.M, Genius Prompter.png",
+    "prompt": "Give my companion from Magic the Gathering exactly one custom companion condition"
+  },
+  {
+    "id": "let-the-aether-flow-fb5",
+    "name": "Let the Aether Flow",
+    "manaCost": "{2}{G}{G}",
+    "type": "Enchantment",
+    "rarity": "Rare",
+    "text": "Whenever you cast a noncreature spell, if it's an —\n• Artifact or enchantment spell — Draw a card.\n• Battle or planeswalker spell — Destroy target noncreature, nonland permanent.\n• Instant or sorcery spell — Put two +1/+1 counters on target creature you control.",
+    "colors": [
+      "G"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "artist": "Dall-E 3",
+    "_supersedes": "let-the-aether-flow-fb1",
+    "_source": "Remake/Let the Aether Flow.png"
+  },
+  {
+    "id": "leyline-of-greed-fb5",
+    "name": "Leyline of Greed",
+    "manaCost": "{2}{B}{B}",
+    "type": "Enchantment",
+    "rarity": "Rare",
+    "text": "If this card is in your opening hand, you may begin the game with it on the battlefield.\nSpells you cast cost {1} less to cast and 1 life more to cast.\n{2/B}{2/B}, Pay 2 life: Draw a card.",
+    "colors": [
+      "B"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "flavorText": "Where untold power and the desire to explore it converge.",
+    "artist": "Dall-E 3",
+    "_supersedes": "leyline-of-greed-fb4",
+    "_source": "Remake/Leyline of Greed.png"
+  },
+  {
+    "id": "nature-s-touch-fb5",
+    "name": "Nature's Touch",
+    "manaCost": "{1}{G}{G}",
+    "type": "Enchantment — Aura",
+    "rarity": "Rare",
+    "text": "Flash\nEnchant creature you control\nWhenever enchanted creature deals combat damage to a player, you may search your library for that many basic land cards, put them onto the battlefield tapped, then shuffle.",
+    "colors": [
+      "G"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "artist": "Cynthia Brody",
+    "_supersedes": "nature-s-touch-fb1",
+    "_source": "Remake/Nature’s Touch.png"
+  },
+  {
+    "id": "necrogenic-face-gear-fb5",
+    "name": "Necrogenic Face-Gear",
+    "manaCost": "{B}",
+    "type": "Artifact — Equipment",
+    "rarity": "Rare",
+    "text": "For Mirrodin! (When this Equipment enters, create a 2/2 red Rebel creature token, then attach this to it.)\nEquipped creature gets -1/-1.\nWhenever equipped creature dies, you lose 2 life. Then choose one —\n• Draw two cards.\n• Return target artifact card from your graveyard to your hand.\nEquip {1}",
+    "colors": [
+      "B"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Artifacts"
+    ],
+    "artist": "Dall-E 3",
+    "relatedTokens": [
+      "2/2 red Rebel"
+    ],
+    "_supersedes": "necrogenic-face-gear-fb1",
+    "_source": "Remake/Necrogenic Face-Gear.png"
+  },
+  {
+    "id": "omnious-basement-fb5",
+    "name": "Ominous Basement",
+    "type": "Land Creature — Swamp Demon",
+    "rarity": "Rare",
+    "text": "(This land isn't a spell, it's affected by summoning sickness, and it has “{T}: Add {B}.”)\nFlying, trample\nThis creature can't attack or block unless you have thirteen or more cards in your graveyard.\n{T}: Mill a card.",
+    "colors": [
+      "B"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Self-mill"
+    ],
+    "power": "6",
+    "toughness": "6",
+    "flavorText": "”I am the shame you cannot hide.”",
+    "artist": "Dall-E 3",
+    "_supersedes": "omnious-basement-tb3",
+    "_source": "Remake/Omnious Basement.png"
+  },
+  {
+    "id": "park-heights-pride-and-joy-fb5",
+    "name": "Park Heights Pride and Joy",
+    "manaCost": "{G/W}{G/W}",
+    "type": "Artifact — Vehicle",
+    "rarity": "Rare",
+    "text": "Flash\n{G/W}{G/W}, Sacrifice this Vehicle: Permanents you control gain hexproof and indestructible until end of turn. This ability costs {G/W} less to activate if this Vehicle is a creature.\nCrew 2",
+    "colors": [
+      "G",
+      "W"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Vehicles"
+    ],
+    "power": "3",
+    "toughness": "3",
+    "artist": "Nano Banana",
+    "_supersedes": "park-heights-pride-and-joy-fb1",
+    "_source": "Remake/Park Heights Pride and Joy.png"
+  },
+  {
+    "id": "road-kill-fb5",
+    "name": "Road Kill",
+    "manaCost": "{G}{G}",
+    "type": "Creature — Zombie Elk",
+    "rarity": "Rare",
+    "text": "You may begin the game with this card in your graveyard. If you do, each opponent investigates.\nRequiem — Whenever a card enters or leaves your graveyard, you may pay {G}{G}. If you do, return this card from your graveyard to the battlefield with a finality counter on it. When it enters this way, you may destroy target Vehicle.",
+    "colors": [
+      "G"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Self-mill"
+    ],
+    "power": "3",
+    "toughness": "3",
+    "flavorText": "You might forget your little accident, but she remembers—and she never forgives.",
+    "artist": "ChatGPT 04",
+    "_supersedes": "road-kill-fb4",
+    "_source": "Remake/Road Kill.png"
+  },
+  {
+    "id": "selesnya-battle-waker-fb5",
+    "name": "Selesnya Battle-Waker",
+    "manaCost": "{2}{G}{W}",
+    "type": "Artifact — Vehicle",
+    "rarity": "Rare",
+    "text": "When this Vehicle enters, put a +1/+1 counter on each Vehicle you control.\nRemove a counter from a Vehicle you control: It becomes an artifact creature until end of turn.\nCrew 1",
+    "colors": [
+      "G",
+      "W"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Vehicles"
+    ],
+    "power": "3",
+    "toughness": "3",
+    "artist": "ChatGPT",
+    "_supersedes": "selesnya-battle-waker-fb1",
+    "_source": "Remake/Selesnya Battle-Waker.png"
+  },
+  {
+    "id": "sharestone-fb5",
+    "name": "Sharestone",
+    "manaCost": "{1}{W}",
+    "type": "Artifact",
+    "rarity": "Common",
+    "text": "When this artifact enters, each player draws a card.\n{T}: Add {W}.",
+    "colors": [
+      "W"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "flavorText": "A relic from an alternate Fomori timeline, this stone reveals a united humanity so profoundly harmonious, its beauty could bring one to tears.",
+    "artist": "ChatGPT 04",
+    "_supersedes": "sharestone-fb4",
+    "_source": "Remake/Sharestone.png"
+  },
+  {
+    "id": "soul-encoder-fb5",
+    "name": "Soul Encoder",
+    "manaCost": "{1}{U}{U}",
+    "type": "Creature — Spirit Ninja",
+    "rarity": "Rare",
+    "text": "Cipherjutsu {2}{U}{U} ({2}{U}{U}, Exile an unblocked attacker you control: Put this creature onto the battlefield tapped and attacking, then encode the exiled creature to it. Whenever this creature deals combat damage to a player, you may cast a copy of the encoded card without paying its mana cost.)\nFlying",
+    "colors": [
+      "U"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Broken Cipher"
+    ],
+    "power": "3",
+    "toughness": "3",
+    "artist": "ChatGPT 04",
+    "_supersedes": "soul-encoder-fb4",
+    "_source": "Remake/Soul Encoder.png"
+  },
+  {
+    "id": "the-oracle-provides-fb5",
+    "name": "The Oracle Provides",
+    "type": "Conspiracy",
+    "rarity": "Rare",
+    "text": "(Start the game with this conspiracy face up in the command zone.)\nBefore the game starts, type the following line into ChatGPT and this card's abilities become the response:\n“Give my Magic the Gathering conspiracy exactly one interesting ability that can affect the game. Nothing else and nothing related to Hidden Agenda.”",
+    "colors": [],
+    "custom": true,
+    "archetypes": [],
+    "artist": "ChatGPT 04",
+    "_supersedes": "the-oracle-provides-fb4",
+    "_source": "Remake/The Oracle Provides.png",
+    "prompt": "Give my Magic the Gathering conspiracy exactly one interesting ability that can effect the game. Nothing else and nothing related to Hidden Agenda."
+  },
+  {
+    "id": "the-real-power-behind-the-throne-fb5",
+    "name": "The Real Power Behind the Throne",
+    "type": "Conspiracy",
+    "rarity": "Mythic Rare",
+    "text": "Hidden agenda (Start the game with this conspiracy face down in the command zone and secretly choose a card name. You may turn this conspiracy face up any time and reveal that name.)\nWhen you turn this Conspiracy face-up, search your library for a legendary creature card with the chosen name, reveal it, put it into your command zone, then shuffle. It becomes your commander. For the rest of the game, you can only cast spells that share a color with your commander.",
+    "colors": [],
+    "custom": true,
+    "archetypes": [],
+    "artist": "ChatGPT 04",
+    "_supersedes": "the-real-power-behind-the-throne-fb4",
+    "_source": "Remake/The Real Power Behind the Throne   .png"
+  },
+  {
+    "id": "vizier-of-second-glory-fb5",
+    "name": "Vizier of Second Glory",
+    "manaCost": "{1}{W}",
+    "type": "Creature — Human Cleric",
+    "rarity": "Rare",
+    "text": "When this creature enters, target creature card in your graveyard gains embalm until end of turn. The embalm cost is equal to its mana cost. (Exile that card and pay its embalm cost: Create a token that's a copy of it, except it's a white Zombie in addition to its other types and has no mana cost. Embalm only as a sorcery.)\nEmbalm {1}{W}",
+    "colors": [
+      "W"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Self-mill"
+    ],
+    "power": "2",
+    "toughness": "1",
+    "artist": "ChatGPT 40",
+    "_supersedes": "vizier-of-second-glory-fb4",
+    "_source": "Remake/Vizier of Second Glory.png"
+  },
+  {
+    "id": "wagon-of-karmic-justice-fb5",
+    "name": "Wagon of Karmic Justice",
+    "manaCost": "{5}{W}{W}",
+    "type": "Artifact — Vehicle",
+    "rarity": "Mythic Rare",
+    "text": "Affinity for permanent types that you don't control and your opponents control.\nFlying\nWhenever this Vehicle attacks, each opponent sacrifices a permanent of each type.\nCrew 3",
+    "colors": [
+      "W"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Vehicles"
+    ],
+    "power": "5",
+    "toughness": "9",
+    "artist": "ChatGPT",
+    "_supersedes": "wagon-of-karmic-justice-fb1",
+    "_source": "Remake/Wagon of Karmic Justice.png"
+  }
+]

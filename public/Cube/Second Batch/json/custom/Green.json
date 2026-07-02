@@ -1,0 +1,70 @@
+[
+  {
+    "id": "nine-rivers-defense-sb2",
+    "name": "Nine River's Defense",
+    "manaCost": "{2}{G}",
+    "type": "Instant",
+    "rarity": "Rare",
+    "text": "Choose one. If {U}{U} was spent to cast this spell, choose two instead —\n• Create two 1/1 blue Merfolk creature tokens with hexproof.\n• Put a +1/+1 counter on each of up to two target creatures.\n• Destroy any number of target artifacts and/or enchantments with total mana value X or less. Where X is the total power of creatures you control.",
+    "colors": [
+      "G"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "artist": "LordAdornable",
+    "relatedTokens": [
+      "1/1 blue Merfolk"
+    ],
+    "_source": "Green/Nine River’s Defense.jpeg"
+  },
+  {
+    "id": "preserver-of-the-flesh-sb2",
+    "name": "Preserver of the Flesh",
+    "manaCost": "{3}{G}",
+    "type": "Artifact",
+    "rarity": "Rare",
+    "text": "Ward — Untap this artifact\n{T}: Petrify target creature card from a graveyard. (Exile it. Its controller creates a token that's a copy of it, except it's an artifact and loses all other card types.)\n{1}{B}, {T}: Petrify target creature.",
+    "colors": [
+      "G"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "artist": "DALL-E 3",
+    "_source": "Green/Preserver of the Flesh.png"
+  },
+  {
+    "id": "remade-into-perfection-sb2",
+    "name": "Remade into Perfection",
+    "manaCost": "{G}",
+    "type": "Instant",
+    "rarity": "Rare",
+    "text": "Destroy target creature. Its controller incubates X, where X is its power. (They create an Incubator token with X +1/+1 counters on it and \"{2}: Transform this artifact.\" It transforms into a 0/0 Phyrexian artifact creature.)",
+    "colors": [
+      "G"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Control"
+    ],
+    "artist": "Maggock",
+    "relatedTokens": [
+      "Incubator"
+    ],
+    "_source": "Green/Remade into Perfection.png"
+  },
+  {
+    "id": "sylvan-wisdom-sb2",
+    "name": "Sylvan Wisdom",
+    "manaCost": "{1}{G}",
+    "type": "Enchantment",
+    "rarity": "Mythic Rare",
+    "text": "At the beginning of your draw step, you may draw two additional cards. If you do, choose two cards in your hand drawn this turn. For each of those cards, tire yourself twice or put the card on top of your library. (To tire yourself twice, put two Confusion cards on top of your library. They're colorless sorcery cards with no mana cost that have cycling {2}.)",
+    "colors": [
+      "G"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "artist": "World Anvil",
+    "_source": "Green/Sylvan Wisdom.png"
+  }
+]

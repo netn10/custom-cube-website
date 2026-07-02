@@ -1,0 +1,218 @@
+[
+  {
+    "id": "2b-reflection-of-humanity-tb3",
+    "name": "2B, Reflection of Humanity",
+    "manaCost": "{1}{W}",
+    "type": "Legendary Artifact Creature — Robot Soldier",
+    "rarity": "Rare",
+    "text": "Partner with Pod 042, Tactical Support Unit (When this creature enters, target player may put Pod 042 into their hand from their library, then shuffle.)\nWhenever you cast a noncreature spell, 2B gets +1/+1 until end of turn for each other noncreature spell you've cast this turn.",
+    "colors": [
+      "W"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Storm"
+    ],
+    "power": "2",
+    "toughness": "2",
+    "artist": "Craizuss",
+    "_source": "White/2B, Reflection of Humanity.png",
+    "relatedFace": "Pod 042, Tactical Support Unit"
+  },
+  {
+    "id": "confiscate-goods-tb3",
+    "name": "Confiscate Goods",
+    "manaCost": "{1}{W}",
+    "type": "Instant",
+    "rarity": "Common",
+    "text": "Destroy target artifact or enchantment.\nTax 1. (The next spell each of your opponents cast cost {1} more to cast. This doesn't end at the end of turn.)",
+    "colors": [
+      "W"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "flavorText": "\"... and per the Guildpact's Cross-Plane Commerce Act, you must present an Omenpath-Passage Declaration, confirm the item's Aetheric Stability Rating, and ensure all extraplanar fees have been paid...\"",
+    "artist": "Dall-E",
+    "_source": "White/Confiscate Goods.png"
+  },
+  {
+    "id": "gentelman-s-agreement-tb3",
+    "name": "Gentleman's Agreement",
+    "manaCost": "{1}{W}",
+    "type": "Enchantment",
+    "rarity": "Rare",
+    "text": "When a player casts a spell, sacrifice this enchantment. If you do, each of that player's opponents draws three cards.",
+    "colors": [
+      "W"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "flavorText": "\"Incredible Valor! Respectable Muscles!\"",
+    "artist": "Studio Bones",
+    "_source": "White/Gentelman’s Agreement.png"
+  },
+  {
+    "id": "leona-the-radiant-dawn-tb3",
+    "name": "Leona, the Radiant Dawn",
+    "manaCost": "{W}{W}",
+    "type": "Legendary Creature — Human Soldier",
+    "rarity": "Rare",
+    "text": "Partner with Diana, Scorn of the Moon (When this creature enters, target player may put Diana into their hand from their library, then shuffle.)\nWard {2}\nIf it's neither day nor night, it becomes day as Leona enters.\nWhenever it becomes day, tap each creature you don't control.",
+    "colors": [
+      "W"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "power": "2",
+    "toughness": "3",
+    "artist": "Sixmorevodka",
+    "_source": "White/Leona, the Radiant Dawn.png",
+    "relatedFace": "Dianna, Scorn of the Moon"
+  },
+  {
+    "id": "my-old-form-disgusted-me-tb3",
+    "name": "My Old Form Disgusted Me",
+    "manaCost": "{W}",
+    "type": "Sorcery",
+    "rarity": "Rare",
+    "text": "Return target creature card from your graveyard to the battlefield, except it's an artifact Vehicle with crew 5. (It's not a creature.)",
+    "colors": [
+      "W"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Vehicles",
+      "Self-mill"
+    ],
+    "flavorText": "\"Death dismantles, but ingenuity reassembles—now, crank the engine and let us ride together as one.\"",
+    "artist": "Alequin_Dv",
+    "_source": "White/My Old Form Disgusted Me.png"
+  },
+  {
+    "id": "rin-loyal-friend-tb3",
+    "name": "Rin, Loyal Friend",
+    "manaCost": "{2}{W}",
+    "type": "Legendary Creature — Dog",
+    "rarity": "Rare",
+    "text": "Partner with Seri, Fierce Friend (When this creature enters, target player may put Seri into their hand from their library, then shuffle.)\nWhenever you attack with a Cat, mill a card, then return target nonland permanent card with mana value 3 or less from your graveyard to the battlefield.\n{2}{G}, {T}: Create a 1/1 green Cat creature token.",
+    "colors": [
+      "W"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Self-mill"
+    ],
+    "power": "2",
+    "toughness": "2",
+    "artist": "Dall-E 3",
+    "relatedTokens": [
+      "1/1 green Cat"
+    ],
+    "_source": "White/Rin, Loyal Friend.png",
+    "relatedFace": "Seri, Fierce Friend"
+  },
+  {
+    "id": "solar-force-tb3",
+    "name": "Solar Force",
+    "manaCost": "{W}",
+    "type": "Enchantment",
+    "rarity": "Uncommon",
+    "text": "When an opponent casts a spell, sacrifice this enchantment and counter that spell.",
+    "colors": [
+      "W"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "flavorText": "\"Sunlight radiates a stark brilliance that fills me with an energy moonlight could never offer.\"",
+    "artist": "Kelsey Roth",
+    "_source": "White/Solar Force.png"
+  },
+  {
+    "id": "the-legion-does-not-forget-tb3",
+    "name": "The Legion Does Not Forget",
+    "manaCost": "{6}{W}{W}",
+    "type": "Instant",
+    "rarity": "Rare",
+    "text": "This spell costs {1} less to cast for each creature you control that died this turn.\nCreate a 1/1 white and red Soldier creature token with formation for each creature card in your graveyard. (Whenever a creature with formation is dealt damage for the first time each turn, you may have it instead be dealt to another creature you control with formation.)",
+    "colors": [
+      "W"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Self-mill"
+    ],
+    "artist": "Dall-E 3",
+    "relatedTokens": [
+      "1/1 white and red Soldier"
+    ],
+    "_source": "White/The Legion Does Not Forget.png"
+  },
+  {
+    "id": "together-again-tb3",
+    "name": "Together Again",
+    "manaCost": "{2}{W}",
+    "type": "Sorcery",
+    "rarity": "Uncommon",
+    "text": "Mill three cards, then return a creature card with mana value 3 or less from your graveyard to the battlefield.\nRebound (If you cast this spell from your hand, exile it as it resolves. At the beginning of your next upkeep, you may cast this card from exile without paying its mana cost.)",
+    "colors": [
+      "W"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Self-mill"
+    ],
+    "artist": "Mirek Kuzniar",
+    "_source": "White/Together Again.png"
+  },
+  {
+    "id": "true-face-of-divinity-tb3",
+    "name": "True Face of Divinity",
+    "manaCost": "{W}{W}{W}",
+    "type": "Creature — Angel",
+    "rarity": "Mythic Rare",
+    "text": "As an additional cost to cast this spell, exile six cards from your graveyard.\nFlying\nWhenever a face-up creature you control dies, return it to the battlefield cloaked. (To cloak a card, put it onto the battlefield face down as a 2/2 creature with ward {2}. Turn it face up any time for its mana cost if it's a creature card.)",
+    "colors": [
+      "W"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Self-mill"
+    ],
+    "power": "6",
+    "toughness": "6",
+    "artist": "Crimsery",
+    "_source": "White/True Face of Divinity.png"
+  },
+  {
+    "id": "united-we-stand-tb3",
+    "name": "United We Stand",
+    "manaCost": "{2}{W}",
+    "type": "Instant",
+    "rarity": "Rare",
+    "text": "Creatures you control gain hexproof and indestructible until end of turn. Nontoken creatures you control gain unity until end of turn. (Token creatures you control have all activated abilities of nontoken creatures you control with unity.)",
+    "colors": [
+      "W"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "artist": "Dall-E 3",
+    "_source": "White/United We Stand.png"
+  },
+  {
+    "id": "vizkopa-bank-manager-tb3",
+    "name": "Vizkopa Bank Manager",
+    "manaCost": "{W}",
+    "type": "Creature — Thrull Advisor",
+    "rarity": "Rare",
+    "text": "{2}: Target player gains control of this creature.\nWhenever an opponent casts their first spell each turn, they may pay {1}. If they do, they draw a card. If they don't, put a +1/+1 counter on this creature and they get a debt counter. (At the beginning of that player's end step, they may pay {1} for each debt counter they have. They remove that many counters, then lose 1 life for each debt counter they have.)",
+    "colors": [
+      "W"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "power": "1",
+    "toughness": "1",
+    "artist": "Dall-E 3",
+    "_source": "White/Vizkopa Bank Manager.png"
+  }
+]

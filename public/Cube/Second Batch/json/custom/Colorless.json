@@ -1,0 +1,44 @@
+[
+  {
+    "id": "impossible-charm-sb2",
+    "name": "Impossible Charm",
+    "manaCost": "{3}",
+    "type": "Kindred Instant — Eldrazi",
+    "rarity": "Mythic Rare",
+    "text": "Type the following line into ChatGPT and put the response on the stack: \"Give me exactly one option for three abilities for my Magic the Gathering 3 mana charm. Nothing else.\"",
+    "colors": [],
+    "custom": true,
+    "archetypes": [],
+    "artist": "Brian Palmer Art",
+    "_source": "Colorless/Impossible Charm.png",
+    "prompt": "Give me exactly one option for three abilities for my Magic the Gathering 3 mana charm. Nothing else."
+  },
+  {
+    "id": "the-eludha-prime-sb2",
+    "name": "The Eludha Prime",
+    "manaCost": "{3}",
+    "type": "Legendary Creature — Human Druid",
+    "rarity": "Mythic Rare",
+    "text": "Companion — Your sideboard has three or more cards with Companion.\nAs long as The Eludha Prime is your commander or your Companion, you may have any number of Companions, ignoring their restrictions.\nYou may cast spells from your Companion zone.\n{2/W}{2/U}{2/B}{2/R}{2/G}: Put target creature you control or target creature card from your graveyard into your Companion zone.",
+    "colors": [],
+    "custom": true,
+    "archetypes": [],
+    "power": "1",
+    "toughness": "1",
+    "artist": "DALL-E 3",
+    "_source": "Colorless/The Eludha Prime.png"
+  },
+  {
+    "id": "unnatural-selection-sb2",
+    "name": "Unnatural Selection",
+    "manaCost": "{4}",
+    "type": "Kindred Sorcery — Eldrazi",
+    "rarity": "Mythic Rare",
+    "text": "As an additional cost to cast this spell, exile a creature you control.\nYou may reveal an artifact or creature card you own from outside the game and put it onto the battlefield. It loses all colors and becomes an Eldrazi creature with base power and toughness 1/21 in addition to its other types.\nAfter the game ends, remove the chosen card from your pool. (You don't own the card, you can't play it in your deck and it's no longer a part of your sideboard.)",
+    "colors": [],
+    "custom": true,
+    "archetypes": [],
+    "artist": "Peter Mohrbacher",
+    "_source": "Colorless/Unnatural Selection.png"
+  }
+]

@@ -1,0 +1,187 @@
+[
+  {
+    "id": "ash-blossoms-fb5",
+    "name": "Ash Blossoms",
+    "manaCost": "{1}{R}",
+    "type": "Sorcery",
+    "rarity": "Uncommon",
+    "text": "Whenever a creature you control enters this turn, put a +1/+1 counter on it and it gains haste until end of turn.\nCreate a 1/1 green Mountain Dryad land creature token.\nFlashback {3}{R}",
+    "colors": [
+      "R"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Self-mill"
+    ],
+    "artist": "Camila Reis",
+    "relatedTokens": [
+      "1/1 green Mountain Dryad"
+    ],
+    "_source": "Red/Ash Blossoms.png"
+  },
+  {
+    "id": "firebending-mastery-fb5",
+    "name": "Firebending Mastery",
+    "manaCost": "{R}",
+    "type": "Enchantment",
+    "rarity": "Rare",
+    "text": "Each creature you control has firebending X, where X is that creature's power. (Whenever that creature attacks, add {R}. This mana lasts until end of combat.)",
+    "colors": [
+      "R"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "artist": "Nickelodeon Animation Studio",
+    "_source": "Red/Firebending Mastery.png"
+  },
+  {
+    "id": "fragments-of-potential-fb5",
+    "name": "Fragments of Potential",
+    "manaCost": "{R}",
+    "type": "Sorcery",
+    "rarity": "Rare",
+    "text": "Create three Shard tokens. At the beginning of the end step on your next turn, sacrifice those tokens. (They're enchantments with \"{2}, Sacrifice this token: Scry 1, then draw a card.\")",
+    "colors": [
+      "R"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Token Collection"
+    ],
+    "flavorText": "\"One day, you will forget me, but in the quiet corners of your heart, the echo of our laughter will always find a way to linger.\"",
+    "artist": "Ev Ganin",
+    "relatedTokens": [
+      "Shard"
+    ],
+    "_source": "Red/Fragments of Potential.png"
+  },
+  {
+    "id": "kamehameha-fb5",
+    "name": "KAMEHAMEHA!",
+    "manaCost": "{R}",
+    "type": "Enchantment — Aura",
+    "rarity": "Rare",
+    "text": "Enchant creature\nEnchanted creature has haste and has the following abilities.\n• {T}: Put a ki counter on this creature.\n• {R}, {T}, Remove a ki counter from this creature: This creature deals 1 damage to any target.\n• {R}, {T}, Remove three ki counters from this creature: This creature deals 10 damage to any target.",
+    "colors": [
+      "R"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "artist": "AGB234",
+    "_source": "Red/KAMEHAMEHA!.png"
+  },
+  {
+    "id": "keranos-s-displeasure-fb5",
+    "name": "Keranos's Displeasure",
+    "manaCost": "{2}{R}{R}",
+    "type": "Sorcery",
+    "rarity": "Rare",
+    "text": "Keranos's Displeasure deals 4 damage to each creature. Whenever a creature dies this way, learn. (You may reveal a Lesson card you own from outside the game and put it into your hand, or discard a card to draw a card.)",
+    "colors": [
+      "R"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Control"
+    ],
+    "flavorText": "Mankind soon understood that some mistakes cannot be made twice.",
+    "artist": "deWitteillustration",
+    "_source": "Red/Keranos’s Displeasure.png"
+  },
+  {
+    "id": "leave-an-impression-fb5",
+    "name": "Leave an Impression",
+    "manaCost": "{1}{R}{R}",
+    "type": "Sorcery — Lesson",
+    "rarity": "Rare",
+    "text": "Create a 4/4 blue and red Elemental creature token. Then, sacrifice a creature. Leave an Impression deals damage equal to the sacrificed creature's power to any target.",
+    "colors": [
+      "R"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "flavorText": "\"Some people only get the point when it's shoved in their face.\"",
+    "artist": "Nano Banana",
+    "relatedTokens": [
+      "4/4 blue and red Elemental"
+    ],
+    "_source": "Red/Leave an Impression.png"
+  },
+  {
+    "id": "mrbeast-fb5",
+    "name": "MrBeast",
+    "manaCost": "{2}{R}{R}",
+    "type": "Legendary Creature — Beast YouTuber",
+    "rarity": "Mythic Rare",
+    "text": "MrBeast is gifting tokens when it enters the battlefield instead of cast. (It works.)\nGift an Island\nGift a Vehicle (It's 3/2 with crew 1.)\nGift two Treasures\nFor each gift that was promised, create a Treasure token and two 1/1 colorless Subscriber tokens with haste.",
+    "colors": [
+      "R"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Token Collection"
+    ],
+    "power": "3",
+    "toughness": "3",
+    "artist": "MrBeast's Mother",
+    "relatedTokens": [
+      "Treasure",
+      "1/1 colorless Subscriber"
+    ],
+    "_source": "Red/MrBeast.png"
+  },
+  {
+    "id": "shivvin-dragon-fb5",
+    "name": "Shivvin' Dragon",
+    "manaCost": "{3}{R}{R}",
+    "type": "Creature — Dragon",
+    "rarity": "Rare",
+    "text": "Flying\nWhenever this creature attacks, you may pay any amount of {R}. If you do, create that many Shiv tokens.",
+    "colors": [
+      "R"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Token Collection"
+    ],
+    "power": "5",
+    "toughness": "5",
+    "artist": "Donato Giancola, Anailis Dorta",
+    "relatedTokens": [
+      "Shiv"
+    ],
+    "_source": "Red/Shivvin' Dragon.png"
+  },
+  {
+    "id": "star-pegasus-fb5",
+    "name": "Star Pegasus",
+    "manaCost": "{R}",
+    "type": "Legendary Enchantment Artifact — Beyblade",
+    "rarity": "Mythic Rare",
+    "text": "Go Shoot! (Tap an untapped creature you control: put a number of spin counters on this Beyblade equal to that creature's power. This Beyblade is a creature as long as it has spin counters on it. At the beginning of your upkeep, remove a spin counter from it. Activate this ability only as a sorcery.)\nFirst strike, haste\nStarblast Attack — Whenever Star Pegasus attacks you may pay {W} and remove one spin counter from it. If you do, it gains flying until end of turn.",
+    "colors": [
+      "R"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "power": "2",
+    "toughness": "2",
+    "artist": "Takara",
+    "_source": "Red/Star Pegasus.png"
+  },
+  {
+    "id": "tainted-wish-fb5",
+    "name": "Tainted Wish",
+    "manaCost": "{R}",
+    "type": "Instant",
+    "rarity": "Mythic Rare",
+    "text": "Exile the top card of your library. Until the end of your next turn, you may play it unless it has the same name as another card exiled this way. Repeat this process until you put a card into your hand or you exile two cards with the same name, whichever comes first.",
+    "colors": [
+      "R"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "artist": "Piotr Foksowicz",
+    "_source": "Red/Tainted Wish.png"
+  }
+]

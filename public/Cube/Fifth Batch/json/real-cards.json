@@ -1,0 +1,116 @@
+[
+  {
+    "id": "bitterbloom-bearer-ecl",
+    "name": "Bitterbloom Bearer",
+    "manaCost": "{B}{B}",
+    "type": "Creature — Faerie Rogue",
+    "rarity": "Mythic Rare",
+    "text": "Flash\nFlying\nAt the beginning of your upkeep, you lose 1 life and create a 1/1 blue and black Faerie creature token with flying.",
+    "colors": [
+      "B"
+    ],
+    "custom": false,
+    "archetypes": [
+      "Token Collection"
+    ],
+    "flavorText": "Petals burst in evening hours with flitting things so fickle and sour.",
+    "artist": "Chris Rahn",
+    "power": "1",
+    "toughness": "1",
+    "set": "Lorwyn Eclipsed",
+    "imageUrl": "/Cube/RealCards/bitterbloom-bearer-ecl.jpg",
+    "_source": "Black\\Bitterbloom Bearer.jpg",
+    "relatedTokens": [
+      "1/1 blue and black Faerie"
+    ]
+  },
+  {
+    "id": "osteomancer-adept-blb",
+    "name": "Osteomancer Adept",
+    "manaCost": "{1}{B}",
+    "type": "Creature — Squirrel Warlock",
+    "rarity": "Rare",
+    "text": "Deathtouch\n{T}: Until end of turn, you may cast creature spells from your graveyard by foraging in addition to paying their other costs. If you cast a spell this way, that creature enters with a finality counter on it. (To forage, exile three cards from your graveyard or sacrifice a Food. If a creature with a finality counter on it would die, exile it instead.)",
+    "colors": [
+      "B"
+    ],
+    "custom": false,
+    "archetypes": [
+      "Self-mill"
+    ],
+    "artist": "Daniel Zrom",
+    "power": "2",
+    "toughness": "2",
+    "set": "Bloomburrow",
+    "imageUrl": "/Cube/RealCards/osteomancer-adept-blb.jpg",
+    "_source": "Black\\Osteomancer Adept.jpg"
+  },
+  {
+    "id": "hymn-of-the-wilds-cn2",
+    "name": "Hymn of the Wilds",
+    "manaCost": "",
+    "type": "Conspiracy",
+    "rarity": "Mythic Rare",
+    "text": "(Start the game with this conspiracy face up in the command zone.)\nThe first creature spell you cast each turn costs {1} less to cast.\nYou can't cast instant or sorcery spells.",
+    "colors": [],
+    "custom": false,
+    "archetypes": [],
+    "flavorText": "Many attempt to speak with nature. Selvala speaks less, and nature answers more.",
+    "artist": "Jason Rainville",
+    "set": "Conspiracy: Take the Crown",
+    "imageUrl": "/Cube/RealCards/hymn-of-the-wilds-cn2.jpg",
+    "_source": "Colorless\\Hymn of the Wilds.jpg"
+  },
+  {
+    "id": "sovereign-s-realm-cn2",
+    "name": "Sovereign's Realm",
+    "manaCost": "",
+    "type": "Conspiracy",
+    "rarity": "Mythic Rare",
+    "text": "(Start the game with this conspiracy face up in the command zone.)\nYour starting deck can't have basic land cards and your starting hand size is five.\nExile a card from your hand: This turn, you may play basic lands from outside the game.\nBasic lands you control have \"{T}: Add one mana of any color.\"",
+    "colors": [],
+    "custom": false,
+    "archetypes": [],
+    "artist": "Daniel Ljunggren",
+    "set": "Conspiracy: Take the Crown",
+    "imageUrl": "/Cube/RealCards/sovereign-s-realm-cn2.jpg",
+    "_source": "Colorless\\Sovereign's Realm.jpg"
+  },
+  {
+    "id": "planar-birth-usg",
+    "name": "Planar Birth",
+    "manaCost": "{1}{W}",
+    "type": "Sorcery",
+    "rarity": "Rare",
+    "text": "Return all basic land cards from all graveyards to the battlefield tapped under their owners' control.",
+    "colors": [
+      "W"
+    ],
+    "custom": false,
+    "archetypes": [],
+    "flavorText": "\"From womb of nothingness sprang this place of beauty, purity, and hope realized.\"\n—*Song of All*, canto 3",
+    "artist": "Adam Rex",
+    "set": "Urza's Saga",
+    "imageUrl": "/Cube/RealCards/planar-birth-usg.jpg",
+    "_source": "White\\Planar Birth.jpg"
+  },
+  {
+    "id": "touch-the-spirit-realm-neo",
+    "name": "Touch the Spirit Realm",
+    "manaCost": "{2}{W}",
+    "type": "Enchantment",
+    "rarity": "Uncommon",
+    "text": "When this enchantment enters, exile up to one target artifact or creature until this enchantment leaves the battlefield.\nChannel — {1}{W}, Discard this card: Exile target artifact or creature. Return it to the battlefield under its owner's control at the beginning of the next end step.",
+    "colors": [
+      "W"
+    ],
+    "custom": false,
+    "archetypes": [
+      "Blink/ETB/Value"
+    ],
+    "artist": "Marta Nael",
+    "set": "Kamigawa: Neon Dynasty",
+    "imageUrl": "/Cube/RealCards/touch-the-spirit-realm-neo.jpg",
+    "_source": "White\\Touch the Spirit Realm.jpg"
+  }
+]

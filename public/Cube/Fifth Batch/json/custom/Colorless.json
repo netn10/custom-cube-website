@@ -1,0 +1,88 @@
+[
+  {
+    "id": "cogwork-mindsplitter-fb5",
+    "name": "Cogwork Mindsplitter",
+    "manaCost": "{4}",
+    "type": "Artifact Creature — Construct",
+    "rarity": "Mythic Rare",
+    "text": "You may reveal this card as you draft it. If you do, remove any number of other cards from the booster, then put that many random cards from the Cube into the booster.\n{2}, {T}: Exile any number of cards from your hand, then draw that many cards.",
+    "colors": [],
+    "custom": true,
+    "archetypes": [],
+    "power": "2",
+    "toughness": "4",
+    "flavorText": "Perfect for a divided society.",
+    "artist": "Nano Banana",
+    "_source": "Colorless/Cogwork Mindsplitter.png"
+  },
+  {
+    "id": "dream-bullet-jolly-the-johnny-fb5",
+    "name": "Dream Bullet & Jolly the Johnny",
+    "manaCost": "{7}",
+    "type": "Legendary Creature — Joker Mercenary",
+    "rarity": "Mythic Rare",
+    "text": "You may cast Dream Bullet & Jolly the Johnny without paying its mana cost if you control five or more creatures with different mana values.\nHaste\nWhenever Dream Bullet & Jolly the Johnny attacks, it deals damage equal to the number of creatures you control with different mana values to target creature or player. Your opponents can't cast spells with those mana values during their next turn.",
+    "colors": [],
+    "custom": true,
+    "archetypes": [],
+    "power": "10",
+    "toughness": "10",
+    "flavorText": "\"My horse is a gosh darn gun. Any questions?\"",
+    "artist": "Yuukoo009",
+    "_source": "Colorless/Dream Bullet & Jolly the Johnny.png"
+  },
+  {
+    "id": "let-it-rip-fb5",
+    "name": "Let It Rip!",
+    "manaCost": "{5}",
+    "type": "Sorcery",
+    "rarity": "Mythic Rare",
+    "text": "Create three Sensei's Divining Tops. (They're not tokens.)",
+    "colors": [],
+    "custom": true,
+    "archetypes": [
+      "Artifacts"
+    ],
+    "artist": "Michael Sutfin, Greg Staples, Rob Alexander and Takao Aoki",
+    "_source": "Colorless/Let It Rip!.png"
+  },
+  {
+    "id": "literally-wedding-ring-fb5",
+    "name": "Literally Wedding Ring",
+    "type": "Artifact",
+    "text": "When you draft this ring, reveal a creature from your draft pool. That creature becomes your companion. (You may put it into your hand from outside the game for {3} any time you could cast a sorcery.)",
+    "colors": [],
+    "custom": true,
+    "archetypes": [],
+    "_source": "Colorless/Literally Wedding Ring.png"
+  },
+  {
+    "id": "mox-crimson-fb5",
+    "name": "Mox Crimson",
+    "manaCost": "{0}",
+    "type": "Legendary Artifact",
+    "rarity": "Mythic Rare",
+    "text": "Raid — {T}: Add one mana of any color. Activate only if you attacked this turn.",
+    "colors": [],
+    "custom": true,
+    "archetypes": [],
+    "flavorText": "\"War is ugly, chaotic, and unrelenting. It tests us at our highest and breaks us at our lowest. And yet, the fight itself must be beautiful, orderly, and calculated. May we always remember how to become whole after we are broken.\"\n—Alesha's First Poem of War",
+    "artist": "Nano Banana",
+    "_source": "Colorless/Mox Crimson.png"
+  },
+  {
+    "id": "the-custom-cube-fb5",
+    "name": "The Custom Cube",
+    "manaCost": "{3}",
+    "type": "Legendary Artifact",
+    "rarity": "Mythic Rare",
+    "text": "Whenever you cast your first spell each turn, counter it. Note its mana cost, and type the following line into ChatGPT and cast it without paying its mana cost: \"Give me exactly one custom Magic the Gathering spell with mana cost of {noted mana cost}.\"",
+    "colors": [],
+    "custom": true,
+    "archetypes": [],
+    "flavorText": "\"The age of Wizards of the Coast is over. Billions must design.\"",
+    "artist": "Nano Banana",
+    "_source": "Colorless/The Custom Cube.png",
+    "prompt": "Give me exactly one custom Magic the Gathering spell with mana cost of {noted mana cost}."
+  }
+]

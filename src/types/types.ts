@@ -27,6 +27,7 @@ export type Card = {
   relatedTokens?: string[];
   relatedFace?: string | string[];
   facedown?: boolean;
+  prompt?: string;
 };
 
 export type Token = {
@@ -39,6 +40,8 @@ export type Token = {
   abilities?: string[];
   imageUrl?: string;
   artist?: string;
+  set?: string;
+  versions?: { set: string; imageUrl: string }[]; // art per set (current = latest)
   creatorCards?: any[]; // Optional, matches usage in token detail page
 };
 

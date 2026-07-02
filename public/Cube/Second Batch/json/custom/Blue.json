@@ -1,0 +1,53 @@
+[
+  {
+    "id": "be-as-one-sb2",
+    "name": "Be As One",
+    "manaCost": "{U}",
+    "type": "Instant",
+    "rarity": "Uncommon",
+    "text": "Put target creature over or under target creature with the same owner. They mutate into the creature on top plus all abilities from under it.",
+    "colors": [
+      "U"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "flavorText": "\"You don't have to be alone anymore.\"",
+    "artist": "MasterJuunanagou17",
+    "_source": "Blue/Be As One.png"
+  },
+  {
+    "id": "head-twister-sb2",
+    "name": "Head Twister",
+    "manaCost": "{2}{U}{U}",
+    "type": "Sorcery",
+    "rarity": "Mythic Rare",
+    "text": "You may cast this spell as though it had flash. If you cast it any time a sorcery couldn't have been cast, it costs {1} less to cast and each player tire themselves 7. (They put seven Confusion cards on top of their library. They're colorless sorcery cards with no mana value that have cycling {2}.)\nEach player shuffles their hand and graveyard into their library, then draws seven cards. (Then put this card into its owner's graveyard.)",
+    "colors": [
+      "U"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "artist": "Bruce Rolff",
+    "_source": "Blue/Head Twister.png"
+  },
+  {
+    "id": "rise-my-minions-sb2",
+    "name": "Rise, My Minions!",
+    "manaCost": "{U}",
+    "type": "Sorcery",
+    "rarity": "Uncommon",
+    "text": "Create a 2/2 black Zombie creature token with decayed. (It can't block. When it attacks, sacrifice it at end of combat.)\nStorm",
+    "colors": [
+      "U"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Storm"
+    ],
+    "artist": "DALL-E 3",
+    "relatedTokens": [
+      "2/2 black Zombie"
+    ],
+    "_source": "Blue/Rise, My Minions!.png"
+  }
+]

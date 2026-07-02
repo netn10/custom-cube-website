@@ -1,0 +1,58 @@
+[
+  {
+    "id": "celestial-ice-realm-fb1",
+    "name": "Celestial Ice-Realm",
+    "manaCost": "",
+    "type": "Land",
+    "rarity": "Rare",
+    "text": "{T}, Pay 1 life: Add {W} or {U}.\n{1}, {T}, Sacrifice Celestial Ice-Realm: Draw a card.",
+    "colors": [],
+    "custom": true,
+    "archetypes": [],
+    "flavorText": "The Ice Queen has gone, but her aura lingers, a chilling reminder to honor her legacy.",
+    "_source": "Lands/Celestial Ice-Realm.png",
+    "artist": "ChatGPT"
+  },
+  {
+    "id": "fractured-mountain-range-fb1",
+    "name": "Fractured Mountain-Range",
+    "manaCost": "",
+    "type": "Land",
+    "rarity": "Rare",
+    "text": "{T}, Pay 1 life: Add {B} or {R}.\n{1}, {T}, Sacrifice Fractured Mountain-Range: Draw a card.",
+    "colors": [],
+    "custom": true,
+    "archetypes": [],
+    "flavorText": "A broken canvas can still paint a beautiful picture, perhaps if you let your imagination wander just a little bit...",
+    "_source": "Lands/Fractured Mountain-Range.png",
+    "artist": "ChatGPT"
+  },
+  {
+    "id": "mystical-marsh-fb1",
+    "name": "Mystical Marsh",
+    "manaCost": "",
+    "type": "Land",
+    "rarity": "Rare",
+    "text": "{T}, Pay 1 life: Add {U} or {B}.\n{1}, {T}, Sacrifice Mystical Marsh: Draw a card.",
+    "colors": [],
+    "custom": true,
+    "archetypes": [],
+    "flavorText": "The waters will show you what you are, but look again; you will be shown what you are meant to be.",
+    "_source": "Lands/Mystical Marsh.png",
+    "artist": "ChatGPT"
+  },
+  {
+    "id": "utopic-desolate-peaks-fb1",
+    "name": "Utopic Desolate-Peaks",
+    "manaCost": "",
+    "type": "Land",
+    "rarity": "Rare",
+    "text": "{T}, Pay 1 life: Add {R} or {G}.\n{1}, {T}, Sacrifice Utopic Desolate-Peaks: Draw a card.",
+    "colors": [],
+    "custom": true,
+    "archetypes": [],
+    "flavorText": "The faefolk are forbidden from helping children directly, so they created a haven to gather those who are lost, even though they cannot cure the ache of homesickness...",
+    "_source": "Lands/Utopic Desolate-Peaks.png",
+    "artist": "Dall-E 3"
+  }
+]

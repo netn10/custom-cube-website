@@ -1,0 +1,474 @@
+[
+  {
+    "id": "aspiring-speedbrooder-fb4",
+    "name": "Aspiring Speedbrooder",
+    "type": "Artifact — Vehicle",
+    "rarity": "Rare",
+    "text": "Level up Crew 2 (Crew 2: Put a level counter on this. Level up only as a sorcery.)\nLEVEL 2-3\n4/4\nThis Vehicle gets +1/+1 for each artifact and/or creature card in your graveyard.\nLEVEL 4+\n5/5\nEach Vehicle you control gets +1/+1 for each artifact and/or creature card in your graveyard.",
+    "colors": [],
+    "custom": true,
+    "archetypes": [
+      "Vehicles",
+      "Self-mill"
+    ],
+    "power": "3",
+    "toughness": "3",
+    "artist": "ChatGPT 04",
+    "_source": "Green/Aspiring Speedbrooder.png"
+  },
+  {
+    "id": "berserker-s-prayer-fb4",
+    "name": "Berserker's Prayer",
+    "manaCost": "{1}{G}",
+    "type": "Instant",
+    "rarity": "Common",
+    "text": "Target creature gets +2/+2 and gains berserk until end of turn. (Whenever it attacks, you may double its power. If you do, sacrifice it at the end of turn.)",
+    "colors": [
+      "G"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "flavorText": "\"Raze-Boar, roar with me: if I die today, I die with their city in ruins!\"",
+    "artist": "Maciej Kuciara",
+    "_source": "Green/Berserker’s Prayer.png"
+  },
+  {
+    "id": "boss-encounter-fb4",
+    "name": "Boss Encounter",
+    "manaCost": "{2}{G}{G}",
+    "type": "Sorcery",
+    "rarity": "Rare",
+    "text": "At the beginning of your next combat, target creature you control fights each creature you don't control, one at a time.\nSuspend 2 — {R}{R}\nThrilling Preparations — Whenever a time counter is removed from this card while it's exiled, exile the top card of your library. Until end of turn, you may play that card. If it's a creature spell, it enters with two +1/+1 counters on it.",
+    "colors": [
+      "G"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Control"
+    ],
+    "artist": "Josh Herman",
+    "_source": "Green/Boss Encounter.png"
+  },
+  {
+    "id": "decorated-overseer-fb4",
+    "name": "Decorated Overseer",
+    "manaCost": "{2}{G}",
+    "type": "Creature — Centaur Warrior",
+    "rarity": "Rare",
+    "text": "Unity (Token creatures you control have all activated abilities of all nontoken creatures you control with unity.)\nWhenever this creature becomes a target of a spell, create a 1/1 green Human Soldier creature token with haste.\n{G}, {T}: Target creature gets +1/+1 until end of turn.",
+    "colors": [
+      "G"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "power": "3",
+    "toughness": "3",
+    "artist": "ChatGPT 04",
+    "relatedTokens": [
+      "1/1 green Human Soldier"
+    ],
+    "_source": "Green/Decorated Overseer.png"
+  },
+  {
+    "id": "domain-expansion-fb4",
+    "name": "Domain Expansion",
+    "manaCost": "{5}{G}{G}",
+    "type": "Instant",
+    "rarity": "Mythic Rare",
+    "text": "For each basic land type, create a 1/1 green Dryad land creature token with that basic land type. (They're affected by summoning sickness, and each of them has a different name.)",
+    "colors": [
+      "G"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Token Collection"
+    ],
+    "flavorText": "United in sorrow, the dryads quietly pledged to reclaim and grow—lest human greed consume what little remained.",
+    "artist": "ChatGPT 04",
+    "relatedTokens": [
+      "1/1 green Dryad"
+    ],
+    "_source": "Green/Domain Expansion.png"
+  },
+  {
+    "id": "el-verde-danna-s-masterpiece-fb4",
+    "name": "El-Verde, Danna's Masterpiece",
+    "manaCost": "{1}{G}",
+    "type": "Legendary Artifact — Vehicle",
+    "rarity": "Rare",
+    "text": "Haste\n{2}{W}: This Vehicle becomes an artifact creature until end of turn. Until end of turn, whenever a Vehicle you control attacks, put a +1/+1 counter on each creature you control and noncreature Vehicle you control. If a creature named Danna, Lockloft Ace crewed this Vehicle this turn, copy this ability.\nCrew 2",
+    "colors": [
+      "G"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Vehicles"
+    ],
+    "power": "4",
+    "toughness": "3",
+    "artist": "ChatGPT 04",
+    "_source": "Green/El-Verde, Danna’s Masterpiece.png"
+  },
+  {
+    "id": "elves-of-civilized-facade-fb4",
+    "name": "Elves of Civilized Facade",
+    "manaCost": "{G}",
+    "type": "Creature — Elf Druid",
+    "rarity": "Common",
+    "text": "Berserk (Whenever this creature attacks, you may double its power. If you do, sacrifice it at the end of turn.)\n{T}: Add {R}.",
+    "colors": [
+      "G"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "power": "0",
+    "toughness": "1",
+    "flavorText": "Some Gruul elves leave the Clans and seek acceptance in Ravnican society, but old habits die hard.",
+    "artist": "ChatGPT 04",
+    "_source": "Green/Elves of Civilized Facade.png"
+  },
+  {
+    "id": "essence-resonator-fb4",
+    "name": "Essence Resonator",
+    "manaCost": "{2}{G}",
+    "type": "Artifact",
+    "rarity": "Mythic Rare",
+    "text": "Whenever an artifact or creature enters under your control, you may activate one of its activated abilities without paying its mana cost and/or {T} cost.\nCreatures you control have haste.",
+    "colors": [
+      "G"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Artifacts",
+      "Blink/ETB/Value"
+    ],
+    "flavorText": "At the Edge of Eternities, it awaits—not to be understood, but to awaken what lies beyond understanding.",
+    "artist": "Gustav Schmidt",
+    "_source": "Green/Essence Resonator.png"
+  },
+  {
+    "id": "grothama-the-final-boss-fb4",
+    "name": "Grothama, the Final Boss",
+    "manaCost": "{4}{G}{G}",
+    "type": "Legendary Battle Creature — Wurm Boss",
+    "rarity": "Mythic Rare",
+    "text": "(Any player may attack and defend Bosses. Whenever a Boss is dealt damage, remove that many defense counters from it. Bosses deal damage equal to their defense. A boss can't attack itself. When it's defeated, the player that defeated it exile it, then cast it transformed.)\nVigilance, trample, ward {3}",
+    "colors": [
+      "G"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "power": "9",
+    "artist": "Kohei Hayama",
+    "_source": "Green/Grothama, the Final Boss.png",
+    "relatedFace": "Legendary Loot Drop"
+  },
+  {
+    "id": "heretic-s-capusle-fb4",
+    "name": "Heretic's Capsule",
+    "type": "Artifact",
+    "rarity": "Common",
+    "text": "{1}{G}, {T}, Sacrifice this artifact: Search your library for up to two basic land cards, reveal those cards, put one onto the battlefield tapped and the other into your hand, then shuffle.",
+    "colors": [],
+    "custom": true,
+    "archetypes": [],
+    "flavorText": "\"Nothing is more natural than nurturing the world around you while discarding your metallic impurities.\"\n—Dolomarus, Esper Heretic",
+    "artist": "ChatGPT 04",
+    "_source": "Green/Heretic’s Capusle.png"
+  },
+  {
+    "id": "jungle-sanctifier-fb4",
+    "name": "Jungle Sanctifier",
+    "manaCost": "{1}{G}",
+    "type": "Creature — Koala Druid",
+    "rarity": "Rare",
+    "text": "Vigilance\n{T}: Add {G}. If this mana was spent to cast a spell that targets this creature, put a +1/+1 counter on this creature, then you may destroy target artifact or enchantment with mana value less than or equal to this creature's power.",
+    "colors": [
+      "G"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "power": "1",
+    "toughness": "1",
+    "artist": "Raini Studios",
+    "_source": "Green/Jungle Sanctifier.png"
+  },
+  {
+    "id": "legendary-loot-drop-fb4",
+    "name": "Legendary Loot Drop",
+    "type": "Sorcery",
+    "rarity": "Mythic Rare",
+    "text": "You draw seven cards and you gain 14 life. Add {W}{W}{U}{U}{B}{B}{R}{R}{G}{G}.",
+    "colors": [
+      "G"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Control"
+    ],
+    "facedown": true,
+    "flavorText": "Kylem cheers for the showstopper, not the scaffolding crushed beneath the stage.",
+    "artist": "IllustrationBySam",
+    "_source": "Green/Legendary Loot Drop.png",
+    "relatedFace": "Grothama, the Final Boss"
+  },
+  {
+    "id": "nourishment-for-the-puppet-fb4",
+    "name": "Nourishment for the Puppet",
+    "manaCost": "{3}{G}{G}",
+    "type": "Sorcery",
+    "rarity": "Rare",
+    "text": "Cleave {1}{G}{G} (You may cast this spell for its cleave cost. If you do, remove the words in square brackets.)\nCreate a [4/6] green artifact [Treefolk Horror creature] token named Nourisher with \"At the beginning of your upkeep, return target creature card from your graveyard to your hand.\"",
+    "colors": [
+      "G"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "artist": "Helge C. Balzer",
+    "relatedTokens": [
+      "Nourisher"
+    ],
+    "_source": "Green/Nourishment for the Puppet.png"
+  },
+  {
+    "id": "overgrown-peacock-fb4",
+    "name": "Overgrown Peacock",
+    "manaCost": "{3}{G}",
+    "type": "Creature — Bird",
+    "rarity": "Rare",
+    "text": "Prowess, trample\nWhenever you cast an artifact spell, this creature fights target creature you don't control.",
+    "colors": [
+      "G"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Prowess",
+      "Artifacts"
+    ],
+    "power": "3",
+    "toughness": "3",
+    "flavorText": "\"In the Wastelands, always carry the biggest stick.\"",
+    "artist": "Marianna Kladi",
+    "_source": "Green/Overgrown Peacock.png"
+  },
+  {
+    "id": "podium-of-the-ancestors-fb4",
+    "name": "Podium of the Ancestors",
+    "manaCost": "{3}{G}",
+    "type": "Artifact",
+    "rarity": "Mythic Rare",
+    "text": "{T}: Target creature you control endures 1. (Put a +1/+1 counter on it or create a 1/1 white Spirit creature token.)\n{T}, Remove any number of counters from among creatures you control and sacrifice any number of tokens: Search your library for a creature card with mana value less than or equal to the total number of counters removed and tokens sacrificed this way, put it onto the battlefield, then shuffle. Activate only as a sorcery.",
+    "colors": [
+      "G"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Token Collection"
+    ],
+    "artist": "ChatGPT 04",
+    "relatedTokens": [
+      "1/1 white Spirit"
+    ],
+    "_source": "Green/Podium of the Ancestors.png"
+  },
+  {
+    "id": "road-kill-fb4",
+    "name": "Road Kill",
+    "manaCost": "{G}{G}",
+    "type": "Creature — Elk Zombie",
+    "rarity": "Rare",
+    "text": "You may begin the game with this card in your graveyard. If you do, each opponent investigates.\nRequiem — Whenever a card enters or leaves your graveyard, return this card from your graveyard to the battlefield with a finality counter on it. When it enters this way, you may destroy target Vehicle.",
+    "colors": [
+      "G"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Self-mill"
+    ],
+    "power": "3",
+    "toughness": "3",
+    "flavorText": "You might forget your little accident, but she remembers—and she never forgives.",
+    "artist": "ChatGPT 04",
+    "_source": "Green/Road Kill.png"
+  },
+  {
+    "id": "shepard-of-the-cycle-fb4",
+    "name": "Shepherd of the Cycle",
+    "manaCost": "{3}{G}",
+    "type": "Creature — Elf Shaman",
+    "rarity": "Rare",
+    "text": "{2}, {T}: Put a +1/+1 counter on target creature for each artifact and/or creature you control. If this permanent is an artifact, also put a +1/+1 counter on that creature for each artifact and/or creature card in your graveyard.\nPetrify from your graveyard {5}{B} ({5}{B}, Exile this card from your graveyard: Create a copy of it, except it's an artifact. Activate only as a sorcery.)",
+    "colors": [
+      "G"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Artifacts"
+    ],
+    "power": "2",
+    "toughness": "2",
+    "artist": "Sydney Young",
+    "_source": "Green/Shepard of the Cycle.png"
+  },
+  {
+    "id": "spell-fierce-fb4",
+    "name": "Spell Fierce",
+    "manaCost": "{G}",
+    "type": "Instant",
+    "rarity": "Common",
+    "text": "Target creature you control fights target creature spell. (If a creature spell is dealt enough damage, it's countered.)",
+    "colors": [
+      "G"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Control"
+    ],
+    "flavorText": "The Fleshbeasts of Iquatana are born for psychological warfare by The Masked Ones, and the only triumph that truly quenches their thirst is one over their own Memorybeast.",
+    "artist": "ChatGPT 40",
+    "_source": "Green/Spell Fierce.png"
+  },
+  {
+    "id": "tankamutaticar-fb4",
+    "name": "Tankamutaticar",
+    "manaCost": "{3}{G}{G}",
+    "type": "Artifact — Vehicle",
+    "rarity": "Rare",
+    "text": "Whenever this Vehicle attacks, experiment X, where X is the total power of creatures that crewed it this turn. (You get X {E} counters. If you don't control The Experiment, create one. Then, spend any amount of {E} on it.)\nCrew 3. Activate only once each turn.",
+    "colors": [
+      "G"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Vehicles"
+    ],
+    "power": "7",
+    "toughness": "7",
+    "flavorText": "\"Holy shit.\"\n—Auralia, Very Confused",
+    "artist": "ChatGPT 04",
+    "relatedTokens": [
+      "The Experiment"
+    ],
+    "_source": "Green/Tankamutaticar.png"
+  },
+  {
+    "id": "thaldrin-the-rune-bearer-fb4",
+    "name": "Thaldrin, the Rune-Bearer",
+    "manaCost": "{G}{G}",
+    "type": "Legendary Creature — Treefolk Shaman",
+    "rarity": "Rare",
+    "text": "Vigilance\nCreatures you control have hexproof during combat.\n{2}{U}: Put a prowess counter on target creature.",
+    "colors": [
+      "G"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Prowess"
+    ],
+    "power": "2",
+    "toughness": "4",
+    "flavorText": "\"You hide behind the artificial to imitate a fraction of our power… pitiful.\"",
+    "artist": "ChatGPT 04",
+    "_source": "Green/Thaldrin, the Rune-Bearer.png"
+  },
+  {
+    "id": "there-are-two-wolves-inside-you-fb4",
+    "name": "There Are Two Wolves Inside You",
+    "manaCost": "{G}",
+    "type": "Sorcery",
+    "rarity": "Rare",
+    "text": "Destroy target creature. Its controller creates a 2/2 legendary white Wolf creature token and a 2/2 legendary black Wolf creature token, then they give each of them a different name.",
+    "colors": [
+      "G"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Control"
+    ],
+    "flavorText": "\"mmrffgghhhhhhmm😫\"",
+    "artist": "UNCLEFATHER",
+    "relatedTokens": [
+      "2/2 white Wolf",
+      "2/2 black Wolf"
+    ],
+    "_source": "Green/There Are Two Wolves Inside You.png"
+  },
+  {
+    "id": "titan-of-future-promised-fb4",
+    "name": "Titan of Future Promised",
+    "manaCost": "{7}{G}{G}",
+    "type": "Artifact Creature — Giant",
+    "rarity": "Rare",
+    "text": "Affinity for artifacts (This spell costs {1} less to cast for each artifact you control.)\nTrample\nThis creature's power and toughness are each equal to twice the number of artifacts you control.",
+    "colors": [
+      "G"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Artifacts"
+    ],
+    "power": "*",
+    "toughness": "*",
+    "flavorText": "When the first man-made tool on Dominaria was crafted, he was there, watching.",
+    "artist": "ChatGPT 04",
+    "_source": "Green/Titan of Future Promised.png"
+  },
+  {
+    "id": "unveil-the-future-fb4",
+    "name": "Unveil the Future",
+    "manaCost": "{2}{G}",
+    "type": "Instant",
+    "rarity": "Common",
+    "text": "Prevent all damage that would be dealt this turn except by sources you control with one or more counters on them.\nExperiment 3. (You get three {E} counters. If you don't control The Experiment, create one. Then, spend any amount of {E} on it.)",
+    "colors": [
+      "G"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "artist": "ChatGPT 04",
+    "relatedTokens": [
+      "The Experiment"
+    ],
+    "_source": "Green/Unveil the Future.png"
+  },
+  {
+    "id": "verdentreader-fb4",
+    "name": "Verdentreader",
+    "type": "Artifact — Vehicle",
+    "rarity": "Rare",
+    "text": "Whenever this Vehicle attacks, create a 1/1 green Forest Dryad land creature token. (It's affected by summoning sickness.)\nCrew 2",
+    "colors": [],
+    "custom": true,
+    "archetypes": [
+      "Vehicles"
+    ],
+    "power": "3",
+    "toughness": "2",
+    "flavorText": "As the Brothers' War embraced modern warfare, Gaea's defenses adapted accordingly.",
+    "artist": "ChatGPT 04",
+    "relatedTokens": [
+      "1/1 green Forest Dryad"
+    ],
+    "_source": "Green/Verdentreader.png"
+  },
+  {
+    "id": "vorinclex-s-garage-fb4",
+    "name": "Vorinclex's Garage",
+    "manaCost": "{2}{G}",
+    "type": "Artifact",
+    "rarity": "Rare",
+    "text": "At the beginning of combat on your turn, put an oil counter on this artifact, then create an X/X green artifact Vehicle token with trample, haste and crew 1, where X is the number of oil counters on this artifact.",
+    "colors": [
+      "G"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Vehicles"
+    ],
+    "artist": "ChatGPT 04",
+    "relatedTokens": [
+      "X/X green Vehicle"
+    ],
+    "_source": "Green/Vorinclex’s Garage.png"
+  }
+]

@@ -1,0 +1,165 @@
+[
+  {
+    "id": "armix-of-the-scrapped-past-fb5",
+    "name": "Armix of the Scrapped Past",
+    "manaCost": "{2}{B}",
+    "type": "Legendary Artifact Creature — Golem",
+    "rarity": "Rare",
+    "text": "Armix gets +1/+1 for each artifact and creature card in your graveyard with an activated ability.\nDuring your turn, you may activate activated abilities of artifact and creature cards in your graveyard as though they were on the battlefield. (Tap them in your graveyard.)",
+    "colors": [
+      "B"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Artifacts",
+      "Self-mill"
+    ],
+    "power": "0",
+    "toughness": "0",
+    "artist": "Zack Stella",
+    "_source": "Black/Armix of the Scrapped Past.png"
+  },
+  {
+    "id": "can-t-back-down-fb5",
+    "name": "Can’t Back Down",
+    "manaCost": "{5}{B}{B}",
+    "type": "Instant",
+    "rarity": "Rare",
+    "text": "Each nontoken creature you control gains persist until end of turn, then destroy all creatures. (When it dies, if it had no -1/-1 counters on it, return it to the battlefield under its owner’s control with a -1/-1 counter on it.)",
+    "colors": [
+      "B"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "flavorText": "In Shadowmoor, the darkest emotions are the only way to endure the night.",
+    "artist": "Adam Rex",
+    "_source": "Black/Can’t Back Down.png"
+  },
+  {
+    "id": "confuse-fb5",
+    "name": "Confuse",
+    "manaCost": "{B}",
+    "type": "Sorcery",
+    "rarity": "Rare",
+    "text": "Target player reveals their hand. You choose a nonland card from it. That player discards that card, then puts a Confusion card into their hand. (Confusion is a colorless sorcery card with no mana cost that has cycling {2}.)",
+    "colors": [
+      "B"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "artist": "Milan Bourgeon",
+    "_source": "Black/Confuse.png"
+  },
+  {
+    "id": "inkredible-idea-fb5",
+    "name": "Inkredible Idea",
+    "manaCost": "{B}{B}",
+    "type": "Sorcery — Lesson",
+    "rarity": "Rare",
+    "text": "Search your library for a card, exile it face down, then shuffle. Create a 2/1 white and black Inkling creature token with flying. It gains “Whenever this creature dies, put the exiled card into your hand.”",
+    "colors": [
+      "B"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "flavorText": "“Writer’s block? Naa, I prefer writer’s attack.”",
+    "artist": "Nano Banana",
+    "relatedTokens": [
+      "2/1 white and black Inkling"
+    ],
+    "_source": "Black/Inkredible Idea.png"
+  },
+  {
+    "id": "inverted-pathogenesis-fb5",
+    "name": "Inverted Pathogenesis",
+    "manaCost": "{B}",
+    "type": "Enchantment",
+    "rarity": "Rare",
+    "text": "When this enchantment enters, create three 1/1 green Swamp Dryad land creature tokens. (They’re affected by summoning sickness.)\nAt the beginning of your upkeep, sacrifice a creature.",
+    "colors": [
+      "B"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Token Collection"
+    ],
+    "flavorText": "“Dawnsire, Log 122: Planet Adagia breaks under the sickness we caused. Its twisted, dying life is filled with retribution, and I sense something far worse has been awakened.”",
+    "artist": "Nano Banana",
+    "relatedTokens": [
+      "1/1 green Swamp Dryad"
+    ],
+    "_source": "Black/Inverted Pathogenesis.png"
+  },
+  {
+    "id": "keep-coming-back-wrong-fb5",
+    "name": "Keep Coming Back Wrong",
+    "manaCost": "{2}{B}",
+    "type": "Enchantment",
+    "rarity": "Rare",
+    "text": "Whenever a creature you control with mana value 3 or less dies, bring it back, except it’s slightly more dead. This ability triggers only once each turn. (Permanently give it one of the following characteristics it doesn’t already have: it’s a zombie now; it can’t block; its mana value becomes 4.)",
+    "colors": [
+      "B"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "artist": "David Auden Nash",
+    "_source": "Black/Keep Coming Back Wrong.webp"
+  },
+  {
+    "id": "pain-is-the-greatest-teacher-fb5",
+    "name": "Pain is the Greatest Teacher",
+    "manaCost": "{2}{B}",
+    "type": "Enchantment",
+    "rarity": "Rare",
+    "text": "Whenever you lose life, create that many Blood tokens. Then, if you lost 3 or more life, learn. (You may reveal a Lesson card you own from outside the game and put it into your hand, or discard a card to draw a card.)\n{1}, Sacrifice a Blood: You gain 1 life.",
+    "colors": [
+      "B"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Token Collection"
+    ],
+    "artist": "Anato Finnstark",
+    "relatedTokens": [
+      "Blood"
+    ],
+    "_source": "Black/Pain is the Greatest Teacher.png"
+  },
+  {
+    "id": "rat-pack-fb5",
+    "name": "Rat Pack",
+    "manaCost": "{2}{B}{B}",
+    "type": "Creature — Rat",
+    "rarity": "Rare",
+    "text": "This creature’s power and toughness are each equal to the number of booster packs you’ve opened this event.\n{2}{B}, Discard a card: Open a sealed Magic booster pack, reveal the cards, and put one of them into your hand. (Remove that card from your deck before beginning a new game.)",
+    "colors": [
+      "B"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "power": "0",
+    "toughness": "0",
+    "artist": "Tapioca",
+    "_source": "Black/Rat Pack.png"
+  },
+  {
+    "id": "table-of-costly-greatness-fb5",
+    "name": "Table of Costly Greatness",
+    "manaCost": "{1}{B}",
+    "type": "Artifact",
+    "rarity": "Mythic Rare",
+    "text": "At the beginning of your upkeep, create a Dark Confidant token. (It’s a {1}{B} 2/1 Human Wizard creature with “At the beginning of your upkeep, reveal the top card of your library and put that card into your hand. You lose life equal to its mana value.”)\n{T}, Tap five untapped Wizards you control: Target opponent loses 10 life and you gain 10 life.",
+    "colors": [
+      "B"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Token Collection"
+    ],
+    "artist": "Nano Banana",
+    "relatedTokens": [
+      "Dark Confidant"
+    ],
+    "_source": "Black/Table of Costly Greatness.png"
+  }
+]

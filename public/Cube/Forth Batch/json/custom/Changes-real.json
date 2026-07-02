@@ -1,0 +1,20 @@
+[
+  {
+    "id": "sticker-collector-fb4",
+    "name": "Sticker Collector",
+    "manaCost": "{8}",
+    "type": "Artifact Creature — Robot",
+    "rarity": "Rare",
+    "text": "{T}: Untap another target permanent.\nWhenever this creature deals combat damage to a player, exile target creature you control, then return it to the battlefield under its owner's control.\nProtection from odd mana values\nSacrifice this permanent: Draw two cards.\n{T}: The next time target player would roll one or more dice this turn, instead they roll that many dice plus one, then you choose one of those rolls to ignore.\nWhenever this creature attacks, proliferate.\nStickers are not removed from this card after the game ends. Yap.",
+    "colors": [],
+    "custom": true,
+    "archetypes": [
+      "Blink/ETB/Value"
+    ],
+    "power": "8",
+    "toughness": "7",
+    "artist": "DALL-E 3",
+    "_supersedes": "sticker-collector-tb3",
+    "_source": "Changes/Total/Sticker Collector.jpg"
+  }
+]

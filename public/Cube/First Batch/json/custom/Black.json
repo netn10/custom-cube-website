@@ -1,0 +1,500 @@
+[
+  {
+    "id": "aetherborn-tutor-fb1",
+    "name": "Aetherborn Tutor",
+    "manaCost": "{B}",
+    "type": "Sorcery",
+    "rarity": "Rare",
+    "text": "Search your library for a nonland card with mana value less than or equal to the number of differently named tokens you control, reveal it, put it into your hand, then shuffle.",
+    "colors": [
+      "B"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Token Collection"
+    ],
+    "flavorText": "The Aetherborn, shaped by their short existence, chase meaning with fervent intensity. For some, this means embracing thrill and adventure; for others, it involves immersing themselves in pure sensation and pain. A rare few, however, dedicate their brief lives to amassing objects, ideas, and experiences for future Aetherborn.",
+    "_source": "Black/Aetherborn Tutor.png",
+    "artist": "DALL-E 3"
+  },
+  {
+    "id": "annihilatog-fb1",
+    "name": "Annihilatog",
+    "manaCost": "{1}{B}",
+    "type": "Creature — Atog",
+    "rarity": "Uncommon",
+    "text": "Sacrifice a nonland permanent: This creature gets +1/+1 until end of turn.",
+    "colors": [
+      "B"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Token Collection"
+    ],
+    "flavorText": "If there's a will, there's a meal.",
+    "power": "1",
+    "toughness": "2",
+    "_source": "Black/Annihilatog.png",
+    "artist": "Jesper Milfords"
+  },
+  {
+    "id": "bloody-murder-fb1",
+    "name": "Bloody Murder",
+    "manaCost": "{1}{B}{B}",
+    "type": "Instant",
+    "rarity": "Common",
+    "text": "Destroy target creature. Create a number of Blood tokens equal to that creature's toughness.",
+    "colors": [
+      "B"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Token Collection"
+    ],
+    "flavorText": "The rain poured as Calder lit a cigarette, staring down. Hazel Lockhart — his first case, his first obsession, and the first to lie to his face. He found her again at Olive's, shadows dancing in her eyes, fear mingling with secrets. In a city like this, he thought, you never forget your first — whether you're the detective, the lover, or the killer.",
+    "_source": "Black/Bloody Murder.png",
+    "artist": "DALL-E 3",
+    "relatedTokens": [
+      "Blood"
+    ]
+  },
+  {
+    "id": "body-inspector-fb1",
+    "name": "Body Inspector",
+    "manaCost": "{B}",
+    "type": "Creature — Skeleton Detective",
+    "rarity": "Common",
+    "text": "Flash\nWhen this creature enters, create a Spike token, then create a Spike token for each creature that died this turn. (They're artifacts with \"{2}, Sacrifice this artifact: Target opponent gains an emblem with 'At the beginning of your upkeep, you lose 1 life.'\")",
+    "colors": [
+      "B"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Token Collection"
+    ],
+    "flavorText": "\"The perfect candidate. It's as if he knows where the crime will occur before it happens.\"\n—Department Recommendation Letter",
+    "power": "1",
+    "toughness": "2",
+    "relatedTokens": [
+      "Spike"
+    ],
+    "_source": "Black/Body Inspector.png",
+    "artist": "ChatGPT"
+  },
+  {
+    "id": "creeping-incubator-fb1",
+    "name": "Creeping Incubator",
+    "manaCost": "{3}{B}",
+    "type": "Artifact — Incubator",
+    "rarity": "Uncommon",
+    "text": "This enters the battlefield with four +1/+1 counters on it. When it does, target opponent discards two cards.\n{2}: Transform this artifact.\n{1}{B}: Return this card from your graveyard to the battlefield with two additional +1/+1 counters on it.",
+    "colors": [
+      "B"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "_source": "Black/Creeping Incubator.png"
+  },
+  {
+    "id": "day-of-the-gorgon-fb1",
+    "name": "Day of the Gorgon",
+    "manaCost": "{B}{B}",
+    "type": "Sorcery",
+    "rarity": "Rare",
+    "text": "Petrify all non-Gorgon creatures. (To petrify a creature, exile it. Its controller creates a copy of it, except it's an artifact.)",
+    "colors": [
+      "B"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "flavorText": "\"Sisters, the time has come to rebuild Ravnica, stone by stone.\"\n—Vraska, the Coiling Usurper",
+    "_source": "Black/Day of the Gorgon.png",
+    "artist": "DALL-E 3"
+  },
+  {
+    "id": "forbidden-knowladge-fb1",
+    "name": "Forbidden Knowledge",
+    "manaCost": "{4}{B}{B}",
+    "type": "Sorcery",
+    "rarity": "Mythic Rare",
+    "text": "Exile your hand. For each card exiled this way, search your library for that many cards, put them into your hand, then shuffle. If this is the second time you've cast a spell named Forbidden Knowledge this turn, you may cast a spell from your hand by paying life equal to its mana value rather than paying its mana cost.\nCipher",
+    "colors": [
+      "B"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Broken Cipher"
+    ],
+    "_source": "Black/Forbidden Knowladge.png",
+    "artist": "KingInYellow-AI-Art"
+  },
+  {
+    "id": "gimme-that-fb1",
+    "name": "Gimme That",
+    "manaCost": "{2}{B}",
+    "type": "Sorcery",
+    "rarity": "Rare",
+    "text": "Create a Treasure token.\nTarget opponent reveals their hand. You may choose a card from it and exile it. You may cast that card for as long as it remains exiled.\nCipher",
+    "colors": [
+      "B"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Broken Cipher"
+    ],
+    "_source": "Black/Gimme That.png",
+    "artist": "SirTiefling, DevianArt",
+    "relatedTokens": [
+      "Treasure"
+    ]
+  },
+  {
+    "id": "gnawing-in-the-deep-fb1",
+    "name": "Gnawing in the Deep",
+    "manaCost": "{B}",
+    "type": "Sorcery — Lesson",
+    "rarity": "Rare",
+    "text": "Exile target card from a graveyard. If a card was exiled this way, create a 1/1 black and green Pest creature token with \"When this creature dies, you gain 1 life.\"\nAt the beginning of your end step, if this card is in your graveyard, you may pay {B}. If you do, cast it without paying its mana cost.",
+    "colors": [
+      "B"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Self-mill"
+    ],
+    "_source": "Black/Gnawing in the Deep.png",
+    "artist": "Dexistor371",
+    "relatedTokens": [
+      "1/1 black and green Pest"
+    ]
+  },
+  {
+    "id": "himoto-kaito-s-pet-fb1",
+    "name": "Himoto, Kaito's Pet",
+    "manaCost": "{B}",
+    "type": "Legendary Artifact Creature — Equipment Dog",
+    "rarity": "Rare",
+    "text": "This creature and equipped creature can't block and can't be blocked.\nWhenever this creature or equipped creature deals combat damage to a player, reveal that many cards from the top of your library and put them into your hand. You lose life equal to their total mana value.\nReconfigure—{2} or 4 life.",
+    "colors": [
+      "B"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Broken Cipher"
+    ],
+    "power": "1",
+    "toughness": "1",
+    "_source": "Black/Himoto, Kaito’s Pet.png",
+    "artist": "ChatGPT"
+  },
+  {
+    "id": "kexos-splicer-of-new-phyrexia-fb1",
+    "name": "Kexos, Splicer of New Phyrexia",
+    "manaCost": "{B}",
+    "type": "Legendary Creature — Phyrexian Artificer",
+    "rarity": "Mythic Rare",
+    "text": "When this creature enters, create a 3/3 colorless Phyrexian Golem artifact creature token.\nGolems you control can't attack as long as you control a creature with less power.\nArtifact cards in your hand have reinforce 2—{1}{G} ({1}{G}, Discard the card: Put two +1/+1 counters on target creature.)\nCreature cards in your graveyard have scavenge {2}{G} ({2}{G}, Exile the card from your graveyard: Put a number of +1/+1 counters equal to this card's power on target creature. Scavenge only as a sorcery.)",
+    "colors": [
+      "B"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Artifacts"
+    ],
+    "power": "1",
+    "toughness": "1",
+    "_source": "Black/Kexos, Splicer of New Phyrexia.png",
+    "artist": "ChatGPT",
+    "relatedTokens": [
+      "3/3 colorless Phyrexian Golem"
+    ]
+  },
+  {
+    "id": "last-will-fb1",
+    "name": "Last Will",
+    "manaCost": "{B}",
+    "type": "Enchantment — Aura",
+    "rarity": "Rare",
+    "text": "Enchant creature you control\nWhen enchanted creature dies, search your library for a card, put that card into your hand, then shuffle.",
+    "colors": [
+      "B"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "flavorText": "\"We play a different game around here, partner.\"\n—The Master Duelist",
+    "_source": "Black/Last Will.png",
+    "artist": "Konami"
+  },
+  {
+    "id": "leyline-of-greed-fb1",
+    "name": "Leyline of Greed",
+    "manaCost": "{2}{B}{B}",
+    "type": "Enchantment",
+    "rarity": "Rare",
+    "text": "If this card is in your opening hand, you may begin the game with it on the battlefield. If you do, target opponent controls you during your next turn.\nSpells you cast cost {2} less to cast.\n{2}{B}, Pay 2 life: Draw a card.",
+    "colors": [
+      "B"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "flavorText": "Where untold power and the desire to explore it converge.",
+    "_source": "Black/Leyline of Greed.png",
+    "artist": "ChatGPT"
+  },
+  {
+    "id": "malakir-highborn-fb1",
+    "name": "Malakir Highborn",
+    "manaCost": "{1}{B}{B}",
+    "type": "Creature — Vampire Noble",
+    "rarity": "Rare",
+    "text": "Flying\nWhen this creature enters, return target creature card from your graveyard to the battlefield. Put a null counter on it. As long as it has a null counter on it, it's a black Zombie named Mindless Null with base power and toughness 2/2, loses all abilities, and has \"This creature can't block unless you control a Vampire.\" (Its enter the battlefield abilities still trigger.)",
+    "colors": [
+      "B"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Blink/ETB/Value"
+    ],
+    "power": "2",
+    "toughness": "2",
+    "_source": "Black/Malakir Highborn.png"
+  },
+  {
+    "id": "mindclogger-fb1",
+    "name": "Mindclogger",
+    "manaCost": "{1}{B}",
+    "type": "Artifact",
+    "rarity": "Rare",
+    "text": "When this artifact enters, target opponent shuffles four Confusion cards into their library. (Confusion is a colorless sorcery card with no mana cost that has cycling {2}.)\nYour opponents reveal each card they draw. Whenever they reveal a Confusion card this way, they lose 5 life.\n{2}{B}, {T}: Target opponent shuffles two Confusion cards into their library.",
+    "colors": [
+      "B"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "flavorText": "\"Of course it's a repurposed Izzet Mind-Enhancer. We love irony around here.\"\n—Yariva, Dimir Engineer",
+    "relatedTokens": [
+      "Confusion"
+    ],
+    "_source": "Black/Mindclogger.png",
+    "artist": "ChatGPT"
+  },
+  {
+    "id": "necrogenic-face-gear-fb1",
+    "name": "Necrogenic Face-Gear",
+    "manaCost": "{B}",
+    "type": "Artifact — Equipment",
+    "rarity": "Rare",
+    "text": "For Mirrodin! (When this Equipment enters, create a 2/2 red Rebel creature token, then attach this to it.)\nEquipped creature gets +1/-1.\nWhenever equipped creature dies, you lose 2 life. Then choose one —\n• Draw two cards.\n• Return target artifact card from your graveyard to your hand.\nEquip {1}",
+    "colors": [
+      "B"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Artifacts"
+    ],
+    "_source": "Black/Necrogenic Face-Gear.png",
+    "artist": "ChatGPT",
+    "relatedTokens": [
+      "2/2 red Rebel"
+    ]
+  },
+  {
+    "id": "night-to-remamber-fb1",
+    "name": "Night to Remember",
+    "manaCost": "{2}{B}",
+    "type": "Instant",
+    "rarity": "Uncommon",
+    "text": "Spectacle {X}{R} (You may cast this spell for its spectacle cost rather than its mana cost if an opponent lost life this turn.)\nCreate three tapped Fireworks artifact tokens of any combination of colors. If this spell's spectacle cost was paid, instead create X of those tokens.",
+    "colors": [
+      "B"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Token Collection"
+    ],
+    "flavorText": "The Rakdos Cult occasionally hosts \"normal\" parties to maintain the facade of not being JUST a murder cult.",
+    "relatedTokens": [
+      "Fireworks"
+    ],
+    "_source": "Black/Night to Remamber.png",
+    "artist": "ChatGPT"
+  },
+  {
+    "id": "pull-from-the-static-noise-fb1",
+    "name": "Pull from the Static Noise",
+    "manaCost": "{1}{B}",
+    "type": "Sorcery",
+    "rarity": "Rare",
+    "text": "Target opponent reveals their hand. You choose a nonland card from it. Exile that card with an impending counter on it.\nAs long as this spell is encoded or is in your graveyard, whenever you cast a spell, if it has the same name as a spell you've cast this turn, you may pay {U}{U}. If you do, copy target spell card from exile with an impending counter on it. You may cast the copy without paying its mana cost.\nCipher",
+    "colors": [
+      "B"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Broken Cipher"
+    ],
+    "_source": "Black/Pull from the Static Noise.png",
+    "artist": "DALL-E 3"
+  },
+  {
+    "id": "restless-tracker-fb1",
+    "name": "Restless Tracker",
+    "manaCost": "{2}{B}",
+    "type": "Creature — Zombie Scout",
+    "rarity": "Rare",
+    "text": "Landfall — Whenever a land you control enters, study. (Create a Scroll token. It's an artifact with \"{2}, Sacrifice this artifact: Learn.\")\nSacrifice three tokens: Return this creature card from your graveyard to the battlefield.",
+    "colors": [
+      "B"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Token Collection"
+    ],
+    "power": "3",
+    "toughness": "2",
+    "relatedTokens": [
+      "Scroll"
+    ],
+    "_source": "Black/Restless Tracker.png",
+    "artist": "ChatGPT"
+  },
+  {
+    "id": "salvage-automaton-fb1",
+    "name": "Salvage Automaton",
+    "manaCost": "{1}{B}",
+    "type": "Artifact Creature — Construct",
+    "rarity": "Rare",
+    "text": "You may sacrifice an artifact rather than pay this spell's mana cost.\nExile an artifact card from your graveyard: Return Salvage Automaton from your graveyard to your hand.",
+    "colors": [
+      "B"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Artifacts"
+    ],
+    "flavorText": "The Architects salvaged his father to create him; now, he'll salvage them to recreate his father.",
+    "power": "3",
+    "toughness": "1",
+    "_source": "Black/Salvage Automaton.png",
+    "artist": "ChatGPT"
+  },
+  {
+    "id": "sign-off-fb1",
+    "name": "Sign Off",
+    "manaCost": "{B}",
+    "type": "Instant",
+    "rarity": "Uncommon",
+    "text": "Destroy target creature or enchantment. Its controller draws two cards and loses 2 life.",
+    "colors": [
+      "B"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "flavorText": "\"My body is willing, my blood flows pure as crimson, my intentions remain untainted, my questions echo unanswered, and my patience wears thin.\"",
+    "_source": "Black/Sign Off.png",
+    "artist": "ARTBYCARLOS@DEVIANART"
+  },
+  {
+    "id": "sleep-of-the-sleepless-fb1",
+    "name": "Sleep of the Sleepless",
+    "manaCost": "{B}",
+    "type": "Sorcery",
+    "rarity": "Rare",
+    "text": "Return target creature card from your graveyard to the battlefield tapped with three stun counters on it.",
+    "colors": [
+      "B"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "flavorText": "\"Give him a minute... or two... or three...\"",
+    "_source": "Black/Sleep of the Sleepless.png",
+    "artist": "ChatGPT"
+  },
+  {
+    "id": "stillmoon-samurai-fb1",
+    "name": "Stillmoon Samurai",
+    "manaCost": "{B}",
+    "type": "Creature — Vampire Samurai",
+    "rarity": "Rare",
+    "text": "Norowareshi Mono no Haiku—Whenever this creature deals combat damage to an opponent, you lose that much life.\nFangs pierce moonlit flesh—{B}: This creature gets +1/+0 until end of turn.\nLife cascades in ruby streams—{B}{B}: This creature gains lifelink until end of turn.\nShadows thirst for more—{B}{B}{B}: This creature gains double strike until end of turn.",
+    "colors": [
+      "B"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "power": "2",
+    "toughness": "1",
+    "_source": "Black/Stillmoon Samurai.png",
+    "artist": "TEOFT"
+  },
+  {
+    "id": "total-sabotage-fb1",
+    "name": "Total Sabotage",
+    "manaCost": "{1}{B}",
+    "type": "Sorcery",
+    "rarity": "Uncommon",
+    "text": "Target player sacrifices a creature, enchantment or Vehicle. If this is the second time you cast a spell named Total Sabotage, instead target player sacrifices a creature, an enchantment and a Vehicle.\nCipher",
+    "colors": [
+      "B"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Broken Cipher"
+    ],
+    "_source": "Black/Total Sabotage.png",
+    "artist": "ChatGPT"
+  },
+  {
+    "id": "train-to-the-underworld-fb1",
+    "name": "Train to the Underworld",
+    "manaCost": "{B}{B}",
+    "type": "Artifact — Vehicle",
+    "rarity": "Rare",
+    "text": "Menace\nWhenever this creature attacks, exile each creature that crewed it, return that many creature cards from your graveyard to the battlefield, then put the exiled cards into their owner's graveyard.\nCrew 3",
+    "colors": [
+      "B"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Vehicles"
+    ],
+    "power": "3",
+    "toughness": "4",
+    "_source": "Black/Train to the Underworld.png",
+    "artist": "Cesar Diaz Ayres"
+  },
+  {
+    "id": "wailbounder-fb1",
+    "name": "Wailbounder",
+    "manaCost": "{4}{B}",
+    "type": "Creature — Elemental",
+    "rarity": "Uncommon",
+    "text": "Menace\nWhen this creature enters, return target creature card from your graveyard to the battlefield until this creature leaves the battlefield. (That creature dies when this creature leaves.)\nEvoke {1}{W} (You may cast this spell for its evoke cost. If you do, it's sacrificed when it enters.)",
+    "colors": [
+      "B"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Blink/ETB/Value"
+    ],
+    "power": "3",
+    "toughness": "2",
+    "_source": "Black/Wailbounder.png",
+    "artist": "DALL-E 3"
+  },
+  {
+    "id": "well-balanced-account-fb1",
+    "name": "Well-Balanced Account",
+    "manaCost": "{B}{B}{B}",
+    "type": "Enchantment",
+    "rarity": "Rare",
+    "text": "Pay 1 life: You get a debt counter. (At the beginning of your end step, you may pay {1} for each debt counter you have. For each {1} paid this way, remove a debt counter from you. At the end of your end step, you lose 1 life for each debt counter you have.)\nWhenever you lose life from your debt, you draw that many cards.",
+    "colors": [
+      "B"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "_source": "Black/Well-Balanced Account.png",
+    "artist": "Trez-Art"
+  }
+]

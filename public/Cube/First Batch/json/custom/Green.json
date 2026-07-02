@@ -1,0 +1,571 @@
+[
+  {
+    "id": "all-that-begin-must-end-fb1",
+    "name": "All That Begin Must End",
+    "manaCost": "{4}{G}{G}",
+    "type": "Sorcery",
+    "rarity": "Rare",
+    "text": "Choose one or more —\n• Destroy all artifacts.\n• Destroy all creatures with flying.\n• Destroy all enchantments.\n• Destroy all nonbasic lands.\n• Exile all graveyards.",
+    "colors": [
+      "G"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Control"
+    ],
+    "_source": "Green/All That Begin Must End.png",
+    "artist": "Mixze"
+  },
+  {
+    "id": "aram-lockloft-co-ace-fb1",
+    "name": "Aram, Lockloft Co-Ace",
+    "manaCost": "{1}{G}",
+    "type": "Legendary Creature — Troll Pilot",
+    "rarity": "Rare",
+    "text": "Partner with Danna, Lockloft Ace (When this creature enters, target player may put Danna into their hand from their library, then shuffle.)\nWhenever a Vehicle you control deals combat damage to a player, put that many +1/+1 counters on target creature or Vehicle you control.",
+    "colors": [
+      "G"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Vehicles"
+    ],
+    "power": "3",
+    "toughness": "2",
+    "flavorText": "\"Lockloft is made up of all the friends we've made along the way. Let's win this and extend the family.\"",
+    "_source": "Green/Aram, Lockloft Co-Ace.png",
+    "artist": "ChatGPT",
+    "relatedFace": "Danna, Lockloft Ace"
+  },
+  {
+    "id": "battle-for-zendikar-fb1",
+    "name": "Battle for Zendikar",
+    "manaCost": "{5}{G}{G}",
+    "type": "Battle — Siege",
+    "rarity": "Mythic Rare",
+    "text": "Domain — This spell costs {1} less to cast for each basic land type among lands you control.\nWhen this battle enters, for each creature you control, that creature deals damage equal to its power to target creature you don't control.",
+    "colors": [
+      "G"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "artist": "Michael Komarck",
+    "relatedFace": "Worldwake",
+    "notes": "Modal double-faced card; the other face is Worldwake. Battle defense is 5.",
+    "_source": "Green/Battle for Zendikar.png"
+  },
+  {
+    "id": "beastie-within-fb1",
+    "name": "Beastie Within",
+    "manaCost": "{2}{G}",
+    "type": "Instant",
+    "rarity": "Uncommon",
+    "text": "This spell costs {2} less to cast if it targets a permanent you don't control.\nDestroy target permanent. Its controller creates a Bashful Beastie token.",
+    "colors": [
+      "G"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Control"
+    ],
+    "relatedTokens": [
+      "Bashful Beastie"
+    ],
+    "flavorText": "The beastie were told humans love being hugged, but not from where…",
+    "_source": "Green/Beastie Within.png",
+    "artist": "Mumu"
+  },
+  {
+    "id": "blooming-tender-fb1",
+    "name": "Blooming Tender",
+    "manaCost": "{1}{G}",
+    "type": "Artifact — Vehicle",
+    "rarity": "Rare",
+    "text": "This Vehicle's power and toughness are each equal to the total power of creatures that crewed it this turn.\n{T}: For each color among permanents you control, add one mana of that color. If this Vehicle is also a creature, instead add X mana in any combination of colors, where X is this creature's power.\nCrew 3",
+    "colors": [
+      "G"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Vehicles"
+    ],
+    "power": "*",
+    "toughness": "*",
+    "_source": "Green/Blooming Tender.png",
+    "artist": "DALL-E 3"
+  },
+  {
+    "id": "burning-tree-harvester-fb1",
+    "name": "Burning-Tree Harvester",
+    "manaCost": "{2}{G}{G}",
+    "type": "Creature — Wurm Beast",
+    "rarity": "Rare",
+    "text": "Whenever this creature deals combat damage to a player, add that much {R}. Until end of turn, you don't lose this mana as steps and phases end.\nBloodrush — {1}{R}{R}, Discard this card: Target attacking creature gets +5/+5 and gains \"Whenever this creature deals combat damage to a player, add that much {R}. Until end of turn, you don't lose this mana as steps and phases end.\"",
+    "colors": [
+      "G"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "power": "5",
+    "toughness": "5",
+    "_source": "Green/Burning-Tree Harvester.png",
+    "artist": "ChatGPT"
+  },
+  {
+    "id": "colony-perfector-fb1",
+    "name": "Colony Perfector",
+    "manaCost": "",
+    "type": "Artifact Creature — Phyrexian Spider",
+    "rarity": "Common",
+    "text": "Reach\nWhen this transforms into Colony Perfector, reveal the top card of your library. If it's a land card, put it onto the battlefield. Otherwise, put that card into your hand.",
+    "colors": [
+      "G"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "power": "0",
+    "toughness": "0",
+    "relatedFace": "Skitterer Incubator",
+    "facedown": true,
+    "flavorText": "… and yet, it brought life to a lifeless world.",
+    "notes": "Back face of the transforming card Skitterer Incubator.",
+    "_source": "Green/Colony Perfector.png",
+    "artist": "ChatGPT"
+  },
+  {
+    "id": "deriving-a-formula-fb1",
+    "name": "Deriving a Formula",
+    "manaCost": "{1}{G}{G}",
+    "type": "Sorcery — Lesson",
+    "rarity": "Rare",
+    "text": "Fill the blanks with 1, 2 and 3. You can use each number only once.\nCreate _ 0/0 blue and green Fractal creature token/s, put _ +1/+1 counters on it/them. Learn _ time/s.",
+    "colors": [
+      "G"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "relatedTokens": [
+      "0/0 blue and green Fractal"
+    ],
+    "_source": "Green/Deriving a Formula.png",
+    "artist": "DALL-E 3"
+  },
+  {
+    "id": "emerald-clad-behemoth-fb1",
+    "name": "Emerald-Clad Behemoth",
+    "manaCost": "{3}{G}{G}{G}",
+    "type": "Artifact — Vehicle",
+    "rarity": "Mythic Rare",
+    "text": "This spell can't be countered.\nTrample, haste\nWard {7}\nWhen this creature attacks, create a token that's a copy of each nontoken creature that crewed it this turn.\nCrew 3",
+    "colors": [
+      "G"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Vehicles"
+    ],
+    "power": "7",
+    "toughness": "7",
+    "_source": "Green/Emerald-Clad Behemoth.png",
+    "artist": "DALL-E 3"
+  },
+  {
+    "id": "extraterrestrial-entity-fb1",
+    "name": "Extraterrestrial Entity",
+    "manaCost": "{3}{G}",
+    "type": "Creature — Alien",
+    "rarity": "Rare",
+    "text": "Changeling (This card is every creature type.)\n{1}{W}{W}: Create an Unidentified Hovership token.\n{X}: Until end of turn, artifacts and creatures you control become creatures with base power and toughness X/X and gain all creature types.",
+    "colors": [
+      "G"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "power": "1",
+    "toughness": "1",
+    "relatedTokens": [
+      "Unidentified Hovership"
+    ],
+    "_source": "Green/Extraterrestrial Entity.png",
+    "artist": "Dall-E 3"
+  },
+  {
+    "id": "flourishing-bauble-pet-fb1",
+    "name": "Flourishing Bauble-Pet",
+    "manaCost": "{G}",
+    "type": "Creature — Saproling",
+    "rarity": "Common",
+    "text": "{1}, {T}, Sacrifice this creature: Add one mana of any color.\nPetrify from your graveyard {G} (To petrify a card from your graveyard, exile it. Create a copy of it, except it's an artifact.)",
+    "colors": [
+      "G"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "power": "1",
+    "toughness": "1",
+    "flavorText": "\"We are all vessels of nature's will. Some of us more… literally.\"\n—Calvatika, Korozda Gorgon",
+    "_source": "Green/Flourishing Bauble-Pet.png",
+    "artist": "ChatGPT"
+  },
+  {
+    "id": "gaea-root-of-machines-fb1",
+    "name": "Gaea, Root of Machines",
+    "manaCost": "{2}{G}{G}",
+    "type": "Legendary Artifact Creature — Dryad God",
+    "rarity": "Mythic Rare",
+    "text": "Indestructible\nGaea isn't a creature as long as you control a nonartifact, nonland permanent.\nWhenever you cast an artifact spell, draw a card and untap target land.",
+    "colors": [
+      "G"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Artifacts"
+    ],
+    "power": "6",
+    "toughness": "4",
+    "flavorText": "A twisted timeline has given birth to a mockery of nature itself, sparing no irony.",
+    "_source": "Green/Gaea, Root of Machines.png",
+    "artist": "ChatGPT"
+  },
+  {
+    "id": "grazing-swifthoof-fb1",
+    "name": "Grazing Swifthoof",
+    "manaCost": "{2}{G}",
+    "type": "Creature — Elk Monk",
+    "rarity": "Rare",
+    "text": "Haste\nProwess\nWhenever you cast a noncreature spell, until end of turn, up to one target creature loses all abilities and has base power and toughness 3/3.",
+    "colors": [
+      "G"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Prowess"
+    ],
+    "power": "3",
+    "toughness": "3",
+    "flavorText": "After the failed heist, Oko swore off hired outlaws, choosing instead to train those worthy of his Gift of Transformation.",
+    "_source": "Green/Grazing Swifthoof.png",
+    "artist": "ChatGPT"
+  },
+  {
+    "id": "jade-weaver-fb1",
+    "name": "Jade Weaver",
+    "manaCost": "{G}",
+    "type": "Creature — Merfolk Druid",
+    "rarity": "Uncommon",
+    "text": "{T}, Put a stun counter and a prowess counter on this creature: Add {U}{U}.",
+    "colors": [
+      "G"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "power": "1",
+    "toughness": "1",
+    "flavorText": "\"The Omenpaths opened new possibilities for beauty, but I still haven't found anything as beautiful as the Nine Rivers.\"",
+    "_source": "Green/Jade Weaver.png",
+    "artist": "ChatGPT"
+  },
+  {
+    "id": "let-him-cook-fb1",
+    "name": "Let Him Cook",
+    "manaCost": "{3}{G}{G}",
+    "type": "Sorcery",
+    "rarity": "Rare",
+    "text": "As an additional cost to cast this spell, choose a creature you control or reveal a creature card from your hand.\nLet Him Cook deals damage equal to the power of the creature you chose or the card you revealed to each other creature. Create a Food token for each creature that died this way.",
+    "colors": [
+      "G"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "relatedTokens": [
+      "Food"
+    ],
+    "_source": "Green/Let Him Cook.png",
+    "artist": "ChatGPT"
+  },
+  {
+    "id": "let-the-aether-flow-fb1",
+    "name": "Let the Aether Flow",
+    "manaCost": "{1}{G}",
+    "type": "Enchantment",
+    "rarity": "Rare",
+    "text": "Whenever you cast a noncreature spell, if it's an —\n• Artifact or enchantment spell — Draw a card.\n• Battle or planeswalker spell — Destroy target noncreature, nonland permanent.\n• Instant or sorcery spell — Put two +1/+1 counters on target creature you control.",
+    "colors": [
+      "G"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Prowess"
+    ],
+    "_source": "Green/Let the Aether Flow.png",
+    "artist": "ChatGPT"
+  },
+  {
+    "id": "mirran-witness-fb1",
+    "name": "Mirran Witness",
+    "manaCost": "{G}",
+    "type": "Creature — Human Warrior",
+    "rarity": "Uncommon",
+    "text": "Trample\nMetalcraft — Whenever this creature deals combat damage to a player, if you control three or more artifacts, return that many cards from your graveyard to your hand.",
+    "colors": [
+      "G"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Artifacts"
+    ],
+    "power": "2",
+    "toughness": "1",
+    "artist": "MadManny510",
+    "flavorText": "She remembers every friend who turned, every cry silenced, and every oath broken. She's done with just remembering.",
+    "_source": "Green/Mirran Witness.png"
+  },
+  {
+    "id": "muraganda-data-sphere-fb1",
+    "name": "Muraganda Data-Sphere",
+    "manaCost": "{2}{G}",
+    "type": "Artifact — Vehicle",
+    "rarity": "Rare",
+    "text": "Whenever an artifact or a creature with no abilities enters the battlefield under your control, draw a card.\nWhenever this Vehicle attacks, untap each artifact and creature with no abilities you control.\nCrew 3",
+    "colors": [
+      "G"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Vehicles",
+      "Artifacts"
+    ],
+    "power": "5",
+    "toughness": "5",
+    "_source": "Green/Muraganda Data-Sphere.png",
+    "artist": "ChatGPT"
+  },
+  {
+    "id": "natural-disagreement-fb1",
+    "name": "Natural Disagreement",
+    "manaCost": "{G}{G}",
+    "type": "Instant",
+    "rarity": "Rare",
+    "text": "Choose one —\n• Counter target spell that targets you or a permanent you control.\n• Counter target activated or triggered ability.\n• Counter target nonpermanent spell that will cause you to sacrifice one or more permanents or discard one or more cards.",
+    "colors": [
+      "G"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Control"
+    ],
+    "_source": "Green/Natural Disagreement.png",
+    "artist": "Dall-E 3"
+  },
+  {
+    "id": "nature-s-touch-fb1",
+    "name": "Nature's Touch",
+    "manaCost": "{1}{G}",
+    "type": "Enchantment — Aura",
+    "rarity": "Rare",
+    "text": "Flash\nEnchant creature\nWhenever enchanted creature deals combat damage to a player, you may search your library for that many basic land cards, put them onto the battlefield tapped, then shuffle.",
+    "colors": [
+      "G"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "artist": "Cynthia Brody",
+    "_source": "Green/Nature's Touch.png"
+  },
+  {
+    "id": "rev-it-up-fb1",
+    "name": "Rev it Up",
+    "manaCost": "{G}",
+    "type": "Instant",
+    "rarity": "Uncommon",
+    "text": "Put three prowess counters on target creature or Vehicle.",
+    "colors": [
+      "G"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Prowess"
+    ],
+    "flavorText": "Most racers enjoy the thrill of the race itself, but not Aram. For him, it's all about the roar of engines igniting, the electric anticipation, the boundless potential, and the symphony of noise before chaos unfolds—that's where his heart truly lies.",
+    "_source": "Green/Rev it Up.png",
+    "artist": "Dalle-3"
+  },
+  {
+    "id": "runed-rendhorn-fb1",
+    "name": "Runed Rendhorn",
+    "manaCost": "{1}{G}{G}",
+    "type": "Creature — Rhino Beast",
+    "rarity": "Special",
+    "text": "Trample\nBerserk (Whenever a creature you control with berserk attacks, you may double its power. If you do, sacrifice it at the end of turn.)\nWhenever this creature deals combat damage to a player, draw that many cards.",
+    "colors": [
+      "G"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "power": "3",
+    "toughness": "4",
+    "artist": "saralgam1980",
+    "flavorText": "\"Destruction is not the end, but the crucible in which wisdom is born, rising from the ruins of civilization.\"\n— Turuz, Burning-Tree Storyteller",
+    "_source": "Green/Runed Rendhorn.png"
+  },
+  {
+    "id": "skitterer-incubator-fb1",
+    "name": "Skitterer Incubator",
+    "manaCost": "{G}",
+    "type": "Artifact — Incubator",
+    "rarity": "Common",
+    "text": "This enters with two +1/+1 counters. When it does, surveil 2.\n{2}: Transform Skitterer Incubator.",
+    "colors": [
+      "G"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "relatedFace": "Colony Perfector",
+    "flavorText": "A mockery of life itself…",
+    "notes": "Front face of a transforming card; back face is Colony Perfector.",
+    "_source": "Green/Skitterer Incubator.png",
+    "artist": "ChatGPT"
+  },
+  {
+    "id": "storm-tamer-fb1",
+    "name": "Storm Tamer",
+    "manaCost": "{1}{G}",
+    "type": "Creature — Elf Shaman",
+    "rarity": "Rare",
+    "text": "Flash\nSplit second (As long as this spell is on the stack, players can't cast spells or activate abilities that aren't mana abilities.)\nSpells cost {1} more to cast for each spell their owner cast before them.",
+    "colors": [
+      "G"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "power": "2",
+    "toughness": "2",
+    "flavorText": "\"Hush, mage. You will respect the timeline in awe or in death.\"",
+    "_source": "Green/Storm Tamer.png",
+    "artist": "ChatGPT"
+  },
+  {
+    "id": "the-adaptationists-protocol-fb1",
+    "name": "The Adaptationists' Protocol",
+    "manaCost": "{X}{G}",
+    "type": "Sorcery",
+    "rarity": "Special",
+    "text": "Draw a card.\nExperiment X. (You get X experiment counters. If you don't control The Experiment, create one. Then, spend any amount of experiment on it.)",
+    "colors": [
+      "G"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "relatedTokens": [
+      "The Experiment"
+    ],
+    "flavorText": "The Adaptationists' sect of the Simic Combine believes that true evolution lies in rapid, fixed transformation—each mutation a definitive leap towards a perfected future, where perfection is not redefined, but attained once and for all.",
+    "_source": "Green/The Adaptationists’ Protocol.png",
+    "artist": "Dall-E 3"
+  },
+  {
+    "id": "trek-fb1",
+    "name": "Trek",
+    "manaCost": "{G}",
+    "type": "Sorcery",
+    "rarity": "Common",
+    "text": "Reveal the top card of your library. If it's a land card, put it onto the battlefield. Otherwise, put that card into your hand.",
+    "colors": [
+      "G"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "flavorText": "\"A path without purpose often holds the truest purpose.\"\n—Azusa, Lost but Seeking",
+    "_source": "Green/Trek.png",
+    "artist": "ChatGPT"
+  },
+  {
+    "id": "untamed-savagery-fb1",
+    "name": "Untamed Savagery",
+    "manaCost": "{2}{G}",
+    "type": "Instant",
+    "rarity": "Common",
+    "text": "As an additional cost to cast this spell, choose a creature you control or reveal a creature card from your hand.\nUntamed Savagery deals damage equal to the power of the creature you chose or the card you revealed to target creature. Excess damage is dealt to that creature's controller instead.",
+    "colors": [
+      "G"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "_source": "Green/Untamed Savagery.png",
+    "artist": "ChatGPT"
+  },
+  {
+    "id": "vinewrought-integrator-fb1",
+    "name": "Vinewrought Integrator",
+    "manaCost": "{1}{G}",
+    "type": "Artifact — Equipment Extension",
+    "rarity": "Rare",
+    "text": "Whenever extended creature deals combat damage to a player, draw that many cards.\n{1}{G}: If extended permanent is a Vehicle, it becomes a creature until end of turn.\nExtend {3} ({3}: Attach to target creature or Vehicle you control. Extend only as a sorcery.)",
+    "colors": [
+      "G"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Vehicles"
+    ],
+    "_source": "Green/Vinewrought Integrator.png",
+    "artist": "ChatGPT"
+  },
+  {
+    "id": "viridian-oilweaver-fb1",
+    "name": "Viridian Oilweaver",
+    "manaCost": "{1}{G}",
+    "type": "Creature — Phyrexian Elf Druid",
+    "rarity": "Common",
+    "text": "{T}: Add {B} or {G}.\nSacrifice an artifact: Untap Viridian Oilweaver. Put a Toxic 2 counter on it. (Players dealt combat damage by this creature also get two poison counters. Each instance of toxic triggers separately.)",
+    "colors": [
+      "G"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Artifacts"
+    ],
+    "power": "1",
+    "toughness": "1",
+    "_source": "Green/Viridian Oilweaver.png",
+    "artist": "ChatGPT"
+  },
+  {
+    "id": "woodlings-progenitor-fb1",
+    "name": "Woodlings Progenitor",
+    "manaCost": "{4}{G}{G}",
+    "type": "Creature — Dryad Elemental",
+    "rarity": "Rare",
+    "text": "Convoke\nUnity (Token creatures you control have all activated abilities of all nontoken creatures you control with unity.)\nWhen this creature enters, create a 1/1 green Saproling creature token for each creature that convoked it.\n{T}: Add {G}.",
+    "colors": [
+      "G"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "power": "4",
+    "toughness": "4",
+    "relatedTokens": [
+      "1/1 green Saproling"
+    ],
+    "_source": "Green/Woodlings Progenitor.png",
+    "artist": "ChatGPT"
+  },
+  {
+    "id": "worldwake-fb1",
+    "name": "Worldwake",
+    "manaCost": "",
+    "type": "Sorcery",
+    "rarity": "Mythic Rare",
+    "text": "Return all land cards from your graveyard to the battlefield. Then, put a +1/+1 counter on each creature and land you control. You may have any number of lands you control become 0/0 Elemental creatures. Creatures you control gain haste until end of turn.",
+    "colors": [
+      "G"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "artist": "Christopher Guenard",
+    "relatedFace": "Battle for Zendikar",
+    "facedown": true,
+    "notes": "Back face of the modal double-faced card whose front is Battle for Zendikar; no mana cost printed on this face.",
+    "_source": "Green/Worldwake.png"
+  }
+]

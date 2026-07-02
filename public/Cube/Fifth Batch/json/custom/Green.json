@@ -1,0 +1,175 @@
+[
+  {
+    "id": "earthbending-mastery-fb5",
+    "name": "Earthbending Mastery",
+    "manaCost": "{G}",
+    "type": "Enchantment",
+    "rarity": "Rare",
+    "text": "{X}{G}{G}: Untap target land, then earthbend X. (Target land you control becomes a 0/0 creature with haste that's still a land. Put X +1/+1 counters on it. When it dies or is exiled, return it to the battlefield tapped.)",
+    "colors": [
+      "G"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "artist": "Nickelodeon Animation Studio",
+    "_source": "Green/Earthbending Mastery.png"
+  },
+  {
+    "id": "fear-of-technology-fb5",
+    "name": "Fear of Technology",
+    "manaCost": "{2}{G}{G}",
+    "type": "Enchantment Creature — Nightmare",
+    "rarity": "Rare",
+    "text": "Players can't cast artifacts and enchantments spells.\nActivated abilities of artifacts and enchantments can't be activated.\nChatGPT can't be used.",
+    "colors": [
+      "G"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "power": "3",
+    "toughness": "3",
+    "flavorText": "It saw your browsing history. It didn't like the fact you even have a phone.",
+    "artist": "Gemini Nano Banana",
+    "_source": "Green/Fear of Technology.png"
+  },
+  {
+    "id": "hearthstone-rules-fb5",
+    "name": "Hearthstone Rules",
+    "manaCost": "{3}{G}",
+    "type": "Enchantment",
+    "rarity": "Rare",
+    "text": "Creatures can attack other creatures. (You figure it out)",
+    "colors": [
+      "G"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "_source": "Green/Hearthstone Rules.png"
+  },
+  {
+    "id": "i-don-t-know-anymore-fb5",
+    "name": "I Don't Know Anymore",
+    "manaCost": "{4}{G}{G}",
+    "type": "Sorcery",
+    "rarity": "Rare",
+    "text": "Search your library for a custom creature card and a noncustom creature card. If you do, put them onto the battlefield combined into one creature. (Its power is equal to their total power, its toughness is equal to their total toughness, and it has their names, mana costs, types, text boxes, etc.)",
+    "colors": [
+      "G"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "artist": "SayGames",
+    "_source": "Green/I Don’t Know Anymore.png"
+  },
+  {
+    "id": "mrbeast-within-fb5",
+    "name": "MrBeast Within",
+    "manaCost": "{2}{G}",
+    "type": "Instant",
+    "rarity": "Uncommon",
+    "text": "Destroy target permanent. Its controller creates a MrBeast token.",
+    "colors": [
+      "G"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "flavorText": "\"Monsters dwell in every heart… but this is just fucked up.\"\n—Euphemia, Nexus watcher",
+    "artist": "Jesper Ejsing and Nati",
+    "relatedTokens": [
+      "MrBeast"
+    ],
+    "_source": "Green/MrBeast Within.png"
+  },
+  {
+    "id": "mwonvuli-awakened-fb5",
+    "name": "Mwonvuli Awakened",
+    "manaCost": "{5}{G}{G}{G}",
+    "type": "Legendary Land Creature — Forest Elemental",
+    "rarity": "Mythic Rare",
+    "text": "({T}: Add {G}.)\nTrample, vigilance\nMwonvuli's power and toughness are each equal to the number of creatures you control plus the number of lands you control.\nWhenever Mwonvuli deals combat damage to a player, create that many 1/1 green Forest Dryad land creature tokens. (They're affected by summoning sickness.)",
+    "colors": [
+      "G"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Token Collection"
+    ],
+    "power": "*",
+    "toughness": "*",
+    "artist": "Nano Banana",
+    "relatedTokens": [
+      "1/1 green Forest Dryad"
+    ],
+    "_source": "Green/Mwonvuli Awakened.png"
+  },
+  {
+    "id": "nature-s-consumption-fb5",
+    "name": "Nature's Consumption",
+    "manaCost": "{G}{G}",
+    "type": "Sorcery — Lesson",
+    "rarity": "Uncommon",
+    "text": "Destroy target artifact or enchantment. Create X 1/1 black and green Pest creature tokens with \"When this token dies, you gain 1 life\", where X is that permanent's mana value.",
+    "colors": [
+      "G"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Token Collection"
+    ],
+    "flavorText": "Witherbloom students delight in wagering over which pest will bloat into the fattest first.",
+    "artist": "Nano Banana",
+    "relatedTokens": [
+      "1/1 black and green Pest"
+    ],
+    "_source": "Green/Nature’s Consumption.png"
+  },
+  {
+    "id": "overwhelming-crush-out-fb5",
+    "name": "Overwhelming Crush-Out",
+    "manaCost": "{2}{G}{G}{G}",
+    "type": "Sorcery",
+    "rarity": "Uncommon",
+    "text": "Vehicles you control become artifact creatures until end of turn. Creatures you control get +3/+3 and gain trample until end of turn.",
+    "colors": [
+      "G"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Vehicles"
+    ],
+    "flavorText": "Gonti's secret backup plan, in case Aetherdrift wouldn't sell well.",
+    "artist": "Nano Banana",
+    "_source": "Green/Overwhelming Crush-Out.png"
+  },
+  {
+    "id": "resonance-fb5",
+    "name": "Resonance",
+    "manaCost": "{X}{X}{X}{G}",
+    "type": "Sorcery",
+    "rarity": "Mythic Rare",
+    "text": "Resonance for permanents (This spell costs {X} less to cast, where X is the total mana value of permanents you control.)\nDraw X cards.",
+    "colors": [
+      "G"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "flavorText": "\"Life, when lived to the fullest, teaches us that within each of us, there's the beauty of all of us.\"",
+    "artist": "Cheryle Bannon",
+    "_source": "Green/Resonance.png"
+  },
+  {
+    "id": "their-legacy-remambered-fb5",
+    "name": "Their Legacy Remembered",
+    "manaCost": "{2}{G}{G}",
+    "type": "Sorcery",
+    "rarity": "Rare",
+    "text": "Exile target player's graveyard. You gain 1 life for each card exiled this way, then learn for each three cards exiled this way. (You may reveal a Lesson card you own from outside the game and put it into your hand, or discard a card to draw a card.)",
+    "colors": [
+      "G"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "artist": "Rebecca Guay",
+    "_source": "Green/Their Legacy Remambered.png"
+  }
+]

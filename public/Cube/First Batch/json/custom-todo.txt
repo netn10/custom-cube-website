@@ -1,0 +1,213 @@
+Black\Aetherborn Tutor.png
+Black\Annihilatog.png
+Black\Bloody Murder.png
+Black\Body Inspector.png
+Black\Creeping Incubator.png
+Black\Day of the Gorgon.png
+Black\Forbidden Knowladge.png
+Black\Gimme That.png
+Black\Gnawing in the Deep.png
+Black\Himoto, Kaito’s Pet.png
+Black\Kexos, Splicer of New Phyrexia.png
+Black\Last Will.png
+Black\Leyline of Greed.png
+Black\Malakir Highborn.png
+Black\Mindclogger.png
+Black\Necrogenic Face-Gear.png
+Black\Night to Remamber.png
+Black\Pull from the Static Noise.png
+Black\Restless Tracker.png
+Black\Salvage Automaton.png
+Black\Sign Off.png
+Black\Sleep of the Sleepless.png
+Black\Stillmoon Samurai.png
+Black\Total Sabotage.png
+Black\Train to the Underworld.png
+Black\Wailbounder.png
+Black\Well-Balanced Account.png
+Blue\Broken Mirage.png
+Blue\Clutterbrain.png
+Blue\Dreamborn Queen.png
+Blue\Fleeting Promises.png
+Blue\Hold That Thought.png
+Blue\Invigorating Roil.png
+Blue\It of Incomprehensible Truths.png
+Blue\Learn Storm.png
+Blue\Mana Piracy.png
+Blue\Misinformation Spreader.png
+Blue\Most Thoughts.png
+Blue\Ninja of Starry Nights.png
+Blue\Nivix Data-Collector.png
+Blue\Papers, Please.png
+Blue\Phantasmal Monk.png
+Blue\Rabbit Hole.png
+Blue\Resculpt with Porpuse.png
+Blue\Ronin of Shimmering Azure.png
+Blue\Scute Storm.png
+Blue\Stealing Time.png
+Blue\Surgical Room.png
+Blue\The Utopians’ Protocol.png
+Blue\Tinkerer’s Caraven.png
+Blue\Written in the Stars.png
+Colorless\Crimson-Wedding Decoration.png
+Colorless\Deathcrafter’s Puzzleknot.png
+Colorless\Doubling Orb.png
+Colorless\Keranos’ Gift to Mankind.png
+Colorless\Littjara Mirror-Orb.png
+Colorless\Map to the Sunken Vault.png
+Colorless\Mobilizer of the Machines.png
+Colorless\Moxwagen.png
+Colorless\Obliteration Titan.png
+Colorless\Silver Lotus.png
+Colorless\Sticker Collector.png
+Colorless\Sword of Pauper and King.png
+Colorless\Teferi’s Globe of Possibilities.png
+Colorless\Thieves’ Masterpiece.png
+Colorless\Threads of the Triad.png
+Colorless\Titan of Impossibility.png
+Colorless\Walker of the Finest Things.png
+Gold\3 colors\Anhelo, Dashing Artist.png
+Gold\3 colors\Animar, Corrupted Essence.png
+Gold\3 colors\Awareness Beyond Awareness.png
+Gold\3 colors\Bell of Echoing Possibilities                .png
+Gold\3 colors\Ill-Gotten Wealth.png
+Gold\3 colors\Sangrite-Feeding Nexus.png
+Gold\3 colors\Siege Mastodon.png
+Gold\3 colors\Thrill Force, Kaladesh’s Triumph.png
+Gold\3 colors\Trillia, Godmother of Broken Hearts               .png
+Gold\3 colors\Untold Prosperity.png
+Gold\BG\Rust Germinator.png
+Gold\BG\Salvage Scraps.png
+Gold\BG\Swarm Charm.png
+Gold\BR\Cult Charm.png
+Gold\BR\Mogis’s Battle-Recorder.png
+Gold\BR\Pyrotechnical Cauldron.png
+Gold\BR\Taint the Crime Scene.png
+Gold\GU\Combine Charm.png
+Gold\GU\Jadeskin.png
+Gold\GU\Pump Mutagen.png
+Gold\GW\Conclave Charm.png
+Gold\GW\Park Heights Pride and Joy.png
+Gold\GW\Release the Chariots.png
+Gold\GW\Selesnya Battle-Waker.png
+Gold\RG\Clans Charm.png
+Gold\RG\Destroy the Unnatural.png
+Gold\RG\It That Demolish Societies.png
+Gold\RG\Savagery Unbound.png
+Gold\RW\Dig With Purpose.png
+Gold\RW\Fear of the Apocalypse.png
+Gold\RW\Legion Charm.png
+Gold\RW\Quintorius’ Journal.png
+Gold\UB\Entity of Double and Nothing.png
+Gold\UB\House Charm.png
+Gold\UB\Perfected Scheme.png
+Gold\UB\Prepare the Troubles.png
+Gold\UR\Fate Reforged.png
+Gold\UR\Glimmer of Fun.png
+Gold\UR\League Charm.png
+Gold\UR\Presence of the Firemind.png
+Gold\UR\Risky Game We Run Here.png
+Gold\WB\It of Earthly and Divine.png
+Gold\WB\Rise to the Occasion.png
+Gold\WB\Starnheim Must Not Wait.png
+Gold\WB\Syndicate Charm.png
+Gold\WB\Walker of Good and Evil.png
+Gold\WU\Deploy the Cenn.png
+Gold\WU\Ephara’s Epiphany.png
+Gold\WU\Senate Charm.png
+Green\All That Begin Must End.png
+Green\Aram, Lockloft Co-Ace.png
+Green\Battle for Zendikar.png
+Green\Beastie Within.png
+Green\Blooming Tender.png
+Green\Burning-Tree Harvester.png
+Green\Colony Perfector.png
+Green\Deriving a Formula.png
+Green\Emerald-Clad Behemoth.png
+Green\Extraterrestrial Entity.png
+Green\Flourishing Bauble-Pet.png
+Green\Gaea, Root of Machines.png
+Green\Grazing Swifthoof.png
+Green\Jade Weaver.png
+Green\Let Him Cook.png
+Green\Let the Aether Flow.png
+Green\Mirran Witness.png
+Green\Muraganda Data-Sphere.png
+Green\Natural Disagreement.png
+Green\Nature's Touch.png
+Green\Rev it Up.png
+Green\Runed Rendhorn.png
+Green\Skitterer Incubator.png
+Green\Storm Tamer.png
+Green\The Adaptationists’ Protocol.png
+Green\Trek.png
+Green\Untamed Savagery.png
+Green\Vinewrought Integrator.png
+Green\Viridian Oilweaver.png
+Green\Woodlings Progenitor.png
+Green\Worldwake.png
+Lands\Celestial Ice-Realm.png
+Lands\Fractured Mountain-Range.png
+Lands\Mystical Marsh.png
+Lands\Utopic Desolate-Peaks.png
+Red\All In Good Fun.png
+Red\Bendable Lightining.png
+Red\Bolrac-Clan Gauntlets.png
+Red\Brightspark Collector.png
+Red\Collector’s Spite.png
+Red\Dumpster Diving.png
+Red\Eidolon Maker.png
+Red\Fire Ritual.png
+Red\God-Pharaoh's Pup.png
+Red\Impulsive Choice.png
+Red\Journey to the Core.png
+Red\Laelia, Reforger of the Lost.png
+Red\Lorecrafter’s Tutor.png
+Red\Lose to the Moment.png
+Red\Nothing is Truly Forgotten.png
+Red\Nymph of Running Away.png
+Red\Paranormal Conspiricist.png
+Red\Predictions Obliterator.png
+Red\Questing Beast, Enraged.png
+Red\Reckoner of Fiery Justice.png
+Red\Searing Seering.png
+Red\Shattering Sound.png
+Red\Shine Bright.png
+Red\Spellsmute.png
+Red\Steam Preservation Program.png
+Red\Straight Up Fire.png
+Red\Student of Flaming Crimson.png
+Red\“Everything Must Go” Season.png
+White\Altruistic Channeler.png
+White\Ancestral Care.png
+White\Beza’s Grace.png
+White\Celestigoyf.png
+White\Coordination Unit.png
+White\Cut What Binds.png
+White\Danna, Lockloft Ace.png
+White\Diamond Storm.png
+White\Dust Off.png
+White\Elite Teacher.png
+White\Erni, Shy Dreamer.png
+White\Erni’s Secret Identity.png
+White\Fill the Wastes.png
+White\Inklined to Stop.png
+White\Judge’s Falcon.png
+White\Leave in the Smokes.png
+White\Lightsworn Behemoth.png
+White\Lightsworn Visionary.png
+White\Mardu Phoenix-Blessed.png
+White\Mat’Selesnya Loresinger.png
+White\Memory Car.png
+White\Mirror-Sigil Trooper.png
+White\Moth-Winged Seeker.png
+White\Mutual Understanding.png
+White\Palisade Champion.png
+White\Prismation, Mankind’s Reach to Heaven               .png
+White\Serra Savior.png
+White\Sigiled Lightsworn.png
+White\The Bank Robs You.png
+White\The Golden Touch.png
+White\Tongue in Cheek.png
+White\Wagon of Karmic Justice.png
+White\Your Own Story.png

@@ -1,0 +1,202 @@
+Black\Bloodtithe Watcher.png
+Black\Cleanser of Imperfections.png
+Black\Conjure From Blood.png
+Black\Deep-Sea Horrors.png
+Black\Force of Greed.png
+Black\Gonti’s Nexus.png
+Black\Greater Bad.png
+Black\Grimacing Grackle.png
+Black\Inside Gonti’s Nexus.png
+Black\Lost in the Sauce.png
+Black\Loyalty Exploiter.png
+Black\Lying By Omission.png
+Black\Makub, the Dealer.png
+Black\Monster Mash.png
+Black\Problematic Trolley.png
+Black\Ran by the Numbers.png
+Black\Stargazer’s Tutor.png
+Black\Submerge into Darkness.png
+Black\Thalia, Rebelious Heretic.png
+Black\The Road to Fenara.png
+Black\Tormenting Decision.png
+Black\Total Annihilation.png
+Black\Vessel of the Cycle.png
+Blue\Begone.png
+Blue\Blend In.png
+Blue\Decorated Sibsig.png
+Blue\Dreams Can Travel Tonight.png
+Blue\Frog Leap.png
+Blue\Gifts Unwrapped.png
+Blue\How Cold of You.png
+Blue\Identity Theft.png
+Blue\Magecaster Page.png
+Blue\Mental Breakdown.png
+Blue\Muddle with Existance.png
+Blue\Not Myself Lately.png
+Blue\Nyxification.png
+Blue\Orca War-Beast.png
+Blue\Pay Day.png
+Blue\Perish That Thought.png
+Blue\Plesiosplash.png
+Blue\Point and Laugh.png
+Blue\Protective Custody.png
+Blue\Savvy Seagull.png
+Blue\Soul Encoder.png
+Blue\Swarm of Night’s Sky .png
+Blue\Taukai Spellstainer.png
+Blue\Terai, Ghost Writer.png
+Blue\The Pretender.png
+Blue\Traditional Futurist.png
+Blue\Train of Thought (Not the Guildpact One)          .png
+Blue\Wall of Questions.png
+Colorless\Cogwork Redeemer.png
+Colorless\Duel Masters.png
+Colorless\Emrakul, Disturbing Reality.png
+Colorless\Everything is a Conspiricy.png
+Colorless\Fresh Start.png
+Colorless\Gooser-Cruiser.png
+Colorless\Height Advantage.png
+Colorless\Karametra’s Beloved.png
+Colorless\Kozilek, Unfathomable Truth.png
+Colorless\Magus of the Petal.png
+Colorless\Mox Amethyst.png
+Colorless\Pizza Oven.png
+Colorless\Soul Ring.png
+Colorless\Surveillance State.png
+Colorless\The Godess of Speed.png
+Colorless\The Oracle Provides.png
+Colorless\The Real Power Behind the Throne     .png
+Colorless\Ulamog, Eternal Consumer.png
+Gold\BG\New Phyrexia.png
+Gold\BG\Pulse Blaster.png
+Gold\BG\Purito “Vilefingers”.png
+Gold\BG\Vraska, The Coiling Usurper.png
+Gold\BR\Brewer’s Troubles.png
+Gold\BR\Knife to Meet You.png
+Gold\BR\Rakdos, Sadism Incarnate.png
+Gold\GU\Pact of Abundance.png
+Gold\GU\Selkie Caretaker.png
+Gold\GU\Talion, the Infinite Progress.png
+Gold\GW\Blessed Neon-Pulse.png
+Gold\GW\Mat’Selesnya.png
+Gold\GW\Vitu-Ghazi Behemoth.png
+Gold\RG\Anzrag.png
+Gold\RG\Branching Helix.png
+Gold\RG\Doomskar’s Aftershock.png
+Gold\RG\Kuraz, the Boiling Anger.png
+Gold\RG\Maakian Nodorog.png
+Gold\RW\Ela, She Who Defies Destiny.png
+Gold\RW\Lord of Dissociation.png
+Gold\RW\Odric, Redeemed Cathar.png
+Gold\RW\Yaszen, Ascendant Commander.png
+Gold\UB\Inkfathom’s Brew.png
+Gold\UB\Phenax, First to Escape.png
+Gold\UB\Szadek, Ancient Madness.png
+Gold\UR\Glengal, Aether-Splitter.png
+Gold\UR\Kroliz, Conspiricy Nut.png
+Gold\UR\Memorydra.png
+Gold\UR\Stack Overflow.png
+Gold\WB\Cube of Promised Balance.png
+Gold\WB\Dance of Life and Death.png
+Gold\WB\Siyara, Judge of Indulgence.png
+Gold\WB\We Are All One.png
+Gold\WU\Class Room Adventure.png
+Gold\WU\Misted Away.png
+Gold\WU\Niro, Ascetic Judge.png
+Gold\WU\The Calming Storm.png
+Green\Aspiring Speedbrooder.png
+Green\Berserker’s Prayer.png
+Green\Boss Encounter.png
+Green\Decorated Overseer.png
+Green\Domain Expansion.png
+Green\El-Verde, Danna’s Masterpiece.png
+Green\Elves of Civilized Facade.png
+Green\Essence Resonator.png
+Green\Grothama, the Final Boss.png
+Green\Heretic’s Capusle.png
+Green\Jungle Sanctifier.png
+Green\Legendary Loot Drop.png
+Green\Nourishment for the Puppet.png
+Green\Overgrown Peacock.png
+Green\Podium of the Ancestors.png
+Green\Road Kill.png
+Green\Shepard of the Cycle.png
+Green\Spell Fierce.png
+Green\Tankamutaticar.png
+Green\Thaldrin, the Rune-Bearer.png
+Green\There Are Two Wolves Inside You.png
+Green\Titan of Future Promised.png
+Green\Unveil the Future.png
+Green\Verdentreader.png
+Green\Vorinclex’s Garage.png
+Lands\Abandoned Church.png
+Lands\Architoid’s Nexus.png
+Lands\Bazaar of the Damned.png
+Lands\Bountiful Oasis.png
+Lands\Collectomancer’s Lab.png
+Lands\Forgotten Town.png
+Lands\Glittermore.png
+Lands\Inconspicuous Drop-Site.png
+Lands\Industrious Frontier.png
+Lands\Lockloft Charge-Station.png
+Lands\Lushwater Monastery.png
+Lands\Security Outpost.png
+Lands\Sweltering Heath.png
+Lands\Titan’s Proving Grounds.png
+Red\Ad Infinitum.png
+Red\Artistic Strike.png
+Red\Astral Force.png
+Red\Bloodrush Bellow.png
+Red\Collectric Blast.png
+Red\Crash Bandicoot!.png
+Red\Determined.png
+Red\Everything, at Once.png
+Red\Go Out With a Bang.png
+Red\Guilty Gear.png
+Red\I Want It All.png
+Red\Jaxis Taxis.png
+Red\Leave No Turn Unstoned.png
+Red\Look for Fossils.png
+Red\Nightmare Halls.png
+Red\Pyromancer’s Mentor.png
+Red\Raga-Van, Nimble Pilferer.png
+Red\Regal Rooster.png
+Red\Shocking Revelation.png
+Red\Song of Hero’s Past.png
+Red\Sort Yourself Out.png
+Red\Titan of Stars Aligned.png
+Red\Unlock Creativity.png
+Red\Unlucky Strike.png
+Red\Visionary of Unfathomable Sights         .png
+Red\Whisper Twice.png
+Red\Wild Speculation.png
+Red\Yamper.png
+White\Anthem of Duality.png
+White\Barrenton Acrobat-Singer.png
+White\Cleanse Impure Thoughts.png
+White\Count Your Grains.png
+White\Day of Awakening.png
+White\Doctor’s Orders.png
+White\El-Argint, Aram’s Masterpiece.png
+White\Equenaut Coordinator.png
+White\Erayo’s Gift.png
+White\Falcon Mecha.png
+White\Glisterchrome Elemental.png
+White\Matron of Porcelain.png
+White\Monastery Alarmist.png
+White\More Money, More Problems.png
+White\Nightmare Fracture.png
+White\Out of Body Experience.png
+White\Parhelion III.png
+White\Radiant Multi-Striker.png
+White\Ravnica’s Last Resort.png
+White\Sancitifier of Lost Media.png
+White\Sharestone.png
+White\Stranded on a Shore.png
+White\Strength in Solitude.png
+White\The Day is Yours.png
+White\The Paper Man.png
+White\Vehicles Need It.png
+White\Vizier of Second Glory.png
+White\We Own This City.png
+White\Where Truth Reveals.png

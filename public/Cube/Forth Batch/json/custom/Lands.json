@@ -1,0 +1,191 @@
+[
+  {
+    "id": "abandoned-church-fb4",
+    "name": "Abandoned Church",
+    "type": "Land — Plains Swamp",
+    "rarity": "Rare",
+    "text": "({T}: Add {W} or {B}.)\nThis land enters tapped.\nCycling {2} ({2}, Discard this card: Draw a card.)",
+    "colors": [],
+    "custom": true,
+    "archetypes": [],
+    "flavorText": "Thunder Junction is a land with no faith, yet even outlaws must always find something to believe in.",
+    "artist": "ChatGPT o4",
+    "_source": "Lands/Abandoned Church.png"
+  },
+  {
+    "id": "architoid-s-nexus-fb4",
+    "name": "Architoid's Nexus",
+    "type": "Land",
+    "rarity": "Common",
+    "text": "This land enters tapped.\nWhen this land enters, if you've cast two or more spells this turn, draw a card.\n{T}: Add {W} or {U}.",
+    "colors": [],
+    "custom": true,
+    "archetypes": [
+      "Storm"
+    ],
+    "flavorText": "It can be anything—so long as it remains nothing.",
+    "artist": "Neople",
+    "_source": "Lands/Architoid’s Nexus.png"
+  },
+  {
+    "id": "bazaar-of-the-damned-fb4",
+    "name": "Bazaar of the Damned",
+    "type": "Land",
+    "rarity": "Common",
+    "text": "This land enters tapped.\nWhen this land enters, you may sacrifice a creature. If you do, return a creature card with the same mana value from your graveyard to your hand.\n{T}: Add {W} or {B}.",
+    "colors": [],
+    "custom": true,
+    "archetypes": [],
+    "artist": "Planescape: I am the Mimir",
+    "_source": "Lands/Bazaar of the Damned.png"
+  },
+  {
+    "id": "bountiful-oasis-fb4",
+    "name": "Bountiful Oasis",
+    "type": "Land — Forest Island",
+    "rarity": "Rare",
+    "text": "({T}: Add {G} or {U}.)\nThis land enters tapped.\nCycling {2} ({2}, Discard this card: Draw a card.)",
+    "colors": [],
+    "custom": true,
+    "archetypes": [],
+    "flavorText": "Thunder Juncture is a land with no nature, yet even outlaws must always find something to rely on.",
+    "artist": "ChatGPT o4",
+    "_source": "Lands/Bountiful Oasis.png"
+  },
+  {
+    "id": "collectomancer-s-lab-fb4",
+    "name": "Collectomancer's Lab",
+    "type": "Land",
+    "rarity": "Common",
+    "text": "This land enters tapped.\nWhen this land enters, you may create a token that's a copy of target token you control. If you do, sacrifice it at the beginning of the next end step.\n{T}: Add {B} or {R}.",
+    "colors": [],
+    "custom": true,
+    "archetypes": [
+      "Token Collection"
+    ],
+    "artist": "Kaileigh Vincent",
+    "_source": "Lands/Collectomancer’s Lab.png"
+  },
+  {
+    "id": "forgotten-town-fb4",
+    "name": "Forgotten Town",
+    "type": "Land — Swamp Forest",
+    "rarity": "Rare",
+    "text": "({T}: Add {B} or {G}.)\nThis land enters tapped.\nCycling {2} ({2}, Discard this card: Draw a card.)",
+    "colors": [],
+    "custom": true,
+    "archetypes": [],
+    "flavorText": "Thunder Juncture is a land with no history, yet even outlaws must always find something to look back on.",
+    "artist": "ChatGPT o4",
+    "_source": "Lands/Forgotten Town.png"
+  },
+  {
+    "id": "glittermore-fb4",
+    "name": "Glittermore",
+    "type": "Enchantment Land",
+    "rarity": "Common",
+    "text": "This land enters tapped.\nIndestructible\n{T}: Add {U} or {R}.",
+    "colors": [],
+    "custom": true,
+    "archetypes": [],
+    "flavorText": "Dreams never die, as long as you know where to look.",
+    "artist": "StarryAI",
+    "_source": "Lands/Glittermore.png"
+  },
+  {
+    "id": "inconspicuous-drop-site-fb4",
+    "name": "Inconspicuous Drop-Site",
+    "type": "Land",
+    "rarity": "Common",
+    "text": "This land enters tapped unless you control an encoded creature or a creature you control was dealt combat damage to a player this turn.\n{T}: Add {U} or {B}.",
+    "colors": [],
+    "custom": true,
+    "archetypes": [],
+    "flavorText": "It's hidden in plain sight, even if you know what you are looking for.",
+    "artist": "MatLatArt",
+    "_source": "Lands/Inconspicuous Drop-Site.png"
+  },
+  {
+    "id": "industrious-frontier-fb4",
+    "name": "Industrious Frontier",
+    "type": "Land — Island Mountain",
+    "rarity": "Rare",
+    "text": "({T}: Add {U} or {R}.)\nThis land enters tapped.\nCycling {2} ({2}, Discard this card: Draw a card.)",
+    "colors": [],
+    "custom": true,
+    "archetypes": [],
+    "flavorText": "Thunder Juncture is a land with no future, yet even outlaws must always find something to leave behind.",
+    "artist": "ChatGPT o4",
+    "_source": "Lands/Industrious Frontier.png"
+  },
+  {
+    "id": "lockloft-charge-station-fb4",
+    "name": "Lockloft Charge-Station",
+    "type": "Land",
+    "rarity": "Common",
+    "text": "This land enters tapped.\nWhen this land enters, up to one target Vehicle you control becomes an artifact creature until end of turn.\n{T}: Add {G} or {W}.",
+    "colors": [],
+    "custom": true,
+    "archetypes": [
+      "Vehicles"
+    ],
+    "flavorText": "Maximum convenience, if you know what drives the Lockloft family.",
+    "artist": "ChatGPT o4",
+    "_source": "Lands/Lockloft Charge-Station.png"
+  },
+  {
+    "id": "lushwater-monastery-fb4",
+    "name": "Lushwater Monastery",
+    "type": "Land",
+    "rarity": "Common",
+    "text": "This land enters tapped.\n{T}: Add {G} or {U}.\nGraft Prowess 1 (This land enters with a prowess counter on it. Whenever a creature enters, you may move a prowess counter from this land onto it.)",
+    "colors": [],
+    "custom": true,
+    "archetypes": [
+      "Prowess"
+    ],
+    "artist": "Stable Diffusion",
+    "_source": "Lands/Lushwater Monastery.png"
+  },
+  {
+    "id": "security-outpost-fb4",
+    "name": "Security Outpost",
+    "type": "Land — Mountain Plains",
+    "rarity": "Rare",
+    "text": "({T}: Add {R} or {W}.)\nThis land enters tapped.\nCycling {2} ({2}, Discard this card: Draw a card.)",
+    "colors": [],
+    "custom": true,
+    "archetypes": [],
+    "flavorText": "Thunder Juncture is a land with no law, yet even outlaws must always find something to stand for.",
+    "artist": "ChatGPT o4",
+    "_source": "Lands/Security Outpost.png"
+  },
+  {
+    "id": "sweltering-heath-fb4",
+    "name": "Sweltering Heath",
+    "type": "Land",
+    "rarity": "Common",
+    "text": "This land enters tapped.\nWhen this land enters, mill two cards.\n{T}: Add {R} or {W}.",
+    "colors": [],
+    "custom": true,
+    "archetypes": [
+      "Self-mill"
+    ],
+    "flavorText": "Your mind won't betray you, as long as you stay hydrated.",
+    "artist": "ChanceKafkaArt",
+    "_source": "Lands/Sweltering Heath.png"
+  },
+  {
+    "id": "titan-s-proving-grounds-fb4",
+    "name": "Titan's Proving Grounds",
+    "type": "Land",
+    "rarity": "Common",
+    "text": "This land enters tapped.\nSpells you cast with mana value 6 or more cost {1} less to cast.\n{T}: Add {R} or {G}.",
+    "colors": [],
+    "custom": true,
+    "archetypes": [],
+    "flavorText": "You've got this… just don't look up.",
+    "artist": "ChatGPT o4",
+    "_source": "Lands/Titan’s Proving Grounds.png"
+  }
+]

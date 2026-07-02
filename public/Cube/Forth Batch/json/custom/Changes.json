@@ -1,0 +1,465 @@
+[
+  {
+    "id": "blessed-be-the-fruition-fb4",
+    "name": "Blessed Be the Fruition",
+    "manaCost": "{3}{W}{W}",
+    "type": "Sorcery",
+    "rarity": "Mythic Rare",
+    "text": "Each player gets an emblem with \"You have no maximum hand size.\"\nEach opponent draws three cards.\nYou may draw up to three cards.\nStorm",
+    "colors": [
+      "W"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Storm"
+    ],
+    "artist": "Rosie A",
+    "_supersedes": "blessed-be-the-fruition-sb2",
+    "_source": "Changes/Buff/Blessed Be the Fruition.png"
+  },
+  {
+    "id": "brightspark-collector-fb4",
+    "name": "Brightspark Collector",
+    "manaCost": "{R}",
+    "type": "Creature — Lizard Artificer",
+    "rarity": "Rare",
+    "text": "Offspring {1}{B} (You may pay an additional {1}{B} as you cast this spell. If you do, when this creature enters, create a 1/1 token copy of it.)\nWhenever a token you control enters, this creature deals 1 damage to each opponent.",
+    "colors": [
+      "R"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Token Collection"
+    ],
+    "power": "2",
+    "toughness": "1",
+    "flavorText": "\"Everything has a beautiful shine; you just have to look at it from the right perspective.\"",
+    "artist": "Dall-E 3",
+    "_supersedes": "brightspark-collector-fb1",
+    "_source": "Changes/Nerf/Brightspark Collector.png"
+  },
+  {
+    "id": "creeping-incubator-fb4",
+    "name": "Creeping Incubator",
+    "manaCost": "{3}{B}",
+    "type": "Artifact — Incubator",
+    "rarity": "Uncommon",
+    "text": "This enters the battlefield with three +1/+1 counters on it. When it does, target opponent loses 3 life unless they sacrifice a nonland permanent or discard a card.\n{2}: Transform this artifact.\n{3}{B}{B}: Return this card from your graveyard to the battlefield with an additional +1/+1 counter on it.",
+    "colors": [
+      "B"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "power": "0",
+    "toughness": "0",
+    "artist": "Dall-E 3",
+    "relatedFace": "Creeping Monstrosity",
+    "_supersedes": "creeping-incubator-fb1",
+    "_source": "Changes/Nerf/Creeping Incubator.png"
+  },
+  {
+    "id": "creeping-monstrosity-fb4",
+    "name": "Creeping Monstrosity",
+    "type": "Artifact Creature — Phyrexian Horror",
+    "rarity": "Uncommon",
+    "text": "Menace\nWhen this creature deals combat damage to a player, that player loses 3 life unless they sacrifice a nonland permanent or discard a card.",
+    "colors": [
+      "B"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Broken Cipher"
+    ],
+    "power": "0",
+    "toughness": "0",
+    "artist": "Dall-E 3",
+    "relatedFace": "Creeping Incubator",
+    "facedown": true,
+    "_source": "Changes/Nerf/Creeping Monstrosity.png"
+  },
+  {
+    "id": "escape-from-the-underworld-fb4",
+    "name": "Escape from the Underworld",
+    "manaCost": "{1}{B}",
+    "type": "Sorcery",
+    "rarity": "Rare",
+    "text": "Create a Map token or a 0/1 white Goat creature token.\nReturn target creature card with mana value X or less from your graveyard to the battlefield, where X is the number of differently named tokens you control.\nEscape—{1}{B}, Exile four other cards from your graveyard. (You may cast this card from your graveyard for its escape cost.)",
+    "colors": [
+      "B"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Self-mill",
+      "Token Collection"
+    ],
+    "relatedTokens": [
+      "Map",
+      "0/1 white Goat"
+    ],
+    "artist": "Dall-E 3",
+    "_supersedes": "escape-from-the-underworld-tb3",
+    "_source": "Changes/Nerf/Escape from the Underworld.png"
+  },
+  {
+    "id": "escaping-bolt-fb4",
+    "name": "Escaping Bolt",
+    "manaCost": "{1}{R}",
+    "type": "Sorcery",
+    "rarity": "Rare",
+    "text": "Escaping Bolt deals 3 damage to any target.\nIf a card left your graveyard this turn, copy this spell. You may choose a new target for the copy.\nEscape—{4}{R}{R}, Exile six other cards from your graveyard. (You may cast this card from your graveyard for its escape cost.)",
+    "colors": [
+      "R"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Self-mill"
+    ],
+    "artist": "Cobaltplasma",
+    "_supersedes": "escaping-bolt-tb3",
+    "_source": "Changes/Nerf/Escaping Bolt.png"
+  },
+  {
+    "id": "fear-of-the-apocalypse-fb4",
+    "name": "Fear of the Apocalypse",
+    "manaCost": "{4}{R}{W}",
+    "type": "Enchantment Creature — Nightmare",
+    "rarity": "Mythic Rare",
+    "text": "When this creature enters, each player discards their hand, then draws a card for each card type among cards in their graveyard.\nDelirium — Whenever this creature attacks, if there are four or more card types among cards in your graveyard, destroy each other creature.",
+    "colors": [
+      "R",
+      "W"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Self-mill"
+    ],
+    "power": "6",
+    "toughness": "4",
+    "flavorText": "Worlds end, yet it persists.",
+    "artist": "Dall-E 3",
+    "_supersedes": "fear-of-the-apocalypse-fb1",
+    "_source": "Changes/Nerf/Fear of the Apocalypse.png"
+  },
+  {
+    "id": "gnawing-in-the-deep-fb4",
+    "name": "Gnawing in the Deep",
+    "manaCost": "{B}",
+    "type": "Sorcery — Lesson",
+    "rarity": "Rare",
+    "text": "Exile target card from a graveyard. If a creature card was exiled this way, create a 1/1 black and green Pest creature token with \"When this creature dies, you gain 1 life.\"\nAt the beginning of your end step, if this card is in your graveyard, you may pay {2}{B/G}. If you do, cast it without paying its mana cost.",
+    "colors": [
+      "B"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "relatedTokens": [
+      "1/1 black and green Pest"
+    ],
+    "artist": "Dexistor371",
+    "_supersedes": "gnawing-in-the-deep-fb1",
+    "_source": "Changes/Nerf/Gnawing in the Deep.png"
+  },
+  {
+    "id": "keranos-gift-to-mankind-fb4",
+    "name": "Keranos' Gift to Mankind",
+    "manaCost": "{5}",
+    "type": "Legendary Artifact Enchantment Creature — Demigod",
+    "rarity": "Mythic Rare",
+    "text": "Vigilance, haste\nAt the beginning of your upkeep and whenever Keranos' Gift to Mankind attacks or blocks, reveal the top card of your library. If it's a land card, scry X. If it's a nonland card, Keranos' Gift to Mankind deals X damage to any target. X is the number of enchantments you control.\n{5}{U/R}: If it's your turn, after this step, you get an additional upkeep followed by an additional combat step.",
+    "colors": [],
+    "custom": true,
+    "archetypes": [
+      "Enchantments"
+    ],
+    "power": "3",
+    "toughness": "3",
+    "artist": "Dall-E 3",
+    "_supersedes": "keranos-gift-to-mankind-fb1",
+    "_source": "Changes/Nerf/Keranos’ Gift to Mankind.png"
+  },
+  {
+    "id": "no-rose-without-thorns-fb4",
+    "name": "No Rose Without Thorns",
+    "manaCost": "{1}{B}",
+    "type": "Enchantment",
+    "rarity": "Mythic Rare",
+    "text": "At the beginning of your upkeep, you lose 1 life and you create the next token from the following list. If you can't, you lose the game.\n[Blood, Clue, Food, Junk, Map, Scroll, Spike, Treasure]",
+    "colors": [
+      "B"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Token Collection"
+    ],
+    "artist": "Dall-E 3",
+    "_supersedes": "no-rose-without-thorns-tb3",
+    "_source": "Changes/Nerf/No Rose Without Thorns.png",
+    "relatedTokens": [
+      "Blood",
+      "Clue",
+      "Food",
+      "Junk",
+      "Map",
+      "Scroll",
+      "Spike",
+      "Treasure"
+    ]
+  },
+  {
+    "id": "pyrotechnical-cauldron-fb4",
+    "name": "Pyrotechnical Cauldron",
+    "manaCost": "{B}{R}",
+    "type": "Artifact",
+    "rarity": "Rare",
+    "text": "{T}, Pay 1 life: Create a tapped Firework token of a color of your choice.\n{T}, Sacrifice X tokens with different names, Sacrifice this artifact: You may cast a spell with mana value X or less from your hand or graveyard without paying its mana cost.",
+    "colors": [
+      "B",
+      "R"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Token Collection"
+    ],
+    "relatedTokens": [
+      "Firework"
+    ],
+    "artist": "Dall-E 3",
+    "_supersedes": "pyrotechnical-cauldron-fb1",
+    "_source": "Changes/Nerf/Pyrotechnical Cauldron.png"
+  },
+  {
+    "id": "untold-prosperity-fb4",
+    "name": "Untold Prosperity",
+    "manaCost": "{4}{G}{W}{U}",
+    "type": "Enchantment",
+    "rarity": "Mythic Rare",
+    "text": "At the beginning of your upkeep, draw a card.\nYou may play an additional land on each of your turns.\nLandfall — Whenever a land you control enters, you gain 2 life.\nStorm",
+    "colors": [
+      "G",
+      "W",
+      "U"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Storm"
+    ],
+    "artist": "Angela Perrin",
+    "_supersedes": "untold-prosperity-fb1",
+    "_source": "Changes/Nerf/Untold Prosperity.png"
+  },
+  {
+    "id": "valuable-smithing-fb4",
+    "name": "Valuable Smithing",
+    "manaCost": "{3}{R}",
+    "type": "Sorcery",
+    "rarity": "Rare",
+    "text": "Delve (Each card you exile from your graveyard while casting this spell pays for {1}.)\nCreate a tapped Treasure token for each mana spent to cast this spell.\nCreate a Clue token for each card exiled to cast this spell.\nThis spell deals 3 damage to any target.",
+    "colors": [
+      "R"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Self-mill",
+      "Token Collection"
+    ],
+    "relatedTokens": [
+      "Treasure",
+      "Clue"
+    ],
+    "artist": "Dall-E 3",
+    "_supersedes": "valuable-smithing-tb3",
+    "_source": "Changes/Nerf/Valuable Smithing.png"
+  },
+  {
+    "id": "experimental-test-facility-fb4",
+    "name": "Experimental Test Facility",
+    "type": "Land",
+    "rarity": "Rare",
+    "text": "This land enters tapped unless you control a modified creature. (Equipment, Auras you control, and counters are modifications.)\n{T}: Add {G} or {U}.\n{X}{X}, {T}: Experiment X. X can't be 0. (You get X vial counters. If you don't control The Experiment, create one. Then, spend any amount of vial on it.)",
+    "colors": [],
+    "custom": true,
+    "archetypes": [],
+    "relatedTokens": [
+      "The Experiment"
+    ],
+    "artist": "Wasurah",
+    "_supersedes": "experimental-test-facility-tb3",
+    "_source": "Changes/Total/Experimental Test Facility.png"
+  },
+  {
+    "id": "flourishing-bauble-pet-fb4",
+    "name": "Flourishing Bauble-Pet",
+    "manaCost": "{G}",
+    "type": "Creature — Saproling",
+    "rarity": "Common",
+    "text": "{1}, {T}, Sacrifice this creature: Add one mana of any color. Draw a card.\nPetrify from your graveyard {G} ({T}, Exile this card from your graveyard: Create a copy of it, except it's an artifact. Activate only as a sorcery.)",
+    "colors": [
+      "G"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "power": "1",
+    "toughness": "1",
+    "flavorText": "\"We are all vessels of nature's will. Some of us more… literally.\"\n—Calvatika, Korozda Gorgon",
+    "artist": "Dall-E 3",
+    "_supersedes": "flourishing-bauble-pet-tb3",
+    "_source": "Changes/Total/Flourishing Bauble-Pet.png"
+  },
+  {
+    "id": "gilded-cage-fb4",
+    "name": "Gilded Cage",
+    "manaCost": "{4}",
+    "type": "Artifact",
+    "rarity": "Rare",
+    "text": "Whenever a nontoken creature dies, exile it. Its controller gets debt equal to that creature's power. (At the beginning of that player's end step, they may pay {1} for each debt counter they have. They remove that many counters, then lose 1 life for each debt counter they have.)\nWhenever a player fully pays their debt, they may put a creature card exiled with this artifact onto the battlefield under their control.",
+    "colors": [],
+    "custom": true,
+    "archetypes": [],
+    "artist": "Dall-E 3",
+    "_supersedes": "gilded-cage-tb3",
+    "_source": "Changes/Total/Gilded Cage.png"
+  },
+  {
+    "id": "gimme-that-fb4",
+    "name": "Gimme That",
+    "manaCost": "{3}{B}",
+    "type": "Sorcery",
+    "rarity": "Rare",
+    "text": "Create a Treasure token.\nTarget opponent reveals their hand. You may choose a nonland card from it and exile it. You may cast that card for as long as it remains exiled.\nCipher",
+    "colors": [
+      "B"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Broken Cipher"
+    ],
+    "relatedTokens": [
+      "Treasure"
+    ],
+    "artist": "SirTiefling, DeviantArt",
+    "_supersedes": "gimme-that-fb1",
+    "_source": "Changes/Total/Gimme That.png"
+  },
+  {
+    "id": "impossible-pact-fb4",
+    "name": "Impossible Pact",
+    "manaCost": "{0}",
+    "type": "Kindred Instant — Eldrazi",
+    "rarity": "Mythic Rare",
+    "text": "Type the following line into ChatGPT and put the response on the stack: \"Give me a Magic the Gathering 'Pact' price to pay next upkeep or lose the game and one ability for this instant. Nothing else.\"\nAt the beginning of your next upkeep, pay that price. If you don't, you lose the game.",
+    "colors": [],
+    "custom": true,
+    "archetypes": [],
+    "artist": "Diligent Nocturne",
+    "_source": "Changes/Total/Impossible Pact.png",
+    "prompt": "Give me a Magic the Gathering 'Pact' price to pay next upkeep or lose the game and one ability for this instant. Nothing else."
+  },
+  {
+    "id": "leyline-of-greed-fb4",
+    "name": "Leyline of Greed",
+    "manaCost": "{2}{B}{B}",
+    "type": "Enchantment",
+    "rarity": "Rare",
+    "text": "If this card is in your opening hand, you may begin the game with it on the battlefield.\nSpells you cast cost {1} less to cast and 1 life more to cast.\n{2}{B}{2}{B}, Pay 2 life: Draw a card.",
+    "colors": [
+      "B"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Storm"
+    ],
+    "flavorText": "Where untold power and the desire to explore it converge.",
+    "_supersedes": "leyline-of-greed-fb1",
+    "_source": "Changes/Total/Leyline of Greed 2.png",
+    "artist": "Dall-E 3"
+  },
+  {
+    "id": "mana-piracy-fb4",
+    "name": "Mana Piracy",
+    "manaCost": "{2}{U}{U}",
+    "type": "Sorcery",
+    "rarity": "Mythic Rare",
+    "text": "Your opponents can't tap lands for mana as long as this spell is on the stack.\nUntil end of turn, you may tap lands you don't control for mana and your opponents can't tap lands for mana. If this is the second time you've cast a spell named Mana Piracy this turn, untap all lands your opponents control.\nCipher",
+    "colors": [
+      "U"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Broken Cipher"
+    ],
+    "artist": "Dall-E 3",
+    "_supersedes": "mana-piracy-fb1",
+    "_source": "Changes/Total/Mana Piracy.png"
+  },
+  {
+    "id": "misinformation-spreader-fb4",
+    "name": "Misinformation Spreader",
+    "manaCost": "{2}{U}",
+    "type": "Creature — Vedalken Rogue",
+    "rarity": "Rare",
+    "text": "Flash\nAt the beginning of your upkeep, each player shuffles two Confusion cards into their deck. (They're colorless sorceries with cycling {2}.)\nAt the beginning of your end step, draw a card for each Confusion card in all graveyards.\nWhenever you surveil for the first time each turn, shuffle that many Confusion cards into target player's library.",
+    "colors": [
+      "U"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "power": "2",
+    "toughness": "4",
+    "artist": "Rhys Kim",
+    "_supersedes": "misinformation-spreader-fb1",
+    "_source": "Changes/Total/Misinformation Spreader.png"
+  },
+  {
+    "id": "risky-game-we-run-here-fb4",
+    "name": "Risky Game We Run Here",
+    "manaCost": "{2}{U}{R}",
+    "type": "Enchantment",
+    "rarity": "Rare",
+    "text": "At the beginning of your upkeep, each player may discard any number of cards, then draw that many cards. Using the discarded nonland cards mana values and colors, the player with the best poker hand among the discarded cards creates a token that's a copy of this enchantment and this enchantment deals 2 damage to each other player. (The ranks from worst to best are High Card, Pair, Two Pairs, Three of a Kind, Straight, Flush, Full House, Four of a Kind, Straight Flush and Royal Flush.)",
+    "colors": [
+      "U",
+      "R"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "artist": "Dall-E 3",
+    "_supersedes": "risky-game-we-run-here-fb1",
+    "_source": "Changes/Total/Risky Game We Run Here.png"
+  },
+  {
+    "id": "the-utopians-protocol-fb4",
+    "name": "The Utopians' Protocol",
+    "manaCost": "{U}",
+    "type": "Enchantment",
+    "rarity": "Rare",
+    "text": "When this enchantment enters, experiment 1. (You get a vial counter. If you don't control The Experiment, create one. Then, spend any amount of vial on it.)\n{3}{U}: Experiment 2.",
+    "colors": [
+      "U"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "relatedTokens": [
+      "The Experiment"
+    ],
+    "flavorText": "The Utopians' sect of the Simic Combine believes that true evolution lies in slow, constant experimentation—each mutation a step towards an ideal future, where perfection is not achieved, but continually redefined.",
+    "artist": "Dall-E 3",
+    "_supersedes": "the-utopians-protocol-fb1",
+    "_source": "Changes/Total/The Utopians’ Protocol.png"
+  },
+  {
+    "id": "your-own-story-fb4",
+    "name": "Your Own Story",
+    "manaCost": "{1}{W}",
+    "type": "Enchantment — Saga",
+    "rarity": "Mythic Rare",
+    "text": "Fill the blanks as Your Own Story enters.\nI — ___ (Surveil 3/Draw a card/You gain 6 life).\nII — If you control two or more __, destroy all __ other than this permanent. Choose the same option for both blanks. (artifacts, creatures, enchantments)\nIII — At the end of turn, return ___ from your graveyard to your hand. (a card named Your Own Story/each other permanent card with mana value 2 or less.)",
+    "colors": [
+      "W"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "artist": "Iris Rodriguez",
+    "_supersedes": "your-own-story-fb1",
+    "_source": "Changes/Total/Your Own Story.png"
+  }
+]

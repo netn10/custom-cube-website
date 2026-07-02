@@ -1,0 +1,172 @@
+[
+  {
+    "name": "Black Fireworks",
+    "type": "Artifact — Fireworks",
+    "colors": [],
+    "text": "This artifact enters tapped.\n{X}, {T}, Sacrifice this artifact: Add X {B} mana.\nWhen this artifact is put into your graveyard, surveil 1.",
+    "artist": "ChatGPT",
+    "_source": "Tokens/Black Fireworks.png"
+  },
+  {
+    "name": "Blue Fireworks",
+    "type": "Artifact — Fireworks",
+    "colors": [],
+    "text": "This artifact enters tapped.\n{X}, {T}, Sacrifice this artifact: Add X {U} mana.\nWhen this artifact is put into your graveyard, surveil 1.",
+    "artist": "ChatGPT",
+    "_source": "Tokens/Blue Fireworks.png"
+  },
+  {
+    "name": "Brightspark Collector",
+    "type": "Token Creature — Lizard Artificer",
+    "colors": ["R"],
+    "power": "1",
+    "toughness": "1",
+    "text": "Whenever a token you control enters or is put into your graveyard, this creature deals 1 damage to each opponent.\n(This token's mana cost is {R}.)",
+    "artist": "Dall-E 3",
+    "_source": "Tokens/Brightspark Collector.png"
+  },
+  {
+    "name": "Chariot",
+    "type": "Token Artifact — Vehicle",
+    "colors": [],
+    "power": "*",
+    "toughness": "*",
+    "text": "This Vehicle's power and toughness are each equal to the number of creatures you control.\nCrew 1",
+    "artist": "Dall-E 3",
+    "_source": "Tokens/Chariot.png"
+  },
+  {
+    "name": "Confusion",
+    "type": "Token Sorcery",
+    "colors": [],
+    "text": "Cycling {2}",
+    "artist": "NatalieDixonArt",
+    "_source": "Tokens/Confusion 1.png"
+  },
+  {
+    "name": "Flourishing Bauble-Pet",
+    "type": "Artifact",
+    "colors": [],
+    "text": "{1}, {T}, Sacrifice this artifact: Add one mana of any color.",
+    "artist": "ChatGPT",
+    "_source": "Tokens/Flourishing Bauble-Pet.png"
+  },
+  {
+    "name": "God-Pharaoh's Pup",
+    "type": "Creature — Zombie Dog",
+    "colors": ["B"],
+    "power": "4",
+    "toughness": "4",
+    "text": "When this creature enters, it deals damage to you equal to its power.",
+    "_source": "Tokens/God-Pharaoh's Pup - Black.png"
+  },
+  {
+    "name": "God-Pharaoh's Pup",
+    "type": "Creature — Zombie Dog",
+    "colors": ["W"],
+    "power": "2",
+    "toughness": "2",
+    "text": "When this creature enters, it deals damage to you equal to its power.",
+    "_source": "Tokens/God-Pharaoh's Pup - White.png"
+  },
+  {
+    "name": "Green Fireworks",
+    "type": "Artifact — Fireworks",
+    "colors": [],
+    "text": "This artifact enters tapped.\n{X}, {T}, Sacrifice this artifact: Add X {G} mana.\nWhen this artifact is put into your graveyard, surveil 1.",
+    "artist": "ChatGPT",
+    "_source": "Tokens/Green Fireworks.png"
+  },
+  {
+    "name": "Memory",
+    "type": "Token Enchantment — Memory",
+    "colors": [],
+    "text": "When this enchantment enters, exile an instant or sorcery card from your hand or graveyard with mana value X or less.\n{2}, Sacrifice this enchantment: Cast the card exiled with it without paying its mana cost.",
+    "artist": "Dall-E 3",
+    "_source": "Tokens/Memory.png"
+  },
+  {
+    "name": "Questing Role",
+    "type": "Token Enchantment — Aura Role",
+    "colors": [],
+    "text": "Enchant creature\nEnchanted creature has vigilance, deathtouch, and haste.\nEnchanted creature can't be blocked by creatures with power 2 or less.\nCombat damage that would be dealt by creatures you control can't be prevented.\nWhenever enchanted creature deals combat damage to an opponent, it deals that much damage to target planeswalker that player controls.",
+    "artist": "Crazy Chucky",
+    "_source": "Tokens/Questing Role.jpg"
+  },
+  {
+    "name": "Red Fireworks",
+    "type": "Artifact — Fireworks",
+    "colors": [],
+    "text": "This artifact enters tapped.\n{X}, {T}, Sacrifice this artifact: Add X {R} mana.\nWhen this artifact is put into your graveyard, surveil 1.",
+    "artist": "ChatGPT",
+    "_source": "Tokens/Red Fireworks.png"
+  },
+  {
+    "name": "Sangrite",
+    "type": "Token Artifact — Sangrite",
+    "colors": [],
+    "text": "{1}, Sacrifice this artifact: Target creature gets +1/-1 until end of turn.",
+    "artist": "Dall-E 3",
+    "_source": "Tokens/Sangrite.png"
+  },
+  {
+    "name": "Scroll",
+    "type": "Token Artifact — Scroll",
+    "colors": [],
+    "text": "{2}, Sacrifice this artifact: Learn. (You may reveal a Lesson card you own from outside the game and put it into your hand, or discard a card to draw a card.)",
+    "artist": "Feast4daBeast",
+    "_source": "Tokens/Scroll.png"
+  },
+  {
+    "name": "Spike",
+    "type": "Token Artifact — Spike",
+    "colors": [],
+    "text": "{2}, Sacrifice this artifact: Target opponent gains an emblem with \"At the beginning of your upkeep, you lose 1 life.\"",
+    "artist": "Dall-E 3",
+    "_source": "Tokens/Spike.png"
+  },
+  {
+    "name": "Spiked!",
+    "type": "Emblem",
+    "colors": [],
+    "text": "At the beginning of your upkeep, you lose 1 life.",
+    "artist": "Seb McKinnon",
+    "_source": "Tokens/Spiked!.png"
+  },
+  {
+    "name": "The Experiment",
+    "type": "Legendary Creature — Mutant",
+    "colors": ["G", "U"],
+    "power": "1",
+    "toughness": "1",
+    "text": "(Spend {E} only when you experiment. These abilities are counters.)\n{E}: Graft, trample or vigilance.\n{E}{E}: +1/+1 or shield.\n{E}{E}{E}: Hexproof.\n{E}{E}{E}{E}: \"{T}: Draw cards equal to this creature's power.\"\n{E}{E}{E}{E}{E}: \"At the beginning of your upkeep, double the number of counters on this creature.\"",
+    "artist": "Dall-E 3",
+    "_source": "Tokens/The Experiment.png"
+  },
+  {
+    "name": "The Sunken Vault",
+    "type": "Legendary Land",
+    "colors": [],
+    "text": "{T}: Choose a card name that hasn't been chosen. You may cast a copy of it. (You still pay its costs.) Activate this ability only as a sorcery and only if a card named Map to the Sunken Vault is in your graveyard —\n• Black Lotus.\n• Sol Ring.\n• Winter Orb.\n• Ensnaring Bridge.\n• The One Ring.\n• Memory Jar.\n• Mindslaver.\n• Platinum Angel.",
+    "artist": "ChatGPT",
+    "_source": "Tokens/The Sunken Vault.png"
+  },
+  {
+    "name": "Vampire Cleric",
+    "type": "Creature — Vampire Cleric",
+    "colors": [],
+    "power": "1",
+    "toughness": "1",
+    "text": "Whenever this creature deals combat damage to a player, that player gets that many debt counters.",
+    "artist": "ChatGPT",
+    "_source": "Tokens/Vampire Cleric.png"
+  },
+  {
+    "name": "White Fireworks",
+    "type": "Artifact — Fireworks",
+    "colors": [],
+    "text": "This artifact enters tapped.\n{X}, {T}, Sacrifice this artifact: Add X {W} mana.\nWhen this artifact is put into your graveyard, surveil 1.",
+    "artist": "ChatGPT",
+    "_source": "Tokens/White Fireworks.png"
+  }
+]

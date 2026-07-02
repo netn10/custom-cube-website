@@ -1,0 +1,52 @@
+[
+  {
+    "id": "bizarre-tutor-sb2",
+    "name": "Bizarre Tutor",
+    "manaCost": "{B}",
+    "type": "Instant",
+    "rarity": "Rare",
+    "text": "Search your library for a card, then shuffle and put that card on top.\nTire yourself (Put a Confusion card on top of your library. It's a colorless sorcery card with no mana cost that has cycling {2}.)",
+    "colors": [
+      "B"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "artist": "Remedios Varo",
+    "_source": "Black/Bizarre Tutor.png"
+  },
+  {
+    "id": "compleat-mockery-sb2",
+    "name": "Compleat Mockery",
+    "manaCost": "{B}",
+    "type": "Enchantment",
+    "rarity": "Rare",
+    "text": "At the beginning of your upkeep, you lose 1 life and you create a token that's a copy of this enchantment.\n{2}: Target opponent gains control of this enchantment. Activate only as a sorcery.\nSacrifice four enchantments named Compleat Mockery: Create a token that's a copy of target permanent. Activate only as a sorcery.",
+    "colors": [
+      "B"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Enchantments",
+      "Token Collection"
+    ],
+    "artist": "DALL-E 3",
+    "_source": "Black/Compleat Mockery.png"
+  },
+  {
+    "id": "two-with-nothing-sb2",
+    "name": "Two with Nothing",
+    "manaCost": "{B}{B}",
+    "type": "Sorcery",
+    "rarity": "Rare",
+    "text": "Discard your hand. If this is the second time you cast a spell named Two with Nothing this turn, instead each player discards their hand.\nCipher",
+    "colors": [
+      "B"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Broken Cipher"
+    ],
+    "artist": "Jim Nelson",
+    "_source": "Black/Two with Nothing.png"
+  }
+]

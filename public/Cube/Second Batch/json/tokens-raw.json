@@ -1,0 +1,147 @@
+[
+  {
+    "name": "Beast",
+    "type": "Token Creature — Beast",
+    "colors": ["G"],
+    "power": "1",
+    "toughness": "1",
+    "text": "{T}: Target creature gets +1/+1 until end of turn.",
+    "_source": "Tokens/Beast.png"
+  },
+  {
+    "name": "Blink",
+    "type": "Token Enchantment — Blink",
+    "colors": [],
+    "text": "{2}, Sacrifice Blink: Exile target creature, then return it to the battlefield under its owner's control.",
+    "artist": "Kay Nari",
+    "_source": "Tokens/Blink.png"
+  },
+  {
+    "name": "Brightspark Collector",
+    "type": "Token Creature — Lizard Artificer",
+    "colors": ["R"],
+    "power": "1",
+    "toughness": "1",
+    "text": "Whenever a token you control enters or is put into your graveyard, this creature deals 1 damage to each opponent.\n(This token's mana cost is {R}.)",
+    "_source": "Tokens/Brightspark Collector.png"
+  },
+  {
+    "name": "Cat",
+    "type": "Token Creature — Cat",
+    "colors": [],
+    "power": "1",
+    "toughness": "1",
+    "text": "{T}: Surveil 1.",
+    "_source": "Tokens/Cat.png"
+  },
+  {
+    "name": "Chariot",
+    "type": "Token Artifact — Vehicle",
+    "colors": ["G"],
+    "power": "*",
+    "toughness": "*",
+    "text": "This Vehicle's power and toughness are each equal to the number of creatures you control.\nCrew 1",
+    "_source": "Tokens/Chariot.png"
+  },
+  {
+    "name": "Confusion",
+    "type": "Token Sorcery",
+    "colors": [],
+    "text": "Cycling {2}",
+    "artist": "NatalieDixonArt",
+    "_source": "Tokens/Confusion 1.png"
+  },
+  {
+    "name": "Crystal Ship",
+    "type": "Token Artifact — Vehicle",
+    "colors": [],
+    "power": "4",
+    "toughness": "4",
+    "text": "Crew 2",
+    "artist": "@SometimesWitchy",
+    "_source": "Tokens/Crystal Ship.png"
+  },
+  {
+    "name": "Dinosaur",
+    "type": "Token Creature — Dinosaur",
+    "colors": ["R"],
+    "power": "1",
+    "toughness": "1",
+    "text": "Trample",
+    "_source": "Tokens/Dinosaur.png"
+  },
+  {
+    "name": "Elemental Lizard",
+    "type": "Token Creature — Elemental Lizard",
+    "colors": [],
+    "power": "2",
+    "toughness": "2",
+    "text": "",
+    "_source": "Tokens/Elemental Lizard.png"
+  },
+  {
+    "name": "Elemental",
+    "type": "Token Creature — Elemental",
+    "colors": ["U"],
+    "power": "1",
+    "toughness": "1",
+    "text": "Ward {1}",
+    "_source": "Tokens/Elemental.png"
+  },
+  {
+    "name": "Memory",
+    "type": "Token Enchantment — Memory",
+    "colors": [],
+    "text": "When this enchantment enters, exile an instant or sorcery card from your hand or graveyard with mana value X or less\n{2}, Sacrifice this enchantment: Cast the card exiled with it without paying its mana cost.",
+    "_source": "Tokens/Memory.png"
+  },
+  {
+    "name": "Nightmare",
+    "type": "Token Creature — Nightmare",
+    "colors": [],
+    "power": "1",
+    "toughness": "1",
+    "text": "{T}: You gain 1 life.",
+    "_source": "Tokens/Nightmare.png"
+  },
+  {
+    "name": "Prompt",
+    "type": "Token Enchantment — Prompt",
+    "colors": [],
+    "text": "When this token enters, ask ChatGPT with \"Give my Prompt enchantment token exactly one ability.\"",
+    "artist": "Come on lol",
+    "_source": "Tokens/Prompt.png"
+  },
+  {
+    "name": "Sangrite",
+    "type": "Token Artifact — Sangrite",
+    "colors": [],
+    "text": "{1}, Sacrifice this artifact: Target creature gets +1/-1 until end of turn.",
+    "_source": "Tokens/Sangrite.png"
+  },
+  {
+    "name": "Scroll",
+    "type": "Token Artifact — Scroll",
+    "colors": [],
+    "text": "{2}, Sacrifice this artifact: Learn. (You may reveal a Lesson card you own from outside the game and put it into your hand, or discard a card to draw a card.)",
+    "artist": "Feast4daBeast",
+    "_source": "Tokens/Scroll.png"
+  },
+  {
+    "name": "Spike",
+    "type": "Token Artifact — Spike",
+    "colors": [],
+    "text": "{2}, Sacrifice this artifact: Target opponent gains an emblem with \"At the beginning of your upkeep, you lose 1 life.\"",
+    "_source": "Tokens/Spike.png"
+  },
+  {
+    "name": "Vampire Cleric",
+    "type": "Creature — Vampire Cleric",
+    "colors": [],
+    "power": "1",
+    "toughness": "1",
+    "text": "Whenever this creature deals combat damage to a player, that player gets that many debt counters.",
+    "artist": "ChatGPT",
+    "_source": "Tokens/Vampire Cleric.png"
+  }
+]

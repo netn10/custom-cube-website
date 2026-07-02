@@ -3,7 +3,7 @@
 import { useParams, useRouter, useSearchParams } from 'next/navigation';
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { getCards, getTokenByName, API_BASE_URL, getChatGPTResponseAlt, getCardComments, addComment, deleteComment, addCardHistory, getCardHistory, getArchetypes, getCardById } from '@/lib/api';
+import { getCards, getTokenByName, API_BASE_URL, getImageSrc, getChatGPTResponseAlt, getCardComments, addComment, deleteComment, addCardHistory, getCardHistory, getArchetypes, getCardById } from '@/lib/api';
 import { FaRobot, FaTrash, FaHistory, FaPlus, FaSave, FaCopy } from 'react-icons/fa';
 import { Card, Token, Comment, CommentFormData, Archetype } from '@/types/types';
 import { useAuth } from '@/contexts/AuthContext';
@@ -46,6 +46,7 @@ export default function CardDetailPage() {
   const [customCardData, setCustomCardData] = useState<Partial<Card> | null>(null);
   const [useCustomData, setUseCustomData] = useState(false);
   const [hasHistory, setHasHistory] = useState<boolean>(false);
+  const [cardVersions, setCardVersions] = useState<{ set: string; imageUrl: string; name: string; current?: boolean }[]>([]);
   
   // Copy feedback state
   const [copyMessage, setCopyMessage] = useState<string | null>(null);
@@ -324,11 +325,23 @@ export default function CardDetailPage() {
   };
 
   // Function to check if card has history
-  const checkCardHistory = async (cardId: string) => {
+  const checkCardHistory = async (cardObj: any) => {
     try {
       setLoadingStates(prev => ({ ...prev, history: true }));
-      const historyResponse = await getCardHistory(cardId, 1, 1);
+      const historyResponse = await getCardHistory(cardObj.id, 1, 50);
       setHasHistory(historyResponse.total > 0);
+      const SET_ORDER: Record<string, number> = { 'Set 1': 1, 'Set 2': 2, 'Set 3': 3, 'Set 4': 4, 'Set 5': 5 };
+      const vs: { set: string; imageUrl: string; name: string; current?: boolean }[] = (historyResponse.history || [])
+        .filter((h: any) => h.version_data)
+        .map((h: any) => ({ set: h.version_data.set || '', imageUrl: h.version_data.imageUrl || '', name: h.version_data.name }));
+      if (vs.length > 0) {
+        vs.push({ set: cardObj.set || '', imageUrl: cardObj.imageUrl || '', name: cardObj.name, current: true });
+        const bySet = new Map<string, any>();
+        for (const v of vs) { if (v.current || !bySet.has(v.set)) bySet.set(v.set, v); }
+        setCardVersions([...bySet.values()].sort((a, b) => (SET_ORDER[a.set] || 0) - (SET_ORDER[b.set] || 0)));
+      } else {
+        setCardVersions([]);
+      }
     } catch (error) {
       console.error('Error checking card history:', error);
       setHasHistory(false);
@@ -407,7 +420,7 @@ export default function CardDetailPage() {
         
         // Check history (non-blocking)
         secondaryPromises.push(
-          checkCardHistory(cardToUse.id).catch(err => 
+          checkCardHistory(cardToUse).catch(err =>
             console.error('Error checking history:', err)
           )
         );
@@ -845,7 +858,7 @@ export default function CardDetailPage() {
                 />
               ) : (
                 <img 
-                  src={`${API_BASE_URL}/image-proxy?url=${encodeURIComponent(card.imageUrl)}`}
+                  src={getImageSrc(card.imageUrl)}
                   alt={card.name}
                   className="mtg-card-detail fixed-card-size object-contain"
                   onError={(e) => {
@@ -915,7 +928,32 @@ export default function CardDetailPage() {
                 </button>
               )}
             </div>
-            
+
+            {/* Versions across sets (older iterations preserved via card history) */}
+            {cardVersions.length > 1 && (
+              <div className="mt-4 bg-white dark:bg-gray-800 rounded-lg shadow p-4">
+                <h2 className="text-lg font-semibold mb-3 dark:text-white">Versions</h2>
+                <div className="flex flex-wrap gap-3">
+                  {cardVersions.map((v) => (
+                    <div key={v.set + (v.current ? '-cur' : '')} className="text-center">
+                      {v.imageUrl ? (
+                        <img
+                          src={getImageSrc(v.imageUrl)}
+                          alt={`${v.name} — ${v.set}`}
+                          className={`w-28 rounded shadow object-contain ${v.current ? 'ring-2 ring-blue-500' : 'opacity-90'}`}
+                        />
+                      ) : (
+                        <div className="w-28 h-40 bg-gray-300 dark:bg-gray-700 rounded flex items-center justify-center text-xs text-gray-500">No image</div>
+                      )}
+                      <div className="mt-1 text-xs text-gray-600 dark:text-gray-400">
+                        {v.set}{v.current ? ' (current)' : ''}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+
             {/* Add History Form (Admin Only) */}
             {isAdmin && showAddHistoryForm && (
               <div className="bg-green-50 dark:bg-green-900 p-4 rounded-lg mb-4 border border-green-200 dark:border-green-800">
@@ -1128,7 +1166,7 @@ export default function CardDetailPage() {
                         <div className="w-1/3">
                           {customCardData.imageUrl ? (
                             <img 
-                              src={`${API_BASE_URL}/image-proxy?url=${encodeURIComponent(customCardData.imageUrl)}`}
+                              src={getImageSrc(customCardData.imageUrl)}
                               alt={customCardData.name || 'Card'}
                               className="w-full rounded-lg shadow-md"
                               onError={(e) => {

@@ -1,0 +1,109 @@
+[
+  {
+    "id": "brokers-safehouse-tb3",
+    "name": "Brokers Safehouse",
+    "type": "Land",
+    "rarity": "Rare",
+    "text": "This land enters tapped.\n{T}: Add {G}, {W}, or {U}.\n{3}, {T}: Put a shield counter on target permanent. (If it would be dealt damage or destroyed, remove a shield counter from it instead.)",
+    "colors": [],
+    "custom": true,
+    "archetypes": [],
+    "artist": "Rockstar Games",
+    "_source": "Lands/Brokers Safehouse.png"
+  },
+  {
+    "id": "experimental-test-facility-tb3",
+    "name": "Experimental Test Facility",
+    "type": "Land",
+    "rarity": "Rare",
+    "text": "This land enters tapped unless you control a modified creature. (Equipment, Auras you control, and counters are modifications.)\n{T}: Add {G} or {U}.\n{X}{X}, {T}: Experiment X. (You get X {experiment} counters. If you don't control The Experiment, create one. Then, spend any amount of {experiment} on it.)",
+    "colors": [],
+    "custom": true,
+    "archetypes": [],
+    "artist": "Wasurah",
+    "relatedTokens": [
+      "The Experiment"
+    ],
+    "_source": "Lands/Experimental Test Facility.png"
+  },
+  {
+    "id": "hatching-ground-tb3",
+    "name": "Hatching Ground",
+    "type": "Kindred Land — Lizard",
+    "rarity": "Rare",
+    "text": "Offspring {2} (You may pay an additional {2} as you play. If you do, when this land enters, create a 1/1 land creature token copy of it.)\nDevour permanent 1 (As this land enters, you may sacrifice any number of permanents. It enters with that many +1/+1 counters on it.)\nThis land enters tapped.\n{T}: Add {B}, {R}, or {G}.",
+    "colors": [],
+    "custom": true,
+    "archetypes": [],
+    "_source": "Lands/Hatching Ground.png",
+    "artist": "Dall-E 3"
+  },
+  {
+    "id": "jeskai-monastery-tb3",
+    "name": "Jeskai Monastery",
+    "type": "Land",
+    "rarity": "Rare",
+    "text": "This land enters tapped.\n{T}: Add {U}, {R}, or {W}. If you've cast both a creature spell and a noncreature spell this turn, instead add {U}{R}{W}.",
+    "colors": [],
+    "custom": true,
+    "archetypes": [],
+    "flavorText": "The student asked, \"Master, how do I grasp the infinite?\"\nThe master poured tea until the cup overflowed.\n\"First,\" he said, \"let go.\"",
+    "artist": "Vextera",
+    "_source": "Lands/Jeskai Monastery.png"
+  },
+  {
+    "id": "omnious-basement-tb3",
+    "name": "Ominous Basement",
+    "type": "Land Creature — Swamp Demon",
+    "rarity": "Rare",
+    "text": "(This land isn't a spell, it's affected by summoning sickness, and it has \"{T}: Add {B}.\")\nFlying, trample\nThis creature can't attack or block unless you have six or more cards in your graveyard.\n{T}: Mill a card.",
+    "colors": [],
+    "custom": true,
+    "archetypes": [
+      "Self-mill"
+    ],
+    "artist": "Dall-E 3",
+    "_source": "Lands/Omnious Basement.png"
+  },
+  {
+    "id": "that-damned-road-tb3",
+    "name": "That Damned Road",
+    "type": "Legendary Land",
+    "rarity": "Rare",
+    "text": "{T}: Add {R}, {W} or {B}. You lose 1 life. Then, if your life total is exactly 13, target creature or Vehicle phases out, each opponent loses 2 life and you gain 2 life.",
+    "colors": [],
+    "custom": true,
+    "archetypes": [],
+    "flavorText": "They say if you drive there at 13:13, headlights appear—hovering, watching. Survivors fall silent… until they vanish, and the world forgets they ever existed.",
+    "artist": "Dall-E 3",
+    "_source": "Lands/That Damned Road.png"
+  },
+  {
+    "id": "the-open-road-tb3",
+    "name": "The Open Road",
+    "type": "Artifact Land — Plains Vehicle",
+    "rarity": "Rare",
+    "text": "(This land isn't a spell, it's affected by summoning sickness if it's a creature, and it has \"{T}: Add {W}.\")\nCrew 1",
+    "colors": [],
+    "custom": true,
+    "archetypes": [
+      "Vehicles"
+    ],
+    "artist": "Dall-E 3",
+    "_source": "Lands/The Open Road.png"
+  },
+  {
+    "id": "treasury-catacomb-tb3",
+    "name": "Treasury Catacomb",
+    "type": "Land",
+    "rarity": "Rare",
+    "text": "This land enters tapped.\n{T}: Add {B}, {G}, or {U}.\n{4}, {T}: The next spell you cast this turn has delve. As you pay the cost to activate this ability, you may exile any number of cards from your graveyard. If you do, this ability costs {1} less to cast for each card exiled this way. (Each card you exile from your graveyard while casting that spell pays for {1}.)",
+    "colors": [],
+    "custom": true,
+    "archetypes": [
+      "Self-mill"
+    ],
+    "artist": "Sam Nielson",
+    "_source": "Lands/Treasury Catacomb.png"
+  }
+]

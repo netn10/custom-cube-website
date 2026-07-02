@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useRef } from 'react';
 import { Card } from '@/types/types';
-import { API_BASE_URL } from '@/lib/api';
+import { getImageSrc } from '@/lib/api';
 
 interface RelatedFaceCardDetailProps {
   card: Card;
@@ -26,8 +26,7 @@ export default function RelatedFaceCardDetail({ card, relatedCard, className = '
       originalSrcRef.current = imgRef.current.src;
       
       // Switch to the related face image
-      const imageProxyUrl = `${API_BASE_URL}/image-proxy?url=${encodeURIComponent(relatedCard.imageUrl)}`;
-      imgRef.current.src = imageProxyUrl;
+      imgRef.current.src = getImageSrc(relatedCard.imageUrl);
       
       setIsHovering(true);
     }

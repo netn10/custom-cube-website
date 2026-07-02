@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useRef } from 'react';
 import { Card } from '@/types/types';
-import { API_BASE_URL } from '@/lib/api';
+import { API_BASE_URL, getImageSrc } from '@/lib/api';
 
 interface RelatedFaceCardProps {
   card: Card;
@@ -20,6 +20,9 @@ export default function RelatedFaceCard({ card, className = '', children }: Rela
 
   // Fetch the related face image when component mounts
   useEffect(() => {
+    // Reset on (re)mount — StrictMode's mount/cleanup/mount cycle would
+    // otherwise leave this false, silently dropping the fetched image.
+    isMounted.current = true;
     const fetchRelatedFaceImage = async () => {
       if (!card.relatedFace) return;
       
@@ -71,11 +74,8 @@ export default function RelatedFaceCard({ card, className = '', children }: Rela
     };
   }, [card.relatedFace]);
 
-  // Process image URL through proxy if needed
-  const processImageUrl = (url: string): string => {
-    if (!url) return '';
-    return url.startsWith('data:') ? url : `${API_BASE_URL}/image-proxy?url=${encodeURIComponent(url)}`;
-  };
+  // Process image URL through proxy if needed (local/data URLs used directly)
+  const processImageUrl = (url: string): string => getImageSrc(url);
 
   const handleMouseEnter = () => {
     // Support both string and array

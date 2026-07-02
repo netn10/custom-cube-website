@@ -1,0 +1,636 @@
+[
+  {
+    "id": "altruistic-channeler-fb1",
+    "name": "Altruistic Channeler",
+    "manaCost": "{W}",
+    "type": "Creature — Human Druid",
+    "rarity": "Rare",
+    "text": "{T}: Add {W}{W}{W}. Spend this mana only to cast spells. Whenever you cast a spell this way, target opponent gains control of it. If it has targets, that player may choose new targets for it.",
+    "colors": [
+      "W"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "artist": "Tyler Walpole",
+    "power": "1",
+    "toughness": "1",
+    "flavorText": "\"Power shared is wisdom multiplied, for in giving, we all learn.\"",
+    "_source": "White/Altruistic Channeler.png"
+  },
+  {
+    "id": "ancestral-care-fb1",
+    "name": "Ancestral Care",
+    "manaCost": "{W}",
+    "type": "Instant",
+    "rarity": "Mythic Rare",
+    "text": "Each player draws three cards.",
+    "colors": [
+      "W"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "artist": "Dall-E 3",
+    "flavorText": "\"In the grand tapestry of Bloomburrow, no single generation shines brighter than the rest. We are but a humble thread in this intricate weave. Take pride in your place, but remember to tread lightly and honor the bonds that bind us all.\"\n— Mabel, to Her Children",
+    "_source": "White/Ancestral Care.png"
+  },
+  {
+    "id": "beza-s-grace-fb1",
+    "name": "Beza's Grace",
+    "manaCost": "{1}{W}{W}",
+    "type": "Sorcery",
+    "rarity": "Rare",
+    "text": "Create a Treasure token if an opponent controls more lands than you. You gain 4 life if an opponent has more life than you. Create two 1/1 blue Fish creature tokens if an opponent controls more creatures than you. Draw a card if an opponent has more cards in hand than you.\nStorm",
+    "colors": [
+      "W"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Storm"
+    ],
+    "artist": "Plaiemobile",
+    "relatedTokens": [
+      "Treasure",
+      "1/1 blue Fish"
+    ],
+    "_source": "White/Beza’s Grace.png"
+  },
+  {
+    "id": "celestigoyf-fb1",
+    "name": "Celestigoyf",
+    "manaCost": "{W}{W}",
+    "type": "Creature — Lhurgoyf",
+    "rarity": "Mythic Rare",
+    "text": "Celestigoyf's power is equal to the number of card types among cards in all graveyards and its toughness is equal to that number plus 1.\n{2}{W}: Reveal cards from the top of your library until you reveal a creature card with mana value 3 or less. If you do, put that card onto the battlefield and put all other cards revealed this way into your graveyard.",
+    "colors": [
+      "W"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Self-mill"
+    ],
+    "artist": "Dall-E 3",
+    "power": "*",
+    "toughness": "1+*",
+    "_source": "White/Celestigoyf.png"
+  },
+  {
+    "id": "coordination-unit-fb1",
+    "name": "Coordination Unit",
+    "manaCost": "{W}",
+    "type": "Artifact — Vehicle",
+    "rarity": "Rare",
+    "text": "At the beginning of your end step, if Coordination Unit is untapped, put a +1/+1 counter on target creature you control. Otherwise, each player draws a card.\nCrew 1",
+    "colors": [
+      "W"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Vehicles"
+    ],
+    "artist": "ChatGPT",
+    "power": "3",
+    "toughness": "2",
+    "_source": "White/Coordination Unit.png"
+  },
+  {
+    "id": "cut-what-binds-fb1",
+    "name": "Cut What Binds",
+    "manaCost": "{1}{W}",
+    "type": "Instant",
+    "rarity": "Uncommon",
+    "text": "Kicker {1}{B}\nExile target nonland permanent, then return it to the battlefield unless this spell was kicked.",
+    "colors": [
+      "W"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Blink/ETB/Value"
+    ],
+    "artist": "ChatGPT",
+    "flavorText": "Sometimes fate is set in stone, and sometimes fate is set free.",
+    "_source": "White/Cut What Binds.png"
+  },
+  {
+    "id": "danna-lockloft-ace-fb1",
+    "name": "Danna, Lockloft Ace",
+    "manaCost": "{W}",
+    "type": "Legendary Creature — Human Pilot",
+    "rarity": "Rare",
+    "text": "Partner with Aram, Lockloft Co-Ace (When this creature enters, target player may put Aram into their hand from their library, then shuffle.)\nWhenever a Vehicle you control attacks, put a +1/+1 counter on each creature you control and noncreature Vehicle you control.",
+    "colors": [
+      "W"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Vehicles"
+    ],
+    "artist": "ChatGPT",
+    "power": "2",
+    "toughness": "1",
+    "flavorText": "\"Let's show them what the Lockloft family is made of!\"",
+    "_source": "White/Danna, Lockloft Ace.png",
+    "relatedFace": "Aram, Lockloft Co-Ace"
+  },
+  {
+    "id": "diamond-storm-fb1",
+    "name": "Diamond Storm",
+    "manaCost": "{2}{W}{W}",
+    "type": "Instant",
+    "rarity": "Rare",
+    "text": "This spell deals 1 damage to each attacking creature. Create a tapped Treasure token for each creature damaged this way.\nStorm",
+    "colors": [
+      "W"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Storm"
+    ],
+    "artist": "Dall-E 3",
+    "relatedTokens": [
+      "Treasure"
+    ],
+    "flavorText": "Gobakhan's weather is as dangerous as it is beautiful. Many inexperienced travelers don't know the difference and don't live to make the same mistake twice.",
+    "_source": "White/Diamond Storm.png"
+  },
+  {
+    "id": "dust-off-fb1",
+    "name": "Dust Off",
+    "manaCost": "{X}{W}",
+    "type": "Instant",
+    "rarity": "Uncommon",
+    "text": "You may return X Plains you control to their owner's hand rather than pay this spell's mana cost.\nReturn up to one target artifact or a creature card with mana value X or less from your graveyard to the battlefield.",
+    "colors": [
+      "W"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Blink/ETB/Value"
+    ],
+    "artist": "Dall-E 3",
+    "_source": "White/Dust Off.png"
+  },
+  {
+    "id": "elite-teacher-fb1",
+    "name": "Elite Teacher",
+    "manaCost": "{W}",
+    "type": "Creature — Kor Wizard",
+    "rarity": "Uncommon",
+    "text": "When this creature enters or attacks, each player learns. (You may reveal a Lesson card you own from outside the game and put it into your hand, or discard a card to draw a card.)",
+    "colors": [
+      "W"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "artist": "ChatGPT",
+    "power": "2",
+    "toughness": "1",
+    "flavorText": "\"A lesson isn't a lesson if you don't learn from it.\"",
+    "_source": "White/Elite Teacher.png"
+  },
+  {
+    "id": "erni-shy-dreamer-fb1",
+    "name": "Erni, Shy Dreamer",
+    "manaCost": "{1}{W}",
+    "type": "Legendary Artifact Creature — Human Cat",
+    "rarity": "Rare",
+    "text": "More Than Meets the Eye {1}{G} (You may cast this card converted for {1}{G}.)\nVehicle spells you cast cost {2} less to cast.\nWhenever you cast a Vehicle spell, you draw a card and convert Erni.",
+    "colors": [
+      "W"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Vehicles"
+    ],
+    "artist": "Dustin Panzino",
+    "power": "1",
+    "toughness": "3",
+    "relatedFace": "Erni's Secret Identity",
+    "notes": "Reversible/transforming double-faced card; back face is Erni's Secret Identity.",
+    "flavorText": "\"She's never faced combat, never achieved a Neural Sync, and yet she returns bearing the same bruises as the Elite Five. Intriguing.\"\n— First-Year Class Report",
+    "_source": "White/Erni, Shy Dreamer.png"
+  },
+  {
+    "id": "erni-s-secret-identity-fb1",
+    "name": "Erni's Secret Identity",
+    "manaCost": "",
+    "type": "Legendary Kindred Artifact — Vehicle Cat",
+    "rarity": "Rare",
+    "text": "Living metal (During your turn, this Vehicle is also a creature.)\nErni's power and toughness are each equal to the number of creatures you control plus the number of Vehicles you control.\nWhenever Erni becomes the target of a spell or an ability for the first time each turn, counter it, draw a card and convert Erni.",
+    "colors": [
+      "G"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Vehicles"
+    ],
+    "artist": "VladGheneli",
+    "power": "*",
+    "toughness": "*",
+    "relatedFace": "Erni, Shy Dreamer",
+    "facedown": true,
+    "notes": "Back face of the reversible double-faced card Erni, Shy Dreamer. No printed mana cost.",
+    "flavorText": "Rumors of a girl who achieved complete Bio-Sync spread rapidly, drawing intrigue from curious mech-pilots and ruthless bio-cyber corporations alike.",
+    "_source": "White/Erni’s Secret Identity.png"
+  },
+  {
+    "id": "fill-the-wastes-fb1",
+    "name": "Fill the Wastes",
+    "manaCost": "{X}{X}{W}{W}",
+    "type": "Instant",
+    "rarity": "Mythic Rare",
+    "text": "Delve (Each card you exile from your graveyard while casting this spell pays for {1}.)\nCreate X 1/1 white Warrior creature tokens.",
+    "colors": [
+      "W"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Self-mill"
+    ],
+    "artist": "Khans Of Tarkir Trailer",
+    "relatedTokens": [
+      "1/1 white Warrior"
+    ],
+    "flavorText": "The Abzan and the Sultai agree: no amount of security is ever enough.",
+    "_source": "White/Fill the Wastes.png"
+  },
+  {
+    "id": "inklined-to-stop-fb1",
+    "name": "Inklined to Stop",
+    "manaCost": "{W}",
+    "type": "Sorcery — Lesson",
+    "rarity": "Rare",
+    "text": "Put each card exiled onto and by permanents target player controls into their owner's graveyard. Create a 2/1 white and black Inkling creature token for each card put into a graveyard this way.",
+    "colors": [
+      "W"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "artist": "ChatGPT",
+    "relatedTokens": [
+      "2/1 white and black Inkling"
+    ],
+    "flavorText": "Pun magic is encouraged by all Silverquill professors. The worse the pun is, the more inkredible.",
+    "_source": "White/Inklined to Stop.png"
+  },
+  {
+    "id": "judge-s-falcon-fb1",
+    "name": "Judge's Falcon",
+    "manaCost": "{W}",
+    "type": "Creature — Bird",
+    "rarity": "Uncommon",
+    "text": "Flying\nWhenever this creature attacks, tax 1. (The next spell each of your opponents cast cost {1} more to cast. This doesn't end at the end of turn.)\nSacrifice Judge's Falcon: Counter target noncreature spell unless its controller pays {1}.",
+    "colors": [
+      "W"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "artist": "ChatGPT",
+    "power": "1",
+    "toughness": "1",
+    "flavorText": "\"The owl and the falcon are working together! I've seen it with my own eyes!\"\n- Dar, Keyhole Downs Merchant",
+    "_source": "White/Judge’s Falcon.png"
+  },
+  {
+    "id": "leave-in-the-smokes-fb1",
+    "name": "Leave in the Smokes",
+    "manaCost": "{1}{W}",
+    "type": "Instant",
+    "rarity": "Rare",
+    "text": "Exile target nonland permanent with mana value less than or equal to the greatest power among Vehicle creatures you control.",
+    "colors": [
+      "W"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Vehicles"
+    ],
+    "artist": "ChatGPT",
+    "flavorText": "\"I don't see any competition around me—not out of arrogance, but because the only rival I recognize is the one I face in the mirror.\"\n—Derian, Top Ace",
+    "_source": "White/Leave in the Smokes.png"
+  },
+  {
+    "id": "lightsworn-behemoth-fb1",
+    "name": "Lightsworn Behemoth",
+    "manaCost": "{2}{W}",
+    "type": "Creature — Beast",
+    "rarity": "Uncommon",
+    "text": "Whenever a creature enters under your control, put a +1/+1 counter on this creature. If that creature didn't enter from your hand, instead put two +1/+1 counters on this creature.\nAs long as this creature's power is 5 or greater, it has indestructible.",
+    "colors": [
+      "W"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "artist": "TheHungTD",
+    "power": "2",
+    "toughness": "2",
+    "flavorText": "Before the shards converged, each of its steps shattered Naya. Now, it seeks healing, but through shattering the whole world.",
+    "_source": "White/Lightsworn Behemoth.png"
+  },
+  {
+    "id": "lightsworn-visionary-fb1",
+    "name": "Lightsworn Visionary",
+    "manaCost": "{1}{W}",
+    "type": "Artifact Creature — Vedalken Wizard",
+    "rarity": "Common",
+    "text": "When this creature enters, each player draws two cards. If this creature didn't enter from your hand, instead you draw two cards.",
+    "colors": [
+      "W"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Blink/ETB/Value"
+    ],
+    "artist": "Dall-E 3",
+    "power": "1",
+    "toughness": "1",
+    "flavorText": "\"Light is merely particles, and darkness is the absence of them. But I place no value in either. For us, the true light should lie in the spreading of knowledge—a beacon that dispels the darkness of ignorance.\"",
+    "_source": "White/Lightsworn Visionary.png"
+  },
+  {
+    "id": "mardu-phoenix-blessed-fb1",
+    "name": "Mardu Phoenix-Blessed",
+    "manaCost": "{W}{W}",
+    "type": "Creature — Human Warrior",
+    "rarity": "Rare",
+    "text": "Dash {1}{R}{R} (You may cast this spell for its dash cost. If you do, it gains haste, and it's returned from the battlefield to its owner's hand at the beginning of the next end step.)\nFlying\nWhen this creature enters, mill three cards.\nWhen this creature returns to your hand, return a card with mana value 3 or less from your graveyard to your hand.\nYou may cast Mardu Phoenix-Blessed from your graveyard using its dash ability.",
+    "colors": [
+      "W"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Self-mill"
+    ],
+    "artist": "ChatGPT",
+    "power": "3",
+    "toughness": "1",
+    "_source": "White/Mardu Phoenix-Blessed.png"
+  },
+  {
+    "id": "mat-selesnya-loresinger-fb1",
+    "name": "Mat'Selesnya Loresinger",
+    "manaCost": "{3}{W}",
+    "type": "Creature — Centaur Bard",
+    "rarity": "Special",
+    "text": "Unity (Token creatures you control have all activated abilities of all nontoken creatures you control with unity.)\n{T}: Surveil 1.\nWhenever one or more cards are put into your graveyard from your library, if at least one of them is a —\n• Creature card: Create a 1/1 green Saproling creature token.\n• Noncreature, nonland card: Create a Clue token.\n• Land card: Create a Treasure token.",
+    "colors": [
+      "W"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Self-mill",
+      "Token Collection"
+    ],
+    "artist": "Yaminokuni",
+    "power": "3",
+    "toughness": "3",
+    "relatedTokens": [
+      "1/1 green Saproling",
+      "Clue",
+      "Treasure"
+    ],
+    "_source": "White/Mat’Selesnya Loresinger.png"
+  },
+  {
+    "id": "memory-car-fb1",
+    "name": "Memory Car",
+    "manaCost": "{3}{W}{W}",
+    "type": "Artifact — Vehicle",
+    "rarity": "Rare",
+    "text": "Double strike\nWhenever this creature deals combat damage to a player, each player exiles all cards from their hand face down and draws seven cards. At the beginning of the next end step, each player discards their hand and returns to their hand each card they exiled this way.\nCrew 1",
+    "colors": [
+      "W"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Vehicles"
+    ],
+    "artist": "ChatGPT",
+    "power": "3",
+    "toughness": "3",
+    "_source": "White/Memory Car.png"
+  },
+  {
+    "id": "mirror-sigil-trooper-fb1",
+    "name": "Mirror-Sigil Trooper",
+    "manaCost": "{1}{W}",
+    "type": "Creature — Human Soldier",
+    "rarity": "Rare",
+    "text": "Non-Token Echo {1}{U} (At the beginning of your upkeep, if this came under your control since the beginning of your last upkeep and it's not a token, sacrifice it unless you pay its echo cost.)\nWhen this creature's echo cost is paid, create a token that's a copy of it.\nWhenever a creature you control attacks alone, create a token that's a copy of target token you control for each spell you've cast this turn.",
+    "colors": [
+      "W"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Storm"
+    ],
+    "artist": "ChatGPT",
+    "power": "2",
+    "toughness": "2",
+    "flavorText": "\"I have the best sparring partners.\"",
+    "_source": "White/Mirror-Sigil Trooper.png"
+  },
+  {
+    "id": "moth-winged-seeker-fb1",
+    "name": "Moth-Winged Seeker",
+    "manaCost": "{W}",
+    "type": "Artifact",
+    "rarity": "Rare",
+    "text": "At the end of each player's turn, if target opponent controls more lands than you, return target land card from your graveyard to the battlefield and untap Moth-Winged Seeker.\n{T}: Surveil 1.",
+    "colors": [
+      "W"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Self-mill"
+    ],
+    "artist": "ChatGPT",
+    "flavorText": "\"This is probably another one of Valgavoth's 'gifts', but I don't care. It's pretty, and it inspires me to move forward.\"\n- Maggie, Hopeful Survivor",
+    "_source": "White/Moth-Winged Seeker.png"
+  },
+  {
+    "id": "mutual-understanding-fb1",
+    "name": "Mutual Understanding",
+    "manaCost": "{1}{W}",
+    "type": "Sorcery",
+    "rarity": "Common",
+    "text": "Each player draws two cards.\nUntap up to two target lands you control.",
+    "colors": [
+      "W"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "artist": "Dall-E 3",
+    "flavorText": "\"In New Capenna, you give a little, you take a little. But this ain't New Capenna, kid. Here in Thunder Junction, it's a bird-eats-worm kinda world.\"\n— Borio, Brokers' Recruiter",
+    "_source": "White/Mutual Understanding.png"
+  },
+  {
+    "id": "palisade-champion-fb1",
+    "name": "Palisade Champion",
+    "manaCost": "{2}{W}",
+    "type": "Creature — Giant Soldier",
+    "rarity": "Rare",
+    "text": "Formation (Whenever a creature you control with formation is dealt damage for the first time each turn, you may have any amount of it be dealt to another creature you control.)\nYou have formation.\n{W}: Target creature you control gains formation until end of turn.",
+    "colors": [
+      "W"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "artist": "ChatGPT",
+    "power": "2",
+    "toughness": "4",
+    "_source": "White/Palisade Champion.png"
+  },
+  {
+    "id": "prismation-mankind-s-reach-to-heaven-fb1",
+    "name": "Prismation, Mankind's Reach to Heaven",
+    "manaCost": "{1}{W}{W}",
+    "type": "Legendary Artifact — Vehicle",
+    "rarity": "Mythic Rare",
+    "text": "Flash\nFlying, vigilance\n{W}, {T}: Return another target permanent you control to its owner's hand.\n{W}, {T}: Return to the battlefield target permanent card in your graveyard that was put there from the battlefield this turn.\nCrew 1",
+    "colors": [
+      "W"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Vehicles",
+      "Blink/ETB/Value"
+    ],
+    "artist": "ChatGPT",
+    "power": "3",
+    "toughness": "3",
+    "_source": "White/Prismation, Mankind’s Reach to Heaven               .png"
+  },
+  {
+    "id": "serra-savior-fb1",
+    "name": "Serra Savior",
+    "manaCost": "{6}{W}",
+    "type": "Creature — Angel",
+    "rarity": "Common",
+    "text": "This card costs {1} less to cast for each card type among cards in your graveyard.\nFlying, vigilance\nWard {2}\nWhen this creature enters the battlefield, you gain 4 life and you draw a card.",
+    "colors": [
+      "W"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Self-mill",
+      "Blink/ETB/Value"
+    ],
+    "artist": "Kaiz0",
+    "power": "4",
+    "toughness": "4",
+    "flavorText": "\"We lost so much, but the key word is 'we.' Remember—you are not alone.\"",
+    "_source": "White/Serra Savior.png"
+  },
+  {
+    "id": "sigiled-lightsworn-fb1",
+    "name": "Sigiled Lightsworn",
+    "manaCost": "{W}",
+    "type": "Creature — Human Cleric",
+    "rarity": "Rare",
+    "text": "Exalted (Whenever a creature you control attacks alone, that creature gets +1/+1 until end of turn.)\n{T}: Destroy another target creature, then return it to the battlefield under its owner's control.",
+    "colors": [
+      "W"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Blink/ETB/Value"
+    ],
+    "artist": "Silvia Meiliani",
+    "power": "0",
+    "toughness": "1",
+    "flavorText": "A decade after the shards merged, the three white-aligned shards united to form an organization called The Lightsworns, dedicated to finding light and countering the darkness embodied by the remaining two shards.",
+    "_source": "White/Sigiled Lightsworn.png"
+  },
+  {
+    "id": "the-bank-robs-you-fb1",
+    "name": "The Bank Robs You",
+    "manaCost": "{1}{W}",
+    "type": "Enchantment",
+    "rarity": "Rare",
+    "text": "Whenever an opponent's debt is paid, you gain that much life.\nAt the beginning of your upkeep, you lose 1 life and create a 1/1 white Vampire Cleric creature token with \"Whenever this creature deals combat damage to a player, they get that many debt counters.\" (At the beginning of that player's end step, they may pay {1} for each debt counter they have. They remove that many counters, then lose 1 life for each debt counter they have.)",
+    "colors": [
+      "W"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "artist": "ChatGPT",
+    "relatedTokens": [
+      "1/1 white Vampire Cleric"
+    ],
+    "_source": "White/The Bank Robs You.png"
+  },
+  {
+    "id": "the-golden-touch-fb1",
+    "name": "The Golden Touch",
+    "manaCost": "{1}{W}",
+    "type": "Legendary Artifact — Vehicle Treasure",
+    "rarity": "Rare",
+    "text": "Whenever you cast your second spell each turn, you may pay {1}{W}. If you do, return The Golden Touch from your graveyard to the battlefield and draw a card.\n{T}, Sacrifice The Golden Touch: Add one mana of any color.\nCrew 1",
+    "colors": [
+      "W"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Vehicles",
+      "Storm"
+    ],
+    "artist": "Luisa Fumi",
+    "power": "3",
+    "toughness": "3",
+    "_source": "White/The Golden Touch.png"
+  },
+  {
+    "id": "tongue-in-cheek-fb1",
+    "name": "Tongue in Cheek",
+    "manaCost": "{W}",
+    "type": "Sorcery",
+    "rarity": "Rare",
+    "text": "Look at target opponent's hand. You may exile a nonland card from it. For as long as that card remains exiled, its owner may play it. A spell cast this way costs {2} more to cast.",
+    "colors": [
+      "W"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "artist": "Dall-E 3",
+    "flavorText": "Mouth-binding magic is strictly banned in Silverquill duels, which is precisely why they reserve it for their classmates in other houses.",
+    "_source": "White/Tongue in Cheek.png"
+  },
+  {
+    "id": "wagon-of-karmic-justice-fb1",
+    "name": "Wagon of Karmic Justice",
+    "manaCost": "{5}{W}{W}",
+    "type": "Legendary Artifact — Vehicle",
+    "rarity": "Mythic Rare",
+    "text": "Affinity for permanent types that you don't control and your opponents control.\nFlying\nWhenever this enters or attacks, each opponent sacrifices a permanent of each type.\nCrew 3",
+    "colors": [
+      "W"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Vehicles",
+      "Artifacts"
+    ],
+    "artist": "ChatGPT",
+    "power": "5",
+    "toughness": "9",
+    "_source": "White/Wagon of Karmic Justice.png"
+  },
+  {
+    "id": "your-own-story-fb1",
+    "name": "Your Own Story",
+    "manaCost": "{1}{W}",
+    "type": "Enchantment — Saga",
+    "rarity": "Mythic Rare",
+    "text": "Fill the blanks as Your Own Story enters.\nI: ___ (Surveil 3/Draw a card/You gain 6 life).\nII: If you control two ___, destroy all ___ other than this permanent. (artifacts, creatures, enchantments)\nIII: At the end of turn, return ___ from your graveyard to your hand. (a card named Your Own Story/each other permanent card with converted mana cost 2 or less.)",
+    "colors": [
+      "W"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Enchantments",
+      "Self-mill"
+    ],
+    "artist": "Iris Rodriguez",
+    "_source": "White/Your Own Story.png"
+  }
+]

@@ -1,0 +1,492 @@
+[
+  {
+    "id": "begone-fb4",
+    "name": "Begone",
+    "manaCost": "{2}{U}",
+    "type": "Sorcery",
+    "rarity": "Rare",
+    "text": "Choose one —\n• Put target creature on top of its owner's library.\n• Target player puts a Confusion card on top of their library. (Confusion is a colorless sorcery card with no mana cost that has cycling {2}.)\nEntwine {B} (Choose both if you pay the entwine cost.)",
+    "colors": [
+      "U"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "artist": "Matt Forsyth",
+    "_source": "Blue/Begone.png"
+  },
+  {
+    "id": "blend-in-fb4",
+    "name": "Blend In",
+    "manaCost": "{1}{U}",
+    "type": "Enchantment — Aura",
+    "rarity": "Uncommon",
+    "text": "Enchant creature\nEnchanted creature loses all abilities, has hexproof, it can't be blocked and is a green and white Citizen creature with base power and toughness 1/1 named Face in the Crowd.\n{3}: This Aura phases out. Any player may activate this ability.",
+    "colors": [
+      "U"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "artist": "ChatGPT 4o",
+    "_source": "Blue/Blend In.png"
+  },
+  {
+    "id": "decorated-sibsig-fb4",
+    "name": "Decorated Sibsig",
+    "manaCost": "{2}{U}",
+    "type": "Creature — Zombie Druid",
+    "rarity": "Rare",
+    "text": "{U}, {T}: Move all counters from another target creature onto this creature. Gain control of all permanents attached to that creature and attach them to this creature.\nRenew — {3}{U}, Exile this card from your graveyard: Put a +1/+1 counter on target creature you control. Move all counters from other creatures onto that creature. Gain control of all permanents attached to those creatures and attach them to that creature. Activate only as a sorcery.",
+    "colors": [
+      "U"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Self-mill"
+    ],
+    "power": "2",
+    "toughness": "2",
+    "artist": "IllustrationsBySam",
+    "_source": "Blue/Decorated Sibsig.png"
+  },
+  {
+    "id": "dreams-can-travel-tonight-fb4",
+    "name": "Dreams Can Travel Tonight",
+    "manaCost": "{U}",
+    "type": "Sorcery",
+    "rarity": "Uncommon",
+    "text": "Put up to three land cards from your hand onto the battlefield. Return them to your hand at the beginning of the next end step.",
+    "colors": [
+      "U"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "flavorText": "\"You may drift through endless dreamscapes, but waking always brings you back to where your heart calls home…\"",
+    "artist": "Peter Ryan",
+    "_source": "Blue/Dreams Can Travel Tonight.png"
+  },
+  {
+    "id": "frog-leap-fb4",
+    "name": "Frog Leap",
+    "manaCost": "{U}",
+    "type": "Instant",
+    "rarity": "Uncommon",
+    "text": "Buyback {2}{G} (You may pay an additional {2}{G} as you cast this spell. If you do, put this card into your hand as it resolves.)\nTarget creature gets +3/+3 and gains flying until end of turn. At the end of turn, return it to its owner's hand unless this spell was buybacked.",
+    "colors": [
+      "U"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "flavorText": "With the weight of the whole village resting behind her knees, Helga let go of fear, felt the raindrops—and leapt.",
+    "artist": "ChatGPT o4",
+    "_source": "Blue/Frog Leap.png"
+  },
+  {
+    "id": "gifts-unwrapped-fb4",
+    "name": "Gifts Unwrapped",
+    "manaCost": "{3}{U}",
+    "type": "Instant",
+    "rarity": "Rare",
+    "text": "Open four boosters. An opponent chooses two of them. Shuffle the chosen boosters into your library and that opponent shuffles the other two boosters into their library.",
+    "colors": [
+      "U"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "artist": "Dall-E 3 (I hope D. Alexander Gregory is going to sue you holy f)",
+    "_source": "Blue/Gifts Unwrapped.png"
+  },
+  {
+    "id": "how-cold-of-you-fb4",
+    "name": "How Cold of You",
+    "manaCost": "{2}{U}",
+    "type": "Sorcery",
+    "rarity": "Uncommon",
+    "text": "This spell costs {2} less to cast if it targets a creature you control.\nTap up to two target creatures and put a stun counter on each of those creatures.\nCipher (Then you may exile this spell card encoded on a creature you control. Whenever that creature deals combat damage to a player, its controller may cast a copy of the encoded card without paying its mana cost.)",
+    "colors": [
+      "U"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Broken Cipher"
+    ],
+    "artist": "DavidMahl",
+    "_source": "Blue/How Cold of You.png"
+  },
+  {
+    "id": "identity-theft-fb4",
+    "name": "Identity Theft",
+    "manaCost": "{1}{U}",
+    "type": "Sorcery",
+    "rarity": "Rare",
+    "text": "Populate (Create a token that's a copy of a creature token you control.)\nCipher (Then you may exile this spell card encoded on a creature you control. Whenever that creature deals combat damage to a player, its controller may cast a copy of the encoded card without paying its mana cost.)",
+    "colors": [
+      "U"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Broken Cipher"
+    ],
+    "artist": "ChatGPT o4",
+    "_source": "Blue/Identity Theft.png"
+  },
+  {
+    "id": "magecaster-page-fb4",
+    "name": "Magecaster Page",
+    "manaCost": "{2}{U}",
+    "type": "Artifact",
+    "rarity": "Rare",
+    "text": "Flash\n{1}{U}, {T}, Discard a card: Create a Snapcaster Mage token. (It's a 2/1 {1}{U} Human Wizard with \"When this creature enters, target instant or sorcery card in your graveyard gains flashback until end of turn. The flashback cost is equal to its mana cost.\")",
+    "colors": [
+      "U"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Self-mill"
+    ],
+    "artist": "ChatGPT o4",
+    "relatedTokens": [
+      "Snapcaster Mage"
+    ],
+    "_source": "Blue/Magecaster Page.png"
+  },
+  {
+    "id": "mental-breakdown-fb4",
+    "name": "Mental Breakdown",
+    "manaCost": "{1}{U}{U}",
+    "type": "Battle Enchantment — Aura State",
+    "rarity": "Rare",
+    "text": "(Enchanted creature's controller defends this State. When it's defeated, the owner of enchanted creature exiles this State, then cast it transformed.)\nEnchant creature you don't own\nYou control enchanted creature.",
+    "colors": [
+      "U"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "artist": "ChatGPT o4",
+    "_source": "Blue/Mental Breakdown.png",
+    "relatedFace": "Not Myself Lately"
+  },
+  {
+    "id": "muddle-with-existance-fb4",
+    "name": "Muddle with Existence",
+    "manaCost": "{U}",
+    "type": "Instant",
+    "rarity": "Uncommon",
+    "text": "Choose one —\n• Until end of turn, cards can't leave exile.\n• Exile target artifact or enchantment, then return that card to the battlefield under its owner's control.\nEntwine {1}{W} (Choose both if you pay the entwine cost.)",
+    "colors": [
+      "U"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "artist": "sakimori_st30",
+    "_source": "Blue/Muddle with Existance.png"
+  },
+  {
+    "id": "not-myself-lately-fb4",
+    "name": "Not Myself Lately",
+    "type": "Sorcery",
+    "rarity": "Rare",
+    "text": "You may cast this spell transformed. If you don't, draw three cards.",
+    "colors": [
+      "U"
+    ],
+    "custom": true,
+    "facedown": true,
+    "archetypes": [],
+    "flavorText": "\"Sometimes, I don't feel like myself—like something else is wearing my skin, looking through my eyes. If you're hearing this… you will understand soon enough.\"\n—Found Cassette, Covered in Oil",
+    "artist": "ChatGPT o4",
+    "_source": "Blue/Not Myself Lately.png",
+    "relatedFace": "Mental Breakdown"
+  },
+  {
+    "id": "nyxification-fb4",
+    "name": "Nyxification",
+    "manaCost": "{2}{U}",
+    "type": "Enchantment",
+    "rarity": "Rare",
+    "text": "Creatures you control are enchantments in addition to their other types. The same is true for creature spells you control and creature cards you own that aren't on the battlefield.\n{2}{U}: Target enchantment becomes an enchantment creature with power and toughness each equal to its mana value until end of turn.",
+    "colors": [
+      "U"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Enchantments"
+    ],
+    "artist": "Tashi Nakia",
+    "_source": "Blue/Nyxification.png"
+  },
+  {
+    "id": "orca-war-beast-fb4",
+    "name": "Orca War-Beast",
+    "manaCost": "{4}{U}{U}",
+    "type": "Creature — Leviathan Beast Mount",
+    "rarity": "Rare",
+    "text": "Ward {4}\nWhenever this creature attacks while saddled, untap all artifacts and creatures you control and tap all artifacts and creatures you don't control.\nSaddle 4 (Tap any number of other creatures you control with total power 6 or more: This Mount becomes saddled until end of turn. Saddle only as a sorcery.)",
+    "colors": [
+      "U"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "power": "6",
+    "toughness": "6",
+    "artist": "Davesrightmind",
+    "_source": "Blue/Orca War-Beast.png"
+  },
+  {
+    "id": "pay-day-fb4",
+    "name": "Pay Day",
+    "manaCost": "{4}{U}",
+    "type": "Sorcery",
+    "rarity": "Common",
+    "text": "Tax 3 (The next spell each of your opponents cast costs {3} more to cast. This doesn't end at the end of turn.)\nDraw a card.",
+    "colors": [
+      "U"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "flavorText": "The Azorius hire tax collectors whose dedication runs so deep, they'd still do the job for free.",
+    "artist": "Based on art by RenMoraes",
+    "_source": "Blue/Pay Day.png"
+  },
+  {
+    "id": "perish-that-thought-fb4",
+    "name": "Perish That Thought",
+    "manaCost": "{U}",
+    "type": "Sorcery",
+    "rarity": "Rare",
+    "text": "Target player reveals their hand. You choose a nonland card from it. That player exiles that card, then draws a card.",
+    "colors": [
+      "U"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "flavorText": "\"One day I imagined myself to be sad. It was a great day, for to summon sorrow from nothing is to admit it once had meaning. In pretending to ache, I remembered all that had once made me whole.\"",
+    "artist": "ChatGPT o4",
+    "_source": "Blue/Perish That Thought.png"
+  },
+  {
+    "id": "plesiosplash-fb4",
+    "name": "Plesiosplash",
+    "manaCost": "{U}",
+    "type": "Enchantment Creature — Elemental",
+    "rarity": "Rare",
+    "text": "Whenever this creature dies, discard a card. If you do, draw a card.\nYou may cast this card from your graveyard using its evoke ability.\nEvoke {2}{R} (You may cast this spell for its evoke cost. If you do, it's sacrificed when it enters.)",
+    "colors": [
+      "U"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Self-mill"
+    ],
+    "power": "1",
+    "toughness": "1",
+    "artist": "Hurca!",
+    "_source": "Blue/Plesiosplash.png"
+  },
+  {
+    "id": "point-and-laugh-fb4",
+    "name": "Point and Laugh",
+    "manaCost": "{U}",
+    "type": "Instant",
+    "rarity": "Common",
+    "text": "Create a Cursed Role token attached to target creature. (If you control another Role on it, put that one into the graveyard. Enchanted creature is 1/1.)\nDraw a card.",
+    "colors": [
+      "U"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "flavorText": "Most tales of Eldraine are epic tales of heroism and grandeur. This one… barely croaks.",
+    "artist": "ChatGPT o4",
+    "relatedTokens": [
+      "Cursed Role"
+    ],
+    "_source": "Blue/Point and Laugh.png"
+  },
+  {
+    "id": "protective-custody-fb4",
+    "name": "Protective Custody",
+    "manaCost": "{1}{U}{U}",
+    "type": "Enchantment — Aura",
+    "rarity": "Rare",
+    "text": "Enchant creature\nYou control enchanted creature.\nEnchanted creature loses all abilities and is a green and white Citizen creature with base power and toughness 1/1 named Familiar Stranger. (It loses all other colors, card types, creature types, and names.)",
+    "colors": [
+      "U"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "artist": "ChatGPT o4",
+    "_source": "Blue/Protective Custody.png"
+  },
+  {
+    "id": "savvy-seagull-fb4",
+    "name": "Savvy Seagull",
+    "manaCost": "{2}{U}",
+    "type": "Creature — Bird",
+    "rarity": "Rare",
+    "text": "Flying, prowess\nWhenever this creature attacks, you may cast target noncreature spell from your graveyard this turn. If you don't, create a Shard token. (It's an enchantment with \"{2}, Sacrifice this token: Scry 1, then draw a card.\")",
+    "colors": [
+      "U"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Prowess",
+      "Self-mill"
+    ],
+    "power": "2",
+    "toughness": "2",
+    "artist": "Elisabeth Lucas",
+    "relatedTokens": [
+      "Shard"
+    ],
+    "_source": "Blue/Savvy Seagull.png"
+  },
+  {
+    "id": "soul-encoder-fb4",
+    "name": "Soul Encoder",
+    "manaCost": "{1}{U}{U}",
+    "type": "Creature — Spirit Ninja",
+    "rarity": "Rare",
+    "text": "Cipherjitsu {2}{U}{U} ({2}{U}{U}, Exile an unblocked attacker you control: Put this creature onto the battlefield tapped and attacking, then encode the exiled creature to it. Whenever this creature deals combat damage to a player, you may cast a copy of the encoded card without paying its mana cost.)\nFlying",
+    "colors": [
+      "U"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Broken Cipher"
+    ],
+    "power": "3",
+    "toughness": "3",
+    "artist": "ChatGPT o4",
+    "_source": "Blue/Soul Encoder.png"
+  },
+  {
+    "id": "swarm-of-night-s-sky-fb4",
+    "name": "Swarm of Night's Sky",
+    "manaCost": "{1}{U}",
+    "type": "Enchantment Creature — Insect",
+    "rarity": "Rare",
+    "text": "Bestow {2}{U} (If you cast this card for its bestow cost, it's an Aura spell with enchant creature. It becomes a creature again if it's not attached to a creature.)\nFlying\nEnchanted creature gets +1/+1 and has flying.\nStorm",
+    "colors": [
+      "U"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Storm"
+    ],
+    "power": "1",
+    "toughness": "1",
+    "artist": "NightCafe",
+    "_source": "Blue/Swarm of Night’s Sky .png"
+  },
+  {
+    "id": "taukai-spellstainer-fb4",
+    "name": "Taukai Spellstainer",
+    "manaCost": "{1}{U}",
+    "type": "Creature — Shark Shaman",
+    "rarity": "Uncommon",
+    "text": "Noncreature spells you cast cost {1} less to cast if you've gained life this turn and {1} less to cast if you've lost life this turn.",
+    "colors": [
+      "U"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Storm"
+    ],
+    "power": "2",
+    "toughness": "1",
+    "flavorText": "Most sharkfolk of the Lost Isles of Ulak'thaar follow the Vow of Humanity, forsaking their hunger to live peacefully with humans—except for the Taukai, whose thirst for violence deepens with each passing tide.",
+    "artist": "Arcane Wonders",
+    "_source": "Blue/Taukai Spellstainer.png"
+  },
+  {
+    "id": "terai-ghost-writer-fb4",
+    "name": "Terai, Ghost Writer",
+    "manaCost": "{2}{U}{U}",
+    "type": "Legendary Creature — Spirit Detective",
+    "rarity": "Rare",
+    "text": "Flying\nWhen Terai enters, you may search your graveyard, hand and/or library for a card named Blend In, Protective Custody and/or Witness Protection and put them into your hand. If you search your library this way, shuffle.\nWhenever you cast a spell that targets a creature, draw a card.",
+    "colors": [
+      "U"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "power": "3",
+    "toughness": "3",
+    "flavorText": "\"Based on true story… trust me.\"",
+    "artist": "ChatGPT o4",
+    "_source": "Blue/Terai, Ghost Writer.png"
+  },
+  {
+    "id": "the-pretender-fb4",
+    "name": "The Pretender",
+    "manaCost": "{3}{U}",
+    "type": "Legendary Creature — Mutant Shapeshifter",
+    "rarity": "Rare",
+    "text": "You may have The Pretender enter as a copy of any creature on the battlefield, except it has all the abilities of The Experiment. When it does, its name becomes The Experiment and you experiment 4. (You get four {experiment} counters. If you don't control The Experiment, create one. Then, spend any amount of {experiment} on it.)",
+    "colors": [
+      "U"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "power": "0",
+    "toughness": "0",
+    "artist": "ChatGPT 4o",
+    "_source": "Blue/The Pretender.png"
+  },
+  {
+    "id": "traditional-futurist-fb4",
+    "name": "Traditional Futurist",
+    "manaCost": "{U}",
+    "type": "Enchantment Artifact Creature — Moonfolk Artificer",
+    "rarity": "Rare",
+    "text": "Custom spells you cast cost {1} less to cast as long as you control two or more noncustom, nonland, nontoken permanents.\nNoncustom spells you cast cost {1} less to cast as long as you control two or more other noncustom, nonland, nontoken permanents.",
+    "colors": [
+      "U"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Storm"
+    ],
+    "power": "1",
+    "toughness": "2",
+    "artist": "ChatGPT o4",
+    "_source": "Blue/Traditional Futurist.png"
+  },
+  {
+    "id": "train-of-thought-not-the-guildpact-one-fb4",
+    "name": "Train of Thought (Not the Guildpact One)",
+    "manaCost": "{1}{U}",
+    "type": "Artifact — Vehicle",
+    "rarity": "Uncommon",
+    "text": "Replicate {1}{U} (When you cast this spell, copy it for each time you paid its replicate cost. A copy of a permanent spell becomes a token.)\nWhen this Vehicle enters, draw a card.\nCrew 1",
+    "colors": [
+      "U"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Vehicles"
+    ],
+    "power": "3",
+    "toughness": "2",
+    "flavorText": "Obviously.",
+    "artist": "ChatGPT o4",
+    "_source": "Blue/Train of Thought (Not the Guildpact One)          .png"
+  },
+  {
+    "id": "wall-of-questions-fb4",
+    "name": "Wall of Questions",
+    "manaCost": "{1}{U}",
+    "type": "Enchantment Creature — Wall",
+    "rarity": "Uncommon",
+    "text": "Defender\nWhen this creature enters, draw a card.",
+    "colors": [
+      "U"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "power": "0",
+    "toughness": "4",
+    "flavorText": "The sphinx adores it, for within lies a paradox: To enter, one must abandon the desire to solve it.",
+    "artist": "ChatGPT o4",
+    "_source": "Blue/Wall of Questions.png"
+  }
+]

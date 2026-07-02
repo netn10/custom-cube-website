@@ -1,0 +1,181 @@
+[
+  {
+    "id": "claimed-by-the-muse-fb5",
+    "name": "Claimed by the Muse",
+    "manaCost": "{1}{U}{U}",
+    "type": "Instant",
+    "rarity": "Uncommon",
+    "text": "Create a 1/1 green Island Dryad land creature token, then choose one —\n• Counter target spell.\n• Draw two cards.",
+    "colors": [
+      "U"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "flavorText": "Beauty is in the eyes of the beholder, but your eyes were never truly yours.",
+    "artist": "Peakpx",
+    "relatedTokens": [
+      "1/1 green Island Dryad"
+    ],
+    "_source": "Blue/Claimed by the Muse.png"
+  },
+  {
+    "id": "clonogoyf-fb5",
+    "name": "Clonogoyf",
+    "manaCost": "{3}{U}",
+    "type": "Creature — Lhurgoyf",
+    "rarity": "Rare",
+    "text": "You may have this creature enter the battlefield as a copy of any creature, except its power is equal to the number of card types among cards in all graveyards and its toughness is equal to that number plus 1.",
+    "colors": [
+      "U"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Self-mill"
+    ],
+    "power": "*",
+    "toughness": "1+*",
+    "artist": "D1ESELX",
+    "_source": "Blue/Clonogoyf.png"
+  },
+  {
+    "id": "cognition-fb5",
+    "name": "Cognition",
+    "manaCost": "{U}",
+    "type": "Sorcery",
+    "rarity": "Common",
+    "text": "Surveil 1, then draw a card, then surveil 1.",
+    "colors": [
+      "U"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "flavorText": "\"Oh, hacking? I'll say it's art, and science, and finding out who the hell you are under all this noise. And yeah—it's feeding the ever-growing crowd that craves the next Run sticking it to the Corpos.\"",
+    "artist": "Matt Zeilinger",
+    "_source": "Blue/Cognition.png"
+  },
+  {
+    "id": "curator-of-broken-timelines-fb5",
+    "name": "Curator of Broken Timelines",
+    "manaCost": "{5}{U}{U}",
+    "type": "Creature — Sphinx",
+    "rarity": "Mythic Rare",
+    "text": "Flying\nWhen this creature enters, you get an additional deck of all the cards of the Cube that got nerfed. (You may draw from either deck.)",
+    "colors": [
+      "U"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "power": "5",
+    "toughness": "5",
+    "flavorText": "\"Sit down, it's your time to learn the legend of Danna and Aram.\"",
+    "artist": "ChatGPT o4",
+    "_source": "Blue/Curator of Broken Timelines.png"
+  },
+  {
+    "id": "disrespect-fb5",
+    "name": "Disrespect",
+    "manaCost": "{U}",
+    "type": "Instant",
+    "rarity": "Common",
+    "text": "Counter target spell unless its controller pays {1}. Your opponents respect you until the end of your next turn. (Creatures can't attack you or block creatures you control unless their controller pays {1} for each creature they control that's attacking you or blocking a creature you control. You have ward {1}.)",
+    "colors": [
+      "U"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "artist": "Lie Setiawan",
+    "_source": "Blue/Disrespect.png"
+  },
+  {
+    "id": "gifted-arithmancer-fb5",
+    "name": "Gifted Arithmancer",
+    "manaCost": "{2}{U}",
+    "type": "Creature — Human Wizard",
+    "rarity": "Rare",
+    "text": "When this creature enters, assign the numbers 2 and 4 to the variables A and B.\nA{U}, {T}: Learn. (You may reveal a Lesson card you own from outside the game and put it into your hand, or discard a card to draw a card.)\nB{U}, {T}: Create a 0/0 green and blue Fractal creature token. Put B +1/+1 counters on it.",
+    "colors": [
+      "U"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "power": "A",
+    "toughness": "B",
+    "flavorText": "\"Odd. You even read it twice.\"",
+    "artist": "Nano Banana",
+    "relatedTokens": [
+      "0/0 blue and green Fractal"
+    ],
+    "_source": "Blue/Gifted Arithmancer.png"
+  },
+  {
+    "id": "govermental-appropriation-fb5",
+    "name": "Governmental Appropriation",
+    "manaCost": "{1}{U}{U}",
+    "type": "Sorcery",
+    "rarity": "Rare",
+    "text": "Gain control of target nonland permanent. Tax yourself X, where X is that permanent's mana cost. (The next spell you cast costs {X} more to cast. This doesn't end at the end of turn.)",
+    "colors": [
+      "U"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "flavorText": "\"…Failing to do so, your goods shall be impounded at the nearest Interplanar Omenpath, subject to seizure, and cataloged under Section VII of the Ravnica Import Restrictions.\"",
+    "artist": "Nano Banana",
+    "_source": "Blue/Govermental Appropriation.png"
+  },
+  {
+    "id": "mean-arithmetic-fb5",
+    "name": "Mean Arithmetic",
+    "manaCost": "{2}{U}{U}",
+    "type": "Sorcery — Lesson",
+    "rarity": "Rare",
+    "text": "You scry X, then draw a card, then create a 0/0 green and blue Fractal creature token, then put X +1/+1 counters on it, where X is the average of mana values among nonland permanents you control, rounded up. (The sum of the n values, divided by n.)",
+    "colors": [
+      "U"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "flavorText": "Outliers can be dangerous.",
+    "artist": "Nano Banana",
+    "relatedTokens": [
+      "0/0 blue and green Fractal"
+    ],
+    "_source": "Blue/Mean Arithmetic.png"
+  },
+  {
+    "id": "mega-proompting-fb5",
+    "name": "Mega Proompting",
+    "manaCost": "{3}{U}{U}",
+    "type": "Sorcery",
+    "rarity": "Rare",
+    "text": "Create an enchantment token named Prompt. It has \"When this enchantment enters, ask ChatGPT with 'Give my Prompt enchantment token exactly one ability.'\"\nStorm (When you cast this spell, copy it for each spell cast before it this turn.)",
+    "colors": [
+      "U"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Storm"
+    ],
+    "artist": "Anders Lundbjörk",
+    "relatedTokens": [
+      "Prompt"
+    ],
+    "_source": "Blue/Mega Proompting.png",
+    "prompt": "Give my Prompt enchantment token exactly one ability."
+  },
+  {
+    "id": "waterbending-mastery-fb5",
+    "name": "Waterbending Mastery",
+    "manaCost": "{4}{U}{U}",
+    "type": "Enchantment",
+    "rarity": "Rare",
+    "text": "Spells you cast and activated abilities you activate are waterbended. (While paying a waterbend cost, you can tap your artifacts and creatures to help. Each one pays for {1}.)",
+    "colors": [
+      "U"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "artist": "Nickelodeon Animation Studio",
+    "_source": "Blue/Waterbending Mastery.png"
+  }
+]

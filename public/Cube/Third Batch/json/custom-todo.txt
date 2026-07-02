@@ -1,0 +1,114 @@
+Black\Asura of Insatiable Ambitions.png
+Black\Diabolical Scheme.png
+Black\Dianna, Scorn of the Moon.png
+Black\Edgar, the Groom.png
+Black\Escape from the Underworld.png
+Black\From the Shadows They Come.png
+Black\Gaze of Stone.png
+Black\Gorgon Granite-Collector.png
+Black\Him of Forgotten Kingdom.png
+Black\Hugs’ Legendary Pile.png
+Black\Killer Performance.png
+Black\Mech-Savant of the Core.png
+Black\Meet the Crew.png
+Black\Mindbender Moroii.png
+Black\No Hope At All.png
+Black\No Rose Without Thorns.png
+Black\Take a Loan.png
+Black\Temple Might Ruins.png
+Black\ZebZeb, First Day at the Job .png
+Black\ZebZeb, Master Detective.png
+Blue\Arbiter-Approved Material.png
+Blue\Dungeon Trapper.png
+Blue\Faerie Gale-Bringer.png
+Blue\Fear of Mana Flood.png
+Blue\Feedback Loop.png
+Blue\Hall of Shame.png
+Blue\Memories of a Friend.png
+Blue\Mind or Matter.png
+Blue\Obscura Influencer.png
+Blue\Pod 042, Tactical Support Unit.png
+Blue\Recon.png
+Blue\Riches Beyond Imagination.png
+Blue\Show-Off Attitude.png
+Blue\Sow Doubt.png
+Blue\Thassa’s Enchantress.png
+Blue\The Usurper of House Dimir.png
+Blue\Who Could It Be_.png
+Blue\Yolov, Biomancy Visionary.png
+Colorless\Banner of Solidarity.png
+Colorless\Blue-Eyes White Dragon.png
+Colorless\Brain-Clearing Chip.png
+Colorless\Cogwork Bartender.png
+Colorless\Cogwork Phone.png
+Colorless\Cogwork Rotator.png
+Colorless\Fiery War Axe.png
+Colorless\Garbage Collector.png
+Colorless\Gilded Cage.png
+Colorless\Gorgon’s Necklace.png
+Colorless\Impossible Confluence.png
+Colorless\Inferno Fun, Rakdos’s Favorite.png
+Colorless\Mind Stoner.png
+Colorless\Sol Rig.png
+Colorless\The Genesis Vat.png
+Colorless\The Omniorb.png
+Colorless\Wall of Paperwork.png
+Green\All Must Be Perfected.png
+Green\Argoth’s Findings.png
+Green\Benzir, Archdruid of Temple Might.png
+Green\Burning-Tree Storyteller.png
+Green\Chorus of the Worldsoul.png
+Green\Circuit Gorger.png
+Green\Essence of the Clans.png
+Green\Extract DNA.png
+Green\Kianne, Experimental Mage.png
+Green\Nissa, Verdant Soul.png
+Green\Saikeiseisha, Reshaper of Boseiju.png
+Green\Someone to Rely On.png
+Green\Sow a Better Tommorow.png
+Green\The Otterly Impossible Machine.png
+Green\Tricky Trickshoter.png
+Green\What Nature Giveth.png
+Green\Yolov’s Refined Technique.png
+Lands\Brokers Safehouse.png
+Lands\Experimental Test Facility.png
+Lands\Hatching Ground.png
+Lands\Jeskai Monastery.png
+Lands\Omnious Basement.png
+Lands\That Damned Road.png
+Lands\The Open Road.png
+Lands\Treasury Catacomb.png
+Red\Afterimage Brawler.png
+Red\Buckle Up.png
+Red\Chandra, Wildfire Heart.png
+Red\Code Monkey.png
+Red\Earthcore Elder.png
+Red\Escaping Bolt.png
+Red\Ethereal Blacksmith.png
+Red\Evoker of Unbound Potential.png
+Red\Fear of Mana Screw.png
+Red\Flames of Revolution.png
+Red\Goblin Mauler.png
+Red\High-Octane Mind-Stimulator.png
+Red\Humanity’s Determination.png
+Red\Olivia, the Bride.png
+Red\Pump and Dump.png
+Red\Reflections of a Daydreamer.png
+Red\Scavenger’s Ritual.png
+Red\Seri, Fierce Friend.png
+Red\Survivalist’s Luck.png
+Red\The Floor is Lava.png
+Red\Twisted Piñata.png
+Red\Valuable Smithing.png
+White\2B, Reflection of Humanity.png
+White\Confiscate Goods.png
+White\Gentelman’s Agreement.png
+White\Leona, the Radiant Dawn.png
+White\My Old Form Disgusted Me.png
+White\Rin, Loyal Friend.png
+White\Solar Force.png
+White\The Legion Does Not Forget.png
+White\Together Again.png
+White\True Face of Divinity.png
+White\United We Stand.png
+White\Vizkopa Bank Manager.png

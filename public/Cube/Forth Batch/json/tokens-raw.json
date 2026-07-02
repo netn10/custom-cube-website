@@ -1,0 +1,358 @@
+[
+  {
+    "name": "Cheese",
+    "type": "Artifact — Food",
+    "colors": [],
+    "text": "{2}, {T}, Sacrifice this token: You gain 3 life.",
+    "artist": "ChatGPT o4",
+    "_source": "Tokens/Cheese.png"
+  },
+  {
+    "name": "Child",
+    "type": "Token Creature — Child",
+    "colors": [],
+    "power": "1",
+    "toughness": "2",
+    "text": "Curiosity (Whenever this creature deals damage to an opponent, you may draw a card.)",
+    "artist": "PBS",
+    "_source": "Tokens/Child.png"
+  },
+  {
+    "name": "Debt",
+    "type": "Counter",
+    "colors": [],
+    "text": "At the beginning of your upkeep, you may pay {1} for each debt counter you have. If you do, remove that many debt counters from yourself, then you lose 1 life for each debt counter you have.",
+    "artist": "Seb McKinnon",
+    "_source": "Tokens/Debt.png"
+  },
+  {
+    "name": "Dough",
+    "type": "Artifact — Food",
+    "colors": [],
+    "text": "{2}, {T}, Sacrifice this token: You gain 3 life.",
+    "artist": "ChatGPT o4",
+    "_source": "Tokens/Dough.png"
+  },
+  {
+    "name": "Forest Dryad",
+    "type": "Token Land Creature — Forest Dryad",
+    "colors": ["G"],
+    "power": "1",
+    "toughness": "1",
+    "text": "(This creature is affected by summoning sickness, and it has \"{T}: Add {G}.\")",
+    "artist": "ChatGPT o4",
+    "_source": "Tokens/Forest Dryad.png"
+  },
+  {
+    "name": "Golden Egg",
+    "type": "Artifact — Food",
+    "colors": [],
+    "text": "When Golden Egg enters the battlefield, draw a card.\n{1}, {T}, Sacrifice Golden Egg: Add one mana of any color.\n{2}, {T}, Sacrifice Golden Egg: You gain 3 life.",
+    "artist": "Lindsey Look",
+    "_source": "Tokens/Golden Egg.jpg"
+  },
+  {
+    "name": "Hatching Ground",
+    "type": "Token Kindred Land Creature — Lizard",
+    "colors": [],
+    "power": "1",
+    "toughness": "1",
+    "text": "Devour permenant 1\nThis creature enters tapped.\n{T}: Add {B}, {R}, or {G}.",
+    "artist": "Dall-E 3",
+    "_source": "Tokens/Hatching Ground.png"
+  },
+  {
+    "name": "Human Monk",
+    "type": "Token Creature — Human Monk",
+    "colors": [],
+    "power": "2",
+    "toughness": "1",
+    "text": "Prowess (Whenever you cast a noncreature spell, this creature gets +1/+1 until end of turn.)",
+    "artist": "ChatGPT o4",
+    "_source": "Tokens/Human Monk.png"
+  },
+  {
+    "name": "Human Soldier",
+    "type": "Token Creature — Human Soldier",
+    "colors": [],
+    "power": "1",
+    "toughness": "1",
+    "text": "Haste",
+    "artist": "ChatGPT o4",
+    "_source": "Tokens/Human Soldier.png"
+  },
+  {
+    "name": "Inkfathom",
+    "type": "Token Enchantment — Aura Role",
+    "colors": [],
+    "text": "Enchant creature\nEnchanted creature can't block and can't be blocked.",
+    "artist": "ChatGPT o4",
+    "_source": "Tokens/Inkfathom.png"
+  },
+  {
+    "name": "Island Dryad",
+    "type": "Token Land Creature — Island Dryad",
+    "colors": ["G"],
+    "power": "1",
+    "toughness": "1",
+    "text": "(This creature is affected by summoning sickness, and it has \"{T}: Add {U}.\")",
+    "artist": "ChatGPT o4",
+    "_source": "Tokens/Island Dryad.png"
+  },
+  {
+    "name": "Lazotep Archway",
+    "type": "Token Creature — Zombie",
+    "colors": [],
+    "power": "4",
+    "toughness": "4",
+    "text": "This creature enters tapped.\n{T}: Add {W} or {B}.",
+    "artist": "Dall-E 3",
+    "_source": "Tokens/Lazotep Archway.png"
+  },
+  {
+    "name": "Mountain Dryad",
+    "type": "Token Land Creature — Mountain Dryad",
+    "colors": ["G"],
+    "power": "1",
+    "toughness": "1",
+    "text": "(This creature is affected by summoning sickness, and it has \"{T}: Add {R}.\")",
+    "artist": "ChatGPT o4",
+    "_source": "Tokens/Mountain Dryad.png"
+  },
+  {
+    "name": "Nourisher",
+    "type": "Token Artifact Creature — Treefolk Horror",
+    "colors": [],
+    "power": "4",
+    "toughness": "6",
+    "text": "At the beginning of your upkeep, return target creature card from your graveyard to your hand.",
+    "artist": "ChatGPT o4",
+    "_source": "Tokens/Nourisher (Creature).png"
+  },
+  {
+    "name": "Nourisher",
+    "type": "Token Artifact",
+    "colors": [],
+    "text": "At the beginning of your upkeep, return target creature card from your graveyard to your hand.",
+    "artist": "ChatGPT o4",
+    "_source": "Tokens/Nourisher (Noncreature).png"
+  },
+  {
+    "name": "Petrified Copy",
+    "type": "Token Artifact",
+    "colors": [],
+    "text": "This token can be used to represent a token that's a copy of a permanent, except it's an artifact and no other type.",
+    "artist": "Dall-E 3",
+    "_source": "Tokens/Petrified Copy.png"
+  },
+  {
+    "name": "Pilot",
+    "type": "Token Creature — Pilot",
+    "colors": [],
+    "power": "1",
+    "toughness": "1",
+    "text": "This token saddles Mounts and crews Vehicles as though its power were 2 greater.",
+    "artist": "Julia Metzger",
+    "_source": "Tokens/Pilot.jpg"
+  },
+  {
+    "name": "Pizza",
+    "type": "Artifact — Food",
+    "colors": [],
+    "text": "{2}, {T}, Sacrifice this token: You gain 9 life and draw three cards.",
+    "artist": "ChatGPT o4",
+    "_source": "Tokens/Pizza.png"
+  },
+  {
+    "name": "Plains Dryad",
+    "type": "Token Land Creature — Plains Dryad",
+    "colors": ["G"],
+    "power": "1",
+    "toughness": "1",
+    "text": "(This creature is affected by summoning sickness, and it has \"{T}: Add {W}.\")",
+    "artist": "ChatGPT o4",
+    "_source": "Tokens/Plains Dryad.png"
+  },
+  {
+    "name": "Potential",
+    "type": "Token Enchantment",
+    "colors": [],
+    "text": "{3}, Sacrifice this token: Cast each card exiled with it without paying its mana cost.",
+    "artist": "Craiyon",
+    "_source": "Tokens/Potential.png"
+  },
+  {
+    "name": "Shepard of the Cycle",
+    "type": "Artifact",
+    "colors": [],
+    "text": "{2}, {T}: Put a +1/+1 counter on target creature for each artifact and/or creature you control. If this permanent is an artifact, also put a +1/+1 counter on that creature for each artifact and/or creature card in your graveyard.",
+    "artist": "ChatGPT o4",
+    "_source": "Tokens/Shepard of the Cycle token.png"
+  },
+  {
+    "name": "Snapcaster Mage",
+    "type": "Creature — Human Wizard",
+    "colors": ["U"],
+    "power": "2",
+    "toughness": "1",
+    "text": "Flash\nWhen Snapcaster Mage enters the battlefield, target instant or sorcery card in your graveyard gains flashback until end of turn. The flashback cost is equal to its mana cost. (You may cast that card from your graveyard for its flashback cost. Then exile it.)",
+    "artist": "Volkan Baga",
+    "_source": "Tokens/Snapcaster Mage.jpg"
+  },
+  {
+    "name": "Spirit",
+    "type": "Token Creature — Spirit",
+    "colors": [],
+    "power": "1",
+    "toughness": "1",
+    "text": "",
+    "artist": "Julie Dillon",
+    "_source": "Tokens/Spirit.jpg"
+  },
+  {
+    "name": "Swamp Dryad",
+    "type": "Token Land Creature — Swamp Dryad",
+    "colors": ["G"],
+    "power": "1",
+    "toughness": "1",
+    "text": "(This creature is affected by summoning sickness, and it has \"{T}: Add {B}.\")",
+    "artist": "ChatGPT o4",
+    "_source": "Tokens/Swamp Dryad.png"
+  },
+  {
+    "name": "Sweat",
+    "type": "Token Artifact — Vehicle",
+    "colors": [],
+    "power": "4",
+    "toughness": "3",
+    "text": "Crew 1",
+    "artist": "ChatGPT o4",
+    "_source": "Tokens/Sweat.png"
+  },
+  {
+    "name": "Tears",
+    "type": "Token Artifact — Vehicle",
+    "colors": [],
+    "power": "3",
+    "toughness": "4",
+    "text": "Crew 1",
+    "artist": "ChatGPT o4",
+    "_source": "Tokens/Tears.png"
+  },
+  {
+    "name": "The Experiment",
+    "type": "Legendary Creature — Mutant",
+    "colors": [],
+    "power": "1",
+    "toughness": "1",
+    "text": "(Spend experiment counters only when you experiment. These abilities are counters.)\n{experiment}: Trample or vigilance.\n{experiment}{experiment}: +1/+1 or prowess.\n{experiment}{experiment}{experiment}: Hexproof or shield.\n{experiment}{experiment}{experiment}{experiment}: \"{T}: Draw cards equal to this creature's power.\"\n{experiment}{experiment}{experiment}{experiment}{experiment}: \"{T}: Experiment X, where X's The Experiment's power.\"",
+    "artist": "Dall-E 3",
+    "_source": "Tokens/The Experiment.png"
+  },
+  {
+    "name": "The Three",
+    "type": "Legendary Creature — Eldrazi Eldrazi Eldrazi Eldrazi Eldrazi Eldrazi Eldrazi Eldrazi Eldrazi",
+    "colors": [],
+    "power": "100",
+    "toughness": "100",
+    "text": "This is literally all the Eldrazi titans, from Rise of the Eldrazi, Battle for Zendikar block, Eldrich Moon and Modern Horizons 3. Hey, you succefully melded all the Titens in the cube — you deserve it!",
+    "artist": "Pindurski",
+    "_source": "Tokens/The Three.png"
+  },
+  {
+    "name": "Tomato",
+    "type": "Artifact — Food",
+    "colors": [],
+    "text": "{2}, {T}, Sacrifice this token: You gain 3 life.",
+    "artist": "ChatGPT o4",
+    "_source": "Tokens/Tomato.png"
+  },
+  {
+    "name": "Vehicle",
+    "type": "Token Artifact — Vehicle",
+    "colors": [],
+    "power": "*",
+    "toughness": "*",
+    "text": "Crew 1",
+    "artist": "ChatGPT o4",
+    "_source": "Tokens/Vehicle.png"
+  },
+  {
+    "name": "Vernadi Shieldmate",
+    "type": "Creature — Human Soldier",
+    "colors": ["G", "W"],
+    "power": "2",
+    "toughness": "2",
+    "text": "Vigilance",
+    "artist": "Matt Stewart",
+    "_source": "Tokens/Vernadi Shieldmate.jpg"
+  },
+  {
+    "name": "Vessel of the Cycle",
+    "type": "Artifact",
+    "colors": [],
+    "text": "{T}: If this permenant is a creature, sacrifice a creature. Then, add {B}{B}.",
+    "artist": "ChatGPT o4",
+    "_source": "Tokens/Vessel of the Cycle token.png"
+  },
+  {
+    "name": "Visionary of Unfathomable Sights",
+    "type": "Token Creature — Human Horror Eldrazi",
+    "colors": [],
+    "power": "8",
+    "toughness": "8",
+    "text": "When this creature enters or attacks, discard cards equal to its toughness, then draw cards equal to its power.",
+    "artist": "Imagen 3",
+    "_source": "Tokens/Visionary of Unfathomable Sights token.png"
+  },
+  {
+    "name": "Vizier of Second Glory",
+    "type": "Token Creature — Zombie Human Cleric",
+    "colors": [],
+    "power": "2",
+    "toughness": "1",
+    "text": "When this creature enters, target creature card in your graveyard gains embalm until end of turn. The embalm cost is equal to its mana cost.",
+    "artist": "ChatGPT 4o",
+    "_source": "Tokens/Vizier of Second Glory token.png"
+  },
+  {
+    "name": "Warrior",
+    "type": "Token Creature — Warrior",
+    "colors": [],
+    "power": "1",
+    "toughness": "1",
+    "text": "",
+    "artist": "Forrest Imel",
+    "_source": "Tokens/Warrior.jpg"
+  },
+  {
+    "name": "Young Pyromancer",
+    "type": "Creature — Human Shaman",
+    "colors": ["R"],
+    "power": "2",
+    "toughness": "1",
+    "text": "Whenever you cast an instant or sorcery spell, put a 1/1 red Elemental creature token onto the battlefield.",
+    "artist": "Cynthia Sheppard",
+    "_source": "Tokens/Young Pyromancer.jpg"
+  },
+  {
+    "name": "Wolf",
+    "type": "Token Creature — Wolf",
+    "colors": ["W"],
+    "power": "2",
+    "toughness": "2",
+    "text": "",
+    "artist": "emowolfonsol",
+    "_source": "Tokens/______________ (White Wolf).png"
+  },
+  {
+    "name": "Wolf",
+    "type": "Token Creature — Wolf",
+    "colors": ["B"],
+    "power": "2",
+    "toughness": "2",
+    "text": "",
+    "artist": "flameborn.artstation",
+    "_source": "Tokens/______________ Black Wolf).png"
+  }
+]

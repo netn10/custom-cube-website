@@ -3,7 +3,7 @@
 import React from 'react';
 import { useState, useRef, useEffect } from 'react';
 import { FaDice, FaRandom, FaCalculator, FaSearch, FaPlusCircle, FaList, FaRobot } from 'react-icons/fa';
-import { getBotDraftPick, getDraftPack, getMultipleDraftPacks, getSuggestions, addSuggestion, uploadSuggestionImage, getChatGPTCards, getChatGPTResponse, getChatGPTResponseAlt, getRandomPack, getShowDecks, API_BASE_URL } from '@/lib/api';
+import { getBotDraftPick, getDraftPack, getMultipleDraftPacks, getSuggestions, addSuggestion, uploadSuggestionImage, getChatGPTCards, getChatGPTResponse, getChatGPTResponseAlt, getRandomPack, getShowDecks, API_BASE_URL, getImageSrc } from '@/lib/api';
 
 type Tool = {
   id: string;
@@ -953,7 +953,7 @@ function DraftSimulator() {
             }}
           >
             <img 
-              src={card.imageUrl.startsWith('data:') ? card.imageUrl : `${API_BASE_URL}/image-proxy?url=${encodeURIComponent(card.imageUrl)}`}
+              src={getImageSrc(card.imageUrl)}
               alt={card.name}
               className="w-full h-auto rounded shadow-xl"
               style={{ maxHeight: '500px' }}
@@ -1521,12 +1521,8 @@ function DraftSimulator() {
           
           img.onerror = () => reject(new Error('Failed to load image'));
           
-          // Use the proxy URL for external images
-          if (url.startsWith('data:')) {
-            img.src = url;
-          } else {
-            img.src = `${API_BASE_URL}/image-proxy?url=${encodeURIComponent(url)}`;
-          }
+          // External images go through the proxy; local/data URLs are used directly
+          img.src = getImageSrc(url);
         });
       };
 
@@ -1728,7 +1724,7 @@ function DraftSimulator() {
                       {card.imageUrl ? (
                         <div className="relative w-32 h-44 overflow-hidden rounded shadow-md hover:shadow-lg transition-shadow duration-200">
                           <img 
-                            src={card.imageUrl.startsWith('data:') ? card.imageUrl : `${API_BASE_URL}/image-proxy?url=${encodeURIComponent(card.imageUrl)}`} 
+                            src={getImageSrc(card.imageUrl)} 
                             alt={card.name} 
                             className="w-full h-full object-cover"
                             onError={(e) => {
@@ -1839,7 +1835,7 @@ function DraftSimulator() {
                           >
                             {card.imageUrl ? (
                               <img 
-                                src={card.imageUrl.startsWith('data:') ? card.imageUrl : `${API_BASE_URL}/image-proxy?url=${encodeURIComponent(card.imageUrl)}`} 
+                                src={getImageSrc(card.imageUrl)} 
                                 alt={card.name} 
                                 className="w-20 h-28 object-cover rounded shadow-sm hover:shadow-md transition-shadow"
                               />
@@ -1859,7 +1855,7 @@ function DraftSimulator() {
                             title={`${landCard.name} - Basic Land`}
                           >
                             <img 
-                              src={`${API_BASE_URL}/image-proxy?url=${encodeURIComponent(landCard.imageUrl)}`} 
+                              src={getImageSrc(landCard.imageUrl)}
                               alt={landCard.name} 
                               className="w-20 h-28 object-cover rounded shadow-sm"
                             />
@@ -1897,7 +1893,7 @@ function DraftSimulator() {
                           >
                             {card.imageUrl ? (
                               <img 
-                                src={card.imageUrl.startsWith('data:') ? card.imageUrl : `${API_BASE_URL}/image-proxy?url=${encodeURIComponent(card.imageUrl)}`} 
+                                src={getImageSrc(card.imageUrl)} 
                                 alt={card.name} 
                                 className="w-20 h-28 object-cover rounded shadow-sm hover:shadow-md transition-shadow"
                               />
@@ -2158,7 +2154,7 @@ function DraftSimulator() {
                               {card.imageUrl ? (
                                 <div className="relative w-full aspect-[2.5/3.5] overflow-hidden rounded shadow-md hover:shadow-lg transition-shadow duration-200">
                                   <img 
-                                    src={card.imageUrl.startsWith('data:') ? card.imageUrl : `${API_BASE_URL}/image-proxy?url=${encodeURIComponent(card.imageUrl)}`} 
+                                    src={getImageSrc(card.imageUrl)} 
                                     alt={card.name} 
                                     className="w-full h-full object-cover"
                                     onError={(e) => {
@@ -2358,7 +2354,7 @@ function DraftSimulator() {
                                         {card.imageUrl ? (
                                           <div className="relative w-full aspect-[2.5/3.5] overflow-hidden rounded shadow-md hover:shadow-lg transition-shadow duration-200">
                                             <img 
-                                              src={card.imageUrl.startsWith('data:') ? card.imageUrl : `${API_BASE_URL}/image-proxy?url=${encodeURIComponent(card.imageUrl)}`} 
+                                              src={getImageSrc(card.imageUrl)} 
                                               alt={card.name} 
                                               className="w-full h-full object-cover"
                                               onError={(e) => {
@@ -2419,7 +2415,7 @@ function DraftSimulator() {
                                           {card.imageUrl ? (
                                             <div className="relative w-full aspect-[2.5/3.5] overflow-hidden rounded shadow-md hover:shadow-lg transition-shadow duration-200">
                                               <img 
-                                                src={card.imageUrl.startsWith('data:') ? card.imageUrl : `${API_BASE_URL}/image-proxy?url=${encodeURIComponent(card.imageUrl)}`} 
+                                                src={getImageSrc(card.imageUrl)} 
                                                 alt={card.name} 
                                                 className="w-full h-full object-cover"
                                               />
@@ -2455,7 +2451,7 @@ function DraftSimulator() {
                                          {card.imageUrl ? (
                                            <div className="relative w-full aspect-[2.5/3.5] overflow-hidden rounded shadow-md hover:shadow-lg transition-shadow duration-200 opacity-75">
                                              <img 
-                                               src={card.imageUrl.startsWith('data:') ? card.imageUrl : `${API_BASE_URL}/image-proxy?url=${encodeURIComponent(card.imageUrl)}`} 
+                                               src={getImageSrc(card.imageUrl)} 
                                                alt={card.name} 
                                                className="w-full h-full object-cover"
                                                onError={(e) => {
@@ -2544,7 +2540,7 @@ function DraftSimulator() {
                   {card.imageUrl ? (
                     <div className="relative h-full w-full overflow-hidden">
                       <img 
-                        src={card.imageUrl.startsWith('data:') ? card.imageUrl : `${API_BASE_URL}/image-proxy?url=${encodeURIComponent(card.imageUrl)}`} 
+                        src={getImageSrc(card.imageUrl)} 
                         alt={card.name} 
                         className="mtg-card-image w-full h-auto object-contain"
                         onError={(e) => {
@@ -2627,7 +2623,7 @@ function DraftSimulator() {
                     {card.imageUrl ? (
                       <div className="relative w-32 h-44 overflow-hidden rounded shadow-md hover:shadow-lg transition-shadow duration-200">
                         <img 
-                          src={card.imageUrl.startsWith('data:') ? card.imageUrl : `${API_BASE_URL}/image-proxy?url=${encodeURIComponent(card.imageUrl)}`} 
+                          src={getImageSrc(card.imageUrl)} 
                           alt={card.name} 
                           className="w-full h-full object-cover"
                           onError={(e) => {
@@ -2689,7 +2685,7 @@ function DraftSimulator() {
                                   {pick.card.imageUrl ? (
                                     <div className="relative w-32 h-44 overflow-hidden rounded shadow-md hover:shadow-lg transition-shadow duration-200">
                                       <img 
-                                        src={pick.card.imageUrl.startsWith('data:') ? pick.card.imageUrl : `${API_BASE_URL}/image-proxy?url=${encodeURIComponent(pick.card.imageUrl)}`} 
+                                        src={getImageSrc(pick.card.imageUrl)}
                                         alt={pick.card.name} 
                                         className="w-full h-full object-cover"
                                         onError={(e) => {
@@ -2826,7 +2822,7 @@ function RandomPackGenerator() {
                   {card.imageUrl && (
                     <div className="absolute inset-0 p-1">
                       <img 
-                        src={card.imageUrl.startsWith('data:') ? card.imageUrl : `${API_BASE_URL}/image-proxy?url=${encodeURIComponent(card.imageUrl)}`} 
+                        src={getImageSrc(card.imageUrl)} 
                         alt={card.name}
                         className="w-full h-full object-cover rounded"
                         loading="lazy"
@@ -3608,7 +3604,7 @@ function SuggestedCards() {
                 {suggestion.imageUrl && (
                   <div className="flex justify-center p-2">
                     <img 
-                      src={suggestion.imageUrl.startsWith('data:') ? suggestion.imageUrl : `${API_BASE_URL}/image-proxy?url=${encodeURIComponent(suggestion.imageUrl)}`} 
+                      src={getImageSrc(suggestion.imageUrl)}
                       alt={suggestion.name} 
                       className="mtg-card"
                       onError={(e) => {
@@ -3801,7 +3797,7 @@ function AskChatGPT() {
               {card.imageUrl && (
                 <div className="flex justify-center p-2">
                   <img 
-                    src={card.imageUrl.startsWith('data:') ? card.imageUrl : `${API_BASE_URL}/image-proxy?url=${encodeURIComponent(card.imageUrl)}`} 
+                    src={getImageSrc(card.imageUrl)} 
                     alt={card.name} 
                     className="mtg-card"
                     onError={(e) => {

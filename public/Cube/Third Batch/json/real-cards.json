@@ -1,0 +1,1116 @@
+[
+  {
+    "id": "black-market-connections-msc",
+    "name": "Black Market Connections",
+    "manaCost": "{2}{B}",
+    "type": "Enchantment",
+    "rarity": "Rare",
+    "text": "At the beginning of your first main phase, choose one or more —\n• Sell Contraband — Create a Treasure token. You lose 1 life.\n• Buy Information — Draw a card. You lose 2 life.\n• Hire a Mercenary — Create a 3/2 colorless Shapeshifter creature token with changeling. You lose 3 life. (It is every creature type.)",
+    "colors": [
+      "B"
+    ],
+    "custom": false,
+    "archetypes": [
+      "Token Collection"
+    ],
+    "artist": "Xabi Gaztelua",
+    "set": "Marvel Super Heroes Commander",
+    "imageUrl": "/Cube/RealCards/black-market-connections-msc.jpg",
+    "_source": "Black\\Black Market Connections.jpg",
+    "relatedTokens": [
+      "Treasure",
+      "3/2 colorless Shapeshifter"
+    ]
+  },
+  {
+    "id": "bolas-s-citadel-war",
+    "name": "Bolas's Citadel",
+    "manaCost": "{3}{B}{B}{B}",
+    "type": "Legendary Artifact",
+    "rarity": "Rare",
+    "text": "You may look at the top card of your library any time.\nYou may play lands and cast spells from the top of your library. If you cast a spell this way, pay life equal to its mana value rather than pay its mana cost.\n{T}, Sacrifice ten nonland permanents: Each opponent loses 10 life.",
+    "colors": [
+      "B"
+    ],
+    "custom": false,
+    "archetypes": [],
+    "artist": "Jonas De Ro",
+    "set": "War of the Spark",
+    "imageUrl": "/Cube/RealCards/bolas-s-citadel-war.jpg",
+    "_source": "Black\\Bolas's Citadel.jpg"
+  },
+  {
+    "id": "booster-tutor-und",
+    "name": "Booster Tutor",
+    "manaCost": "{B}",
+    "type": "Instant",
+    "rarity": "Uncommon",
+    "text": "Open a sealed Magic booster pack, reveal the cards, and put one of them into your hand. (Remove that card from your deck before beginning a new game.)",
+    "colors": [
+      "B"
+    ],
+    "custom": false,
+    "archetypes": [],
+    "flavorText": "\"You saved that *Urza's Saga* pack all these years for *this*?\"",
+    "artist": "Heather Hudson",
+    "set": "Unsanctioned",
+    "imageUrl": "/Cube/RealCards/booster-tutor-und.jpg",
+    "_source": "Black\\Booster Tutor.jpg"
+  },
+  {
+    "id": "orcish-bowmasters-ltr",
+    "name": "Orcish Bowmasters",
+    "manaCost": "{1}{B}",
+    "type": "Creature — Orc Archer",
+    "rarity": "Rare",
+    "text": "Flash\nWhen this creature enters and whenever an opponent draws a card except the first one they draw in each of their draw steps, this creature deals 1 damage to any target. Then amass Orcs 1.",
+    "colors": [
+      "B"
+    ],
+    "custom": false,
+    "archetypes": [
+      "Blink/ETB/Value"
+    ],
+    "artist": "Maxim Kostin",
+    "power": "1",
+    "toughness": "1",
+    "set": "The Lord of the Rings: Tales of Middle-earth",
+    "imageUrl": "/Cube/RealCards/orcish-bowmasters-ltr.jpg",
+    "_source": "Black\\Orcish Bowmasters.jpg"
+  },
+  {
+    "id": "sedgemoor-witch-stx",
+    "name": "Sedgemoor Witch",
+    "manaCost": "{2}{B}",
+    "type": "Creature — Human Warlock",
+    "rarity": "Rare",
+    "text": "Menace\nWard—Pay 3 life. (Whenever this creature becomes the target of a spell or ability an opponent controls, counter it unless that player pays 3 life.)\nMagecraft — Whenever you cast or copy an instant or sorcery spell, create a 1/1 black and green Pest creature token with \"When this token dies, you gain 1 life.\"",
+    "colors": [
+      "B"
+    ],
+    "custom": false,
+    "archetypes": [
+      "Storm",
+      "Prowess"
+    ],
+    "artist": "Igor Kieryluk",
+    "power": "3",
+    "toughness": "2",
+    "set": "Strixhaven: School of Mages",
+    "imageUrl": "/Cube/RealCards/sedgemoor-witch-stx.jpg",
+    "_source": "Black\\Sedgemoor Witch.jpg",
+    "relatedTokens": [
+      "1/1 black and green Pest"
+    ]
+  },
+  {
+    "id": "yawgmoth-s-testament-cmb2",
+    "name": "Yawgmoth's Testament",
+    "manaCost": "{2}{B}",
+    "type": "Sorcery",
+    "rarity": "Rare",
+    "text": "Until end of turn, you may play face-up cards you own from exile.\nIf a card would be put into your graveyard or exile from anywhere this turn, put it on the bottom of your library instead.",
+    "colors": [
+      "B"
+    ],
+    "custom": false,
+    "archetypes": [],
+    "artist": "Mary Kathryn Amiotte-Beaulieu",
+    "set": "Mystery Booster Playtest Cards 2021",
+    "imageUrl": "/Cube/RealCards/yawgmoth-s-testament-cmb2.jpg",
+    "_source": "Black\\Yawgmoth's Testament.jpg"
+  },
+  {
+    "id": "arcane-heist-otc",
+    "name": "Arcane Heist",
+    "manaCost": "{2}{U}{U}",
+    "type": "Sorcery",
+    "rarity": "Rare",
+    "text": "You may cast target instant or sorcery card from an opponent's graveyard without paying its mana cost. If that spell would be put into their graveyard, exile it instead.\nCipher (Then you may exile this spell card encoded on a creature you control. Whenever that creature deals combat damage to a player, its controller may cast a copy of the encoded card without paying its mana cost.)",
+    "colors": [
+      "U"
+    ],
+    "custom": false,
+    "archetypes": [
+      "Broken Cipher"
+    ],
+    "artist": "Anna Pavleeva",
+    "set": "Outlaws of Thunder Junction Commander",
+    "imageUrl": "/Cube/RealCards/arcane-heist-otc.jpg",
+    "_source": "Blue\\Arcane Heist.jpg"
+  },
+  {
+    "id": "etherium-sculptor-eoc",
+    "name": "Etherium Sculptor",
+    "manaCost": "{1}{U}",
+    "type": "Artifact Creature — Vedalken Artificer",
+    "rarity": "Common",
+    "text": "Artifact spells you cast cost {1} less to cast.",
+    "colors": [
+      "U"
+    ],
+    "custom": false,
+    "archetypes": [
+      "Artifacts"
+    ],
+    "flavorText": "The greatest masters of the craft abandon tools altogether, shaping metal with hand and mind alone.",
+    "artist": "Steven Belledin",
+    "power": "1",
+    "toughness": "2",
+    "set": "Edge of Eternities Commander",
+    "imageUrl": "/Cube/RealCards/etherium-sculptor-eoc.jpg",
+    "_source": "Blue\\Etherium Sculptor.jpg"
+  },
+  {
+    "id": "force-of-will-dmr",
+    "name": "Force of Will",
+    "manaCost": "{3}{U}{U}",
+    "type": "Instant",
+    "rarity": "Mythic Rare",
+    "text": "You may pay 1 life and exile a blue card from your hand rather than pay this spell's mana cost.\nCounter target spell.",
+    "colors": [
+      "U"
+    ],
+    "custom": false,
+    "archetypes": [],
+    "flavorText": "\"Your artillery will burn itself out before I allow my focus to waver.\"",
+    "artist": "Donato Giancola",
+    "set": "Dominaria Remastered",
+    "imageUrl": "/Cube/RealCards/force-of-will-dmr.jpg",
+    "_source": "Blue\\Force of Will.jpg"
+  },
+  {
+    "id": "mind-s-desire-c21",
+    "name": "Mind's Desire",
+    "manaCost": "{4}{U}{U}",
+    "type": "Sorcery",
+    "rarity": "Rare",
+    "text": "Shuffle your library. Then exile the top card of your library. Until end of turn, you may play that card without paying its mana cost.\nStorm (When you cast this spell, copy it for each spell cast before it this turn.)",
+    "colors": [
+      "U"
+    ],
+    "custom": false,
+    "archetypes": [
+      "Storm"
+    ],
+    "artist": "Anthony Francisco",
+    "set": "Commander 2021",
+    "imageUrl": "/Cube/RealCards/mind-s-desire-c21.jpg",
+    "_source": "Blue\\Mind's Desire.jpg"
+  },
+  {
+    "id": "propaganda-msc",
+    "name": "Propaganda",
+    "manaCost": "{2}{U}",
+    "type": "Enchantment",
+    "rarity": "Uncommon",
+    "text": "Creatures can't attack you unless their controller pays {2} for each creature they control that's attacking you.",
+    "colors": [
+      "U"
+    ],
+    "custom": false,
+    "archetypes": [],
+    "flavorText": "\"Why vote for a mere mortal when you can vote for a god?\"",
+    "artist": "Borja Pindado",
+    "set": "Marvel Super Heroes Commander",
+    "imageUrl": "/Cube/RealCards/propaganda-msc.jpg",
+    "_source": "Blue\\Propaganda.jpg"
+  },
+  {
+    "id": "thassa-s-oracle-thb",
+    "name": "Thassa's Oracle",
+    "manaCost": "{U}{U}",
+    "type": "Creature — Merfolk Wizard",
+    "rarity": "Rare",
+    "text": "When this creature enters, look at the top X cards of your library, where X is your devotion to blue. Put up to one of them on top of your library and the rest on the bottom of your library in a random order. If X is greater than or equal to the number of cards in your library, you win the game. (Each {U} in the mana costs of permanents you control counts toward your devotion to blue.)",
+    "colors": [
+      "U"
+    ],
+    "custom": false,
+    "archetypes": [
+      "Self-mill"
+    ],
+    "artist": "Jesper Ejsing",
+    "power": "1",
+    "toughness": "3",
+    "set": "Theros Beyond Death",
+    "imageUrl": "/Cube/RealCards/thassa-s-oracle-thb.jpg",
+    "_source": "Blue\\Thassa's Oracle.jpg"
+  },
+  {
+    "id": "there-tb3",
+    "name": "There",
+    "manaCost": "{U}",
+    "type": "Instant — Lesson",
+    "rarity": "Rare",
+    "text": "Exile target creature you control, then return it to the battlefield under its owner's control.\nThey're {1}{U} (Instant — Lesson): Up to three target creatures can't be blocked this turn.\nTheir {2}{U} (Instant — Lesson): Target opponent gains control of target creature you control.",
+    "colors": [
+      "U"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Blink/ETB/Value"
+    ],
+    "artist": "Marika Lord",
+    "_source": "Blue/There.jpg"
+  },
+  {
+    "id": "triton-wavebreaker-mh3",
+    "name": "Triton Wavebreaker",
+    "manaCost": "{U}",
+    "type": "Enchantment Creature — Merfolk Wizard",
+    "rarity": "Uncommon",
+    "text": "Bestow {1}{U} (If you cast this card for its bestow cost, it's an Aura spell with enchant creature. It becomes a creature again if it's not attached.)\nAs long as this permanent is a creature, it has prowess. (Whenever you cast a noncreature spell, this creature gets +1/+1 until end of turn.)\nEnchanted creature gets +1/+1 and has prowess.",
+    "colors": [
+      "U"
+    ],
+    "custom": false,
+    "archetypes": [
+      "Prowess"
+    ],
+    "artist": "Christina Kraus",
+    "power": "1",
+    "toughness": "1",
+    "set": "Modern Horizons 3",
+    "imageUrl": "/Cube/RealCards/triton-wavebreaker-mh3.jpg",
+    "_source": "Blue\\Triton Wavebreaker.jpg"
+  },
+  {
+    "id": "deal-broker-cns",
+    "name": "Deal Broker",
+    "manaCost": "{3}",
+    "type": "Artifact Creature — Construct",
+    "rarity": "Rare",
+    "text": "Draft this card face up.\nImmediately after the draft, you may reveal a card in your card pool. Each other player may offer you one card in their card pool in exchange. You may accept any one offer.\n{T}: Draw a card, then discard a card.",
+    "colors": [],
+    "custom": false,
+    "archetypes": [],
+    "artist": "Cliff Childs",
+    "power": "2",
+    "toughness": "3",
+    "set": "Conspiracy",
+    "imageUrl": "/Cube/RealCards/deal-broker-cns.jpg",
+    "_source": "Colorless\\Deal Broker.jpg"
+  },
+  {
+    "id": "microscope-mb2",
+    "name": "Microscope",
+    "manaCost": "{2}",
+    "type": "Artifact",
+    "rarity": "Rare",
+    "text": "{T}: Surveil 1.\n{T}: Target permanent card in a graveyard becomes a 0/0 black Germ creature in addition to its other colors and types until end of turn. (This effect ends if it leaves the graveyard.)",
+    "colors": [],
+    "custom": false,
+    "archetypes": [
+      "Self-mill"
+    ],
+    "artist": "Alina Marica",
+    "set": "Mystery Booster 2",
+    "imageUrl": "/Cube/RealCards/microscope-mb2.jpg",
+    "_source": "Colorless\\Microscope.jpg"
+  },
+  {
+    "id": "collective-resistance-mh3",
+    "name": "Collective Resistance",
+    "manaCost": "{1}{G}",
+    "type": "Instant",
+    "rarity": "Uncommon",
+    "text": "Escalate {G} (Pay this cost for each mode chosen beyond the first.)\nChoose one or more —\n• Destroy target artifact.\n• Destroy target enchantment.\n• Target creature gains hexproof and indestructible until end of turn.",
+    "colors": [
+      "G"
+    ],
+    "custom": false,
+    "archetypes": [],
+    "artist": "Raoul Vitale",
+    "set": "Modern Horizons 3",
+    "imageUrl": "/Cube/RealCards/collective-resistance-mh3.jpg",
+    "_source": "Green\\Collective Resistance.jpg"
+  },
+  {
+    "id": "dragonsguard-elite-stx",
+    "name": "Dragonsguard Elite",
+    "manaCost": "{1}{G}",
+    "type": "Creature — Human Druid",
+    "rarity": "Rare",
+    "text": "Magecraft — Whenever you cast or copy an instant or sorcery spell, put a +1/+1 counter on this creature.\n{4}{G}{G}: Double the number of +1/+1 counters on this creature.",
+    "colors": [
+      "G"
+    ],
+    "custom": false,
+    "archetypes": [
+      "Prowess"
+    ],
+    "flavorText": "\"The Founder Dragons brought the Blood Age to an end. It is an honor to serve them.\"",
+    "artist": "David Rapoza",
+    "power": "2",
+    "toughness": "2",
+    "set": "Strixhaven: School of Mages",
+    "imageUrl": "/Cube/RealCards/dragonsguard-elite-stx.jpg",
+    "_source": "Green\\Dragonsguard Elite.jpg"
+  },
+  {
+    "id": "growth-charm-cmb2",
+    "name": "Growth Charm",
+    "manaCost": "{1}{G}{G}",
+    "type": "Instant",
+    "rarity": "Rare",
+    "text": "Choose one —\n• Rampant Growth\n• Giant Growth\n• Regrowth",
+    "colors": [
+      "G"
+    ],
+    "custom": false,
+    "archetypes": [],
+    "artist": "Chris Bellach",
+    "set": "Mystery Booster Playtest Cards 2021",
+    "imageUrl": "/Cube/RealCards/growth-charm-cmb2.jpg",
+    "_source": "Green\\Growth Charm.jpg"
+  },
+  {
+    "id": "herald-of-the-pantheon-cmm",
+    "name": "Herald of the Pantheon",
+    "manaCost": "{1}{G}",
+    "type": "Creature — Centaur Shaman",
+    "rarity": "Rare",
+    "text": "Enchantment spells you cast cost {1} less to cast.\nWhenever you cast an enchantment spell, you gain 1 life.",
+    "colors": [
+      "G"
+    ],
+    "custom": false,
+    "archetypes": [
+      "Enchantments"
+    ],
+    "flavorText": "The distinction of bearing the gods' banner is nothing compared to the glory of being closer to Nyx.",
+    "artist": "Jason A. Engle",
+    "power": "2",
+    "toughness": "2",
+    "set": "Commander Masters",
+    "imageUrl": "/Cube/RealCards/herald-of-the-pantheon-cmm.jpg",
+    "_source": "Green\\Herald of the Pantheon.jpg"
+  },
+  {
+    "id": "hermit-druid-inr",
+    "name": "Hermit Druid",
+    "manaCost": "{1}{G}",
+    "type": "Creature — Human Druid",
+    "rarity": "Rare",
+    "text": "{G}, {T}: Reveal cards from the top of your library until you reveal a basic land card. Put that card into your hand and all other cards revealed this way into your graveyard.",
+    "colors": [
+      "G"
+    ],
+    "custom": false,
+    "archetypes": [
+      "Self-mill"
+    ],
+    "flavorText": "\"The woods are not unknowable. Certainty and order are woven with the roots.\"",
+    "artist": "Bryan Sola",
+    "power": "1",
+    "toughness": "1",
+    "set": "Innistrad Remastered",
+    "imageUrl": "/Cube/RealCards/hermit-druid-inr.jpg",
+    "_source": "Green\\Hermit Druid.jpg"
+  },
+  {
+    "id": "primal-might-fdn",
+    "name": "Primal Might",
+    "manaCost": "{X}{G}",
+    "type": "Sorcery",
+    "rarity": "Rare",
+    "text": "Target creature you control gets +X/+X until end of turn. Then it fights up to one target creature you don't control. (Each deals damage equal to its power to the other.)",
+    "colors": [
+      "G"
+    ],
+    "custom": false,
+    "archetypes": [],
+    "flavorText": "The shaman looked at the world through Ghalta's eyes and understood that everything else was his prey.",
+    "artist": "Randy Vargas",
+    "set": "Foundations",
+    "imageUrl": "/Cube/RealCards/primal-might-fdn.jpg",
+    "_source": "Green\\Primal Might.jpg"
+  },
+  {
+    "id": "tyvar-s-stand-soc",
+    "name": "Tyvar's Stand",
+    "manaCost": "{X}{G}",
+    "type": "Instant",
+    "rarity": "Uncommon",
+    "text": "Target creature you control gets +X/+X and gains hexproof and indestructible until end of turn. (It can't be the target of spells or abilities your opponents control. Damage and effects that say \"destroy\" don't destroy it.)",
+    "colors": [
+      "G"
+    ],
+    "custom": false,
+    "archetypes": [],
+    "flavorText": "\"When they write songs about this battle, I will make sure your name is forgotten, devil.\"",
+    "artist": "Kieran Yanner",
+    "set": "Secrets of Strixhaven Commander",
+    "imageUrl": "/Cube/RealCards/tyvar-s-stand-soc.jpg",
+    "_source": "Green\\Tyvar's Stand.jpg"
+  },
+  {
+    "id": "aggressive-crag-cmb2",
+    "name": "Aggressive Crag",
+    "manaCost": "",
+    "type": "Land",
+    "rarity": "Rare",
+    "text": "At the beginning of your combat step, tap Aggressive Crag.\n{T}: Add {R} or {W}.",
+    "colors": [],
+    "custom": false,
+    "archetypes": [],
+    "artist": "Demitrios Feredinos",
+    "set": "Mystery Booster Playtest Cards 2021",
+    "imageUrl": "/Cube/RealCards/aggressive-crag-cmb2.jpg",
+    "_source": "Lands\\Aggressive Crag.jpg"
+  },
+  {
+    "id": "domesticated-watercourse-cmb2",
+    "name": "Domesticated Watercourse",
+    "manaCost": "",
+    "type": "Land",
+    "rarity": "Rare",
+    "text": "Domesticated Watercourse enters tapped.\n{T}: Add {U} or {B}.\n{U}{B}: Until end of turn, Domesticated Watercourse becomes an Equipment artifact with equip {2}.\nWhenever equipped creature deals combat damage to a player, draw a card.",
+    "colors": [],
+    "custom": false,
+    "archetypes": [],
+    "artist": "Joe Torra",
+    "set": "Mystery Booster Playtest Cards 2021",
+    "imageUrl": "/Cube/RealCards/domesticated-watercourse-cmb2.jpg",
+    "_source": "Lands\\Domesticated Watercourse.jpg"
+  },
+  {
+    "id": "enchanted-prairie-cmb2",
+    "name": "Enchanted Prairie",
+    "manaCost": "",
+    "type": "Enchantment Land",
+    "rarity": "Rare",
+    "text": "Enchanted Prairie enters tapped.\n{T}: Add {W} or {U}.",
+    "colors": [],
+    "custom": false,
+    "archetypes": [],
+    "artist": "James Arnold",
+    "set": "Mystery Booster Playtest Cards 2021",
+    "imageUrl": "/Cube/RealCards/enchanted-prairie-cmb2.jpg",
+    "_source": "Lands\\Enchanted Prairie.jpg"
+  },
+  {
+    "id": "fetching-garden-mb2",
+    "name": "Fetching Garden",
+    "manaCost": "",
+    "type": "Land — Forest Plains",
+    "rarity": "Rare",
+    "text": "({T}: Add {G} or {W}.)\nFetching Garden enters the battlefield tapped if it was played from your hand.",
+    "colors": [],
+    "custom": false,
+    "archetypes": [],
+    "artist": "Sophie Rochon",
+    "set": "Mystery Booster 2",
+    "imageUrl": "/Cube/RealCards/fetching-garden-mb2.jpg",
+    "_source": "Lands\\Fetching Garden.jpg"
+  },
+  {
+    "id": "gobland-mb2",
+    "name": "Gobland",
+    "manaCost": "",
+    "type": "Land Creature — Mountain Goblin",
+    "rarity": "Rare",
+    "text": "(Gobland isn't a spell, it's affected by summoning sickness, and it has \"{T}: Add {R}.\")\nGobland can't block.",
+    "colors": [
+      "R"
+    ],
+    "custom": false,
+    "archetypes": [],
+    "artist": "Anik Sikder",
+    "power": "2",
+    "toughness": "1",
+    "set": "Mystery Booster 2",
+    "imageUrl": "/Cube/RealCards/gobland-mb2.jpg",
+    "_source": "Lands\\Gobland.jpg"
+  },
+  {
+    "id": "jasconian-isle-cmb2",
+    "name": "Jasconian Isle",
+    "manaCost": "",
+    "type": "Land Creature — Island Fish",
+    "rarity": "Rare",
+    "text": "(Jasconian Isle isn't a spell, it's affected by summoning sickness, it's blue, and it has \"{T}: Add {U}.\")\nJasconian Isle enters tapped.\nJasconian Isle doesn't untap during your untap step.\nAt the beginning of your upkeep, you may pay {U}{U}. If you do, untap Jasconian Isle.",
+    "colors": [],
+    "custom": false,
+    "archetypes": [],
+    "artist": "Aaron Reed",
+    "power": "3",
+    "toughness": "4",
+    "set": "Mystery Booster Playtest Cards 2021",
+    "imageUrl": "/Cube/RealCards/jasconian-isle-cmb2.jpg",
+    "_source": "Lands\\Jasconian Isle.jpg"
+  },
+  {
+    "id": "lazotep-archway-mb2",
+    "name": "Lazotep Archway",
+    "manaCost": "",
+    "type": "Land",
+    "rarity": "Rare",
+    "text": "Lazotep Archway enters the battlefield tapped.\n{T}: Add {W} or {B}.\nEternalize {3}{W}{B} ({3}{W}{B}, Exile this card from your graveyard: Create a token that's a copy of it, except it's a 4/4 black Zombie creature and loses all other card types. Eternalize only as a sorcery. And don't forget it still enters tapped!)",
+    "colors": [],
+    "custom": false,
+    "archetypes": [],
+    "artist": "Will Liu",
+    "set": "Mystery Booster 2",
+    "imageUrl": "/Cube/RealCards/lazotep-archway-mb2.jpg",
+    "_source": "Lands\\Lazotep Archway.jpg"
+  },
+  {
+    "id": "madlands-mb2",
+    "name": "Madlands",
+    "manaCost": "",
+    "type": "Land",
+    "rarity": "Rare",
+    "text": "Madlands enters the battlefield tapped.\n{T}: Add {B} or {R}.\nMadness {0} (If you discard this card, discard it into exile. When you do, play it for its madness cost or put it into your graveyard. You can play a land only during your turn and only if you have an available land play remaining.)",
+    "colors": [],
+    "custom": false,
+    "archetypes": [],
+    "artist": "Véronique Chabot",
+    "set": "Mystery Booster 2",
+    "imageUrl": "/Cube/RealCards/madlands-mb2.jpg",
+    "_source": "Lands\\Madlands.jpg"
+  },
+  {
+    "id": "maestros-totally-safe-hideout-mb2",
+    "name": "Maestros' Totally Safe Hideout",
+    "manaCost": "",
+    "type": "Land",
+    "rarity": "Rare",
+    "text": "Land casualty 2 (As this land enters, you may sacrifice a creature with power 2 or greater. If you do, create a token that's a copy of this land.)\nMaestros' Totally Safe Hideout enters the battlefield tapped.\n{T}: Add {U}, {B}, or {R}.",
+    "colors": [],
+    "custom": false,
+    "archetypes": [],
+    "artist": "Gonçalo Pereira",
+    "set": "Mystery Booster 2",
+    "imageUrl": "/Cube/RealCards/maestros-totally-safe-hideout-mb2.jpg",
+    "_source": "Lands\\Maestros' Totally Safe Hideout.jpg"
+  },
+  {
+    "id": "noxious-bayou-cmb2",
+    "name": "Noxious Bayou",
+    "manaCost": "",
+    "type": "Land",
+    "rarity": "Rare",
+    "text": "{T}: Add {B} or {G}. You get a poison counter.",
+    "colors": [],
+    "custom": false,
+    "archetypes": [],
+    "artist": "James Rose",
+    "set": "Mystery Booster Playtest Cards 2021",
+    "imageUrl": "/Cube/RealCards/noxious-bayou-cmb2.jpg",
+    "_source": "Lands\\Noxious Bayou.jpg"
+  },
+  {
+    "id": "omenpath-to-naya-mb2",
+    "name": "Omenpath to Naya",
+    "manaCost": "",
+    "type": "Land — Omenpath",
+    "rarity": "Rare",
+    "text": "Vanishing 4 (This land enters the battlefield with four time counters on it. At the beginning of your upkeep, remove a time counter from it. When the last is removed, sacrifice it.)\n{T}: Add {R}, {G}, or {W}.",
+    "colors": [],
+    "custom": false,
+    "archetypes": [],
+    "artist": "Sandy Lee",
+    "set": "Mystery Booster 2",
+    "imageUrl": "/Cube/RealCards/omenpath-to-naya-mb2.jpg",
+    "_source": "Lands\\Omenpath to Naya.jpg"
+  },
+  {
+    "id": "processing-plant-mb2",
+    "name": "Processing Plant",
+    "manaCost": "",
+    "type": "Land — Ulamog's Power-Plant",
+    "rarity": "Rare",
+    "text": "Processing Plant enters the battlefield tapped.\nWhen Processing Plant enters the battlefield, you may put a card an opponent owns from exile into that player's graveyard. If you do, untap Processing Plant. Otherwise, exile the top card of each opponent's library.\n{T}: Add {W}, {U}, {B}, or {C}.",
+    "colors": [],
+    "custom": false,
+    "archetypes": [],
+    "artist": "Thomas Ricci",
+    "set": "Mystery Booster 2",
+    "imageUrl": "/Cube/RealCards/processing-plant-mb2.jpg",
+    "_source": "Lands\\Processing Plant.jpg"
+  },
+  {
+    "id": "taiga-stadium-cmb2",
+    "name": "Taiga Stadium",
+    "manaCost": "",
+    "type": "Land",
+    "rarity": "Rare",
+    "text": "Taiga Stadium enters tapped unless you control a white, blue, or black permanent.\n{T}: Add {R} or {G}.",
+    "colors": [],
+    "custom": false,
+    "archetypes": [],
+    "artist": "Tara Rueping",
+    "set": "Mystery Booster Playtest Cards 2021",
+    "imageUrl": "/Cube/RealCards/taiga-stadium-cmb2.jpg",
+    "_source": "Lands\\Taiga Stadium.jpg"
+  },
+  {
+    "id": "temur-elevator-mb2",
+    "name": "Temur Elevator",
+    "manaCost": "",
+    "type": "Land",
+    "rarity": "Rare",
+    "text": "Ascend (If you control ten or more permanents, you get the city's blessing for the rest of the game.)\n{T}: Add {G}, {U}, or {R}. If you don't have the city's blessing, you lose 1 life.",
+    "colors": [],
+    "custom": false,
+    "archetypes": [],
+    "artist": "Marika Lord",
+    "set": "Mystery Booster 2",
+    "imageUrl": "/Cube/RealCards/temur-elevator-mb2.jpg",
+    "_source": "Lands\\Temur Elevator.jpg"
+  },
+  {
+    "id": "under-construction-skyscraper-mb2",
+    "name": "Under-Construction Skyscraper",
+    "manaCost": "",
+    "type": "Land",
+    "rarity": "Rare",
+    "text": "Level up {1} ({1}: Put a level counter on this. Level up only as a sorcery.)\n{T}: Add {C}.\nLEVEL 1-7\n{T}: Add {W}, {B}, {G}, or {C}.\nLEVEL 8+\n{T}: Add {W}, {B}, {G}, or {C}. Scry 1.",
+    "colors": [],
+    "custom": false,
+    "archetypes": [],
+    "artist": "Kevin Dubell",
+    "set": "Mystery Booster 2",
+    "imageUrl": "/Cube/RealCards/under-construction-skyscraper-mb2.jpg",
+    "_source": "Lands\\Under-Construction Skyscraper.jpg"
+  },
+  {
+    "id": "value-town-take-a-trip-to-mb2",
+    "name": "Value Town // Take a Trip to...",
+    "manaCost": "",
+    "type": "Land — Town // Sorcery — Adventure",
+    "rarity": "Rare",
+    "text": "Value Town enters the battlefield tapped.\n{T}: Add {U} or {R}.",
+    "colors": [],
+    "custom": false,
+    "archetypes": [],
+    "artist": "Hélio Frazão",
+    "set": "Mystery Booster 2",
+    "imageUrl": "/Cube/RealCards/value-town-take-a-trip-to-mb2.jpg",
+    "_source": "Lands\\Value Town.jpg"
+  },
+  {
+    "id": "wrenn-and-one-mb2",
+    "name": "Wrenn and One",
+    "manaCost": "",
+    "type": "Land Planeswalker — Wrenn",
+    "rarity": "Rare",
+    "text": "+1: Wrenn and One gains \"{T}: Add {G}\" until your next turn.\n−1: Create a 1/1 green Squirrel creature token.\n−4: You get an emblem with \"At the beginning of your precombat main phase, add {G} for each creature you control.\"",
+    "colors": [
+      "G"
+    ],
+    "custom": false,
+    "archetypes": [],
+    "artist": "Marianne Martin",
+    "loyalty": 1,
+    "set": "Mystery Booster 2",
+    "imageUrl": "/Cube/RealCards/wrenn-and-one-mb2.jpg",
+    "_source": "Lands\\Wrenn and One.jpg"
+  },
+  {
+    "id": "detective-s-phoenix-mh3",
+    "name": "Detective's Phoenix",
+    "manaCost": "{2}{R}",
+    "type": "Enchantment Creature — Phoenix",
+    "rarity": "Rare",
+    "text": "Bestow—{R}, Collect evidence 6. (To pay this bestow cost, pay {R} and exile cards with total mana value 6 or greater from your graveyard.)\nFlying, haste\nEnchanted creature gets +2/+2 and has flying and haste.\nYou may cast this card from your graveyard using its bestow ability.",
+    "colors": [
+      "R"
+    ],
+    "custom": false,
+    "archetypes": [
+      "Self-mill"
+    ],
+    "artist": "Deruchenko Alexander",
+    "power": "2",
+    "toughness": "2",
+    "set": "Modern Horizons 3",
+    "imageUrl": "/Cube/RealCards/detective-s-phoenix-mh3.jpg",
+    "_source": "Red\\Detective's Phoenix.jpg"
+  },
+  {
+    "id": "force-of-rowan-unk",
+    "name": "Force of Rowan",
+    "manaCost": "{3}{R}{R}",
+    "type": "Instant",
+    "rarity": "Rare",
+    "text": "You may pay 1 life and exile a red card from your hand rather than pay this spell's mana cost.\nCopy target instant or sorcery spell. You may choose new targets for the copy.",
+    "colors": [
+      "R"
+    ],
+    "custom": false,
+    "archetypes": [
+      "Storm"
+    ],
+    "set": "Unknown Event",
+    "imageUrl": "/Cube/RealCards/force-of-rowan-unk.jpg",
+    "_source": "Red\\Force of Rowan.jpg"
+  },
+  {
+    "id": "goblin-welder-cm2",
+    "name": "Goblin Welder",
+    "manaCost": "{R}",
+    "type": "Creature — Goblin Artificer",
+    "rarity": "Rare",
+    "text": "{T}: Choose target artifact a player controls and target artifact card in that player's graveyard. If both targets are still legal as this ability resolves, that player simultaneously sacrifices the artifact and returns the artifact card to the battlefield.",
+    "colors": [
+      "R"
+    ],
+    "custom": false,
+    "archetypes": [
+      "Artifacts"
+    ],
+    "flavorText": "\"I wrecked your metal guy, boss. But look! I made you an ashtray.\"",
+    "artist": "Scott M. Fischer",
+    "power": "1",
+    "toughness": "1",
+    "set": "Commander Anthology Volume II",
+    "imageUrl": "/Cube/RealCards/goblin-welder-cm2.jpg",
+    "_source": "Red\\Goblin Welder.jpg"
+  },
+  {
+    "id": "grapeshot-msc",
+    "name": "Grapeshot",
+    "manaCost": "{1}{R}",
+    "type": "Sorcery",
+    "rarity": "Common",
+    "text": "Grapeshot deals 1 damage to any target.\nStorm (When you cast this spell, copy it for each spell cast before it this turn. You may choose new targets for the copies.)",
+    "colors": [
+      "R"
+    ],
+    "custom": false,
+    "archetypes": [
+      "Storm"
+    ],
+    "flavorText": "As the mother rewrites the fabric of reality, so too does the son.",
+    "artist": "Irvin Rodriguez",
+    "set": "Marvel Super Heroes Commander",
+    "imageUrl": "/Cube/RealCards/grapeshot-msc.jpg",
+    "_source": "Red\\Grapeshot.jpg"
+  },
+  {
+    "id": "cheap-ass-unh",
+    "name": "Cheap Ass",
+    "manaCost": "{1}{W}",
+    "type": "Creature — Donkey Townsfolk",
+    "rarity": "Common",
+    "text": "Spells you cast cost {½} less to cast.",
+    "colors": [
+      "W"
+    ],
+    "custom": false,
+    "archetypes": [
+      "Storm"
+    ],
+    "flavorText": "And you thought Yawgmoth drove a hard bargain.",
+    "artist": "Randy Gallegos",
+    "power": "1",
+    "toughness": "3.5",
+    "set": "Unhinged",
+    "imageUrl": "/Cube/RealCards/cheap-ass-unh.jpg",
+    "_source": "White\\Cheap Ass.jpg"
+  },
+  {
+    "id": "ephemerate-mh1",
+    "name": "Ephemerate",
+    "manaCost": "{W}",
+    "type": "Instant",
+    "rarity": "Common",
+    "text": "Exile target creature you control, then return it to the battlefield under its owner's control.\nRebound (If you cast this spell from your hand, exile it as it resolves. At the beginning of your next upkeep, you may cast this card from exile without paying its mana cost.)",
+    "colors": [
+      "W"
+    ],
+    "custom": false,
+    "archetypes": [
+      "Blink/ETB/Value"
+    ],
+    "artist": "Bastien L. Deharme",
+    "set": "Modern Horizons",
+    "imageUrl": "/Cube/RealCards/ephemerate-mh1.jpg",
+    "_source": "White\\Ephemerate.jpg"
+  },
+  {
+    "id": "ethersworn-canonist-2xm",
+    "name": "Ethersworn Canonist",
+    "manaCost": "{1}{W}",
+    "type": "Artifact Creature — Human Cleric",
+    "rarity": "Rare",
+    "text": "Each player who has cast a nonartifact spell this turn can't cast additional nonartifact spells.",
+    "colors": [
+      "W"
+    ],
+    "custom": false,
+    "archetypes": [],
+    "flavorText": "\"The noble work of our order is to infuse all life on Esper with etherium. Our goal will be reached more rapidly if new life is . . . suppressed.\"",
+    "artist": "Izzy",
+    "power": "2",
+    "toughness": "2",
+    "set": "Double Masters",
+    "imageUrl": "/Cube/RealCards/ethersworn-canonist-2xm.jpg",
+    "_source": "White\\Ethersworn Canonist.jpg"
+  },
+  {
+    "id": "fabrication-foundry-lci",
+    "name": "Fabrication Foundry",
+    "manaCost": "{1}{W}",
+    "type": "Artifact",
+    "rarity": "Rare",
+    "text": "{T}: Add {W}. Spend this mana only to cast an artifact spell or activate an ability of an artifact source.\n{2}{W}, {T}, Exile one or more other artifacts you control with total mana value X: Return target artifact card with mana value X or less from your graveyard to the battlefield. Activate only as a sorcery.",
+    "colors": [
+      "W"
+    ],
+    "custom": false,
+    "archetypes": [
+      "Artifacts"
+    ],
+    "artist": "Racrufi",
+    "set": "The Lost Caverns of Ixalan",
+    "imageUrl": "/Cube/RealCards/fabrication-foundry-lci.jpg",
+    "_source": "White\\Fabrication Foundry.jpg"
+  },
+  {
+    "id": "intangible-vibes-mb2",
+    "name": "Intangible Vibes",
+    "manaCost": "{1}{W}",
+    "type": "Enchantment",
+    "rarity": "Rare",
+    "text": "All creatures are tokens. (They're considered tokens for spells and abilities. After a creature leaves the battlefield, it ceases to exist.)",
+    "colors": [
+      "W"
+    ],
+    "custom": false,
+    "archetypes": [],
+    "artist": "Marisa Oh",
+    "set": "Mystery Booster 2",
+    "imageUrl": "/Cube/RealCards/intangible-vibes-mb2.jpg",
+    "_source": "White\\Intangible Vibes.jpg"
+  },
+  {
+    "id": "land-tax-soc",
+    "name": "Land Tax",
+    "manaCost": "{W}",
+    "type": "Enchantment",
+    "rarity": "Mythic Rare",
+    "text": "At the beginning of your upkeep, if an opponent controls more lands than you, you may search your library for up to three basic land cards, reveal them, put them into your hand, then shuffle.",
+    "colors": [
+      "W"
+    ],
+    "custom": false,
+    "archetypes": [],
+    "artist": "Chuck Lukacs",
+    "set": "Secrets of Strixhaven Commander",
+    "imageUrl": "/Cube/RealCards/land-tax-soc.jpg",
+    "_source": "White\\Land Tax.jpg"
+  },
+  {
+    "id": "monastery-mentor-tdc",
+    "name": "Monastery Mentor",
+    "manaCost": "{2}{W}",
+    "type": "Creature — Human Monk",
+    "rarity": "Mythic Rare",
+    "text": "Prowess (Whenever you cast a noncreature spell, this creature gets +1/+1 until end of turn.)\nWhenever you cast a noncreature spell, create a 1/1 white Monk creature token with prowess.",
+    "colors": [
+      "W"
+    ],
+    "custom": false,
+    "archetypes": [
+      "Storm",
+      "Prowess"
+    ],
+    "flavorText": "\"Speak little. Do much.\"",
+    "artist": "Magali Villeneuve",
+    "power": "2",
+    "toughness": "2",
+    "set": "Tarkir: Dragonstorm Commander",
+    "imageUrl": "/Cube/RealCards/monastery-mentor-tdc.jpg",
+    "_source": "White\\Monastery Mentor.jpg",
+    "relatedTokens": [
+      "1/1 white Monk"
+    ]
+  },
+  {
+    "id": "murmuration-blc",
+    "name": "Murmuration",
+    "manaCost": "{4}{W}",
+    "type": "Enchantment",
+    "rarity": "Rare",
+    "text": "Birds you control get +1/+1 and have vigilance.\nAt the beginning of your end step, for each spell you've cast this turn, create a 1/2 blue Bird creature token with flying named Storm Crow.",
+    "colors": [
+      "W"
+    ],
+    "custom": false,
+    "archetypes": [
+      "Storm"
+    ],
+    "flavorText": "Once the crow birdfolk realized augurs were using the shapes of their murmurations for divination, they decided to have some fun with it.",
+    "artist": "Xabi Gaztelua",
+    "set": "Bloomburrow Commander",
+    "imageUrl": "/Cube/RealCards/murmuration-blc.jpg",
+    "_source": "White\\Murmuration.jpg",
+    "relatedTokens": [
+      "Storm Crow"
+    ]
+  },
+  {
+    "id": "portable-hole-afr",
+    "name": "Portable Hole",
+    "manaCost": "{W}",
+    "type": "Artifact",
+    "rarity": "Uncommon",
+    "text": "When this artifact enters, exile target nonland permanent an opponent controls with mana value 2 or less until this artifact leaves the battlefield.",
+    "colors": [
+      "W"
+    ],
+    "custom": false,
+    "archetypes": [],
+    "flavorText": "\"They fall for it every time.\"",
+    "artist": "John Stanko",
+    "set": "Adventures in the Forgotten Realms",
+    "imageUrl": "/Cube/RealCards/portable-hole-afr.jpg",
+    "_source": "White\\Portable Hole.jpg"
+  },
+  {
+    "id": "recommission-bro",
+    "name": "Recommission",
+    "manaCost": "{1}{W}",
+    "type": "Sorcery",
+    "rarity": "Common",
+    "text": "Return target artifact or creature card with mana value 3 or less from your graveyard to the battlefield. If a creature enters this way, it enters with an additional +1/+1 counter on it.",
+    "colors": [
+      "W"
+    ],
+    "custom": false,
+    "archetypes": [
+      "Blink/ETB/Value"
+    ],
+    "flavorText": "\"Put your backs into it! If we don't lay claim to it, the Fallaji will!\"",
+    "artist": "Andrew Mar",
+    "set": "The Brothers' War",
+    "imageUrl": "/Cube/RealCards/recommission-bro.jpg",
+    "_source": "White\\Recommission.jpg"
+  },
+  {
+    "id": "redress-fate-dsc",
+    "name": "Redress Fate",
+    "manaCost": "{6}{W}{W}",
+    "type": "Sorcery",
+    "rarity": "Rare",
+    "text": "Return all artifact and enchantment cards from your graveyard to the battlefield.\nMiracle {3}{W} (You may cast this card for its miracle cost when you draw it if it's the first card you drew this turn.)",
+    "colors": [
+      "W"
+    ],
+    "custom": false,
+    "archetypes": [
+      "Enchantments"
+    ],
+    "flavorText": "\"I can't go with you into the House, but I can give you one chance to reverse your doom. Make it count.\"",
+    "artist": "Julie Dillon",
+    "set": "Duskmourn: House of Horror Commander",
+    "imageUrl": "/Cube/RealCards/redress-fate-dsc.jpg",
+    "_source": "White\\Redress Fate.jpg"
+  },
+  {
+    "id": "replenish-uds",
+    "name": "Replenish",
+    "manaCost": "{3}{W}",
+    "type": "Sorcery",
+    "rarity": "Rare",
+    "text": "Return all enchantment cards from your graveyard to the battlefield. (Auras with nothing to enchant remain in your graveyard.)",
+    "colors": [
+      "W"
+    ],
+    "custom": false,
+    "archetypes": [
+      "Enchantments"
+    ],
+    "flavorText": "Treasures, trinkets, trash—the relics of the past are brought forth again.",
+    "artist": "Jim Nelson",
+    "set": "Urza's Destiny",
+    "imageUrl": "/Cube/RealCards/replenish-uds.jpg",
+    "_source": "White\\Replenish.jpg"
+  },
+  {
+    "id": "soul-partition-bro",
+    "name": "Soul Partition",
+    "manaCost": "{1}{W}",
+    "type": "Instant",
+    "rarity": "Rare",
+    "text": "Exile target nonland permanent. For as long as that card remains exiled, its owner may play it. A spell cast by an opponent this way costs {2} more to cast.",
+    "colors": [
+      "W"
+    ],
+    "custom": false,
+    "archetypes": [],
+    "flavorText": "Teferi's body couldn't travel through time far enough, but with Kaya's help, his spirit could.",
+    "artist": "Kekai Kotaki",
+    "set": "The Brothers' War",
+    "imageUrl": "/Cube/RealCards/soul-partition-bro.jpg",
+    "_source": "White\\Soul Partition.jpg"
+  },
+  {
+    "id": "valor-s-flagship-dft",
+    "name": "Valor's Flagship",
+    "manaCost": "{4}{W}{W}{W}",
+    "type": "Legendary Artifact — Vehicle",
+    "rarity": "Mythic Rare",
+    "text": "Flying, first strike, lifelink\nCrew 3\nCycling {X}{2}{W} ({X}{2}{W}, Discard this card: Draw a card.)\nWhen you cycle this card, create X 1/1 colorless Pilot creature tokens with \"This token saddles Mounts and crews Vehicles as though its power were 2 greater.\"",
+    "colors": [
+      "W"
+    ],
+    "custom": false,
+    "archetypes": [
+      "Vehicles"
+    ],
+    "artist": "Stephan Martiniere",
+    "power": "7",
+    "toughness": "7",
+    "set": "Aetherdrift",
+    "imageUrl": "/Cube/RealCards/valor-s-flagship-dft.jpg",
+    "_source": "White\\Valor's Flagship.jpg",
+    "relatedTokens": [
+      "1/1 colorless Pilot"
+    ]
+  },
+  {
+    "id": "tarrian-s-journal-lci",
+    "name": "Tarrian's Journal",
+    "manaCost": "{1}{B}",
+    "type": "Legendary Artifact — Book",
+    "rarity": "Rare",
+    "text": "{T}, Sacrifice another artifact or creature: Draw a card. Activate only as a sorcery.\n{2}, {T}, Discard your hand: Transform Tarrian's Journal.",
+    "colors": [
+      "B"
+    ],
+    "custom": false,
+    "archetypes": [
+      "Artifacts"
+    ],
+    "flavorText": "Though officially deemed a heretic for his reverent writings on Aclazotz, Tarrian is viewed as a holy martyr by the most radical sects of the Church of Dusk.",
+    "artist": "Randy Gallegos",
+    "set": "The Lost Caverns of Ixalan",
+    "relatedFace": "The Tomb of Aclazotz",
+    "imageUrl": "/Cube/RealCards/tarrian-s-journal-lci.jpg",
+    "_source": "Black/Tarrian's Journal.jpg"
+  },
+  {
+    "id": "the-tomb-of-aclazotz-lci",
+    "name": "The Tomb of Aclazotz",
+    "manaCost": "",
+    "type": "Legendary Land — Cave",
+    "rarity": "Rare",
+    "text": "(Transforms from Tarrian's Journal.)\n{T}: Add {B}.\n{T}: You may cast a creature spell from your graveyard this turn. If you do, it enters with a finality counter on it and is a Vampire in addition to its other types. (If a creature with a finality counter on it would die, exile it instead.)",
+    "colors": [],
+    "custom": false,
+    "archetypes": [
+      "Self-mill"
+    ],
+    "artist": "Randy Gallegos",
+    "set": "The Lost Caverns of Ixalan",
+    "facedown": true,
+    "relatedFace": "Tarrian's Journal",
+    "imageUrl": "/Cube/RealCards/the-tomb-of-aclazotz-lci.jpg",
+    "_source": "Black/The Tomb of Aclazotz.jpg"
+  }
+]

@@ -257,6 +257,31 @@ export default function TokenDetailPage() {
             </div>
           )}
           
+          {/* Versions across sets */}
+          {token.versions && token.versions.length > 1 && (
+            <div className="mt-8">
+              <h2 className="text-lg font-semibold mb-3 dark:text-white">Versions:</h2>
+              <div className="flex flex-wrap gap-3">
+                {token.versions.map((v) => (
+                  <div key={v.set} className="text-center">
+                    {v.imageUrl ? (
+                      <img
+                        src={v.imageUrl}
+                        alt={`${token.name} — ${v.set}`}
+                        className={`w-24 rounded shadow object-contain ${v.imageUrl === token.imageUrl ? 'ring-2 ring-blue-500' : 'opacity-90'}`}
+                      />
+                    ) : (
+                      <div className="w-24 h-32 bg-gray-300 dark:bg-gray-700 rounded flex items-center justify-center text-xs text-gray-500">No img</div>
+                    )}
+                    <div className="mt-1 text-xs text-gray-600 dark:text-gray-400">
+                      {v.set}{v.imageUrl === token.imageUrl ? ' (current)' : ''}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+
           {/* Creator Cards */}
           {token.creatorCards && token.creatorCards.length > 0 && (
             <div className="mt-8">

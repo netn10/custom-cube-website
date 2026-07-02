@@ -1,0 +1,97 @@
+[
+  {
+    "id": "anhelo-dashing-artist-sb2",
+    "name": "Anhelo, Dashing Artist",
+    "manaCost": "{U}{B}{R}",
+    "type": "Legendary Creature — Vampire Assassin",
+    "rarity": "Mythic Rare",
+    "text": "Haste\nWhenever you cast an instant or sorcery spell without cipher from your hand, it gains cipher. Encode it to Anhelo.\n{3}{U}{B}{R}: Until end of turn, Anhelo can't be blocked. The next time it attacks this turn, untap it. If you do, after this phase, there is an additional combat phase.",
+    "colors": [
+      "U",
+      "B",
+      "R"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Broken Cipher"
+    ],
+    "power": "2",
+    "toughness": "2",
+    "flavorText": "\"Look how they massacred my boy…\"",
+    "artist": "Alessandra Gava",
+    "_supersedes": "anhelo-dashing-artist-fb1",
+    "_source": "Remake/Anhelo, Dashing Artist.png"
+  },
+  {
+    "id": "destroy-the-unnatural-sb2",
+    "name": "Destroy the Unnatural",
+    "manaCost": "{3}{R/G}",
+    "type": "Instant",
+    "rarity": "Common",
+    "text": "Destroy target artifact, enchantment, creature with flying or a land with an activated ability that isn't a mana ability.\nFlashback {R}{G}",
+    "colors": [
+      "R",
+      "G"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Control"
+    ],
+    "artist": "DALL-E 3",
+    "_supersedes": "destroy-the-unnatural-fb1",
+    "_source": "Remake/Destroy the Unnatural.png"
+  },
+  {
+    "id": "judges-falcon-sb2",
+    "name": "Judge's Falcon",
+    "manaCost": "{W}",
+    "type": "Creature — Bird",
+    "rarity": "Uncommon",
+    "text": "Flying\nSacrifice this creature: Tax 1. (The next spell each of your opponents cast costs {1} more to cast. This doesn't end at the end of turn.)",
+    "colors": [
+      "W"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "power": "1",
+    "toughness": "1",
+    "flavorText": "\"The owl and the falcon are working together! I've seen it with my own eyes!\"\n— Dar, Keyhole Downs Merchant",
+    "artist": "DALL-E 3",
+    "_supersedes": "judge-s-falcon-fb1",
+    "_source": "Remake/Judge’s Falcon.png"
+  },
+  {
+    "id": "rabbit-hole-sb2",
+    "name": "Rabbit Hole",
+    "manaCost": "{U}",
+    "type": "Enchantment",
+    "rarity": "Uncommon",
+    "text": "When this enchantment enters, another target nonland permanent becomes a green and white Rabbit creature with no abilities and with base power and toughness 2/2 as long as this enchantment is on the battlefield.",
+    "colors": [
+      "U"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "flavorText": "\"I've just had the weirdest dream…\"",
+    "artist": "DALL-E 3",
+    "_supersedes": "rabbit-hole-fb1",
+    "_source": "Remake/Rabbit Hole.png"
+  },
+  {
+    "id": "titan-of-impossibility-sb2",
+    "name": "Titan of Impossibility",
+    "manaCost": "{6}",
+    "type": "Creature — Eldrazi",
+    "rarity": "Mythic Rare",
+    "text": "When this creature enters, attacks, or becomes a target of a spell or an ability you don't control, type the following line into ChatGPT and put the response on the stack:\n\"My 6 mana Eldrazi did something. Respond with one effect. Nothing else.\"",
+    "colors": [],
+    "custom": true,
+    "archetypes": [],
+    "power": "6",
+    "toughness": "6",
+    "artist": "Alexandr Elichev",
+    "_supersedes": "titan-of-impossibility-fb1",
+    "_source": "Remake/Titan of Impossibility.png",
+    "prompt": "My 6 mana Eldrazi did something. Respond with one effect. Nothing else."
+  }
+]

@@ -5,6 +5,16 @@ import { Card, Archetype, Token, Suggestion, User, LoginCredentials, RegisterFor
 // In production, the URL from env already includes the /api path
 export const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL ? process.env.NEXT_PUBLIC_API_URL : 'http://127.0.0.1:5000/api';
 
+// Resolve an image URL for use as an <img src>. Only cross-origin URLs
+// (e.g. Scryfall) need the backend CORS proxy; inline data URIs and local
+// paths served from /public (custom card art like "/Cube/...") must be used
+// directly — passing them to the proxy makes requests.get() fail (no scheme).
+export function getImageSrc(url?: string | null): string {
+  if (!url) return '';
+  if (url.startsWith('data:') || url.startsWith('/')) return url;
+  return `${API_BASE_URL}/image-proxy?url=${encodeURIComponent(url)}`;
+}
+
 
 // Authentication API
 
@@ -430,13 +440,11 @@ export async function getTokens(params?: {
 // Get a single token by name
 export async function getTokenByName(name: string): Promise<Token> {
   try {
-    // Double-encode slashes and other special characters to ensure proper URL handling with Flask
-    const safeTokenName = name.replace(/\//g, '%2F');
-    const url = `/api/tokens/${encodeURIComponent(safeTokenName)}`;
-    console.log('getTokenByName - original name:', name);
-    console.log('getTokenByName - safeTokenName:', safeTokenName);
-    console.log('getTokenByName - final URL:', url);
-    
+    // Look tokens up by a query parameter rather than a path segment: token
+    // names can contain '/' (e.g. "1/1 green Island Dryad"), which an encoded
+    // slash in the URL path breaks. Hit the backend (API_BASE_URL) directly.
+    const url = `${API_BASE_URL}/token?name=${encodeURIComponent(name)}`;
+
     const response = await fetch(url, {
       headers: {
         'Content-Type': 'application/json',

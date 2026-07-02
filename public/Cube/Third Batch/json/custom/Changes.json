@@ -1,0 +1,685 @@
+[
+  {
+    "id": "annihilatog-tb3",
+    "name": "Annihilatog",
+    "manaCost": "{1}{B}",
+    "type": "Creature — Atog",
+    "rarity": "Uncommon",
+    "text": "{1}, Sacrifice a nonland permanent: This creature gets +2/+2 until end of turn.",
+    "colors": [
+      "B"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "power": "1",
+    "toughness": "2",
+    "flavorText": "If there's a will, there's a meal.",
+    "artist": "Jesper Milfords",
+    "_supersedes": "annihilatog-fb1",
+    "_source": "Changes from set 1/Buffs/Annihilatog.png"
+  },
+  {
+    "id": "crimson-wedding-decoration-tb3",
+    "name": "Crimson-Wedding Decoration",
+    "manaCost": "{1}",
+    "type": "Artifact — Blood",
+    "rarity": "Rare",
+    "text": "{1}, {T}, Discard a card, Sacrifice this artifact: Draw a card. Add {C} for each differently named token you control.\n{B/R}, {T}: Create a token that's a copy of this artifact.",
+    "colors": [],
+    "custom": true,
+    "archetypes": [
+      "Token Collection"
+    ],
+    "flavorText": "\"It really is a wedding to die for,\" said Edgar, smiling slightly.\n\"Why, of course, darling! You should've seen the faces of the uninvited!\" said Olivia, unable to hide her glee.",
+    "artist": "Dall-E 3",
+    "_supersedes": "crimson-wedding-decoration-fb1",
+    "_source": "Changes from set 1/Buffs/Crimson-Wedding Decoration.png"
+  },
+  {
+    "id": "diamond-storm-tb3",
+    "name": "Diamond Storm",
+    "manaCost": "{W}{W}",
+    "type": "Instant",
+    "rarity": "Rare",
+    "text": "This spell deals 1 damage to each attacking creature. Create a tapped Treasure token for each creature damaged this way.\nStorm",
+    "colors": [
+      "W"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Storm"
+    ],
+    "flavorText": "Gobakhan's weather is as dangerous as it is beautiful. Many inexperienced travelers don't know the difference and don't live to make the same mistake twice.",
+    "artist": "Dall-E 3",
+    "_supersedes": "diamond-storm-fb1",
+    "_source": "Changes from set 1/Buffs/Diamond Storm.png",
+    "relatedTokens": [
+      "Treasure"
+    ]
+  },
+  {
+    "id": "flourishing-bauble-pet-tb3",
+    "name": "Flourishing Bauble-Pet",
+    "manaCost": "{G}",
+    "type": "Creature — Saproling",
+    "rarity": "Common",
+    "text": "{1}, {T}, Sacrifice this creature: Add one mana of any color. Draw a card.\nPetrify from your graveyard {G} ({G}, Exile this card from your graveyard: Create a copy of it, except it's an artifact.)",
+    "colors": [
+      "G"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "power": "1",
+    "toughness": "1",
+    "flavorText": "\"We are all vessels of nature's will. Some of us more… literally.\"\n—Calvatika, Korozda Gorgon",
+    "artist": "Dall-E 3",
+    "_supersedes": "flourishing-bauble-pet-fb1",
+    "_source": "Changes from set 1/Buffs/Flourishing Bauble-Pet.png"
+  },
+  {
+    "id": "god-pharaoh-s-pup-tb3",
+    "name": "God-Pharaoh's Pup",
+    "manaCost": "{R}",
+    "type": "Creature — Dog",
+    "rarity": "Rare",
+    "text": "When this creature enters, it deals damage to you equal to its power.\nEmbalm {R}\nEternalize {R}{R}",
+    "colors": [
+      "R"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Self-mill"
+    ],
+    "power": "2",
+    "toughness": "2",
+    "artist": "Dall-E 3",
+    "_supersedes": "god-pharaoh-s-pup-fb1",
+    "_source": "Changes from set 1/Buffs/God-Pharaoh's Pup.png"
+  },
+  {
+    "id": "house-charm-tb3",
+    "name": "House Charm",
+    "manaCost": "{U/B}{U/B}{U/B}",
+    "type": "Instant",
+    "rarity": "Rare",
+    "text": "Choose one —\n• Create a 3/2 blue and black Horror Rogue creature token with flying.\n• Exile target instant or sorcery card from an opponent's graveyard encoded to a creature you control.\n• Each opponent shuffles six Confusion cards into their library. (Confusion is a colorless sorcery card with no mana cost that has cycling {2}.)",
+    "colors": [
+      "U",
+      "B"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Broken Cipher"
+    ],
+    "artist": "Dall-E 3",
+    "_supersedes": "house-charm-fb1",
+    "_source": "Changes from set 1/Buffs/House Charm.png",
+    "relatedTokens": [
+      "3/2 blue and black Horror Rogue",
+      "Confusion"
+    ]
+  },
+  {
+    "id": "night-to-remember-tb3",
+    "name": "Night to Remember",
+    "manaCost": "{2}{B}",
+    "type": "Instant",
+    "rarity": "Common",
+    "text": "Spectacle {X}{R} (You may cast this spell for its spectacle cost rather than its mana cost if an opponent lost life this turn.)\nCreate three tapped Fireworks artifact tokens of any combination of colors. If this spell's spectacle cost was paid, instead create X of those tokens.\nDraw a card.",
+    "colors": [
+      "B"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Token Collection"
+    ],
+    "flavorText": "The Rakdos Cult occasionally hosts \"normal\" parties to maintain the facade of not being JUST a murder cult.",
+    "artist": "Dall-E 3",
+    "_supersedes": "night-to-remamber-fb1",
+    "_source": "Changes from set 1/Buffs/Night to Remember.png",
+    "relatedTokens": [
+      "Fireworks"
+    ]
+  },
+  {
+    "id": "phantasmal-monk-tb3",
+    "name": "Phantasmal Monk",
+    "manaCost": "{U}",
+    "type": "Creature — Illusion Monk",
+    "rarity": "Common",
+    "text": "Prowess\nWhen this creature becomes the target of a spell or an ability, sacrifice it.\nWhen this creature dies, draw a card.",
+    "colors": [
+      "U"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Prowess"
+    ],
+    "power": "2",
+    "toughness": "1",
+    "flavorText": "\"Forsake your body, and you'll gain a whole new perspective. Oh, and it helps with mobility, too.\"",
+    "artist": "Dall-E 3",
+    "_supersedes": "phantasmal-monk-fb1",
+    "_source": "Changes from set 1/Buffs/Phantasmal Monk.png"
+  },
+  {
+    "id": "trillia-godmother-of-broken-hearts-tb3",
+    "name": "Trillia, Godmother of Broken Hearts",
+    "manaCost": "{R}{W}{B}",
+    "type": "Legendary Creature — Faerie Noble",
+    "rarity": "Rare",
+    "text": "Flash\nFlying, vigilance, haste\n{X}, {T}: Put two target creature cards with total mana value X or less from your hand and/or graveyard onto the battlefield paired to each other.\nIf a paired creature you control would die, you may instead sacrifice the other creature.",
+    "colors": [
+      "R",
+      "W",
+      "B"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "power": "2",
+    "toughness": "4",
+    "flavorText": "To her, \"Till death do us part\" isn't a vow—it's a warning.",
+    "artist": "Dall-E 3",
+    "_supersedes": "trillia-godmother-of-broken-hearts-fb1",
+    "_source": "Changes from set 1/Buffs/Trillia, Godmother of Broken Hearts.png"
+  },
+  {
+    "id": "animar-corrupted-essence-tb3",
+    "name": "Animar, Corrupted Essence",
+    "manaCost": "{G}{U}{R}",
+    "type": "Legendary Creature — Phyrexian Elemental",
+    "rarity": "Mythic Rare",
+    "text": "Hexproof from red and from white\nWhenever you cast a noncreature spell, put a +1/+1 counter on Animar, Corrupted Essence.\nOnce during each of your turns, you may cast a noncreature card from your graveyard with mana value less than or equal to Animar's power. If that card would be put into your graveyard this turn, exile it instead.",
+    "colors": [
+      "G",
+      "U",
+      "R"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Prowess",
+      "Self-mill"
+    ],
+    "power": "1",
+    "toughness": "1",
+    "artist": "Kevin McKenna",
+    "_supersedes": "animar-corrupted-essence-fb1",
+    "_source": "Changes from set 1/Nerfs/Animar, Corrupted Essence.png"
+  },
+  {
+    "id": "aram-lockloft-co-ace-tb3",
+    "name": "Aram, Lockloft Co-Ace",
+    "manaCost": "{1}{G}",
+    "type": "Legendary Creature — Troll Pilot",
+    "rarity": "Rare",
+    "text": "Partner with Danna, Lockloft Ace (When this creature enters, target player may put Danna into their hand from their library, then shuffle.)\nWhenever a Vehicle you control deals combat damage to a player, put that many +1/+1 counters on it.",
+    "colors": [
+      "G"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Vehicles"
+    ],
+    "power": "3",
+    "toughness": "2",
+    "flavorText": "\"Lockloft is made up of all the friends we've made along the way. Let's win this and extend the family.\"",
+    "artist": "Dall-E 3",
+    "_supersedes": "aram-lockloft-co-ace-fb1",
+    "_source": "Changes from set 1/Nerfs/Aram, Lockloft Co-Ace.png",
+    "relatedFace": "Danna, Lockloft Ace"
+  },
+  {
+    "id": "blooming-tender-tb3",
+    "name": "Blooming Tender",
+    "manaCost": "{1}{G}",
+    "type": "Artifact — Vehicle",
+    "rarity": "Rare",
+    "text": "Trample, vigilance\n{T}: For each color among permanents you control, add one mana of that color. Activate this ability only if this Vehicle has dealt combat damage to a player this turn.\nCrew 1",
+    "colors": [
+      "G"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Vehicles"
+    ],
+    "power": "3",
+    "toughness": "3",
+    "artist": "Dall-E 3",
+    "_supersedes": "blooming-tender-fb1",
+    "_source": "Changes from set 1/Nerfs/Blooming Tender.png"
+  },
+  {
+    "id": "danna-lockloft-ace-tb3",
+    "name": "Danna, Lockloft Ace",
+    "manaCost": "{W}",
+    "type": "Legendary Creature — Human Pilot",
+    "rarity": "Rare",
+    "text": "Partner with Aram, Lockloft Co-Ace (When this creature enters, target player may put Aram into their hand from their library, then shuffle.)\nWhenever a Vehicle you control deals combat damage to a player, put a +1/+1 counter on each other Vehicle you control.",
+    "colors": [
+      "W"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Vehicles"
+    ],
+    "power": "2",
+    "toughness": "1",
+    "flavorText": "\"Let's show them what the Lockloft family is made of!\"",
+    "artist": "Dall-E 3",
+    "_supersedes": "danna-lockloft-ace-fb1",
+    "_source": "Changes from set 1/Nerfs/Danna, Lockloft Ace.png",
+    "relatedFace": "Aram, Lockloft Co-Ace"
+  },
+  {
+    "id": "journey-to-the-core-tb3",
+    "name": "Journey to the Core",
+    "manaCost": "{1}{R}",
+    "type": "Enchantment",
+    "rarity": "Rare",
+    "text": "At the beginning of your upkeep, mill two cards. You may put an historic card from among the cards milled this way into your hand. (Artifacts, legendaries and Sagas are historic.)\nIf you would draw a card while your library has no cards in it, you win the game instead.\n{3}{W}: Create a token that's a copy of this enchantment.",
+    "colors": [
+      "R"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Self-mill"
+    ],
+    "artist": "Dall-E 3",
+    "_supersedes": "journey-to-the-core-fb1",
+    "_source": "Changes from set 1/Nerfs/Journey to the Core.png"
+  },
+  {
+    "id": "laelia-reforger-of-the-lost-tb3",
+    "name": "Laelia, Reforger of the Lost",
+    "manaCost": "{R}",
+    "type": "Legendary Creature — Spirit",
+    "rarity": "Rare",
+    "text": "Haste\n{X}, {T}: Surveil X.\nWhenever one or more cards are put into your graveyard from your library for the first time each turn, put a +1/+1 counter on Laelia and you may exile one of those cards. If you do, you may play that card this turn.",
+    "colors": [
+      "R"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Self-mill"
+    ],
+    "power": "0",
+    "toughness": "1",
+    "artist": "",
+    "_supersedes": "laelia-reforger-of-the-lost-fb1",
+    "_source": "Changes from set 1/Nerfs/Laelia, Reforger of the Lost.png"
+  },
+  {
+    "id": "league-charm-tb3",
+    "name": "League Charm",
+    "manaCost": "{U/R}{U/R}{U/R}",
+    "type": "Instant",
+    "rarity": "Rare",
+    "text": "Choose one —\n• Discard your hand, then draw four cards.\n• Change target instant or sorcery spell's text by replacing each instance of \"target\" with \"each\".\n• Upload 4 four times. (Create four enchantment Memory tokens. They each have \"When this enters, exile an instant or sorcery card from your hand or graveyard with mana value 4 or less.\" and \"{2}, Sacrifice this: Cast a copy of a card exiled with this enchantment without paying its mana cost.\")",
+    "colors": [
+      "U",
+      "R"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "artist": "Dall-E 3",
+    "_supersedes": "league-charm-fb1",
+    "_source": "Changes from set 1/Nerfs/League Charm.png",
+    "relatedTokens": [
+      "Memory"
+    ]
+  },
+  {
+    "id": "legion-charm-tb3",
+    "name": "Legion Charm",
+    "manaCost": "{R/W}{R/W}{R/W}",
+    "type": "Instant",
+    "rarity": "Rare",
+    "text": "Choose one —\n• Target creature gets +2/+0 and gains double strike until end of turn.\n• Surveil 5, then return an Aura or Equipment card from your graveyard to the battlefield attached to target creature you control.\n• Creatures you control get +2/+0 and gain formation until end of turn. (Whenever each of them would be dealt damage this turn, you may have it instead be dealt to another creature you control with formation.)",
+    "colors": [
+      "R",
+      "W"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Self-mill"
+    ],
+    "artist": "Dall-E 3",
+    "_supersedes": "legion-charm-fb1",
+    "_source": "Changes from set 1/Nerfs/Legion Charm.png"
+  },
+  {
+    "id": "mirror-sigil-trooper-tb3",
+    "name": "Mirror-Sigil Trooper",
+    "manaCost": "{1}{W}",
+    "type": "Creature — Human Soldier",
+    "rarity": "Rare",
+    "text": "Echo {1}{U} (At the beginning of your upkeep, if this came under your control since the beginning of your last upkeep, sacrifice it unless you pay its echo cost.)\nWhen this creature's echo cost is paid, create a token that's a copy of it.\nWhenever a creature you control attacks alone, create a token that's a copy of target token you control for each spell you've cast this turn.",
+    "colors": [
+      "W"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Storm",
+      "Token Collection"
+    ],
+    "power": "2",
+    "toughness": "2",
+    "flavorText": "\"I have the best sparring partners.\"",
+    "artist": "Dall-E 3",
+    "_supersedes": "mirror-sigil-trooper-fb1",
+    "_source": "Changes from set 1/Nerfs/Mirror-Sigil Trooper.png"
+  },
+  {
+    "id": "nivix-data-collector-tb3",
+    "name": "Nivix Data-Collector",
+    "manaCost": "{1}{U}",
+    "type": "Enchantment Creature — Weird",
+    "rarity": "Uncommon",
+    "text": "This creature can't be blocked.\nWhenever this creature deals combat damage to a player, draw a card, then discard a card, then upload 3. (Create an enchantment Memory token. It has \"When this enters, exile an instant or sorcery card from your hand or graveyard with mana value 3 or less.\" and \"{2}, Sacrifice this: Cast a copy of a card exiled with this enchantment without paying its mana cost.\")",
+    "colors": [
+      "U"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Broken Cipher"
+    ],
+    "power": "1",
+    "toughness": "1",
+    "artist": "Dall-E 3",
+    "_supersedes": "nivix-data-collector-fb1",
+    "_source": "Changes from set 1/Nerfs/Nivix Data-Collector.png",
+    "relatedTokens": [
+      "Memory"
+    ]
+  },
+  {
+    "id": "palisade-champion-tb3",
+    "name": "Palisade Champion",
+    "manaCost": "{2}{W}",
+    "type": "Creature — Giant Soldier",
+    "rarity": "Rare",
+    "text": "Formation (Whenever this creature is dealt damage for the first time each turn, you may have it instead be dealt to another creature you control with formation or to you.)\nYou have formation.\n{W}: Target creature you control gains formation until end of turn.",
+    "colors": [
+      "W"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "power": "2",
+    "toughness": "4",
+    "artist": "Dall-E 3",
+    "_supersedes": "palisade-champion-fb1",
+    "_source": "Changes from set 1/Nerfs/Palisade Champion.png"
+  },
+  {
+    "id": "papers-please-tb3",
+    "name": "Papers, Please",
+    "manaCost": "{1}{U}{U}",
+    "type": "Instant",
+    "rarity": "Common",
+    "text": "Counter target spell.\nTax 1. (The next spell each of your opponents cast costs {1} more to cast. This doesn't end at the end of turn.)",
+    "colors": [
+      "U"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "flavorText": "The opening of the Omenpaths led to a steady influx of immigrants to Ravnica, resulting in a corresponding increase in the already extensive number of Azorius laws.",
+    "artist": "Dall-E 3",
+    "_supersedes": "papers-please-fb1",
+    "_source": "Changes from set 1/Nerfs/Papers, Please.png"
+  },
+  {
+    "id": "reckoner-of-fiery-justice-tb3",
+    "name": "Reckoner of Fiery Justice",
+    "manaCost": "{2}{R}",
+    "type": "Creature — Minotaur Soldier",
+    "rarity": "Rare",
+    "text": "Formation (Whenever this creature is dealt damage for the first time each turn, you may have it instead be dealt to another creature you control with formation.)\nWhenever this creature is dealt damage, it deals that much damage to any target.\n{R}: Target creature you control gains formation until end of turn.",
+    "colors": [
+      "R"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "power": "3",
+    "toughness": "3",
+    "artist": "JeKriMo",
+    "_supersedes": "reckoner-of-fiery-justice-fb1",
+    "_source": "Changes from set 1/Nerfs/Reckoner of Fiery Justice.png"
+  },
+  {
+    "id": "siege-engine-tb3",
+    "name": "Siege Engine",
+    "manaCost": "{1}{W}{B}{G}",
+    "type": "Artifact — Vehicle",
+    "rarity": "Rare",
+    "text": "Trample\nWhenever a creature enters under your control, put a ward {1} counter and a ward—Pay 2 life counter on this Vehicle.\nWhenever this Vehicle attacks, each opponent loses life equal to the number of counters on this Vehicle and you gain that much life.\nCrew 3",
+    "colors": [
+      "W",
+      "B",
+      "G"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Vehicles"
+    ],
+    "power": "4",
+    "toughness": "5",
+    "artist": "Dall-E 3",
+    "_supersedes": "siege-mastodon-fb1",
+    "_source": "Changes from set 1/Nerfs/Siege Engine.png"
+  },
+  {
+    "id": "sigiled-lightsworn-tb3",
+    "name": "Sigiled Lightsworn",
+    "manaCost": "{W}",
+    "type": "Creature — Human Cleric",
+    "rarity": "Rare",
+    "text": "Exalted (Whenever a creature you control attacks alone, that creature gets +1/+1 until end of turn.)\n{2}, {T}: Destroy another target creature, then return it to the battlefield under its owner's control.",
+    "colors": [
+      "W"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Blink/ETB/Value"
+    ],
+    "power": "0",
+    "toughness": "1",
+    "flavorText": "A decade after the shards merged, the three white-aligned shards united to form The Lightsworns, dedicated to finding light and countering the darkness embodied by the remaining two shards.",
+    "artist": "Silvia Meiliani",
+    "_supersedes": "sigiled-lightsworn-fb1",
+    "_source": "Changes from set 1/Nerfs/Sigiled Lightsworn.png"
+  },
+  {
+    "id": "stealing-time-tb3",
+    "name": "Stealing Time",
+    "manaCost": "{6}{U}{U}",
+    "type": "Sorcery",
+    "rarity": "Mythic Rare",
+    "text": "Draw three cards and untap up to five lands. If it's the second time you cast a spell named Stealing Time this turn, also take an extra turn after this one.\nCipher",
+    "colors": [
+      "U"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Broken Cipher"
+    ],
+    "artist": "Dall-E 3",
+    "_supersedes": "stealing-time-fb1",
+    "_source": "Changes from set 1/Nerfs/Stealing Time.png"
+  },
+  {
+    "id": "steam-preservation-program-tb3",
+    "name": "Steam Preservation Program",
+    "manaCost": "{2}{R}",
+    "type": "Enchantment",
+    "rarity": "Rare",
+    "text": "Instant and sorcery spells you cast cost {1} less to cast.\nWhenever you cast an instant or sorcery spell from your hand, upload X, where X is that spell's mana value. (Create an enchantment Memory token. It has \"When this enters, exile an instant or sorcery card from your hand or graveyard with mana value X or less.\" and \"{2}, Sacrifice this: Cast a copy of a card exiled with this enchantment without paying its mana cost.\")",
+    "colors": [
+      "R"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Storm"
+    ],
+    "artist": "Dall-E 3",
+    "_supersedes": "steam-preservation-program-fb1",
+    "_source": "Changes from set 1/Nerfs/Steam Preservation Program.png",
+    "relatedTokens": [
+      "Memory"
+    ]
+  },
+  {
+    "id": "coordination-unit-tb3",
+    "name": "Coordination Unit",
+    "manaCost": "{W}",
+    "type": "Artifact — Vehicle",
+    "rarity": "Rare",
+    "text": "At the beginning of your end step, put a +1/+1 counter on target creature you control if this Vehicle is untapped. Otherwise, each player draws a card.\nCrew 1",
+    "colors": [],
+    "custom": true,
+    "archetypes": [
+      "Vehicles"
+    ],
+    "power": "3",
+    "toughness": "2",
+    "artist": "Dall-E 3",
+    "_supersedes": "coordination-unit-fb1",
+    "_source": "Changes from set 1/Wording Fixes/Coordination Unit.png"
+  },
+  {
+    "id": "lightsworn-behemoth-tb3",
+    "name": "Lightsworn Behemoth",
+    "manaCost": "{2}{W}",
+    "type": "Creature — Beast",
+    "rarity": "Uncommon",
+    "text": "Whenever a creature enters under your control, put a +1/+1 counter on this creature. If you didn't cast it from your hand, instead put two +1/+1 counters on this creature.\nAs long as this creature's power is 5 or greater, it has indestructible.",
+    "colors": [
+      "W"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "power": "2",
+    "toughness": "2",
+    "flavorText": "Before the shards converged, each of its steps shattered Naya. Now, it seeks healing, but through shattering the whole world.",
+    "artist": "Konami",
+    "_supersedes": "lightsworn-behemoth-fb1",
+    "_source": "Changes from set 1/Wording Fixes/Lightsworn Behemoth.png"
+  },
+  {
+    "id": "lightsworn-visionary-tb3",
+    "name": "Lightsworn Visionary",
+    "manaCost": "{1}{W}",
+    "type": "Artifact Creature — Vedalken Wizard",
+    "rarity": "Common",
+    "text": "When this creature enters, each player draws two cards. If you didn't cast it from your hand, instead you draw two cards.",
+    "colors": [
+      "W"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Blink/ETB/Value"
+    ],
+    "power": "1",
+    "toughness": "1",
+    "flavorText": "\"Light is merely particles, and darkness is the absence of them. But I place no value in either. For us, the true light should lie in the spreading of knowledge—a beacon that dispels the darkness of ignorance.\"",
+    "artist": "Dall-E 3",
+    "_supersedes": "lightsworn-visionary-fb1",
+    "_source": "Changes from set 1/Wording Fixes/Lightsworn Visionary.png"
+  },
+  {
+    "id": "muraganda-data-sphere-tb3",
+    "name": "Muraganda Data-Sphere",
+    "manaCost": "{2}{G}",
+    "type": "Artifact — Vehicle",
+    "rarity": "Rare",
+    "text": "Whenever a creature with no abilities or an artifact enters under your control, draw a card.\nWhenever this Vehicle attacks, untap all creatures with no abilities and artifacts you control.\nCrew 3",
+    "colors": [
+      "G"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Vehicles",
+      "Artifacts"
+    ],
+    "power": "5",
+    "toughness": "5",
+    "artist": "Dall-E 3",
+    "_supersedes": "muraganda-data-sphere-fb1",
+    "_source": "Changes from set 1/Wording Fixes/Muraganda Data-Sphere.png"
+  },
+  {
+    "id": "sticker-collector-tb3",
+    "name": "Sticker Collector",
+    "manaCost": "{2}",
+    "type": "Artifact Creature — Robot",
+    "rarity": "Rare",
+    "text": "When this creature enters, choose either power and toughness sticker or an ability sticker. Put a random sticker of that type on it.\nStickers are not removed from this card after the game ends. Yap.",
+    "colors": [],
+    "custom": true,
+    "archetypes": [],
+    "power": "2",
+    "toughness": "2",
+    "artist": "Dall-E 3",
+    "_supersedes": "sticker-collector-fb1",
+    "_source": "Changes from set 1/Wording Fixes/Sticker Collector.png"
+  },
+  {
+    "id": "wailbounder-tb3",
+    "name": "Wailbounder",
+    "manaCost": "{4}{B}",
+    "type": "Creature — Elemental",
+    "rarity": "Uncommon",
+    "text": "Menace\nWhen this creature enters, return target creature card from your graveyard to the battlefield. It gains \"When you don't control a permanent named Wailbounder, exile this creature.\"\nEvoke {1}{W} (You may cast this spell for its evoke cost. If you do, it's sacrificed when it enters.)",
+    "colors": [
+      "B"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Blink/ETB/Value",
+      "Self-mill"
+    ],
+    "power": "3",
+    "toughness": "2",
+    "artist": "Dall-E 3",
+    "_supersedes": "wailbounder-fb1",
+    "_source": "Changes from set 1/Wording Fixes/Wailbounder.png"
+  },
+  {
+    "id": "tekikal-geoshaper-of-continents-tb3",
+    "name": "Tekikal, Geoshaper of Continents",
+    "manaCost": "{R}{W}",
+    "type": "Legendary Creature — Dinosaur Elemental",
+    "rarity": "Rare",
+    "text": "Companion — You have no land cards in your starting deck.\nAs long as Tekikal is your commander, your Companion, or on the battlefield, you may play cards from your hand as lands. A card played this way enters tapped, loses all abilities, and gains \"{T}: Add one mana of this card's colors.\"",
+    "colors": [
+      "R",
+      "W"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "power": "3",
+    "toughness": "3",
+    "flavorText": "A broken world deserves its broken king.",
+    "artist": "Wattpad",
+    "_supersedes": "tekikal-geoshaper-of-continents-sb2",
+    "_source": "Changes from set 2/Nerfs/Tekikal, Geoshaper of Continents        .png"
+  },
+  {
+    "id": "nine-river-s-defense-tb3",
+    "name": "Nine River's Defense",
+    "manaCost": "{2}{G}",
+    "type": "Instant",
+    "rarity": "Rare",
+    "text": "Choose one. If {U}{U} was spent to cast this spell, choose two instead —\n• Create two 1/1 blue Merfolk creature tokens with hexproof.\n• Put a +1/+1 counter on up to two creatures.\n• Destroy any number of target artifacts and/or enchantments if their total mana value is less than or equal to the total power of creatures you control.",
+    "colors": [
+      "G"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "artist": "LordAdornable",
+    "_supersedes": "nine-rivers-defense-sb2",
+    "_source": "Changes from set 2/Wording fixes/Nine River's Defense.png",
+    "relatedTokens": [
+      "1/1 blue Merfolk"
+    ]
+  }
+]

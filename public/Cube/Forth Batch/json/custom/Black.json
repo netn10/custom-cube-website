@@ -1,0 +1,414 @@
+[
+  {
+    "id": "bloodtithe-watcher-fb4",
+    "name": "Bloodtithe Watcher",
+    "manaCost": "{1}{B}",
+    "type": "Creature — Vampire Cleric",
+    "rarity": "Uncommon",
+    "text": "Debtouch (Keep reading.)\nWhen this creature enters or dies, create a 1/1 white Vampire Cleric creature token with \"Whenever this creature deals combat damage to a player, they get that many debt counters. Basically debtouch.\" (At the beginning of that player's end step, they may pay {1} for each debt counter they have. They remove that many counters, then lose 1 life for each debt counter they have.)",
+    "colors": [
+      "B"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "power": "1",
+    "toughness": "1",
+    "artist": "Henrique Lindner",
+    "relatedTokens": [
+      "1/1 white Vampire Cleric"
+    ],
+    "_source": "Black/Bloodtithe Watcher.png"
+  },
+  {
+    "id": "cleanser-of-imperfections-fb4",
+    "name": "Cleanser of Imperfections",
+    "manaCost": "{4}{B}",
+    "type": "Artifact Creature — Horror Cleric",
+    "rarity": "Rare",
+    "text": "{2}{B}, {T}: Choose target nonartifact creature and target noncreature artifact you control, from the battlefield and/or from your graveyard. Combine them into one artifact creature. Activate only as a sorcery. (It has their names, mana costs, types, text boxes, etc.)",
+    "colors": [
+      "B"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Artifacts"
+    ],
+    "power": "4",
+    "toughness": "4",
+    "artist": "Dmitry Brushray",
+    "_source": "Black/Cleanser of Imperfections.png"
+  },
+  {
+    "id": "conjure-from-blood-fb4",
+    "name": "Conjure From Blood",
+    "manaCost": "{B}",
+    "type": "Sorcery",
+    "rarity": "Rare",
+    "text": "Populate twice. You lose life equal to the total power of creature tokens created this way. (To populate, create a token that's a copy of a creature token you control.)",
+    "colors": [
+      "B"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Token Collection"
+    ],
+    "flavorText": "\"Blood is thicker than water, and much more useful.\"\n—Tiany, Aspiring Bloodmage",
+    "artist": "ChatGPT o4",
+    "_source": "Black/Conjure From Blood.png"
+  },
+  {
+    "id": "deep-sea-horrors-fb4",
+    "name": "Deep-Sea Horrors",
+    "manaCost": "{1}{B}",
+    "type": "Enchantment Creature — Horror",
+    "rarity": "Rare",
+    "text": "Squad {1}{U} (As an additional cost to cast this spell, you may pay {1}{U} any number of times. When this creature enters, create that many tokens that are copies of it.)\nWhen this creature enters, exile a card from your graveyard.\nWhenever this creature deals combat damage to a player, you may cast a card exiled with it without paying its mana cost.",
+    "colors": [
+      "B"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Broken Cipher"
+    ],
+    "power": "1",
+    "toughness": "1",
+    "artist": "Sam Manley",
+    "_source": "Black/Deep-Sea Horrors.png"
+  },
+  {
+    "id": "force-of-greed-fb4",
+    "name": "Force of Greed",
+    "manaCost": "{3}{B}{B}",
+    "type": "Instant",
+    "rarity": "Mythic Rare",
+    "text": "You may pay 1 life and exile a black card from your hand rather than pay this spell's mana cost.\nSearch your library for a card, reveal it, put it into your hand, then shuffle. You lose life equal to its mana value if you didn't pay mana to cast this spell.",
+    "colors": [
+      "B"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "artist": "FallenNeophyteDesign",
+    "_source": "Black/Force of Greed.png"
+  },
+  {
+    "id": "gonti-s-nexus-fb4",
+    "name": "Gonti's Nexus",
+    "type": "Artifact Battle — Nexus",
+    "rarity": "Rare",
+    "text": "(All players protect Nexuses. You and others can attack it. When it's defeated, the player that defeated it exiles it, then puts it onto the battlefield transformed.)\nAt the beginning of each player's upkeep, that player loses 1 life and exiles the top card of your library with a prize counter on it.",
+    "colors": [
+      "B"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "artist": "ChatGPT o4",
+    "_source": "Black/Gonti’s Nexus.png",
+    "relatedFace": "Inside Gonti's Nexus"
+  },
+  {
+    "id": "greater-bad-fb4",
+    "name": "Greater Bad",
+    "manaCost": "{2}{B}{B}",
+    "type": "Enchantment",
+    "rarity": "Rare",
+    "text": "Sacrifice a creature: Draw cards equal to the sacrificed creature's power, then discard three cards.",
+    "colors": [
+      "B"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "flavorText": "\"I did it for me. I liked it. I was good at it. And I was really… I was alive.\"\n—Walter White, to Skyler White",
+    "artist": "After Darkness Art",
+    "_source": "Black/Greater Bad.png"
+  },
+  {
+    "id": "grimacing-grackle-fb4",
+    "name": "Grimacing Grackle",
+    "manaCost": "{1}{B}",
+    "type": "Creature — Bird",
+    "rarity": "Rare",
+    "text": "Flying\nWhenever this creature deals combat damage to a player, create a Blood token.\n{B}, Sacrifice X tokens: Return target artifact or creature card with mana value X or less from your graveyard to the battlefield.",
+    "colors": [
+      "B"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Token Collection"
+    ],
+    "power": "1",
+    "toughness": "1",
+    "artist": "weirdorangecat",
+    "relatedTokens": [
+      "Blood"
+    ],
+    "_source": "Black/Grimacing Grackle.png"
+  },
+  {
+    "id": "inside-gonti-s-nexus-fb4",
+    "name": "Inside Gonti's Nexus",
+    "type": "Artifact Land",
+    "rarity": "Rare",
+    "text": "Indestructible\nYou may play cards from exile with a prize counter on them.\n{T}: Add one mana of any color for each card in exile with a prize counter on it.",
+    "colors": [
+      "B"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "facedown": true,
+    "flavorText": "The Ghirapur Grand Prix was a front for a far more thrilling competition with an even greater prize.",
+    "artist": "ChatGPT o4",
+    "_source": "Black/Inside Gonti’s Nexus.png",
+    "relatedFace": "Gonti's Nexus"
+  },
+  {
+    "id": "lost-in-the-sauce-fb4",
+    "name": "Lost in the Sauce",
+    "manaCost": "{X}{X}{B}",
+    "type": "Instant",
+    "rarity": "Uncommon",
+    "text": "Target player creates X Food tokens, then up to one target creature gets -1/-1 for each token you control.",
+    "colors": [
+      "B"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Token Collection"
+    ],
+    "flavorText": "Every wise witch will always sob,\n\"If you get baked, you'll lose the job!\"",
+    "artist": "ChatGPT o4",
+    "relatedTokens": [
+      "Food"
+    ],
+    "_source": "Black/Lost in the Sauce.png"
+  },
+  {
+    "id": "loyalty-exploiter-fb4",
+    "name": "Loyalty Exploiter",
+    "manaCost": "{B}",
+    "type": "Creature — Dog Warrior",
+    "rarity": "Rare",
+    "text": "This creature can't block.\nMobilize 1 (Whenever this creature attacks, create a tapped and attacking 1/1 red Warrior creature token. Sacrifice it at the beginning of the next end step.)\n{1}{B}, Sacrifice a token: Return this card from your graveyard to the battlefield.",
+    "colors": [
+      "B"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Token Collection"
+    ],
+    "power": "2",
+    "toughness": "2",
+    "flavorText": "\"They are desperate to find a cause to die for—I will become that cause.\"",
+    "artist": "ChatGPT o4",
+    "relatedTokens": [
+      "1/1 red Warrior"
+    ],
+    "_source": "Black/Loyalty Exploiter.png"
+  },
+  {
+    "id": "lying-by-omission-fb4",
+    "name": "Lying By Omission",
+    "manaCost": "{B}",
+    "type": "Sorcery",
+    "rarity": "Rare",
+    "text": "Target player reveals their hand except two cards of their choice. You choose a nonland card from it. That player discards that card.",
+    "colors": [
+      "B"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "flavorText": "The truth always sits comfortably between two lies.",
+    "artist": "ChatGPT o4",
+    "_source": "Black/Lying By Omission.png"
+  },
+  {
+    "id": "makub-the-dealer-fb4",
+    "name": "Makub, the Dealer",
+    "manaCost": "{1}{B}{B}",
+    "type": "Creature — Wraith Mercenery",
+    "rarity": "Rare",
+    "text": "Decayed (This creature can't block. When it attacks, sacrifice it at end of combat.)\nWhen this creature enters or dies, sacrifice any number of nonland permanents, then draw that many cards.",
+    "colors": [
+      "B"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Blink/ETB/Value"
+    ],
+    "power": "6",
+    "toughness": "6",
+    "artist": "FazzRaven (A.I)",
+    "_source": "Black/Makub, the Dealer.png"
+  },
+  {
+    "id": "monster-mash-fb4",
+    "name": "Monster Mash",
+    "manaCost": "{3}{B}",
+    "type": "Sorcery",
+    "rarity": "Rare",
+    "text": "Put target custom creature card and target noncustom creature card from your graveyard onto the battlefield combined into one creature. (Its power is equal to their total power, its toughness is equal to their total toughness, and it has their names, mana costs, types, text boxes, etc.)",
+    "colors": [
+      "B"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Self-mill"
+    ],
+    "artist": "Francine Bridge",
+    "_source": "Black/Monster Mash.png"
+  },
+  {
+    "id": "problematic-trolley-fb4",
+    "name": "Problematic Trolley",
+    "manaCost": "{2}{B}",
+    "type": "Artifact — Vehicle",
+    "rarity": "Rare",
+    "text": "Whenever this Vehicle attacks, choose target creature defending player controls, then that player faces a villainous choice — That player sacrifices that creature, or they sacrifice each other creature they control.\nCrew 1",
+    "colors": [
+      "B"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Vehicles"
+    ],
+    "power": "4",
+    "toughness": "3",
+    "artist": "L. Lullabi & K. Turovec",
+    "_source": "Black/Problematic Trolley.png"
+  },
+  {
+    "id": "ran-by-the-numbers-fb4",
+    "name": "Ran by the Numbers",
+    "manaCost": "{B}",
+    "type": "Instant — Lesson",
+    "rarity": "Uncommon",
+    "text": "Destroy target creature if its power plus toughness plus mana value equals a prime number. (2, 3, 5, 7, 11, 13, 17, 19, 23, 29, and 31 are prime numbers.)",
+    "colors": [
+      "B"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "flavorText": "No matter how dull the lesson or dubious the instructor, a Silverquill student will always embrace the opportunity to learn a forbidden spell.",
+    "artist": "ChatGPT o4",
+    "_source": "Black/Ran by the Numbers.png"
+  },
+  {
+    "id": "stargazer-s-tutor-fb4",
+    "name": "Stargazer's Tutor",
+    "manaCost": "{1}{B}",
+    "type": "Sorcery",
+    "rarity": "Rare",
+    "text": "Search your library for a card with mana value less than or equal to the amount of life you've gained and lost this turn, reveal it, put it into your hand, then shuffle.",
+    "colors": [
+      "B"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "flavorText": "\"Absorb the wisdom of success and failure alike, but above all, find truths in the moments that lie between.\"\n—Warion, scholar of the Cosmos",
+    "artist": "EKHIRN",
+    "_source": "Black/Stargazer’s Tutor.png"
+  },
+  {
+    "id": "submerge-into-darkness-fb4",
+    "name": "Submerge into Darkness",
+    "manaCost": "{2}{B}",
+    "type": "Sorcery",
+    "rarity": "Uncommon",
+    "text": "Search target player's library for up to four cards and exile them. Then, that player shuffles that many Confusion cards into their library. (Confusion is a colorless sorcery card with no mana cost that has cycling {2}.)",
+    "colors": [
+      "B"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "artist": "Nad N",
+    "_source": "Black/Submerge into Darkness.png"
+  },
+  {
+    "id": "thalia-rebelious-heretic-fb4",
+    "name": "Thalia, Rebellious Heretic",
+    "manaCost": "{1}{B}",
+    "type": "Legendary Creature — Human Soldier",
+    "rarity": "Rare",
+    "text": "Deathtouch\nNoncreature spells cost 2 life more to cast.",
+    "colors": [
+      "B"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "power": "1",
+    "toughness": "3",
+    "flavorText": "\"It's not just a phase, Avacyn — it's the beginning of the end phase.\"",
+    "artist": "ChatGPT o4",
+    "_source": "Black/Thalia, Rebelious Heretic.png"
+  },
+  {
+    "id": "the-road-to-fenara-fb4",
+    "name": "The Road to Fenara",
+    "manaCost": "{2}{B}",
+    "type": "Enchantment",
+    "rarity": "Rare",
+    "text": "This enchantment enters from your graveyard with a lifelink counter and a finality counter on it.\nAt the beginning of your upkeep, put target creature card from your graveyard onto the battlefield with a finality counter on it. This enchantment deals damage to you equal to its mana value.\n{3}{W}{W}: Return this card from your graveyard to the battlefield.",
+    "colors": [
+      "B"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Self-mill"
+    ],
+    "flavorText": "Even after life, the citizens and the outsiders crave to be in Fenara.",
+    "artist": "PixelRealms",
+    "_source": "Black/The Road to Fenara.png"
+  },
+  {
+    "id": "tormenting-decision-fb4",
+    "name": "Tormenting Decision",
+    "manaCost": "{2}{B}",
+    "type": "Sorcery",
+    "rarity": "Uncommon",
+    "text": "Each opponent loses 3 life unless they discard a card or sacrifice a nonland permanent.\nCipher (Then you may exile this spell card encoded on a creature you control. Whenever that creature deals combat damage to a player, its controller may cast a copy of the encoded card without paying its mana cost.)",
+    "colors": [
+      "B"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Broken Cipher"
+    ],
+    "artist": "Andrew Paranavitana",
+    "_source": "Black/Tormenting Decision.png"
+  },
+  {
+    "id": "total-annihilation-fb4",
+    "name": "Total Annihilation",
+    "manaCost": "{3}{B}{B}",
+    "type": "Sorcery",
+    "rarity": "Rare",
+    "text": "Destroy all creatures, enchantments, and Vehicles.",
+    "colors": [
+      "B"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Control"
+    ],
+    "artist": "Peakpx",
+    "_source": "Black/Total Annihilation.png"
+  },
+  {
+    "id": "vessel-of-the-cycle-fb4",
+    "name": "Vessel of the Cycle",
+    "manaCost": "{1}{B}",
+    "type": "Creature — Human Druid",
+    "rarity": "Rare",
+    "text": "{T}: If this permanent is a creature, sacrifice a creature. Then, add {B}{B}.\nPetrify from your graveyard {5}{G} ({5}{G}, Exile this card from your graveyard: Create a copy of it, except it's an artifact. Activate only as a sorcery.)",
+    "colors": [
+      "B"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Self-mill"
+    ],
+    "power": "1",
+    "toughness": "1",
+    "artist": "JAGA",
+    "_source": "Black/Vessel of the Cycle.png"
+  }
+]

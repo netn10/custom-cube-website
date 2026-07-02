@@ -1,0 +1,54 @@
+[
+  {
+    "id": "house-maniac-sb2",
+    "name": "House Maniac",
+    "manaCost": "{1}{R}",
+    "type": "Creature — Human Clown",
+    "rarity": "Rare",
+    "text": "If you would draw a card while your library has no cards in it, instead this creature deals 5 damage to any target.",
+    "colors": [
+      "R"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Self-mill"
+    ],
+    "power": "3",
+    "toughness": "1",
+    "flavorText": "come inside keep happy thoughts no laugh\n—Scratched on a Colorful Door in Duskmourn",
+    "artist": "Pxfuel",
+    "_source": "Red/House Maniac.png"
+  },
+  {
+    "id": "sunbirds-song-sb2",
+    "name": "Sunbird's Song",
+    "manaCost": "{R}",
+    "type": "Instant",
+    "rarity": "Rare",
+    "text": "Exile target spell. Its controller discover X, where X is that spell's mana value minus 1. (They exile cards from the top of their library until they exile a nonland card with that mana value or less. They cast it without paying its mana cost or put it into their hand. They put the rest on the bottom in a random order.)",
+    "colors": [
+      "R"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "artist": "Liz and Jess Art Shop",
+    "_source": "Red/Sunbird’s Song.png"
+  },
+  {
+    "id": "tiring-bolt-sb2",
+    "name": "Tiring Bolt",
+    "manaCost": "{R}",
+    "type": "Instant",
+    "rarity": "Uncommon",
+    "text": "Tiring Bolt deals 3 damage to any target.\nTire yourself. (Put a Confusion card on top of your library. It's a colorless sorcery card with no mana cost that has cycling {2}.)",
+    "colors": [
+      "R"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Control"
+    ],
+    "artist": "Dice Cove",
+    "_source": "Red/Tiring Bolt.png"
+  }
+]

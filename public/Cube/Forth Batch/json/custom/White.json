@@ -1,0 +1,527 @@
+[
+  {
+    "id": "anthem-of-duality-fb4",
+    "name": "Anthem of Duality",
+    "manaCost": "{W}",
+    "type": "Enchantment",
+    "rarity": "Rare",
+    "text": "Non-custom, nontoken creatures you control get +1/+1 as long as you control a custom, nontoken creature.\nCustom, nontoken creatures you control get +1/+1 as long as you control a non-custom, nontoken creature.",
+    "colors": [
+      "W"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "flavorText": "Humanity diverged, yet sang as one.",
+    "artist": "ChatGPT o4",
+    "_source": "White/Anthem of Duality.png"
+  },
+  {
+    "id": "barrenton-acrobat-singer-fb4",
+    "name": "Barrenton Acrobat-Singer",
+    "manaCost": "{W}",
+    "type": "Creature — Kithkin Bard",
+    "rarity": "Uncommon",
+    "text": "Whenever this creature attacks, you may pay {2}{W}. If you do, choose one —\n• Tap target creature and put a stun counter on it.\n• Untap target creature and put a vitality counter on it.\nIf {U}{U} was spent to pay this cost, do both instead. (If a permanent with a vitality counter would tap, remove one from it instead.)",
+    "colors": [
+      "W"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "power": "2",
+    "toughness": "1",
+    "artist": "ChatGPT o4",
+    "_source": "White/Barrenton Acrobat-Singer.png"
+  },
+  {
+    "id": "cleanse-impure-thoughts-fb4",
+    "name": "Cleanse Impure Thoughts",
+    "manaCost": "{W}",
+    "type": "Sorcery",
+    "rarity": "Rare",
+    "text": "Target opponent reveals their hand. You choose a nonland card from it. That player discards that card. Then you reveal your hand. That opponent chooses a nonland card from it. You discard that card.",
+    "colors": [
+      "W"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "flavorText": "\"Only those bound by ten winters of shared vigil may invoke the Mind Purification—for to tread the halls of another's mind is to walk barefoot upon sacred ground.\"\n—Her Holy Word, Avacyn's Book, Page 354",
+    "artist": "ChatGPT o4",
+    "_source": "White/Cleanse Impure Thoughts.png"
+  },
+  {
+    "id": "count-your-grains-fb4",
+    "name": "Count Your Grains",
+    "manaCost": "{W}",
+    "type": "Sorcery",
+    "rarity": "Uncommon",
+    "text": "Choose an opponent. If they control more lands than you, untap a number of lands you control equal to the difference.\nDraw a card.",
+    "colors": [
+      "W"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "flavorText": "Warriors who shed excessive blood must tend Inys Haen for ten years under the Harvesting Sun Goddess to atone, cultivating patience, humility, and grace.",
+    "artist": "Dominik Mayer",
+    "_source": "White/Count Your Grains.png"
+  },
+  {
+    "id": "day-of-awakening-fb4",
+    "name": "Day of Awakening",
+    "manaCost": "{X}{W}",
+    "type": "Sorcery",
+    "rarity": "Mythic Rare",
+    "text": "Return from your graveyard to the battlefield any number of target creature cards that each have a different mana value X or less.",
+    "colors": [
+      "W"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Self-mill"
+    ],
+    "flavorText": "\"… On that day, they shall rise as one, a legion forged from difference, for it is the clash of voices that births the mightiest chorus.\"\n—Song of All, canto 38",
+    "artist": "Fantastic-Rope-713",
+    "_source": "White/Day of Awakening.png"
+  },
+  {
+    "id": "doctor-s-orders-fb4",
+    "name": "Doctor's Orders",
+    "manaCost": "{W}",
+    "type": "Sorcery",
+    "rarity": "Uncommon",
+    "text": "Destroy target creature, then return it to the battlefield.\nFlashback {2}{B}",
+    "colors": [
+      "W"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Blink/ETB/Value",
+      "Self-mill"
+    ],
+    "flavorText": "\"Side effects include: death, coughing blood, confusing medical bills…\"",
+    "artist": "Hinata Sipes",
+    "_source": "White/Doctor's Orders.png"
+  },
+  {
+    "id": "el-argint-aram-s-masterpiece-fb4",
+    "name": "El-Argint, Aram's Masterpiece",
+    "manaCost": "{2}{W}",
+    "type": "Legendary Artifact — Vehicle",
+    "rarity": "Rare",
+    "text": "Lifelink\n{3}{G}: This Vehicle becomes an artifact creature until end of turn. Until end of turn, whenever a Vehicle you control deals combat damage to a player, put that many +1/+1 counters on target creature or Vehicle you control. If a creature named Aram, Lockloft Co-Ace crewed this Vehicle this turn, copy this ability.\nCrew 3",
+    "colors": [
+      "W"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Vehicles"
+    ],
+    "power": "5",
+    "toughness": "5",
+    "artist": "ChatGPT o4",
+    "_source": "White/El-Argint, Aram's Masterpiece.png"
+  },
+  {
+    "id": "equenaut-coordinator-fb4",
+    "name": "Equenaut Coordinator",
+    "manaCost": "{3}{W}{W}",
+    "type": "Creature — Human Knight",
+    "rarity": "Rare",
+    "text": "Flying, vigilance\nUnity (Token creatures you control have all activated abilities of all nontoken creatures you control with unity.)\nAs long as this creature is on the battlefield, it has all activated abilities of all creature cards in your graveyard.",
+    "colors": [
+      "W"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Self-mill"
+    ],
+    "power": "4",
+    "toughness": "4",
+    "artist": "ChatGPT o4",
+    "_source": "White/Equenaut Coordinator.png"
+  },
+  {
+    "id": "erayo-s-gift-fb4",
+    "name": "Erayo's Gift",
+    "manaCost": "{1}{W}",
+    "type": "Legendary Enchantment",
+    "rarity": "Rare",
+    "text": "Whenever the fourth spell of a turn is cast, each player draws four cards and flips Erayo's Gift.",
+    "colors": [
+      "W"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Storm"
+    ],
+    "artist": "ChatGPT o4",
+    "_source": "White/Erayo's Gift.png"
+  },
+  {
+    "id": "falcon-mecha-fb4",
+    "name": "Falcon Mecha",
+    "manaCost": "{W}",
+    "type": "Artifact — Vehicle",
+    "rarity": "Rare",
+    "text": "Flying, lifelink\nEscape—{2}{W}, Exile four other cards from your graveyard. (You may cast this card from your graveyard for its escape cost.)\nSacrifice this Vehicle: Surveil X, where X is the number of spells you've cast this turn.\nCrew 1",
+    "colors": [
+      "W"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Vehicles",
+      "Self-mill"
+    ],
+    "power": "2",
+    "toughness": "2",
+    "artist": "Ramza Ardyputra",
+    "_source": "White/Falcon Mecha.png"
+  },
+  {
+    "id": "glisterchrome-elemental-fb4",
+    "name": "Glisterchrome Elemental",
+    "manaCost": "{1}{W}",
+    "type": "Creature — Elemental",
+    "rarity": "Uncommon",
+    "text": "Lifelink\nThis creature enters with a +1/+1 counter on it for each other spell cast this turn.\nStormcycling {3} ({3}, Discard this card: Search your library for a card with Storm, reveal it, put it into your hand, then shuffle.)",
+    "colors": [
+      "W"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Storm"
+    ],
+    "power": "1",
+    "toughness": "1",
+    "artist": "Tiziana Federica Ruiu",
+    "_source": "White/Glisterchrome Elemental.png"
+  },
+  {
+    "id": "matron-of-porcelain-fb4",
+    "name": "Matron of Porcelain",
+    "manaCost": "{2}{W}",
+    "type": "Creature — Vampire Artificer",
+    "rarity": "Rare",
+    "text": "When this creature enters, create a 4/3 artifact Vehicle token with crew 1 named Sweat.\nWhen this creature dies, create a 3/4 artifact Vehicle token with crew 1 named Tears.\n{W}, Exile this card from your graveyard: Target Vehicle you control becomes an artifact creature until end of turn.",
+    "colors": [
+      "W"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Vehicles"
+    ],
+    "power": "2",
+    "toughness": "2",
+    "artist": "Craiyon",
+    "relatedTokens": [
+      "Sweat",
+      "Tears"
+    ],
+    "_source": "White/Matron of Porcelain.png"
+  },
+  {
+    "id": "monastery-alarmist-fb4",
+    "name": "Monastery Alarmist",
+    "manaCost": "{W}",
+    "type": "Creature — Dog Monk",
+    "rarity": "Uncommon",
+    "text": "Flurry — Whenever you cast your second spell each turn, untap each creature you control. Scry 1.",
+    "colors": [
+      "W"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Storm"
+    ],
+    "power": "2",
+    "toughness": "1",
+    "flavorText": "From barking through the nights of his puphood to ringing his bell until dawn as an adult, his proficiency was never in question — only his methods.",
+    "artist": "ChatGPT o4",
+    "_source": "White/Monastery Alarmist.png"
+  },
+  {
+    "id": "more-money-more-problems-fb4",
+    "name": "More Money, More Problems",
+    "manaCost": "{2}{W}",
+    "type": "Sorcery",
+    "rarity": "Rare",
+    "text": "Target player creates a tapped Treasure token with a stun counter on it and gets a debt counter. (At the beginning of that player's end step, they may pay {1} for each debt counter they have. They remove that many counters, then lose 1 life for each debt counter they have.)\nStorm (When you cast this spell, copy it for each spell cast before it this turn.)",
+    "colors": [
+      "W"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Storm"
+    ],
+    "artist": "ChatGPT o4",
+    "_source": "White/More Money, More Problems.png",
+    "relatedTokens": [
+      "Treasure"
+    ]
+  },
+  {
+    "id": "nightmare-fracture-fb4",
+    "name": "Nightmare Fracture",
+    "manaCost": "{1}{W}{W}",
+    "type": "Instant",
+    "rarity": "Uncommon",
+    "text": "Counter target spell. Its controller draws a card.\nDraw a card.",
+    "colors": [
+      "W"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "flavorText": "\"Dreams are paradoxical. They offer freedom, yet trap the mind in its own desires.\"\n—Olka, Mistmeadow witch",
+    "artist": "ChatGPT o4",
+    "_source": "White/Nightmare Fracture.png"
+  },
+  {
+    "id": "out-of-body-experience-fb4",
+    "name": "Out of Body Experience",
+    "manaCost": "{2}{W}",
+    "type": "Instant",
+    "rarity": "Rare",
+    "text": "Exile target creature. Its controller creates a token that's a copy of it, except it's 1/1, it's a Mind in addition to its other types, and it has flying. Its controller creates a colorless Body creature token with power equal to that creature's power and toughness equal to that creature's toughness.",
+    "colors": [
+      "W"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Blink/ETB/Value"
+    ],
+    "artist": "ChatGPT o4",
+    "relatedTokens": [
+      "colorless Body"
+    ],
+    "_source": "White/Out of Body Experience.png"
+  },
+  {
+    "id": "parhelion-iii-fb4",
+    "name": "Parhelion III",
+    "type": "Legendary Artifact — Vehicle",
+    "rarity": "Mythic Rare",
+    "text": "Flying, first strike, vigilance\nWhenever Parhelion III attacks, put two Vehicle cards from your hand tapped and attacking. They become creatures until end of turn. Return them to your hand at the end of turn.\nCrew 4",
+    "colors": [
+      "W"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Vehicles"
+    ],
+    "power": "5",
+    "toughness": "5",
+    "facedown": true,
+    "artist": "ChatGPT o4",
+    "_source": "White/Parhelion III.png",
+    "relatedFace": "Ravnica's Last Resort"
+  },
+  {
+    "id": "radiant-multi-striker-fb4",
+    "name": "Radiant Multi-Striker",
+    "manaCost": "{1}{W}",
+    "type": "Artifact — Vehicle",
+    "rarity": "Rare",
+    "text": "Start your engines! (If you have no speed, it starts at 1. It increases once on each of your turns when an opponent loses life. Max speed is 4.)\nThis Vehicle strikes equal to your speed. (Speed 1 = first strike; 2 = double strike; 3 = triple strike; 4 = quad strike.)\nCrew 1",
+    "colors": [
+      "W"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Vehicles"
+    ],
+    "power": "1",
+    "toughness": "1",
+    "artist": "kisuke_ichi",
+    "_source": "White/Radiant Multi-Striker.png"
+  },
+  {
+    "id": "ravnica-s-last-resort-fb4",
+    "name": "Ravnica's Last Resort",
+    "manaCost": "{2}{W}{W}",
+    "type": "Battle — Siege",
+    "rarity": "Mythic Rare",
+    "text": "(As a Siege enters, choose an opponent to protect it. You and others can attack it. When it's defeated, exile it, then cast it transformed.)\nAt the beginning of your upkeep, surveil 1, then reveal the top card of your library. If it's a creature or a Vehicle card, put it into your hand.",
+    "colors": [
+      "W"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Vehicles"
+    ],
+    "loyalty": "5",
+    "artist": "ChatGPT o4",
+    "_source": "White/Ravnica's Last Resort.png",
+    "relatedFace": "Parhelion III"
+  },
+  {
+    "id": "sancitifier-of-lost-media-fb4",
+    "name": "Sanctifier of Lost Media",
+    "manaCost": "{1}{W}",
+    "type": "Creature — Human Cleric",
+    "rarity": "Rare",
+    "text": "Requiem — Whenever one or more cards enter or leave your graveyard, scry that many cards.\n{4}{W}: Exile target player's graveyard, then you may return it to their graveyard.",
+    "colors": [
+      "W"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Self-mill"
+    ],
+    "power": "0",
+    "toughness": "3",
+    "flavorText": "\"And to think, I once hunted for a real copy of Red Mist. The irony isn't lost on me—but I'm sure Valgavoth enjoys it more.\"",
+    "artist": "ChatGPT o4",
+    "_source": "White/Sancitifier of Lost Media.png"
+  },
+  {
+    "id": "sharestone-fb4",
+    "name": "Sharestone",
+    "manaCost": "{1}{W}",
+    "type": "Artifact",
+    "rarity": "Common",
+    "text": "When this artifact enters, each player draws a card.\n{T}: Add {W}.",
+    "colors": [
+      "W"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "flavorText": "A relic from an alternate Fomori timeline, this stone reveals a united humanity so profoundly harmonious, its beauty could bring one to tears.",
+    "artist": "ChatGPT o4",
+    "_source": "White/Sharestone.png"
+  },
+  {
+    "id": "stranded-on-a-shore-fb4",
+    "name": "Stranded on a Shore",
+    "manaCost": "{W}",
+    "type": "Enchantment — Aura",
+    "rarity": "Rare",
+    "text": "Enchant Island you control\nWhen this Aura enters, exile target creature an opponent controls until this Aura leaves the battlefield. (That creature returns under its owner's control.)",
+    "colors": [
+      "W"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "artist": "Paul Reid",
+    "_source": "White/Stranded on a Shore.png"
+  },
+  {
+    "id": "strength-in-solitude-fb4",
+    "name": "Strength in Solitude",
+    "manaCost": "{W}",
+    "type": "Enchantment",
+    "rarity": "Uncommon",
+    "text": "Storm (When you cast this spell, copy it for each spell cast before it this turn. Copies become tokens.)\nExalted (Whenever a creature you control attacks alone, that creature gets +1/+1 until end of turn.)",
+    "colors": [
+      "W"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Storm"
+    ],
+    "flavorText": "\"I quenched my inner storm. Now, I am the storm that is approaching.\"",
+    "artist": "||Lamb||",
+    "_source": "White/Strength in Solitude.png"
+  },
+  {
+    "id": "the-day-is-yours-fb4",
+    "name": "The Day is Yours",
+    "manaCost": "{1}{W}",
+    "type": "Instant",
+    "rarity": "Uncommon",
+    "text": "Target creature you own becomes a commander. (It starts with commander tax {0}.)\nDraw a card.",
+    "colors": [
+      "W"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "flavorText": "\"I never dreamt of battle, nor of banners raised in my name. But fate chose this course, and I ask you now to believe in it as I do.\"\n—The One Who Risen",
+    "artist": "Gabriel Velloso",
+    "_source": "White/The Day is Yours.png"
+  },
+  {
+    "id": "the-paper-man-fb4",
+    "name": "The Paper Man",
+    "manaCost": "{1}{W}{W}",
+    "type": "Legendary Creature — Alien",
+    "rarity": "Rare",
+    "text": "Requiem — Whenever a card enters or leaves your graveyard, each player exiles a creature they control. If they do, they draw a card.",
+    "colors": [
+      "W"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Self-mill"
+    ],
+    "power": "3",
+    "toughness": "3",
+    "flavorText": "Wrap and wrap and wrap he goes,\nWith hands of silk delight.\nHe'll snatch you up, he'll fold you tight,\nAnd vanish you from sight.",
+    "artist": "ChatGPT o4",
+    "_source": "White/The Paper Man.png"
+  },
+  {
+    "id": "vehicles-need-it-fb4",
+    "name": "Vehicles Need It",
+    "manaCost": "{3}{W}",
+    "type": "Instant",
+    "rarity": "Rare",
+    "text": "Put an artifact or creature card you own from outside the game onto the battlefield. It's a 4/4 Kindred Artifact Vehicle Angel with flying and crew 3.\nMiracle {W} (You may cast this card for its miracle cost when you draw it if it's the first card you drew this turn.)",
+    "colors": [
+      "W"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Vehicles"
+    ],
+    "artist": "ChatGPT o4",
+    "_source": "White/Vehicles Need It.png"
+  },
+  {
+    "id": "vizier-of-second-glory-fb4",
+    "name": "Vizier of Second Glory",
+    "manaCost": "{1}{W}",
+    "type": "Creature — Human Cleric",
+    "rarity": "Rare",
+    "text": "When this creature enters, target creature card in your graveyard gains embalm until end of turn. The embalm cost is equal to its mana cost. (Exile that card and pay its embalm cost: Create a token that's a copy of it, except it's a white Zombie in addition to its other types and has no mana cost. Embalm only as a sorcery.)\nEmbalm {1}{W}",
+    "colors": [
+      "W"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Blink/ETB/Value",
+      "Self-mill"
+    ],
+    "power": "2",
+    "toughness": "1",
+    "artist": "ChatGPT 4o",
+    "_source": "White/Vizier of Second Glory.png"
+  },
+  {
+    "id": "we-own-this-city-fb4",
+    "name": "We Own This City",
+    "manaCost": "{2}{W}{W}",
+    "type": "Enchantment",
+    "rarity": "Rare",
+    "text": "Ward {2}\nYour opponents respect you twice. (Creatures can't attack you or block creatures you control unless their controller pays {2} for each creature they control that's attacking you or blocking a creature you control. You have ward {2}.)",
+    "colors": [
+      "W"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "artist": "Anna Steinbauer",
+    "_source": "White/We Own This City.png"
+  },
+  {
+    "id": "where-lies-hide-where-truth-reveals-fb4",
+    "name": "Where Lies Hide // Where Truth Reveals",
+    "type": "Enchantment — Room",
+    "rarity": "Mythic Rare",
+    "text": "Where Lies Hide {2}{W}{W}\nWhen you unlock this door, exile up to three other target creatures from the battlefield and/or creature cards from graveyards.\nWhen this Room leaves the battlefield, return the exiled cards to their owners' hands.\n//\nWhere Truth Reveals {6}{R}{R}\nYou may cast cards exiled with permanents you control, and you may spend any type of mana to cast them.\n(You may cast either half. That door unlocks on the battlefield. As a sorcery, you may pay the mana cost of a locked door to unlock it.)",
+    "colors": [
+      "W",
+      "R"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "artist": "ChatGPT o4",
+    "_source": "White/Where Truth Reveals.png"
+  }
+]

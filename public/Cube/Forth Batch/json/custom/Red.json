@@ -1,0 +1,487 @@
+[
+  {
+    "id": "ad-infinitum-fb4",
+    "name": "Ad Infinitum",
+    "manaCost": "{3}{R}{R}",
+    "type": "Sorcery",
+    "rarity": "Rare",
+    "text": "Exile the top card of your library. Until the end of your next turn, you may play that card. At the end of that turn, if you didn't play it, it deals damage to you equal to its mana value. You may repeat this process any number of times.",
+    "colors": [
+      "R"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "flavorText": "\"The best part of this job is getting fired.\"",
+    "artist": "ChatGPT o4",
+    "_source": "Red/Ad Infinitum.png"
+  },
+  {
+    "id": "artistic-strike-fb4",
+    "name": "Artistic Strike",
+    "manaCost": "{2}{R}",
+    "type": "Instant",
+    "rarity": "Common",
+    "text": "This spell deals 3 damage to any target, including a spell on the stack (If it deals enough damage to a creature or planeswalker spell, it's countered. If it's a Battle, it enters transformed.)",
+    "colors": [
+      "R"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Control"
+    ],
+    "flavorText": "A lot of Prismari students start off with a bright idea, only to be shut down by an even brighter one.",
+    "artist": "Asur Misoa",
+    "_source": "Red/Artistic Strike.png"
+  },
+  {
+    "id": "astral-force-fb4",
+    "name": "Astral Force",
+    "manaCost": "{1}{R}",
+    "type": "Enchantment",
+    "rarity": "Rare",
+    "text": "At the beginning of combat on your turn, target creature you control gains double strike until end of turn.\n{2}{U}: Until end of turn, this enchantment becomes a 1/1 Monk creature with prowess and \"Whenever this creature deals combat damage to a player, draw a card.\" in addition to its other types until end of turn.",
+    "colors": [
+      "R"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "artist": "Harliskudo",
+    "_source": "Red/Astral Force.png"
+  },
+  {
+    "id": "bloodrush-bellow-fb4",
+    "name": "Bloodrush Bellow",
+    "manaCost": "{3}{R}",
+    "type": "Enchantment",
+    "rarity": "Rare",
+    "text": "At the beginning of combat on your turn, target creature you control gets +1/+0 and gains haste and berserk until end of turn. (Whenever it attacks, you may double its power. If you do, sacrifice it at the end of turn.)\n{4}{R/G}{R/G}, Discard a creature card: Add the discarded creature card's power, toughness and text box to target attacking creature until end of turn.",
+    "colors": [
+      "R"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "artist": "Wisnu Tan",
+    "_source": "Red/Bloodrush Bellow.png"
+  },
+  {
+    "id": "collectric-blast-fb4",
+    "name": "Collectric Blast",
+    "manaCost": "{R}",
+    "type": "Instant",
+    "rarity": "Common",
+    "text": "Collectric Blast deals 2 damage to any target.\nCollection — Collectric Blast deals 4 damage instead if you control three or more differently named tokens.",
+    "colors": [
+      "R"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Token Collection"
+    ],
+    "flavorText": "Collectomancy is part art, part science, and all fun.",
+    "artist": "ChatGPT o4",
+    "_source": "Red/Collectric Blast.png"
+  },
+  {
+    "id": "crash-bandicoot-fb4",
+    "name": "Crash Bandicoot!",
+    "manaCost": "{2}{R}",
+    "type": "Legendary Creature — Bandicoot",
+    "rarity": "Rare",
+    "text": "{R}{R}{R}{R}{R}: Destroy target artifact. If an artifact is put into a graveyard this way, put a shield counter on Crash Bandicoot! Then, if Crash Bandicoot! has three or more shield counters on him, untap him and until end of turn, he must be blocked by all creatures if able. (You literally tap him 450 degrees. Make it look good.)",
+    "colors": [
+      "R"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "power": "2",
+    "toughness": "2",
+    "flavorText": "Woah!",
+    "artist": "Naughty Dog",
+    "_source": "Red/Crash Bandicoot!.png"
+  },
+  {
+    "id": "determined-fb4",
+    "name": "Determined",
+    "manaCost": "{R}",
+    "type": "Sorcery",
+    "rarity": "Rare",
+    "text": "Discard a nonland card. If you do, draw two cards.",
+    "colors": [
+      "R"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "artist": "BoredPanda",
+    "_source": "Red/Determined.png"
+  },
+  {
+    "id": "everything-at-once-fb4",
+    "name": "Everything, at Once",
+    "type": "Sorcery",
+    "rarity": "Mythic Rare",
+    "text": "Exile your graveyard. Until the end of your next turn, you may play cards exiled this way.",
+    "colors": [
+      "R"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Self-mill"
+    ],
+    "artist": "Janne Parviainen",
+    "_source": "Red/Everything, at Once.png"
+  },
+  {
+    "id": "go-out-with-a-bang-fb4",
+    "name": "Go Out With a Bang",
+    "manaCost": "{R}",
+    "type": "Instant",
+    "rarity": "Common",
+    "text": "Target creature gets +3/+0 until end of turn. When it dies this turn, exile it. Its controller creates a token that's a copy of it, except it's an enchantment.",
+    "colors": [
+      "R"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "flavorText": "\"Please remember me at my best, but most of all, remember me at my worst.\"\n— Judith, the Magnificent Death",
+    "artist": "Imagen 3",
+    "_source": "Red/Go Out With a Bang.png"
+  },
+  {
+    "id": "guilty-gear-fb4",
+    "name": "Guilty Gear",
+    "manaCost": "{R}",
+    "type": "Sorcery",
+    "rarity": "Rare",
+    "text": "Strive — This spell costs {2}{B} more to cast for each target beyond the first.\nUntil end of turn, whenever you sacrifice a token, it deals 1 damage to each opponent.\nChoose any number of target artifact and/or creature cards with mana value 3 or less in your graveyard. For each of them, create a token that's a copy of it, except it has haste. Sacrifice those tokens at the beginning of the next end step.",
+    "colors": [
+      "R"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Token Collection",
+      "Self-mill"
+    ],
+    "artist": "Daisuke Ishiwatari",
+    "_source": "Red/Guilty Gear.png"
+  },
+  {
+    "id": "i-want-it-all-fb4",
+    "name": "I Want It All",
+    "manaCost": "{2}{R}",
+    "type": "Sorcery",
+    "rarity": "Rare",
+    "text": "Exile your hand and the top seven cards of your library. Until end of turn, you may play cards exiled this way.",
+    "colors": [
+      "R"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "flavorText": "\"A torturous existence indeed—to taste everything, yet taste nothing.\"\n—Elspeth, to Xenagos",
+    "artist": "Easy-Peasy-AI",
+    "_source": "Red/I Want It All.png"
+  },
+  {
+    "id": "jaxis-taxis-fb4",
+    "name": "Jaxis Taxis",
+    "manaCost": "{2}{R}",
+    "type": "Artifact — Vehicle",
+    "rarity": "Rare",
+    "text": "Whenever this Vehicle attacks, you may sacrifice X differently named tokens. If you do, you may put a creature card with mana value X or less from your hand onto the battlefield tapped and attacking. It gains \"When this creature dies, draw a card.\" Sacrifice that creature at the beginning of the next end step.\nBlitz {R} (If you cast this spell for its blitz cost, it gains haste and \"When this artifact dies, draw a card.\" Sacrifice it at the beginning of the next end step.)\nCrew 1",
+    "colors": [
+      "R"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Vehicles",
+      "Token Collection"
+    ],
+    "power": "5",
+    "toughness": "2",
+    "artist": "ChatGPT o4",
+    "_source": "Red/Jaxis Taxis.png"
+  },
+  {
+    "id": "leave-no-turn-unstoned-fb4",
+    "name": "Leave No Turn Unstoned",
+    "manaCost": "{1}{R}",
+    "type": "Enchantment",
+    "rarity": "Rare",
+    "text": "At the beginning of your upkeep, exile a card at random from your graveyard. You may cast a copy of that card this turn.",
+    "colors": [
+      "R"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Self-mill"
+    ],
+    "flavorText": "\"All truths are seeded in your mind — your path is simply the journey of remembrance.\"\n—The Burning-Tree Sisterhood, to Judith",
+    "artist": "Natasha Chomko",
+    "_source": "Red/Leave No Turn Unstoned.png"
+  },
+  {
+    "id": "look-for-fossils-fb4",
+    "name": "Look for Fossils",
+    "manaCost": "{1}{R}",
+    "type": "Instant",
+    "rarity": "Uncommon",
+    "text": "Return a card [at random] from your graveyard to your hand.\nFlashback-Cleave {2}{G}{G} (You may cast this card from your graveyard for its flashback-cleave cost. If you do, remove the words in square brackets. Then exile it.)",
+    "colors": [
+      "R"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Self-mill"
+    ],
+    "artist": "ChatGPT o4",
+    "_source": "Red/Look for Fossils.png"
+  },
+  {
+    "id": "nightmare-halls-fb4",
+    "name": "Nightmare Halls",
+    "manaCost": "{3}{R}{R}",
+    "type": "Enchantment",
+    "rarity": "Mythic Rare",
+    "text": "Rather than pay the mana cost for a spell, its controller may discard a card that shares a color with that spell.",
+    "colors": [
+      "R"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "flavorText": "\"Madness is not a problem, Fran. It's a gift.\"",
+    "artist": "Foxtragic",
+    "_source": "Red/Nightmare Halls.png"
+  },
+  {
+    "id": "pyromancer-s-mentor-fb4",
+    "name": "Pyromancer's Mentor",
+    "manaCost": "{3}{R}{R}",
+    "type": "Creature — Human Elder Shaman",
+    "rarity": "Mythic Rare",
+    "text": "Whenever you cast an instant or sorcery spell, create a Young Pyromancer token. (It's a {1}{R} 2/1 Human Shaman creature with \"Whenever you cast an instant or sorcery spell, create a 1/1 red Elemental creature token.\")",
+    "colors": [
+      "R"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Token Collection"
+    ],
+    "power": "4",
+    "toughness": "3",
+    "artist": "Dall-E 3",
+    "relatedTokens": [
+      "Young Pyromancer"
+    ],
+    "_source": "Red/Pyromancer's Mentor.png"
+  },
+  {
+    "id": "raga-van-nimble-pilferer-fb4",
+    "name": "Raga-Van, Nimble Pilferer",
+    "manaCost": "{R}",
+    "type": "Kindred Artifact — Vehicle Monkey Pirate",
+    "rarity": "Mythic Rare",
+    "text": "Whenever Raga-Van deals combat damage to a player, create a Treasure token and exile the top card of that player's library. Until end of turn, you may cast that card.\nDash {1}{R} (You may cast this spell for its dash cost. If you do, it gains haste, and it's returned from the battlefield to its owner's hand at the beginning of the next end step.)\nCrew 3",
+    "colors": [
+      "R"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Vehicles"
+    ],
+    "power": "6",
+    "toughness": "4",
+    "artist": "Simon Dominic and Nati",
+    "relatedTokens": [
+      "Treasure"
+    ],
+    "_source": "Red/Raga-Van, Nimble Pilferer.png"
+  },
+  {
+    "id": "regal-rooster-fb4",
+    "name": "Regal Rooster",
+    "manaCost": "{5}{R}{R}",
+    "type": "Creature — Bird Berserker Noble",
+    "rarity": "Rare",
+    "text": "Flying, menace, haste\nWhen this creature enters, mill cards until you mill an enchantment card. Create a tapped Treasure token for each card milled this way, and put that enchantment into your hand.\n{2}{R}, Discard this card: You become the monarch.",
+    "colors": [
+      "R"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Self-mill",
+      "Token Collection"
+    ],
+    "power": "5",
+    "toughness": "5",
+    "artist": "Milan Randika (With A.I probably)",
+    "relatedTokens": [
+      "Treasure"
+    ],
+    "_source": "Red/Regal Rooster.png"
+  },
+  {
+    "id": "shocking-revelation-fb4",
+    "name": "Shocking Revelation",
+    "manaCost": "{1}{R}",
+    "type": "Instant",
+    "rarity": "Uncommon",
+    "text": "As an additional cost to cast this spell, you may behold a card with mana value 6 or more. (You may choose a permanent you control with mana value 6 or more or reveal a card with mana value 6 or more from your hand.)\nShocking Revelation deals 2 damage to any target. If you beheld, discard any number of cards, then draw that many cards.",
+    "colors": [
+      "R"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "artist": "ChatGPT 4o",
+    "_source": "Red/Shocking Revelation.png"
+  },
+  {
+    "id": "song-of-hero-s-past-fb4",
+    "name": "Song of Hero's Past",
+    "manaCost": "{R}",
+    "type": "Instant",
+    "rarity": "Uncommon",
+    "text": "Add {R} for each creature card in your graveyard.",
+    "colors": [
+      "R"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Self-mill"
+    ],
+    "flavorText": "\"I sing of warriors lost to night,\nTheir flames snuffed out, yet set to light.\nAcross the Realms, their names shall roar,\nThe fire wakes and burns once more.\"\n—Birgi, God of Storytelling",
+    "artist": "Shutterstock",
+    "_source": "Red/Song of Hero's Past.png"
+  },
+  {
+    "id": "sort-yourself-out-fb4",
+    "name": "Sort Yourself Out",
+    "manaCost": "{1}{R}{R}",
+    "type": "Battle — Inner Struggle",
+    "rarity": "Mythic Rare",
+    "text": "(You protect this battle. At the beginning of your upkeep, remove a defense counter from it. If you remove the last counter this way, exile it, then cast it transformed.)\nAt the beginning of your end step, discard a card, then draw a card.",
+    "colors": [
+      "R"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "loyalty": "4",
+    "artist": "Janne Parviainen",
+    "_source": "Red/Sort Yourself Out.png"
+  },
+  {
+    "id": "titan-of-stars-aligned-fb4",
+    "name": "Titan of Stars Aligned",
+    "manaCost": "{7}{R}{R}",
+    "type": "Enchantment Creature — Giant",
+    "rarity": "Rare",
+    "text": "Resonance for enchantments (This spell costs {X} less to cast, where X is the total mana value of enchantments you control.)\nTrample\nThis creature's power and toughness are each equal to the total mana value of other enchantments you control.",
+    "colors": [
+      "R"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Enchantments"
+    ],
+    "power": "*",
+    "toughness": "*",
+    "flavorText": "When the skies of Theros were formed, he was there, watching.",
+    "artist": "ChatGPT o4",
+    "_source": "Red/Titan of Stars Aligned.png"
+  },
+  {
+    "id": "unlock-creativity-fb4",
+    "name": "Unlock Creativity",
+    "manaCost": "{3}{R}",
+    "type": "Sorcery",
+    "rarity": "Rare",
+    "text": "Fill the blanks with \"custom\" and \"noncustom\". Use each word only once.\nAdd {R} for each ___, nonland, nontoken permanent you control.\nExile the top card of your library for each ___, nonland, nontoken permanent you control. You may play them this turn.",
+    "colors": [
+      "R"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "artist": "ChatGPT o4",
+    "_source": "Red/Unlock Creativity.png"
+  },
+  {
+    "id": "unlucky-strike-fb4",
+    "name": "Unlucky Strike",
+    "manaCost": "{R}",
+    "type": "Enchantment",
+    "rarity": "Rare",
+    "text": "At the beginning of your upkeep, if you have exactly thirteen cards in your graveyard, sacrifice this enchantment and it deals 13 damage to each opponent.\n{2}{R}, Exile a card from your graveyard: This enchantment deals 1 damage to each opponent.",
+    "colors": [
+      "R"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Self-mill"
+    ],
+    "artist": "ChatGPT o4",
+    "_source": "Red/Unlucky Strike.png"
+  },
+  {
+    "id": "visionary-of-unfathomable-sights-fb4",
+    "name": "Visionary of Unfathomable Sights",
+    "manaCost": "{2}{R}",
+    "type": "Creature — Human Horror",
+    "rarity": "Rare",
+    "text": "Devoid (This card has no color.)\nTitanform 7 (7, Exile this card from your hand: Cast a copy of it, except it's a 8/8 Eldrazi in addition to its other types. Activate only as a sorcery.)\nWhen this creature enters or attacks, discard cards equal to its toughness, then draw cards equal to its power.",
+    "colors": [],
+    "custom": true,
+    "archetypes": [],
+    "power": "3",
+    "toughness": "2",
+    "artist": "Imagen 3",
+    "_source": "Red/Visionary of Unfathomable Sights         .png"
+  },
+  {
+    "id": "whisper-twice-fb4",
+    "name": "Whisper Twice",
+    "manaCost": "{1}{R}",
+    "type": "Instant",
+    "rarity": "Common",
+    "text": "Add {G}{U}{R}.\nHarmonize {4}{R} (You may cast this card from your graveyard for its harmonize cost. You may tap a creature you control to reduce that cost by {X}, where X is its power. Then exile this spell.)",
+    "colors": [
+      "R"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Self-mill"
+    ],
+    "flavorText": "\"Let the Jeskai meditate in silence—a silence that will be broken as easily as their bones.\"\n—Taki, Temur Whisperer",
+    "artist": "ChatGPT o4",
+    "_source": "Red/Whisper Twice.png"
+  },
+  {
+    "id": "wild-speculation-fb4",
+    "name": "Wild Speculation",
+    "manaCost": "{R}",
+    "type": "Instant",
+    "rarity": "Rare",
+    "text": "Buyback {2} (You may pay an additional {2} as you cast this spell. If you do, put this card into your hand as it resolves.)\nChoose a card type and name a card. Shuffle, then reveal the top card of your library. If it's the chosen type, draw it. If it's the named card, instead you may cast it without paying its mana cost.",
+    "colors": [
+      "R"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "artist": "ChatGPT o4",
+    "_source": "Red/Wild Speculation.png"
+  },
+  {
+    "id": "yamper-fb4",
+    "name": "Yamper",
+    "manaCost": "{1}{R}",
+    "type": "Creature — Pokémon Dog",
+    "rarity": "Uncommon",
+    "text": "Pokémon (Instead of playing a land, you may exile a land card from your hand. Lands exiled this way can be tapped to activate this creature's activated abilities. They can't be activated any other way.)\nZap — !{R}!, {T}: This creature deals 1 damage to target creature. Put a stun counter on it.\nBall Fetch! — !{1}{R}!, {T}: Return target artifact card from your graveyard to your hand, then discard a card.",
+    "colors": [
+      "R"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "power": "1",
+    "toughness": "1",
+    "artist": "陰狐",
+    "_source": "Red/Yamper.png"
+  }
+]

@@ -1,0 +1,878 @@
+[
+  {
+    "id": "al-bhed-salvagers-fin",
+    "name": "Al Bhed Salvagers",
+    "manaCost": "{2}{B}",
+    "type": "Creature — Human Artificer Warrior",
+    "rarity": "Uncommon",
+    "text": "Whenever this creature or another creature or artifact you control dies, target opponent loses 1 life and you gain 1 life.",
+    "colors": [
+      "B"
+    ],
+    "custom": false,
+    "archetypes": [
+      "Artifacts"
+    ],
+    "flavorText": "\"We found the airship! The records were right.\"",
+    "artist": "Masateru Ikeda",
+    "power": "2",
+    "toughness": "3",
+    "set": "Final Fantasy",
+    "imageUrl": "/Cube/RealCards/al-bhed-salvagers-fin.jpg",
+    "_source": "Black\\Al Bhed Salvagers.jpg"
+  },
+  {
+    "id": "demonic-junker-dft",
+    "name": "Demonic Junker",
+    "manaCost": "{6}{B}",
+    "type": "Artifact — Vehicle",
+    "rarity": "Rare",
+    "text": "Affinity for artifacts (This spell costs {1} less to cast for each artifact you control.)\nWhen this Vehicle enters, for each player, destroy up to one target creature that player controls. If a creature you controlled was destroyed this way, put two +1/+1 counters on this Vehicle.\nCrew 2",
+    "colors": [
+      "B"
+    ],
+    "custom": false,
+    "archetypes": [
+      "Vehicles",
+      "Artifacts"
+    ],
+    "artist": "Stephan Martiniere",
+    "power": "4",
+    "toughness": "3",
+    "set": "Aetherdrift",
+    "imageUrl": "/Cube/RealCards/demonic-junker-dft.jpg",
+    "_source": "Black\\Demonic Junker.jpg"
+  },
+  {
+    "id": "disciple-of-the-vault-2xm",
+    "name": "Disciple of the Vault",
+    "manaCost": "{B}",
+    "type": "Creature — Human Cleric",
+    "rarity": "Uncommon",
+    "text": "Whenever an artifact is put into a graveyard from the battlefield, you may have target opponent lose 1 life.",
+    "colors": [
+      "B"
+    ],
+    "custom": false,
+    "archetypes": [
+      "Artifacts"
+    ],
+    "flavorText": "He stands in the shadow of his lord, Geth, drinking in the dark energies of the Vault.",
+    "artist": "Matt Thompson",
+    "power": "1",
+    "toughness": "1",
+    "set": "Double Masters",
+    "imageUrl": "/Cube/RealCards/disciple-of-the-vault-2xm.jpg",
+    "_source": "Black\\Disciple of the Vault.jpg"
+  },
+  {
+    "id": "dockside-chef-neo",
+    "name": "Dockside Chef",
+    "manaCost": "{B}",
+    "type": "Enchantment Creature — Human Citizen",
+    "rarity": "Uncommon",
+    "text": "{1}{B}, Sacrifice an artifact or creature: Draw a card.",
+    "colors": [
+      "B"
+    ],
+    "custom": false,
+    "archetypes": [
+      "Artifacts"
+    ],
+    "flavorText": "The squirming is how you know it's fresh.",
+    "artist": "Steven Belledin",
+    "power": "1",
+    "toughness": "2",
+    "set": "Kamigawa: Neon Dynasty",
+    "imageUrl": "/Cube/RealCards/dockside-chef-neo.jpg",
+    "_source": "Black\\Dockside Chef.jpg"
+  },
+  {
+    "id": "grim-bauble-dft",
+    "name": "Grim Bauble",
+    "manaCost": "{B}",
+    "type": "Artifact",
+    "rarity": "Common",
+    "text": "When this artifact enters, target creature an opponent controls gets -2/-2 until end of turn.\n{2}{B}, {T}, Sacrifice this artifact: Surveil 2. (Look at the top two cards of your library, then put any number of them into your graveyard and the rest on top of your library in any order.)",
+    "colors": [
+      "B"
+    ],
+    "custom": false,
+    "archetypes": [
+      "Self-mill"
+    ],
+    "artist": "Wero Gallo",
+    "set": "Aetherdrift",
+    "imageUrl": "/Cube/RealCards/grim-bauble-dft.jpg",
+    "_source": "Black\\Grim Bauble.jpg"
+  },
+  {
+    "id": "saw-in-half-unf",
+    "name": "Saw in Half",
+    "manaCost": "{2}{B}",
+    "type": "Instant",
+    "rarity": "Rare",
+    "text": "Destroy target creature. If that creature dies this way, its controller creates two tokens that are copies of that creature, except their power is half that creature's power and their toughness is half that creature's toughness. Round up each time.",
+    "colors": [
+      "B"
+    ],
+    "custom": false,
+    "archetypes": [
+      "Token Collection"
+    ],
+    "flavorText": "The audience always loves it, but volunteers are divided.",
+    "artist": "Sebastian Giacobino",
+    "set": "Unfinity",
+    "imageUrl": "/Cube/RealCards/saw-in-half-unf.jpg",
+    "_source": "Black\\Saw in Half.jpg"
+  },
+  {
+    "id": "tendrils-of-agony-vma",
+    "name": "Tendrils of Agony",
+    "manaCost": "{2}{B}{B}",
+    "type": "Sorcery",
+    "rarity": "Uncommon",
+    "text": "Target player loses 2 life and you gain 2 life.\nStorm (When you cast this spell, copy it for each spell cast before it this turn. You may choose new targets for the copies.)",
+    "colors": [
+      "B"
+    ],
+    "custom": false,
+    "archetypes": [
+      "Storm"
+    ],
+    "artist": "Volkan Baǵa",
+    "set": "Vintage Masters",
+    "imageUrl": "/Cube/RealCards/tendrils-of-agony-vma.jpg",
+    "_source": "Black\\Tendrils of Agony.jpg"
+  },
+  {
+    "id": "unearth-2x2",
+    "name": "Unearth",
+    "manaCost": "{B}",
+    "type": "Sorcery",
+    "rarity": "Common",
+    "text": "Return target creature card with mana value 3 or less from your graveyard to the battlefield.\nCycling {2} ({2}, Discard this card: Draw a card.)",
+    "colors": [
+      "B"
+    ],
+    "custom": false,
+    "archetypes": [
+      "Self-mill"
+    ],
+    "flavorText": "No matter how deep you bury it, some evil refuses to stay dead.",
+    "artist": "Jehan Choo",
+    "set": "Double Masters 2022",
+    "imageUrl": "/Cube/RealCards/unearth-2x2.jpg",
+    "_source": "Black\\Unearth.jpg"
+  },
+  {
+    "id": "brain-freeze-vma",
+    "name": "Brain Freeze",
+    "manaCost": "{1}{U}",
+    "type": "Instant",
+    "rarity": "Uncommon",
+    "text": "Target player mills three cards.\nStorm (When you cast this spell, copy it for each spell cast before it this turn. You may choose new targets for the copies.)",
+    "colors": [
+      "U"
+    ],
+    "custom": false,
+    "archetypes": [
+      "Storm"
+    ],
+    "artist": "Tim Hildebrandt",
+    "set": "Vintage Masters",
+    "imageUrl": "/Cube/RealCards/brain-freeze-vma.jpg",
+    "_source": "Blue\\Brain Freeze.jpg"
+  },
+  {
+    "id": "dramatic-reversal-tle",
+    "name": "Dramatic Reversal",
+    "manaCost": "{1}{U}",
+    "type": "Instant",
+    "rarity": "Common",
+    "text": "Untap all nonland permanents you control.",
+    "colors": [
+      "U"
+    ],
+    "custom": false,
+    "archetypes": [
+      "Storm"
+    ],
+    "flavorText": "\"I beat you all before and I'll do it again!\"\n—Toph",
+    "artist": "Maël Ollivier-Henry",
+    "set": "Avatar: The Last Airbender Eternal",
+    "imageUrl": "/Cube/RealCards/dramatic-reversal-tle.jpg",
+    "_source": "Blue\\Dramatic Reversal.jpg"
+  },
+  {
+    "id": "witness-protection-fdn",
+    "name": "Witness Protection",
+    "manaCost": "{U}",
+    "type": "Enchantment — Aura",
+    "rarity": "Common",
+    "text": "Enchant creature\nEnchanted creature loses all abilities and is a green and white Citizen creature with base power and toughness 1/1 named Legitimate Businessperson. (It loses all other colors, card types, creature types, and names.)",
+    "colors": [
+      "U"
+    ],
+    "custom": false,
+    "archetypes": [],
+    "artist": "Dominik Mayer",
+    "set": "Foundations",
+    "imageUrl": "/Cube/RealCards/witness-protection-fdn.jpg",
+    "_source": "Blue\\Witness Protection.jpg"
+  },
+  {
+    "id": "agatha-s-soul-cauldron-woe",
+    "name": "Agatha's Soul Cauldron",
+    "manaCost": "{2}",
+    "type": "Legendary Artifact",
+    "rarity": "Mythic Rare",
+    "text": "You may spend mana as though it were mana of any color to activate abilities of creatures you control.\nCreatures you control with +1/+1 counters on them have all activated abilities of all creature cards exiled with Agatha's Soul Cauldron.\n{T}: Exile target card from a graveyard. When a creature card is exiled this way, put a +1/+1 counter on target creature you control.",
+    "colors": [],
+    "custom": false,
+    "archetypes": [
+      "Self-mill"
+    ],
+    "artist": "Jason A. Engle",
+    "set": "Wilds of Eldraine",
+    "imageUrl": "/Cube/RealCards/agatha-s-soul-cauldron-woe.jpg",
+    "_source": "Colorless\\Agatha's Soul Cauldron.jpg"
+  },
+  {
+    "id": "birthing-pod-nph",
+    "name": "Birthing Pod",
+    "manaCost": "{3}{G/P}",
+    "type": "Artifact",
+    "rarity": "Rare",
+    "text": "({G/P} can be paid with either {G} or 2 life.)\n{1}{G/P}, {T}, Sacrifice a creature: Search your library for a creature card with mana value equal to 1 plus the sacrificed creature's mana value, put that card onto the battlefield, then shuffle. Activate only as a sorcery.",
+    "colors": [
+      "G"
+    ],
+    "custom": false,
+    "archetypes": [],
+    "artist": "Daarken",
+    "set": "New Phyrexia",
+    "imageUrl": "/Cube/RealCards/birthing-pod-nph.jpg",
+    "_source": "Colorless\\Birthing Pod.jpg"
+  },
+  {
+    "id": "assassin-s-trophy-soc",
+    "name": "Assassin's Trophy",
+    "manaCost": "{B}{G}",
+    "type": "Instant",
+    "rarity": "Rare",
+    "text": "Destroy target permanent an opponent controls. Its controller may search their library for a basic land card, put it onto the battlefield, then shuffle.",
+    "colors": [
+      "B",
+      "G"
+    ],
+    "custom": false,
+    "archetypes": [
+      "Control"
+    ],
+    "flavorText": "\"Not just any floriculturist can grow this caliber of nightbloom. We're looking for a rooftop hothouse with quite particular conditions.\"\n—Dr. A of the Foundway Associates",
+    "artist": "Dmitry Burmak",
+    "set": "Secrets of Strixhaven Commander",
+    "imageUrl": "/Cube/RealCards/assassin-s-trophy-soc.jpg",
+    "_source": "Gold\\BG\\Assassin's Trophy.jpg"
+  },
+  {
+    "id": "grusilda-monster-masher-ust",
+    "name": "Grusilda, Monster Masher",
+    "manaCost": "{3}{B}{R}",
+    "type": "Legendary Creature — Zombie Villain",
+    "rarity": "Rare",
+    "text": "Combined, enchanted, and equipped creatures you control have menace.\n{3}{B}{R}, {T}: Put two target creature cards from graveyards onto the battlefield combined into one creature under your control. (Its power is equal to their total power, its toughness is equal to their total toughness, and it has their names, mana costs, types, text boxes, etc.)",
+    "colors": [
+      "B",
+      "R"
+    ],
+    "custom": false,
+    "archetypes": [
+      "Self-mill"
+    ],
+    "artist": "Mathias Kollros",
+    "power": "4",
+    "toughness": "4",
+    "set": "Unstable",
+    "imageUrl": "/Cube/RealCards/grusilda-monster-masher-ust.jpg",
+    "_source": "Gold\\BR\\Grusilda, Monster Masher.jpg"
+  },
+  {
+    "id": "juri-master-of-the-revue-eoc",
+    "name": "Juri, Master of the Revue",
+    "manaCost": "{B}{R}",
+    "type": "Legendary Creature — Human Shaman",
+    "rarity": "Uncommon",
+    "text": "Whenever you sacrifice a permanent, put a +1/+1 counter on Juri.\nWhen Juri dies, it deals damage equal to its power to any target.",
+    "colors": [
+      "B",
+      "R"
+    ],
+    "custom": false,
+    "archetypes": [
+      "Token Collection"
+    ],
+    "flavorText": "\"What a show! We're going to make a killing tonight.\"",
+    "artist": "Dmitry Burmak",
+    "power": "1",
+    "toughness": "1",
+    "set": "Edge of Eternities Commander",
+    "imageUrl": "/Cube/RealCards/juri-master-of-the-revue-eoc.jpg",
+    "_source": "Gold\\BR\\Juri, Master of the Revue.jpg"
+  },
+  {
+    "id": "edric-spymaster-of-trest-otc",
+    "name": "Edric, Spymaster of Trest",
+    "manaCost": "{1}{G}{U}",
+    "type": "Legendary Creature — Elf Rogue",
+    "rarity": "Rare",
+    "text": "Whenever a creature deals combat damage to one of your opponents, its controller may draw a card.",
+    "colors": [
+      "G",
+      "U"
+    ],
+    "custom": false,
+    "archetypes": [
+      "Broken Cipher"
+    ],
+    "flavorText": "\"I am not at liberty to reveal my sources, but I can assure you, the price on your head is high.\"",
+    "artist": "Volkan Baǵa",
+    "power": "2",
+    "toughness": "2",
+    "set": "Outlaws of Thunder Junction Commander",
+    "imageUrl": "/Cube/RealCards/edric-spymaster-of-trest-otc.jpg",
+    "_source": "Gold\\GU\\Edric, Spymaster of Trest.jpg"
+  },
+  {
+    "id": "it-came-from-planet-glurg-unf",
+    "name": "It Came from Planet Glurg",
+    "manaCost": "{X}{X}{G}{U}",
+    "type": "Legendary Creature — Alien Ooze",
+    "rarity": "Mythic Rare",
+    "text": "You may have It Came from Planet Glurg enter as a copy of X different creatures on the battlefield. (It has their total power, total toughness, combined mana costs, all text boxes, names, art, and so on.)",
+    "colors": [
+      "G",
+      "U"
+    ],
+    "custom": false,
+    "archetypes": [],
+    "flavorText": "A sludge with a grudge.",
+    "artist": "Marco Bucci",
+    "power": "0",
+    "toughness": "0",
+    "set": "Unfinity",
+    "imageUrl": "/Cube/RealCards/it-came-from-planet-glurg-unf.jpg",
+    "_source": "Gold\\GU\\It Came from Planet Glurg.jpg"
+  },
+  {
+    "id": "rip-spawn-hunter-dsk",
+    "name": "Rip, Spawn Hunter",
+    "manaCost": "{2}{G}{W}",
+    "type": "Legendary Creature — Human Survivor",
+    "rarity": "Rare",
+    "text": "Survival — At the beginning of your second main phase, if Rip is tapped, reveal the top X cards of your library, where X is its power. Put any number of creature and/or Vehicle cards with different powers from among them into your hand. Put the rest on the bottom of your library in a random order.",
+    "colors": [
+      "G",
+      "W"
+    ],
+    "custom": false,
+    "archetypes": [],
+    "artist": "Justine Cruz",
+    "power": "4",
+    "toughness": "4",
+    "set": "Duskmourn: House of Horror",
+    "imageUrl": "/Cube/RealCards/rip-spawn-hunter-dsk.jpg",
+    "_source": "Gold\\GW\\Rip, Spawn Hunter.jpg"
+  },
+  {
+    "id": "yotian-dissident-bro",
+    "name": "Yotian Dissident",
+    "manaCost": "{G}{W}",
+    "type": "Creature — Human Artificer",
+    "rarity": "Uncommon",
+    "text": "Whenever an artifact you control enters, put a +1/+1 counter on target creature you control.",
+    "colors": [
+      "G",
+      "W"
+    ],
+    "custom": false,
+    "archetypes": [
+      "Artifacts"
+    ],
+    "flavorText": "\"I joined this war to protect my homeland, not to destroy someone else's.\"",
+    "artist": "Steve Prescott",
+    "power": "1",
+    "toughness": "1",
+    "set": "The Brothers' War",
+    "imageUrl": "/Cube/RealCards/yotian-dissident-bro.jpg",
+    "_source": "Gold\\GW\\Yotian Dissident.jpg"
+  },
+  {
+    "id": "phlage-titan-of-fire-s-fury-mh3",
+    "name": "Phlage, Titan of Fire's Fury",
+    "manaCost": "{1}{R}{W}",
+    "type": "Legendary Creature — Elder Giant",
+    "rarity": "Mythic Rare",
+    "text": "When Phlage enters, sacrifice it unless it escaped.\nWhenever Phlage enters or attacks, it deals 3 damage to any target and you gain 3 life.\nEscape—{R}{R}{W}{W}, Exile five other cards from your graveyard. (You may cast this card from your graveyard for its escape cost.)",
+    "colors": [
+      "R",
+      "W"
+    ],
+    "custom": false,
+    "archetypes": [
+      "Self-mill"
+    ],
+    "artist": "Lucas Graciano",
+    "power": "6",
+    "toughness": "6",
+    "set": "Modern Horizons 3",
+    "imageUrl": "/Cube/RealCards/phlage-titan-of-fire-s-fury-mh3.jpg",
+    "_source": "Gold\\RW\\Phlage, Titan of Fire's Fury.jpg"
+  },
+  {
+    "id": "fallen-shinobi-otc",
+    "name": "Fallen Shinobi",
+    "manaCost": "{3}{U}{B}",
+    "type": "Creature — Zombie Ninja",
+    "rarity": "Rare",
+    "text": "Ninjutsu {2}{U}{B} ({2}{U}{B}, Return an unblocked attacker you control to hand: Put this card onto the battlefield from your hand tapped and attacking.)\nWhenever this creature deals combat damage to a player, that player exiles the top two cards of their library. Until end of turn, you may play those cards without paying their mana costs.",
+    "colors": [
+      "B",
+      "U"
+    ],
+    "custom": false,
+    "archetypes": [
+      "Broken Cipher"
+    ],
+    "artist": "Dmitry Burmak",
+    "power": "5",
+    "toughness": "4",
+    "set": "Outlaws of Thunder Junction Commander",
+    "imageUrl": "/Cube/RealCards/fallen-shinobi-otc.jpg",
+    "_source": "Gold\\UB\\Fallen Shinobi.jpg"
+  },
+  {
+    "id": "phoebe-head-of-s-n-e-a-k-ust",
+    "name": "Phoebe, Head of S.N.E.A.K.",
+    "manaCost": "{1}{U}{B}",
+    "type": "Legendary Creature — Human Spy",
+    "rarity": "Mythic Rare",
+    "text": "Phoebe can't be blocked by creatures with flavor text.\n{2}{U}{B}: Phoebe permanently steals target creature's text box. (That creature loses all rules text, flavor text, and watermarks. This creature gains them.)",
+    "colors": [
+      "B",
+      "U"
+    ],
+    "custom": false,
+    "archetypes": [],
+    "flavorText": "This space intentionally left blank.",
+    "artist": "Ralph Horsley",
+    "power": "2",
+    "toughness": "3",
+    "set": "Unstable",
+    "imageUrl": "/Cube/RealCards/phoebe-head-of-s-n-e-a-k-ust.jpg",
+    "_source": "Gold\\UB\\Phoebe, Head of S.N.E.A.K..jpg"
+  },
+  {
+    "id": "bohn-beguiling-balladeer-slx",
+    "name": "Bohn, Beguiling Balladeer",
+    "manaCost": "{1}{U}{R}",
+    "type": "Legendary Creature — Human Bard",
+    "rarity": "Rare",
+    "text": "Each nonland card in your hand without foretell has foretell. Its foretell cost is equal to its mana cost reduced by {2}. (During your turn, you may pay {2} and exile it from your hand face down. Cast it on a later turn for its foretell cost.)\nWhenever you cast your second spell each turn, goad target creature an opponent controls.",
+    "colors": [
+      "R",
+      "U"
+    ],
+    "custom": false,
+    "archetypes": [
+      "Storm"
+    ],
+    "artist": "Alix Branwyn",
+    "power": "3",
+    "toughness": "3",
+    "set": "Universes Within",
+    "imageUrl": "/Cube/RealCards/bohn-beguiling-balladeer-slx.jpg",
+    "_source": "Gold\\UR\\Bohn, Beguiling Balladeer.jpg"
+  },
+  {
+    "id": "athreos-god-of-passage-jou",
+    "name": "Athreos, God of Passage",
+    "manaCost": "{1}{W}{B}",
+    "type": "Legendary Enchantment Creature — God",
+    "rarity": "Mythic Rare",
+    "text": "Indestructible\nAs long as your devotion to white and black is less than seven, Athreos isn't a creature.\nWhenever another creature you own dies, return it to your hand unless target opponent pays 3 life.",
+    "colors": [
+      "B",
+      "W"
+    ],
+    "custom": false,
+    "archetypes": [],
+    "artist": "Ryan Barger",
+    "power": "5",
+    "toughness": "4",
+    "set": "Journey into Nyx",
+    "imageUrl": "/Cube/RealCards/athreos-god-of-passage-jou.jpg",
+    "_source": "Gold\\WB\\Athreos, God of Passage.jpg"
+  },
+  {
+    "id": "urza-lord-protector-bro",
+    "name": "Urza, Lord Protector",
+    "manaCost": "{1}{W}{U}",
+    "type": "Legendary Creature — Human Artificer",
+    "rarity": "Mythic Rare",
+    "text": "Artifact, instant, and sorcery spells you cast cost {1} less to cast.\n{7}: If you both own and control Urza, Lord Protector and an artifact named The Mightstone and Weakstone, exile them, then meld them into Urza, Planeswalker. Activate only as a sorcery.",
+    "colors": [
+      "U",
+      "W"
+    ],
+    "custom": false,
+    "archetypes": [
+      "Storm"
+    ],
+    "artist": "Ryan Pancoast",
+    "power": "2",
+    "toughness": "4",
+    "set": "The Brothers' War",
+    "imageUrl": "/Cube/RealCards/urza-lord-protector-bro.jpg",
+    "_source": "Gold\\WU\\Urza, Lord Protector.jpg"
+  },
+  {
+    "id": "alloy-animist-bro",
+    "name": "Alloy Animist",
+    "manaCost": "{G}",
+    "type": "Creature — Human Druid",
+    "rarity": "Uncommon",
+    "text": "{2}{G}: Until end of turn, target noncreature artifact you control becomes a 4/4 artifact creature.",
+    "colors": [
+      "G"
+    ],
+    "custom": false,
+    "archetypes": [
+      "Artifacts"
+    ],
+    "flavorText": "\"This metal belonged to Argoth before it was ripped from the ground. Now it belongs to Argoth again.\"",
+    "artist": "Kim Sokol",
+    "power": "1",
+    "toughness": "1",
+    "set": "The Brothers' War",
+    "imageUrl": "/Cube/RealCards/alloy-animist-bro.jpg",
+    "_source": "Green\\Alloy Animist.jpg"
+  },
+  {
+    "id": "bane-of-progress-ecc",
+    "name": "Bane of Progress",
+    "manaCost": "{4}{G}{G}",
+    "type": "Creature — Elemental",
+    "rarity": "Rare",
+    "text": "When this creature enters, destroy all artifacts and enchantments. Put a +1/+1 counter on this creature for each permanent destroyed this way.",
+    "colors": [
+      "G"
+    ],
+    "custom": false,
+    "archetypes": [],
+    "flavorText": "It sees shaped stone and carved wood as mutilations.",
+    "artist": "Lars Grant-West",
+    "power": "2",
+    "toughness": "2",
+    "set": "Lorwyn Eclipsed Commander",
+    "imageUrl": "/Cube/RealCards/bane-of-progress-ecc.jpg",
+    "_source": "Green\\Bane of Progress.jpg"
+  },
+  {
+    "id": "biorhythm-9ed",
+    "name": "Biorhythm",
+    "manaCost": "{6}{G}{G}",
+    "type": "Sorcery",
+    "rarity": "Rare",
+    "text": "Each player's life total becomes the number of creatures they control.",
+    "colors": [
+      "G"
+    ],
+    "custom": false,
+    "archetypes": [
+      "Control"
+    ],
+    "flavorText": "\"I have seen life's purpose, and now it is my own.\"\n—Kamahl, druid acolyte",
+    "artist": "Ron Spears",
+    "set": "Ninth Edition",
+    "imageUrl": "/Cube/RealCards/biorhythm-9ed.jpg",
+    "_source": "Green\\Biorhythm.jpg"
+  },
+  {
+    "id": "defend-the-rider-dft",
+    "name": "Defend the Rider",
+    "manaCost": "{G}",
+    "type": "Instant",
+    "rarity": "Uncommon",
+    "text": "Choose one —\n• Target permanent you control gains hexproof and indestructible until end of turn.\n• Create a 1/1 colorless Pilot creature token with \"This token saddles Mounts and crews Vehicles as though its power were 2 greater.\"",
+    "colors": [
+      "G"
+    ],
+    "custom": false,
+    "archetypes": [
+      "Vehicles"
+    ],
+    "flavorText": "Lagorin would not lose another.",
+    "artist": "Raph Lomotan",
+    "set": "Aetherdrift",
+    "imageUrl": "/Cube/RealCards/defend-the-rider-dft.jpg",
+    "_source": "Green\\Defend the Rider.jpg",
+    "relatedTokens": [
+      "1/1 colorless Pilot"
+    ]
+  },
+  {
+    "id": "thunderous-velocipede-dft",
+    "name": "Thunderous Velocipede",
+    "manaCost": "{1}{G}{G}",
+    "type": "Artifact — Vehicle",
+    "rarity": "Mythic Rare",
+    "text": "Trample\nEach other Vehicle and creature you control enters with an additional +1/+1 counter on it if its mana value is 4 or less. Otherwise, it enters with three additional +1/+1 counters on it.\nCrew 3",
+    "colors": [
+      "G"
+    ],
+    "custom": false,
+    "archetypes": [
+      "Vehicles"
+    ],
+    "artist": "Adrián Rodríguez Pérez",
+    "power": "5",
+    "toughness": "5",
+    "set": "Aetherdrift",
+    "imageUrl": "/Cube/RealCards/thunderous-velocipede-dft.jpg",
+    "_source": "Green\\Thunderous Velocipede.jpg"
+  },
+  {
+    "id": "titania-s-song-me4",
+    "name": "Titania's Song",
+    "manaCost": "{3}{G}",
+    "type": "Enchantment",
+    "rarity": "Rare",
+    "text": "Each noncreature artifact loses all abilities and becomes an artifact creature with power and toughness each equal to its mana value. If this enchantment leaves the battlefield, this effect continues until end of turn.",
+    "colors": [
+      "G"
+    ],
+    "custom": false,
+    "archetypes": [
+      "Artifacts"
+    ],
+    "artist": "Kerstin Kaman",
+    "set": "Masters Edition IV",
+    "imageUrl": "/Cube/RealCards/titania-s-song-me4.jpg",
+    "_source": "Green\\Titania's Song.jpg"
+  },
+  {
+    "id": "canyon-slough-msc",
+    "name": "Canyon Slough",
+    "manaCost": "",
+    "type": "Land — Swamp Mountain",
+    "rarity": "Rare",
+    "text": "({T}: Add {B} or {R}.)\nThis land enters tapped.\nCycling {2} ({2}, Discard this card: Draw a card.)",
+    "colors": [],
+    "custom": false,
+    "archetypes": [],
+    "flavorText": "Gamma radiation destroys all it touches, save for an unlucky few.",
+    "artist": "Arthur Yuan",
+    "set": "Marvel Super Heroes Commander",
+    "imageUrl": "/Cube/RealCards/canyon-slough-msc.jpg",
+    "_source": "Lands\\Canyon Slough.jpg"
+  },
+  {
+    "id": "darkmoss-bridge-dsc",
+    "name": "Darkmoss Bridge",
+    "manaCost": "",
+    "type": "Artifact Land",
+    "rarity": "Common",
+    "text": "This land enters tapped.\nIndestructible\n{T}: Add {B} or {G}.",
+    "colors": [],
+    "custom": false,
+    "archetypes": [],
+    "flavorText": "The path to power is forged in ruthlessness.",
+    "artist": "Raoul Vitale",
+    "set": "Duskmourn: House of Horror Commander",
+    "imageUrl": "/Cube/RealCards/darkmoss-bridge-dsc.jpg",
+    "_source": "Lands\\Darkmoss Bridge.jpg"
+  },
+  {
+    "id": "fetid-pools-msc",
+    "name": "Fetid Pools",
+    "manaCost": "",
+    "type": "Land — Island Swamp",
+    "rarity": "Rare",
+    "text": "({T}: Add {U} or {B}.)\nThis land enters tapped.\nCycling {2} ({2}, Discard this card: Draw a card.)",
+    "colors": [],
+    "custom": false,
+    "archetypes": [],
+    "flavorText": "\"I was baptized in gamma radiation and reborn into greatness.\"\n—Leader, Samuel Sterns",
+    "artist": "Jonas De Ro",
+    "set": "Marvel Super Heroes Commander",
+    "imageUrl": "/Cube/RealCards/fetid-pools-msc.jpg",
+    "_source": "Lands\\Fetid Pools.jpg"
+  },
+  {
+    "id": "irrigated-farmland-msc",
+    "name": "Irrigated Farmland",
+    "manaCost": "",
+    "type": "Land — Plains Island",
+    "rarity": "Rare",
+    "text": "({T}: Add {W} or {U}.)\nThis land enters tapped.\nCycling {2} ({2}, Discard this card: Draw a card.)",
+    "colors": [],
+    "custom": false,
+    "archetypes": [],
+    "flavorText": "\"O beautiful for spacious skies, for amber waves of grain.\"\n—\"America the Beautiful\"",
+    "artist": "Milivoj Ćeran",
+    "set": "Marvel Super Heroes Commander",
+    "imageUrl": "/Cube/RealCards/irrigated-farmland-msc.jpg",
+    "_source": "Lands\\Irrigated Farmland.jpg"
+  },
+  {
+    "id": "scattered-groves-msc",
+    "name": "Scattered Groves",
+    "manaCost": "",
+    "type": "Land — Forest Plains",
+    "rarity": "Rare",
+    "text": "({T}: Add {G} or {W}.)\nThis land enters tapped.\nCycling {2} ({2}, Discard this card: Draw a card.)",
+    "colors": [],
+    "custom": false,
+    "archetypes": [],
+    "flavorText": "\"Just because you have ravaged your natural resources and paved over your forests, do not think we have made the same mistake.\"\n—King T'Chaka, to the United Nations",
+    "artist": "Josu Hernaiz",
+    "set": "Marvel Super Heroes Commander",
+    "imageUrl": "/Cube/RealCards/scattered-groves-msc.jpg",
+    "_source": "Lands\\Scattered Groves.jpg"
+  },
+  {
+    "id": "sheltered-thicket-ecc",
+    "name": "Sheltered Thicket",
+    "manaCost": "",
+    "type": "Land — Mountain Forest",
+    "rarity": "Rare",
+    "text": "({T}: Add {R} or {G}.)\nThis land enters tapped.\nCycling {2} ({2}, Discard this card: Draw a card.)",
+    "colors": [],
+    "custom": false,
+    "archetypes": [],
+    "artist": "Sung Choi",
+    "set": "Lorwyn Eclipsed Commander",
+    "imageUrl": "/Cube/RealCards/sheltered-thicket-ecc.jpg",
+    "_source": "Lands\\Sheltered Thicket.jpg"
+  },
+  {
+    "id": "artist-s-talent-blb",
+    "name": "Artist's Talent",
+    "manaCost": "{1}{R}",
+    "type": "Enchantment — Class",
+    "rarity": "Rare",
+    "text": "(Gain the next level as a sorcery to add its ability.)\nWhenever you cast a noncreature spell, you may discard a card. If you do, draw a card.\n{2}{R}: Level 2\nNoncreature spells you cast cost {1} less to cast.\n{2}{R}: Level 3\nIf a source you control would deal noncombat damage to an opponent or a permanent an opponent controls, it deals that much damage plus 2 instead.",
+    "colors": [
+      "R"
+    ],
+    "custom": false,
+    "archetypes": [
+      "Storm",
+      "Prowess"
+    ],
+    "artist": "Lars Grant-West",
+    "set": "Bloomburrow",
+    "imageUrl": "/Cube/RealCards/artist-s-talent-blb.jpg",
+    "_source": "Red\\Artist's Talent.jpg"
+  },
+  {
+    "id": "pyroclasm-dsk",
+    "name": "Pyroclasm",
+    "manaCost": "{1}{R}",
+    "type": "Sorcery",
+    "rarity": "Uncommon",
+    "text": "Pyroclasm deals 2 damage to each creature.",
+    "colors": [
+      "R"
+    ],
+    "custom": false,
+    "archetypes": [
+      "Control"
+    ],
+    "flavorText": "\"In my younger days, I would meticulously catalog all the terrors I encountered. These days, I mostly just kill them with fire.\"\n—Rip, spawn hunter",
+    "artist": "Néstor Ossandón Leal",
+    "set": "Duskmourn: House of Horror",
+    "imageUrl": "/Cube/RealCards/pyroclasm-dsk.jpg",
+    "_source": "Red\\Pyroclasm.jpg"
+  },
+  {
+    "id": "trigger-happy-unf",
+    "name": "Trigger Happy",
+    "manaCost": "{1}{R}",
+    "type": "Instant",
+    "rarity": "Uncommon",
+    "text": "Choose a triggered ability of target permanent. It triggers. You control that ability.",
+    "colors": [
+      "R"
+    ],
+    "custom": false,
+    "archetypes": [],
+    "flavorText": "Whenever you copy a triggered ability, you may do a little dance.",
+    "artist": "Jamroz Gary",
+    "set": "Unfinity",
+    "imageUrl": "/Cube/RealCards/trigger-happy-unf.jpg",
+    "_source": "Red\\Trigger Happy.jpg"
+  },
+  {
+    "id": "spectacular-pileup-dft",
+    "name": "Spectacular Pileup",
+    "manaCost": "{3}{W}{W}",
+    "type": "Sorcery",
+    "rarity": "Rare",
+    "text": "All creatures and Vehicles lose indestructible until end of turn, then destroy all creatures and Vehicles.\nCycling {2} ({2}, Discard this card: Draw a card.)",
+    "colors": [
+      "W"
+    ],
+    "custom": false,
+    "archetypes": [],
+    "flavorText": "The first four crashes were accidental. Then the Endriders joined the fun.",
+    "artist": "Zezhou Chen",
+    "set": "Aetherdrift",
+    "imageUrl": "/Cube/RealCards/spectacular-pileup-dft.jpg",
+    "_source": "White\\Spectacular Pileup.jpg"
+  },
+  {
+    "id": "tempest-technique-tdc",
+    "name": "Tempest Technique",
+    "manaCost": "{3}{W}",
+    "type": "Enchantment — Aura",
+    "rarity": "Rare",
+    "text": "Storm (When you cast this spell, copy it for each spell cast before it this turn. You may choose new targets for the copies. Copies become tokens.)\nEnchant creature you control\nEnchanted creature gets +1/+1 for each enchantment you control.",
+    "colors": [
+      "W"
+    ],
+    "custom": false,
+    "archetypes": [
+      "Enchantments",
+      "Storm"
+    ],
+    "artist": "Nino Vecia",
+    "set": "Tarkir: Dragonstorm Commander",
+    "imageUrl": "/Cube/RealCards/tempest-technique-tdc.jpg",
+    "_source": "White\\Tempest Technique.jpg"
+  },
+  {
+    "id": "voyager-glidecar-dft",
+    "name": "Voyager Glidecar",
+    "manaCost": "{W}",
+    "type": "Artifact — Vehicle",
+    "rarity": "Rare",
+    "text": "When this Vehicle enters, scry 1.\nTap three other untapped creatures you control: Until end of turn, this Vehicle becomes an artifact creature and gains flying. Put a +1/+1 counter on it.\nCrew 1",
+    "colors": [
+      "W"
+    ],
+    "custom": false,
+    "archetypes": [
+      "Vehicles"
+    ],
+    "flavorText": "\"Exclamatory: Hang on to something.\"",
+    "artist": "Eduardo Francisco",
+    "power": "2",
+    "toughness": "3",
+    "set": "Aetherdrift",
+    "imageUrl": "/Cube/RealCards/voyager-glidecar-dft.jpg",
+    "_source": "White\\Voyager Glidecar.jpg"
+  }
+]

@@ -1,0 +1,2744 @@
+[
+  {
+    "id": "biotransference-40k",
+    "name": "Biotransference",
+    "manaCost": "{2}{B}{B}",
+    "type": "Enchantment",
+    "rarity": "Rare",
+    "text": "Creatures you control are artifacts in addition to their other types. The same is true for creature spells you control and creature cards you own that aren't on the battlefield.\nWhenever you cast an artifact spell, you lose 1 life and create a 2/2 black Necron Warrior artifact creature token.",
+    "colors": [
+      "B"
+    ],
+    "custom": false,
+    "archetypes": [
+      "Artifacts",
+      "Token Collection"
+    ],
+    "artist": "Anthony Devine",
+    "set": "Warhammer 40,000 Commander",
+    "imageUrl": "/Cube/RealCards/biotransference-40k.jpg",
+    "_source": "Black\\Biotransference.jpg",
+    "relatedTokens": [
+      "2/2 black Necron Warrior"
+    ]
+  },
+  {
+    "id": "bitterblossom-2x2",
+    "name": "Bitterblossom",
+    "manaCost": "{1}{B}",
+    "type": "Kindred Enchantment — Faerie",
+    "rarity": "Mythic Rare",
+    "text": "At the beginning of your upkeep, you lose 1 life and create a 1/1 black Faerie Rogue creature token with flying.",
+    "colors": [
+      "B"
+    ],
+    "custom": false,
+    "archetypes": [
+      "Token Collection"
+    ],
+    "flavorText": "In Lorwyn's brief evenings, the sun pauses at the horizon long enough for a certain species of violet to bloom with the fragrance of mischief.",
+    "artist": "Rebecca Guay",
+    "set": "Double Masters 2022",
+    "imageUrl": "/Cube/RealCards/bitterblossom-2x2.jpg",
+    "_source": "Black\\Bitterblossom.jpg",
+    "relatedTokens": [
+      "1/1 black Faerie Rogue"
+    ]
+  },
+  {
+    "id": "damnation-2x2",
+    "name": "Damnation",
+    "manaCost": "{2}{B}{B}",
+    "type": "Sorcery",
+    "rarity": "Rare",
+    "text": "Destroy all creatures. They can't be regenerated.",
+    "colors": [
+      "B"
+    ],
+    "custom": false,
+    "archetypes": [
+      "Control"
+    ],
+    "artist": "Kev Walker",
+    "set": "Double Masters 2022",
+    "imageUrl": "/Cube/RealCards/damnation-2x2.jpg",
+    "_source": "Black\\Damnation.jpg"
+  },
+  {
+    "id": "dark-ritual-msc",
+    "name": "Dark Ritual",
+    "manaCost": "{B}",
+    "type": "Instant",
+    "rarity": "Uncommon",
+    "text": "Add {B}{B}{B}.",
+    "colors": [
+      "B"
+    ],
+    "custom": false,
+    "archetypes": [],
+    "flavorText": "\"Behold! The most arcane powers of the multiverse are mere tools in service of Doom's ambition.\"",
+    "artist": "Nino Is",
+    "set": "Marvel Super Heroes Commander",
+    "imageUrl": "/Cube/RealCards/dark-ritual-msc.jpg",
+    "_source": "Black\\Dark Ritual.jpg"
+  },
+  {
+    "id": "demonic-tutor-cmm",
+    "name": "Demonic Tutor",
+    "manaCost": "{1}{B}",
+    "type": "Sorcery",
+    "rarity": "Mythic Rare",
+    "text": "Search your library for a card, put that card into your hand, then shuffle.",
+    "colors": [
+      "B"
+    ],
+    "custom": false,
+    "archetypes": [],
+    "flavorText": "Beware the generosity of demons.",
+    "artist": "Zack Stella",
+    "set": "Commander Masters",
+    "imageUrl": "/Cube/RealCards/demonic-tutor-cmm.jpg",
+    "_source": "Black\\Demonic Tutor.jpg"
+  },
+  {
+    "id": "duress-fdn",
+    "name": "Duress",
+    "manaCost": "{B}",
+    "type": "Sorcery",
+    "rarity": "Common",
+    "text": "Target opponent reveals their hand. You choose a noncreature, nonland card from it. That player discards that card.",
+    "colors": [
+      "B"
+    ],
+    "custom": false,
+    "archetypes": [],
+    "flavorText": "\"Give of yourself, for *compleation* awaits the cleansed.\"\n—Nokar, priest of Sheoldred",
+    "artist": "PINDURSKI",
+    "set": "Foundations",
+    "imageUrl": "/Cube/RealCards/duress-fdn.jpg",
+    "_source": "Black\\Duress.jpg"
+  },
+  {
+    "id": "fatal-push-2xm",
+    "name": "Fatal Push",
+    "manaCost": "{B}",
+    "type": "Instant",
+    "rarity": "Uncommon",
+    "text": "Destroy target creature if it has mana value 2 or less.\nRevolt — Destroy that creature if it has mana value 4 or less instead if a permanent left the battlefield under your control this turn.",
+    "colors": [
+      "B"
+    ],
+    "custom": false,
+    "archetypes": [
+      "Control"
+    ],
+    "artist": "Eric Deschamps",
+    "set": "Double Masters",
+    "imageUrl": "/Cube/RealCards/fatal-push-2xm.jpg",
+    "_source": "Black\\Fatal Push.jpg"
+  },
+  {
+    "id": "inquisition-of-kozilek-2x2",
+    "name": "Inquisition of Kozilek",
+    "manaCost": "{B}",
+    "type": "Sorcery",
+    "rarity": "Uncommon",
+    "text": "Target player reveals their hand. You choose a nonland card from it with mana value 3 or less. That player discards that card.",
+    "colors": [
+      "B"
+    ],
+    "custom": false,
+    "archetypes": [],
+    "flavorText": "You will scream out your innermost secrets just to make it stop.",
+    "artist": "Tomasz Jedruszek",
+    "set": "Double Masters 2022",
+    "imageUrl": "/Cube/RealCards/inquisition-of-kozilek-2x2.jpg",
+    "_source": "Black\\Inquisition of Kozilek.jpg"
+  },
+  {
+    "id": "marionette-apprentice-mh3",
+    "name": "Marionette Apprentice",
+    "manaCost": "{1}{B}",
+    "type": "Creature — Human Artificer",
+    "rarity": "Uncommon",
+    "text": "Fabricate 1 (When this creature enters, put a +1/+1 counter on it or create a 1/1 colorless Servo artifact creature token.)\nWhenever another creature or artifact you control is put into a graveyard from the battlefield, each opponent loses 1 life.",
+    "colors": [
+      "B"
+    ],
+    "custom": false,
+    "archetypes": [
+      "Artifacts"
+    ],
+    "flavorText": "\"Ah! Yes! I got its leg to twitch!\"",
+    "artist": "Steve Ellis",
+    "power": "1",
+    "toughness": "2",
+    "set": "Modern Horizons 3",
+    "imageUrl": "/Cube/RealCards/marionette-apprentice-mh3.jpg",
+    "_source": "Black\\Marionette Apprentice.jpg",
+    "relatedTokens": [
+      "1/1 colorless Servo"
+    ]
+  },
+  {
+    "id": "thoughtseize-2xm",
+    "name": "Thoughtseize",
+    "manaCost": "{B}",
+    "type": "Sorcery",
+    "rarity": "Rare",
+    "text": "Target player reveals their hand. You choose a nonland card from it. That player discards that card. You lose 2 life.",
+    "colors": [
+      "B"
+    ],
+    "custom": false,
+    "archetypes": [],
+    "flavorText": "\"Any dream is a robust harvest. Still, I prefer the timeworn dreams, heavy with import, that haunt the obsessive mind.\"",
+    "artist": "Aleksi Briclot",
+    "set": "Double Masters",
+    "imageUrl": "/Cube/RealCards/thoughtseize-2xm.jpg",
+    "_source": "Black\\Thoughtseize.jpg"
+  },
+  {
+    "id": "toxic-deluge-msc",
+    "name": "Toxic Deluge",
+    "manaCost": "{2}{B}",
+    "type": "Sorcery",
+    "rarity": "Rare",
+    "text": "As an additional cost to cast this spell, pay X life.\nAll creatures get -X/-X until end of turn.",
+    "colors": [
+      "B"
+    ],
+    "custom": false,
+    "archetypes": [],
+    "flavorText": "\"Zemo insults me by tasking me with weaklings such as you. Even together, you pose no challenge.\"\n—Radioactive Man, Dr. Chen Lu",
+    "artist": "Anthony Devine",
+    "set": "Marvel Super Heroes Commander",
+    "imageUrl": "/Cube/RealCards/toxic-deluge-msc.jpg",
+    "_source": "Black\\Toxic Deluge.jpg"
+  },
+  {
+    "id": "brainstorm-tle",
+    "name": "Brainstorm",
+    "manaCost": "{U}",
+    "type": "Instant",
+    "rarity": "Common",
+    "text": "Draw three cards, then put two cards from your hand on top of your library in any order.",
+    "colors": [
+      "U"
+    ],
+    "custom": false,
+    "archetypes": [],
+    "flavorText": "\"Now I get it. Something awful happened on that day. I don't know what, but I do know why. Firebenders lose their bending during a solar eclipse!\"\n—Sokka",
+    "artist": "Arthur Yuan",
+    "set": "Avatar: The Last Airbender Eternal",
+    "imageUrl": "/Cube/RealCards/brainstorm-tle.jpg",
+    "_source": "Blue\\Brainstorm.jpg"
+  },
+  {
+    "id": "counterspell-dsc",
+    "name": "Counterspell",
+    "manaCost": "{U}{U}",
+    "type": "Instant",
+    "rarity": "Uncommon",
+    "text": "Counter target spell.",
+    "colors": [
+      "U"
+    ],
+    "custom": false,
+    "archetypes": [],
+    "artist": "Zack Stella",
+    "set": "Duskmourn: House of Horror Commander",
+    "imageUrl": "/Cube/RealCards/counterspell-dsc.jpg",
+    "_source": "Blue\\Counterspell.jpg"
+  },
+  {
+    "id": "entity-tracker-dsk",
+    "name": "Entity Tracker",
+    "manaCost": "{2}{U}",
+    "type": "Creature — Human Scout",
+    "rarity": "Rare",
+    "text": "Flash\nEerie — Whenever an enchantment you control enters and whenever you fully unlock a Room, draw a card.",
+    "colors": [
+      "U"
+    ],
+    "custom": false,
+    "archetypes": [
+      "Enchantments"
+    ],
+    "flavorText": "\"The readings are off the charts! Whatever it is, it's close.\"",
+    "artist": "Cristi Balanescu",
+    "power": "2",
+    "toughness": "3",
+    "set": "Duskmourn: House of Horror",
+    "imageUrl": "/Cube/RealCards/entity-tracker-dsk.jpg",
+    "_source": "Blue\\Entity Tracker.jpg"
+  },
+  {
+    "id": "frantic-search-tle",
+    "name": "Frantic Search",
+    "manaCost": "{2}{U}",
+    "type": "Instant",
+    "rarity": "Common",
+    "text": "Draw two cards, then discard two cards. Untap up to three lands.",
+    "colors": [
+      "U"
+    ],
+    "custom": false,
+    "archetypes": [
+      "Storm"
+    ],
+    "flavorText": "In the skies of the Si Wong Desert, a solitary winged lemur searched in vain for a lost friend.",
+    "artist": "Alejandro Pacheco",
+    "set": "Avatar: The Last Airbender Eternal",
+    "imageUrl": "/Cube/RealCards/frantic-search-tle.jpg",
+    "_source": "Blue\\Frantic Search.jpg"
+  },
+  {
+    "id": "gush-jvc",
+    "name": "Gush",
+    "manaCost": "{4}{U}",
+    "type": "Instant",
+    "rarity": "Common",
+    "text": "You may return two Islands you control to their owner's hand rather than pay this spell's mana cost.\nDraw two cards.",
+    "colors": [
+      "U"
+    ],
+    "custom": false,
+    "archetypes": [
+      "Storm"
+    ],
+    "flavorText": "Don't trust your secrets to the sea.",
+    "artist": "Kev Walker",
+    "set": "Duel Decks Anthology: Jace vs. Chandra",
+    "imageUrl": "/Cube/RealCards/gush-jvc.jpg",
+    "_source": "Blue\\Gush.jpg"
+  },
+  {
+    "id": "hidden-strings-dgm",
+    "name": "Hidden Strings",
+    "manaCost": "{1}{U}",
+    "type": "Sorcery",
+    "rarity": "Common",
+    "text": "You may tap or untap target permanent, then you may tap or untap another target permanent.\nCipher (Then you may exile this spell card encoded on a creature you control. Whenever that creature deals combat damage to a player, its controller may cast a copy of the encoded card without paying its mana cost.)",
+    "colors": [
+      "U"
+    ],
+    "custom": false,
+    "archetypes": [
+      "Broken Cipher"
+    ],
+    "artist": "Daarken",
+    "set": "Dragon's Maze",
+    "imageUrl": "/Cube/RealCards/hidden-strings-dgm.jpg",
+    "_source": "Blue\\Hidden Strings.jpg"
+  },
+  {
+    "id": "impulse-dmr",
+    "name": "Impulse",
+    "manaCost": "{1}{U}",
+    "type": "Instant",
+    "rarity": "Common",
+    "text": "Look at the top four cards of your library. Put one of them into your hand and the rest on the bottom of your library in any order.",
+    "colors": [
+      "U"
+    ],
+    "custom": false,
+    "archetypes": [],
+    "flavorText": "\"I've always made snap decisions. I'm just better at making the right ones now that I'm older and wiser.\"\n—Teferi",
+    "artist": "Sam Guay",
+    "set": "Dominaria Remastered",
+    "imageUrl": "/Cube/RealCards/impulse-dmr.jpg",
+    "_source": "Blue\\Impulse.jpg"
+  },
+  {
+    "id": "mana-leak-2x2",
+    "name": "Mana Leak",
+    "manaCost": "{1}{U}",
+    "type": "Instant",
+    "rarity": "Common",
+    "text": "Counter target spell unless its controller pays {3}.",
+    "colors": [
+      "U"
+    ],
+    "custom": false,
+    "archetypes": [],
+    "flavorText": "The fatal flaw in every plan is the assumption that you know more than your enemy.",
+    "artist": "Howard Lyon",
+    "set": "Double Masters 2022",
+    "imageUrl": "/Cube/RealCards/mana-leak-2x2.jpg",
+    "_source": "Blue\\Mana Leak.jpg"
+  },
+  {
+    "id": "memory-lapse-ema",
+    "name": "Memory Lapse",
+    "manaCost": "{1}{U}",
+    "type": "Instant",
+    "rarity": "Common",
+    "text": "Counter target spell. If that spell is countered this way, put it on top of its owner's library instead of into that player's graveyard.",
+    "colors": [
+      "U"
+    ],
+    "custom": false,
+    "archetypes": [],
+    "flavorText": "What a lonely agony, the memory of memories lost.",
+    "artist": "Greg Staples",
+    "set": "Eternal Masters",
+    "imageUrl": "/Cube/RealCards/memory-lapse-ema.jpg",
+    "_source": "Blue\\Memory Lapse.jpg"
+  },
+  {
+    "id": "opt-tdc",
+    "name": "Opt",
+    "manaCost": "{U}",
+    "type": "Instant",
+    "rarity": "Common",
+    "text": "Scry 1. (Look at the top card of your library. You may put that card on the bottom.)\nDraw a card.",
+    "colors": [
+      "U"
+    ],
+    "custom": false,
+    "archetypes": [],
+    "flavorText": "\"It's easy to anticipate Captain Storm's orders: take the more dangerous route.\"",
+    "artist": "Craig J Spearing",
+    "set": "Tarkir: Dragonstorm Commander",
+    "imageUrl": "/Cube/RealCards/opt-tdc.jpg",
+    "_source": "Blue\\Opt.jpg"
+  },
+  {
+    "id": "ponder-tdc",
+    "name": "Ponder",
+    "manaCost": "{U}",
+    "type": "Sorcery",
+    "rarity": "Common",
+    "text": "Look at the top three cards of your library, then put them back in any order. You may shuffle.\nDraw a card.",
+    "colors": [
+      "U"
+    ],
+    "custom": false,
+    "archetypes": [],
+    "flavorText": "Tomorrow belongs to those who prepare for it today.",
+    "artist": "Dan Murayama Scott",
+    "set": "Tarkir: Dragonstorm Commander",
+    "imageUrl": "/Cube/RealCards/ponder-tdc.jpg",
+    "_source": "Blue\\Ponder.jpg"
+  },
+  {
+    "id": "preordain-tdc",
+    "name": "Preordain",
+    "manaCost": "{U}",
+    "type": "Sorcery",
+    "rarity": "Common",
+    "text": "Scry 2, then draw a card. (To scry 2, look at the top two cards of your library, then put any number of them on the bottom and the rest on top in any order.)",
+    "colors": [
+      "U"
+    ],
+    "custom": false,
+    "archetypes": [],
+    "artist": "Svetlin Velinov",
+    "set": "Tarkir: Dragonstorm Commander",
+    "imageUrl": "/Cube/RealCards/preordain-tdc.jpg",
+    "_source": "Blue\\Preordain.jpg"
+  },
+  {
+    "id": "remand-rvr",
+    "name": "Remand",
+    "manaCost": "{1}{U}",
+    "type": "Instant",
+    "rarity": "Uncommon",
+    "text": "Counter target spell. If that spell is countered this way, put it into its owner's hand instead of into that player's graveyard.\nDraw a card.",
+    "colors": [
+      "U"
+    ],
+    "custom": false,
+    "archetypes": [],
+    "flavorText": "\"Well, at least all of that arm-waving and arcane babbling you did was impressive.\"",
+    "artist": "Mark A. Nelson",
+    "set": "Ravnica Remastered",
+    "imageUrl": "/Cube/RealCards/remand-rvr.jpg",
+    "_source": "Blue\\Remand.jpg"
+  },
+  {
+    "id": "snapcaster-mage-inr",
+    "name": "Snapcaster Mage",
+    "manaCost": "{1}{U}",
+    "type": "Creature — Human Wizard",
+    "rarity": "Mythic Rare",
+    "text": "Flash\nWhen this creature enters, target instant or sorcery card in your graveyard gains flashback until end of turn. The flashback cost is equal to its mana cost. (You may cast that card from your graveyard for its flashback cost. Then exile it.)",
+    "colors": [
+      "U"
+    ],
+    "custom": false,
+    "archetypes": [
+      "Storm"
+    ],
+    "artist": "Volkan Baǵa",
+    "power": "2",
+    "toughness": "1",
+    "set": "Innistrad Remastered",
+    "imageUrl": "/Cube/RealCards/snapcaster-mage-inr.jpg",
+    "_source": "Blue\\Snapcaster Mage.jpg"
+  },
+  {
+    "id": "academy-manufactor-otc",
+    "name": "Academy Manufactor",
+    "manaCost": "{3}",
+    "type": "Artifact Creature — Assembly-Worker",
+    "rarity": "Rare",
+    "text": "If you would create a Clue, Food, or Treasure token, instead create one of each.",
+    "colors": [],
+    "custom": false,
+    "archetypes": [
+      "Token Collection",
+      "Artifacts"
+    ],
+    "flavorText": "Automated systems at the Tolarian Academy sort new acquisitions for optimal use, determining which should be studied, eaten, or sold.",
+    "artist": "Campbell White",
+    "power": "1",
+    "toughness": "3",
+    "set": "Outlaws of Thunder Junction Commander",
+    "imageUrl": "/Cube/RealCards/academy-manufactor-otc.jpg",
+    "_source": "Colorless\\Academy Manufactor.jpg",
+    "relatedTokens": [
+      "Clue",
+      "Food",
+      "Treasure"
+    ]
+  },
+  {
+    "id": "agent-of-acquisitions-cns",
+    "name": "Agent of Acquisitions",
+    "manaCost": "{2}",
+    "type": "Artifact Creature — Construct",
+    "rarity": "Uncommon",
+    "text": "Draft this card face up.\nInstead of drafting a card from a booster pack, you may draft each card in that booster pack, one at a time. If you do, turn this card face down and you can't draft cards for the rest of this draft round. (You may look at booster packs passed to you.)",
+    "colors": [],
+    "custom": false,
+    "archetypes": [],
+    "artist": "Eytan Zana",
+    "power": "2",
+    "toughness": "1",
+    "set": "Conspiracy",
+    "imageUrl": "/Cube/RealCards/agent-of-acquisitions-cns.jpg",
+    "_source": "Colorless\\Agent of Acquisitions.jpg"
+  },
+  {
+    "id": "chromatic-sphere-jmp",
+    "name": "Chromatic Sphere",
+    "manaCost": "{1}",
+    "type": "Artifact",
+    "rarity": "Common",
+    "text": "{1}, {T}, Sacrifice this artifact: Add one mana of any color. Draw a card.",
+    "colors": [],
+    "custom": false,
+    "archetypes": [
+      "Artifacts"
+    ],
+    "flavorText": "\"As expected, this sphere's design reflects the colors of the four moons . . . plus another?\"\n—Pontifex, elder researcher",
+    "artist": "Brian Snõddy",
+    "set": "Jumpstart",
+    "imageUrl": "/Cube/RealCards/chromatic-sphere-jmp.jpg",
+    "_source": "Colorless\\Chromatic Sphere.jpg"
+  },
+  {
+    "id": "chromatic-star-tsr",
+    "name": "Chromatic Star",
+    "manaCost": "{1}",
+    "type": "Artifact",
+    "rarity": "Common",
+    "text": "{1}, {T}, Sacrifice this artifact: Add one mana of any color.\nWhen this artifact is put into a graveyard from the battlefield, draw a card.",
+    "colors": [],
+    "custom": false,
+    "archetypes": [
+      "Artifacts"
+    ],
+    "flavorText": "\"This item is not from ... now. It reflects a sky no longer ours and gleams with hope that does not exist.\"\n—Tavalus, acolyte of Korlis",
+    "artist": "Daniel Ljunggren",
+    "set": "Time Spiral Remastered",
+    "imageUrl": "/Cube/RealCards/chromatic-star-tsr.jpg",
+    "_source": "Colorless\\Chromatic Star.jpg"
+  },
+  {
+    "id": "cogwork-librarian-cns",
+    "name": "Cogwork Librarian",
+    "manaCost": "{4}",
+    "type": "Artifact Creature — Construct",
+    "rarity": "Common",
+    "text": "Draft this card face up.\nAs you draft a card, you may draft an additional card from that booster pack. If you do, put this card into that booster pack.",
+    "colors": [],
+    "custom": false,
+    "archetypes": [],
+    "flavorText": "Why wait for answers?",
+    "artist": "Dan Murayama Scott",
+    "power": "3",
+    "toughness": "3",
+    "set": "Conspiracy",
+    "imageUrl": "/Cube/RealCards/cogwork-librarian-cns.jpg",
+    "_source": "Colorless\\Cogwork Librarian.jpg"
+  },
+  {
+    "id": "dismember-mm2",
+    "name": "Dismember",
+    "manaCost": "{1}{B/P}{B/P}",
+    "type": "Instant",
+    "rarity": "Uncommon",
+    "text": "({B/P} can be paid with either {B} or 2 life.)\nTarget creature gets -5/-5 until end of turn.",
+    "colors": [
+      "B"
+    ],
+    "custom": false,
+    "archetypes": [],
+    "flavorText": "\"You serve Phyrexia. Your pieces would better serve Phyrexia elsewhere.\"\n—Azax-Azog, the Demon Thane",
+    "artist": "Terese Nielsen",
+    "set": "Modern Masters 2015",
+    "imageUrl": "/Cube/RealCards/dismember-mm2.jpg",
+    "_source": "Colorless\\Dismember.jpg"
+  },
+  {
+    "id": "fellwar-stone-soc",
+    "name": "Fellwar Stone",
+    "manaCost": "{2}",
+    "type": "Artifact",
+    "rarity": "Uncommon",
+    "text": "{T}: Add one mana of any color that a land an opponent controls could produce.",
+    "colors": [],
+    "custom": false,
+    "archetypes": [],
+    "flavorText": "\"What do you have that I cannot obtain?\"\n—Mairsil, the Pretender",
+    "artist": "John Avon",
+    "set": "Secrets of Strixhaven Commander",
+    "imageUrl": "/Cube/RealCards/fellwar-stone-soc.jpg",
+    "_source": "Colorless\\Fellwar Stone.jpg"
+  },
+  {
+    "id": "gitaxian-probe-nph",
+    "name": "Gitaxian Probe",
+    "manaCost": "{U/P}",
+    "type": "Sorcery",
+    "rarity": "Common",
+    "text": "({U/P} can be paid with either {U} or 2 life.)\nLook at target player's hand.\nDraw a card.",
+    "colors": [
+      "U"
+    ],
+    "custom": false,
+    "archetypes": [
+      "Storm"
+    ],
+    "flavorText": "\"My flesh holds no secrets, monster. The spirit of Mirrodin will fight on.\"\n—Vy Covalt, Mirran resistance",
+    "artist": "Chippy",
+    "set": "New Phyrexia",
+    "imageUrl": "/Cube/RealCards/gitaxian-probe-nph.jpg",
+    "_source": "Colorless\\Gitaxian Probe.jpg"
+  },
+  {
+    "id": "mind-stone-soc",
+    "name": "Mind Stone",
+    "manaCost": "{2}",
+    "type": "Artifact",
+    "rarity": "Uncommon",
+    "text": "{T}: Add {C}.\n{1}, {T}, Sacrifice this artifact: Draw a card.",
+    "colors": [],
+    "custom": false,
+    "archetypes": [],
+    "flavorText": "\"We have barely begun to learn the secrets of the Fourth People. Every remnant of their presence, however cryptic, is a gift.\"\n—Akal Pakal, First Steward of Oteclan",
+    "artist": "Camille Alquier",
+    "set": "Secrets of Strixhaven Commander",
+    "imageUrl": "/Cube/RealCards/mind-stone-soc.jpg",
+    "_source": "Colorless\\Mind Stone.jpg"
+  },
+  {
+    "id": "mutagenic-growth-mm2",
+    "name": "Mutagenic Growth",
+    "manaCost": "{G/P}",
+    "type": "Instant",
+    "rarity": "Uncommon",
+    "text": "({G/P} can be paid with either {G} or 2 life.)\nTarget creature gets +2/+2 until end of turn.",
+    "colors": [
+      "G"
+    ],
+    "custom": false,
+    "archetypes": [
+      "Prowess"
+    ],
+    "flavorText": "\"Sympathy is for weaklings. Whoever survives, wins.\"\n—Benzir, archdruid of Temple Might",
+    "artist": "Dave Kendall",
+    "set": "Modern Masters 2015",
+    "imageUrl": "/Cube/RealCards/mutagenic-growth-mm2.jpg",
+    "_source": "Colorless\\Mutagenic Growth.jpg"
+  },
+  {
+    "id": "reckoner-bankbuster-neo",
+    "name": "Reckoner Bankbuster",
+    "manaCost": "{2}",
+    "type": "Artifact — Vehicle",
+    "rarity": "Rare",
+    "text": "This Vehicle enters with three charge counters on it.\n{2}, {T}, Remove a charge counter from this Vehicle: Draw a card. Then if there are no charge counters on this Vehicle, create a Treasure token and a 1/1 colorless Pilot creature token with \"This token crews Vehicles as though its power were 2 greater.\"\nCrew 3",
+    "colors": [],
+    "custom": false,
+    "archetypes": [
+      "Vehicles"
+    ],
+    "artist": "Steve Prescott",
+    "power": "4",
+    "toughness": "4",
+    "set": "Kamigawa: Neon Dynasty",
+    "imageUrl": "/Cube/RealCards/reckoner-bankbuster-neo.jpg",
+    "_source": "Colorless\\Reckoner Bankbuster.jpg",
+    "relatedTokens": [
+      "Treasure",
+      "1/1 colorless Pilot"
+    ]
+  },
+  {
+    "id": "smuggler-s-copter-nec",
+    "name": "Smuggler's Copter",
+    "manaCost": "{2}",
+    "type": "Artifact — Vehicle",
+    "rarity": "Rare",
+    "text": "Flying\nWhenever this Vehicle attacks or blocks, you may draw a card. If you do, discard a card.\nCrew 1 (Tap any number of creatures you control with total power 1 or more: This Vehicle becomes an artifact creature until end of turn.)",
+    "colors": [],
+    "custom": false,
+    "archetypes": [
+      "Vehicles"
+    ],
+    "artist": "Florian de Gesincourt",
+    "power": "3",
+    "toughness": "3",
+    "set": "Neon Dynasty Commander",
+    "imageUrl": "/Cube/RealCards/smuggler-s-copter-nec.jpg",
+    "_source": "Colorless\\Smuggler's Copter.jpg"
+  },
+  {
+    "id": "unlicensed-hearse-snc",
+    "name": "Unlicensed Hearse",
+    "manaCost": "{2}",
+    "type": "Artifact — Vehicle",
+    "rarity": "Rare",
+    "text": "{T}: Exile up to two target cards from a single graveyard.\nUnlicensed Hearse's power and toughness are each equal to the number of cards exiled with it.\nCrew 2",
+    "colors": [],
+    "custom": false,
+    "archetypes": [
+      "Vehicles"
+    ],
+    "artist": "Chris Seaman",
+    "power": "*",
+    "toughness": "*",
+    "set": "Streets of New Capenna",
+    "imageUrl": "/Cube/RealCards/unlicensed-hearse-snc.jpg",
+    "_source": "Colorless\\Unlicensed Hearse.jpg"
+  },
+  {
+    "id": "glissa-the-traitor-mbs",
+    "name": "Glissa, the Traitor",
+    "manaCost": "{B}{G}{G}",
+    "type": "Legendary Creature — Phyrexian Zombie Elf",
+    "rarity": "Mythic Rare",
+    "text": "First strike, deathtouch\nWhenever a creature an opponent controls dies, you may return target artifact card from your graveyard to your hand.",
+    "colors": [
+      "B",
+      "G"
+    ],
+    "custom": false,
+    "archetypes": [
+      "Artifacts"
+    ],
+    "artist": "Chris Rahn",
+    "power": "3",
+    "toughness": "3",
+    "set": "Mirrodin Besieged",
+    "imageUrl": "/Cube/RealCards/glissa-the-traitor-mbs.jpg",
+    "_source": "Gold\\BG\\Glissa, the Traitor.jpg"
+  },
+  {
+    "id": "ravenous-squirrel-mh2",
+    "name": "Ravenous Squirrel",
+    "manaCost": "{B/G}",
+    "type": "Creature — Squirrel",
+    "rarity": "Uncommon",
+    "text": "Whenever you sacrifice an artifact or creature, put a +1/+1 counter on this creature.\n{1}{B}{G}, Sacrifice an artifact or creature: You gain 1 life and draw a card.",
+    "colors": [
+      "B",
+      "G"
+    ],
+    "custom": false,
+    "archetypes": [
+      "Artifacts"
+    ],
+    "flavorText": "\"Nope, no monsters in the forest. Nothing in there but squirrels.\"\n—Joskun, An-Havva constable",
+    "artist": "Dan Murayama Scott",
+    "power": "1",
+    "toughness": "1",
+    "set": "Modern Horizons 2",
+    "imageUrl": "/Cube/RealCards/ravenous-squirrel-mh2.jpg",
+    "_source": "Gold\\BG\\Ravenous Squirrel.jpg"
+  },
+  {
+    "id": "umori-the-collector-iko",
+    "name": "Umori, the Collector",
+    "manaCost": "{2}{B/G}{B/G}",
+    "type": "Legendary Creature — Ooze",
+    "rarity": "Rare",
+    "text": "Companion — Each nonland card in your starting deck shares a card type. (If this card is your chosen companion, you may put it into your hand from outside the game for {3} as a sorcery.)\nAs Umori enters, choose a card type.\nSpells you cast of the chosen type cost {1} less to cast.",
+    "colors": [
+      "B",
+      "G"
+    ],
+    "custom": false,
+    "archetypes": [],
+    "artist": "Jehan Choo",
+    "power": "4",
+    "toughness": "5",
+    "set": "Ikoria: Lair of Behemoths",
+    "imageUrl": "/Cube/RealCards/umori-the-collector-iko.jpg",
+    "_source": "Gold\\BG\\Umori, the Collector.jpg"
+  },
+  {
+    "id": "mayhem-devil-eoc",
+    "name": "Mayhem Devil",
+    "manaCost": "{1}{B}{R}",
+    "type": "Creature — Devil",
+    "rarity": "Uncommon",
+    "text": "Whenever a player sacrifices a permanent, this creature deals 1 damage to any target.",
+    "colors": [
+      "B",
+      "R"
+    ],
+    "custom": false,
+    "archetypes": [
+      "Token Collection"
+    ],
+    "flavorText": "Despite their stake in the city's survival, Rakdos cultists are loath to pass up any opportunity to sow chaos.",
+    "artist": "Dmitry Burmak",
+    "power": "3",
+    "toughness": "3",
+    "set": "Edge of Eternities Commander",
+    "imageUrl": "/Cube/RealCards/mayhem-devil-eoc.jpg",
+    "_source": "Gold\\BR\\Mayhem Devil.jpg"
+  },
+  {
+    "id": "obosh-the-preypiercer-iko",
+    "name": "Obosh, the Preypiercer",
+    "manaCost": "{3}{B/R}{B/R}",
+    "type": "Legendary Creature — Hellion Horror",
+    "rarity": "Rare",
+    "text": "Companion — Your starting deck contains only cards with odd mana values and land cards. (If this card is your chosen companion, you may put it into your hand from outside the game for {3} as a sorcery.)\nIf a source you control with an odd mana value would deal damage to a permanent or player, it deals double that damage to that permanent or player instead.",
+    "colors": [
+      "B",
+      "R"
+    ],
+    "custom": false,
+    "archetypes": [],
+    "artist": "Daarken",
+    "power": "3",
+    "toughness": "5",
+    "set": "Ikoria: Lair of Behemoths",
+    "imageUrl": "/Cube/RealCards/obosh-the-preypiercer-iko.jpg",
+    "_source": "Gold\\BR\\Obosh, the Preypiercer.jpg"
+  },
+  {
+    "id": "growth-spiral-dsc",
+    "name": "Growth Spiral",
+    "manaCost": "{G}{U}",
+    "type": "Instant",
+    "rarity": "Common",
+    "text": "Draw a card. You may put a land card from your hand onto the battlefield.",
+    "colors": [
+      "G",
+      "U"
+    ],
+    "custom": false,
+    "archetypes": [],
+    "flavorText": "Hidden within the infinite, protean rooms of the House are strange pockets of power that only the bravest dare access.",
+    "artist": "Nicholas Gregory",
+    "set": "Duskmourn: House of Horror Commander",
+    "imageUrl": "/Cube/RealCards/growth-spiral-dsc.jpg",
+    "_source": "Gold\\GU\\Growth Spiral.jpg"
+  },
+  {
+    "id": "keruga-the-macrosage-iko",
+    "name": "Keruga, the Macrosage",
+    "manaCost": "{3}{G/U}{G/U}",
+    "type": "Legendary Creature — Dinosaur Hippo",
+    "rarity": "Rare",
+    "text": "Companion — Your starting deck contains only cards with mana value 3 or greater and land cards. (If this card is your chosen companion, you may put it into your hand from outside the game for {3} as a sorcery.)\nWhen Keruga enters, draw a card for each other permanent you control with mana value 3 or greater.",
+    "colors": [
+      "G",
+      "U"
+    ],
+    "custom": false,
+    "archetypes": [],
+    "artist": "Dan Murayama Scott",
+    "power": "5",
+    "toughness": "4",
+    "set": "Ikoria: Lair of Behemoths",
+    "imageUrl": "/Cube/RealCards/keruga-the-macrosage-iko.jpg",
+    "_source": "Gold\\GU\\Keruga, the Macrosage.jpg"
+  },
+  {
+    "id": "nadu-winged-wisdom-mh3",
+    "name": "Nadu, Winged Wisdom",
+    "manaCost": "{1}{G}{U}",
+    "type": "Legendary Creature — Bird Wizard",
+    "rarity": "Rare",
+    "text": "Flying\nCreatures you control have \"Whenever this creature becomes the target of a spell or ability, reveal the top card of your library. If it's a land card, put it onto the battlefield. Otherwise, put it into your hand. This ability triggers only twice each turn.\"",
+    "colors": [
+      "G",
+      "U"
+    ],
+    "custom": false,
+    "archetypes": [],
+    "artist": "Daren Bader",
+    "power": "3",
+    "toughness": "4",
+    "set": "Modern Horizons 3",
+    "imageUrl": "/Cube/RealCards/nadu-winged-wisdom-mh3.jpg",
+    "_source": "Gold\\GU\\Nadu, Winged Wisdom.jpg"
+  },
+  {
+    "id": "kaheera-the-orphanguard-iko",
+    "name": "Kaheera, the Orphanguard",
+    "manaCost": "{1}{G/W}{G/W}",
+    "type": "Legendary Creature — Cat Beast",
+    "rarity": "Rare",
+    "text": "Companion — Each creature card in your starting deck is a Cat, Elemental, Nightmare, Dinosaur, or Beast card. (If this card is your chosen companion, you may put it into your hand from outside the game for {3} as a sorcery.)\nVigilance\nEach other creature you control that's a Cat, Elemental, Nightmare, Dinosaur, or Beast gets +1/+1 and has vigilance.",
+    "colors": [
+      "G",
+      "W"
+    ],
+    "custom": false,
+    "archetypes": [],
+    "artist": "Ryan Pancoast",
+    "power": "3",
+    "toughness": "2",
+    "set": "Ikoria: Lair of Behemoths",
+    "imageUrl": "/Cube/RealCards/kaheera-the-orphanguard-iko.jpg",
+    "_source": "Gold\\GW\\Kaheera, the Orphanguard.jpg"
+  },
+  {
+    "id": "miriam-herd-whisperer-otj",
+    "name": "Miriam, Herd Whisperer",
+    "manaCost": "{G}{W}",
+    "type": "Legendary Creature — Human Druid",
+    "rarity": "Uncommon",
+    "text": "During your turn, Mounts and Vehicles you control have hexproof.\nWhenever a Mount or Vehicle you control attacks, put a +1/+1 counter on it.",
+    "colors": [
+      "G",
+      "W"
+    ],
+    "custom": false,
+    "archetypes": [
+      "Vehicles"
+    ],
+    "flavorText": "\"Anything willing to bear your weight and save your feet a trip across the hot sands deserves respect. Show some.\"",
+    "artist": "Viko Menezes",
+    "power": "3",
+    "toughness": "2",
+    "set": "Outlaws of Thunder Junction",
+    "imageUrl": "/Cube/RealCards/miriam-herd-whisperer-otj.jpg",
+    "_source": "Gold\\GW\\Miriam, Herd Whisperer.jpg"
+  },
+  {
+    "id": "jegantha-the-wellspring-ecc",
+    "name": "Jegantha, the Wellspring",
+    "manaCost": "{4}{R/G}",
+    "type": "Legendary Creature — Elemental Elk",
+    "rarity": "Rare",
+    "text": "Companion — No card in your starting deck has more than one of the same mana symbol in its mana cost. (If this card is your chosen companion, you may put it into your hand from outside the game for {3} as a sorcery.)\n{T}: Add {W}{U}{B}{R}{G}. This mana can't be spent to pay generic mana costs.",
+    "colors": [
+      "G",
+      "R"
+    ],
+    "custom": false,
+    "archetypes": [],
+    "artist": "Chris Rahn",
+    "power": "5",
+    "toughness": "5",
+    "set": "Lorwyn Eclipsed Commander",
+    "imageUrl": "/Cube/RealCards/jegantha-the-wellspring-ecc.jpg",
+    "_source": "Gold\\RG\\Jegantha, the Wellspring.jpg"
+  },
+  {
+    "id": "minsc-boo-timeless-heroes-clb",
+    "name": "Minsc & Boo, Timeless Heroes",
+    "manaCost": "{2}{R}{G}",
+    "type": "Legendary Planeswalker — Minsc",
+    "rarity": "Mythic Rare",
+    "text": "When Minsc & Boo enters and at the beginning of your upkeep, you may create Boo, a legendary 1/1 red Hamster creature token with trample and haste.\n+1: Put three +1/+1 counters on up to one target creature with trample or haste.\n−2: Sacrifice a creature. When you do, Minsc & Boo deals X damage to any target, where X is that creature's power. If the sacrificed creature was a Hamster, draw X cards.\nMinsc & Boo, Timeless Heroes can be your commander.",
+    "colors": [
+      "G",
+      "R"
+    ],
+    "custom": false,
+    "archetypes": [],
+    "artist": "Andreas Zafiratos",
+    "loyalty": 3,
+    "set": "Commander Legends: Battle for Baldur's Gate",
+    "imageUrl": "/Cube/RealCards/minsc-boo-timeless-heroes-clb.jpg",
+    "_source": "Gold\\RG\\Minsc & Boo, Timeless Heroes.jpg",
+    "relatedTokens": [
+      "Boo"
+    ]
+  },
+  {
+    "id": "lightning-helix-mkm",
+    "name": "Lightning Helix",
+    "manaCost": "{R}{W}",
+    "type": "Instant",
+    "rarity": "Uncommon",
+    "text": "Lightning Helix deals 3 damage to any target and you gain 3 life.",
+    "colors": [
+      "R",
+      "W"
+    ],
+    "custom": false,
+    "archetypes": [],
+    "flavorText": "After heavy casualties in the Phyrexian invasion, the Boros mage-priests trained as many rank-and-file soldiers as possible to wield the Legion's legendary battle magic.",
+    "artist": "Eli Minaya",
+    "set": "Murders at Karlov Manor",
+    "imageUrl": "/Cube/RealCards/lightning-helix-mkm.jpg",
+    "_source": "Gold\\RW\\Lightning Helix.jpg"
+  },
+  {
+    "id": "zirda-the-dawnwaker-iko",
+    "name": "Zirda, the Dawnwaker",
+    "manaCost": "{1}{R/W}{R/W}",
+    "type": "Legendary Creature — Elemental Fox",
+    "rarity": "Rare",
+    "text": "Companion — Each permanent card in your starting deck has an activated ability. (If this card is your chosen companion, you may put it into your hand from outside the game for {3} as a sorcery.)\nAbilities you activate that aren't mana abilities cost {2} less to activate. This effect can't reduce the mana in that cost to less than one mana.\n{1}, {T}: Target creature can't block this turn.",
+    "colors": [
+      "R",
+      "W"
+    ],
+    "custom": false,
+    "archetypes": [],
+    "artist": "Jesper Ejsing",
+    "power": "3",
+    "toughness": "3",
+    "set": "Ikoria: Lair of Behemoths",
+    "imageUrl": "/Cube/RealCards/zirda-the-dawnwaker-iko.jpg",
+    "_source": "Gold\\RW\\Zirda, the Dawnwaker.jpg"
+  },
+  {
+    "id": "baleful-strix-otc",
+    "name": "Baleful Strix",
+    "manaCost": "{U}{B}",
+    "type": "Artifact Creature — Bird",
+    "rarity": "Rare",
+    "text": "Flying, deathtouch\nWhen this creature enters, draw a card.",
+    "colors": [
+      "B",
+      "U"
+    ],
+    "custom": false,
+    "archetypes": [
+      "Blink/ETB/Value"
+    ],
+    "flavorText": "Its beak rends flesh and bone, exposing the tender marrow of dream.",
+    "artist": "Nils Hamm",
+    "power": "1",
+    "toughness": "1",
+    "set": "Outlaws of Thunder Junction Commander",
+    "imageUrl": "/Cube/RealCards/baleful-strix-otc.jpg",
+    "_source": "Gold\\UB\\Baleful Strix.jpg"
+  },
+  {
+    "id": "gyruda-doom-of-depths-iko",
+    "name": "Gyruda, Doom of Depths",
+    "manaCost": "{4}{U/B}{U/B}",
+    "type": "Legendary Creature — Demon Kraken",
+    "rarity": "Rare",
+    "text": "Companion — Your starting deck contains only cards with even mana values. (If this card is your chosen companion, you may put it into your hand from outside the game for {3} as a sorcery.)\nWhen Gyruda enters, each player mills four cards. Put a creature card with an even mana value from among the milled cards onto the battlefield under your control.",
+    "colors": [
+      "B",
+      "U"
+    ],
+    "custom": false,
+    "archetypes": [
+      "Blink/ETB/Value"
+    ],
+    "artist": "Tyler Jacobson",
+    "power": "6",
+    "toughness": "6",
+    "set": "Ikoria: Lair of Behemoths",
+    "imageUrl": "/Cube/RealCards/gyruda-doom-of-depths-iko.jpg",
+    "_source": "Gold\\UB\\Gyruda, Doom of Depths.jpg"
+  },
+  {
+    "id": "lutri-the-spellchaser-iko",
+    "name": "Lutri, the Spellchaser",
+    "manaCost": "{1}{U/R}{U/R}",
+    "type": "Legendary Creature — Elemental Otter",
+    "rarity": "Rare",
+    "text": "Companion — Each nonland card in your starting deck has a different name. (If this card is your chosen companion, you may put it into your hand from outside the game for {3} as a sorcery.)\nFlash\nWhen Lutri enters, if you cast it, copy target instant or sorcery spell you control. You may choose new targets for the copy.",
+    "colors": [
+      "R",
+      "U"
+    ],
+    "custom": false,
+    "archetypes": [
+      "Storm"
+    ],
+    "artist": "Lie Setiawan",
+    "power": "3",
+    "toughness": "2",
+    "set": "Ikoria: Lair of Behemoths",
+    "imageUrl": "/Cube/RealCards/lutri-the-spellchaser-iko.jpg",
+    "_source": "Gold\\UR\\Lutri, the Spellchaser.jpg"
+  },
+  {
+    "id": "abstruse-appropriation-mh3",
+    "name": "Abstruse Appropriation",
+    "manaCost": "{2}{W}{B}",
+    "type": "Instant",
+    "rarity": "Rare",
+    "text": "Devoid (This card has no color.)\nExile target nonland permanent. You may cast that card for as long as it remains exiled, and you may spend colorless mana as though it were mana of any color to cast that spell.",
+    "colors": [],
+    "custom": false,
+    "archetypes": [],
+    "flavorText": "\"Kozilek experiences reality on his own terms.\"\n—Ayli, high priest of the Eternal Pilgrims",
+    "artist": "Jason Rainville",
+    "set": "Modern Horizons 3",
+    "imageUrl": "/Cube/RealCards/abstruse-appropriation-mh3.jpg",
+    "_source": "Gold\\WB\\Abstruse Appropriation.jpg"
+  },
+  {
+    "id": "lurrus-of-the-dream-den-iko",
+    "name": "Lurrus of the Dream-Den",
+    "manaCost": "{1}{W/B}{W/B}",
+    "type": "Legendary Creature — Cat Nightmare",
+    "rarity": "Rare",
+    "text": "Companion — Each permanent card in your starting deck has mana value 2 or less. (If this card is your chosen companion, you may put it into your hand from outside the game for {3} as a sorcery.)\nLifelink\nOnce during each of your turns, you may cast a permanent spell with mana value 2 or less from your graveyard.",
+    "colors": [
+      "B",
+      "W"
+    ],
+    "custom": false,
+    "archetypes": [],
+    "artist": "Slawomir Maniak",
+    "power": "3",
+    "toughness": "2",
+    "set": "Ikoria: Lair of Behemoths",
+    "imageUrl": "/Cube/RealCards/lurrus-of-the-dream-den-iko.jpg",
+    "_source": "Gold\\WB\\Lurrus of the Dream-Den.jpg"
+  },
+  {
+    "id": "grand-arbiter-augustin-iv-2x2",
+    "name": "Grand Arbiter Augustin IV",
+    "manaCost": "{2}{W}{U}",
+    "type": "Legendary Creature — Human Advisor",
+    "rarity": "Rare",
+    "text": "White spells you cast cost {1} less to cast.\nBlue spells you cast cost {1} less to cast.\nSpells your opponents cast cost {1} more to cast.",
+    "colors": [
+      "U",
+      "W"
+    ],
+    "custom": false,
+    "archetypes": [
+      "Storm"
+    ],
+    "flavorText": "The Arbiter is a conduit of justice, a will so disciplined that it dispenses justice without ego or remorse.",
+    "artist": "Zoltan Boros & Gabor Szikszai",
+    "power": "2",
+    "toughness": "3",
+    "set": "Double Masters 2022",
+    "imageUrl": "/Cube/RealCards/grand-arbiter-augustin-iv-2x2.jpg",
+    "_source": "Gold\\WU\\Grand Arbiter Augustin IV.jpg"
+  },
+  {
+    "id": "wrath-of-leknif-mb2",
+    "name": "Wrath of Leknif",
+    "manaCost": "{1}{W}{W}{U}",
+    "type": "Sorcery",
+    "rarity": "Rare",
+    "text": "Destroy all creatures. They can't be regenerated. Untap up to four lands you control.",
+    "colors": [
+      "U",
+      "W"
+    ],
+    "custom": false,
+    "archetypes": [],
+    "artist": "Marion Kivits",
+    "set": "Mystery Booster 2",
+    "imageUrl": "/Cube/RealCards/wrath-of-leknif-mb2.jpg",
+    "_source": "Gold\\WU\\Wrath of Leknif.jpg"
+  },
+  {
+    "id": "yorion-sky-nomad-iko",
+    "name": "Yorion, Sky Nomad",
+    "manaCost": "{3}{W/U}{W/U}",
+    "type": "Legendary Creature — Bird Serpent",
+    "rarity": "Rare",
+    "text": "Companion — Your starting deck contains at least twenty cards more than the minimum deck size. (If this card is your chosen companion, you may put it into your hand from outside the game for {3} as a sorcery.)\nFlying\nWhen Yorion enters, exile any number of other nonland permanents you own and control. Return those cards to the battlefield at the beginning of the next end step.",
+    "colors": [
+      "U",
+      "W"
+    ],
+    "custom": false,
+    "archetypes": [
+      "Blink/ETB/Value"
+    ],
+    "artist": "Steven Belledin",
+    "power": "4",
+    "toughness": "5",
+    "set": "Ikoria: Lair of Behemoths",
+    "imageUrl": "/Cube/RealCards/yorion-sky-nomad-iko.jpg",
+    "_source": "Gold\\WU\\Yorion, Sky Nomad.jpg"
+  },
+  {
+    "id": "birds-of-paradise-msc",
+    "name": "Birds of Paradise",
+    "manaCost": "{G}",
+    "type": "Creature — Bird",
+    "rarity": "Rare",
+    "text": "Flying\n{T}: Add one mana of any color.",
+    "colors": [
+      "G"
+    ],
+    "custom": false,
+    "archetypes": [],
+    "flavorText": "The migration of the cranes is believed to be a portent of coming abundance in Wakanda.",
+    "artist": "Kevin Sidharta",
+    "power": "0",
+    "toughness": "1",
+    "set": "Marvel Super Heroes Commander",
+    "imageUrl": "/Cube/RealCards/birds-of-paradise-msc.jpg",
+    "_source": "Green\\Birds of Paradise.jpg"
+  },
+  {
+    "id": "cemetery-prowler-vow",
+    "name": "Cemetery Prowler",
+    "manaCost": "{1}{G}{G}",
+    "type": "Creature — Wolf",
+    "rarity": "Mythic Rare",
+    "text": "Vigilance\nWhenever this creature enters or attacks, exile a card from a graveyard.\nSpells you cast cost {1} less to cast for each card type they share with cards exiled with this creature.",
+    "colors": [
+      "G"
+    ],
+    "custom": false,
+    "archetypes": [
+      "Self-mill"
+    ],
+    "artist": "Daarken",
+    "power": "3",
+    "toughness": "4",
+    "set": "Innistrad: Crimson Vow",
+    "imageUrl": "/Cube/RealCards/cemetery-prowler-vow.jpg",
+    "_source": "Green\\Cemetery Prowler.jpg"
+  },
+  {
+    "id": "cultivate-msc",
+    "name": "Cultivate",
+    "manaCost": "{2}{G}",
+    "type": "Sorcery",
+    "rarity": "Common",
+    "text": "Search your library for up to two basic land cards, reveal those cards, put one onto the battlefield tapped and the other into your hand, then shuffle.",
+    "colors": [
+      "G"
+    ],
+    "custom": false,
+    "archetypes": [],
+    "flavorText": "\"Don't get so caught up in the science that you forget to embrace the wonder in front of you.\"\n—Reed Richards, to Valeria Richards",
+    "artist": "Darius Zablockis",
+    "set": "Marvel Super Heroes Commander",
+    "imageUrl": "/Cube/RealCards/cultivate-msc.jpg",
+    "_source": "Green\\Cultivate.jpg"
+  },
+  {
+    "id": "deeproot-champion-xln",
+    "name": "Deeproot Champion",
+    "manaCost": "{1}{G}",
+    "type": "Creature — Merfolk Shaman",
+    "rarity": "Rare",
+    "text": "Whenever you cast a noncreature spell, put a +1/+1 counter on this creature.",
+    "colors": [
+      "G"
+    ],
+    "custom": false,
+    "archetypes": [
+      "Prowess"
+    ],
+    "flavorText": "\"No good will come from what you seek. Turn back now or suffer an ignoble death far from your home.\"",
+    "artist": "Raymond Swanland",
+    "power": "1",
+    "toughness": "1",
+    "set": "Ixalan",
+    "imageUrl": "/Cube/RealCards/deeproot-champion-xln.jpg",
+    "_source": "Green\\Deeproot Champion.jpg"
+  },
+  {
+    "id": "elvish-mystic-soc",
+    "name": "Elvish Mystic",
+    "manaCost": "{G}",
+    "type": "Creature — Elf Druid",
+    "rarity": "Common",
+    "text": "{T}: Add {G}.",
+    "colors": [
+      "G"
+    ],
+    "custom": false,
+    "archetypes": [],
+    "flavorText": "\"Life grows everywhere. My kin merely find those places where it grows strongest.\"\n—Nissa Revane",
+    "artist": "Wesley Burt",
+    "power": "1",
+    "toughness": "1",
+    "set": "Secrets of Strixhaven Commander",
+    "imageUrl": "/Cube/RealCards/elvish-mystic-soc.jpg",
+    "_source": "Green\\Elvish Mystic.jpg"
+  },
+  {
+    "id": "gilded-goose-soc",
+    "name": "Gilded Goose",
+    "manaCost": "{G}",
+    "type": "Creature — Bird",
+    "rarity": "Rare",
+    "text": "Flying\nWhen this creature enters, create a Food token. (It's an artifact with \"{2}, {T}, Sacrifice this token: You gain 3 life.\")\n{1}{G}, {T}: Create a Food token.\n{T}, Sacrifice a Food: Add one mana of any color.",
+    "colors": [
+      "G"
+    ],
+    "custom": false,
+    "archetypes": [
+      "Artifacts"
+    ],
+    "artist": "Lindsey Look",
+    "power": "0",
+    "toughness": "2",
+    "set": "Secrets of Strixhaven Commander",
+    "imageUrl": "/Cube/RealCards/gilded-goose-soc.jpg",
+    "_source": "Green\\Gilded Goose.jpg",
+    "relatedTokens": [
+      "Food"
+    ]
+  },
+  {
+    "id": "hedge-shredder-dsk",
+    "name": "Hedge Shredder",
+    "manaCost": "{2}{G}{G}",
+    "type": "Artifact — Vehicle",
+    "rarity": "Rare",
+    "text": "Whenever this Vehicle attacks, you may mill two cards.\nWhenever one or more land cards are put into your graveyard from your library, put them onto the battlefield tapped.\nCrew 1 (Tap any number of creatures you control with total power 1 or more: This Vehicle becomes an artifact creature until end of turn.)",
+    "colors": [
+      "G"
+    ],
+    "custom": false,
+    "archetypes": [
+      "Vehicles",
+      "Self-mill"
+    ],
+    "artist": "Cristi Balanescu",
+    "power": "5",
+    "toughness": "5",
+    "set": "Duskmourn: House of Horror",
+    "imageUrl": "/Cube/RealCards/hedge-shredder-dsk.jpg",
+    "_source": "Green\\Hedge Shredder.jpg"
+  },
+  {
+    "id": "scavenging-ooze-fdn",
+    "name": "Scavenging Ooze",
+    "manaCost": "{1}{G}",
+    "type": "Creature — Ooze",
+    "rarity": "Rare",
+    "text": "{G}: Exile target card from a graveyard. If it was a creature card, put a +1/+1 counter on this creature and you gain 1 life.",
+    "colors": [
+      "G"
+    ],
+    "custom": false,
+    "archetypes": [],
+    "flavorText": "In nature, not a single bone or scrap of flesh goes to waste.",
+    "artist": "Austin Hsu",
+    "power": "2",
+    "toughness": "2",
+    "set": "Foundations",
+    "imageUrl": "/Cube/RealCards/scavenging-ooze-fdn.jpg",
+    "_source": "Green\\Scavenging Ooze.jpg"
+  },
+  {
+    "id": "song-of-the-dryads-cmm",
+    "name": "Song of the Dryads",
+    "manaCost": "{2}{G}",
+    "type": "Enchantment — Aura",
+    "rarity": "Rare",
+    "text": "Enchant permanent\nEnchanted permanent is a colorless Forest land.",
+    "colors": [
+      "G"
+    ],
+    "custom": false,
+    "archetypes": [],
+    "flavorText": "Few who encounter the strange, human-like grove leave once the lilting chorus of the dryads reaches their ears.",
+    "artist": "Lars Grant-West",
+    "set": "Commander Masters",
+    "imageUrl": "/Cube/RealCards/song-of-the-dryads-cmm.jpg",
+    "_source": "Green\\Song of the Dryads.jpg"
+  },
+  {
+    "id": "arid-mesa-mh2",
+    "name": "Arid Mesa",
+    "manaCost": "",
+    "type": "Land",
+    "rarity": "Rare",
+    "text": "{T}, Pay 1 life, Sacrifice this land: Search your library for a Mountain or Plains card, put it onto the battlefield, then shuffle.",
+    "colors": [],
+    "custom": false,
+    "archetypes": [],
+    "artist": "Raymond Swanland",
+    "set": "Modern Horizons 2",
+    "imageUrl": "/Cube/RealCards/arid-mesa-mh2.jpg",
+    "_source": "Lands\\Arid Mesa.jpg"
+  },
+  {
+    "id": "ash-barrens-tmc",
+    "name": "Ash Barrens",
+    "manaCost": "",
+    "type": "Land",
+    "rarity": "Common",
+    "text": "{T}: Add {C}.\nBasic landcycling {1} ({1}, Discard this card: Search your library for a basic land card, reveal it, put it into your hand, then shuffle.)",
+    "colors": [],
+    "custom": false,
+    "archetypes": [],
+    "flavorText": "Many interstellar civilizations have dumped their unwanted elements on Planet Morbus, from toxins to lowlifes.",
+    "artist": "Lucas Staniec",
+    "set": "Teenage Mutant Ninja Turtles Eternal",
+    "imageUrl": "/Cube/RealCards/ash-barrens-tmc.jpg",
+    "_source": "Lands\\Ash Barrens.jpg"
+  },
+  {
+    "id": "badlands-vma",
+    "name": "Badlands",
+    "manaCost": "",
+    "type": "Land — Swamp Mountain",
+    "rarity": "Rare",
+    "text": "({T}: Add {B} or {R}.)",
+    "colors": [],
+    "custom": false,
+    "archetypes": [],
+    "artist": "Daarken",
+    "set": "Vintage Masters",
+    "imageUrl": "/Cube/RealCards/badlands-vma.jpg",
+    "_source": "Lands\\Badlands.jpg"
+  },
+  {
+    "id": "bayou-vma",
+    "name": "Bayou",
+    "manaCost": "",
+    "type": "Land — Swamp Forest",
+    "rarity": "Rare",
+    "text": "({T}: Add {B} or {G}.)",
+    "colors": [],
+    "custom": false,
+    "archetypes": [],
+    "artist": "Karl Kopinski",
+    "set": "Vintage Masters",
+    "imageUrl": "/Cube/RealCards/bayou-vma.jpg",
+    "_source": "Lands\\Bayou.jpg"
+  },
+  {
+    "id": "blood-crypt-ecl",
+    "name": "Blood Crypt",
+    "manaCost": "",
+    "type": "Land — Swamp Mountain",
+    "rarity": "Rare",
+    "text": "({T}: Add {B} or {R}.)\nAs this land enters, you may pay 2 life. If you don't, it enters tapped.",
+    "colors": [],
+    "custom": false,
+    "archetypes": [],
+    "flavorText": "The boggart was playfully prodding a critter when the skies darkened, then he gobbled it down with glee.",
+    "artist": "Adam Paquette",
+    "set": "Lorwyn Eclipsed",
+    "imageUrl": "/Cube/RealCards/blood-crypt-ecl.jpg",
+    "_source": "Lands\\Blood Crypt.jpg"
+  },
+  {
+    "id": "bloodstained-mire-mh3",
+    "name": "Bloodstained Mire",
+    "manaCost": "",
+    "type": "Land",
+    "rarity": "Rare",
+    "text": "{T}, Pay 1 life, Sacrifice this land: Search your library for a Swamp or Mountain card, put it onto the battlefield, then shuffle.",
+    "colors": [],
+    "custom": false,
+    "archetypes": [],
+    "flavorText": "A graveyard for conquerors and conquered alike.",
+    "artist": "Bruce Brenneise",
+    "set": "Modern Horizons 3",
+    "imageUrl": "/Cube/RealCards/bloodstained-mire-mh3.jpg",
+    "_source": "Lands\\Bloodstained Mire.jpg"
+  },
+  {
+    "id": "breeding-pool-eoe",
+    "name": "Breeding Pool",
+    "manaCost": "",
+    "type": "Land — Forest Island",
+    "rarity": "Rare",
+    "text": "({T}: Add {G} or {U}.)\nAs this land enters, you may pay 2 life. If you don't, it enters tapped.",
+    "colors": [],
+    "custom": false,
+    "archetypes": [],
+    "flavorText": "\"Log 1.4.778: Granove, a tropical moon teeming with endemic biota. A must see for any aspiring astrobiologist!\"\n—*Maisie's Edge Chronicles*",
+    "artist": "Constantin Marin",
+    "set": "Edge of Eternities",
+    "imageUrl": "/Cube/RealCards/breeding-pool-eoe.jpg",
+    "_source": "Lands\\Breeding Pool.jpg"
+  },
+  {
+    "id": "city-of-brass-tmc",
+    "name": "City of Brass",
+    "manaCost": "",
+    "type": "Land",
+    "rarity": "Rare",
+    "text": "Whenever this land becomes tapped, it deals 1 damage to you.\n{T}: Add one mana of any color.",
+    "colors": [],
+    "custom": false,
+    "archetypes": [],
+    "flavorText": "It's like the future's a party that these brothers just crashed . . .",
+    "artist": "Robin Olausson",
+    "set": "Teenage Mutant Ninja Turtles Eternal",
+    "imageUrl": "/Cube/RealCards/city-of-brass-tmc.jpg",
+    "_source": "Lands\\City of Brass.jpg"
+  },
+  {
+    "id": "commercial-district-mkm",
+    "name": "Commercial District",
+    "manaCost": "",
+    "type": "Land — Mountain Forest",
+    "rarity": "Rare",
+    "text": "({T}: Add {R} or {G}.)\nThis land enters tapped.\nWhen this land enters, surveil 1. (Look at the top card of your library. You may put it into your graveyard.)",
+    "colors": [],
+    "custom": false,
+    "archetypes": [],
+    "artist": "Julian Kok Joon Wen",
+    "set": "Murders at Karlov Manor",
+    "imageUrl": "/Cube/RealCards/commercial-district-mkm.jpg",
+    "_source": "Lands\\Commercial District.jpg"
+  },
+  {
+    "id": "elegant-parlor-mkm",
+    "name": "Elegant Parlor",
+    "manaCost": "",
+    "type": "Land — Mountain Plains",
+    "rarity": "Rare",
+    "text": "({T}: Add {R} or {W}.)\nThis land enters tapped.\nWhen this land enters, surveil 1. (Look at the top card of your library. You may put it into your graveyard.)",
+    "colors": [],
+    "custom": false,
+    "archetypes": [],
+    "artist": "Kamila Szutenberg",
+    "set": "Murders at Karlov Manor",
+    "imageUrl": "/Cube/RealCards/elegant-parlor-mkm.jpg",
+    "_source": "Lands\\Elegant Parlor.jpg"
+  },
+  {
+    "id": "escape-tunnel-tmt",
+    "name": "Escape Tunnel",
+    "manaCost": "",
+    "type": "Land",
+    "rarity": "Common",
+    "text": "{T}, Sacrifice this land: Search your library for a basic land card, put it onto the battlefield tapped, then shuffle.\n{T}, Sacrifice this land: Target creature with power 2 or less can't be blocked this turn.",
+    "colors": [],
+    "custom": false,
+    "archetypes": [],
+    "flavorText": "\"I hear the sewers in Connecticut are really nice.\"\n—Michelangelo",
+    "artist": "Aenami",
+    "set": "Teenage Mutant Ninja Turtles",
+    "imageUrl": "/Cube/RealCards/escape-tunnel-tmt.jpg",
+    "_source": "Lands\\Escape Tunnel.jpg"
+  },
+  {
+    "id": "evolving-wilds-msc",
+    "name": "Evolving Wilds",
+    "manaCost": "",
+    "type": "Land",
+    "rarity": "Common",
+    "text": "{T}, Sacrifice this land: Search your library for a basic land card, put it onto the battlefield tapped, then shuffle.",
+    "colors": [],
+    "custom": false,
+    "archetypes": [],
+    "flavorText": "\"The mechanisms of evolution do their work upon the Savage Land, as they do everywhere. I only hasten the process.\"\n—High Evolutionary, Herbert Wyndham",
+    "artist": "Rytis Sabaliauskas",
+    "set": "Marvel Super Heroes Commander",
+    "imageUrl": "/Cube/RealCards/evolving-wilds-msc.jpg",
+    "_source": "Lands\\Evolving Wilds.jpg"
+  },
+  {
+    "id": "exotic-orchard-msc",
+    "name": "Exotic Orchard",
+    "manaCost": "",
+    "type": "Land",
+    "rarity": "Rare",
+    "text": "{T}: Add one mana of any color that a land an opponent controls could produce.",
+    "colors": [],
+    "custom": false,
+    "archetypes": [],
+    "flavorText": "In the Blue Area of the moon lies a garden sculpted by alien hands, where the one called the Watcher stands witness.",
+    "artist": "David Szabo",
+    "set": "Marvel Super Heroes Commander",
+    "imageUrl": "/Cube/RealCards/exotic-orchard-msc.jpg",
+    "_source": "Lands\\Exotic Orchard.jpg"
+  },
+  {
+    "id": "fabled-passage-msc",
+    "name": "Fabled Passage",
+    "manaCost": "",
+    "type": "Land",
+    "rarity": "Rare",
+    "text": "{T}, Sacrifice this land: Search your library for a basic land card, put it onto the battlefield tapped, then shuffle. Then if you control four or more lands, untap that land.",
+    "colors": [],
+    "custom": false,
+    "archetypes": [],
+    "flavorText": "\"Well? You coming in or what?\"\n—The One Above All",
+    "artist": "Mintautas Šukys",
+    "set": "Marvel Super Heroes Commander",
+    "imageUrl": "/Cube/RealCards/fabled-passage-msc.jpg",
+    "_source": "Lands\\Fabled Passage.jpg"
+  },
+  {
+    "id": "fiery-islet-mh1",
+    "name": "Fiery Islet",
+    "manaCost": "",
+    "type": "Land",
+    "rarity": "Rare",
+    "text": "{T}, Pay 1 life: Add {U} or {R}.\n{1}, {T}, Sacrifice this land: Draw a card.",
+    "colors": [],
+    "custom": false,
+    "archetypes": [],
+    "flavorText": "Where water is the canvas and lava the paint.",
+    "artist": "Richard Wright",
+    "set": "Modern Horizons",
+    "imageUrl": "/Cube/RealCards/fiery-islet-mh1.jpg",
+    "_source": "Lands\\Fiery Islet.jpg"
+  },
+  {
+    "id": "flooded-strand-mh3",
+    "name": "Flooded Strand",
+    "manaCost": "",
+    "type": "Land",
+    "rarity": "Rare",
+    "text": "{T}, Pay 1 life, Sacrifice this land: Search your library for a Plains or Island card, put it onto the battlefield, then shuffle.",
+    "colors": [],
+    "custom": false,
+    "archetypes": [],
+    "flavorText": "Once a prosperous Vantress town, now swept clean and reclaimed by the waters of the wilds.",
+    "artist": "Alexander Forssberg",
+    "set": "Modern Horizons 3",
+    "imageUrl": "/Cube/RealCards/flooded-strand-mh3.jpg",
+    "_source": "Lands\\Flooded Strand.jpg"
+  },
+  {
+    "id": "godless-shrine-eoe",
+    "name": "Godless Shrine",
+    "manaCost": "",
+    "type": "Land — Plains Swamp",
+    "rarity": "Rare",
+    "text": "({T}: Add {W} or {B}.)\nAs this land enters, you may pay 2 life. If you don't, it enters tapped.",
+    "colors": [],
+    "custom": false,
+    "archetypes": [],
+    "flavorText": "\"Log 1.7.618: Starshadow, a relic of a culture lost to calamity. Its people were eradicated in a single day—but by what?\"\n—*Maisie's Edge Chronicles*",
+    "artist": "Rob Rey",
+    "set": "Edge of Eternities",
+    "imageUrl": "/Cube/RealCards/godless-shrine-eoe.jpg",
+    "_source": "Lands\\Godless Shrine.jpg"
+  },
+  {
+    "id": "hallowed-fountain-ecl",
+    "name": "Hallowed Fountain",
+    "manaCost": "",
+    "type": "Land — Plains Island",
+    "rarity": "Rare",
+    "text": "({T}: Add {W} or {U}.)\nAs this land enters, you may pay 2 life. If you don't, it enters tapped.",
+    "colors": [],
+    "custom": false,
+    "archetypes": [],
+    "flavorText": "The merrow was vending her wares when the skies darkened, then she sharply raised her prices.",
+    "artist": "Adam Paquette",
+    "set": "Lorwyn Eclipsed",
+    "imageUrl": "/Cube/RealCards/hallowed-fountain-ecl.jpg",
+    "_source": "Lands\\Hallowed Fountain.jpg"
+  },
+  {
+    "id": "hedge-maze-mkm",
+    "name": "Hedge Maze",
+    "manaCost": "",
+    "type": "Land — Forest Island",
+    "rarity": "Rare",
+    "text": "({T}: Add {G} or {U}.)\nThis land enters tapped.\nWhen this land enters, surveil 1. (Look at the top card of your library. You may put it into your graveyard.)",
+    "colors": [],
+    "custom": false,
+    "archetypes": [],
+    "artist": "Andrew Mar",
+    "set": "Murders at Karlov Manor",
+    "imageUrl": "/Cube/RealCards/hedge-maze-mkm.jpg",
+    "_source": "Lands\\Hedge Maze.jpg"
+  },
+  {
+    "id": "horizon-canopy-ima",
+    "name": "Horizon Canopy",
+    "manaCost": "",
+    "type": "Land",
+    "rarity": "Rare",
+    "text": "{T}, Pay 1 life: Add {G} or {W}.\n{1}, {T}, Sacrifice this land: Draw a card.",
+    "colors": [],
+    "custom": false,
+    "archetypes": [],
+    "flavorText": "The day is born within its branches.",
+    "artist": "Noah Bradley",
+    "set": "Iconic Masters",
+    "imageUrl": "/Cube/RealCards/horizon-canopy-ima.jpg",
+    "_source": "Lands\\Horizon Canopy.jpg"
+  },
+  {
+    "id": "indatha-triome-iko",
+    "name": "Indatha Triome",
+    "manaCost": "",
+    "type": "Land — Plains Swamp Forest",
+    "rarity": "Rare",
+    "text": "({T}: Add {W}, {B}, or {G}.)\nThis land enters tapped.\nCycling {3} ({3}, Discard this card: Draw a card.)",
+    "colors": [],
+    "custom": false,
+    "archetypes": [],
+    "flavorText": "\"These lowlands were formed thousands of years ago by the behemoth Indath—its final footsteps before vanishing into the sea.\"\n—*Tales of the Ozolith*",
+    "artist": "Noah Bradley",
+    "set": "Ikoria: Lair of Behemoths",
+    "imageUrl": "/Cube/RealCards/indatha-triome-iko.jpg",
+    "_source": "Lands\\Indatha Triome.jpg"
+  },
+  {
+    "id": "jetmir-s-garden-snc",
+    "name": "Jetmir's Garden",
+    "manaCost": "",
+    "type": "Land — Mountain Forest Plains",
+    "rarity": "Rare",
+    "text": "({T}: Add {R}, {G}, or {W}.)\nThis land enters tapped.\nCycling {3} ({3}, Discard this card: Draw a card.)",
+    "colors": [],
+    "custom": false,
+    "archetypes": [],
+    "flavorText": "The parklike Cabaretti grounds offer rest, food, and the perfect place to shake off a tail.",
+    "artist": "Kasia 'Kafis' Zielińska",
+    "set": "Streets of New Capenna",
+    "imageUrl": "/Cube/RealCards/jetmir-s-garden-snc.jpg",
+    "_source": "Lands\\Jetmir's Garden.jpg"
+  },
+  {
+    "id": "ketria-triome-iko",
+    "name": "Ketria Triome",
+    "manaCost": "",
+    "type": "Land — Forest Island Mountain",
+    "rarity": "Rare",
+    "text": "({T}: Add {G}, {U}, or {R}.)\nThis land enters tapped.\nCycling {3} ({3}, Discard this card: Draw a card.)",
+    "colors": [],
+    "custom": false,
+    "archetypes": [],
+    "flavorText": "Nowhere on Ikoria are monsters more integral to the landscape than Ketria, where the river itself will stand up and roar.",
+    "artist": "Sam Burley",
+    "set": "Ikoria: Lair of Behemoths",
+    "imageUrl": "/Cube/RealCards/ketria-triome-iko.jpg",
+    "_source": "Lands\\Ketria Triome.jpg"
+  },
+  {
+    "id": "lush-portico-mkm",
+    "name": "Lush Portico",
+    "manaCost": "",
+    "type": "Land — Forest Plains",
+    "rarity": "Rare",
+    "text": "({T}: Add {G} or {W}.)\nThis land enters tapped.\nWhen this land enters, surveil 1. (Look at the top card of your library. You may put it into your graveyard.)",
+    "colors": [],
+    "custom": false,
+    "archetypes": [],
+    "artist": "Kamila Szutenberg",
+    "set": "Murders at Karlov Manor",
+    "imageUrl": "/Cube/RealCards/lush-portico-mkm.jpg",
+    "_source": "Lands\\Lush Portico.jpg"
+  },
+  {
+    "id": "mana-confluence-jou",
+    "name": "Mana Confluence",
+    "manaCost": "",
+    "type": "Land",
+    "rarity": "Rare",
+    "text": "{T}, Pay 1 life: Add one mana of any color.",
+    "colors": [],
+    "custom": false,
+    "archetypes": [],
+    "flavorText": "Five rivers encircle Theros, flowing with waters more ancient than the world itself.",
+    "artist": "Richard Wright",
+    "set": "Journey into Nyx",
+    "imageUrl": "/Cube/RealCards/mana-confluence-jou.jpg",
+    "_source": "Lands\\Mana Confluence.jpg"
+  },
+  {
+    "id": "marsh-flats-mh2",
+    "name": "Marsh Flats",
+    "manaCost": "",
+    "type": "Land",
+    "rarity": "Rare",
+    "text": "{T}, Pay 1 life, Sacrifice this land: Search your library for a Plains or Swamp card, put it onto the battlefield, then shuffle.",
+    "colors": [],
+    "custom": false,
+    "archetypes": [],
+    "artist": "Izzy",
+    "set": "Modern Horizons 2",
+    "imageUrl": "/Cube/RealCards/marsh-flats-mh2.jpg",
+    "_source": "Lands\\Marsh Flats.jpg"
+  },
+  {
+    "id": "meticulous-archive-mkm",
+    "name": "Meticulous Archive",
+    "manaCost": "",
+    "type": "Land — Plains Island",
+    "rarity": "Rare",
+    "text": "({T}: Add {W} or {U}.)\nThis land enters tapped.\nWhen this land enters, surveil 1. (Look at the top card of your library. You may put it into your graveyard.)",
+    "colors": [],
+    "custom": false,
+    "archetypes": [],
+    "artist": "Sam Burley",
+    "set": "Murders at Karlov Manor",
+    "imageUrl": "/Cube/RealCards/meticulous-archive-mkm.jpg",
+    "_source": "Lands\\Meticulous Archive.jpg"
+  },
+  {
+    "id": "misty-rainforest-mh2",
+    "name": "Misty Rainforest",
+    "manaCost": "",
+    "type": "Land",
+    "rarity": "Rare",
+    "text": "{T}, Pay 1 life, Sacrifice this land: Search your library for a Forest or Island card, put it onto the battlefield, then shuffle.",
+    "colors": [],
+    "custom": false,
+    "archetypes": [],
+    "artist": "Shelly Wan",
+    "set": "Modern Horizons 2",
+    "imageUrl": "/Cube/RealCards/misty-rainforest-mh2.jpg",
+    "_source": "Lands\\Misty Rainforest.jpg"
+  },
+  {
+    "id": "nurturing-peatland-mh1",
+    "name": "Nurturing Peatland",
+    "manaCost": "",
+    "type": "Land",
+    "rarity": "Rare",
+    "text": "{T}, Pay 1 life: Add {B} or {G}.\n{1}, {T}, Sacrifice this land: Draw a card.",
+    "colors": [],
+    "custom": false,
+    "archetypes": [],
+    "flavorText": "New life is born within its shadows.",
+    "artist": "Noah Bradley",
+    "set": "Modern Horizons",
+    "imageUrl": "/Cube/RealCards/nurturing-peatland-mh1.jpg",
+    "_source": "Lands\\Nurturing Peatland.jpg"
+  },
+  {
+    "id": "overgrown-tomb-ecl",
+    "name": "Overgrown Tomb",
+    "manaCost": "",
+    "type": "Land — Swamp Forest",
+    "rarity": "Rare",
+    "text": "({T}: Add {B} or {G}.)\nAs this land enters, you may pay 2 life. If you don't, it enters tapped.",
+    "colors": [],
+    "custom": false,
+    "archetypes": [],
+    "flavorText": "The elf was disgusted by the bramble before him when the skies darkened, then he stepped closer to observe the wild beauty.",
+    "artist": "Adam Paquette",
+    "set": "Lorwyn Eclipsed",
+    "imageUrl": "/Cube/RealCards/overgrown-tomb-ecl.jpg",
+    "_source": "Lands\\Overgrown Tomb.jpg"
+  },
+  {
+    "id": "plateau-vma",
+    "name": "Plateau",
+    "manaCost": "",
+    "type": "Land — Mountain Plains",
+    "rarity": "Rare",
+    "text": "({T}: Add {R} or {W}.)",
+    "colors": [],
+    "custom": false,
+    "archetypes": [],
+    "artist": "Noah Bradley",
+    "set": "Vintage Masters",
+    "imageUrl": "/Cube/RealCards/plateau-vma.jpg",
+    "_source": "Lands\\Plateau.jpg"
+  },
+  {
+    "id": "polluted-delta-mh3",
+    "name": "Polluted Delta",
+    "manaCost": "",
+    "type": "Land",
+    "rarity": "Rare",
+    "text": "{T}, Pay 1 life, Sacrifice this land: Search your library for an Island or Swamp card, put it onto the battlefield, then shuffle.",
+    "colors": [],
+    "custom": false,
+    "archetypes": [],
+    "flavorText": "A warped gateway that seeps toxins and malevolence into the waters around Towashi.",
+    "artist": "Chris Ostrowski",
+    "set": "Modern Horizons 3",
+    "imageUrl": "/Cube/RealCards/polluted-delta-mh3.jpg",
+    "_source": "Lands\\Polluted Delta.jpg"
+  },
+  {
+    "id": "prismatic-vista-mh1",
+    "name": "Prismatic Vista",
+    "manaCost": "",
+    "type": "Land",
+    "rarity": "Rare",
+    "text": "{T}, Pay 1 life, Sacrifice this land: Search your library for a basic land card, put it onto the battlefield, then shuffle.",
+    "colors": [],
+    "custom": false,
+    "archetypes": [],
+    "flavorText": "There is beauty in the uncertainty of potential.",
+    "artist": "Sam Burley",
+    "set": "Modern Horizons",
+    "imageUrl": "/Cube/RealCards/prismatic-vista-mh1.jpg",
+    "_source": "Lands\\Prismatic Vista.jpg"
+  },
+  {
+    "id": "raffine-s-tower-snc",
+    "name": "Raffine's Tower",
+    "manaCost": "",
+    "type": "Land — Plains Island Swamp",
+    "rarity": "Rare",
+    "text": "({T}: Add {W}, {U}, or {B}.)\nThis land enters tapped.\nCycling {3} ({3}, Discard this card: Draw a card.)",
+    "colors": [],
+    "custom": false,
+    "archetypes": [],
+    "flavorText": "The Obscura's Cloud Spire dominates the skyline, its eye a beacon of progress that sees all.",
+    "artist": "Sam White",
+    "set": "Streets of New Capenna",
+    "imageUrl": "/Cube/RealCards/raffine-s-tower-snc.jpg",
+    "_source": "Lands\\Raffine's Tower.jpg"
+  },
+  {
+    "id": "raucous-theater-mkm",
+    "name": "Raucous Theater",
+    "manaCost": "",
+    "type": "Land — Swamp Mountain",
+    "rarity": "Rare",
+    "text": "({T}: Add {B} or {R}.)\nThis land enters tapped.\nWhen this land enters, surveil 1. (Look at the top card of your library. You may put it into your graveyard.)",
+    "colors": [],
+    "custom": false,
+    "archetypes": [],
+    "artist": "Sergey Glushakov",
+    "set": "Murders at Karlov Manor",
+    "imageUrl": "/Cube/RealCards/raucous-theater-mkm.jpg",
+    "_source": "Lands\\Raucous Theater.jpg"
+  },
+  {
+    "id": "raugrin-triome-iko",
+    "name": "Raugrin Triome",
+    "manaCost": "",
+    "type": "Land — Island Mountain Plains",
+    "rarity": "Rare",
+    "text": "({T}: Add {U}, {R}, or {W}.)\nThis land enters tapped.\nCycling {3} ({3}, Discard this card: Draw a card.)",
+    "colors": [],
+    "custom": false,
+    "archetypes": [],
+    "flavorText": "Raugrin meets the sea with jaws wide, its coast spiked with teeth of crystal and granite.",
+    "artist": "Jonas De Ro",
+    "set": "Ikoria: Lair of Behemoths",
+    "imageUrl": "/Cube/RealCards/raugrin-triome-iko.jpg",
+    "_source": "Lands\\Raugrin Triome.jpg"
+  },
+  {
+    "id": "reflecting-pool-clb",
+    "name": "Reflecting Pool",
+    "manaCost": "",
+    "type": "Land",
+    "rarity": "Rare",
+    "text": "{T}: Add one mana of any type that a land you control could produce.",
+    "colors": [],
+    "custom": false,
+    "archetypes": [],
+    "flavorText": "Gale stared into the pool and saw a stranger. The similarities were uncanny, but it was not him.",
+    "artist": "Alayna Danner",
+    "set": "Commander Legends: Battle for Baldur's Gate",
+    "imageUrl": "/Cube/RealCards/reflecting-pool-clb.jpg",
+    "_source": "Lands\\Reflecting Pool.jpg"
+  },
+  {
+    "id": "sacred-foundry-eoe",
+    "name": "Sacred Foundry",
+    "manaCost": "",
+    "type": "Land — Mountain Plains",
+    "rarity": "Rare",
+    "text": "({T}: Add {R} or {W}.)\nAs this land enters, you may pay 2 life. If you don't, it enters tapped.",
+    "colors": [],
+    "custom": false,
+    "archetypes": [],
+    "flavorText": "\"Log 2.2.119: Kiln, known for its blazing forges and ancient lava seeps. The footing may be treacherous, but the metallurgy is grand!\"\n—*Maisie's Edge Chronicles*",
+    "artist": "Titus Lunter",
+    "set": "Edge of Eternities",
+    "imageUrl": "/Cube/RealCards/sacred-foundry-eoe.jpg",
+    "_source": "Lands\\Sacred Foundry.jpg"
+  },
+  {
+    "id": "savai-triome-iko",
+    "name": "Savai Triome",
+    "manaCost": "",
+    "type": "Land — Mountain Plains Swamp",
+    "rarity": "Rare",
+    "text": "({T}: Add {R}, {W}, or {B}.)\nThis land enters tapped.\nCycling {3} ({3}, Discard this card: Draw a card.)",
+    "colors": [],
+    "custom": false,
+    "archetypes": [],
+    "flavorText": "Broad prairies feed the human sanctuary of Drannith and conceal a network of caverns where giant cats make their dens.",
+    "artist": "Titus Lunter",
+    "set": "Ikoria: Lair of Behemoths",
+    "imageUrl": "/Cube/RealCards/savai-triome-iko.jpg",
+    "_source": "Lands\\Savai Triome.jpg"
+  },
+  {
+    "id": "savannah-vma",
+    "name": "Savannah",
+    "manaCost": "",
+    "type": "Land — Forest Plains",
+    "rarity": "Rare",
+    "text": "({T}: Add {G} or {W}.)",
+    "colors": [],
+    "custom": false,
+    "archetypes": [],
+    "artist": "Charles Urbach",
+    "set": "Vintage Masters",
+    "imageUrl": "/Cube/RealCards/savannah-vma.jpg",
+    "_source": "Lands\\Savannah.jpg"
+  },
+  {
+    "id": "scalding-tarn-mh2",
+    "name": "Scalding Tarn",
+    "manaCost": "",
+    "type": "Land",
+    "rarity": "Rare",
+    "text": "{T}, Pay 1 life, Sacrifice this land: Search your library for an Island or Mountain card, put it onto the battlefield, then shuffle.",
+    "colors": [],
+    "custom": false,
+    "archetypes": [],
+    "artist": "Philip Straub",
+    "set": "Modern Horizons 2",
+    "imageUrl": "/Cube/RealCards/scalding-tarn-mh2.jpg",
+    "_source": "Lands\\Scalding Tarn.jpg"
+  },
+  {
+    "id": "scrubland-vma",
+    "name": "Scrubland",
+    "manaCost": "",
+    "type": "Land — Plains Swamp",
+    "rarity": "Rare",
+    "text": "({T}: Add {W} or {B}.)",
+    "colors": [],
+    "custom": false,
+    "archetypes": [],
+    "artist": "Eytan Zana",
+    "set": "Vintage Masters",
+    "imageUrl": "/Cube/RealCards/scrubland-vma.jpg",
+    "_source": "Lands\\Scrubland.jpg"
+  },
+  {
+    "id": "shadowy-backstreet-mkm",
+    "name": "Shadowy Backstreet",
+    "manaCost": "",
+    "type": "Land — Plains Swamp",
+    "rarity": "Rare",
+    "text": "({T}: Add {W} or {B}.)\nThis land enters tapped.\nWhen this land enters, surveil 1. (Look at the top card of your library. You may put it into your graveyard.)",
+    "colors": [],
+    "custom": false,
+    "archetypes": [],
+    "artist": "Andreas Zafiratos",
+    "set": "Murders at Karlov Manor",
+    "imageUrl": "/Cube/RealCards/shadowy-backstreet-mkm.jpg",
+    "_source": "Lands\\Shadowy Backstreet.jpg"
+  },
+  {
+    "id": "silent-clearing-mh1",
+    "name": "Silent Clearing",
+    "manaCost": "",
+    "type": "Land",
+    "rarity": "Rare",
+    "text": "{T}, Pay 1 life: Add {W} or {B}.\n{1}, {T}, Sacrifice this land: Draw a card.",
+    "colors": [],
+    "custom": false,
+    "archetypes": [],
+    "flavorText": "The expedition's end began the marsh's story.",
+    "artist": "Seb McKinnon",
+    "set": "Modern Horizons",
+    "imageUrl": "/Cube/RealCards/silent-clearing-mh1.jpg",
+    "_source": "Lands\\Silent Clearing.jpg"
+  },
+  {
+    "id": "spara-s-headquarters-snc",
+    "name": "Spara's Headquarters",
+    "manaCost": "",
+    "type": "Land — Forest Plains Island",
+    "rarity": "Rare",
+    "text": "({T}: Add {G}, {W}, or {U}.)\nThis land enters tapped.\nCycling {3} ({3}, Discard this card: Draw a card.)",
+    "colors": [],
+    "custom": false,
+    "archetypes": [],
+    "flavorText": "To most, the Nido Sanctuary is an office complex. To the Brokers, it's a vault of secrets.",
+    "artist": "Kieran Yanner",
+    "set": "Streets of New Capenna",
+    "imageUrl": "/Cube/RealCards/spara-s-headquarters-snc.jpg",
+    "_source": "Lands\\Spara's Headquarters.jpg"
+  },
+  {
+    "id": "steam-vents-ecl",
+    "name": "Steam Vents",
+    "manaCost": "",
+    "type": "Land — Island Mountain",
+    "rarity": "Rare",
+    "text": "({T}: Add {U} or {R}.)\nAs this land enters, you may pay 2 life. If you don't, it enters tapped.",
+    "colors": [],
+    "custom": false,
+    "archetypes": [],
+    "flavorText": "The flamekin was drawn toward warm laughter when the skies darkened, then she turned back to the lonely peak.",
+    "artist": "Adam Paquette",
+    "set": "Lorwyn Eclipsed",
+    "imageUrl": "/Cube/RealCards/steam-vents-ecl.jpg",
+    "_source": "Lands\\Steam Vents.jpg"
+  },
+  {
+    "id": "stomping-ground-eoe",
+    "name": "Stomping Ground",
+    "manaCost": "",
+    "type": "Land — Mountain Forest",
+    "rarity": "Rare",
+    "text": "({T}: Add {R} or {G}.)\nAs this land enters, you may pay 2 life. If you don't, it enters tapped.",
+    "colors": [],
+    "custom": false,
+    "archetypes": [],
+    "flavorText": "\"Log 2.5.325: A newborn moon, Aqqat still churns with the fires of creation. I'm eager to see what it will become!\"\n—*Maisie's Edge Chronicles*",
+    "artist": "Bruce Brenneise",
+    "set": "Edge of Eternities",
+    "imageUrl": "/Cube/RealCards/stomping-ground-eoe.jpg",
+    "_source": "Lands\\Stomping Ground.jpg"
+  },
+  {
+    "id": "sunbaked-canyon-mh1",
+    "name": "Sunbaked Canyon",
+    "manaCost": "",
+    "type": "Land",
+    "rarity": "Rare",
+    "text": "{T}, Pay 1 life: Add {R} or {W}.\n{1}, {T}, Sacrifice this land: Draw a card.",
+    "colors": [],
+    "custom": false,
+    "archetypes": [],
+    "flavorText": "Since the river ran dry, travelers wander where fish once swam.",
+    "artist": "Yeong-Hao Han",
+    "set": "Modern Horizons",
+    "imageUrl": "/Cube/RealCards/sunbaked-canyon-mh1.jpg",
+    "_source": "Lands\\Sunbaked Canyon.jpg"
+  },
+  {
+    "id": "taiga-vma",
+    "name": "Taiga",
+    "manaCost": "",
+    "type": "Land — Mountain Forest",
+    "rarity": "Rare",
+    "text": "({T}: Add {R} or {G}.)",
+    "colors": [],
+    "custom": false,
+    "archetypes": [],
+    "artist": "Sam Burley",
+    "set": "Vintage Masters",
+    "imageUrl": "/Cube/RealCards/taiga-vma.jpg",
+    "_source": "Lands\\Taiga.jpg"
+  },
+  {
+    "id": "temple-garden-ecl",
+    "name": "Temple Garden",
+    "manaCost": "",
+    "type": "Land — Forest Plains",
+    "rarity": "Rare",
+    "text": "({T}: Add {G} or {W}.)\nAs this land enters, you may pay 2 life. If you don't, it enters tapped.",
+    "colors": [],
+    "custom": false,
+    "archetypes": [],
+    "flavorText": "The kithkin was admiring the flowers when the skies darkened, then they ripped up the roots for the next season.",
+    "artist": "Adam Paquette",
+    "set": "Lorwyn Eclipsed",
+    "imageUrl": "/Cube/RealCards/temple-garden-ecl.jpg",
+    "_source": "Lands\\Temple Garden.jpg"
+  },
+  {
+    "id": "terramorphic-expanse-msc",
+    "name": "Terramorphic Expanse",
+    "manaCost": "",
+    "type": "Land",
+    "rarity": "Common",
+    "text": "{T}, Sacrifice this land: Search your library for a basic land card, put it onto the battlefield tapped, then shuffle.",
+    "colors": [],
+    "custom": false,
+    "archetypes": [],
+    "flavorText": "\"This is . . . I can't explain it. The opposite of all we know. A negative zone.\"\n—Mister Fantastic, Reed Richards",
+    "artist": "Arthur Yuan",
+    "set": "Marvel Super Heroes Commander",
+    "imageUrl": "/Cube/RealCards/terramorphic-expanse-msc.jpg",
+    "_source": "Lands\\Terramorphic Expanse.jpg"
+  },
+  {
+    "id": "thundering-falls-mkm",
+    "name": "Thundering Falls",
+    "manaCost": "",
+    "type": "Land — Island Mountain",
+    "rarity": "Rare",
+    "text": "({T}: Add {U} or {R}.)\nThis land enters tapped.\nWhen this land enters, surveil 1. (Look at the top card of your library. You may put it into your graveyard.)",
+    "colors": [],
+    "custom": false,
+    "archetypes": [],
+    "artist": "Grady Frederick",
+    "set": "Murders at Karlov Manor",
+    "imageUrl": "/Cube/RealCards/thundering-falls-mkm.jpg",
+    "_source": "Lands\\Thundering Falls.jpg"
+  },
+  {
+    "id": "tropical-island-vma",
+    "name": "Tropical Island",
+    "manaCost": "",
+    "type": "Land — Forest Island",
+    "rarity": "Rare",
+    "text": "({T}: Add {G} or {U}.)",
+    "colors": [],
+    "custom": false,
+    "archetypes": [],
+    "artist": "Franz Vohwinkel",
+    "set": "Vintage Masters",
+    "imageUrl": "/Cube/RealCards/tropical-island-vma.jpg",
+    "_source": "Lands\\Tropical Island.jpg"
+  },
+  {
+    "id": "tundra-vma",
+    "name": "Tundra",
+    "manaCost": "",
+    "type": "Land — Plains Island",
+    "rarity": "Rare",
+    "text": "({T}: Add {W} or {U}.)",
+    "colors": [],
+    "custom": false,
+    "archetypes": [],
+    "artist": "Lars Grant-West",
+    "set": "Vintage Masters",
+    "imageUrl": "/Cube/RealCards/tundra-vma.jpg",
+    "_source": "Lands\\Tundra.jpg"
+  },
+  {
+    "id": "undercity-sewers-mkm",
+    "name": "Undercity Sewers",
+    "manaCost": "",
+    "type": "Land — Island Swamp",
+    "rarity": "Rare",
+    "text": "({T}: Add {U} or {B}.)\nThis land enters tapped.\nWhen this land enters, surveil 1. (Look at the top card of your library. You may put it into your graveyard.)",
+    "colors": [],
+    "custom": false,
+    "archetypes": [],
+    "artist": "Yeong-Hao Han",
+    "set": "Murders at Karlov Manor",
+    "imageUrl": "/Cube/RealCards/undercity-sewers-mkm.jpg",
+    "_source": "Lands\\Undercity Sewers.jpg"
+  },
+  {
+    "id": "underground-mortuary-mkm",
+    "name": "Underground Mortuary",
+    "manaCost": "",
+    "type": "Land — Swamp Forest",
+    "rarity": "Rare",
+    "text": "({T}: Add {B} or {G}.)\nThis land enters tapped.\nWhen this land enters, surveil 1. (Look at the top card of your library. You may put it into your graveyard.)",
+    "colors": [],
+    "custom": false,
+    "archetypes": [],
+    "artist": "Sergey Glushakov",
+    "set": "Murders at Karlov Manor",
+    "imageUrl": "/Cube/RealCards/underground-mortuary-mkm.jpg",
+    "_source": "Lands\\Underground Mortuary.jpg"
+  },
+  {
+    "id": "underground-sea-vma",
+    "name": "Underground Sea",
+    "manaCost": "",
+    "type": "Land — Island Swamp",
+    "rarity": "Rare",
+    "text": "({T}: Add {U} or {B}.)",
+    "colors": [],
+    "custom": false,
+    "archetypes": [],
+    "artist": "Cliff Childs",
+    "set": "Vintage Masters",
+    "imageUrl": "/Cube/RealCards/underground-sea-vma.jpg",
+    "_source": "Lands\\Underground Sea.jpg"
+  },
+  {
+    "id": "verdant-catacombs-mh2",
+    "name": "Verdant Catacombs",
+    "manaCost": "",
+    "type": "Land",
+    "rarity": "Rare",
+    "text": "{T}, Pay 1 life, Sacrifice this land: Search your library for a Swamp or Forest card, put it onto the battlefield, then shuffle.",
+    "colors": [],
+    "custom": false,
+    "archetypes": [],
+    "artist": "Vance Kovacs",
+    "set": "Modern Horizons 2",
+    "imageUrl": "/Cube/RealCards/verdant-catacombs-mh2.jpg",
+    "_source": "Lands\\Verdant Catacombs.jpg"
+  },
+  {
+    "id": "volcanic-island-vma",
+    "name": "Volcanic Island",
+    "manaCost": "",
+    "type": "Land — Island Mountain",
+    "rarity": "Rare",
+    "text": "({T}: Add {U} or {R}.)",
+    "colors": [],
+    "custom": false,
+    "archetypes": [],
+    "artist": "Noah Bradley",
+    "set": "Vintage Masters",
+    "imageUrl": "/Cube/RealCards/volcanic-island-vma.jpg",
+    "_source": "Lands\\Volcanic Island.jpg"
+  },
+  {
+    "id": "waterlogged-grove-mh1",
+    "name": "Waterlogged Grove",
+    "manaCost": "",
+    "type": "Land",
+    "rarity": "Rare",
+    "text": "{T}, Pay 1 life: Add {G} or {U}.\n{1}, {T}, Sacrifice this land: Draw a card.",
+    "colors": [],
+    "custom": false,
+    "archetypes": [],
+    "flavorText": "The trees pull water from deep underground, filling the forest for miles.",
+    "artist": "John Avon",
+    "set": "Modern Horizons",
+    "imageUrl": "/Cube/RealCards/waterlogged-grove-mh1.jpg",
+    "_source": "Lands\\Waterlogged Grove.jpg"
+  },
+  {
+    "id": "watery-grave-eoe",
+    "name": "Watery Grave",
+    "manaCost": "",
+    "type": "Land — Island Swamp",
+    "rarity": "Rare",
+    "text": "({T}: Add {U} or {B}.)\nAs this land enters, you may pay 2 life. If you don't, it enters tapped.",
+    "colors": [],
+    "custom": false,
+    "archetypes": [],
+    "flavorText": "\"Log 2.9.089: Lammuat, the cemetery moon of salvage and secrets. Could be profitable for those brave enough to plumb its recesses.\"\n—*Maisie's Edge Chronicles*",
+    "artist": "Sergey Glushakov",
+    "set": "Edge of Eternities",
+    "imageUrl": "/Cube/RealCards/watery-grave-eoe.jpg",
+    "_source": "Lands\\Watery Grave.jpg"
+  },
+  {
+    "id": "windswept-heath-mh3",
+    "name": "Windswept Heath",
+    "manaCost": "",
+    "type": "Land",
+    "rarity": "Rare",
+    "text": "{T}, Pay 1 life, Sacrifice this land: Search your library for a Forest or Plains card, put it onto the battlefield, then shuffle.",
+    "colors": [],
+    "custom": false,
+    "archetypes": [],
+    "flavorText": "An underground paradise, bright and thriving beneath the surface of Ixalan.",
+    "artist": "Alexander Forssberg",
+    "set": "Modern Horizons 3",
+    "imageUrl": "/Cube/RealCards/windswept-heath-mh3.jpg",
+    "_source": "Lands\\Windswept Heath.jpg"
+  },
+  {
+    "id": "wooded-foothills-mh3",
+    "name": "Wooded Foothills",
+    "manaCost": "",
+    "type": "Land",
+    "rarity": "Rare",
+    "text": "{T}, Pay 1 life, Sacrifice this land: Search your library for a Mountain or Forest card, put it onto the battlefield, then shuffle.",
+    "colors": [],
+    "custom": false,
+    "archetypes": [],
+    "flavorText": "Home and hunting ground for Kaldheim's fearsome trolls.",
+    "artist": "Chris Ostrowski",
+    "set": "Modern Horizons 3",
+    "imageUrl": "/Cube/RealCards/wooded-foothills-mh3.jpg",
+    "_source": "Lands\\Wooded Foothills.jpg"
+  },
+  {
+    "id": "xander-s-lounge-snc",
+    "name": "Xander's Lounge",
+    "manaCost": "",
+    "type": "Land — Island Swamp Mountain",
+    "rarity": "Rare",
+    "text": "({T}: Add {U}, {B}, or {R}.)\nThis land enters tapped.\nCycling {3} ({3}, Discard this card: Draw a card.)",
+    "colors": [],
+    "custom": false,
+    "archetypes": [],
+    "flavorText": "Maestros agents can lie low in high style at the opulent Shadow Hostel.",
+    "artist": "James Paick",
+    "set": "Streets of New Capenna",
+    "imageUrl": "/Cube/RealCards/xander-s-lounge-snc.jpg",
+    "_source": "Lands\\Xander's Lounge.jpg"
+  },
+  {
+    "id": "zagoth-triome-iko",
+    "name": "Zagoth Triome",
+    "manaCost": "",
+    "type": "Land — Swamp Forest Island",
+    "rarity": "Rare",
+    "text": "({T}: Add {B}, {G}, or {U}.)\nThis land enters tapped.\nCycling {3} ({3}, Discard this card: Draw a card.)",
+    "colors": [],
+    "custom": false,
+    "archetypes": [],
+    "flavorText": "Hunters in the primeval wetlands become fluent in reading the ripples to tell when to pursue and when to flee.",
+    "artist": "Eytan Zana",
+    "set": "Ikoria: Lair of Behemoths",
+    "imageUrl": "/Cube/RealCards/zagoth-triome-iko.jpg",
+    "_source": "Lands\\Zagoth Triome.jpg"
+  },
+  {
+    "id": "ziatora-s-proving-ground-snc",
+    "name": "Ziatora's Proving Ground",
+    "manaCost": "",
+    "type": "Land — Swamp Mountain Forest",
+    "rarity": "Rare",
+    "text": "({T}: Add {B}, {R}, or {G}.)\nThis land enters tapped.\nCycling {3} ({3}, Discard this card: Draw a card.)",
+    "colors": [],
+    "custom": false,
+    "archetypes": [],
+    "flavorText": "Restless Riveteers can always find a sparring partner in the sprawling Treza warehouse.",
+    "artist": "Viko Menezes",
+    "set": "Streets of New Capenna",
+    "imageUrl": "/Cube/RealCards/ziatora-s-proving-ground-snc.jpg",
+    "_source": "Lands\\Ziatora's Proving Ground.jpg"
+  },
+  {
+    "id": "abrade-soc",
+    "name": "Abrade",
+    "manaCost": "{1}{R}",
+    "type": "Instant",
+    "rarity": "Uncommon",
+    "text": "Choose one —\n• Abrade deals 3 damage to target creature.\n• Destroy target artifact.",
+    "colors": [
+      "R"
+    ],
+    "custom": false,
+    "archetypes": [
+      "Control"
+    ],
+    "flavorText": "The desert is a voracious beast, devouring both flesh and stone.",
+    "artist": "Jonas De Ro",
+    "set": "Secrets of Strixhaven Commander",
+    "imageUrl": "/Cube/RealCards/abrade-soc.jpg",
+    "_source": "Red\\Abrade.jpg"
+  },
+  {
+    "id": "brotherhood-s-end-bro",
+    "name": "Brotherhood's End",
+    "manaCost": "{1}{R}{R}",
+    "type": "Sorcery",
+    "rarity": "Rare",
+    "text": "Choose one —\n• Brotherhood's End deals 3 damage to each creature and each planeswalker.\n• Destroy all artifacts with mana value 3 or less.",
+    "colors": [
+      "R"
+    ],
+    "custom": false,
+    "archetypes": [
+      "Control"
+    ],
+    "flavorText": "The brothers' rivalry escalated into all-out enmity, and Tocasia paid the price.",
+    "artist": "Bryan Sola",
+    "set": "The Brothers' War",
+    "imageUrl": "/Cube/RealCards/brotherhood-s-end-bro.jpg",
+    "_source": "Red\\Brotherhood's End.jpg"
+  },
+  {
+    "id": "chain-lightning-dmr",
+    "name": "Chain Lightning",
+    "manaCost": "{R}",
+    "type": "Sorcery",
+    "rarity": "Common",
+    "text": "Chain Lightning deals 3 damage to any target. Then that player or that permanent's controller may pay {R}{R}. If the player does, they may copy this spell and may choose a new target for that copy.",
+    "colors": [
+      "R"
+    ],
+    "custom": false,
+    "archetypes": [
+      "Control"
+    ],
+    "artist": "Christopher Moeller",
+    "set": "Dominaria Remastered",
+    "imageUrl": "/Cube/RealCards/chain-lightning-dmr.jpg",
+    "_source": "Red\\Chain Lightning.jpg"
+  },
+  {
+    "id": "dragon-s-rage-channeler-mh2",
+    "name": "Dragon's Rage Channeler",
+    "manaCost": "{R}",
+    "type": "Creature — Human Shaman",
+    "rarity": "Uncommon",
+    "text": "Whenever you cast a noncreature spell, surveil 1. (Look at the top card of your library. You may put that card into your graveyard.)\nDelirium — As long as there are four or more card types among cards in your graveyard, this creature gets +2/+2, has flying, and attacks each combat if able.",
+    "colors": [
+      "R"
+    ],
+    "custom": false,
+    "archetypes": [
+      "Self-mill"
+    ],
+    "artist": "Martina Fačková",
+    "power": "1",
+    "toughness": "1",
+    "set": "Modern Horizons 2",
+    "imageUrl": "/Cube/RealCards/dragon-s-rage-channeler-mh2.jpg",
+    "_source": "Red\\Dragon's Rage Channeler.jpg"
+  },
+  {
+    "id": "fable-of-the-mirror-breaker-neo",
+    "name": "Fable of the Mirror-Breaker",
+    "manaCost": "{2}{R}",
+    "type": "Enchantment — Saga",
+    "rarity": "Rare",
+    "text": "(As this Saga enters and after your draw step, add a lore counter.)\nI — Create a 2/2 red Goblin Shaman creature token with \"Whenever this token attacks, create a Treasure token.\"\nII — You may discard up to two cards. If you do, draw that many cards.\nIII — Exile this Saga, then return it to the battlefield transformed under your control.",
+    "colors": [
+      "R"
+    ],
+    "custom": false,
+    "archetypes": [],
+    "artist": "Joseph Meehan",
+    "set": "Kamigawa: Neon Dynasty",
+    "relatedFace": "Reflection of Kiki-Jiki",
+    "imageUrl": "/Cube/RealCards/fable-of-the-mirror-breaker-neo.jpg",
+    "_source": "Red\\Fable of the Mirror Breaker.jpg",
+    "relatedTokens": [
+      "2/2 red Goblin Shaman",
+      "Treasure"
+    ]
+  },
+  {
+    "id": "reflection-of-kiki-jiki-neo",
+    "name": "Reflection of Kiki-Jiki",
+    "manaCost": "",
+    "type": "Enchantment Creature — Goblin Shaman",
+    "rarity": "Rare",
+    "text": "{1}, {T}: Create a token that's a copy of another target nonlegendary creature you control, except it has haste. Sacrifice it at the beginning of the next end step.",
+    "colors": [
+      "R"
+    ],
+    "custom": false,
+    "archetypes": [
+      "Blink/ETB/Value"
+    ],
+    "artist": "Joseph Meehan",
+    "power": "2",
+    "toughness": "2",
+    "set": "Kamigawa: Neon Dynasty",
+    "relatedFace": "Fable of the Mirror-Breaker",
+    "facedown": true,
+    "imageUrl": "/Cube/RealCards/reflection-of-kiki-jiki-neo.jpg",
+    "_source": "Red\\Reflection of Kiki-Jiki.jpg"
+  },
+  {
+    "id": "faithless-looting-soc",
+    "name": "Faithless Looting",
+    "manaCost": "{R}",
+    "type": "Sorcery",
+    "rarity": "Common",
+    "text": "Draw two cards, then discard two cards.\nFlashback {2}{R} (You may cast this card from your graveyard for its flashback cost. Then exile it.)",
+    "colors": [
+      "R"
+    ],
+    "custom": false,
+    "archetypes": [
+      "Self-mill"
+    ],
+    "flavorText": "\"Avacyn has abandoned us! We have nothing left except what we can take!\"",
+    "artist": "Gabor Szikszai",
+    "set": "Secrets of Strixhaven Commander",
+    "imageUrl": "/Cube/RealCards/faithless-looting-soc.jpg",
+    "_source": "Red\\Faithless Looting.jpg"
+  },
+  {
+    "id": "lightning-bolt-msc",
+    "name": "Lightning Bolt",
+    "manaCost": "{R}",
+    "type": "Instant",
+    "rarity": "Uncommon",
+    "text": "Lightning Bolt deals 3 damage to any target.",
+    "colors": [
+      "R"
+    ],
+    "custom": false,
+    "archetypes": [
+      "Control"
+    ],
+    "flavorText": "\"I am the god of thunder, the lord of the savage lightning, and the very skies must tremble when speaks The Mighty Thor!\"",
+    "artist": "Milivoj Ćeran",
+    "set": "Marvel Super Heroes Commander",
+    "imageUrl": "/Cube/RealCards/lightning-bolt-msc.jpg",
+    "_source": "Red\\Lightning Bolt.jpg"
+  },
+  {
+    "id": "monastery-swiftspear-bro",
+    "name": "Monastery Swiftspear",
+    "manaCost": "{R}",
+    "type": "Creature — Human Monk",
+    "rarity": "Uncommon",
+    "text": "Haste\nProwess (Whenever you cast a noncreature spell, this creature gets +1/+1 until end of turn.)",
+    "colors": [
+      "R"
+    ],
+    "custom": false,
+    "archetypes": [
+      "Prowess"
+    ],
+    "flavorText": "She focused her mind on the volcano's fury, and hers erupted in kind.",
+    "artist": "Gabor Szikszai",
+    "power": "1",
+    "toughness": "2",
+    "set": "The Brothers' War",
+    "imageUrl": "/Cube/RealCards/monastery-swiftspear-bro.jpg",
+    "_source": "Red\\Monastery Swiftspear.jpg"
+  },
+  {
+    "id": "underworld-breach-thb",
+    "name": "Underworld Breach",
+    "manaCost": "{1}{R}",
+    "type": "Enchantment",
+    "rarity": "Rare",
+    "text": "Each nonland card in your graveyard has escape. The escape cost is equal to the card's mana cost plus exile three other cards from your graveyard. (You may cast cards from your graveyard for their escape cost.)\nAt the beginning of the end step, sacrifice this enchantment.",
+    "colors": [
+      "R"
+    ],
+    "custom": false,
+    "archetypes": [
+      "Self-mill"
+    ],
+    "artist": "Lie Setiawan",
+    "set": "Theros Beyond Death",
+    "imageUrl": "/Cube/RealCards/underworld-breach-thb.jpg",
+    "_source": "Red\\Underworld Breach.jpg"
+  },
+  {
+    "id": "wildfire-mm2",
+    "name": "Wildfire",
+    "manaCost": "{4}{R}{R}",
+    "type": "Sorcery",
+    "rarity": "Rare",
+    "text": "Each player sacrifices four lands of their choice. Wildfire deals 4 damage to each creature.",
+    "colors": [
+      "R"
+    ],
+    "custom": false,
+    "archetypes": [
+      "Control"
+    ],
+    "flavorText": "Fire is always at the top of the food chain, and it has a big appetite.",
+    "artist": "Rob Alexander",
+    "set": "Modern Masters 2015",
+    "imageUrl": "/Cube/RealCards/wildfire-mm2.jpg",
+    "_source": "Red\\Wildfire.jpg"
+  },
+  {
+    "id": "day-of-judgment-fdn",
+    "name": "Day of Judgment",
+    "manaCost": "{2}{W}{W}",
+    "type": "Sorcery",
+    "rarity": "Rare",
+    "text": "Destroy all creatures.",
+    "colors": [
+      "W"
+    ],
+    "custom": false,
+    "archetypes": [],
+    "flavorText": "Clerics on both sides prayed for divine intervention to end the war. The gods didn't play favorites.",
+    "artist": "Vincent Proce",
+    "set": "Foundations",
+    "imageUrl": "/Cube/RealCards/day-of-judgment-fdn.jpg",
+    "_source": "White\\Day of Judgement.jpg"
+  },
+  {
+    "id": "esper-sentinel-mh2",
+    "name": "Esper Sentinel",
+    "manaCost": "{W}",
+    "type": "Artifact Creature — Human Soldier",
+    "rarity": "Rare",
+    "text": "Whenever an opponent casts their first noncreature spell each turn, draw a card unless that player pays {X}, where X is this creature's power.",
+    "colors": [
+      "W"
+    ],
+    "custom": false,
+    "archetypes": [],
+    "flavorText": "The more Esper changes, the more he refuses to.",
+    "artist": "Eric Deschamps",
+    "power": "1",
+    "toughness": "1",
+    "set": "Modern Horizons 2",
+    "imageUrl": "/Cube/RealCards/esper-sentinel-mh2.jpg",
+    "_source": "White\\Esper Sentinel.jpg"
+  },
+  {
+    "id": "path-to-exile-msc",
+    "name": "Path to Exile",
+    "manaCost": "{W}",
+    "type": "Instant",
+    "rarity": "Uncommon",
+    "text": "Exile target creature. Its controller may search their library for a basic land card, put that card onto the battlefield tapped, then shuffle.",
+    "colors": [
+      "W"
+    ],
+    "custom": false,
+    "archetypes": [],
+    "flavorText": "\"I ain't a man any more. I'm just . . . a monster.\"\n—The Thing, Ben Grimm",
+    "artist": "Nino Is",
+    "set": "Marvel Super Heroes Commander",
+    "imageUrl": "/Cube/RealCards/path-to-exile-msc.jpg",
+    "_source": "White\\Path to Exile.jpg"
+  },
+  {
+    "id": "sram-senior-edificer-soc",
+    "name": "Sram, Senior Edificer",
+    "manaCost": "{1}{W}",
+    "type": "Legendary Creature — Dwarf Advisor",
+    "rarity": "Rare",
+    "text": "Whenever you cast an Aura, Equipment, or Vehicle spell, draw a card.",
+    "colors": [
+      "W"
+    ],
+    "custom": false,
+    "archetypes": [
+      "Vehicles"
+    ],
+    "flavorText": "\"As this conflict grows, it gets harder to prevent the city from breaking down. How much longer can we keep this machinery balanced?\"",
+    "artist": "Chris Rahn",
+    "power": "2",
+    "toughness": "2",
+    "set": "Secrets of Strixhaven Commander",
+    "imageUrl": "/Cube/RealCards/sram-senior-edificer-soc.jpg",
+    "_source": "White\\Sram, Senior Edificer.jpg"
+  },
+  {
+    "id": "swords-to-plowshares-msc",
+    "name": "Swords to Plowshares",
+    "manaCost": "{W}",
+    "type": "Instant",
+    "rarity": "Uncommon",
+    "text": "Exile target creature. Its controller gains life equal to its power.",
+    "colors": [
+      "W"
+    ],
+    "custom": false,
+    "archetypes": [],
+    "flavorText": "\"Gotta get that corn planted before the world ends again.\"\n—Clint Barton",
+    "artist": "Greg Smallwood",
+    "set": "Marvel Super Heroes Commander",
+    "imageUrl": "/Cube/RealCards/swords-to-plowshares-msc.jpg",
+    "_source": "White\\Swords to Plowshares.jpg"
+  },
+  {
+    "id": "thalia-guardian-of-thraben-vow",
+    "name": "Thalia, Guardian of Thraben",
+    "manaCost": "{1}{W}",
+    "type": "Legendary Creature — Human Soldier",
+    "rarity": "Rare",
+    "text": "First strike\nNoncreature spells cost {1} more to cast.",
+    "colors": [
+      "W"
+    ],
+    "custom": false,
+    "archetypes": [],
+    "flavorText": "\"Thraben belongs to the living. I will not rest until it is cleansed.\"",
+    "artist": "Magali Villeneuve",
+    "power": "2",
+    "toughness": "1",
+    "set": "Innistrad: Crimson Vow",
+    "imageUrl": "/Cube/RealCards/thalia-guardian-of-thraben-vow.jpg",
+    "_source": "White\\Thalia, Guardian of Thraben.jpg"
+  }
+]

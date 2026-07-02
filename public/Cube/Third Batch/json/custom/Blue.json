@@ -1,0 +1,329 @@
+[
+  {
+    "id": "arbiter-approved-material-tb3",
+    "name": "Arbiter-Approved Material",
+    "manaCost": "{1}{U}",
+    "type": "Artifact",
+    "rarity": "Rare",
+    "text": "{T}: Add {C}{C}. Activate this ability only if you are taxed.\n{X}, {T}: You draw X cards and you tax yourself X. X can't be 0. (The next spell you cast cost {X} more to cast. This doesn't end at the end of turn.)",
+    "colors": [
+      "U"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "artist": "Dall-E 3",
+    "_source": "Blue/Arbiter-Approved Material.png"
+  },
+  {
+    "id": "dungeon-trapper-tb3",
+    "name": "Dungeon Trapper",
+    "manaCost": "{U}",
+    "type": "Enchantment Creature — Spirit",
+    "rarity": "Rare",
+    "text": "Bestow {1}{U} (If you cast this card for its bestow cost, it's an Aura spell with enchant creature. It becomes a creature again if it's not attached to a creature.)\nAs long as its controller hasn't completed a dungeon, this creature and the enchanted creature have base power and toughness 1/1 and have \"{1}, {T}: Venture into the dungeon.\" (Enter the first room or advance to the next room.)\n{1}, {T}: Venture into the dungeon.",
+    "colors": [
+      "U"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "power": "4",
+    "toughness": "4",
+    "artist": "Dall-E 3",
+    "_source": "Blue/Dungeon Trapper.png"
+  },
+  {
+    "id": "faerie-gale-bringer-tb3",
+    "name": "Faerie Gale-Bringer",
+    "manaCost": "{1}{U}",
+    "type": "Creature — Faerie Warrior",
+    "rarity": "Rare",
+    "text": "Flying\nProwess\nWhenever you cast a noncreature spell, tap target creature an opponent controls.",
+    "colors": [
+      "U"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Prowess"
+    ],
+    "power": "2",
+    "toughness": "1",
+    "flavorText": "\"I do not grant wishes—unless your wish is to be dead.\"",
+    "artist": "Dall-E 3",
+    "_source": "Blue/Faerie Gale-Bringer.png"
+  },
+  {
+    "id": "fear-of-mana-flood-tb3",
+    "name": "Fear of Mana Flood",
+    "manaCost": "{X}{U}{U}",
+    "type": "Enchantment Creature — Nightmare",
+    "rarity": "Rare",
+    "text": "Partner with Fear of Mana Screw\nEach player may help you pay for this spell's {X} cost.\nWhen this creature enters, each player draws X cards.\nEerie — Whenever an enchantment you control enters and whenever you fully unlock a Room, return this enchantment from your graveyard to your hand.",
+    "colors": [
+      "U"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Enchantments"
+    ],
+    "power": "2",
+    "toughness": "2",
+    "artist": "Dall-E 3",
+    "_source": "Blue/Fear of Mana Flood.png",
+    "relatedFace": "Fear of Mana Screw"
+  },
+  {
+    "id": "feedback-loop-tb3",
+    "name": "Feedback Loop",
+    "manaCost": "{2}{U}{U}",
+    "type": "Instant",
+    "rarity": "Uncommon",
+    "text": "Experiment 2. (You get two counters. If you don't control The Experiment, create one. Then, spend any amount of on it.)\nStorm (When you cast this spell, copy it for each spell cast before it this turn.)",
+    "colors": [
+      "U"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Storm"
+    ],
+    "artist": "Dall-E 3",
+    "_source": "Blue/Feedback Loop.png"
+  },
+  {
+    "id": "hall-of-shame-tb3",
+    "name": "Echo Chamber // Hall of Shame",
+    "type": "Enchantment — Room",
+    "rarity": "Rare",
+    "text": "(You may cast either half. That door unlocks on the battlefield. As a sorcery, you may pay the mana cost of a locked door to unlock it.)\nEcho Chamber {1}{U}\nCreatures can't attack. Any player may pay {1} for each enchantment you control for that player to ignore this effect until end of turn.\n{3}: Lock this door and unlock the other door. Any player may activate this ability.\nHall of Shame {1}{U}\nPlayers can't draw cards. Any player may pay {1} for each enchantment you control for that player to ignore this effect until end of turn.\n{3}: Lock this door and unlock the other door. Any player may activate this ability.",
+    "colors": [
+      "U"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "artist": "Dall-E 3",
+    "_source": "Blue/Hall of Shame.png"
+  },
+  {
+    "id": "memories-of-a-friend-tb3",
+    "name": "Memories of a Friend",
+    "manaCost": "{2}{U}{U}",
+    "type": "Enchantment — Aura",
+    "rarity": "Rare",
+    "text": "Enchant a creature card in your graveyard\nAt the beginning of your end step, create a token that's a copy of enchanted creature, except it's an enchantment. (It's not a creature.)",
+    "colors": [
+      "U"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Enchantments",
+      "Self-mill"
+    ],
+    "flavorText": "Nothing is truly gone, as long as you remember.",
+    "artist": "Jim Warren",
+    "_source": "Blue/Memories of a Friend.png"
+  },
+  {
+    "id": "mind-or-matter-tb3",
+    "name": "Mind or Matter",
+    "manaCost": "{3}{U}{U}",
+    "type": "Instant",
+    "rarity": "Mythic Rare",
+    "text": "Reveal the top five cards of your library and separate them into two piles. An opponent chooses one of those piles. Put that pile into your hand and the other into your graveyard. Upload 4 for each card put into your graveyard this way. (Create that many enchantment Memory tokens. They each have \"When this enters, exile an instant or sorcery card from your hand or graveyard with mana value 4 or less.\" and \"{2}, Sacrifice this: Cast a copy of a card exiled with this enchantment without paying its mana cost.\")",
+    "colors": [
+      "U"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Self-mill",
+      "Enchantments"
+    ],
+    "artist": "ARTenyo",
+    "relatedTokens": [
+      "Memory"
+    ],
+    "_source": "Blue/Mind or Matter.png"
+  },
+  {
+    "id": "obscura-influencer-tb3",
+    "name": "Obscura Influencer",
+    "manaCost": "{2}{U}",
+    "type": "Enchantment Creature — Cephalid Advisor",
+    "rarity": "Rare",
+    "text": "Bestow {3}{U} or {W}{B} (If you cast this card for its bestow cost, it's an Aura spell with enchant creature. It becomes a creature again if it's not attached to a creature.)\nAt the beginning of combat on your turn, this permanent and enchanted creature connives. (Draw a card, then discard a card. If you discarded a nonland card, put a +1/+1 counter on this creature.)",
+    "colors": [
+      "U"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "power": "2",
+    "toughness": "2",
+    "artist": "Alessandro Grioni",
+    "_source": "Blue/Obscura Influencer.png"
+  },
+  {
+    "id": "pod-042-tactical-support-unit-tb3",
+    "name": "Pod 042, Tactical Support Unit",
+    "manaCost": "{1}{U}",
+    "type": "Legendary Artifact Creature — Robot",
+    "rarity": "Rare",
+    "text": "Partner with 2B, Reflection of Humanity (When this creature enters, target player may put 2B into their hand from their library, then shuffle.)\nFlying\nNoncreature spells you cast cost {1} less to cast for each noncreature spell you've cast before them this turn.",
+    "colors": [
+      "U"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Storm"
+    ],
+    "power": "1",
+    "toughness": "1",
+    "artist": "Craizuss",
+    "_source": "Blue/Pod 042, Tactical Support Unit.png",
+    "relatedFace": "2B, Reflection of Humanity"
+  },
+  {
+    "id": "recon-tb3",
+    "name": "Recon",
+    "manaCost": "{U}",
+    "type": "Enchantment",
+    "rarity": "Rare",
+    "text": "{0}: Remove target attacking creature you control from combat and untap it. (If you activate during end of combat, the creature will untap after it deals combat damage.)",
+    "colors": [
+      "U"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "flavorText": "\"My name is Sam Fisher. I used to hunt terrorists. Now I am one.\"",
+    "artist": "Ubisoft",
+    "_source": "Blue/Recon.png"
+  },
+  {
+    "id": "riches-beyond-imagination-tb3",
+    "name": "Riches Beyond Imagination",
+    "manaCost": "{4}{U}{U}",
+    "type": "Instant",
+    "rarity": "Rare",
+    "text": "Choose a permanent type other than land. Draw a card for each permanent you control of that type.",
+    "colors": [
+      "U"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "flavorText": "\"Wisdom is the true wealth, and stories are the greatest treasures. Those who never stop wondering are the most fortunate, for knowledge is a currency that never loses its value.\"\n—Kellan, the Poetic Guide",
+    "artist": "Midjourney 5.2",
+    "_source": "Blue/Riches Beyond Imagination.png"
+  },
+  {
+    "id": "show-off-attitude-tb3",
+    "name": "Show-Off Attitude",
+    "manaCost": "{2}{U}{U}",
+    "type": "Enchantment",
+    "rarity": "Rare",
+    "text": "Noncreature spells you cast from your hand have demonstrate. (Whenever you cast a noncreature spell, you may copy it. If you do, choose an opponent to also copy it. Each copy becomes a token.)\nSpells you demonstrate cost {1} less to cast.",
+    "colors": [
+      "U"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Storm",
+      "Enchantments"
+    ],
+    "artist": "Larian Studios",
+    "_source": "Blue/Show-Off Attitude.png"
+  },
+  {
+    "id": "sow-doubt-tb3",
+    "name": "Sow Doubt",
+    "manaCost": "{U}",
+    "type": "Sorcery",
+    "rarity": "Uncommon",
+    "text": "Each opponent shuffles four Confusion cards into their library. (Confusion is a colorless sorcery card with no mana cost that has cycling {2}.)\nCipher (Then you may exile this spell card encoded on a creature you control. Whenever that creature deals combat damage to a player, its controller may cast a copy of the encoded card without paying its mana cost.)",
+    "colors": [
+      "U"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Broken Cipher"
+    ],
+    "artist": "Alex Grey",
+    "relatedTokens": [
+      "Confusion"
+    ],
+    "_source": "Blue/Sow Doubt.png"
+  },
+  {
+    "id": "thassa-s-enchantress-tb3",
+    "name": "Thassa's Enchantress",
+    "manaCost": "{1}{U}",
+    "type": "Creature — Merfolk Druid",
+    "rarity": "Mythic Rare",
+    "text": "Ward {X}, where X is your devotion to blue. (Each {U} in the mana costs of permanents you control counts toward your devotion to blue.)\nWhenever you cast an enchantment spell, scry cards equal to your devotion to blue, then draw a card.",
+    "colors": [
+      "U"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Enchantments"
+    ],
+    "power": "0",
+    "toughness": "1",
+    "flavorText": "\"Then she scattered droplets across the Surface World, like the waves embracing the shore.\"\n—\"The Enchantress,\" Tritonian tale",
+    "artist": "Sylvia Strijk",
+    "_source": "Blue/Thassa’s Enchantress.png"
+  },
+  {
+    "id": "the-usurper-of-house-dimir-tb3",
+    "name": "The Usurper of House Dimir",
+    "manaCost": "{1}{U}{U}",
+    "type": "Legendary Creature — Vampire Rogue",
+    "rarity": "Rare",
+    "text": "Partner with Meet the Crew (When this creature enters, target player may put Meet the Crew into their hand from their library, then shuffle.)\nThe Usurper of House Dimir can't be blocked.\nWhenever you encode a card, instead encode it to each creature you control.\nWhenever a creature you control deals combat damage to a player, you may pay {B}. If you do, put that many +1/+1 counters on it and that player mills that many cards.",
+    "colors": [
+      "U"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Broken Cipher"
+    ],
+    "power": "1",
+    "toughness": "1",
+    "artist": "Whizumi",
+    "_source": "Blue/The Usurper of House Dimir.png",
+    "relatedFace": "Meet the Crew"
+  },
+  {
+    "id": "who-could-it-be-tb3",
+    "name": "Who Could It Be?",
+    "manaCost": "{U}{U}",
+    "type": "Sorcery",
+    "rarity": "Rare",
+    "text": "Gain control of target creature you don't control. Its owner creates a token of Ransom Note. You control that creature until Ransom Note leaves the battlefield.\nCipher (Then you may exile this spell card encoded on a creature you control. Whenever that creature deals combat damage to a player, its controller may cast a copy of the encoded card without paying its mana cost.)",
+    "colors": [
+      "U"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "artist": "Dall-E 3",
+    "relatedTokens": [
+      "Ransom Note"
+    ],
+    "_source": "Blue/Who Could It Be_.png"
+  },
+  {
+    "id": "yolov-biomancy-visionary-tb3",
+    "name": "Yolov, Biomancy Visionary",
+    "manaCost": "{2}{U}",
+    "type": "Legendary Creature — Vedalken Wizard Mutant",
+    "rarity": "Rare",
+    "text": "Partner with Yolov's Refined Technique (When this creature enters, target player may put Yolov's Refined Technique into their hand from their library, then shuffle.)\nWhenever you cast a noncreature spell, experiment X, where X is its mana value. (You get X counters. If you don't control The Experiment, create one. Then, spend any amount of on it.)",
+    "colors": [
+      "U"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Storm"
+    ],
+    "power": "1",
+    "toughness": "1",
+    "artist": "Dall-E 3",
+    "_source": "Blue/Yolov, Biomancy Visionary.png"
+  }
+]

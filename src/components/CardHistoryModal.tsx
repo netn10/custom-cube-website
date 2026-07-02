@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import { FaTimes, FaHistory, FaEye, FaEyeSlash, FaChevronLeft, FaChevronRight, FaCopy, FaCheck, FaTrash } from 'react-icons/fa';
 import { Card, CardHistoryEntry, CardHistoryResponse } from '@/types/types';
-import { getCardHistory, getCardById, API_BASE_URL, deleteCardHistoryEntry } from '@/lib/api';
+import { getCardHistory, getCardById, getImageSrc, deleteCardHistoryEntry } from '@/lib/api';
 import { useAuth } from '@/contexts/AuthContext';
 import * as Diff from 'diff';
 
@@ -393,7 +393,7 @@ export default function CardHistoryModal({ cardId, isOpen, onClose }: CardHistor
                       <div className="w-16 h-22 rounded overflow-hidden shadow-sm relative">
                         <img 
                           src={currentCard.imageUrl ? 
-                            `${API_BASE_URL}/image-proxy?url=${encodeURIComponent(currentCard.imageUrl)}` : 
+                            getImageSrc(currentCard.imageUrl) : 
                             'data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22100%22%20height%3D%22140%22%20viewBox%3D%220%200%20100%20140%22%20preserveAspectRatio%3D%22none%22%3E%3Crect%20width%3D%22100%22%20height%3D%22140%22%20fill%3D%22%23eee%22%3E%3C%2Frect%3E%3Ctext%20text-anchor%3D%22middle%22%20x%3D%2250%22%20y%3D%2270%22%20style%3D%22fill%3A%23aaa%3Bfont-weight%3Abold%3Bfont-size%3A12px%3Bfont-family%3AArial%2C%20Helvetica%2C%20sans-serif%3Bdominant-baseline%3Acentral%22%3EImage%20Not%20Found%3C%2Ftext%3E%3C%2Fsvg%3E'}
                           alt={currentCard.name || 'Current card'}
                           className="w-full h-full object-cover"
@@ -459,7 +459,7 @@ export default function CardHistoryModal({ cardId, isOpen, onClose }: CardHistor
                           <div className="w-16 h-22 rounded overflow-hidden shadow-sm relative">
                             <img 
                               src={item.version_data.imageUrl ? 
-                                `${API_BASE_URL}/image-proxy?url=${encodeURIComponent(item.version_data.imageUrl)}` : 
+                                getImageSrc(item.version_data.imageUrl) : 
                                 'data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22100%22%20height%3D%22140%22%20viewBox%3D%220%200%20100%20140%22%20preserveAspectRatio%3D%22none%22%3E%3Crect%20width%3D%22100%22%20height%3D%22140%22%20fill%3D%22%23eee%22%3E%3C%2Frect%3E%3Ctext%20text-anchor%3D%22middle%22%20x%3D%2250%22%20y%3D%2270%22%20style%3D%22fill%3A%23aaa%3Bfont-weight%3Abold%3Bfont-size%3A12px%3Bfont-family%3AArial%2C%20Helvetica%2C%20sans-serif%3Bdominant-baseline%3Acentral%22%3EImage%20Not%20Found%3C%2Ftext%3E%3C%2Fsvg%3E'
                               }
                               alt={item.version_data.name || 'Card version'}
@@ -567,7 +567,7 @@ export default function CardHistoryModal({ cardId, isOpen, onClose }: CardHistor
                       <div className="w-48 h-auto mb-3">
                         <img 
                           src={selectedVersion.imageUrl ? 
-                            `${API_BASE_URL}/image-proxy?url=${encodeURIComponent(selectedVersion.imageUrl)}` : 
+                            getImageSrc(selectedVersion.imageUrl) : 
                             'data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22100%22%20height%3D%22140%22%20viewBox%3D%220%200%20100%20140%22%20preserveAspectRatio%3D%22none%22%3E%3Crect%20width%3D%22100%22%20height%3D%22140%22%20fill%3D%22%23eee%22%3E%3C%2Frect%3E%3Ctext%20text-anchor%3D%22middle%22%20x%3D%2250%22%20y%3D%2270%22%20style%3D%22fill%3A%23aaa%3Bfont-weight%3Abold%3Bfont-size%3A12px%3Bfont-family%3AArial%2C%20Helvetica%2C%20sans-serif%3Bdominant-baseline%3Acentral%22%3EImage%20Not%20Found%3C%2Ftext%3E%3C%2Fsvg%3E'
                           }
                           alt={selectedVersion.name || 'Card version'}
@@ -611,7 +611,7 @@ export default function CardHistoryModal({ cardId, isOpen, onClose }: CardHistor
                       <div className="w-48 h-auto mb-3">
                         <img 
                           src={comparisonVersion.imageUrl ? 
-                            `${API_BASE_URL}/image-proxy?url=${encodeURIComponent(comparisonVersion.imageUrl)}` : 
+                            getImageSrc(comparisonVersion.imageUrl) : 
                             'data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22100%22%20height%3D%22140%22%20viewBox%3D%220%200%20100%20140%22%20preserveAspectRatio%3D%22none%22%3E%3Crect%20width%3D%22100%22%20height%3D%22140%22%20fill%3D%22%23eee%22%3E%3C%2Frect%3E%3Ctext%20text-anchor%3D%22middle%22%20x%3D%2250%22%20y%3D%2270%22%20style%3D%22fill%3A%23aaa%3Bfont-weight%3Abold%3Bfont-size%3A12px%3Bfont-family%3AArial%2C%20Helvetica%2C%20sans-serif%3Bdominant-baseline%3Acentral%22%3EImage%20Not%20Found%3C%2Ftext%3E%3C%2Fsvg%3E'
                           }
                           alt={comparisonVersion.name || 'Card version'}
@@ -773,7 +773,7 @@ export default function CardHistoryModal({ cardId, isOpen, onClose }: CardHistor
                   <div className="w-64 h-auto">
                     <img 
                       src={selectedVersion.imageUrl ? 
-                        `${API_BASE_URL}/image-proxy?url=${encodeURIComponent(selectedVersion.imageUrl)}` : 
+                        getImageSrc(selectedVersion.imageUrl) : 
                         'data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22100%22%20height%3D%22140%22%20viewBox%3D%220%200%20100%20140%22%20preserveAspectRatio%3D%22none%22%3E%3Crect%20width%3D%22100%22%20height%3D%22140%22%20fill%3D%22%23eee%22%3E%3C%2Frect%3E%3Ctext%20text-anchor%3D%22middle%22%20x%3D%2250%22%20y%3D%2270%22%20style%3D%22fill%3A%23aaa%3Bfont-weight%3Abold%3Bfont-size%3A12px%3Bfont-family%3AArial%2C%20Helvetica%2C%20sans-serif%3Bdominant-baseline%3Acentral%22%3EImage%20Not%20Found%3C%2Ftext%3E%3C%2Fsvg%3E'
                       }
                       alt={selectedVersion.name || 'Card version'}

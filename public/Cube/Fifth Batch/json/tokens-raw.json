@@ -1,0 +1,95 @@
+[
+  {
+    "name": "Dark Confidant",
+    "type": "Creature — Human Wizard",
+    "colors": ["B"],
+    "power": "2",
+    "toughness": "1",
+    "text": "At the beginning of your upkeep, reveal the top card of your library and put that card into your hand. You lose life equal to its converted mana cost.",
+    "artist": "Ron Spears",
+    "_source": "Tokens/Dark Confidant token.jpg"
+  },
+  {
+    "name": "Esper Sentinel",
+    "type": "Artifact Creature — Human Soldier",
+    "colors": ["W"],
+    "power": "1",
+    "toughness": "1",
+    "text": "Whenever an opponent casts their first noncreature spell each turn, draw a card unless that player pays {X}, where X is Esper Sentinel's power.",
+    "artist": "Eric Deschamps",
+    "_source": "Tokens/Esper Sentinel token.jpg"
+  },
+  {
+    "name": "Goblin Shaman",
+    "type": "Token Creature — Goblin Shaman",
+    "colors": ["R"],
+    "power": "2",
+    "toughness": "2",
+    "text": "Whenever this creature attacks, create a Treasure token.",
+    "artist": "Jason Kang",
+    "_source": "Tokens/Goblin Shaman.jpg"
+  },
+  {
+    "name": "MrBeast",
+    "type": "Legendary Creature — Beast YouTuber",
+    "colors": ["R"],
+    "power": "3",
+    "toughness": "3",
+    "text": "MrBeast is gifting tokens when it enters the battlefield instead of cast. (It works.)\nGift an Island\nGift a Vehicle (It's 3/2 with crew 1.)\nGift two Treasures\nFor each gift that was promised, create a Treasure token and two 1/1 colorless Subscriber tokens with haste.",
+    "artist": "MrBeast's Mother",
+    "_source": "Tokens/MrBeast Token.png"
+  },
+  {
+    "name": "Otter",
+    "type": "Token Creature — Otter",
+    "colors": ["U"],
+    "power": "1",
+    "toughness": "1",
+    "text": "Prowess (Whenever you cast a noncreature spell, this creature gets +1/+1 until end of turn.)",
+    "artist": "Julia Griffin",
+    "_source": "Tokens/Otter.jpg"
+  },
+  {
+    "name": "Sensei's Divining Top",
+    "type": "Artifact",
+    "colors": [],
+    "text": "{1}: Look at the top three cards of your library, then put them back in any order.\n{T}: Draw a card, then put Sensei's Divining Top on top of its owner's library.",
+    "artist": "Rob Alexander",
+    "_source": "Tokens/Sensei Divining Top 1 token.jpg"
+  },
+  {
+    "name": "Subscriber",
+    "type": "Creature — Subscriber",
+    "colors": [],
+    "power": "1",
+    "toughness": "1",
+    "text": "",
+    "artist": "Mother Nature",
+    "_source": "Tokens/Subscriber.png"
+  },
+  {
+    "name": "Sword",
+    "type": "Token Artifact — Equipment",
+    "colors": [],
+    "text": "Equipped creature gets +1/+1.\nEquip {2}",
+    "artist": "Vincent Christiaens",
+    "_source": "Tokens/Sword.jpg"
+  },
+  {
+    "name": "Vehicle",
+    "type": "Token Artifact — Vehicle",
+    "colors": [],
+    "power": "3",
+    "toughness": "2",
+    "text": "Crew 1 (Tap any number of creatures you control with total power 1 or more: This token becomes an artifact creature until end of turn.)",
+    "artist": "Devin Elle Kurtz",
+    "_source": "Tokens/Vehicle.jpg"
+  },
+  {
+    "name": "Shiv",
+    "type": "Artifact",
+    "colors": [],
+    "text": "{T}, Sacrifice this token: It deals 1 damage to any target.",
+    "_source": "Tokens/Shiv.bmp"
+  }
+]

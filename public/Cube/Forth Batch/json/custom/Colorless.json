@@ -1,0 +1,285 @@
+[
+  {
+    "id": "cogwork-redeemer-fb4",
+    "name": "Cogwork Redeemer",
+    "manaCost": "{6}",
+    "type": "Artifact Creature — Angel Construct",
+    "rarity": "Rare",
+    "text": "Draft this card face up.\nAs you draft the last card of a booster pack, you may reveal it and note its name.\nFlying, vigilance\nYou may cast spells with names noted by this creature without paying their mana cost.",
+    "colors": [],
+    "custom": true,
+    "archetypes": [],
+    "power": "4",
+    "toughness": "4",
+    "artist": "ChatGPT o4",
+    "_source": "Colorless/Cogwork Redeemer.png"
+  },
+  {
+    "id": "duel-masters-fb4",
+    "name": "Duel Masters",
+    "type": "Conspiracy",
+    "rarity": "Mythic Rare",
+    "text": "(Start the game with this conspiracy face up in the command zone.)\nYou don't have a life total.\nAt the start of the game, put the top five cards of your library face-down in front of you as shields.\nIf you would lose life, instead put one of your shields into your hand. If you can't, you lose the game.",
+    "colors": [],
+    "custom": true,
+    "archetypes": [],
+    "artist": "タカヤマトシアキ",
+    "_source": "Colorless/Duel Masters.png"
+  },
+  {
+    "id": "emrakul-disturbing-reality-fb4",
+    "name": "Emrakul, Disturbing Reality",
+    "manaCost": "{12}",
+    "type": "Legendary Creature — Eldrazi",
+    "rarity": "Mythic Rare",
+    "text": "Partner with Kozilek, Unfathomable Truth and Ulamog, Eternal Consumer\nWhenever you cast this spell, target opponent shuffles thirty confusion cards into their library.\nAt the beginning of your end step, if you both own and control this creature and a creature named Kozilek, Unfathomable Truth and a creature named Ulamog, Eternal Consumer, exile them, then meld them into The Three.",
+    "colors": [],
+    "custom": true,
+    "archetypes": [],
+    "power": "15",
+    "toughness": "15",
+    "artist": "ZEBES",
+    "_source": "Colorless/Emrakul, Disturbing Reality.png",
+    "relatedFace": [
+      "Kozilek, Unfathomable Truth",
+      "Ulamog, Eternal Consumer"
+    ]
+  },
+  {
+    "id": "everything-is-a-conspiricy-fb4",
+    "name": "Everything is a Conspiracy",
+    "type": "Conspiracy",
+    "rarity": "Rare",
+    "text": "(Start the game with this conspiracy face up in the command zone.)\nYou can't cast more than one spell each turn.\nNoncreature spells you cast have conspire. (As you cast the spell, you may tap two untapped creatures you control that share a color with it. When you do, copy it and you may choose new targets for the copy. A copy of a permanent spell becomes a token.)",
+    "colors": [],
+    "custom": true,
+    "archetypes": [],
+    "artist": "Sergiu Roman",
+    "_source": "Colorless/Everything is a Conspiricy.png"
+  },
+  {
+    "id": "fresh-start-fb4",
+    "name": "Fresh Start",
+    "type": "Conspiracy",
+    "rarity": "Rare",
+    "text": "(Start the game with this conspiracy face up in the command zone.)\nWhenever you take a mulligan, you may exile your hand instead of shuffling your hand into your library.",
+    "colors": [],
+    "custom": true,
+    "archetypes": [],
+    "flavorText": "Another chance to do it right.",
+    "artist": "Charley Daveler",
+    "_source": "Colorless/Fresh Start.png"
+  },
+  {
+    "id": "gooser-cruiser-fb4",
+    "name": "Gooser-Cruiser",
+    "manaCost": "{1}",
+    "type": "Artifact — Vehicle Mount",
+    "rarity": "Rare",
+    "text": "Whenever this Vehicle attacks, create a Golden Egg token. If this creature is saddled, instead create two of those tokens.\nCrew 1\nSaddle 1 (Tap any number of other creatures you control with total power 3 or more: This Mount becomes saddled until end of turn. Saddle only as a sorcery.)",
+    "colors": [],
+    "custom": true,
+    "archetypes": [
+      "Vehicles"
+    ],
+    "power": "2",
+    "toughness": "3",
+    "artist": "ChatGPT o4",
+    "relatedTokens": [
+      "Golden Egg"
+    ],
+    "_source": "Colorless/Gooser-Cruiser.png"
+  },
+  {
+    "id": "height-advantage-fb4",
+    "name": "Height Advantage",
+    "type": "Conspiracy",
+    "rarity": "Rare",
+    "text": "(Start the game with this conspiracy face up in the command zone.)\nLethal damage dealt to creatures you control is determined by their power rather than their toughness.",
+    "colors": [],
+    "custom": true,
+    "archetypes": [],
+    "flavorText": "It's better to stand aside than to stand out.",
+    "artist": "ChatGPT o4",
+    "_source": "Colorless/Height Advantage.png"
+  },
+  {
+    "id": "karametra-s-beloved-fb4",
+    "name": "Karametra's Beloved",
+    "manaCost": "{0}",
+    "type": "Enchantment Artifact Creature — Ferret",
+    "rarity": "Uncommon",
+    "text": "",
+    "colors": [],
+    "custom": true,
+    "archetypes": [],
+    "power": "0",
+    "toughness": "1",
+    "flavorText": "Forged by Purphoros and shaped by Nylea, this gift from her two former lovers stands as a reminder that even hands hardened and stained by violence, though they may alter nature's perfection, can still craft beauty beyond imagination.",
+    "artist": "ChatGPT o4",
+    "_source": "Colorless/Karametra’s Beloved.png"
+  },
+  {
+    "id": "kozilek-unfathomable-truth-fb4",
+    "name": "Kozilek, Unfathomable Truth",
+    "manaCost": "{10}",
+    "type": "Legendary Creature — Eldrazi",
+    "rarity": "Mythic Rare",
+    "text": "Partner with Emrakul, Disturbing Reality and Ulamog, Eternal Consumer\nTrample\nWhen you cast this spell, exile five random cards from the cube pool face-down. An opponent separates those cards into a face-down pile and a face-up pile. You may cast spells from it without paying their mana cost.",
+    "colors": [],
+    "custom": true,
+    "archetypes": [],
+    "power": "12",
+    "toughness": "12",
+    "artist": "GALLARDOSE",
+    "_source": "Colorless/Kozilek, Unfathomable Truth.png",
+    "relatedFace": [
+      "Emrakul, Disturbing Reality",
+      "Ulamog, Eternal Consumer"
+    ]
+  },
+  {
+    "id": "magus-of-the-petal-fb4",
+    "name": "Magus of the Petal",
+    "manaCost": "{0}",
+    "type": "Artifact Creature — Human Wizard",
+    "rarity": "Rare",
+    "text": "{T}, Sacrifice this creature: Add one mana of any color.",
+    "colors": [],
+    "custom": true,
+    "archetypes": [],
+    "power": "0",
+    "toughness": "1",
+    "flavorText": "To be entrusted with the petal is to be free of greed and untouched by human affairs—and even then, one must endure a rite that strips away the last traces of their humanity.",
+    "artist": "ChatGPT o4",
+    "_source": "Colorless/Magus of the Petal.png"
+  },
+  {
+    "id": "mox-amethyst-fb4",
+    "name": "Mox Amethyst",
+    "manaCost": "{0}",
+    "type": "Legendary Enchantment Artifact",
+    "rarity": "Mythic Rare",
+    "text": "Nyxborn — {T}: Add one mana of any color. Activate only if you control three or more enchantments.",
+    "colors": [],
+    "custom": true,
+    "archetypes": [
+      "Enchantments"
+    ],
+    "flavorText": "\"Gathering the stars, fourteen gods entrusted Phorphoros to forge them into one perfect jewel, which they hurled to the earth — and from its impact, humanity emerged.\"\n—Theros' Tale of Creation",
+    "artist": "ChatGPT o4",
+    "_source": "Colorless/Mox Amethyst.png"
+  },
+  {
+    "id": "pizza-oven-fb4",
+    "name": "Pizza Oven",
+    "manaCost": "{2}",
+    "type": "Artifact",
+    "rarity": "Rare",
+    "text": "{T}: Create a Food token named Cheese, Dough or Tomato.\n{2}{R}, {T}, Sacrifice a Cheese, a Dough and a Tomato: Create a Pizza token. (It's an artifact Food token with \"{2}, {T}, Sacrifice this token: You gain 9 life and draw three cards.)",
+    "colors": [],
+    "custom": true,
+    "archetypes": [
+      "Token Collection"
+    ],
+    "flavorText": "Asmoranomardicadaistinaculdacar got nothing on this.",
+    "artist": "ChatGPT 4o",
+    "relatedTokens": [
+      "Cheese",
+      "Dough",
+      "Tomato",
+      "Pizza"
+    ],
+    "_source": "Colorless/Pizza Oven.png"
+  },
+  {
+    "id": "soul-ring-fb4",
+    "name": "Soul Ring",
+    "manaCost": "{1}",
+    "type": "Artifact",
+    "rarity": "Mythic Rare",
+    "text": "{T}, Exile a creature card from your graveyard: Add {C}{C}.",
+    "colors": [],
+    "custom": true,
+    "archetypes": [
+      "Self-mill"
+    ],
+    "flavorText": "It holds every final goodbye, every hidden tear, each missed moment, every forsaken dream, and lingering regret — yet within it, a light endures, not to mourn what's lost, but to transform it into something greater.",
+    "artist": "Xinoir",
+    "_source": "Colorless/Soul Ring.png"
+  },
+  {
+    "id": "surveillance-state-fb4",
+    "name": "Surveillance State",
+    "type": "Conspiracy",
+    "rarity": "Rare",
+    "text": "(Start the game with this conspiracy face up in the command zone.)\nLands you control enter tapped.\nWhenever a land enters under your control, surveil 1.",
+    "colors": [],
+    "custom": true,
+    "archetypes": [],
+    "flavorText": "The convenience of the many must be ensured through the inconvenience of the few.",
+    "artist": "ChatGPT o4",
+    "_source": "Colorless/Surveillance State.png"
+  },
+  {
+    "id": "the-godess-of-speed-fb4",
+    "name": "The Goddess of Speed",
+    "manaCost": "{3}",
+    "type": "Legendary Artifact — Vehicle",
+    "rarity": "Rare",
+    "text": "Haste\nYour opponents respect you. (Creatures can't attack you or block creatures you control unless their controller pays {1} for each creature they control that's attacking you or blocking a creature you control. You have ward {1}.)\nCrew 1",
+    "colors": [],
+    "custom": true,
+    "archetypes": [
+      "Vehicles"
+    ],
+    "power": "4",
+    "toughness": "3",
+    "artist": "Julie Dillon",
+    "_source": "Colorless/The Godess of Speed.png"
+  },
+  {
+    "id": "the-oracle-provides-fb4",
+    "name": "The Oracle Provides",
+    "type": "Conspiracy",
+    "rarity": "Rare",
+    "text": "(Start the game with this conspiracy face up in the command zone.)\nBefore the game starts, type the following line into ChatGPT and this card's abilities become the response:\n\"Give my Magic the Gathering conspiracy exactly one interesting ability that can affect the game. Nothing else and nothing related to Hidden Agenda.\"",
+    "colors": [],
+    "custom": true,
+    "archetypes": [],
+    "artist": "ChatGPT o4",
+    "_source": "Colorless/The Oracle Provides.png",
+    "prompt": "Give my Magic the Gathering conspiracy exactly one interesting ability that can effect the game. Nothing else and nothing related to Hidden Agenda."
+  },
+  {
+    "id": "the-real-power-behind-the-throne-fb4",
+    "name": "The Real Power Behind the Throne",
+    "type": "Conspiracy",
+    "rarity": "Mythic Rare",
+    "text": "Hidden agenda (Start the game with this conspiracy face down in the command zone and secretly choose a card name. You may turn this conspiracy face up any time and reveal that name.)\nWhen you turn this Conspiracy face-up, search your library for a legendary creature card with the chosen name, reveal it, put it into your command zone, then shuffle. It becomes your commander. For the rest of the game, you can only cast spells that share a color with your commander.",
+    "colors": [],
+    "custom": true,
+    "archetypes": [],
+    "artist": "ChatGPT o4",
+    "_source": "Colorless/The Real Power Behind the Throne     .png"
+  },
+  {
+    "id": "ulamog-eternal-consumer-fb4",
+    "name": "Ulamog, Eternal Consumer",
+    "manaCost": "{12}",
+    "type": "Legendary Creature — Eldrazi",
+    "rarity": "Mythic Rare",
+    "text": "Partner with Emrakul, Disturbing Reality and Kozilek, Unfathomable Truth\nWhen you cast this spell, exile two target permanents.\nWhen Ulamog enters, combine all permanent cards from target opponent's exile onto it.\nCombinnihilator 4 (Whenever Ulamog attacks, defending player choose four permanents they control to be combined with Ulamog.)",
+    "colors": [],
+    "custom": true,
+    "archetypes": [],
+    "power": "11",
+    "toughness": "11",
+    "artist": "Gustavo Arteaga",
+    "_source": "Colorless/Ulamog, Eternal Consumer.png",
+    "relatedFace": [
+      "Emrakul, Disturbing Reality",
+      "Kozilek, Unfathomable Truth"
+    ]
+  }
+]

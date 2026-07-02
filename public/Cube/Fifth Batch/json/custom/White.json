@@ -1,0 +1,149 @@
+[
+  {
+    "id": "airbending-mastery-fb5",
+    "name": "Airbending Mastery",
+    "manaCost": "{2}{W}{W}",
+    "type": "Enchantment",
+    "rarity": "Rare",
+    "text": "At the beginning of your upkeep, airbend any number of other target nonland permanents you control. (Exile them. While each one is exiled, its owner may cast it for {2} rather than its mana cost.)",
+    "colors": [
+      "W"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Blink/ETB/Value"
+    ],
+    "artist": "Nickelodeon Animation Studio",
+    "_source": "White/Airbending Mastery.png"
+  },
+  {
+    "id": "for-a-perfect-society-fb5",
+    "name": "For a Perfect Society",
+    "manaCost": "{W}",
+    "type": "Instant",
+    "rarity": "Mythic Rare",
+    "text": "Create X Esper Sentinel creature tokens, where X is the number of artifact cards in your graveyard minus the number of nonartifact cards in your graveyard, (Each of them is a {W} 1/1 Human Soldier artifact creature with \"Whenever an opponent casts their first noncreature spell each turn, draw a card unless that player pays {X}, where X is this creature's power.\")",
+    "colors": [
+      "W"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Artifacts",
+      "Self-mill"
+    ],
+    "artist": "Nano Banana",
+    "relatedTokens": [
+      "1/1 white Human Soldier"
+    ],
+    "_source": "White/For a Perfect Society.png"
+  },
+  {
+    "id": "garage-sale-fb5",
+    "name": "Garage Sale",
+    "manaCost": "{2}{W}",
+    "type": "Sorcery",
+    "rarity": "Rare",
+    "text": "Create a 3/2 colorless Vehicle artifact token with crew 1.\nStorm (When you cast this spell, copy it for each spell cast before it this turn.)",
+    "colors": [
+      "W"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Storm"
+    ],
+    "flavorText": "Across the multiverse, Chandra's motorcycle has gained legendary notoriety, inspiring countless cheaper replicas.",
+    "artist": "Nano Banana",
+    "_source": "White/Garage Sale.png",
+    "relatedTokens": [
+      "3/2 colorless Vehicle"
+    ]
+  },
+  {
+    "id": "lore-accurate-rhystic-study-fb5",
+    "name": "Lore-Accurate Rhystic Study",
+    "manaCost": "{2}{W}",
+    "type": "Enchantment",
+    "rarity": "Rare",
+    "text": "Whenever an opponent casts a spell, you may learn unless that player pays {1}. (You may reveal a Lesson card you own from outside the game and put it into your hand, or discard a card to draw a card.)",
+    "colors": [
+      "W"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "flavorText": "Some alternative timelines must be studied, whether to sate an undying curiosity or to win a debate.",
+    "artist": "Nano Banana",
+    "_source": "White/Lore-Accurate Rhystic Study.png"
+  },
+  {
+    "id": "memories-of-a-teacher-fb5",
+    "name": "Memories of a Teacher",
+    "manaCost": "{1}{W}",
+    "type": "Sorcery — Lesson",
+    "rarity": "Uncommon",
+    "text": "Draw two cards.\nTarget opponent creates a 3/2 red and white Spirit creature token.",
+    "colors": [
+      "W"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "flavorText": "\"Do not mourn me. As you remember me, so too will the history books. Now, Let us study once more.\"\n—Augusta, Lorehold's former dean",
+    "artist": "Nano Banana",
+    "_source": "White/Memories of a Teacher.png",
+    "relatedTokens": [
+      "3/2 white and red Spirit"
+    ]
+  },
+  {
+    "id": "planar-geomendesis-fb5",
+    "name": "Planar Geomendesis",
+    "manaCost": "{W}",
+    "type": "Enchantment",
+    "rarity": "Rare",
+    "text": "At the beginning of your upkeep, if an opponent controls more lands than you, create a 1/1 green Plains Dryad creature token. Otherwise, surveil 1. (The token is affected by summoning sickness.)",
+    "colors": [
+      "W"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "flavorText": "\"Dawnsire, Log 121: Planet Adagia is generating new lifeforms, as if it is fighting a sickness caused by our terraforming.\"",
+    "artist": "Nano Banana",
+    "_source": "White/Planar Geomendesis.png",
+    "relatedTokens": [
+      "1/1 green Plains Dryad"
+    ]
+  },
+  {
+    "id": "swords-to-more-swords-fb5",
+    "name": "Swords to More Swords",
+    "manaCost": "{W}",
+    "type": "Instant",
+    "rarity": "Rare",
+    "text": "Exile target creature. Its controller creates a number of Sword tokens equal to its power. (They are colorless Equipment artifact tokens with \"Equipped creature gets +1/+1\" and equip {2}.)",
+    "colors": [
+      "W"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "flavorText": "\"The arc of my blade has carved a path of blades for the blades that will follow.\"",
+    "artist": "Zoltan Boros & Gabor Szikszai & Jesper Ejsing & Greg Staples & Doug Chaffee",
+    "relatedTokens": [
+      "Sword"
+    ],
+    "_source": "White/Swords to More Swords.png"
+  },
+  {
+    "id": "truths-unspoken-fb5",
+    "name": "Truths Unspoken",
+    "manaCost": "{1}{W}",
+    "type": "Sorcery",
+    "rarity": "Rare",
+    "text": "Search your library for up to four cards with different names and reveal them. Target opponent chooses two of those cards. Exile the chosen cards and put the rest into your hand. Then shuffle. That opponent may play the exiled cards as long as they remain exiled, and mana of any type can be spent to cast them.",
+    "colors": [
+      "W"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "artist": "Vanette Kosman",
+    "_source": "White/Truths Unspoken.png"
+  }
+]

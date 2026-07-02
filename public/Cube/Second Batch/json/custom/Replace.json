@@ -1,0 +1,25 @@
+[
+  {
+    "id": "march-of-the-machine-sb2",
+    "name": "March of the Machine",
+    "manaCost": "{X}{B}{G}",
+    "type": "Sorcery",
+    "rarity": "Rare",
+    "text": "Improvise (Your artifacts can help cast this spell. Each artifact you tap after you're done activating mana abilities pays for {1}.)\nCreate X 1/1 Phyrexian Mite artifact creature tokens with toxic 1 and \"This creature can't block.\" Then, nonartifact creatures get -1/-1 until end of turn for each artifact you control. (Players dealt combat damage by a creature with toxic 1 also get a poison counter.)",
+    "colors": [
+      "B",
+      "G"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Artifacts",
+      "Token Collection"
+    ],
+    "artist": "Grzegorz Rutkowski",
+    "relatedTokens": [
+      "1/1 Phyrexian Mite"
+    ],
+    "_supersedes": "ravenous-squirrel-mh2",
+    "_source": "Replace/March of the Machine (Replace Ravenous Squirrel).png"
+  }
+]

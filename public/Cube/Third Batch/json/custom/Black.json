@@ -1,0 +1,386 @@
+[
+  {
+    "id": "asura-of-insatiable-ambitions-tb3",
+    "name": "Asura of Insatiable Ambitions",
+    "manaCost": "{4}{B}{B}",
+    "type": "Creature — Demon Spirit",
+    "rarity": "Mythic Rare",
+    "text": "Forecast — Reveal this card from your hand, Sacrifice a permanent: Draw a card. (Activate only during your upkeep and only once each turn.)\nFlying, trample\nWhen this creature enters, draw a card for each permanent you sacrificed this turn. Return these permanents from your graveyard to your hand.",
+    "colors": [
+      "B"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "power": "6",
+    "toughness": "6",
+    "artist": "Realm of Midgard",
+    "_source": "Black/Asura of Insatiable Ambitions.png"
+  },
+  {
+    "id": "diabolical-scheme-tb3",
+    "name": "Diabolical Scheme",
+    "manaCost": "{1}{B}",
+    "type": "Sorcery",
+    "rarity": "Rare",
+    "text": "Search your library for a card with Cipher, put it into your hand, then shuffle.\nCipher (Then you may exile this spell card encoded on a creature you control. Whenever that creature deals combat damage to a player, its controller may cast a copy of the encoded card without paying its mana cost.)",
+    "colors": [
+      "B"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Broken Cipher"
+    ],
+    "artist": "Reva Of Revington",
+    "_source": "Black/Diabolical Scheme.png"
+  },
+  {
+    "id": "dianna-scorn-of-the-moon-tb3",
+    "name": "Dianna, Scorn of the Moon",
+    "manaCost": "{B}{B}",
+    "type": "Legendary Creature — Human Assassin",
+    "rarity": "Rare",
+    "text": "Partner with Leona, the Radiant Dawn (When this creature enters, target player may put Leona into their hand from their library, then shuffle.)\nWard—Pay 3 life\nIf it's neither day nor night, it becomes night as Dianna enters.\nAt the end of turn, if it became night this turn, put a -1/-1 counter on each tapped creature you don't control.",
+    "colors": [
+      "B"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "power": "3",
+    "toughness": "2",
+    "artist": "Sixmorevodka",
+    "_source": "Black/Dianna, Scorn of the Moon.png",
+    "relatedFace": "Leona, the Radiant Dawn"
+  },
+  {
+    "id": "edgar-the-groom-tb3",
+    "name": "Edgar, the Groom",
+    "manaCost": "{2}{B}{B}",
+    "type": "Legendary Creature — Vampire Assassin",
+    "rarity": "Rare",
+    "text": "Partner with Olivia, the Bride (When this creature enters, target player may put Olivia into their hand from their library, then shuffle.)\nLifelink\nAt the beginning of your end step, Edgar deals damage equal to the number of differently named tokens you control to target opponent.",
+    "colors": [
+      "B"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Token Collection"
+    ],
+    "power": "4",
+    "toughness": "4",
+    "artist": "DALL-E 3",
+    "_source": "Black/Edgar, the Groom.png",
+    "relatedFace": "Olivia, the Bride"
+  },
+  {
+    "id": "escape-from-the-underworld-tb3",
+    "name": "Escape from the Underworld",
+    "manaCost": "{B}",
+    "type": "Sorcery",
+    "rarity": "Rare",
+    "text": "Create a Map token or a 0/1 white Goat creature token.\nReturn target creature card mana value X or less from your graveyard to the battlefield, where X is the number of differently named tokens you control.\nEscape—{B}, Exile two other cards from your graveyard. (You may cast this card from your graveyard for its escape cost.)",
+    "colors": [
+      "B"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Token Collection",
+      "Self-mill"
+    ],
+    "artist": "DALL-E 3",
+    "relatedTokens": [
+      "Map",
+      "0/1 white Goat"
+    ],
+    "_source": "Black/Escape from the Underworld.png"
+  },
+  {
+    "id": "from-the-shadows-they-come-tb3",
+    "name": "From the Shadows They Come",
+    "manaCost": "{2}{B}{B}",
+    "type": "Sorcery",
+    "rarity": "Rare",
+    "text": "Exile target card from your graveyard and target card from an opponent's graveyard in a face-down pile, shuffle that pile, then cloak those cards. (To cloak a card, put it onto the battlefield face down as a 2/2 creature with ward {2}. Turn it face up any time for its mana cost if it's a creature card.)\nCipher",
+    "colors": [
+      "B"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Broken Cipher",
+      "Self-mill"
+    ],
+    "artist": "SueMart",
+    "_source": "Black/From the Shadows They Come.png"
+  },
+  {
+    "id": "gaze-of-stone-tb3",
+    "name": "Gaze of Stone",
+    "manaCost": "{B}",
+    "type": "Sorcery",
+    "rarity": "Rare",
+    "text": "Target player reveals their hand. You may choose a permanent card with mana value 3 or less from it. That player petrifies that card. (Exile it. Its controller creates a token that's a copy of it, except it's an artifact and loses all other card types.)",
+    "colors": [
+      "B"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "flavorText": "Gorgons do like giving the silent treatment.",
+    "artist": "Mischeviouslittleelf",
+    "_source": "Black/Gaze of Stone.png"
+  },
+  {
+    "id": "gorgon-granite-collector-tb3",
+    "name": "Gorgon Granite-Collector",
+    "manaCost": "{2}{B}",
+    "type": "Creature — Gorgon Noble",
+    "rarity": "Rare",
+    "text": "Deathtouch\nWhenever a creature you don't control dies, petrify it. (Exile it. Its controller creates a token that's a copy of it, except it's an artifact and loses all other card types.)\nAt the beginning of your upkeep, target creature an opponent controls gets -1/-1 until end of turn for each differently named token you control.",
+    "colors": [
+      "B"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Token Collection"
+    ],
+    "power": "2",
+    "toughness": "3",
+    "artist": "DALL-E 3",
+    "_source": "Black/Gorgon Granite-Collector.png"
+  },
+  {
+    "id": "him-of-forgotten-kingdom-tb3",
+    "name": "Him of Forgotten Kingdom",
+    "manaCost": "{B}{B}",
+    "type": "Creature — Zombie Noble",
+    "rarity": "Rare",
+    "text": "When this creature enters, each other nontoken creature you control gains persist until end of turn. (When it dies, if it had no -1/-1 counters on it, return it to the battlefield under its owner's control with a -1/-1 counter on it.)\nWhen this creature dies, each other nontoken creature you control gains undying until end of turn. (Persist but with +1/+1 counters instead of -1/-1.)",
+    "colors": [
+      "B"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "power": "2",
+    "toughness": "2",
+    "artist": "Shutterstock",
+    "_source": "Black/Him of Forgotten Kingdom.png"
+  },
+  {
+    "id": "hugs-legendary-pile-tb3",
+    "name": "Hugs' Legendary Pile",
+    "manaCost": "{2}{B}{B}",
+    "type": "Legendary Artifact",
+    "rarity": "Rare",
+    "text": "Machine Intelligence (Nontoken artifacts you control have all activated abilities of all nontoken artifacts you control with Machine Intelligence.)\n{1}: Exile target card from a graveyard with a stock counter on it.\nThis permanent has all activated abilities of all artifact and creature cards exiled with stock counters on them, and mana of any type can be spent to activate those abilities.",
+    "colors": [
+      "B"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Artifacts"
+    ],
+    "artist": "DALL-E 3",
+    "_source": "Black/Hugs’ Legendary Pile.png"
+  },
+  {
+    "id": "killer-performance-tb3",
+    "name": "Killer Performance",
+    "manaCost": "{1}{B}{B}",
+    "type": "Enchantment",
+    "rarity": "Rare",
+    "text": "Nontoken creatures you control are Spike artifacts in addition to their other types and have \"{2}, Sacrifice this permanent: Target opponent gains an emblem with \"at the beginning of your upkeep, you lose 1 life\"\"",
+    "colors": [
+      "B"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "artist": "DALL-E 3",
+    "_source": "Black/Killer Performance.png"
+  },
+  {
+    "id": "mech-savant-of-the-core-tb3",
+    "name": "Mech-Savant of the Core",
+    "manaCost": "{2}{B}",
+    "type": "Artifact Creature — Lizard Artificer",
+    "rarity": "Rare",
+    "text": "Machine Intelligence (Nontoken artifacts you control have all activated abilities of all nontoken artifacts you control with Machine Intelligence.)\n{T}: Target opponent loses 1 life. Activate only as a sorcery.\nAt the beginning of your end step, create a X/X colorless artifact Ox Construct creature token named Ox-Core Power Level: X, where X is the total amount of life your opponents have lost this turn.",
+    "colors": [
+      "B"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Artifacts",
+      "Token Collection"
+    ],
+    "power": "3",
+    "toughness": "2",
+    "artist": "DALL-E 3",
+    "relatedTokens": [
+      "Ox-Core Power Level: X"
+    ],
+    "_source": "Black/Mech-Savant of the Core.png"
+  },
+  {
+    "id": "meet-the-crew-tb3",
+    "name": "Meet the Crew",
+    "manaCost": "{2}{B}{B}",
+    "type": "Sorcery",
+    "rarity": "Rare",
+    "text": "Partner with The Usurper of House Dimir (Target player may put The Usurper of House Dimir into their hand from their library, then shuffle.)\nCreate a 1/1 blue and black Rogue creature token that can't block and can't be blocked. If {U} was spent to cast this spell, create four of these tokens instead.\nCipher",
+    "colors": [
+      "B"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Broken Cipher"
+    ],
+    "artist": "vitorfreitasarts",
+    "relatedTokens": [
+      "1/1 blue and black Rogue"
+    ],
+    "_source": "Black/Meet the Crew.png",
+    "relatedFace": "The Usurper of House Dimir"
+  },
+  {
+    "id": "mindbender-moroii-tb3",
+    "name": "Mindbender Moroii",
+    "manaCost": "{2}{B}",
+    "type": "Creature — Vampire",
+    "rarity": "Rare",
+    "text": "Flying\nWhenever an opponent discards a card, put a +1/+1 counter on this creature.\nWhenever this creature deals combat damage to a player, that player shuffles that many Confusion cards into their library. (Confusion is a colorless sorcery with no mana cost that has cycling {2}.)",
+    "colors": [
+      "B"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "power": "3",
+    "toughness": "1",
+    "artist": "DALL-E 3",
+    "_source": "Black/Mindbender Moroii.png"
+  },
+  {
+    "id": "no-hope-at-all-tb3",
+    "name": "No Hope At All",
+    "manaCost": "{1}{B}{B}{B}",
+    "type": "Sorcery",
+    "rarity": "Rare",
+    "text": "Each player creates a 1/1 white Glimmer enchantment creature token and a 1/1 green Toy artifact creature token, then destroy all creatures.",
+    "colors": [
+      "B"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Token Collection"
+    ],
+    "flavorText": "\"You humans love your cute little trinkets, don't you? Go on, clutch them tightly—then watch as I tear them apart, piece by piece. How delicious.\"\n—Valgavoth, the Moth-Demon",
+    "artist": "Mike Vaillancourt",
+    "relatedTokens": [
+      "1/1 white Glimmer",
+      "1/1 green Toy"
+    ],
+    "_source": "Black/No Hope At All.png"
+  },
+  {
+    "id": "no-rose-without-thorns-tb3",
+    "name": "No Rose Without Thorns",
+    "manaCost": "{B}",
+    "type": "Enchantment",
+    "rarity": "Mythic Rare",
+    "text": "At the beginning of your upkeep, you lose 1 life and you create a token from the following list that hasn't been chosen yet. If you can't, you lose the game.\n[Blood, Clue, Food, Junk, Map, Scroll, Spike, Treasure]",
+    "colors": [
+      "B"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Token Collection"
+    ],
+    "artist": "DALL-E 3",
+    "relatedTokens": [
+      "Blood",
+      "Clue",
+      "Food",
+      "Junk",
+      "Map",
+      "Scroll",
+      "Spike",
+      "Treasure"
+    ],
+    "_source": "Black/No Rose Without Thorns.png"
+  },
+  {
+    "id": "take-a-loan-tb3",
+    "name": "Take a Loan",
+    "manaCost": "{X}{B}",
+    "type": "Sorcery",
+    "rarity": "Rare",
+    "text": "Create twice X tapped Treasure tokens.\nYou get X debt counters. (At the beginning of your end step, you may pay {1} for each debt counter you have. For each {1} paid this way, remove a debt counter from yourself. At the end of your end step, you lose 1 life for each debt counter you have.)",
+    "colors": [
+      "B"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Token Collection"
+    ],
+    "artist": "DALL-E 3",
+    "relatedTokens": [
+      "Treasure"
+    ],
+    "_source": "Black/Take a Loan.png"
+  },
+  {
+    "id": "temple-might-ruins-tb3",
+    "name": "Temple Might Ruins",
+    "type": "Legendary Land",
+    "rarity": "Rare",
+    "text": "Partner with Benzir, Archdruid of Temple Might (When this land enters, target player may put Benzir into their hand from their library, then shuffle.)\n{T}, Pay 4 life: Add two mana of any one color. Spend this mana only to cast artifact spells or activate abilities of artifacts.\n{B}{B}, {T}: Each opponent loses 2 life and you gain 2 life.",
+    "colors": [],
+    "custom": true,
+    "archetypes": [],
+    "flavorText": "\"Flesh is frail, metal is flawed, together they endure.\"",
+    "artist": "DALL-E 3",
+    "_source": "Black/Temple Might Ruins.png",
+    "relatedFace": "Benzir, Archdruid of Temple Might"
+  },
+  {
+    "id": "zebzeb-first-day-at-the-job-tb3",
+    "name": "ZebZeb, First Day at the Job",
+    "manaCost": "{B}",
+    "type": "Legendary Creature — Insect Detective",
+    "rarity": "Rare",
+    "text": "Skulk (This creature can't be blocked by creatures with greater power.)\nLifelink\nWhenever ZebZeb deals combat damage to a player, investigate. Then, if you control three or more Clues, transform it.",
+    "colors": [
+      "B"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "power": "1",
+    "toughness": "1",
+    "flavorText": "\"Let's see what the buzz is all about...\"",
+    "artist": "DALL-E 3",
+    "relatedTokens": [
+      "Clue"
+    ],
+    "_source": "Black/ZebZeb, First Day at the Job .png",
+    "relatedFace": "ZebZeb, Master Detective"
+  },
+  {
+    "id": "zebzeb-master-detective-tb3",
+    "name": "ZebZeb, Master Detective",
+    "type": "Legendary Creature — Insect Detective",
+    "rarity": "Rare",
+    "text": "Flying, lifelink\nWhenever ZebZeb attacks, you may sacrifice a Clue. If you do, exile target instant or sorcery card from a graveyard encoded to ZebZeb.",
+    "colors": [
+      "U"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Broken Cipher"
+    ],
+    "power": "3",
+    "toughness": "2",
+    "flavorText": "\"... I see. The truth really stings.\"",
+    "artist": "DALL-E 3",
+    "_source": "Black/ZebZeb, Master Detective.png",
+    "manaCost": "",
+    "facedown": true,
+    "relatedFace": "ZebZeb, First Day at the Job"
+  }
+]

@@ -6,6 +6,7 @@ import os
 from bson import ObjectId
 from dotenv import load_dotenv
 import json
+import glob
 import random
 import re
 from datetime import datetime, timedelta
@@ -32,12 +33,207 @@ def escape_regex_pattern(pattern):
 MONGO_URI = os.getenv(
     "MONGO_URI", "mongodb+srv://username:password@cluster.mongodb.net/mtgcube"
 )
-try:
-    client = MongoClient(MONGO_URI)
-    db = client["mtgcube"]
-except Exception as e:
-    logging.error(f"Failed to connect to MongoDB: {e}")
-    exit(1)
+
+# When MongoDB is unavailable or empty, the backend falls back to an in-memory
+# database seeded from the on-disk cube JSON so the site keeps working (reads
+# work fully; writes live only for the process lifetime).
+REPO_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+CUBE_DIR = os.path.join(REPO_ROOT, "public", "Cube")
+# Optional single-file override; when unset, every batch's cards.json is loaded
+# (public/Cube/<Batch>/json/cards.json), so each new set is picked up automatically.
+CARDS_JSON_PATH = os.getenv("CARDS_JSON_PATH")
+
+
+def _cards_json_paths():
+    if CARDS_JSON_PATH:
+        return [CARDS_JSON_PATH]
+    return sorted(glob.glob(os.path.join(CUBE_DIR, "*", "json", "cards.json")))
+
+
+def _load_cube_docs():
+    """Load current cards from every batch and derive card-history docs.
+
+    Returns (card_docs, history_docs). Each card's `id` becomes Mongo's `_id`,
+    de-duplicated (e.g. the two faces of a DFC that slugify to the same id).
+
+    A card may carry an internal `_supersedes` field holding an earlier-set
+    card id it remakes/replaces. That predecessor is pulled out of the current
+    cards and turned into a historical version keyed by the newer card's id, so
+    historic mode shows the old version while normal browsing shows only the new
+    one. The `_supersedes`/`_source` markers are stripped before serving.
+    """
+    raw = []
+    for path in _cards_json_paths():
+        try:
+            with open(path, encoding="utf-8") as f:
+                raw.extend(json.load(f))
+        except FileNotFoundError:
+            continue
+
+    by_id = {}
+    for c in raw:
+        by_id.setdefault(c.get("id"), c)
+
+    # Chronological ordering of history entries (by the set a version belongs to),
+    # independent of the alphabetical order batches are globbed in.
+    _set_order = {"Set 1": 1, "Set 2": 2, "Set 3": 3, "Set 4": 4, "Set 5": 5}
+
+    # Map each superseded card -> the card that directly replaced it, so a lineage
+    # spanning several sets (A <- B <- C) can be followed to its current head.
+    successor_of = {}
+    for c in raw:
+        p = c.get("_supersedes")
+        if p:
+            successor_of[p] = c.get("id")
+
+    def _final_current(cid):
+        seen = set()
+        while cid in successor_of and cid not in seen:
+            seen.add(cid)
+            cid = successor_of[cid]
+        return cid
+
+    # Resolve supersedes links -> history entries + set of predecessor ids to drop.
+    # Every older version in a lineage is keyed to the lineage's *current* head so
+    # historic mode can restore it even when the intermediate link was itself
+    # later superseded (A <- B <- C: both A and B attach to C).
+    history_docs, superseded_ids = [], set()
+    for c in raw:
+        pred_id = c.get("_supersedes")
+        if not pred_id:
+            continue
+        pred = by_id.get(pred_id)
+        if not pred:
+            logging.warning(
+                f"_supersedes target '{pred_id}' (from '{c.get('id')}') not found; ignoring."
+            )
+            continue
+        version_data = {k: v for k, v in pred.items() if k not in ("_source", "_supersedes")}
+        history_docs.append({
+            "card_id": _final_current(c.get("id")),  # current head of the lineage
+            "timestamp": _set_order.get(version_data.get("set"), 0),  # older set = lower
+            "version_data": version_data,            # the older version, incl. its `set`
+        })
+        superseded_ids.add(pred_id)
+
+    docs, seen = [], {}
+    for c in raw:
+        cid = c.get("id")
+        if cid in superseded_ids:
+            continue  # now lives only as history under its successor
+        doc = {k: v for k, v in c.items() if k not in ("_source", "_supersedes")}
+        _id = doc.pop("id", None) or doc.get("name")
+        if _id in seen:
+            seen[_id] += 1
+            _id = f"{_id}-{seen[_id]}"
+        else:
+            seen[_id] = 1
+        doc["_id"] = _id
+        docs.append(doc)
+    return docs, history_docs
+
+
+# The cube's 10 guild archetypes (mirrors src/data/archetypes.ts). Cards tag
+# themselves by archetype NAME in their `archetypes` array; the /api/archetypes
+# endpoints join on that name.
+ARCHETYPES = [
+    {"name": "Storm", "colors": ["W", "U"], "description": "Cast multiple spells in a turn to trigger powerful effects."},
+    {"name": "Broken Cipher", "colors": ["U", "B"], "description": "Encode secrets onto creatures and gain value when they deal combat damage."},
+    {"name": "Token Collection", "colors": ["B", "R"], "description": "Create and collect various token types for different synergies."},
+    {"name": "Control", "colors": ["R", "G"], "description": "An unusual take on control using red and green to dominate the board."},
+    {"name": "Vehicles", "colors": ["G", "W"], "description": "Crew powerful artifact vehicles with your creatures for strong attacks."},
+    {"name": "Blink/ETB/Value", "colors": ["W", "B"], "description": "Flicker creatures in and out of the battlefield to accumulate triggers."},
+    {"name": "Artifacts", "colors": ["B", "G"], "description": "Leverage artifacts for value and synergy in an unusual color combination."},
+    {"name": "Enchantments", "colors": ["U", "R"], "description": "Use enchantments to control the game and generate value over time."},
+    {"name": "Self-mill", "colors": ["R", "W"], "description": "Put cards from your library into your graveyard for value and synergy."},
+    {"name": "Prowess", "colors": ["G", "U"], "description": "Cast non-creature spells to trigger bonuses on your creatures."},
+]
+
+
+def _load_archetype_docs():
+    return [dict(a) for a in ARCHETYPES]
+
+
+def _token_json_paths():
+    return sorted(glob.glob(os.path.join(CUBE_DIR, "*", "json", "tokens.json")))
+
+
+def _load_token_docs():
+    """Load token docs from every batch's tokens.json.
+
+    Mirrors _load_cube_docs: each token's `id` becomes Mongo's `_id`,
+    de-duplicated across batches. Cards reference tokens by name via their
+    `relatedTokens` array; the /api/tokens endpoints join on that name.
+    """
+    docs, seen = [], {}
+    for path in _token_json_paths():
+        try:
+            with open(path, encoding="utf-8") as f:
+                raw = json.load(f)
+        except FileNotFoundError:
+            continue
+        for t in raw:
+            doc = {k: v for k, v in t.items() if k != "_source"}
+            _id = doc.pop("id", None) or doc.get("name")
+            if _id in seen:
+                seen[_id] += 1
+                _id = f"{_id}-{seen[_id]}"
+            else:
+                seen[_id] = 1
+            doc["_id"] = _id
+            docs.append(doc)
+    return docs
+
+
+def _init_db():
+    """Return (db, using_json_fallback).
+
+    Prefer a real MongoDB when MONGO_URI points at a reachable, non-empty
+    database. Otherwise serve an in-memory mongomock database seeded from the
+    on-disk cube JSON so the site still runs without a database.
+    """
+    if MONGO_URI and "username:password" not in MONGO_URI:
+        try:
+            client = MongoClient(MONGO_URI, serverSelectionTimeoutMS=3000)
+            client.admin.command("ping")  # force an actual connection check
+            real_db = client["mtgcube"]
+            if real_db.cards.estimated_document_count() > 0:
+                logging.info("Connected to MongoDB.")
+                return real_db, False
+            logging.warning(
+                "MongoDB reachable but empty; using JSON fallback instead."
+            )
+        except Exception as e:
+            logging.warning(f"MongoDB unavailable ({e}); using JSON fallback.")
+    else:
+        logging.warning("No usable MONGO_URI configured; using JSON fallback.")
+
+    import mongomock
+
+    mock_db = mongomock.MongoClient()["mtgcube"]
+    try:
+        docs, history_docs = _load_cube_docs()
+        token_docs = _load_token_docs()
+        if docs:
+            mock_db.cards.insert_many(docs)
+        if history_docs:
+            mock_db.card_history.insert_many(history_docs)
+        if token_docs:
+            mock_db.tokens.insert_many(token_docs)
+        archetype_docs = _load_archetype_docs()
+        if archetype_docs:
+            mock_db.archetypes.insert_many(archetype_docs)
+        logging.info(
+            f"JSON fallback active: loaded {len(docs)} cards, "
+            f"{len(history_docs)} history entries, {len(token_docs)} tokens and "
+            f"{len(archetype_docs)} archetypes from {len(_cards_json_paths())} batch file(s)."
+        )
+    except Exception as e:
+        logging.error(f"Failed to seed JSON fallback: {e}")
+    return mock_db, True
+
+
+db, USING_JSON_FALLBACK = _init_db()
 
 # Simple in-memory cache for historical data
 # Cache structure: {cache_key: {'data': result, 'timestamp': time.time()}}
@@ -172,7 +368,9 @@ CORS(
         r"/api/*": {
             "origins": [
                 "https://netn10-custom-cube-885947dcd6aa.herokuapp.com",
-                "http://localhost:3000",  # For local development
+                # Local development on any port (3000, 3001, ...)
+                re.compile(r"^http://localhost:\d+$"),
+                re.compile(r"^http://127\.0\.0\.1:\d+$"),
             ],
             "methods": ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
             "allow_headers": ["Content-Type", "Authorization", "X-Requested-With"],
@@ -298,7 +496,10 @@ def get_default_image_for_colors(colors):
 # Health check
 @app.route("/api/health", methods=["GET"])
 def health_check():
-    return jsonify({"status": "ok"}), 200
+    return jsonify({
+        "status": "ok",
+        "data_source": "json-fallback" if USING_JSON_FALLBACK else "mongodb",
+    }), 200
 
 # Auth routes
 @app.route("/api/auth/register", methods=["POST"])
@@ -441,6 +642,91 @@ def index():
             ]
         }
     )
+
+
+def _color_matches(card_colors, colors, color_match):
+    """Python mirror of the color post-filter used in the historic-mode pipeline."""
+    if not colors or not colors[0]:
+        return True
+    cc = set(card_colors or [])
+    conds, remaining = [], list(colors)
+    if "colorless" in remaining:
+        conds.append(len(cc) == 0)
+        remaining = [c for c in remaining if c != "colorless"]
+    if "multicolor" in remaining:
+        conds.append(len(cc) != 1)  # matches {"colors": {"$exists": True, "$not": {"$size": 1}}}
+        remaining = [c for c in remaining if c != "multicolor"]
+    if remaining:
+        want = set(remaining)
+        if color_match == "exact":
+            conds.append(cc == want)
+        elif color_match == "at-most":
+            conds.append(cc.issubset(want))
+        else:  # includes (default)
+            conds.append(want.issubset(cc))
+    if not conds:
+        return True
+    return any(conds) if len(conds) > 1 else conds[0]
+
+
+def _historic_mode_fallback(search, body_search, colors, color_match, card_type,
+                            custom, include_facedown, has_history, sort_by,
+                            sort_dir, sets_to_include, skip, limit):
+    """Historic-mode set browsing without aggregation `$lookup` (mongomock can't
+    run it). Replaces each current card with its latest historical version whose
+    `version_data.set` falls in `sets_to_include`, then filters to those sets so
+    a set view shows the cube as it stood then. Returns (cards, total)."""
+    q = {}
+    if not include_facedown:
+        q["facedown"] = {"$ne": True}
+    if search:
+        q["name"] = {"$regex": escape_regex_pattern(search), "$options": "i"}
+    if body_search:
+        q["$or"] = [
+            {"name": {"$regex": escape_regex_pattern(body_search), "$options": "i"}},
+            {"text": {"$regex": escape_regex_pattern(body_search), "$options": "i"}},
+        ]
+    if custom:
+        q["custom"] = custom.lower() == "true"
+    if card_type:
+        q["type"] = {"$regex": escape_regex_pattern(card_type), "$options": "i"}
+    if has_history:
+        q["_id"] = {"$in": db.card_history.distinct("card_id")}
+
+    # Latest history entry per card within the included sets.
+    latest = {}
+    for h in db.card_history.find({"version_data.set": {"$in": sets_to_include}}):
+        cid, ts = h.get("card_id"), h.get("timestamp", 0)
+        if cid not in latest or ts >= latest[cid].get("timestamp", 0):
+            latest[cid] = h
+
+    results = []
+    for c in db.cards.find(q):
+        cid = c.get("_id")
+        h = latest.get(cid)
+        # The current card is the newest version of its lineage. If its own set is
+        # within the viewed range, it's what stood then -> keep it. Only fall back
+        # to an older stored version when the current one is from a later set than
+        # the range (so it wouldn't have existed yet).
+        if h and c.get("set") not in sets_to_include:
+            doc = dict(h.get("version_data", {}))
+            doc["id"], doc["historical_version"] = cid, True
+        else:
+            doc = dict(c)
+            doc["id"] = doc.pop("_id")
+        results.append(doc)
+
+    results = [r for r in results if r.get("set") in sets_to_include
+               and _color_matches(r.get("colors"), colors, color_match)]
+    total = len(results)
+
+    fields = [f for f in (sort_by.split(",") if sort_by else ["name"]) if f]
+    dirs = sort_dir.split(",") if sort_dir else []
+    for i, f in reversed(list(enumerate(fields))):  # stable multi-key sort
+        reverse = i < len(dirs) and dirs[i].lower() == "desc"
+        results.sort(key=lambda r: str(r.get(f, "")).lower(), reverse=reverse)
+
+    return results[skip:skip + limit], total
 
 
 @app.route("/api/cards", methods=["GET"])
@@ -680,7 +966,14 @@ def get_cards_internal(search, body_search, colors, color_match, exclude_colorle
 
     # If using historic mode with a set filter, we need a different approach
     # because we need to apply filtering and sorting AFTER replacing with historical data
-    if historic_mode and card_set:
+    if historic_mode and card_set and USING_JSON_FALLBACK:
+        # mongomock can't run the aggregation `$lookup` below, so do it in Python.
+        cards, total = _historic_mode_fallback(
+            search, body_search, colors, color_match, card_type, custom,
+            include_facedown, has_history, sort_by, sort_dir,
+            sets_to_include, skip, limit,
+        )
+    elif historic_mode and card_set:
         # OPTIMIZED APPROACH: Use aggregation pipeline for better performance
         
         # Build aggregation pipeline for historical data
@@ -1016,12 +1309,13 @@ def get_archetype_cards(archetype_id):
         # Calculate skip for pagination
         skip = (page - 1) * limit
 
-        # Get the archetype to get its name
+        # Get the archetype to get its name + colors
         archetype = db.archetypes.find_one({"_id": ObjectId(archetype_id)})
         archetype_name = archetype.get("name", "") if archetype else ""
+        arch_colors = archetype.get("colors", []) if archetype else []
 
-        # Find cards that have this archetype ID OR name in their archetypes array
-        # Also exclude facedown cards
+        # Find cards that have this archetype ID OR name in their archetypes array,
+        # excluding facedown cards.
         query = {
             "$and": [
                 {"$or": [{"archetypes": archetype_id}, {"archetypes": archetype_name}]},
@@ -1029,32 +1323,17 @@ def get_archetype_cards(archetype_id):
             ]
         }
 
-        # Get total count
-        total = db.cards.count_documents(query)
+        cards = list(db.cards.find(query))
 
-        # Get paginated cards
-        cursor = db.cards.find(query).skip(skip).limit(limit)
-        cards = list(cursor)
+        # Only show cards whose colors fit the archetype: every color of the card
+        # must be one of the archetype's colors (colorless cards are allowed).
+        arch_set = set(arch_colors)
+        cards = [c for c in cards
+                 if all(col in arch_set for col in (c.get("colors") or []))]
 
-        # If the number of cards is less than the limit, get the remaining cards from the next page
-        while len(cards) < limit and skip + len(cards) < total:
-            # This logic for re-fetching seems complex and might be simplified or rethought
-            # For now, preserving original logic, just fixing indentation if any.
-            # skip += len(cards) # This skip adjustment was inside the loop condition in original thought, but should be based on already fetched
-            current_fetched_count = len(cards) # Number of cards fetched in the current iteration
-            skip += current_fetched_count # Adjust skip for the next fetch
-            
-            # Check if we actually fetched any cards in the previous step to avoid infinite loop if DB is slow or query is stuck
-            if current_fetched_count == 0 and (limit - len(cards)) > 0 : # if we fetched 0 but still need cards
-                 break # Avoid potential infinite loop
+        total = len(cards)
+        cards = cards[skip:skip + limit]
 
-            if len(cards) < limit : # Only fetch more if needed
-                remaining_to_fetch = limit - len(cards)
-                cursor = db.cards.find(query).skip(skip).limit(remaining_to_fetch)
-                cards.extend(list(cursor))
-
-
-        # Convert ObjectId to string for each card
         for card in cards:
             card["id"] = str(card.pop("_id"))
 
@@ -1106,6 +1385,11 @@ def get_random_archetype_cards():
 
             # Find all cards for this archetype by checking the archetypes array
             cards = list(db.cards.find(query))
+
+            # Only cards whose colors fit the archetype (colorless allowed).
+            arch_set = set(archetype.get("colors", []))
+            cards = [c for c in cards
+                     if all(col in arch_set for col in (c.get("colors") or []))]
 
             # Debug logging
             if cards and len(cards) > 0:
@@ -1275,6 +1559,20 @@ def get_token_by_query():
     except Exception as e:
         logging.error(f"Error fetching token by query: {str(e)}")
         return jsonify({"error": str(e)}), 500
+
+
+@app.route("/api/token", methods=["GET"])
+def get_token_singular():
+    """Get a single token by name via query param (?name=...).
+
+    Preferred over the path route for tokens whose names contain characters like
+    '/' (e.g. "1/1 green Island Dryad") — query strings carry slashes safely,
+    whereas an encoded slash in the URL path is rejected by the router.
+    """
+    name = request.args.get("name")
+    if not name:
+        return jsonify({"error": "Token name not provided"}), 400
+    return get_token_by_name(name.strip())
 
 
 @app.route("/api/tokens/<string:token_name>", methods=["GET"])

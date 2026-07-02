@@ -1,0 +1,51 @@
+[
+  {
+    "id": "blessed-be-the-fruition-sb2",
+    "name": "Blessed Be the Fruition",
+    "manaCost": "{4}{W}{W}",
+    "type": "Sorcery",
+    "rarity": "Mythic Rare",
+    "text": "Each player gets an emblem with \"You have no maximum hand size.\"\nEach opponent draws three cards. You may draw up to three cards.\nStorm",
+    "colors": [
+      "W"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Storm"
+    ],
+    "artist": "Rosie A",
+    "_source": "White/Blessed Be the Fruition.png"
+  },
+  {
+    "id": "darksteel-intergrator-sb2",
+    "name": "Darksteel Integrator",
+    "manaCost": "{1}{W}",
+    "type": "Artifact — Equipment Extension",
+    "rarity": "Rare",
+    "text": "Extended permanent has indestructible.\n{1}{W}: If extended permanent is a Vehicle, it becomes a creature until end of turn.\nExtend {2} ({2}: Attach to target creature or Vehicle you control. Extend only as a sorcery.)",
+    "colors": [
+      "W"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Vehicles"
+    ],
+    "artist": "DALL-E 3",
+    "_source": "White/Darksteel Intergrator.png"
+  },
+  {
+    "id": "hang-in-the-balance-sb2",
+    "name": "Hang in the Balance",
+    "manaCost": "{1}{W}",
+    "type": "Sorcery",
+    "rarity": "Mythic Rare",
+    "text": "Each player chooses a number of lands they control equal to the number of lands controlled by the player who controls the fewest, then sacrifices the rest unless they tire themselves for each one they want to keep. Players discard cards and sacrifice creatures the same way. (A player tire themselves by putting a Confusion card on top of their library. It's a colorless sorcery card with no mana cost that has cycling {2}.)",
+    "colors": [
+      "W"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "artist": "Eviaison",
+    "_source": "White/Hang in the Balance.png"
+  }
+]

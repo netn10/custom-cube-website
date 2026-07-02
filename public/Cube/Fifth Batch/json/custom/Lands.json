@@ -1,0 +1,31 @@
+[
+  {
+    "id": "traveler-s-imaginarium-fb5",
+    "name": "Traveler's Imaginarium",
+    "type": "Land",
+    "rarity": "Rare",
+    "text": "{T}: Add {C}.\nDelirium — {2}: Put this card from your hand or graveyard onto the battlefield. Activate only if there are four or more card types among cards in your graveyard and only as a sorcery.",
+    "colors": [],
+    "custom": true,
+    "archetypes": [
+      "Self-mill"
+    ],
+    "artist": "Suzan Owens",
+    "_source": "Lands/Traveler’s Imaginarium.png"
+  },
+  {
+    "id": "where-dreams-once-drifted-fb5",
+    "name": "Where Dreams Once Drifted",
+    "type": "Land",
+    "rarity": "Uncommon",
+    "text": "Landstorm (When you play this land, create a token that's a copy of it for each spell cast this turn.)\nThis land enters tapped with a stun counter on it.\n{T}: Add {C}.",
+    "colors": [],
+    "custom": true,
+    "archetypes": [
+      "Storm"
+    ],
+    "flavorText": "\"Remember when the skies felt close enough to touch—like they'd always be there, just an arm's reach away?\"\n—Ponderings of the One That Was",
+    "artist": "ChatGPT o4",
+    "_source": "Lands/Where Dreams Once Drifted.png"
+  }
+]

@@ -1,0 +1,38 @@
+Black\Bizarre Tutor.png
+Black\Compleat Mockery.png
+Black\Two with Nothing.png
+Blue\Be As One.png
+Blue\Head Twister.png
+Blue\Rise, My Minions!.png
+Colorless\Impossible Charm.png
+Colorless\The Eludha Prime.png
+Colorless\Unnatural Selection.png
+Gold\Akul, Dirtiest Gun in the Juncture.png
+Gold\Bara-Loca, Good-Luck Omen.png
+Gold\Gyruda’s Scion.png
+Gold\Jegantha’s Presence.png
+Gold\Kaheera’s Family.png
+Gold\Keruga’s Sage-Crystal.png
+Gold\L.L.M, Genius Prompter.png
+Gold\Lurrus’s Stirrings.png
+Gold\Lutri’s Shenanigens.png
+Gold\Obosh’s Spawn.png
+Gold\Orgle, the Slippery.png
+Gold\Oru, Reality Redifined.png
+Gold\Tekikal, Geoshaper of Continents.png
+Gold\The Fleecetail Wolf.png
+Gold\The Inevitable.png
+Gold\Tsuriai, of Perfected Balance.png
+Gold\Umori’s Glittering-Cavern.png
+Gold\Volgoth, Chewer of Toys.png
+Gold\Yorion’s Soaring.png
+Gold\Zirda’s Zenith.png
+Green\Preserver of the Flesh.png
+Green\Remade into Perfection.png
+Green\Sylvan Wisdom.png
+Red\House Maniac.png
+Red\Sunbird’s Song.png
+Red\Tiring Bolt.png
+White\Blessed Be the Fruition.png
+White\Darksteel Intergrator.png
+White\Hang in the Balance.png

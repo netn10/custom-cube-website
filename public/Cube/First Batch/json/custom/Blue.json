@@ -1,0 +1,433 @@
+[
+  {
+    "id": "broken-mirage-fb1",
+    "name": "Broken Mirage",
+    "manaCost": "{2}{U}{U}",
+    "type": "Enchantment",
+    "rarity": "Mythic Rare",
+    "text": "Replicate {R} (When you cast this spell, copy it for each time you paid its replicate cost. A copy of a permanent spell becomes a token.)\nYou may have this enchantment enter as a copy of any permanent on the battlefield, except it's an enchantment in addition to its other types. If it's a token, sacrifice it at the beginning of the next end step.",
+    "colors": [
+      "U"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "_source": "Blue/Broken Mirage.png",
+    "artist": "DALL-E 3"
+  },
+  {
+    "id": "clutterbrain-fb1",
+    "name": "Clutterbrain",
+    "manaCost": "{U}{U}",
+    "type": "Instant",
+    "rarity": "Rare",
+    "text": "If target player has in their library more cards than the minimum deck size, they mill cards equal to the difference.\nTarget player mills four cards.\nStorm",
+    "colors": [
+      "U"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Storm"
+    ],
+    "_source": "Blue/Clutterbrain.png",
+    "artist": "ChatGPT"
+  },
+  {
+    "id": "dreamborn-queen-fb1",
+    "name": "Dreamborn Queen",
+    "manaCost": "{U}",
+    "type": "Enchantment Creature — Faerie Noble",
+    "rarity": "Rare",
+    "text": "Flying\nWhen this creature enters, create a Royal Role token attached to another target creature you control. (Enchanted creature gets +1/+1 and has ward {1}.)\n{U}: Return another target permanent you control to its owner's hand. If you do, draw a card, then discard a card.",
+    "colors": [
+      "U"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "power": "1",
+    "toughness": "1",
+    "flavorText": "\"Insignificant pawn, you've only glimpsed the splendor that is my birthright—one I can easily reclaim.\"",
+    "_source": "Blue/Dreamborn Queen.png",
+    "artist": "Mari Vorster",
+    "relatedTokens": [
+      "Royal Role"
+    ]
+  },
+  {
+    "id": "fleeting-promises-fb1",
+    "name": "Fleeting Promises",
+    "manaCost": "{2}{U}",
+    "type": "Instant",
+    "rarity": "Rare",
+    "text": "Return any number of target enchantments to their owners' hands. For each card returned to your hand this way, you draw a card and you create a 1/1 blue Bird creature token with flying.",
+    "colors": [
+      "U"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Enchantments"
+    ],
+    "_source": "Blue/Fleeting Promises.png",
+    "artist": "ChatGPT",
+    "relatedTokens": [
+      "1/1 blue Bird"
+    ]
+  },
+  {
+    "id": "hold-that-thought-fb1",
+    "name": "Hold That Thought",
+    "manaCost": "{U}",
+    "type": "Instant",
+    "rarity": "Uncommon",
+    "text": "Buyback {1}{U} (You may pay an additional {1}{U} as you cast this spell. If you do, put this card into your hand as it resolves.)\nReturn target spell to its owner's hand.",
+    "colors": [
+      "U"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "flavorText": "\"Oh, that's a nice idea, I'll let you think about it.\"",
+    "_source": "Blue/Hold That Thought.png",
+    "artist": "DALL-E 3"
+  },
+  {
+    "id": "invigorating-roil-fb1",
+    "name": "Invigorating Roil",
+    "manaCost": "{U}",
+    "type": "Instant",
+    "rarity": "Uncommon",
+    "text": "Waken 3—{G}{G} (If you cast this spell for {G}{G}, put three +1/+1 counters on target land you control and it becomes a 0/0 Elemental creature with haste. It's still a land.)\nUntap all artifacts and creatures you control.",
+    "colors": [
+      "U"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "_source": "Blue/Invigorating Roil.png",
+    "artist": "DALL-E 3"
+  },
+  {
+    "id": "it-of-incomprehensible-truths-fb1",
+    "name": "It of Incomprehensible Truths",
+    "manaCost": "{3}{U}",
+    "type": "Creature — Eldrazi Angel",
+    "rarity": "Special",
+    "text": "Devoid (This card has no color.)\nFlash\nFlying\nAt the beginning of your upkeep, put a card you own from outside the game or from exile into your hand.\nFateful hour — You may instead cast it without paying its mana cost if you have 5 or less life.",
+    "colors": [],
+    "custom": true,
+    "archetypes": [],
+    "power": "5",
+    "toughness": "3",
+    "flavorText": "Eyes wide open to witness, yet none to beseech in the void's embrace.",
+    "_source": "Blue/It of Incomprehensible Truths.png",
+    "artist": "Marcus O. Ostergren"
+  },
+  {
+    "id": "learn-storm-fb1",
+    "name": "Learn Storm",
+    "manaCost": "{U}",
+    "type": "Sorcery",
+    "rarity": "Uncommon",
+    "text": "Learn\nStorm",
+    "colors": [
+      "U"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Storm"
+    ],
+    "flavorText": "You really should.",
+    "_source": "Blue/Learn Storm.png",
+    "artist": "Muhammad Wasif Mushtaq with ChatGPT"
+  },
+  {
+    "id": "mana-piracy-fb1",
+    "name": "Mana Piracy",
+    "manaCost": "{1}{U}{U}",
+    "type": "Sorcery",
+    "rarity": "Mythic Rare",
+    "text": "Your opponents can't tap lands for mana as long as this spell is on the stack.\nUntil end of turn, you may tap lands you don't control for mana and your opponents can't tap lands for mana.\nCipher",
+    "colors": [
+      "U"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Broken Cipher"
+    ],
+    "_source": "Blue/Mana Piracy.png",
+    "artist": "ChatGPT"
+  },
+  {
+    "id": "misinformation-spreader-fb1",
+    "name": "Misinformation Spreader",
+    "manaCost": "{2}{U}",
+    "type": "Creature — Vedalken Rogue",
+    "rarity": "Rare",
+    "text": "Flash\nAt the beginning of your upkeep, each player shuffles four Confusion cards into their deck. (They're colorless sorceries with cycling {2}.)\nAt the beginning of your end step, draw a card for each Confusion card in all graveyards.\nWhenever you surveil for the first time each turn, shuffle that many Confusion cards into target player's library.",
+    "colors": [
+      "U"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "power": "2",
+    "toughness": "4",
+    "relatedTokens": [
+      "Confusion"
+    ],
+    "_source": "Blue/Misinformation Spreader.png",
+    "artist": "Rhys Kim"
+  },
+  {
+    "id": "most-thoughts-fb1",
+    "name": "Most Thoughts",
+    "manaCost": "{1}{U}{U}",
+    "type": "Sorcery",
+    "rarity": "Rare",
+    "text": "Choose an opponent. If that player has more cards in hand than you, draw cards equal to the difference.\nCipher (Then you may exile this spell card encoded on a creature you control. Whenever that creature deals combat damage to a player, its controller may cast a copy of the encoded card without paying its mana cost.)",
+    "colors": [
+      "U"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Broken Cipher"
+    ],
+    "_source": "Blue/Most Thoughts.png",
+    "artist": "ChatGPT"
+  },
+  {
+    "id": "ninja-of-starry-nights-fb1",
+    "name": "Ninja of Starry Nights",
+    "manaCost": "{2}{U}",
+    "type": "Enchantment Creature — Spirit Ninja",
+    "rarity": "Rare",
+    "text": "Ninjutsu {3}{B} ({3}{B}, Return an unblocked attacker you control to hand: Put this card onto the battlefield from your hand tapped and attacking.)\nFlying\nWhenever this creature deals combat damage to a player, exile target instant or sorcery card from a graveyard. Until end of turn, you may cast it. A spell cast this way gains cipher. If this creature entered the battlefield this turn, you may pay life equal to its mana value rather than pay its mana cost.",
+    "colors": [
+      "U"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Broken Cipher"
+    ],
+    "power": "3",
+    "toughness": "2",
+    "_source": "Blue/Ninja of Starry Nights.png",
+    "artist": "ChatGPT"
+  },
+  {
+    "id": "nivix-data-collector-fb1",
+    "name": "Nivix Data-Collector",
+    "manaCost": "{1}{U}",
+    "type": "Enchantment Creature — Weird",
+    "rarity": "Uncommon",
+    "text": "This creature can't be blocked.\nWhenever this creature deals combat damage to a player, draw a card, then discard a card, then upload 3. (Create an enchantment Memory token. It has \"When this enters, exile an instant or sorcery card from your hand or graveyard with mana value 3 or less.\" and \"{2}, Sacrifice this: Cast the card exiled with it without paying its mana cost.\")",
+    "colors": [
+      "U"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Broken Cipher"
+    ],
+    "power": "1",
+    "toughness": "1",
+    "relatedTokens": [
+      "Memory"
+    ],
+    "_source": "Blue/Nivix Data-Collector.png",
+    "artist": "ChatGPT"
+  },
+  {
+    "id": "papers-please-fb1",
+    "name": "Papers, Please",
+    "manaCost": "{1}{U}{U}",
+    "type": "Instant",
+    "rarity": "Common",
+    "text": "Counter target spell.\nTax 3. (The next spell each of your opponents cast cost {3} more to cast. This doesn't end at the end of turn.)",
+    "colors": [
+      "U"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "flavorText": "The opening of the Omenpaths led to a steady influx of immigrants to Ravnica, resulting in a corresponding increase in the already extensive number of Azorius laws.",
+    "_source": "Blue/Papers, Please.png",
+    "artist": "ChatGPT"
+  },
+  {
+    "id": "phantasmal-monk-fb1",
+    "name": "Phantasmal Monk",
+    "manaCost": "{U}",
+    "type": "Creature — Illusion Monk",
+    "rarity": "Common",
+    "text": "Prowess\nWhen this creature becomes the target of a spell or ability, sacrifice it.",
+    "colors": [
+      "U"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Prowess"
+    ],
+    "power": "2",
+    "toughness": "1",
+    "flavorText": "\"Forsake your body, and you'll gain a whole new perspective. Oh, and it helps with mobility, too.\"",
+    "_source": "Blue/Phantasmal Monk.png",
+    "artist": "ChatGPT"
+  },
+  {
+    "id": "rabbit-hole-fb1",
+    "name": "Rabbit Hole",
+    "manaCost": "{U}",
+    "type": "Enchantment",
+    "rarity": "Uncommon",
+    "text": "When Rabbit Hole enters the battlefield, another target nonland permanent becomes a green and white Rabbit with base power and toughness 2/2 as long as Rabbit Hole is on the battlefield.",
+    "colors": [
+      "U"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "flavorText": "\"I've just had the weirdest dream...\"",
+    "_source": "Blue/Rabbit Hole.png",
+    "artist": "DALL-E 3"
+  },
+  {
+    "id": "resculpt-with-porpuse-fb1",
+    "name": "Resculpt with Purpose",
+    "manaCost": "{U}",
+    "type": "Sorcery — Lesson",
+    "rarity": "Common",
+    "text": "Exile target enchantment or creature. Its controller creates a 4/4 blue and red Elemental creature token.",
+    "colors": [
+      "U"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "flavorText": "\"The first attempt was undeniably fierce, indeed, but this one has a certain bite to it.\"\n—Glera, Art Critic",
+    "_source": "Blue/Resculpt with Porpuse.png",
+    "artist": "ChatGPT",
+    "relatedTokens": [
+      "4/4 blue and red Elemental"
+    ]
+  },
+  {
+    "id": "ronin-of-shimmering-azure-fb1",
+    "name": "Ronin of Shimmering Azure",
+    "manaCost": "{1}{U}",
+    "type": "Creature — Dog Samurai",
+    "rarity": "Uncommon",
+    "text": "Vigilance, prowess\n{T}: Add {U}. Activate only during combat.\nWhenever this creature attacks alone, untap it. It gains hexproof until end of turn.",
+    "colors": [
+      "U"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Prowess"
+    ],
+    "power": "1",
+    "toughness": "3",
+    "flavorText": "Her master abandoned her, leaving her wary of humans, too distant for the Kitsune and too strange to the Moonfolk. In search of a new purpose, she wanders Kamigawa, a sad ronin seeking to sing her melancholic song of clashing swords.",
+    "_source": "Blue/Ronin of Shimmering Azure.png",
+    "artist": "DALL-E 3"
+  },
+  {
+    "id": "scute-storm-fb1",
+    "name": "Scute Storm",
+    "manaCost": "{U}",
+    "type": "Creature — Insect",
+    "rarity": "Mythic Rare",
+    "text": "{1}{U}, {T}: Return target instant or sorcery card that you've cast this turn from your graveyard to your hand.\nAs long as you control six or more creatures named Scute Storm, this creature's activated abilities cost {1}{U} less to activate.\nStorm",
+    "colors": [
+      "U"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Storm"
+    ],
+    "power": "0",
+    "toughness": "1",
+    "flavorText": "\"Survival rule 34: If it exist, there is a scute bugs version of it.\"\n—Zurdi, goblin shortcutter",
+    "_source": "Blue/Scute Storm.png",
+    "artist": "ChatGPT"
+  },
+  {
+    "id": "stealing-time-fb1",
+    "name": "Stealing Time",
+    "manaCost": "{3}{U}{U}",
+    "type": "Sorcery",
+    "rarity": "Mythic Rare",
+    "text": "Draw three cards and untap up to five lands. If it's the second time you cast a spell named Stealing Time this turn, also take an extra turn after this one.\nCipher",
+    "colors": [
+      "U"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Broken Cipher"
+    ],
+    "_source": "Blue/Stealing Time.png",
+    "artist": "DALL-E 3"
+  },
+  {
+    "id": "distrubing-cabinet-surgical-room-fb1",
+    "name": "Disturbing Cabinet // Surgical Room",
+    "manaCost": "{U} // {U}",
+    "type": "Enchantment — Room",
+    "rarity": "Common",
+    "text": "Disturbing Cabinet\nWhen you unlock this door, manifest dread, tap it, then put a stun counter on it.\n//\nSurgical Room\nWhen you unlock this door, move all counters from one target creature onto another target creature and tap the second creature.",
+    "colors": [
+      "U"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "_source": "Blue/Surgical Room.png",
+    "artist": "ChatGPT"
+  },
+  {
+    "id": "the-utopians-protocol-fb1",
+    "name": "The Utopians' Protocol",
+    "manaCost": "{2}{U}",
+    "type": "Enchantment",
+    "rarity": "Special",
+    "text": "When this enchantment enters and at the beginning of your upkeep, experiment 1. (You get an experiment counter. If you don't control The Experiment, create one. Then, spend any amount of experiment counters on it.)\n{1}{U}: Experiment 1.",
+    "colors": [
+      "U"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "flavorText": "The Utopians' sect of the Simic Combine believes that true evolution lies in slow, constant experimentation—each mutation a step towards an ideal future, where perfection is not achieved, but continually redefined.",
+    "_source": "Blue/The Utopians’ Protocol.png",
+    "artist": "DALL-E 3",
+    "relatedTokens": [
+      "The Experiment"
+    ]
+  },
+  {
+    "id": "tinkerer-s-caraven-fb1",
+    "name": "Tinkerer's Caraven",
+    "manaCost": "{1}{U}",
+    "type": "Artifact — Vehicle",
+    "rarity": "Rare",
+    "text": "Vigilance\nActivated abilities of this artifact cost {1} less to activate as long as it's a creature.\n{1}, {T}: Untap another target permanent.\n{2}, {T}: Tap target permanent.\n{3}, {T}: Draw a card, then discard a card.\nCrew 2",
+    "colors": [
+      "U"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Vehicles"
+    ],
+    "power": "2",
+    "toughness": "4",
+    "_source": "Blue/Tinkerer’s Caraven.png",
+    "artist": "Studio Ghibli"
+  },
+  {
+    "id": "written-in-the-stars-fb1",
+    "name": "Written in the Stars",
+    "manaCost": "{2}{U}",
+    "type": "Enchantment",
+    "rarity": "Rare",
+    "text": "You may look at the top card of your library any time.\nYou may cast enchantment spells from the top of your library.\nDiscard a card: Mill a card.",
+    "colors": [
+      "U"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Enchantments"
+    ],
+    "_source": "Blue/Written in the Stars.png",
+    "artist": "BashfulGlowfly"
+  }
+]

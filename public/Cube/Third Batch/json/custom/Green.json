@@ -1,0 +1,362 @@
+[
+  {
+    "id": "all-must-be-perfected-tb3",
+    "name": "All Must Be Perfected",
+    "manaCost": "{2}{G}{G}",
+    "type": "Sorcery",
+    "rarity": "Rare",
+    "text": "Destroy all creatures. For each creature destroyed this way, its controller incubate X, where X is that creature's power. (To incubate X, create an Incubator token with three +1/+1 counters on it and \"{2}: Transform this token.\" It transforms into a 0/0 Phyrexian artifact creature.)",
+    "colors": [
+      "G"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Control"
+    ],
+    "artist": "Dall-E 3",
+    "_source": "Green/All Must Be Perfected.png",
+    "relatedTokens": [
+      "Incubator"
+    ]
+  },
+  {
+    "id": "argoth-s-findings-tb3",
+    "name": "Argoth’s Findings",
+    "manaCost": "{1}{G}",
+    "type": "Sorcery",
+    "rarity": "Common",
+    "text": "Mill two cards. Create a tapped Powerstone token. (It's an artifact with \"{T}: Add {C}. This mana can't be spent to cast a nonartifact spell.\")\nFlashback {G} or exile an artifact card from your graveyard.",
+    "colors": [
+      "G"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Self-mill"
+    ],
+    "flavorText": "\"Nature gave freely what the Brothers could never obtain. A harsh irony, yet nature, in its essence, is never cruel.\"\n—Dalmir, Argoth Storyteller",
+    "artist": "Dall-E 3",
+    "_source": "Green/Argoth’s Findings.png",
+    "relatedTokens": [
+      "Powerstone"
+    ]
+  },
+  {
+    "id": "benzir-archdruid-of-temple-might-tb3",
+    "name": "Benzir, Archdruid of Temple Might",
+    "manaCost": "{G}{G}",
+    "type": "Legendary Artifact Creature — Phyrexian Elf Druid",
+    "rarity": "Rare",
+    "text": "Partner with Temple Might Ruins (When this creature enters, target player may put Temple Might Ruins into their hand from their library, then shuffle.)\n{G}, {T}: Target creature gets +2/+2 until end of turn.\n{2}{G}, {T}: Destroy target permanent. Its controller creates a 3/3 green Beast creature token.",
+    "colors": [
+      "G"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Control"
+    ],
+    "power": "2",
+    "toughness": "2",
+    "artist": "Dall-E 3",
+    "relatedTokens": [
+      "3/3 green Beast"
+    ],
+    "_source": "Green/Benzir, Archdruid of Temple Might.png",
+    "relatedFace": "Temple Might Ruins"
+  },
+  {
+    "id": "burning-tree-storyteller-tb3",
+    "name": "Burning-Tree Storyteller",
+    "manaCost": "{2}{G}",
+    "type": "Creature — Giant Druid",
+    "rarity": "Rare",
+    "text": "Riot (This creature enters with your choice of a +1/+1 counter or haste.)\n{T}: Add {G}{R}. If you spend this mana to cast a spell with mana value 5 or more, learn. (You may reveal a Lesson card you own from outside the game and put it into your hand, or discard a card to draw a card.)",
+    "colors": [
+      "G"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "power": "2",
+    "toughness": "4",
+    "flavorText": "\"Let me tell you a story as ancient as the Nephillim, a Ravnica without a city, wilds without oppression, and humanity without shackles...\"",
+    "artist": "Jian Guo",
+    "_source": "Green/Burning-Tree Storyteller.png"
+  },
+  {
+    "id": "chorus-of-the-worldsoul-tb3",
+    "name": "Chorus of the Worldsoul",
+    "manaCost": "{3}{G}",
+    "type": "Enchantment",
+    "rarity": "Rare",
+    "text": "Play with the top card of your library revealed.\nYou may cast creature spells from the top of your library.\nNontoken creatures you control have unity (Token creatures you control have all activated abilities of nontoken creatures you control with unity.)\nAs long as the top card of your library is a creature card, nontoken creatures you control have all activated abilities of that card.",
+    "colors": [
+      "G"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "artist": "Dall-E 3",
+    "_source": "Green/Chorus of the Worldsoul.png"
+  },
+  {
+    "id": "circuit-gorger-tb3",
+    "name": "Circuit Gorger",
+    "manaCost": "{G}",
+    "type": "Artifact Creature — Frog Warrior",
+    "rarity": "Rare",
+    "text": "Machine Intelligence (Nontoken artifacts you control have all activated abilities of all nontoken artifacts you control with Machine Intelligence.)\n{1}{G}: Return this permanent to its owner's hand. Activate only as a sorcery.",
+    "colors": [
+      "G"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Artifacts"
+    ],
+    "power": "1",
+    "toughness": "1",
+    "flavorText": "The Collective Biomachinery is a byproduct of Bloomburrow's timeline colliding with Neo-Kamigawa's timeline. Their bond became more literal—and far more potent.",
+    "artist": "Dall-E 3",
+    "_source": "Green/Circuit Gorger.png"
+  },
+  {
+    "id": "enraged-mantis-tb3",
+    "name": "Enraged Mantis",
+    "manaCost": "{3}{G}{G}",
+    "type": "Creature — Insect",
+    "rarity": "Rare",
+    "text": "Reach\nWhen Enraged Mantis enters or attacks, it fights target creature an opponent controls.\nEvoke {2}{R} (You may cast this spell for its evoke cost. If you do, it's sacrificed when it enters.)",
+    "colors": [
+      "G"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Control"
+    ],
+    "power": "5",
+    "toughness": "5",
+    "artist": "Yucheng Hong",
+    "_source": "Green/Enraged Mantis.jpg"
+  },
+  {
+    "id": "essence-of-the-clans-tb3",
+    "name": "Essence of the Clans",
+    "manaCost": "{2}{G}{G}",
+    "type": "Creature — Elemental",
+    "rarity": "Rare",
+    "text": "Bloodthirst 2 (If an opponent was dealt damage this turn, this creature enters with two +1/+1 counters on it.)\nRiot (This creature enters with your choice of a +1/+1 counter or haste.)\nBerserk (Whenever this creature attacks, you may double its power. If you do, sacrifice it at the end of turn.)",
+    "colors": [
+      "G"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "power": "3",
+    "toughness": "3",
+    "artist": "Chris Ostrowski",
+    "_source": "Green/Essence of the Clans.png"
+  },
+  {
+    "id": "extract-dna-tb3",
+    "name": "Extract DNA",
+    "manaCost": "{G}",
+    "type": "Sorcery",
+    "rarity": "Uncommon",
+    "text": "Target creature you control fights another target creature. If excess damage was dealt this way, experiment X, where X is that excess damage. (You get X {E} counters. If you don't control The Experiment, create one. Then, spend any amount of {E} on it.)",
+    "colors": [
+      "G"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Control"
+    ],
+    "artist": "Dall-E 3",
+    "relatedTokens": [
+      "The Experiment"
+    ],
+    "_source": "Green/Extract DNA.png"
+  },
+  {
+    "id": "kianne-experimental-mage-tb3",
+    "name": "Kianne, Experimental Mage",
+    "manaCost": "{1}{G}{G}",
+    "type": "Legendary Creature — Elf Druid",
+    "rarity": "Rare",
+    "text": "Magecraft — Whenever you cast or copy an instant or sorcery spell, create a 0/0 green and blue Fractal creature token, then put a +1/+1 counter on each Fractal creature you control.",
+    "colors": [
+      "G"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Storm"
+    ],
+    "power": "3",
+    "toughness": "3",
+    "flavorText": "\"Theories come and go, but a well-done experiment is forever valuable.\"",
+    "artist": "Daniel Correia",
+    "relatedTokens": [
+      "0/0 blue and green Fractal"
+    ],
+    "_source": "Green/Kianne, Experimental Mage.png"
+  },
+  {
+    "id": "nissa-verdant-soul-tb3",
+    "name": "Nissa, Verdant Soul",
+    "manaCost": "{2}{G}{G}",
+    "type": "Legendary Planeswalker — Nissa",
+    "rarity": "Mythic Rare",
+    "text": "Partner with Chandra, Wildfire Heart\n+1: Draw a card, then put a land card from your hand onto the battlefield. If it's a Mountain, add {R}.\n-X: Create a 0/0 red and green Elemental creature token, then put X +1/+1 counters on it plus a +1/+1 counter on it for each Mountain you control.",
+    "colors": [
+      "G"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Control"
+    ],
+    "loyalty": "4",
+    "artist": "Kyle Pearson",
+    "relatedTokens": [
+      "0/0 red and green Elemental"
+    ],
+    "_source": "Green/Nissa, Verdant Soul.png",
+    "relatedFace": "Chandra, Wildfire Heart"
+  },
+  {
+    "id": "saikeiseisha-reshaper-of-boseiju-tb3",
+    "name": "Saikeiseisha, Reshaper of Boseiju",
+    "manaCost": "{6}{G}",
+    "type": "Legendary Creature — Cyborg Druid",
+    "rarity": "Mythic Rare",
+    "text": "Affinity for the total printed power of Vehicles you control.\n{T}: Add {W}{W}{W}. If this mana was spent to cast a permanent spell, it enters the battlefield with an indestructible counter and a hexproof counter.\n{3}: Target artifact becomes an artifact creature. If it isn't a Vehicle, it has base power and toughness 4/4.",
+    "colors": [
+      "G"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Vehicles"
+    ],
+    "power": "3",
+    "toughness": "3",
+    "artist": "Dall-E 3",
+    "_source": "Green/Saikeiseisha, Reshaper of Boseiju.png"
+  },
+  {
+    "id": "someone-to-rely-on-tb3",
+    "name": "Someone to Rely On",
+    "manaCost": "{2}{G}",
+    "type": "Enchantment",
+    "rarity": "Rare",
+    "text": "Creatures don't untap during their controllers' untap steps.\nWhenever a creature enters, untap all creatures.",
+    "colors": [
+      "G"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "flavorText": "\"I struggled for a long time with surviving. And no matter what, you keep finding something to fight for.\"",
+    "artist": "Naughty Dog",
+    "_source": "Green/Someone to Rely On.png"
+  },
+  {
+    "id": "sow-a-better-tommorow-tb3",
+    "name": "Sow a Better Tomorrow",
+    "manaCost": "{2}{G}{G}",
+    "type": "Sorcery",
+    "rarity": "Mythic Rare",
+    "text": "Exile your hand. Each nonland card exiled this way gains suspend, then put three time counters on it. Draw a card for each land card exiled this way. (For each card with suspend, its owner removes a time counter from it at the beginning of their upkeep. When the last is removed, they may cast it without paying its mana cost. Those creature spells have haste.)",
+    "colors": [
+      "G"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "artist": "Dall-E 3",
+    "_source": "Green/Sow a Better Tommorow.png"
+  },
+  {
+    "id": "the-otterly-impossible-machine-tb3",
+    "name": "The Otterly Impossible Machine",
+    "manaCost": "{2}{G}",
+    "type": "Legendary Artifact",
+    "rarity": "Mythic Rare",
+    "text": "Machine Intelligence (Nontoken artifacts you control have all activated abilities of all nontoken artifacts you control with Machine Intelligence.)\nCreatures you control are artifacts in addition to their other types.\n{T}: Put a prowess counter on this permanent.\n{1}{G}: This permanent becomes a 1/1 green and blue Otter artifact creature until end of turn.",
+    "colors": [
+      "G"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Artifacts"
+    ],
+    "artist": "Dall-E 3",
+    "_source": "Green/The Otterly Impossible Machine.png"
+  },
+  {
+    "id": "the-swarm-speedbrood-agreement-tb3",
+    "name": "The Swarm-Speedbrood Agreement",
+    "manaCost": "{2}{G}",
+    "type": "Legendary Enchantment",
+    "rarity": "Rare",
+    "text": "Whenever a nontoken creature you control dies, you may pay {G/P}. If you do, petrify it. (Exile it. Its controller creates a token that's a copy of it, except it's an artifact and loses all other card types.)\nEach non-Vehicle artifact token you control is a Vehicle with crew 3. If it doesn't have power and toughness, its power and toughness is 4/4.",
+    "colors": [
+      "G"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Artifacts",
+      "Vehicles"
+    ],
+    "artist": "Dall-E 3",
+    "_source": "Green/The Swarm-Speedbrood Agreement.jpg"
+  },
+  {
+    "id": "tricky-trickshoter-tb3",
+    "name": "Tricky Trickshoter",
+    "manaCost": "{G}",
+    "type": "Creature — Human Wizard",
+    "rarity": "Uncommon",
+    "text": "Magecraft — Whenever you cast or copy an instant or sorcery spell, this creature gets +2/+2 until end of turn.",
+    "colors": [
+      "G"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Prowess"
+    ],
+    "power": "0",
+    "toughness": "1",
+    "flavorText": "\"To be the best, you must first defeat the best and then ensure you are not defeated. Simple.\"",
+    "artist": "Fetsch",
+    "_source": "Green/Tricky Trickshoter.png"
+  },
+  {
+    "id": "what-nature-giveth-tb3",
+    "name": "What Nature Giveth",
+    "manaCost": "{4}{G}{G}",
+    "type": "Sorcery",
+    "rarity": "Rare",
+    "text": "Exile all noncreature, nonland permanents. For each permanent exiled this way, its controller creates a 1/2 green Plant Elemental creature token with \"When this creature dies, draw a card.\"",
+    "colors": [
+      "G"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Control"
+    ],
+    "flavorText": "Nature taketh away.",
+    "artist": "Dreamworld A.I",
+    "relatedTokens": [
+      "1/2 green Plant Elemental"
+    ],
+    "_source": "Green/What Nature Giveth.png"
+  },
+  {
+    "id": "yolov-s-refined-technique-tb3",
+    "name": "Yolov’s Refined Technique",
+    "manaCost": "{1}{G}",
+    "type": "Legendary Enchantment",
+    "rarity": "Rare",
+    "text": "Partner with Yolov, Biomancy Visionary (When this enchantment enters, target player may put Yolov into their hand from their library, then shuffle.)\nIf a triggered ability of a creature you control triggers by casting a spell, it triggers an additional time.\nWhenever you put counters on a creature you control named The Experiment, put that many counters on each other creature you control.",
+    "colors": [
+      "G"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "artist": "Dall-E 3",
+    "_source": "Green/Yolov’s Refined Technique.png",
+    "relatedFace": "Yolov, Biomancy Visionary"
+  }
+]

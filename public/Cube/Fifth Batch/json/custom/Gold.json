@@ -1,0 +1,211 @@
+[
+  {
+    "id": "arboria-survivalist-fb5",
+    "name": "Arboria Survivalist",
+    "manaCost": "{2}{B}{G}",
+    "type": "Artifact Creature — Dinosaur Cyborg",
+    "rarity": "Rare",
+    "text": "Whenever you activate an artifact's activated ability, exile it.\nWhenever this creature attacks, create a token that's a copy of a card exiled with it.\n{1}, Sacrifice an artifact: This creature gets +2/+2 until end of turn.",
+    "colors": [
+      "B",
+      "G"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Artifacts"
+    ],
+    "power": "3",
+    "toughness": "3",
+    "flavorText": "\"With the correct bionic combination, the Extinction can do me no harm.\"",
+    "artist": "Nano Banana",
+    "_source": "Gold/Arboria Survivalist.png"
+  },
+  {
+    "id": "armored-regent-fb5",
+    "name": "Armored Regent",
+    "manaCost": "{2}{R}{W}",
+    "type": "Creature — Dinosaur Soldier",
+    "rarity": "Rare",
+    "text": "Trample, lifelink\nWhenever this creature attacks, put a stun counter on it.\nRequiem — For as long as this creature is tapped, whenever one or more cards enter or leave your graveyard, put a +1/+1 counter on target creature you control.",
+    "colors": [
+      "R",
+      "W"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Self-mill"
+    ],
+    "power": "4",
+    "toughness": "5",
+    "flavorText": "Some Dinokind work alongside humans to prevent the devastation of the Extinction.",
+    "artist": "Nano Banana",
+    "_source": "Gold/Armored Regent.png"
+  },
+  {
+    "id": "calamity-twins-fb5",
+    "name": "Calamity Twins",
+    "manaCost": "{1}{B}{R}",
+    "type": "Creature — Dinosaur",
+    "rarity": "Rare",
+    "text": "When this creature enters, if it's not a token, create a token that's a copy of it.\nWhenever you sacrifice a permanent, put a +1/+1 counter on this creature.",
+    "colors": [
+      "B",
+      "R"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Token Collection"
+    ],
+    "power": "2",
+    "toughness": "2",
+    "flavorText": "Dinokind twins are an exceedingly rare phenomenon. Those born as twins are said to embody life after the Extinction and are both feared and revered.",
+    "artist": "Nano Banana",
+    "_source": "Gold/Calamity Twins.png"
+  },
+  {
+    "id": "citadel-preacher-fb5",
+    "name": "Citadel Preacher",
+    "manaCost": "{1}{W}{U}",
+    "type": "Creature — Dinosaur Cleric",
+    "rarity": "Rare",
+    "text": "Flying\nWhenever you cast your second spell each turn, put a +1/+1 counter on this creature. Third spell, untap up to two target lands you control, and fourth spell, draw two cards.",
+    "colors": [
+      "W",
+      "U"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Storm"
+    ],
+    "power": "2",
+    "toughness": "2",
+    "flavorText": "\"Humanity and Dinokind must sing as one. Join, tiny one, your voice matters.\"",
+    "artist": "Nano Banana",
+    "_source": "Gold/Citadel Preacher.png"
+  },
+  {
+    "id": "cosmoceraptos-fb5",
+    "name": "Cosmoceraptos",
+    "manaCost": "{3}{U}{R}",
+    "type": "Enchantment Creature — Dinosaur",
+    "rarity": "Rare",
+    "text": "Flash\nYou may cast enchantment spells as though they had flash.\nWhenever this creature attacks, the next spell you cast this turn has affinity for enchantments.",
+    "colors": [
+      "U",
+      "R"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Enchantments"
+    ],
+    "power": "4",
+    "toughness": "4",
+    "flavorText": "Behold, a vision of a broken world: one is swallowed by silent oblivion, while the other wails to the stars and beyond.",
+    "artist": "Nano Banana",
+    "_source": "Gold/Cosmoceraptos.png"
+  },
+  {
+    "id": "jagged-teeth-bringer-fb5",
+    "name": "Jagged-Teeth Bringer",
+    "manaCost": "{2}{U}{B}",
+    "type": "Creature — Dinosaur Horror",
+    "rarity": "Rare",
+    "text": "This creature can't be blocked.\nWhenever this creature deals combat damage to a player, that player discards a card and you draw a card.",
+    "colors": [
+      "U",
+      "B"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Broken Cipher"
+    ],
+    "power": "3",
+    "toughness": "5",
+    "flavorText": "A Bringer's bite gives visions of life after the Extinction. Some go mad; others live in pure bliss.",
+    "artist": "Nano Banana",
+    "_source": "Gold/Jagged-Teeth Bringer.png"
+  },
+  {
+    "id": "living-driveway-fb5",
+    "name": "Living Driveway",
+    "manaCost": "{1}{G}{W}",
+    "type": "Creature — Dinosaur",
+    "rarity": "Rare",
+    "text": "Each creature you control with toughness greater than its power crews Vehicles using its toughness rather than its power and assigns combat damage equal to its toughness rather than its power.",
+    "colors": [
+      "G",
+      "W"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Vehicles"
+    ],
+    "power": "1",
+    "toughness": "4",
+    "flavorText": "These gentle dinokind do not see themselves as above humans, but as part of a vibrant ecosystem where everyone has their role and place to contend with.",
+    "artist": "Nano Banana",
+    "_source": "Gold/Living Driveway.png"
+  },
+  {
+    "id": "realm-chomper-fb5",
+    "name": "Realm Chomper",
+    "manaCost": "{1}{R}{G}",
+    "type": "Creature — Dinosaur Warrior",
+    "rarity": "Rare",
+    "text": "Vigilance, trample\nWhenever this creature enters, goad target creature you don't control.\nWhenever this creature kills a creature, create a Treasure token.",
+    "colors": [
+      "R",
+      "G"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "power": "4",
+    "toughness": "4",
+    "flavorText": "\"The Extinction begins when I say it does — and I'm not in a merciful mood.\"",
+    "artist": "Nano Banana",
+    "relatedTokens": [
+      "Treasure"
+    ],
+    "_source": "Gold/Realm Chomper.png"
+  },
+  {
+    "id": "shepherd-of-the-extinction-fb5",
+    "name": "Shepherd of the Extinction",
+    "manaCost": "{2}{W}{B}",
+    "type": "Creature — Dinosaur Cleric",
+    "rarity": "Rare",
+    "text": "When this creature enters, you get an emblem with \"Whenever a creature dies, target opponent loses 1 life and you gain 1 life.\"\nAt the beginning of your upkeep, you may destroy all creatures.",
+    "colors": [
+      "W",
+      "B"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "power": "3",
+    "toughness": "3",
+    "flavorText": "\"Who in willing of body and mind? Let us walk, unafraid! As one!\"",
+    "artist": "Nano Banana",
+    "_source": "Gold/Shepherd of the Extinction.png"
+  },
+  {
+    "id": "wisened-stomper-fb5",
+    "name": "Wisened Stomper",
+    "manaCost": "{3}{G}{U}",
+    "type": "Creature — Dinosaur Ninja",
+    "rarity": "Rare",
+    "text": "Prowess\nWhenever you cast a noncreature spell while this creature is attacking, choose one —\n• Tap target creature and put a stun counter on it.\n• Untap target creature and put a +1/+1 counter on it.",
+    "colors": [
+      "G",
+      "U"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Prowess"
+    ],
+    "power": "4",
+    "toughness": "4",
+    "flavorText": "The Wiseneds manipulate the world so the Extinction will occur. Some prefer to do it from above.",
+    "artist": "Nano Banana",
+    "_source": "Gold/Wisened Stomper.png"
+  }
+]
