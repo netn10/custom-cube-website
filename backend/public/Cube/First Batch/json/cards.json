@@ -3234,7 +3234,9 @@
     "type": "Creature — Eldrazi Angel",
     "rarity": "Special",
     "text": "Devoid (This card has no color.)\nFlash\nFlying\nAt the beginning of your upkeep, put a card you own from outside the game or from exile into your hand.\nFateful hour — You may instead cast it without paying its mana cost if you have 5 or less life.",
-    "colors": [],
+    "colors": [
+      "U"
+    ],
     "custom": true,
     "archetypes": [],
     "power": "5",
