@@ -512,9 +512,7 @@
     "type": "Land Creature — Mountain Goblin",
     "rarity": "Rare",
     "text": "(Gobland isn't a spell, it's affected by summoning sickness, and it has \"{T}: Add {R}.\")\nGobland can't block.",
-    "colors": [
-      "R"
-    ],
+    "colors": [],
     "custom": false,
     "archetypes": [],
     "artist": "Anik Sikder",
@@ -698,9 +696,7 @@
     "type": "Land Planeswalker — Wrenn",
     "rarity": "Rare",
     "text": "+1: Wrenn and One gains \"{T}: Add {G}\" until your next turn.\n−1: Create a 1/1 green Squirrel creature token.\n−4: You get an emblem with \"At the beginning of your precombat main phase, add {G} for each creature you control.\"",
-    "colors": [
-      "G"
-    ],
+    "colors": [],
     "custom": false,
     "archetypes": [],
     "artist": "Marianne Martin",
