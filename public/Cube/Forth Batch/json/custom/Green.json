@@ -5,7 +5,9 @@
     "type": "Artifact — Vehicle",
     "rarity": "Rare",
     "text": "Level up Crew 2 (Crew 2: Put a level counter on this. Level up only as a sorcery.)\nLEVEL 2-3\n4/4\nThis Vehicle gets +1/+1 for each artifact and/or creature card in your graveyard.\nLEVEL 4+\n5/5\nEach Vehicle you control gets +1/+1 for each artifact and/or creature card in your graveyard.",
-    "colors": [],
+    "colors": [
+      "G"
+    ],
     "custom": true,
     "archetypes": [
       "Vehicles",
@@ -169,7 +171,9 @@
     "type": "Artifact",
     "rarity": "Common",
     "text": "{1}{G}, {T}, Sacrifice this artifact: Search your library for up to two basic land cards, reveal those cards, put one onto the battlefield tapped and the other into your hand, then shuffle.",
-    "colors": [],
+    "colors": [
+      "G"
+    ],
     "custom": true,
     "archetypes": [],
     "flavorText": "\"Nothing is more natural than nurturing the world around you while discarding your metallic impurities.\"\n—Dolomarus, Esper Heretic",
@@ -437,7 +441,9 @@
     "type": "Artifact — Vehicle",
     "rarity": "Rare",
     "text": "Whenever this Vehicle attacks, create a 1/1 green Forest Dryad land creature token. (It's affected by summoning sickness.)\nCrew 2",
-    "colors": [],
+    "colors": [
+      "G"
+    ],
     "custom": true,
     "archetypes": [
       "Vehicles"

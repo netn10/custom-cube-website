@@ -1091,7 +1091,10 @@
     "type": "Instant",
     "rarity": "Rare",
     "text": "Devoid (This card has no color.)\nExile target nonland permanent. You may cast that card for as long as it remains exiled, and you may spend colorless mana as though it were mana of any color to cast that spell.",
-    "colors": [],
+    "colors": [
+      "W",
+      "B"
+    ],
     "custom": false,
     "archetypes": [],
     "flavorText": "\"Kozilek experiences reality on his own terms.\"\n—Ayli, high priest of the Eternal Pilgrims",

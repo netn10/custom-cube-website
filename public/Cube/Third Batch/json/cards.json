@@ -2365,7 +2365,9 @@
     "type": "Artifact — Vehicle",
     "rarity": "Rare",
     "text": "At the beginning of your end step, put a +1/+1 counter on target creature you control if this Vehicle is untapped. Otherwise, each player draws a card.\nCrew 1",
-    "colors": [],
+    "colors": [
+      "W"
+    ],
     "custom": true,
     "archetypes": [
       "Vehicles"
