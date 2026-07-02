@@ -91,21 +91,6 @@
     "_source": "Black/Inverted Pathogenesis.png"
   },
   {
-    "id": "keep-coming-back-wrong-fb5",
-    "name": "Keep Coming Back Wrong",
-    "manaCost": "{2}{B}",
-    "type": "Enchantment",
-    "rarity": "Rare",
-    "text": "Whenever a creature you control with mana value 3 or less dies, bring it back, except it’s slightly more dead. This ability triggers only once each turn. (Permanently give it one of the following characteristics it doesn’t already have: it’s a zombie now; it can’t block; its mana value becomes 4.)",
-    "colors": [
-      "B"
-    ],
-    "custom": true,
-    "archetypes": [],
-    "artist": "David Auden Nash",
-    "_source": "Black/Keep Coming Back Wrong.webp"
-  },
-  {
     "id": "pain-is-the-greatest-teacher-fb5",
     "name": "Pain is the Greatest Teacher",
     "manaCost": "{2}{B}",
