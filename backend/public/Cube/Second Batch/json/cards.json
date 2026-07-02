@@ -1,0 +1,972 @@
+[
+  {
+    "id": "deadly-dispute-msc",
+    "name": "Deadly Dispute",
+    "manaCost": "{1}{B}",
+    "type": "Instant",
+    "rarity": "Common",
+    "text": "As an additional cost to cast this spell, sacrifice an artifact or creature.\nDraw two cards and create a Treasure token. (It's an artifact with \"{T}, Sacrifice this token: Add one mana of any color.\")",
+    "colors": [
+      "B"
+    ],
+    "custom": false,
+    "archetypes": [
+      "Token Collection",
+      "Artifacts"
+    ],
+    "flavorText": "\"Ain't you heard a' honor among thieves?\"\n—Tombstone, to Anaconda",
+    "artist": "John Thacker",
+    "set": "Set 2",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__deadly-dispute-msc.jpg",
+    "relatedTokens": [
+      "Treasure"
+    ]
+  },
+  {
+    "id": "stormchaser-s-talent-blb",
+    "name": "Stormchaser's Talent",
+    "manaCost": "{U}",
+    "type": "Enchantment — Class",
+    "rarity": "Rare",
+    "text": "(Gain the next level as a sorcery to add its ability.)\nWhen this Class enters, create a 1/1 blue and red Otter creature token with prowess.\n{3}{U}: Level 2\nWhen this Class becomes level 2, return target instant or sorcery card from your graveyard to your hand.\n{5}{U}: Level 3\nWhenever you cast an instant or sorcery spell, create a 1/1 blue and red Otter creature token with prowess.",
+    "colors": [
+      "U"
+    ],
+    "custom": false,
+    "archetypes": [
+      "Storm",
+      "Prowess"
+    ],
+    "artist": "Christina Kraus",
+    "set": "Set 2",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__stormchaser-s-talent-blb.jpg",
+    "relatedTokens": [
+      "1/1 blue and red Otter"
+    ]
+  },
+  {
+    "id": "standard-procedure-unf",
+    "name": "Standard Procedure",
+    "manaCost": "",
+    "type": "Instant",
+    "rarity": "Mythic Rare",
+    "text": "{1}, Reveal Standard Procedure from your hand: Choose an instant or sorcery card with mana value 3 or less currently legal in the Standard format. Standard Procedure becomes that card until end of turn.",
+    "colors": [],
+    "custom": false,
+    "archetypes": [],
+    "flavorText": "Can it be Lightning Bolt yet?",
+    "artist": "Igor Grechanyi",
+    "set": "Set 2",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__standard-procedure-unf.jpg"
+  },
+  {
+    "id": "worldknit-cns",
+    "name": "Worldknit",
+    "manaCost": "",
+    "type": "Conspiracy",
+    "rarity": "Rare",
+    "text": "(Start the game with this conspiracy face up in the command zone.)\nAs long as every card in your card pool started the game in your library or in the command zone, lands you control have \"{T}: Add one mana of any color.\"",
+    "colors": [],
+    "custom": false,
+    "archetypes": [],
+    "artist": "Adam Paquette",
+    "set": "Set 2",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__worldknit-cns.jpg"
+  },
+  {
+    "id": "chaos-warp-msc",
+    "name": "Chaos Warp",
+    "manaCost": "{2}{R}",
+    "type": "Instant",
+    "rarity": "Rare",
+    "text": "The owner of target permanent shuffles it into their library, then reveals the top card of their library. If it's a permanent card, they put it onto the battlefield.",
+    "colors": [
+      "R"
+    ],
+    "custom": false,
+    "archetypes": [
+      "Control"
+    ],
+    "flavorText": "Loki chortled. \"The trap is sprung, and Loki has achieved his most brilliant jest!\" Thor prepared a thunderous reply. \"Ribbit ribbit!\"",
+    "artist": "Filipe Pagliuso",
+    "set": "Set 2",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__chaos-warp-msc.jpg"
+  },
+  {
+    "id": "wrath-of-god-cmm",
+    "name": "Wrath of God",
+    "manaCost": "{2}{W}{W}",
+    "type": "Sorcery",
+    "rarity": "Rare",
+    "text": "Destroy all creatures. They can't be regenerated.",
+    "colors": [
+      "W"
+    ],
+    "custom": false,
+    "archetypes": [],
+    "flavorText": "Legend speaks of the lost coastal polis of Olantin, whose inhabitants' hubris enraged the sun god Heliod.",
+    "artist": "Willian Murai",
+    "set": "Set 2",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__wrath-of-god-cmm.jpg"
+  },
+  {
+    "id": "bizarre-tutor-sb2",
+    "name": "Bizarre Tutor",
+    "manaCost": "{B}",
+    "type": "Instant",
+    "rarity": "Rare",
+    "text": "Search your library for a card, then shuffle and put that card on top.\nTire yourself (Put a Confusion card on top of your library. It's a colorless sorcery card with no mana cost that has cycling {2}.)",
+    "colors": [
+      "B"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "artist": "Remedios Varo",
+    "set": "Set 2",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/second-batch__black__bizarre-20tutor.png"
+  },
+  {
+    "id": "compleat-mockery-sb2",
+    "name": "Compleat Mockery",
+    "manaCost": "{B}",
+    "type": "Enchantment",
+    "rarity": "Rare",
+    "text": "At the beginning of your upkeep, you lose 1 life and you create a token that's a copy of this enchantment.\n{2}: Target opponent gains control of this enchantment. Activate only as a sorcery.\nSacrifice four enchantments named Compleat Mockery: Create a token that's a copy of target permanent. Activate only as a sorcery.",
+    "colors": [
+      "B"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Enchantments",
+      "Token Collection"
+    ],
+    "artist": "DALL-E 3",
+    "set": "Set 2",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/second-batch__black__compleat-20mockery.png"
+  },
+  {
+    "id": "two-with-nothing-sb2",
+    "name": "Two with Nothing",
+    "manaCost": "{B}{B}",
+    "type": "Sorcery",
+    "rarity": "Rare",
+    "text": "Discard your hand. If this is the second time you cast a spell named Two with Nothing this turn, instead each player discards their hand.\nCipher",
+    "colors": [
+      "B"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Broken Cipher"
+    ],
+    "artist": "Jim Nelson",
+    "set": "Set 2",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/second-batch__black__two-20with-20nothing.png"
+  },
+  {
+    "id": "be-as-one-sb2",
+    "name": "Be As One",
+    "manaCost": "{U}",
+    "type": "Instant",
+    "rarity": "Uncommon",
+    "text": "Put target creature over or under target creature with the same owner. They mutate into the creature on top plus all abilities from under it.",
+    "colors": [
+      "U"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "flavorText": "\"You don't have to be alone anymore.\"",
+    "artist": "MasterJuunanagou17",
+    "set": "Set 2",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/second-batch__blue__be-20as-20one.png"
+  },
+  {
+    "id": "head-twister-sb2",
+    "name": "Head Twister",
+    "manaCost": "{2}{U}{U}",
+    "type": "Sorcery",
+    "rarity": "Mythic Rare",
+    "text": "You may cast this spell as though it had flash. If you cast it any time a sorcery couldn't have been cast, it costs {1} less to cast and each player tire themselves 7. (They put seven Confusion cards on top of their library. They're colorless sorcery cards with no mana value that have cycling {2}.)\nEach player shuffles their hand and graveyard into their library, then draws seven cards. (Then put this card into its owner's graveyard.)",
+    "colors": [
+      "U"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "artist": "Bruce Rolff",
+    "set": "Set 2",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/second-batch__blue__head-20twister.png"
+  },
+  {
+    "id": "rise-my-minions-sb2",
+    "name": "Rise, My Minions!",
+    "manaCost": "{U}",
+    "type": "Sorcery",
+    "rarity": "Uncommon",
+    "text": "Create a 2/2 black Zombie creature token with decayed. (It can't block. When it attacks, sacrifice it at end of combat.)\nStorm",
+    "colors": [
+      "U"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Storm"
+    ],
+    "artist": "DALL-E 3",
+    "relatedTokens": [
+      "2/2 black Zombie"
+    ],
+    "set": "Set 2",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/second-batch__blue__rise-2c-20my-20minions-21.png"
+  },
+  {
+    "id": "impossible-charm-sb2",
+    "name": "Impossible Charm",
+    "manaCost": "{3}",
+    "type": "Kindred Instant — Eldrazi",
+    "rarity": "Mythic Rare",
+    "text": "Type the following line into ChatGPT and put the response on the stack: \"Give me exactly one option for three abilities for my Magic the Gathering 3 mana charm. Nothing else.\"",
+    "colors": [],
+    "custom": true,
+    "archetypes": [],
+    "artist": "Brian Palmer Art",
+    "prompt": "Give me exactly one option for three abilities for my Magic the Gathering 3 mana charm. Nothing else.",
+    "set": "Set 2",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/second-batch__colorless__impossible-20charm.png"
+  },
+  {
+    "id": "the-eludha-prime-sb2",
+    "name": "The Eludha Prime",
+    "manaCost": "{3}",
+    "type": "Legendary Creature — Human Druid",
+    "rarity": "Mythic Rare",
+    "text": "Companion — Your sideboard has three or more cards with Companion.\nAs long as The Eludha Prime is your commander or your Companion, you may have any number of Companions, ignoring their restrictions.\nYou may cast spells from your Companion zone.\n{2/W}{2/U}{2/B}{2/R}{2/G}: Put target creature you control or target creature card from your graveyard into your Companion zone.",
+    "colors": [],
+    "custom": true,
+    "archetypes": [],
+    "power": "1",
+    "toughness": "1",
+    "artist": "DALL-E 3",
+    "set": "Set 2",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/second-batch__colorless__the-20eludha-20prime.png"
+  },
+  {
+    "id": "unnatural-selection-sb2",
+    "name": "Unnatural Selection",
+    "manaCost": "{4}",
+    "type": "Kindred Sorcery — Eldrazi",
+    "rarity": "Mythic Rare",
+    "text": "As an additional cost to cast this spell, exile a creature you control.\nYou may reveal an artifact or creature card you own from outside the game and put it onto the battlefield. It loses all colors and becomes an Eldrazi creature with base power and toughness 1/21 in addition to its other types.\nAfter the game ends, remove the chosen card from your pool. (You don't own the card, you can't play it in your deck and it's no longer a part of your sideboard.)",
+    "colors": [],
+    "custom": true,
+    "archetypes": [],
+    "artist": "Peter Mohrbacher",
+    "set": "Set 2",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/second-batch__colorless__unnatural-20selection.png"
+  },
+  {
+    "id": "akul-dirtiest-gun-in-the-juncture-sb2",
+    "name": "Akul, Dirtiest Gun in the Juncture",
+    "manaCost": "{3}{B}{R}",
+    "type": "Legendary Creature — Scorpion Dragon Rogue",
+    "rarity": "Rare",
+    "text": "Companion — Each nonland card in your starting deck contains the word \"sacrifice\" and/or \"token\". (If this card is your chosen companion, you may put it into your hand from outside the game for {3} as a sorcery.)\nFlying, haste\nSacrifice a token: You draw a card and you lose 1 life.\nSacrifice three tokens: Akul deals 3 damage to any target.",
+    "colors": [
+      "B",
+      "R"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Token Collection"
+    ],
+    "power": "3",
+    "toughness": "3",
+    "artist": "DALL-E 3",
+    "set": "Set 2",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/second-batch__gold__akul-2c-20dirtiest-20gun-20in-20the-20juncture.png"
+  },
+  {
+    "id": "bara-loca-good-luck-omen-sb2",
+    "name": "Bara-Loca, Good-Luck Omen",
+    "manaCost": "{2}{G}{W}",
+    "type": "Legendary Creature — Elemental Lizard",
+    "rarity": "Rare",
+    "text": "Companion — Your starting deck contains more Vehicle cards than creature cards.\nVehicles you control have vigilance.\nWhenever Bara-Loca and at least one Vehicle attacks, create a 4/4 colorless Vehicle artifact token named Crystal Ship with crew 2.\nTap three untapped Vehicles you control: Create a 2/2 green and white Elemental Lizard creature token.",
+    "colors": [
+      "G",
+      "W"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Vehicles"
+    ],
+    "power": "3",
+    "toughness": "5",
+    "artist": "Midjourney",
+    "relatedTokens": [
+      "Crystal Ship",
+      "2/2 white and green Elemental Lizard"
+    ],
+    "set": "Set 2",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/second-batch__gold__bara-loca-2c-20good-luck-20omen.png"
+  },
+  {
+    "id": "gyrudas-scion-sb2",
+    "name": "Gyruda's Scion",
+    "manaCost": "{3}{U/B}",
+    "type": "Creature — Demon Kraken",
+    "rarity": "Rare",
+    "text": "This spell costs {2} less to cast if you have a Companion named Gyruda, Doom of Depths.\nThis creature's toughness is equal to the number of cards with even mana value in your graveyard.\n{2}, {T}: Search target opponent's library for a nonland card with even mana value and exile it. You may cast that card for as long as it remains exiled, and mana of any type can be spent to cast that spell.",
+    "colors": [
+      "U",
+      "B"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "power": "2",
+    "toughness": "*",
+    "artist": "Dinotropia",
+    "set": "Set 2",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/second-batch__gold__gyruda-e2-80-99s-20scion.png"
+  },
+  {
+    "id": "jeganthas-presence-sb2",
+    "name": "Jegantha's Presence",
+    "manaCost": "{5}{R/G}",
+    "type": "Enchantment",
+    "rarity": "Rare",
+    "text": "This spell costs {2} less to cast if you have a Companion named Jegantha, the Wellspring.\nSpells you cast with exactly one of the same mana symbol in their mana cost cost {2} less to cast.",
+    "colors": [
+      "R",
+      "G"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "artist": "DALL-E 3",
+    "set": "Set 2",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/second-batch__gold__jegantha-e2-80-99s-20presence.png"
+  },
+  {
+    "id": "kaheeras-family-sb2",
+    "name": "Kaheera's Family",
+    "manaCost": "{2}{G/W}{G/W}{G/W}",
+    "type": "Sorcery",
+    "rarity": "Rare",
+    "text": "This spell costs {2} less to cast if you have a Companion named Kaheera, the Orphanguard.\nCreate the following 1/1 creature tokens —\n• White Cat with \"{T}: Surveil 1.\"\n• Blue Elemental with ward {1}.\n• Black Nightmare with \"{T}: You gain 1 life.\"\n• Red Dinosaur with trample.\n• Green Beast with \"{T}: Target creature gets +1/+1 until end of turn.\"",
+    "colors": [
+      "G",
+      "W"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Token Collection"
+    ],
+    "artist": "DALL-E 3",
+    "relatedTokens": [
+      "1/1 white Cat",
+      "1/1 blue Elemental",
+      "1/1 black Nightmare",
+      "1/1 red Dinosaur",
+      "1/1 green Beast"
+    ],
+    "set": "Set 2",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/second-batch__gold__kaheera-e2-80-99s-20family.png"
+  },
+  {
+    "id": "kerugas-sage-crystal-sb2",
+    "name": "Keruga's Sage-Crystal",
+    "manaCost": "{2}{G/U}",
+    "type": "Artifact",
+    "rarity": "Rare",
+    "text": "This spell costs {2} less to cast if you have a Companion named Keruga, the Macrosage.\nWard {2}\n{T}: Add {C}{C}. Spend this mana only to cast spells with mana value 3 or greater. Spells cast this way can't be countered.",
+    "colors": [
+      "G",
+      "U"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "artist": "DALL-E 3",
+    "set": "Set 2",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/second-batch__gold__keruga-e2-80-99s-20sage-crystal.png"
+  },
+  {
+    "id": "llm-genius-prompter-sb2",
+    "name": "L.L.M, Genius Prompter",
+    "manaCost": "{1}{U}{R}",
+    "type": "Legendary Creature — Cyborg Rogue",
+    "rarity": "Rare",
+    "text": "Companion — When you pick this card in a limited event, ask ChatGPT with \"Give my companion from Magic the Gathering exactly one custom companion condition\". Otherwise, ask ChatGPT while deck building.\nAt the beginning of your end step, create an enchantment token named Prompt. It has \"When this enchantment enters, ask ChatGPT with 'Give my Prompt enchantment token exactly one ability.'\"",
+    "colors": [
+      "U",
+      "R"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "power": "2",
+    "toughness": "2",
+    "artist": "Artful Journey",
+    "relatedTokens": [
+      "Prompt"
+    ],
+    "prompt": "Give my companion from Magic the Gathering exactly one custom companion condition",
+    "set": "Set 2",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/second-batch__gold__l.l.m-2c-20genius-20prompter.png"
+  },
+  {
+    "id": "lurruss-stirrings-sb2",
+    "name": "Lurrus's Stirrings",
+    "manaCost": "{4}{W/B}{W/B}",
+    "type": "Sorcery",
+    "rarity": "Rare",
+    "text": "This spell costs {2} less to cast if you have a Companion named Lurrus of the Dream-Den.\nDiscard your hand, then return all nonland permanent cards with mana value 2 or less from your graveyard to the battlefield.",
+    "colors": [
+      "W",
+      "B"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Blink/ETB/Value"
+    ],
+    "artist": "DALL-E 3",
+    "set": "Set 2",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/second-batch__gold__lurrus-e2-80-99s-20stirrings.png"
+  },
+  {
+    "id": "lutris-shenanigens-sb2",
+    "name": "Lutri's Shenanigens",
+    "manaCost": "{X}{2}{U/R}{U/R}",
+    "type": "Instant",
+    "rarity": "Rare",
+    "text": "This spell costs {2} less to cast if you have a Companion named Lutri, the Spellchaser.\nGain control of target instant or sorcery spell, then copy it X times. You may choose new targets for it and the copies.",
+    "colors": [
+      "U",
+      "R"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Storm"
+    ],
+    "artist": "DALL-E 3",
+    "set": "Set 2",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/second-batch__gold__lutri-e2-80-99s-20shenanigens.png"
+  },
+  {
+    "id": "oboshs-spawn-sb2",
+    "name": "Obosh's Spawn",
+    "manaCost": "{2}{B/R}",
+    "type": "Creature — Hellion Horror",
+    "rarity": "Rare",
+    "text": "This spell costs {2} less to cast if you have a Companion named Obosh, the Preypiercer.\nTrample, menace\nThis creature's power is equal to the number of cards with odd mana value in your graveyard.",
+    "colors": [
+      "B",
+      "R"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Self-mill"
+    ],
+    "power": "*",
+    "toughness": "1",
+    "artist": "CobaltPlasma",
+    "set": "Set 2",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/second-batch__gold__obosh-e2-80-99s-20spawn.png"
+  },
+  {
+    "id": "orgle-the-slippery-sb2",
+    "name": "Orgle, the Slippery",
+    "manaCost": "{G}{U}",
+    "type": "Legendary Creature — Beast",
+    "rarity": "Rare",
+    "text": "Companion — Your starting deck contains the same amount of creature cards and noncreature, nonland cards. (If this card is your chosen companion, you may put it into your hand from outside the game for {3} as a sorcery.)\nHexproof\nProwess, prowess\nOther creatures you control with prowess have prowess.",
+    "colors": [
+      "G",
+      "U"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Prowess"
+    ],
+    "power": "1",
+    "toughness": "1",
+    "artist": "Максим E",
+    "set": "Set 2",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/second-batch__gold__orgle-2c-20the-20slippery.png"
+  },
+  {
+    "id": "oru-reality-redifined-sb2",
+    "name": "Oru, Reality Redefined",
+    "manaCost": "{2}{W}{U}",
+    "type": "Legendary Creature — Dragon Fractal",
+    "rarity": "Rare",
+    "text": "Companion — Your starting deck contains at least one card of each mana value between 1 and 6 (If this card is your chosen companion, you may put it into your hand from outside the game for {3} as a sorcery.)\nFlash\nFlying\nSpells you cast have flash.\nYou may cast nonland permanents you control from the battlefield. (They enter the stack.)",
+    "colors": [
+      "W",
+      "U"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "power": "2",
+    "toughness": "6",
+    "artist": "HeartyJessman",
+    "set": "Set 2",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/second-batch__gold__oru-2c-20reality-20redifined.png"
+  },
+  {
+    "id": "tekikal-geoshaper-of-continents-sb2",
+    "name": "Tekikal, Geoshaper of Continents",
+    "manaCost": "{R}{W}",
+    "type": "Legendary Creature — Dinosaur Elemental",
+    "rarity": "Rare",
+    "text": "Companion — You have no land cards in your starting deck.\nHaste\nAs long as Tekikal is your commander, your Companion or on the battlefield, you may play cards from your hand as lands. A card played this way loses all abilities and gains \"{T}: Add one mana of this card's colors.\"\n{T}: Return target land card you own to its owner's hand.",
+    "colors": [
+      "R",
+      "W"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "power": "3",
+    "toughness": "2",
+    "artist": "Wattpad",
+    "set": "Set 2",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/second-batch__gold__tekikal-2c-20geoshaper-20of-20continents.png"
+  },
+  {
+    "id": "the-fleecetail-wolf-sb2",
+    "name": "The Fleecetail Wolf",
+    "manaCost": "{2}{R}{G}",
+    "type": "Legendary Creature — Wolf",
+    "rarity": "Rare",
+    "text": "Companion — Each land card in your starting deck is basic. (If this card is your chosen companion, you may put it into your hand from outside the game for {3} as a sorcery.)\nWhenever a nonbasic land becomes tapped, put a stun counter on it.\n{W}{U}{B}{R}{G}: Monstrosity 5\nWhen The Fleecetail Wolf becomes monstrous, put hexproof, indestructible, trample, and lifelink counters on it.",
+    "colors": [
+      "R",
+      "G"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "power": "4",
+    "toughness": "4",
+    "artist": "Tricia Beal",
+    "set": "Set 2",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/second-batch__gold__the-20fleecetail-20wolf.png"
+  },
+  {
+    "id": "the-inevitable-sb2",
+    "name": "The Inevitable",
+    "manaCost": "{3}{U}{B}",
+    "type": "Legendary Enchantment Creature — Nightmare",
+    "rarity": "Rare",
+    "text": "Companion — Before you shuffle your deck to start the game, shuffle ten Confusion cards into your deck. (If this card is your chosen companion, you may put it into your hand from outside the game for {3} as a sorcery. Confusion is a colorless sorcery card with no mana cost that has cycling {2}.)\nThe Inevitable can't leave the battlefield and it attacks each turn if able.\nAt the beginning of your upkeep, target opponent gains control of you until end of turn.",
+    "colors": [
+      "U",
+      "B"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "power": "20",
+    "toughness": "-20",
+    "artist": "Midjourney",
+    "set": "Set 2",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/second-batch__gold__the-20inevitable.png"
+  },
+  {
+    "id": "tsuriai-of-perfected-balance-sb2",
+    "name": "Tsuriai, of Perfected Balance",
+    "manaCost": "{2}{W}{B}",
+    "type": "Legendary Creature — Spirit",
+    "rarity": "Rare",
+    "text": "Companion — Excluding lands, the number of custom cards and non-custom cards in your starting deck is the same. (If this card is your chosen companion, you may put it into your hand from outside the game for {3} as a sorcery.)\nIndestructible\nAt the beginning of your end step, if you've cast a custom card and a non-custom card this turn, exile target nonland permanent, then you may return it to the battlefield under its owner's control.",
+    "colors": [
+      "W",
+      "B"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Blink/ETB/Value"
+    ],
+    "power": "3",
+    "toughness": "3",
+    "artist": "DALL-E 3",
+    "set": "Set 2",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/second-batch__gold__tsuriai-2c-20of-20perfected-20balance.png"
+  },
+  {
+    "id": "umoris-glittering-cavern-sb2",
+    "name": "Umori's Glittering-Cavern",
+    "manaCost": "",
+    "type": "Legendary Land — Cave",
+    "rarity": "Rare",
+    "text": "As Umori's Decorated Cavern enters, choose a card type.\n{T}: Add {C}.\n{T}: Add one mana of any color. Spend this mana only to cast spells of the chosen card type.\n{2}{G}{G}, {T}: Put target card of the chosen card type from your graveyard on top of your library. This ability costs {2} less to activate if you have a Companion named Umori, the Collector.",
+    "colors": [],
+    "custom": true,
+    "archetypes": [
+      "Self-mill"
+    ],
+    "artist": "DALL-E 3",
+    "set": "Set 2",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/second-batch__gold__umori-e2-80-99s-20glittering-cavern.png"
+  },
+  {
+    "id": "volgoth-chewer-of-toys-sb2",
+    "name": "Volgoth, Chewer of Toys",
+    "manaCost": "{8}{B}{G}",
+    "type": "Legendary Artifact Creature — Dog",
+    "rarity": "Rare",
+    "text": "Companion — Before the game starts, shuffle eight cards named Squee's Toy into your deck. (If this card is your chosen companion, you may put it into your hand from outside the game for {3} as a sorcery.)\nAffinity for artifacts (This spell costs {1} less to cast for each artifact you control.)\nWhenever you activate an ability of an artifact, if it isn't a mana ability, you may sacrifice it. If you do, draw a card and copy that ability. You may choose new targets for the copy.",
+    "colors": [
+      "B",
+      "G"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Artifacts"
+    ],
+    "power": "6",
+    "toughness": "4",
+    "artist": "DALL-E 3",
+    "set": "Set 2",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/second-batch__gold__volgoth-2c-20chewer-20of-20toys.png"
+  },
+  {
+    "id": "yorions-soaring-sb2",
+    "name": "Yorion's Soaring",
+    "manaCost": "{3}{W/U}{W/U}",
+    "type": "Enchantment",
+    "rarity": "Rare",
+    "text": "This spell costs {2} less to cast if you have a Companion named Yorion, Sky Nomad.\nWhenever a nontoken, nonland permanent enters under your control, create a Shard token if your library has more than half of its cards remaining. Otherwise, create a Blink token. (Shard is an enchantment with \"{2}, Sacrifice this enchantment: Scry 1, then draw a card.\" and Blink is an enchantment with \"{2}, Sacrifice this enchantment: Exile target creature, then return it to the battlefield under its owner's control.\")",
+    "colors": [
+      "W",
+      "U"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Blink/ETB/Value",
+      "Enchantments"
+    ],
+    "artist": "DALL-E 3",
+    "relatedTokens": [
+      "Shard",
+      "Blink"
+    ],
+    "set": "Set 2",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/second-batch__gold__yorion-e2-80-99s-20soaring.png"
+  },
+  {
+    "id": "zirdas-zenith-sb2",
+    "name": "Zirda's Zenith",
+    "manaCost": "{3}{R/W}{R/W}",
+    "type": "Enchantment",
+    "rarity": "Rare",
+    "text": "This spell costs {2} less to cast if you have a Companion named Zirda, the Dawnwaker.\nCards in your hand have cycling {3}.\nCards in your graveyard have remember {3} (They have \"{3}, Exile three cards from your graveyard: Return this card from your graveyard to its owner's hand.\")\nCycling {3}, remember {3}",
+    "colors": [
+      "R",
+      "W"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Self-mill"
+    ],
+    "artist": "DALL-E 3",
+    "set": "Set 2",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/second-batch__gold__zirda-e2-80-99s-20zenith.png"
+  },
+  {
+    "id": "nine-rivers-defense-sb2",
+    "name": "Nine River's Defense",
+    "manaCost": "{2}{G}",
+    "type": "Instant",
+    "rarity": "Rare",
+    "text": "Choose one. If {U}{U} was spent to cast this spell, choose two instead —\n• Create two 1/1 blue Merfolk creature tokens with hexproof.\n• Put a +1/+1 counter on each of up to two target creatures.\n• Destroy any number of target artifacts and/or enchantments with total mana value X or less. Where X is the total power of creatures you control.",
+    "colors": [
+      "G"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "artist": "LordAdornable",
+    "relatedTokens": [
+      "1/1 blue Merfolk"
+    ],
+    "set": "Set 2",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/second-batch__green__nine-20river-e2-80-99s-20defense.jpeg"
+  },
+  {
+    "id": "preserver-of-the-flesh-sb2",
+    "name": "Preserver of the Flesh",
+    "manaCost": "{3}{G}",
+    "type": "Artifact",
+    "rarity": "Rare",
+    "text": "Ward — Untap this artifact\n{T}: Petrify target creature card from a graveyard. (Exile it. Its controller creates a token that's a copy of it, except it's an artifact and loses all other card types.)\n{1}{B}, {T}: Petrify target creature.",
+    "colors": [
+      "G"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "artist": "DALL-E 3",
+    "set": "Set 2",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/second-batch__green__preserver-20of-20the-20flesh.png"
+  },
+  {
+    "id": "remade-into-perfection-sb2",
+    "name": "Remade into Perfection",
+    "manaCost": "{G}",
+    "type": "Instant",
+    "rarity": "Rare",
+    "text": "Destroy target creature. Its controller incubates X, where X is its power. (They create an Incubator token with X +1/+1 counters on it and \"{2}: Transform this artifact.\" It transforms into a 0/0 Phyrexian artifact creature.)",
+    "colors": [
+      "G"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Control"
+    ],
+    "artist": "Maggock",
+    "relatedTokens": [
+      "Incubator"
+    ],
+    "set": "Set 2",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/second-batch__green__remade-20into-20perfection.png"
+  },
+  {
+    "id": "sylvan-wisdom-sb2",
+    "name": "Sylvan Wisdom",
+    "manaCost": "{1}{G}",
+    "type": "Enchantment",
+    "rarity": "Mythic Rare",
+    "text": "At the beginning of your draw step, you may draw two additional cards. If you do, choose two cards in your hand drawn this turn. For each of those cards, tire yourself twice or put the card on top of your library. (To tire yourself twice, put two Confusion cards on top of your library. They're colorless sorcery cards with no mana cost that have cycling {2}.)",
+    "colors": [
+      "G"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "artist": "World Anvil",
+    "set": "Set 2",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/second-batch__green__sylvan-20wisdom.png"
+  },
+  {
+    "id": "house-maniac-sb2",
+    "name": "House Maniac",
+    "manaCost": "{1}{R}",
+    "type": "Creature — Human Clown",
+    "rarity": "Rare",
+    "text": "If you would draw a card while your library has no cards in it, instead this creature deals 5 damage to any target.",
+    "colors": [
+      "R"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Self-mill"
+    ],
+    "power": "3",
+    "toughness": "1",
+    "flavorText": "come inside keep happy thoughts no laugh\n—Scratched on a Colorful Door in Duskmourn",
+    "artist": "Pxfuel",
+    "set": "Set 2",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/second-batch__red__house-20maniac.png"
+  },
+  {
+    "id": "sunbirds-song-sb2",
+    "name": "Sunbird's Song",
+    "manaCost": "{R}",
+    "type": "Instant",
+    "rarity": "Rare",
+    "text": "Exile target spell. Its controller discover X, where X is that spell's mana value minus 1. (They exile cards from the top of their library until they exile a nonland card with that mana value or less. They cast it without paying its mana cost or put it into their hand. They put the rest on the bottom in a random order.)",
+    "colors": [
+      "R"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "artist": "Liz and Jess Art Shop",
+    "set": "Set 2",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/second-batch__red__sunbird-e2-80-99s-20song.png"
+  },
+  {
+    "id": "tiring-bolt-sb2",
+    "name": "Tiring Bolt",
+    "manaCost": "{R}",
+    "type": "Instant",
+    "rarity": "Uncommon",
+    "text": "Tiring Bolt deals 3 damage to any target.\nTire yourself. (Put a Confusion card on top of your library. It's a colorless sorcery card with no mana cost that has cycling {2}.)",
+    "colors": [
+      "R"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Control"
+    ],
+    "artist": "Dice Cove",
+    "set": "Set 2",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/second-batch__red__tiring-20bolt.png"
+  },
+  {
+    "id": "anhelo-dashing-artist-sb2",
+    "name": "Anhelo, Dashing Artist",
+    "manaCost": "{U}{B}{R}",
+    "type": "Legendary Creature — Vampire Assassin",
+    "rarity": "Mythic Rare",
+    "text": "Haste\nWhenever you cast an instant or sorcery spell without cipher from your hand, it gains cipher. Encode it to Anhelo.\n{3}{U}{B}{R}: Until end of turn, Anhelo can't be blocked. The next time it attacks this turn, untap it. If you do, after this phase, there is an additional combat phase.",
+    "colors": [
+      "U",
+      "B",
+      "R"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Broken Cipher"
+    ],
+    "power": "2",
+    "toughness": "2",
+    "flavorText": "\"Look how they massacred my boy…\"",
+    "artist": "Alessandra Gava",
+    "_supersedes": "anhelo-dashing-artist-fb1",
+    "set": "Set 2",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/second-batch__remake__anhelo-2c-20dashing-20artist.png"
+  },
+  {
+    "id": "destroy-the-unnatural-sb2",
+    "name": "Destroy the Unnatural",
+    "manaCost": "{3}{R/G}",
+    "type": "Instant",
+    "rarity": "Common",
+    "text": "Destroy target artifact, enchantment, creature with flying or a land with an activated ability that isn't a mana ability.\nFlashback {R}{G}",
+    "colors": [
+      "R",
+      "G"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Control"
+    ],
+    "artist": "DALL-E 3",
+    "_supersedes": "destroy-the-unnatural-fb1",
+    "set": "Set 2",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/second-batch__remake__destroy-20the-20unnatural.png"
+  },
+  {
+    "id": "judges-falcon-sb2",
+    "name": "Judge's Falcon",
+    "manaCost": "{W}",
+    "type": "Creature — Bird",
+    "rarity": "Uncommon",
+    "text": "Flying\nSacrifice this creature: Tax 1. (The next spell each of your opponents cast costs {1} more to cast. This doesn't end at the end of turn.)",
+    "colors": [
+      "W"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "power": "1",
+    "toughness": "1",
+    "flavorText": "\"The owl and the falcon are working together! I've seen it with my own eyes!\"\n— Dar, Keyhole Downs Merchant",
+    "artist": "DALL-E 3",
+    "_supersedes": "judge-s-falcon-fb1",
+    "set": "Set 2",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/second-batch__remake__judge-e2-80-99s-20falcon.png"
+  },
+  {
+    "id": "rabbit-hole-sb2",
+    "name": "Rabbit Hole",
+    "manaCost": "{U}",
+    "type": "Enchantment",
+    "rarity": "Uncommon",
+    "text": "When this enchantment enters, another target nonland permanent becomes a green and white Rabbit creature with no abilities and with base power and toughness 2/2 as long as this enchantment is on the battlefield.",
+    "colors": [
+      "U"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "flavorText": "\"I've just had the weirdest dream…\"",
+    "artist": "DALL-E 3",
+    "_supersedes": "rabbit-hole-fb1",
+    "set": "Set 2",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/second-batch__remake__rabbit-20hole.png"
+  },
+  {
+    "id": "titan-of-impossibility-sb2",
+    "name": "Titan of Impossibility",
+    "manaCost": "{6}",
+    "type": "Creature — Eldrazi",
+    "rarity": "Mythic Rare",
+    "text": "When this creature enters, attacks, or becomes a target of a spell or an ability you don't control, type the following line into ChatGPT and put the response on the stack:\n\"My 6 mana Eldrazi did something. Respond with one effect. Nothing else.\"",
+    "colors": [],
+    "custom": true,
+    "archetypes": [],
+    "power": "6",
+    "toughness": "6",
+    "artist": "Alexandr Elichev",
+    "_supersedes": "titan-of-impossibility-fb1",
+    "prompt": "My 6 mana Eldrazi did something. Respond with one effect. Nothing else.",
+    "set": "Set 2",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/second-batch__remake__titan-20of-20impossibility.png"
+  },
+  {
+    "id": "march-of-the-machine-sb2",
+    "name": "March of the Machine",
+    "manaCost": "{X}{B}{G}",
+    "type": "Sorcery",
+    "rarity": "Rare",
+    "text": "Improvise (Your artifacts can help cast this spell. Each artifact you tap after you're done activating mana abilities pays for {1}.)\nCreate X 1/1 Phyrexian Mite artifact creature tokens with toxic 1 and \"This creature can't block.\" Then, nonartifact creatures get -1/-1 until end of turn for each artifact you control. (Players dealt combat damage by a creature with toxic 1 also get a poison counter.)",
+    "colors": [
+      "B",
+      "G"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Artifacts",
+      "Token Collection"
+    ],
+    "artist": "Grzegorz Rutkowski",
+    "relatedTokens": [
+      "1/1 Phyrexian Mite"
+    ],
+    "_supersedes": "ravenous-squirrel-mh2",
+    "set": "Set 2",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/second-batch__replace__march-20of-20the-20machine-20-28replace-20ravenous-20squirrel-29.png"
+  },
+  {
+    "id": "blessed-be-the-fruition-sb2",
+    "name": "Blessed Be the Fruition",
+    "manaCost": "{4}{W}{W}",
+    "type": "Sorcery",
+    "rarity": "Mythic Rare",
+    "text": "Each player gets an emblem with \"You have no maximum hand size.\"\nEach opponent draws three cards. You may draw up to three cards.\nStorm",
+    "colors": [
+      "W"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Storm"
+    ],
+    "artist": "Rosie A",
+    "set": "Set 2",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/second-batch__white__blessed-20be-20the-20fruition.png"
+  },
+  {
+    "id": "darksteel-intergrator-sb2",
+    "name": "Darksteel Integrator",
+    "manaCost": "{1}{W}",
+    "type": "Artifact — Equipment Extension",
+    "rarity": "Rare",
+    "text": "Extended permanent has indestructible.\n{1}{W}: If extended permanent is a Vehicle, it becomes a creature until end of turn.\nExtend {2} ({2}: Attach to target creature or Vehicle you control. Extend only as a sorcery.)",
+    "colors": [
+      "W"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Vehicles"
+    ],
+    "artist": "DALL-E 3",
+    "set": "Set 2",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/second-batch__white__darksteel-20intergrator.png"
+  },
+  {
+    "id": "hang-in-the-balance-sb2",
+    "name": "Hang in the Balance",
+    "manaCost": "{1}{W}",
+    "type": "Sorcery",
+    "rarity": "Mythic Rare",
+    "text": "Each player chooses a number of lands they control equal to the number of lands controlled by the player who controls the fewest, then sacrifices the rest unless they tire themselves for each one they want to keep. Players discard cards and sacrifice creatures the same way. (A player tire themselves by putting a Confusion card on top of their library. It's a colorless sorcery card with no mana cost that has cycling {2}.)",
+    "colors": [
+      "W"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "artist": "Eviaison",
+    "set": "Set 2",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/second-batch__white__hang-20in-20the-20balance.png"
+  }
+]

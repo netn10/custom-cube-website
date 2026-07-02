@@ -37,8 +37,16 @@ MONGO_URI = os.getenv(
 # When MongoDB is unavailable or empty, the backend falls back to an in-memory
 # database seeded from the on-disk cube JSON so the site keeps working (reads
 # work fully; writes live only for the process lifetime).
-REPO_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-CUBE_DIR = os.path.join(REPO_ROOT, "public", "Cube")
+_HERE = os.path.dirname(os.path.abspath(__file__))
+REPO_ROOT = os.path.dirname(_HERE)
+# Prefer a backend-local copy of the cube JSON (public/Cube next to app.py) when
+# present — this is what ships in the deployed slug, where only the backend/
+# directory is pushed. Fall back to the repo-root public/Cube for local dev.
+_CUBE_CANDIDATES = [
+    os.path.join(_HERE, "public", "Cube"),
+    os.path.join(REPO_ROOT, "public", "Cube"),
+]
+CUBE_DIR = next((c for c in _CUBE_CANDIDATES if os.path.isdir(c)), _CUBE_CANDIDATES[-1])
 # Optional single-file override; when unset, every batch's cards.json is loaded
 # (public/Cube/<Batch>/json/cards.json), so each new set is picked up automatically.
 CARDS_JSON_PATH = os.getenv("CARDS_JSON_PATH")
