@@ -128,7 +128,9 @@
       "Self-mill"
     ],
     "artist": "Janne Parviainen",
-    "_source": "Red/Everything, at Once.png"
+    "_source": "Red/Everything, at Once.png",
+    "facedown": true,
+    "relatedFace": "Sort Yourself Out"
   },
   {
     "id": "go-out-with-a-bang-fb4",
@@ -365,7 +367,8 @@
     "archetypes": [],
     "loyalty": "4",
     "artist": "Janne Parviainen",
-    "_source": "Red/Sort Yourself Out.png"
+    "_source": "Red/Sort Yourself Out.png",
+    "relatedFace": "Everything, at Once"
   },
   {
     "id": "titan-of-stars-aligned-fb4",

@@ -4191,6 +4191,8 @@
       "Self-mill"
     ],
     "artist": "Janne Parviainen",
+    "facedown": true,
+    "relatedFace": "Sort Yourself Out",
     "set": "Set 4",
     "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__red__everything-2c-20at-20once.png"
   },
@@ -4441,6 +4443,7 @@
     "archetypes": [],
     "loyalty": "4",
     "artist": "Janne Parviainen",
+    "relatedFace": "Everything, at Once",
     "set": "Set 4",
     "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__red__sort-20yourself-20out.png"
   },
