@@ -45,21 +45,6 @@
     ]
   },
   {
-    "id": "standard-procedure-unf",
-    "name": "Standard Procedure",
-    "manaCost": "",
-    "type": "Instant",
-    "rarity": "Mythic Rare",
-    "text": "{1}, Reveal Standard Procedure from your hand: Choose an instant or sorcery card with mana value 3 or less currently legal in the Standard format. Standard Procedure becomes that card until end of turn.",
-    "colors": [],
-    "custom": false,
-    "archetypes": [],
-    "flavorText": "Can it be Lightning Bolt yet?",
-    "artist": "Igor Grechanyi",
-    "set": "Set 2",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__standard-procedure-unf.jpg"
-  },
-  {
     "id": "worldknit-cns",
     "name": "Worldknit",
     "manaCost": "",
