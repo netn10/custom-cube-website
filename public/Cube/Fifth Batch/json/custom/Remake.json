@@ -169,9 +169,7 @@
     "type": "Land Creature — Swamp Demon",
     "rarity": "Rare",
     "text": "(This land isn't a spell, it's affected by summoning sickness, and it has “{T}: Add {B}.”)\nFlying, trample\nThis creature can't attack or block unless you have thirteen or more cards in your graveyard.\n{T}: Mill a card.",
-    "colors": [
-      "B"
-    ],
+    "colors": [],
     "custom": true,
     "archetypes": [
       "Self-mill"
