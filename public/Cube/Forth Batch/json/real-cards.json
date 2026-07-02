@@ -18,7 +18,7 @@
     "power": "2",
     "toughness": "3",
     "set": "Final Fantasy",
-    "imageUrl": "/Cube/RealCards/al-bhed-salvagers-fin.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__al-bhed-salvagers-fin.jpg",
     "_source": "Black\\Al Bhed Salvagers.jpg"
   },
   {
@@ -40,7 +40,7 @@
     "power": "4",
     "toughness": "3",
     "set": "Aetherdrift",
-    "imageUrl": "/Cube/RealCards/demonic-junker-dft.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__demonic-junker-dft.jpg",
     "_source": "Black\\Demonic Junker.jpg"
   },
   {
@@ -62,7 +62,7 @@
     "power": "1",
     "toughness": "1",
     "set": "Double Masters",
-    "imageUrl": "/Cube/RealCards/disciple-of-the-vault-2xm.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__disciple-of-the-vault-2xm.jpg",
     "_source": "Black\\Disciple of the Vault.jpg"
   },
   {
@@ -84,7 +84,7 @@
     "power": "1",
     "toughness": "2",
     "set": "Kamigawa: Neon Dynasty",
-    "imageUrl": "/Cube/RealCards/dockside-chef-neo.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__dockside-chef-neo.jpg",
     "_source": "Black\\Dockside Chef.jpg"
   },
   {
@@ -103,7 +103,7 @@
     ],
     "artist": "Wero Gallo",
     "set": "Aetherdrift",
-    "imageUrl": "/Cube/RealCards/grim-bauble-dft.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__grim-bauble-dft.jpg",
     "_source": "Black\\Grim Bauble.jpg"
   },
   {
@@ -123,7 +123,7 @@
     "flavorText": "The audience always loves it, but volunteers are divided.",
     "artist": "Sebastian Giacobino",
     "set": "Unfinity",
-    "imageUrl": "/Cube/RealCards/saw-in-half-unf.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__saw-in-half-unf.jpg",
     "_source": "Black\\Saw in Half.jpg"
   },
   {
@@ -142,7 +142,7 @@
     ],
     "artist": "Volkan Baǵa",
     "set": "Vintage Masters",
-    "imageUrl": "/Cube/RealCards/tendrils-of-agony-vma.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__tendrils-of-agony-vma.jpg",
     "_source": "Black\\Tendrils of Agony.jpg"
   },
   {
@@ -162,7 +162,7 @@
     "flavorText": "No matter how deep you bury it, some evil refuses to stay dead.",
     "artist": "Jehan Choo",
     "set": "Double Masters 2022",
-    "imageUrl": "/Cube/RealCards/unearth-2x2.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__unearth-2x2.jpg",
     "_source": "Black\\Unearth.jpg"
   },
   {
@@ -181,7 +181,7 @@
     ],
     "artist": "Tim Hildebrandt",
     "set": "Vintage Masters",
-    "imageUrl": "/Cube/RealCards/brain-freeze-vma.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__brain-freeze-vma.jpg",
     "_source": "Blue\\Brain Freeze.jpg"
   },
   {
@@ -201,7 +201,7 @@
     "flavorText": "\"I beat you all before and I'll do it again!\"\n—Toph",
     "artist": "Maël Ollivier-Henry",
     "set": "Avatar: The Last Airbender Eternal",
-    "imageUrl": "/Cube/RealCards/dramatic-reversal-tle.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__dramatic-reversal-tle.jpg",
     "_source": "Blue\\Dramatic Reversal.jpg"
   },
   {
@@ -218,7 +218,7 @@
     "archetypes": [],
     "artist": "Dominik Mayer",
     "set": "Foundations",
-    "imageUrl": "/Cube/RealCards/witness-protection-fdn.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__witness-protection-fdn.jpg",
     "_source": "Blue\\Witness Protection.jpg"
   },
   {
@@ -235,7 +235,7 @@
     ],
     "artist": "Jason A. Engle",
     "set": "Wilds of Eldraine",
-    "imageUrl": "/Cube/RealCards/agatha-s-soul-cauldron-woe.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__agatha-s-soul-cauldron-woe.jpg",
     "_source": "Colorless\\Agatha's Soul Cauldron.jpg"
   },
   {
@@ -252,7 +252,7 @@
     "archetypes": [],
     "artist": "Daarken",
     "set": "New Phyrexia",
-    "imageUrl": "/Cube/RealCards/birthing-pod-nph.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__birthing-pod-nph.jpg",
     "_source": "Colorless\\Birthing Pod.jpg"
   },
   {
@@ -273,7 +273,7 @@
     "flavorText": "\"Not just any floriculturist can grow this caliber of nightbloom. We're looking for a rooftop hothouse with quite particular conditions.\"\n—Dr. A of the Foundway Associates",
     "artist": "Dmitry Burmak",
     "set": "Secrets of Strixhaven Commander",
-    "imageUrl": "/Cube/RealCards/assassin-s-trophy-soc.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__assassin-s-trophy-soc.jpg",
     "_source": "Gold\\BG\\Assassin's Trophy.jpg"
   },
   {
@@ -295,7 +295,7 @@
     "power": "4",
     "toughness": "4",
     "set": "Unstable",
-    "imageUrl": "/Cube/RealCards/grusilda-monster-masher-ust.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__grusilda-monster-masher-ust.jpg",
     "_source": "Gold\\BR\\Grusilda, Monster Masher.jpg"
   },
   {
@@ -318,7 +318,7 @@
     "power": "1",
     "toughness": "1",
     "set": "Edge of Eternities Commander",
-    "imageUrl": "/Cube/RealCards/juri-master-of-the-revue-eoc.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__juri-master-of-the-revue-eoc.jpg",
     "_source": "Gold\\BR\\Juri, Master of the Revue.jpg"
   },
   {
@@ -341,7 +341,7 @@
     "power": "2",
     "toughness": "2",
     "set": "Outlaws of Thunder Junction Commander",
-    "imageUrl": "/Cube/RealCards/edric-spymaster-of-trest-otc.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__edric-spymaster-of-trest-otc.jpg",
     "_source": "Gold\\GU\\Edric, Spymaster of Trest.jpg"
   },
   {
@@ -362,7 +362,7 @@
     "power": "0",
     "toughness": "0",
     "set": "Unfinity",
-    "imageUrl": "/Cube/RealCards/it-came-from-planet-glurg-unf.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__it-came-from-planet-glurg-unf.jpg",
     "_source": "Gold\\GU\\It Came from Planet Glurg.jpg"
   },
   {
@@ -382,7 +382,7 @@
     "power": "4",
     "toughness": "4",
     "set": "Duskmourn: House of Horror",
-    "imageUrl": "/Cube/RealCards/rip-spawn-hunter-dsk.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__rip-spawn-hunter-dsk.jpg",
     "_source": "Gold\\GW\\Rip, Spawn Hunter.jpg"
   },
   {
@@ -405,7 +405,7 @@
     "power": "1",
     "toughness": "1",
     "set": "The Brothers' War",
-    "imageUrl": "/Cube/RealCards/yotian-dissident-bro.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__yotian-dissident-bro.jpg",
     "_source": "Gold\\GW\\Yotian Dissident.jpg"
   },
   {
@@ -427,7 +427,7 @@
     "power": "6",
     "toughness": "6",
     "set": "Modern Horizons 3",
-    "imageUrl": "/Cube/RealCards/phlage-titan-of-fire-s-fury-mh3.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__phlage-titan-of-fire-s-fury-mh3.jpg",
     "_source": "Gold\\RW\\Phlage, Titan of Fire's Fury.jpg"
   },
   {
@@ -449,7 +449,7 @@
     "power": "5",
     "toughness": "4",
     "set": "Outlaws of Thunder Junction Commander",
-    "imageUrl": "/Cube/RealCards/fallen-shinobi-otc.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__fallen-shinobi-otc.jpg",
     "_source": "Gold\\UB\\Fallen Shinobi.jpg"
   },
   {
@@ -470,7 +470,7 @@
     "power": "2",
     "toughness": "3",
     "set": "Unstable",
-    "imageUrl": "/Cube/RealCards/phoebe-head-of-s-n-e-a-k-ust.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__phoebe-head-of-s-n-e-a-k-ust.jpg",
     "_source": "Gold\\UB\\Phoebe, Head of S.N.E.A.K..jpg"
   },
   {
@@ -492,7 +492,7 @@
     "power": "3",
     "toughness": "3",
     "set": "Universes Within",
-    "imageUrl": "/Cube/RealCards/bohn-beguiling-balladeer-slx.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__bohn-beguiling-balladeer-slx.jpg",
     "_source": "Gold\\UR\\Bohn, Beguiling Balladeer.jpg"
   },
   {
@@ -512,7 +512,7 @@
     "power": "5",
     "toughness": "4",
     "set": "Journey into Nyx",
-    "imageUrl": "/Cube/RealCards/athreos-god-of-passage-jou.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__athreos-god-of-passage-jou.jpg",
     "_source": "Gold\\WB\\Athreos, God of Passage.jpg"
   },
   {
@@ -534,7 +534,7 @@
     "power": "2",
     "toughness": "4",
     "set": "The Brothers' War",
-    "imageUrl": "/Cube/RealCards/urza-lord-protector-bro.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__urza-lord-protector-bro.jpg",
     "_source": "Gold\\WU\\Urza, Lord Protector.jpg"
   },
   {
@@ -556,7 +556,7 @@
     "power": "1",
     "toughness": "1",
     "set": "The Brothers' War",
-    "imageUrl": "/Cube/RealCards/alloy-animist-bro.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__alloy-animist-bro.jpg",
     "_source": "Green\\Alloy Animist.jpg"
   },
   {
@@ -576,7 +576,7 @@
     "power": "2",
     "toughness": "2",
     "set": "Lorwyn Eclipsed Commander",
-    "imageUrl": "/Cube/RealCards/bane-of-progress-ecc.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__bane-of-progress-ecc.jpg",
     "_source": "Green\\Bane of Progress.jpg"
   },
   {
@@ -596,7 +596,7 @@
     "flavorText": "\"I have seen life's purpose, and now it is my own.\"\n—Kamahl, druid acolyte",
     "artist": "Ron Spears",
     "set": "Ninth Edition",
-    "imageUrl": "/Cube/RealCards/biorhythm-9ed.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__biorhythm-9ed.jpg",
     "_source": "Green\\Biorhythm.jpg"
   },
   {
@@ -616,7 +616,7 @@
     "flavorText": "Lagorin would not lose another.",
     "artist": "Raph Lomotan",
     "set": "Aetherdrift",
-    "imageUrl": "/Cube/RealCards/defend-the-rider-dft.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__defend-the-rider-dft.jpg",
     "_source": "Green\\Defend the Rider.jpg",
     "relatedTokens": [
       "1/1 colorless Pilot"
@@ -640,7 +640,7 @@
     "power": "5",
     "toughness": "5",
     "set": "Aetherdrift",
-    "imageUrl": "/Cube/RealCards/thunderous-velocipede-dft.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__thunderous-velocipede-dft.jpg",
     "_source": "Green\\Thunderous Velocipede.jpg"
   },
   {
@@ -659,7 +659,7 @@
     ],
     "artist": "Kerstin Kaman",
     "set": "Masters Edition IV",
-    "imageUrl": "/Cube/RealCards/titania-s-song-me4.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__titania-s-song-me4.jpg",
     "_source": "Green\\Titania's Song.jpg"
   },
   {
@@ -675,7 +675,7 @@
     "flavorText": "Gamma radiation destroys all it touches, save for an unlucky few.",
     "artist": "Arthur Yuan",
     "set": "Marvel Super Heroes Commander",
-    "imageUrl": "/Cube/RealCards/canyon-slough-msc.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__canyon-slough-msc.jpg",
     "_source": "Lands\\Canyon Slough.jpg"
   },
   {
@@ -691,7 +691,7 @@
     "flavorText": "The path to power is forged in ruthlessness.",
     "artist": "Raoul Vitale",
     "set": "Duskmourn: House of Horror Commander",
-    "imageUrl": "/Cube/RealCards/darkmoss-bridge-dsc.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__darkmoss-bridge-dsc.jpg",
     "_source": "Lands\\Darkmoss Bridge.jpg"
   },
   {
@@ -707,7 +707,7 @@
     "flavorText": "\"I was baptized in gamma radiation and reborn into greatness.\"\n—Leader, Samuel Sterns",
     "artist": "Jonas De Ro",
     "set": "Marvel Super Heroes Commander",
-    "imageUrl": "/Cube/RealCards/fetid-pools-msc.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__fetid-pools-msc.jpg",
     "_source": "Lands\\Fetid Pools.jpg"
   },
   {
@@ -723,7 +723,7 @@
     "flavorText": "\"O beautiful for spacious skies, for amber waves of grain.\"\n—\"America the Beautiful\"",
     "artist": "Milivoj Ćeran",
     "set": "Marvel Super Heroes Commander",
-    "imageUrl": "/Cube/RealCards/irrigated-farmland-msc.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__irrigated-farmland-msc.jpg",
     "_source": "Lands\\Irrigated Farmland.jpg"
   },
   {
@@ -739,7 +739,7 @@
     "flavorText": "\"Just because you have ravaged your natural resources and paved over your forests, do not think we have made the same mistake.\"\n—King T'Chaka, to the United Nations",
     "artist": "Josu Hernaiz",
     "set": "Marvel Super Heroes Commander",
-    "imageUrl": "/Cube/RealCards/scattered-groves-msc.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__scattered-groves-msc.jpg",
     "_source": "Lands\\Scattered Groves.jpg"
   },
   {
@@ -754,7 +754,7 @@
     "archetypes": [],
     "artist": "Sung Choi",
     "set": "Lorwyn Eclipsed Commander",
-    "imageUrl": "/Cube/RealCards/sheltered-thicket-ecc.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__sheltered-thicket-ecc.jpg",
     "_source": "Lands\\Sheltered Thicket.jpg"
   },
   {
@@ -774,7 +774,7 @@
     ],
     "artist": "Lars Grant-West",
     "set": "Bloomburrow",
-    "imageUrl": "/Cube/RealCards/artist-s-talent-blb.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__artist-s-talent-blb.jpg",
     "_source": "Red\\Artist's Talent.jpg"
   },
   {
@@ -794,7 +794,7 @@
     "flavorText": "\"In my younger days, I would meticulously catalog all the terrors I encountered. These days, I mostly just kill them with fire.\"\n—Rip, spawn hunter",
     "artist": "Néstor Ossandón Leal",
     "set": "Duskmourn: House of Horror",
-    "imageUrl": "/Cube/RealCards/pyroclasm-dsk.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__pyroclasm-dsk.jpg",
     "_source": "Red\\Pyroclasm.jpg"
   },
   {
@@ -812,7 +812,7 @@
     "flavorText": "Whenever you copy a triggered ability, you may do a little dance.",
     "artist": "Jamroz Gary",
     "set": "Unfinity",
-    "imageUrl": "/Cube/RealCards/trigger-happy-unf.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__trigger-happy-unf.jpg",
     "_source": "Red\\Trigger Happy.jpg"
   },
   {
@@ -830,7 +830,7 @@
     "flavorText": "The first four crashes were accidental. Then the Endriders joined the fun.",
     "artist": "Zezhou Chen",
     "set": "Aetherdrift",
-    "imageUrl": "/Cube/RealCards/spectacular-pileup-dft.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__spectacular-pileup-dft.jpg",
     "_source": "White\\Spectacular Pileup.jpg"
   },
   {
@@ -850,7 +850,7 @@
     ],
     "artist": "Nino Vecia",
     "set": "Tarkir: Dragonstorm Commander",
-    "imageUrl": "/Cube/RealCards/tempest-technique-tdc.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__tempest-technique-tdc.jpg",
     "_source": "White\\Tempest Technique.jpg"
   },
   {
@@ -872,7 +872,7 @@
     "power": "2",
     "toughness": "3",
     "set": "Aetherdrift",
-    "imageUrl": "/Cube/RealCards/voyager-glidecar-dft.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__voyager-glidecar-dft.jpg",
     "_source": "White\\Voyager Glidecar.jpg"
   }
 ]

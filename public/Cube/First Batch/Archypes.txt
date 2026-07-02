@@ -1,0 +1,10 @@
+WU - Storm
+UB - Broken Cipher
+RB - Collect different tokens for bonus
+RG - Control
+GW - Vehicles
+WB - Blink/ETB/Value
+BG - Artifacts
+UR - Enchantments
+RW - Self mill
+GU - Prowess

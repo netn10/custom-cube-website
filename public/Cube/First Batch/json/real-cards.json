@@ -16,7 +16,7 @@
     ],
     "artist": "Anthony Devine",
     "set": "Warhammer 40,000 Commander",
-    "imageUrl": "/Cube/RealCards/biotransference-40k.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__biotransference-40k.jpg",
     "_source": "Black\\Biotransference.jpg",
     "relatedTokens": [
       "2/2 black Necron Warrior"
@@ -39,7 +39,7 @@
     "flavorText": "In Lorwyn's brief evenings, the sun pauses at the horizon long enough for a certain species of violet to bloom with the fragrance of mischief.",
     "artist": "Rebecca Guay",
     "set": "Double Masters 2022",
-    "imageUrl": "/Cube/RealCards/bitterblossom-2x2.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__bitterblossom-2x2.jpg",
     "_source": "Black\\Bitterblossom.jpg",
     "relatedTokens": [
       "1/1 black Faerie Rogue"
@@ -61,7 +61,7 @@
     ],
     "artist": "Kev Walker",
     "set": "Double Masters 2022",
-    "imageUrl": "/Cube/RealCards/damnation-2x2.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__damnation-2x2.jpg",
     "_source": "Black\\Damnation.jpg"
   },
   {
@@ -79,7 +79,7 @@
     "flavorText": "\"Behold! The most arcane powers of the multiverse are mere tools in service of Doom's ambition.\"",
     "artist": "Nino Is",
     "set": "Marvel Super Heroes Commander",
-    "imageUrl": "/Cube/RealCards/dark-ritual-msc.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__dark-ritual-msc.jpg",
     "_source": "Black\\Dark Ritual.jpg"
   },
   {
@@ -97,7 +97,7 @@
     "flavorText": "Beware the generosity of demons.",
     "artist": "Zack Stella",
     "set": "Commander Masters",
-    "imageUrl": "/Cube/RealCards/demonic-tutor-cmm.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__demonic-tutor-cmm.jpg",
     "_source": "Black\\Demonic Tutor.jpg"
   },
   {
@@ -115,7 +115,7 @@
     "flavorText": "\"Give of yourself, for *compleation* awaits the cleansed.\"\n—Nokar, priest of Sheoldred",
     "artist": "PINDURSKI",
     "set": "Foundations",
-    "imageUrl": "/Cube/RealCards/duress-fdn.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__duress-fdn.jpg",
     "_source": "Black\\Duress.jpg"
   },
   {
@@ -134,7 +134,7 @@
     ],
     "artist": "Eric Deschamps",
     "set": "Double Masters",
-    "imageUrl": "/Cube/RealCards/fatal-push-2xm.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__fatal-push-2xm.jpg",
     "_source": "Black\\Fatal Push.jpg"
   },
   {
@@ -152,7 +152,7 @@
     "flavorText": "You will scream out your innermost secrets just to make it stop.",
     "artist": "Tomasz Jedruszek",
     "set": "Double Masters 2022",
-    "imageUrl": "/Cube/RealCards/inquisition-of-kozilek-2x2.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__inquisition-of-kozilek-2x2.jpg",
     "_source": "Black\\Inquisition of Kozilek.jpg"
   },
   {
@@ -174,7 +174,7 @@
     "power": "1",
     "toughness": "2",
     "set": "Modern Horizons 3",
-    "imageUrl": "/Cube/RealCards/marionette-apprentice-mh3.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__marionette-apprentice-mh3.jpg",
     "_source": "Black\\Marionette Apprentice.jpg",
     "relatedTokens": [
       "1/1 colorless Servo"
@@ -195,7 +195,7 @@
     "flavorText": "\"Any dream is a robust harvest. Still, I prefer the timeworn dreams, heavy with import, that haunt the obsessive mind.\"",
     "artist": "Aleksi Briclot",
     "set": "Double Masters",
-    "imageUrl": "/Cube/RealCards/thoughtseize-2xm.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__thoughtseize-2xm.jpg",
     "_source": "Black\\Thoughtseize.jpg"
   },
   {
@@ -213,7 +213,7 @@
     "flavorText": "\"Zemo insults me by tasking me with weaklings such as you. Even together, you pose no challenge.\"\n—Radioactive Man, Dr. Chen Lu",
     "artist": "Anthony Devine",
     "set": "Marvel Super Heroes Commander",
-    "imageUrl": "/Cube/RealCards/toxic-deluge-msc.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__toxic-deluge-msc.jpg",
     "_source": "Black\\Toxic Deluge.jpg"
   },
   {
@@ -231,7 +231,7 @@
     "flavorText": "\"Now I get it. Something awful happened on that day. I don't know what, but I do know why. Firebenders lose their bending during a solar eclipse!\"\n—Sokka",
     "artist": "Arthur Yuan",
     "set": "Avatar: The Last Airbender Eternal",
-    "imageUrl": "/Cube/RealCards/brainstorm-tle.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__brainstorm-tle.jpg",
     "_source": "Blue\\Brainstorm.jpg"
   },
   {
@@ -248,7 +248,7 @@
     "archetypes": [],
     "artist": "Zack Stella",
     "set": "Duskmourn: House of Horror Commander",
-    "imageUrl": "/Cube/RealCards/counterspell-dsc.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__counterspell-dsc.jpg",
     "_source": "Blue\\Counterspell.jpg"
   },
   {
@@ -270,7 +270,7 @@
     "power": "2",
     "toughness": "3",
     "set": "Duskmourn: House of Horror",
-    "imageUrl": "/Cube/RealCards/entity-tracker-dsk.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__entity-tracker-dsk.jpg",
     "_source": "Blue\\Entity Tracker.jpg"
   },
   {
@@ -290,7 +290,7 @@
     "flavorText": "In the skies of the Si Wong Desert, a solitary winged lemur searched in vain for a lost friend.",
     "artist": "Alejandro Pacheco",
     "set": "Avatar: The Last Airbender Eternal",
-    "imageUrl": "/Cube/RealCards/frantic-search-tle.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__frantic-search-tle.jpg",
     "_source": "Blue\\Frantic Search.jpg"
   },
   {
@@ -310,7 +310,7 @@
     "flavorText": "Don't trust your secrets to the sea.",
     "artist": "Kev Walker",
     "set": "Duel Decks Anthology: Jace vs. Chandra",
-    "imageUrl": "/Cube/RealCards/gush-jvc.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__gush-jvc.jpg",
     "_source": "Blue\\Gush.jpg"
   },
   {
@@ -329,7 +329,7 @@
     ],
     "artist": "Daarken",
     "set": "Dragon's Maze",
-    "imageUrl": "/Cube/RealCards/hidden-strings-dgm.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__hidden-strings-dgm.jpg",
     "_source": "Blue\\Hidden Strings.jpg"
   },
   {
@@ -347,7 +347,7 @@
     "flavorText": "\"I've always made snap decisions. I'm just better at making the right ones now that I'm older and wiser.\"\n—Teferi",
     "artist": "Sam Guay",
     "set": "Dominaria Remastered",
-    "imageUrl": "/Cube/RealCards/impulse-dmr.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__impulse-dmr.jpg",
     "_source": "Blue\\Impulse.jpg"
   },
   {
@@ -365,7 +365,7 @@
     "flavorText": "The fatal flaw in every plan is the assumption that you know more than your enemy.",
     "artist": "Howard Lyon",
     "set": "Double Masters 2022",
-    "imageUrl": "/Cube/RealCards/mana-leak-2x2.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__mana-leak-2x2.jpg",
     "_source": "Blue\\Mana Leak.jpg"
   },
   {
@@ -383,7 +383,7 @@
     "flavorText": "What a lonely agony, the memory of memories lost.",
     "artist": "Greg Staples",
     "set": "Eternal Masters",
-    "imageUrl": "/Cube/RealCards/memory-lapse-ema.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__memory-lapse-ema.jpg",
     "_source": "Blue\\Memory Lapse.jpg"
   },
   {
@@ -401,7 +401,7 @@
     "flavorText": "\"It's easy to anticipate Captain Storm's orders: take the more dangerous route.\"",
     "artist": "Craig J Spearing",
     "set": "Tarkir: Dragonstorm Commander",
-    "imageUrl": "/Cube/RealCards/opt-tdc.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__opt-tdc.jpg",
     "_source": "Blue\\Opt.jpg"
   },
   {
@@ -419,7 +419,7 @@
     "flavorText": "Tomorrow belongs to those who prepare for it today.",
     "artist": "Dan Murayama Scott",
     "set": "Tarkir: Dragonstorm Commander",
-    "imageUrl": "/Cube/RealCards/ponder-tdc.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__ponder-tdc.jpg",
     "_source": "Blue\\Ponder.jpg"
   },
   {
@@ -436,7 +436,7 @@
     "archetypes": [],
     "artist": "Svetlin Velinov",
     "set": "Tarkir: Dragonstorm Commander",
-    "imageUrl": "/Cube/RealCards/preordain-tdc.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__preordain-tdc.jpg",
     "_source": "Blue\\Preordain.jpg"
   },
   {
@@ -454,7 +454,7 @@
     "flavorText": "\"Well, at least all of that arm-waving and arcane babbling you did was impressive.\"",
     "artist": "Mark A. Nelson",
     "set": "Ravnica Remastered",
-    "imageUrl": "/Cube/RealCards/remand-rvr.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__remand-rvr.jpg",
     "_source": "Blue\\Remand.jpg"
   },
   {
@@ -475,7 +475,7 @@
     "power": "2",
     "toughness": "1",
     "set": "Innistrad Remastered",
-    "imageUrl": "/Cube/RealCards/snapcaster-mage-inr.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__snapcaster-mage-inr.jpg",
     "_source": "Blue\\Snapcaster Mage.jpg"
   },
   {
@@ -496,7 +496,7 @@
     "power": "1",
     "toughness": "3",
     "set": "Outlaws of Thunder Junction Commander",
-    "imageUrl": "/Cube/RealCards/academy-manufactor-otc.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__academy-manufactor-otc.jpg",
     "_source": "Colorless\\Academy Manufactor.jpg",
     "relatedTokens": [
       "Clue",
@@ -518,7 +518,7 @@
     "power": "2",
     "toughness": "1",
     "set": "Conspiracy",
-    "imageUrl": "/Cube/RealCards/agent-of-acquisitions-cns.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__agent-of-acquisitions-cns.jpg",
     "_source": "Colorless\\Agent of Acquisitions.jpg"
   },
   {
@@ -536,7 +536,7 @@
     "flavorText": "\"As expected, this sphere's design reflects the colors of the four moons . . . plus another?\"\n—Pontifex, elder researcher",
     "artist": "Brian Snõddy",
     "set": "Jumpstart",
-    "imageUrl": "/Cube/RealCards/chromatic-sphere-jmp.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__chromatic-sphere-jmp.jpg",
     "_source": "Colorless\\Chromatic Sphere.jpg"
   },
   {
@@ -554,7 +554,7 @@
     "flavorText": "\"This item is not from ... now. It reflects a sky no longer ours and gleams with hope that does not exist.\"\n—Tavalus, acolyte of Korlis",
     "artist": "Daniel Ljunggren",
     "set": "Time Spiral Remastered",
-    "imageUrl": "/Cube/RealCards/chromatic-star-tsr.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__chromatic-star-tsr.jpg",
     "_source": "Colorless\\Chromatic Star.jpg"
   },
   {
@@ -572,7 +572,7 @@
     "power": "3",
     "toughness": "3",
     "set": "Conspiracy",
-    "imageUrl": "/Cube/RealCards/cogwork-librarian-cns.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__cogwork-librarian-cns.jpg",
     "_source": "Colorless\\Cogwork Librarian.jpg"
   },
   {
@@ -590,7 +590,7 @@
     "flavorText": "\"You serve Phyrexia. Your pieces would better serve Phyrexia elsewhere.\"\n—Azax-Azog, the Demon Thane",
     "artist": "Terese Nielsen",
     "set": "Modern Masters 2015",
-    "imageUrl": "/Cube/RealCards/dismember-mm2.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__dismember-mm2.jpg",
     "_source": "Colorless\\Dismember.jpg"
   },
   {
@@ -606,7 +606,7 @@
     "flavorText": "\"What do you have that I cannot obtain?\"\n—Mairsil, the Pretender",
     "artist": "John Avon",
     "set": "Secrets of Strixhaven Commander",
-    "imageUrl": "/Cube/RealCards/fellwar-stone-soc.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__fellwar-stone-soc.jpg",
     "_source": "Colorless\\Fellwar Stone.jpg"
   },
   {
@@ -626,7 +626,7 @@
     "flavorText": "\"My flesh holds no secrets, monster. The spirit of Mirrodin will fight on.\"\n—Vy Covalt, Mirran resistance",
     "artist": "Chippy",
     "set": "New Phyrexia",
-    "imageUrl": "/Cube/RealCards/gitaxian-probe-nph.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__gitaxian-probe-nph.jpg",
     "_source": "Colorless\\Gitaxian Probe.jpg"
   },
   {
@@ -642,7 +642,7 @@
     "flavorText": "\"We have barely begun to learn the secrets of the Fourth People. Every remnant of their presence, however cryptic, is a gift.\"\n—Akal Pakal, First Steward of Oteclan",
     "artist": "Camille Alquier",
     "set": "Secrets of Strixhaven Commander",
-    "imageUrl": "/Cube/RealCards/mind-stone-soc.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__mind-stone-soc.jpg",
     "_source": "Colorless\\Mind Stone.jpg"
   },
   {
@@ -662,7 +662,7 @@
     "flavorText": "\"Sympathy is for weaklings. Whoever survives, wins.\"\n—Benzir, archdruid of Temple Might",
     "artist": "Dave Kendall",
     "set": "Modern Masters 2015",
-    "imageUrl": "/Cube/RealCards/mutagenic-growth-mm2.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__mutagenic-growth-mm2.jpg",
     "_source": "Colorless\\Mutagenic Growth.jpg"
   },
   {
@@ -681,7 +681,7 @@
     "power": "4",
     "toughness": "4",
     "set": "Kamigawa: Neon Dynasty",
-    "imageUrl": "/Cube/RealCards/reckoner-bankbuster-neo.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__reckoner-bankbuster-neo.jpg",
     "_source": "Colorless\\Reckoner Bankbuster.jpg",
     "relatedTokens": [
       "Treasure",
@@ -704,7 +704,7 @@
     "power": "3",
     "toughness": "3",
     "set": "Neon Dynasty Commander",
-    "imageUrl": "/Cube/RealCards/smuggler-s-copter-nec.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__smuggler-s-copter-nec.jpg",
     "_source": "Colorless\\Smuggler's Copter.jpg"
   },
   {
@@ -723,7 +723,7 @@
     "power": "*",
     "toughness": "*",
     "set": "Streets of New Capenna",
-    "imageUrl": "/Cube/RealCards/unlicensed-hearse-snc.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__unlicensed-hearse-snc.jpg",
     "_source": "Colorless\\Unlicensed Hearse.jpg"
   },
   {
@@ -745,7 +745,7 @@
     "power": "3",
     "toughness": "3",
     "set": "Mirrodin Besieged",
-    "imageUrl": "/Cube/RealCards/glissa-the-traitor-mbs.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__glissa-the-traitor-mbs.jpg",
     "_source": "Gold\\BG\\Glissa, the Traitor.jpg"
   },
   {
@@ -768,7 +768,7 @@
     "power": "1",
     "toughness": "1",
     "set": "Modern Horizons 2",
-    "imageUrl": "/Cube/RealCards/ravenous-squirrel-mh2.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__ravenous-squirrel-mh2.jpg",
     "_source": "Gold\\BG\\Ravenous Squirrel.jpg"
   },
   {
@@ -788,7 +788,7 @@
     "power": "4",
     "toughness": "5",
     "set": "Ikoria: Lair of Behemoths",
-    "imageUrl": "/Cube/RealCards/umori-the-collector-iko.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__umori-the-collector-iko.jpg",
     "_source": "Gold\\BG\\Umori, the Collector.jpg"
   },
   {
@@ -811,7 +811,7 @@
     "power": "3",
     "toughness": "3",
     "set": "Edge of Eternities Commander",
-    "imageUrl": "/Cube/RealCards/mayhem-devil-eoc.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__mayhem-devil-eoc.jpg",
     "_source": "Gold\\BR\\Mayhem Devil.jpg"
   },
   {
@@ -831,7 +831,7 @@
     "power": "3",
     "toughness": "5",
     "set": "Ikoria: Lair of Behemoths",
-    "imageUrl": "/Cube/RealCards/obosh-the-preypiercer-iko.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__obosh-the-preypiercer-iko.jpg",
     "_source": "Gold\\BR\\Obosh, the Preypiercer.jpg"
   },
   {
@@ -850,7 +850,7 @@
     "flavorText": "Hidden within the infinite, protean rooms of the House are strange pockets of power that only the bravest dare access.",
     "artist": "Nicholas Gregory",
     "set": "Duskmourn: House of Horror Commander",
-    "imageUrl": "/Cube/RealCards/growth-spiral-dsc.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__growth-spiral-dsc.jpg",
     "_source": "Gold\\GU\\Growth Spiral.jpg"
   },
   {
@@ -870,7 +870,7 @@
     "power": "5",
     "toughness": "4",
     "set": "Ikoria: Lair of Behemoths",
-    "imageUrl": "/Cube/RealCards/keruga-the-macrosage-iko.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__keruga-the-macrosage-iko.jpg",
     "_source": "Gold\\GU\\Keruga, the Macrosage.jpg"
   },
   {
@@ -890,7 +890,7 @@
     "power": "3",
     "toughness": "4",
     "set": "Modern Horizons 3",
-    "imageUrl": "/Cube/RealCards/nadu-winged-wisdom-mh3.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__nadu-winged-wisdom-mh3.jpg",
     "_source": "Gold\\GU\\Nadu, Winged Wisdom.jpg"
   },
   {
@@ -910,7 +910,7 @@
     "power": "3",
     "toughness": "2",
     "set": "Ikoria: Lair of Behemoths",
-    "imageUrl": "/Cube/RealCards/kaheera-the-orphanguard-iko.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__kaheera-the-orphanguard-iko.jpg",
     "_source": "Gold\\GW\\Kaheera, the Orphanguard.jpg"
   },
   {
@@ -933,7 +933,7 @@
     "power": "3",
     "toughness": "2",
     "set": "Outlaws of Thunder Junction",
-    "imageUrl": "/Cube/RealCards/miriam-herd-whisperer-otj.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__miriam-herd-whisperer-otj.jpg",
     "_source": "Gold\\GW\\Miriam, Herd Whisperer.jpg"
   },
   {
@@ -953,7 +953,7 @@
     "power": "5",
     "toughness": "5",
     "set": "Lorwyn Eclipsed Commander",
-    "imageUrl": "/Cube/RealCards/jegantha-the-wellspring-ecc.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__jegantha-the-wellspring-ecc.jpg",
     "_source": "Gold\\RG\\Jegantha, the Wellspring.jpg"
   },
   {
@@ -972,7 +972,7 @@
     "artist": "Andreas Zafiratos",
     "loyalty": 3,
     "set": "Commander Legends: Battle for Baldur's Gate",
-    "imageUrl": "/Cube/RealCards/minsc-boo-timeless-heroes-clb.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__minsc-boo-timeless-heroes-clb.jpg",
     "_source": "Gold\\RG\\Minsc & Boo, Timeless Heroes.jpg",
     "relatedTokens": [
       "Boo"
@@ -994,7 +994,7 @@
     "flavorText": "After heavy casualties in the Phyrexian invasion, the Boros mage-priests trained as many rank-and-file soldiers as possible to wield the Legion's legendary battle magic.",
     "artist": "Eli Minaya",
     "set": "Murders at Karlov Manor",
-    "imageUrl": "/Cube/RealCards/lightning-helix-mkm.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__lightning-helix-mkm.jpg",
     "_source": "Gold\\RW\\Lightning Helix.jpg"
   },
   {
@@ -1014,7 +1014,7 @@
     "power": "3",
     "toughness": "3",
     "set": "Ikoria: Lair of Behemoths",
-    "imageUrl": "/Cube/RealCards/zirda-the-dawnwaker-iko.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__zirda-the-dawnwaker-iko.jpg",
     "_source": "Gold\\RW\\Zirda, the Dawnwaker.jpg"
   },
   {
@@ -1037,7 +1037,7 @@
     "power": "1",
     "toughness": "1",
     "set": "Outlaws of Thunder Junction Commander",
-    "imageUrl": "/Cube/RealCards/baleful-strix-otc.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__baleful-strix-otc.jpg",
     "_source": "Gold\\UB\\Baleful Strix.jpg"
   },
   {
@@ -1059,7 +1059,7 @@
     "power": "6",
     "toughness": "6",
     "set": "Ikoria: Lair of Behemoths",
-    "imageUrl": "/Cube/RealCards/gyruda-doom-of-depths-iko.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__gyruda-doom-of-depths-iko.jpg",
     "_source": "Gold\\UB\\Gyruda, Doom of Depths.jpg"
   },
   {
@@ -1081,7 +1081,7 @@
     "power": "3",
     "toughness": "2",
     "set": "Ikoria: Lair of Behemoths",
-    "imageUrl": "/Cube/RealCards/lutri-the-spellchaser-iko.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__lutri-the-spellchaser-iko.jpg",
     "_source": "Gold\\UR\\Lutri, the Spellchaser.jpg"
   },
   {
@@ -1097,7 +1097,7 @@
     "flavorText": "\"Kozilek experiences reality on his own terms.\"\n—Ayli, high priest of the Eternal Pilgrims",
     "artist": "Jason Rainville",
     "set": "Modern Horizons 3",
-    "imageUrl": "/Cube/RealCards/abstruse-appropriation-mh3.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__abstruse-appropriation-mh3.jpg",
     "_source": "Gold\\WB\\Abstruse Appropriation.jpg"
   },
   {
@@ -1117,7 +1117,7 @@
     "power": "3",
     "toughness": "2",
     "set": "Ikoria: Lair of Behemoths",
-    "imageUrl": "/Cube/RealCards/lurrus-of-the-dream-den-iko.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__lurrus-of-the-dream-den-iko.jpg",
     "_source": "Gold\\WB\\Lurrus of the Dream-Den.jpg"
   },
   {
@@ -1140,7 +1140,7 @@
     "power": "2",
     "toughness": "3",
     "set": "Double Masters 2022",
-    "imageUrl": "/Cube/RealCards/grand-arbiter-augustin-iv-2x2.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__grand-arbiter-augustin-iv-2x2.jpg",
     "_source": "Gold\\WU\\Grand Arbiter Augustin IV.jpg"
   },
   {
@@ -1158,7 +1158,7 @@
     "archetypes": [],
     "artist": "Marion Kivits",
     "set": "Mystery Booster 2",
-    "imageUrl": "/Cube/RealCards/wrath-of-leknif-mb2.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__wrath-of-leknif-mb2.jpg",
     "_source": "Gold\\WU\\Wrath of Leknif.jpg"
   },
   {
@@ -1180,7 +1180,7 @@
     "power": "4",
     "toughness": "5",
     "set": "Ikoria: Lair of Behemoths",
-    "imageUrl": "/Cube/RealCards/yorion-sky-nomad-iko.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__yorion-sky-nomad-iko.jpg",
     "_source": "Gold\\WU\\Yorion, Sky Nomad.jpg"
   },
   {
@@ -1200,7 +1200,7 @@
     "power": "0",
     "toughness": "1",
     "set": "Marvel Super Heroes Commander",
-    "imageUrl": "/Cube/RealCards/birds-of-paradise-msc.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__birds-of-paradise-msc.jpg",
     "_source": "Green\\Birds of Paradise.jpg"
   },
   {
@@ -1221,7 +1221,7 @@
     "power": "3",
     "toughness": "4",
     "set": "Innistrad: Crimson Vow",
-    "imageUrl": "/Cube/RealCards/cemetery-prowler-vow.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__cemetery-prowler-vow.jpg",
     "_source": "Green\\Cemetery Prowler.jpg"
   },
   {
@@ -1239,7 +1239,7 @@
     "flavorText": "\"Don't get so caught up in the science that you forget to embrace the wonder in front of you.\"\n—Reed Richards, to Valeria Richards",
     "artist": "Darius Zablockis",
     "set": "Marvel Super Heroes Commander",
-    "imageUrl": "/Cube/RealCards/cultivate-msc.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__cultivate-msc.jpg",
     "_source": "Green\\Cultivate.jpg"
   },
   {
@@ -1261,7 +1261,7 @@
     "power": "1",
     "toughness": "1",
     "set": "Ixalan",
-    "imageUrl": "/Cube/RealCards/deeproot-champion-xln.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__deeproot-champion-xln.jpg",
     "_source": "Green\\Deeproot Champion.jpg"
   },
   {
@@ -1281,7 +1281,7 @@
     "power": "1",
     "toughness": "1",
     "set": "Secrets of Strixhaven Commander",
-    "imageUrl": "/Cube/RealCards/elvish-mystic-soc.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__elvish-mystic-soc.jpg",
     "_source": "Green\\Elvish Mystic.jpg"
   },
   {
@@ -1302,7 +1302,7 @@
     "power": "0",
     "toughness": "2",
     "set": "Secrets of Strixhaven Commander",
-    "imageUrl": "/Cube/RealCards/gilded-goose-soc.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__gilded-goose-soc.jpg",
     "_source": "Green\\Gilded Goose.jpg",
     "relatedTokens": [
       "Food"
@@ -1327,7 +1327,7 @@
     "power": "5",
     "toughness": "5",
     "set": "Duskmourn: House of Horror",
-    "imageUrl": "/Cube/RealCards/hedge-shredder-dsk.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__hedge-shredder-dsk.jpg",
     "_source": "Green\\Hedge Shredder.jpg"
   },
   {
@@ -1347,7 +1347,7 @@
     "power": "2",
     "toughness": "2",
     "set": "Foundations",
-    "imageUrl": "/Cube/RealCards/scavenging-ooze-fdn.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__scavenging-ooze-fdn.jpg",
     "_source": "Green\\Scavenging Ooze.jpg"
   },
   {
@@ -1365,7 +1365,7 @@
     "flavorText": "Few who encounter the strange, human-like grove leave once the lilting chorus of the dryads reaches their ears.",
     "artist": "Lars Grant-West",
     "set": "Commander Masters",
-    "imageUrl": "/Cube/RealCards/song-of-the-dryads-cmm.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__song-of-the-dryads-cmm.jpg",
     "_source": "Green\\Song of the Dryads.jpg"
   },
   {
@@ -1380,7 +1380,7 @@
     "archetypes": [],
     "artist": "Raymond Swanland",
     "set": "Modern Horizons 2",
-    "imageUrl": "/Cube/RealCards/arid-mesa-mh2.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__arid-mesa-mh2.jpg",
     "_source": "Lands\\Arid Mesa.jpg"
   },
   {
@@ -1396,7 +1396,7 @@
     "flavorText": "Many interstellar civilizations have dumped their unwanted elements on Planet Morbus, from toxins to lowlifes.",
     "artist": "Lucas Staniec",
     "set": "Teenage Mutant Ninja Turtles Eternal",
-    "imageUrl": "/Cube/RealCards/ash-barrens-tmc.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__ash-barrens-tmc.jpg",
     "_source": "Lands\\Ash Barrens.jpg"
   },
   {
@@ -1411,7 +1411,7 @@
     "archetypes": [],
     "artist": "Daarken",
     "set": "Vintage Masters",
-    "imageUrl": "/Cube/RealCards/badlands-vma.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__badlands-vma.jpg",
     "_source": "Lands\\Badlands.jpg"
   },
   {
@@ -1426,7 +1426,7 @@
     "archetypes": [],
     "artist": "Karl Kopinski",
     "set": "Vintage Masters",
-    "imageUrl": "/Cube/RealCards/bayou-vma.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__bayou-vma.jpg",
     "_source": "Lands\\Bayou.jpg"
   },
   {
@@ -1442,7 +1442,7 @@
     "flavorText": "The boggart was playfully prodding a critter when the skies darkened, then he gobbled it down with glee.",
     "artist": "Adam Paquette",
     "set": "Lorwyn Eclipsed",
-    "imageUrl": "/Cube/RealCards/blood-crypt-ecl.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__blood-crypt-ecl.jpg",
     "_source": "Lands\\Blood Crypt.jpg"
   },
   {
@@ -1458,7 +1458,7 @@
     "flavorText": "A graveyard for conquerors and conquered alike.",
     "artist": "Bruce Brenneise",
     "set": "Modern Horizons 3",
-    "imageUrl": "/Cube/RealCards/bloodstained-mire-mh3.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__bloodstained-mire-mh3.jpg",
     "_source": "Lands\\Bloodstained Mire.jpg"
   },
   {
@@ -1474,7 +1474,7 @@
     "flavorText": "\"Log 1.4.778: Granove, a tropical moon teeming with endemic biota. A must see for any aspiring astrobiologist!\"\n—*Maisie's Edge Chronicles*",
     "artist": "Constantin Marin",
     "set": "Edge of Eternities",
-    "imageUrl": "/Cube/RealCards/breeding-pool-eoe.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__breeding-pool-eoe.jpg",
     "_source": "Lands\\Breeding Pool.jpg"
   },
   {
@@ -1490,7 +1490,7 @@
     "flavorText": "It's like the future's a party that these brothers just crashed . . .",
     "artist": "Robin Olausson",
     "set": "Teenage Mutant Ninja Turtles Eternal",
-    "imageUrl": "/Cube/RealCards/city-of-brass-tmc.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__city-of-brass-tmc.jpg",
     "_source": "Lands\\City of Brass.jpg"
   },
   {
@@ -1505,7 +1505,7 @@
     "archetypes": [],
     "artist": "Julian Kok Joon Wen",
     "set": "Murders at Karlov Manor",
-    "imageUrl": "/Cube/RealCards/commercial-district-mkm.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__commercial-district-mkm.jpg",
     "_source": "Lands\\Commercial District.jpg"
   },
   {
@@ -1520,7 +1520,7 @@
     "archetypes": [],
     "artist": "Kamila Szutenberg",
     "set": "Murders at Karlov Manor",
-    "imageUrl": "/Cube/RealCards/elegant-parlor-mkm.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__elegant-parlor-mkm.jpg",
     "_source": "Lands\\Elegant Parlor.jpg"
   },
   {
@@ -1536,7 +1536,7 @@
     "flavorText": "\"I hear the sewers in Connecticut are really nice.\"\n—Michelangelo",
     "artist": "Aenami",
     "set": "Teenage Mutant Ninja Turtles",
-    "imageUrl": "/Cube/RealCards/escape-tunnel-tmt.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__escape-tunnel-tmt.jpg",
     "_source": "Lands\\Escape Tunnel.jpg"
   },
   {
@@ -1552,7 +1552,7 @@
     "flavorText": "\"The mechanisms of evolution do their work upon the Savage Land, as they do everywhere. I only hasten the process.\"\n—High Evolutionary, Herbert Wyndham",
     "artist": "Rytis Sabaliauskas",
     "set": "Marvel Super Heroes Commander",
-    "imageUrl": "/Cube/RealCards/evolving-wilds-msc.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__evolving-wilds-msc.jpg",
     "_source": "Lands\\Evolving Wilds.jpg"
   },
   {
@@ -1568,7 +1568,7 @@
     "flavorText": "In the Blue Area of the moon lies a garden sculpted by alien hands, where the one called the Watcher stands witness.",
     "artist": "David Szabo",
     "set": "Marvel Super Heroes Commander",
-    "imageUrl": "/Cube/RealCards/exotic-orchard-msc.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__exotic-orchard-msc.jpg",
     "_source": "Lands\\Exotic Orchard.jpg"
   },
   {
@@ -1584,7 +1584,7 @@
     "flavorText": "\"Well? You coming in or what?\"\n—The One Above All",
     "artist": "Mintautas Šukys",
     "set": "Marvel Super Heroes Commander",
-    "imageUrl": "/Cube/RealCards/fabled-passage-msc.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__fabled-passage-msc.jpg",
     "_source": "Lands\\Fabled Passage.jpg"
   },
   {
@@ -1600,7 +1600,7 @@
     "flavorText": "Where water is the canvas and lava the paint.",
     "artist": "Richard Wright",
     "set": "Modern Horizons",
-    "imageUrl": "/Cube/RealCards/fiery-islet-mh1.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__fiery-islet-mh1.jpg",
     "_source": "Lands\\Fiery Islet.jpg"
   },
   {
@@ -1616,7 +1616,7 @@
     "flavorText": "Once a prosperous Vantress town, now swept clean and reclaimed by the waters of the wilds.",
     "artist": "Alexander Forssberg",
     "set": "Modern Horizons 3",
-    "imageUrl": "/Cube/RealCards/flooded-strand-mh3.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__flooded-strand-mh3.jpg",
     "_source": "Lands\\Flooded Strand.jpg"
   },
   {
@@ -1632,7 +1632,7 @@
     "flavorText": "\"Log 1.7.618: Starshadow, a relic of a culture lost to calamity. Its people were eradicated in a single day—but by what?\"\n—*Maisie's Edge Chronicles*",
     "artist": "Rob Rey",
     "set": "Edge of Eternities",
-    "imageUrl": "/Cube/RealCards/godless-shrine-eoe.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__godless-shrine-eoe.jpg",
     "_source": "Lands\\Godless Shrine.jpg"
   },
   {
@@ -1648,7 +1648,7 @@
     "flavorText": "The merrow was vending her wares when the skies darkened, then she sharply raised her prices.",
     "artist": "Adam Paquette",
     "set": "Lorwyn Eclipsed",
-    "imageUrl": "/Cube/RealCards/hallowed-fountain-ecl.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__hallowed-fountain-ecl.jpg",
     "_source": "Lands\\Hallowed Fountain.jpg"
   },
   {
@@ -1663,7 +1663,7 @@
     "archetypes": [],
     "artist": "Andrew Mar",
     "set": "Murders at Karlov Manor",
-    "imageUrl": "/Cube/RealCards/hedge-maze-mkm.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__hedge-maze-mkm.jpg",
     "_source": "Lands\\Hedge Maze.jpg"
   },
   {
@@ -1679,7 +1679,7 @@
     "flavorText": "The day is born within its branches.",
     "artist": "Noah Bradley",
     "set": "Iconic Masters",
-    "imageUrl": "/Cube/RealCards/horizon-canopy-ima.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__horizon-canopy-ima.jpg",
     "_source": "Lands\\Horizon Canopy.jpg"
   },
   {
@@ -1695,7 +1695,7 @@
     "flavorText": "\"These lowlands were formed thousands of years ago by the behemoth Indath—its final footsteps before vanishing into the sea.\"\n—*Tales of the Ozolith*",
     "artist": "Noah Bradley",
     "set": "Ikoria: Lair of Behemoths",
-    "imageUrl": "/Cube/RealCards/indatha-triome-iko.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__indatha-triome-iko.jpg",
     "_source": "Lands\\Indatha Triome.jpg"
   },
   {
@@ -1711,7 +1711,7 @@
     "flavorText": "The parklike Cabaretti grounds offer rest, food, and the perfect place to shake off a tail.",
     "artist": "Kasia 'Kafis' Zielińska",
     "set": "Streets of New Capenna",
-    "imageUrl": "/Cube/RealCards/jetmir-s-garden-snc.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__jetmir-s-garden-snc.jpg",
     "_source": "Lands\\Jetmir's Garden.jpg"
   },
   {
@@ -1727,7 +1727,7 @@
     "flavorText": "Nowhere on Ikoria are monsters more integral to the landscape than Ketria, where the river itself will stand up and roar.",
     "artist": "Sam Burley",
     "set": "Ikoria: Lair of Behemoths",
-    "imageUrl": "/Cube/RealCards/ketria-triome-iko.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__ketria-triome-iko.jpg",
     "_source": "Lands\\Ketria Triome.jpg"
   },
   {
@@ -1742,7 +1742,7 @@
     "archetypes": [],
     "artist": "Kamila Szutenberg",
     "set": "Murders at Karlov Manor",
-    "imageUrl": "/Cube/RealCards/lush-portico-mkm.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__lush-portico-mkm.jpg",
     "_source": "Lands\\Lush Portico.jpg"
   },
   {
@@ -1758,7 +1758,7 @@
     "flavorText": "Five rivers encircle Theros, flowing with waters more ancient than the world itself.",
     "artist": "Richard Wright",
     "set": "Journey into Nyx",
-    "imageUrl": "/Cube/RealCards/mana-confluence-jou.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__mana-confluence-jou.jpg",
     "_source": "Lands\\Mana Confluence.jpg"
   },
   {
@@ -1773,7 +1773,7 @@
     "archetypes": [],
     "artist": "Izzy",
     "set": "Modern Horizons 2",
-    "imageUrl": "/Cube/RealCards/marsh-flats-mh2.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__marsh-flats-mh2.jpg",
     "_source": "Lands\\Marsh Flats.jpg"
   },
   {
@@ -1788,7 +1788,7 @@
     "archetypes": [],
     "artist": "Sam Burley",
     "set": "Murders at Karlov Manor",
-    "imageUrl": "/Cube/RealCards/meticulous-archive-mkm.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__meticulous-archive-mkm.jpg",
     "_source": "Lands\\Meticulous Archive.jpg"
   },
   {
@@ -1803,7 +1803,7 @@
     "archetypes": [],
     "artist": "Shelly Wan",
     "set": "Modern Horizons 2",
-    "imageUrl": "/Cube/RealCards/misty-rainforest-mh2.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__misty-rainforest-mh2.jpg",
     "_source": "Lands\\Misty Rainforest.jpg"
   },
   {
@@ -1819,7 +1819,7 @@
     "flavorText": "New life is born within its shadows.",
     "artist": "Noah Bradley",
     "set": "Modern Horizons",
-    "imageUrl": "/Cube/RealCards/nurturing-peatland-mh1.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__nurturing-peatland-mh1.jpg",
     "_source": "Lands\\Nurturing Peatland.jpg"
   },
   {
@@ -1835,7 +1835,7 @@
     "flavorText": "The elf was disgusted by the bramble before him when the skies darkened, then he stepped closer to observe the wild beauty.",
     "artist": "Adam Paquette",
     "set": "Lorwyn Eclipsed",
-    "imageUrl": "/Cube/RealCards/overgrown-tomb-ecl.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__overgrown-tomb-ecl.jpg",
     "_source": "Lands\\Overgrown Tomb.jpg"
   },
   {
@@ -1850,7 +1850,7 @@
     "archetypes": [],
     "artist": "Noah Bradley",
     "set": "Vintage Masters",
-    "imageUrl": "/Cube/RealCards/plateau-vma.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__plateau-vma.jpg",
     "_source": "Lands\\Plateau.jpg"
   },
   {
@@ -1866,7 +1866,7 @@
     "flavorText": "A warped gateway that seeps toxins and malevolence into the waters around Towashi.",
     "artist": "Chris Ostrowski",
     "set": "Modern Horizons 3",
-    "imageUrl": "/Cube/RealCards/polluted-delta-mh3.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__polluted-delta-mh3.jpg",
     "_source": "Lands\\Polluted Delta.jpg"
   },
   {
@@ -1882,7 +1882,7 @@
     "flavorText": "There is beauty in the uncertainty of potential.",
     "artist": "Sam Burley",
     "set": "Modern Horizons",
-    "imageUrl": "/Cube/RealCards/prismatic-vista-mh1.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__prismatic-vista-mh1.jpg",
     "_source": "Lands\\Prismatic Vista.jpg"
   },
   {
@@ -1898,7 +1898,7 @@
     "flavorText": "The Obscura's Cloud Spire dominates the skyline, its eye a beacon of progress that sees all.",
     "artist": "Sam White",
     "set": "Streets of New Capenna",
-    "imageUrl": "/Cube/RealCards/raffine-s-tower-snc.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__raffine-s-tower-snc.jpg",
     "_source": "Lands\\Raffine's Tower.jpg"
   },
   {
@@ -1913,7 +1913,7 @@
     "archetypes": [],
     "artist": "Sergey Glushakov",
     "set": "Murders at Karlov Manor",
-    "imageUrl": "/Cube/RealCards/raucous-theater-mkm.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__raucous-theater-mkm.jpg",
     "_source": "Lands\\Raucous Theater.jpg"
   },
   {
@@ -1929,7 +1929,7 @@
     "flavorText": "Raugrin meets the sea with jaws wide, its coast spiked with teeth of crystal and granite.",
     "artist": "Jonas De Ro",
     "set": "Ikoria: Lair of Behemoths",
-    "imageUrl": "/Cube/RealCards/raugrin-triome-iko.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__raugrin-triome-iko.jpg",
     "_source": "Lands\\Raugrin Triome.jpg"
   },
   {
@@ -1945,7 +1945,7 @@
     "flavorText": "Gale stared into the pool and saw a stranger. The similarities were uncanny, but it was not him.",
     "artist": "Alayna Danner",
     "set": "Commander Legends: Battle for Baldur's Gate",
-    "imageUrl": "/Cube/RealCards/reflecting-pool-clb.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__reflecting-pool-clb.jpg",
     "_source": "Lands\\Reflecting Pool.jpg"
   },
   {
@@ -1961,7 +1961,7 @@
     "flavorText": "\"Log 2.2.119: Kiln, known for its blazing forges and ancient lava seeps. The footing may be treacherous, but the metallurgy is grand!\"\n—*Maisie's Edge Chronicles*",
     "artist": "Titus Lunter",
     "set": "Edge of Eternities",
-    "imageUrl": "/Cube/RealCards/sacred-foundry-eoe.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__sacred-foundry-eoe.jpg",
     "_source": "Lands\\Sacred Foundry.jpg"
   },
   {
@@ -1977,7 +1977,7 @@
     "flavorText": "Broad prairies feed the human sanctuary of Drannith and conceal a network of caverns where giant cats make their dens.",
     "artist": "Titus Lunter",
     "set": "Ikoria: Lair of Behemoths",
-    "imageUrl": "/Cube/RealCards/savai-triome-iko.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__savai-triome-iko.jpg",
     "_source": "Lands\\Savai Triome.jpg"
   },
   {
@@ -1992,7 +1992,7 @@
     "archetypes": [],
     "artist": "Charles Urbach",
     "set": "Vintage Masters",
-    "imageUrl": "/Cube/RealCards/savannah-vma.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__savannah-vma.jpg",
     "_source": "Lands\\Savannah.jpg"
   },
   {
@@ -2007,7 +2007,7 @@
     "archetypes": [],
     "artist": "Philip Straub",
     "set": "Modern Horizons 2",
-    "imageUrl": "/Cube/RealCards/scalding-tarn-mh2.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__scalding-tarn-mh2.jpg",
     "_source": "Lands\\Scalding Tarn.jpg"
   },
   {
@@ -2022,7 +2022,7 @@
     "archetypes": [],
     "artist": "Eytan Zana",
     "set": "Vintage Masters",
-    "imageUrl": "/Cube/RealCards/scrubland-vma.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__scrubland-vma.jpg",
     "_source": "Lands\\Scrubland.jpg"
   },
   {
@@ -2037,7 +2037,7 @@
     "archetypes": [],
     "artist": "Andreas Zafiratos",
     "set": "Murders at Karlov Manor",
-    "imageUrl": "/Cube/RealCards/shadowy-backstreet-mkm.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__shadowy-backstreet-mkm.jpg",
     "_source": "Lands\\Shadowy Backstreet.jpg"
   },
   {
@@ -2053,7 +2053,7 @@
     "flavorText": "The expedition's end began the marsh's story.",
     "artist": "Seb McKinnon",
     "set": "Modern Horizons",
-    "imageUrl": "/Cube/RealCards/silent-clearing-mh1.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__silent-clearing-mh1.jpg",
     "_source": "Lands\\Silent Clearing.jpg"
   },
   {
@@ -2069,7 +2069,7 @@
     "flavorText": "To most, the Nido Sanctuary is an office complex. To the Brokers, it's a vault of secrets.",
     "artist": "Kieran Yanner",
     "set": "Streets of New Capenna",
-    "imageUrl": "/Cube/RealCards/spara-s-headquarters-snc.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__spara-s-headquarters-snc.jpg",
     "_source": "Lands\\Spara's Headquarters.jpg"
   },
   {
@@ -2085,7 +2085,7 @@
     "flavorText": "The flamekin was drawn toward warm laughter when the skies darkened, then she turned back to the lonely peak.",
     "artist": "Adam Paquette",
     "set": "Lorwyn Eclipsed",
-    "imageUrl": "/Cube/RealCards/steam-vents-ecl.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__steam-vents-ecl.jpg",
     "_source": "Lands\\Steam Vents.jpg"
   },
   {
@@ -2101,7 +2101,7 @@
     "flavorText": "\"Log 2.5.325: A newborn moon, Aqqat still churns with the fires of creation. I'm eager to see what it will become!\"\n—*Maisie's Edge Chronicles*",
     "artist": "Bruce Brenneise",
     "set": "Edge of Eternities",
-    "imageUrl": "/Cube/RealCards/stomping-ground-eoe.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__stomping-ground-eoe.jpg",
     "_source": "Lands\\Stomping Ground.jpg"
   },
   {
@@ -2117,7 +2117,7 @@
     "flavorText": "Since the river ran dry, travelers wander where fish once swam.",
     "artist": "Yeong-Hao Han",
     "set": "Modern Horizons",
-    "imageUrl": "/Cube/RealCards/sunbaked-canyon-mh1.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__sunbaked-canyon-mh1.jpg",
     "_source": "Lands\\Sunbaked Canyon.jpg"
   },
   {
@@ -2132,7 +2132,7 @@
     "archetypes": [],
     "artist": "Sam Burley",
     "set": "Vintage Masters",
-    "imageUrl": "/Cube/RealCards/taiga-vma.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__taiga-vma.jpg",
     "_source": "Lands\\Taiga.jpg"
   },
   {
@@ -2148,7 +2148,7 @@
     "flavorText": "The kithkin was admiring the flowers when the skies darkened, then they ripped up the roots for the next season.",
     "artist": "Adam Paquette",
     "set": "Lorwyn Eclipsed",
-    "imageUrl": "/Cube/RealCards/temple-garden-ecl.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__temple-garden-ecl.jpg",
     "_source": "Lands\\Temple Garden.jpg"
   },
   {
@@ -2164,7 +2164,7 @@
     "flavorText": "\"This is . . . I can't explain it. The opposite of all we know. A negative zone.\"\n—Mister Fantastic, Reed Richards",
     "artist": "Arthur Yuan",
     "set": "Marvel Super Heroes Commander",
-    "imageUrl": "/Cube/RealCards/terramorphic-expanse-msc.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__terramorphic-expanse-msc.jpg",
     "_source": "Lands\\Terramorphic Expanse.jpg"
   },
   {
@@ -2179,7 +2179,7 @@
     "archetypes": [],
     "artist": "Grady Frederick",
     "set": "Murders at Karlov Manor",
-    "imageUrl": "/Cube/RealCards/thundering-falls-mkm.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__thundering-falls-mkm.jpg",
     "_source": "Lands\\Thundering Falls.jpg"
   },
   {
@@ -2194,7 +2194,7 @@
     "archetypes": [],
     "artist": "Franz Vohwinkel",
     "set": "Vintage Masters",
-    "imageUrl": "/Cube/RealCards/tropical-island-vma.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__tropical-island-vma.jpg",
     "_source": "Lands\\Tropical Island.jpg"
   },
   {
@@ -2209,7 +2209,7 @@
     "archetypes": [],
     "artist": "Lars Grant-West",
     "set": "Vintage Masters",
-    "imageUrl": "/Cube/RealCards/tundra-vma.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__tundra-vma.jpg",
     "_source": "Lands\\Tundra.jpg"
   },
   {
@@ -2224,7 +2224,7 @@
     "archetypes": [],
     "artist": "Yeong-Hao Han",
     "set": "Murders at Karlov Manor",
-    "imageUrl": "/Cube/RealCards/undercity-sewers-mkm.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__undercity-sewers-mkm.jpg",
     "_source": "Lands\\Undercity Sewers.jpg"
   },
   {
@@ -2239,7 +2239,7 @@
     "archetypes": [],
     "artist": "Sergey Glushakov",
     "set": "Murders at Karlov Manor",
-    "imageUrl": "/Cube/RealCards/underground-mortuary-mkm.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__underground-mortuary-mkm.jpg",
     "_source": "Lands\\Underground Mortuary.jpg"
   },
   {
@@ -2254,7 +2254,7 @@
     "archetypes": [],
     "artist": "Cliff Childs",
     "set": "Vintage Masters",
-    "imageUrl": "/Cube/RealCards/underground-sea-vma.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__underground-sea-vma.jpg",
     "_source": "Lands\\Underground Sea.jpg"
   },
   {
@@ -2269,7 +2269,7 @@
     "archetypes": [],
     "artist": "Vance Kovacs",
     "set": "Modern Horizons 2",
-    "imageUrl": "/Cube/RealCards/verdant-catacombs-mh2.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__verdant-catacombs-mh2.jpg",
     "_source": "Lands\\Verdant Catacombs.jpg"
   },
   {
@@ -2284,7 +2284,7 @@
     "archetypes": [],
     "artist": "Noah Bradley",
     "set": "Vintage Masters",
-    "imageUrl": "/Cube/RealCards/volcanic-island-vma.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__volcanic-island-vma.jpg",
     "_source": "Lands\\Volcanic Island.jpg"
   },
   {
@@ -2300,7 +2300,7 @@
     "flavorText": "The trees pull water from deep underground, filling the forest for miles.",
     "artist": "John Avon",
     "set": "Modern Horizons",
-    "imageUrl": "/Cube/RealCards/waterlogged-grove-mh1.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__waterlogged-grove-mh1.jpg",
     "_source": "Lands\\Waterlogged Grove.jpg"
   },
   {
@@ -2316,7 +2316,7 @@
     "flavorText": "\"Log 2.9.089: Lammuat, the cemetery moon of salvage and secrets. Could be profitable for those brave enough to plumb its recesses.\"\n—*Maisie's Edge Chronicles*",
     "artist": "Sergey Glushakov",
     "set": "Edge of Eternities",
-    "imageUrl": "/Cube/RealCards/watery-grave-eoe.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__watery-grave-eoe.jpg",
     "_source": "Lands\\Watery Grave.jpg"
   },
   {
@@ -2332,7 +2332,7 @@
     "flavorText": "An underground paradise, bright and thriving beneath the surface of Ixalan.",
     "artist": "Alexander Forssberg",
     "set": "Modern Horizons 3",
-    "imageUrl": "/Cube/RealCards/windswept-heath-mh3.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__windswept-heath-mh3.jpg",
     "_source": "Lands\\Windswept Heath.jpg"
   },
   {
@@ -2348,7 +2348,7 @@
     "flavorText": "Home and hunting ground for Kaldheim's fearsome trolls.",
     "artist": "Chris Ostrowski",
     "set": "Modern Horizons 3",
-    "imageUrl": "/Cube/RealCards/wooded-foothills-mh3.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__wooded-foothills-mh3.jpg",
     "_source": "Lands\\Wooded Foothills.jpg"
   },
   {
@@ -2364,7 +2364,7 @@
     "flavorText": "Maestros agents can lie low in high style at the opulent Shadow Hostel.",
     "artist": "James Paick",
     "set": "Streets of New Capenna",
-    "imageUrl": "/Cube/RealCards/xander-s-lounge-snc.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__xander-s-lounge-snc.jpg",
     "_source": "Lands\\Xander's Lounge.jpg"
   },
   {
@@ -2380,7 +2380,7 @@
     "flavorText": "Hunters in the primeval wetlands become fluent in reading the ripples to tell when to pursue and when to flee.",
     "artist": "Eytan Zana",
     "set": "Ikoria: Lair of Behemoths",
-    "imageUrl": "/Cube/RealCards/zagoth-triome-iko.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__zagoth-triome-iko.jpg",
     "_source": "Lands\\Zagoth Triome.jpg"
   },
   {
@@ -2396,7 +2396,7 @@
     "flavorText": "Restless Riveteers can always find a sparring partner in the sprawling Treza warehouse.",
     "artist": "Viko Menezes",
     "set": "Streets of New Capenna",
-    "imageUrl": "/Cube/RealCards/ziatora-s-proving-ground-snc.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__ziatora-s-proving-ground-snc.jpg",
     "_source": "Lands\\Ziatora's Proving Ground.jpg"
   },
   {
@@ -2416,7 +2416,7 @@
     "flavorText": "The desert is a voracious beast, devouring both flesh and stone.",
     "artist": "Jonas De Ro",
     "set": "Secrets of Strixhaven Commander",
-    "imageUrl": "/Cube/RealCards/abrade-soc.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__abrade-soc.jpg",
     "_source": "Red\\Abrade.jpg"
   },
   {
@@ -2436,7 +2436,7 @@
     "flavorText": "The brothers' rivalry escalated into all-out enmity, and Tocasia paid the price.",
     "artist": "Bryan Sola",
     "set": "The Brothers' War",
-    "imageUrl": "/Cube/RealCards/brotherhood-s-end-bro.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__brotherhood-s-end-bro.jpg",
     "_source": "Red\\Brotherhood's End.jpg"
   },
   {
@@ -2455,7 +2455,7 @@
     ],
     "artist": "Christopher Moeller",
     "set": "Dominaria Remastered",
-    "imageUrl": "/Cube/RealCards/chain-lightning-dmr.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__chain-lightning-dmr.jpg",
     "_source": "Red\\Chain Lightning.jpg"
   },
   {
@@ -2476,7 +2476,7 @@
     "power": "1",
     "toughness": "1",
     "set": "Modern Horizons 2",
-    "imageUrl": "/Cube/RealCards/dragon-s-rage-channeler-mh2.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__dragon-s-rage-channeler-mh2.jpg",
     "_source": "Red\\Dragon's Rage Channeler.jpg"
   },
   {
@@ -2494,7 +2494,7 @@
     "artist": "Joseph Meehan",
     "set": "Kamigawa: Neon Dynasty",
     "relatedFace": "Reflection of Kiki-Jiki",
-    "imageUrl": "/Cube/RealCards/fable-of-the-mirror-breaker-neo.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__fable-of-the-mirror-breaker-neo.jpg",
     "_source": "Red\\Fable of the Mirror Breaker.jpg",
     "relatedTokens": [
       "2/2 red Goblin Shaman",
@@ -2521,7 +2521,7 @@
     "set": "Kamigawa: Neon Dynasty",
     "relatedFace": "Fable of the Mirror-Breaker",
     "facedown": true,
-    "imageUrl": "/Cube/RealCards/reflection-of-kiki-jiki-neo.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__reflection-of-kiki-jiki-neo.jpg",
     "_source": "Red\\Reflection of Kiki-Jiki.jpg"
   },
   {
@@ -2541,7 +2541,7 @@
     "flavorText": "\"Avacyn has abandoned us! We have nothing left except what we can take!\"",
     "artist": "Gabor Szikszai",
     "set": "Secrets of Strixhaven Commander",
-    "imageUrl": "/Cube/RealCards/faithless-looting-soc.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__faithless-looting-soc.jpg",
     "_source": "Red\\Faithless Looting.jpg"
   },
   {
@@ -2561,7 +2561,7 @@
     "flavorText": "\"I am the god of thunder, the lord of the savage lightning, and the very skies must tremble when speaks The Mighty Thor!\"",
     "artist": "Milivoj Ćeran",
     "set": "Marvel Super Heroes Commander",
-    "imageUrl": "/Cube/RealCards/lightning-bolt-msc.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__lightning-bolt-msc.jpg",
     "_source": "Red\\Lightning Bolt.jpg"
   },
   {
@@ -2583,7 +2583,7 @@
     "power": "1",
     "toughness": "2",
     "set": "The Brothers' War",
-    "imageUrl": "/Cube/RealCards/monastery-swiftspear-bro.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__monastery-swiftspear-bro.jpg",
     "_source": "Red\\Monastery Swiftspear.jpg"
   },
   {
@@ -2602,7 +2602,7 @@
     ],
     "artist": "Lie Setiawan",
     "set": "Theros Beyond Death",
-    "imageUrl": "/Cube/RealCards/underworld-breach-thb.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__underworld-breach-thb.jpg",
     "_source": "Red\\Underworld Breach.jpg"
   },
   {
@@ -2622,7 +2622,7 @@
     "flavorText": "Fire is always at the top of the food chain, and it has a big appetite.",
     "artist": "Rob Alexander",
     "set": "Modern Masters 2015",
-    "imageUrl": "/Cube/RealCards/wildfire-mm2.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__wildfire-mm2.jpg",
     "_source": "Red\\Wildfire.jpg"
   },
   {
@@ -2640,7 +2640,7 @@
     "flavorText": "Clerics on both sides prayed for divine intervention to end the war. The gods didn't play favorites.",
     "artist": "Vincent Proce",
     "set": "Foundations",
-    "imageUrl": "/Cube/RealCards/day-of-judgment-fdn.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__day-of-judgment-fdn.jpg",
     "_source": "White\\Day of Judgement.jpg"
   },
   {
@@ -2660,7 +2660,7 @@
     "power": "1",
     "toughness": "1",
     "set": "Modern Horizons 2",
-    "imageUrl": "/Cube/RealCards/esper-sentinel-mh2.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__esper-sentinel-mh2.jpg",
     "_source": "White\\Esper Sentinel.jpg"
   },
   {
@@ -2678,7 +2678,7 @@
     "flavorText": "\"I ain't a man any more. I'm just . . . a monster.\"\n—The Thing, Ben Grimm",
     "artist": "Nino Is",
     "set": "Marvel Super Heroes Commander",
-    "imageUrl": "/Cube/RealCards/path-to-exile-msc.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__path-to-exile-msc.jpg",
     "_source": "White\\Path to Exile.jpg"
   },
   {
@@ -2700,7 +2700,7 @@
     "power": "2",
     "toughness": "2",
     "set": "Secrets of Strixhaven Commander",
-    "imageUrl": "/Cube/RealCards/sram-senior-edificer-soc.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__sram-senior-edificer-soc.jpg",
     "_source": "White\\Sram, Senior Edificer.jpg"
   },
   {
@@ -2718,7 +2718,7 @@
     "flavorText": "\"Gotta get that corn planted before the world ends again.\"\n—Clint Barton",
     "artist": "Greg Smallwood",
     "set": "Marvel Super Heroes Commander",
-    "imageUrl": "/Cube/RealCards/swords-to-plowshares-msc.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__swords-to-plowshares-msc.jpg",
     "_source": "White\\Swords to Plowshares.jpg"
   },
   {
@@ -2738,7 +2738,7 @@
     "power": "2",
     "toughness": "1",
     "set": "Innistrad: Crimson Vow",
-    "imageUrl": "/Cube/RealCards/thalia-guardian-of-thraben-vow.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__thalia-guardian-of-thraben-vow.jpg",
     "_source": "White\\Thalia, Guardian of Thraben.jpg"
   }
 ]

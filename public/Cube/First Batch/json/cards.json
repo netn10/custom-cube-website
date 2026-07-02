@@ -16,7 +16,7 @@
     ],
     "artist": "Anthony Devine",
     "set": "Set 1",
-    "imageUrl": "/Cube/RealCards/biotransference-40k.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__biotransference-40k.jpg",
     "relatedTokens": [
       "2/2 black Necron Warrior"
     ]
@@ -38,7 +38,7 @@
     "flavorText": "In Lorwyn's brief evenings, the sun pauses at the horizon long enough for a certain species of violet to bloom with the fragrance of mischief.",
     "artist": "Rebecca Guay",
     "set": "Set 1",
-    "imageUrl": "/Cube/RealCards/bitterblossom-2x2.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__bitterblossom-2x2.jpg",
     "relatedTokens": [
       "1/1 black Faerie Rogue"
     ]
@@ -59,7 +59,7 @@
     ],
     "artist": "Kev Walker",
     "set": "Set 1",
-    "imageUrl": "/Cube/RealCards/damnation-2x2.jpg"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__damnation-2x2.jpg"
   },
   {
     "id": "dark-ritual-msc",
@@ -76,7 +76,7 @@
     "flavorText": "\"Behold! The most arcane powers of the multiverse are mere tools in service of Doom's ambition.\"",
     "artist": "Nino Is",
     "set": "Set 1",
-    "imageUrl": "/Cube/RealCards/dark-ritual-msc.jpg"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__dark-ritual-msc.jpg"
   },
   {
     "id": "demonic-tutor-cmm",
@@ -93,7 +93,7 @@
     "flavorText": "Beware the generosity of demons.",
     "artist": "Zack Stella",
     "set": "Set 1",
-    "imageUrl": "/Cube/RealCards/demonic-tutor-cmm.jpg"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__demonic-tutor-cmm.jpg"
   },
   {
     "id": "duress-fdn",
@@ -110,7 +110,7 @@
     "flavorText": "\"Give of yourself, for *compleation* awaits the cleansed.\"\n—Nokar, priest of Sheoldred",
     "artist": "PINDURSKI",
     "set": "Set 1",
-    "imageUrl": "/Cube/RealCards/duress-fdn.jpg"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__duress-fdn.jpg"
   },
   {
     "id": "fatal-push-2xm",
@@ -128,7 +128,7 @@
     ],
     "artist": "Eric Deschamps",
     "set": "Set 1",
-    "imageUrl": "/Cube/RealCards/fatal-push-2xm.jpg"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__fatal-push-2xm.jpg"
   },
   {
     "id": "inquisition-of-kozilek-2x2",
@@ -145,7 +145,7 @@
     "flavorText": "You will scream out your innermost secrets just to make it stop.",
     "artist": "Tomasz Jedruszek",
     "set": "Set 1",
-    "imageUrl": "/Cube/RealCards/inquisition-of-kozilek-2x2.jpg"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__inquisition-of-kozilek-2x2.jpg"
   },
   {
     "id": "marionette-apprentice-mh3",
@@ -166,7 +166,7 @@
     "power": "1",
     "toughness": "2",
     "set": "Set 1",
-    "imageUrl": "/Cube/RealCards/marionette-apprentice-mh3.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__marionette-apprentice-mh3.jpg",
     "relatedTokens": [
       "1/1 colorless Servo"
     ]
@@ -186,7 +186,7 @@
     "flavorText": "\"Any dream is a robust harvest. Still, I prefer the timeworn dreams, heavy with import, that haunt the obsessive mind.\"",
     "artist": "Aleksi Briclot",
     "set": "Set 1",
-    "imageUrl": "/Cube/RealCards/thoughtseize-2xm.jpg"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__thoughtseize-2xm.jpg"
   },
   {
     "id": "toxic-deluge-msc",
@@ -203,7 +203,7 @@
     "flavorText": "\"Zemo insults me by tasking me with weaklings such as you. Even together, you pose no challenge.\"\n—Radioactive Man, Dr. Chen Lu",
     "artist": "Anthony Devine",
     "set": "Set 1",
-    "imageUrl": "/Cube/RealCards/toxic-deluge-msc.jpg"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__toxic-deluge-msc.jpg"
   },
   {
     "id": "brainstorm-tle",
@@ -220,7 +220,7 @@
     "flavorText": "\"Now I get it. Something awful happened on that day. I don't know what, but I do know why. Firebenders lose their bending during a solar eclipse!\"\n—Sokka",
     "artist": "Arthur Yuan",
     "set": "Set 1",
-    "imageUrl": "/Cube/RealCards/brainstorm-tle.jpg"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__brainstorm-tle.jpg"
   },
   {
     "id": "counterspell-dsc",
@@ -236,7 +236,7 @@
     "archetypes": [],
     "artist": "Zack Stella",
     "set": "Set 1",
-    "imageUrl": "/Cube/RealCards/counterspell-dsc.jpg"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__counterspell-dsc.jpg"
   },
   {
     "id": "entity-tracker-dsk",
@@ -257,7 +257,7 @@
     "power": "2",
     "toughness": "3",
     "set": "Set 1",
-    "imageUrl": "/Cube/RealCards/entity-tracker-dsk.jpg"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__entity-tracker-dsk.jpg"
   },
   {
     "id": "frantic-search-tle",
@@ -276,7 +276,7 @@
     "flavorText": "In the skies of the Si Wong Desert, a solitary winged lemur searched in vain for a lost friend.",
     "artist": "Alejandro Pacheco",
     "set": "Set 1",
-    "imageUrl": "/Cube/RealCards/frantic-search-tle.jpg"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__frantic-search-tle.jpg"
   },
   {
     "id": "gush-jvc",
@@ -295,7 +295,7 @@
     "flavorText": "Don't trust your secrets to the sea.",
     "artist": "Kev Walker",
     "set": "Set 1",
-    "imageUrl": "/Cube/RealCards/gush-jvc.jpg"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__gush-jvc.jpg"
   },
   {
     "id": "hidden-strings-dgm",
@@ -313,7 +313,7 @@
     ],
     "artist": "Daarken",
     "set": "Set 1",
-    "imageUrl": "/Cube/RealCards/hidden-strings-dgm.jpg"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__hidden-strings-dgm.jpg"
   },
   {
     "id": "impulse-dmr",
@@ -330,7 +330,7 @@
     "flavorText": "\"I've always made snap decisions. I'm just better at making the right ones now that I'm older and wiser.\"\n—Teferi",
     "artist": "Sam Guay",
     "set": "Set 1",
-    "imageUrl": "/Cube/RealCards/impulse-dmr.jpg"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__impulse-dmr.jpg"
   },
   {
     "id": "mana-leak-2x2",
@@ -347,7 +347,7 @@
     "flavorText": "The fatal flaw in every plan is the assumption that you know more than your enemy.",
     "artist": "Howard Lyon",
     "set": "Set 1",
-    "imageUrl": "/Cube/RealCards/mana-leak-2x2.jpg"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__mana-leak-2x2.jpg"
   },
   {
     "id": "memory-lapse-ema",
@@ -364,7 +364,7 @@
     "flavorText": "What a lonely agony, the memory of memories lost.",
     "artist": "Greg Staples",
     "set": "Set 1",
-    "imageUrl": "/Cube/RealCards/memory-lapse-ema.jpg"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__memory-lapse-ema.jpg"
   },
   {
     "id": "opt-tdc",
@@ -381,7 +381,7 @@
     "flavorText": "\"It's easy to anticipate Captain Storm's orders: take the more dangerous route.\"",
     "artist": "Craig J Spearing",
     "set": "Set 1",
-    "imageUrl": "/Cube/RealCards/opt-tdc.jpg"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__opt-tdc.jpg"
   },
   {
     "id": "ponder-tdc",
@@ -398,7 +398,7 @@
     "flavorText": "Tomorrow belongs to those who prepare for it today.",
     "artist": "Dan Murayama Scott",
     "set": "Set 1",
-    "imageUrl": "/Cube/RealCards/ponder-tdc.jpg"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__ponder-tdc.jpg"
   },
   {
     "id": "preordain-tdc",
@@ -414,7 +414,7 @@
     "archetypes": [],
     "artist": "Svetlin Velinov",
     "set": "Set 1",
-    "imageUrl": "/Cube/RealCards/preordain-tdc.jpg"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__preordain-tdc.jpg"
   },
   {
     "id": "remand-rvr",
@@ -431,7 +431,7 @@
     "flavorText": "\"Well, at least all of that arm-waving and arcane babbling you did was impressive.\"",
     "artist": "Mark A. Nelson",
     "set": "Set 1",
-    "imageUrl": "/Cube/RealCards/remand-rvr.jpg"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__remand-rvr.jpg"
   },
   {
     "id": "snapcaster-mage-inr",
@@ -451,7 +451,7 @@
     "power": "2",
     "toughness": "1",
     "set": "Set 1",
-    "imageUrl": "/Cube/RealCards/snapcaster-mage-inr.jpg"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__snapcaster-mage-inr.jpg"
   },
   {
     "id": "academy-manufactor-otc",
@@ -471,7 +471,7 @@
     "power": "1",
     "toughness": "3",
     "set": "Set 1",
-    "imageUrl": "/Cube/RealCards/academy-manufactor-otc.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__academy-manufactor-otc.jpg",
     "relatedTokens": [
       "Clue",
       "Food",
@@ -492,7 +492,7 @@
     "power": "2",
     "toughness": "1",
     "set": "Set 1",
-    "imageUrl": "/Cube/RealCards/agent-of-acquisitions-cns.jpg"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__agent-of-acquisitions-cns.jpg"
   },
   {
     "id": "chromatic-sphere-jmp",
@@ -509,7 +509,7 @@
     "flavorText": "\"As expected, this sphere's design reflects the colors of the four moons . . . plus another?\"\n—Pontifex, elder researcher",
     "artist": "Brian Snõddy",
     "set": "Set 1",
-    "imageUrl": "/Cube/RealCards/chromatic-sphere-jmp.jpg"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__chromatic-sphere-jmp.jpg"
   },
   {
     "id": "chromatic-star-tsr",
@@ -526,7 +526,7 @@
     "flavorText": "\"This item is not from ... now. It reflects a sky no longer ours and gleams with hope that does not exist.\"\n—Tavalus, acolyte of Korlis",
     "artist": "Daniel Ljunggren",
     "set": "Set 1",
-    "imageUrl": "/Cube/RealCards/chromatic-star-tsr.jpg"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__chromatic-star-tsr.jpg"
   },
   {
     "id": "cogwork-librarian-cns",
@@ -543,7 +543,7 @@
     "power": "3",
     "toughness": "3",
     "set": "Set 1",
-    "imageUrl": "/Cube/RealCards/cogwork-librarian-cns.jpg"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__cogwork-librarian-cns.jpg"
   },
   {
     "id": "dismember-mm2",
@@ -560,7 +560,7 @@
     "flavorText": "\"You serve Phyrexia. Your pieces would better serve Phyrexia elsewhere.\"\n—Azax-Azog, the Demon Thane",
     "artist": "Terese Nielsen",
     "set": "Set 1",
-    "imageUrl": "/Cube/RealCards/dismember-mm2.jpg"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__dismember-mm2.jpg"
   },
   {
     "id": "fellwar-stone-soc",
@@ -575,7 +575,7 @@
     "flavorText": "\"What do you have that I cannot obtain?\"\n—Mairsil, the Pretender",
     "artist": "John Avon",
     "set": "Set 1",
-    "imageUrl": "/Cube/RealCards/fellwar-stone-soc.jpg"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__fellwar-stone-soc.jpg"
   },
   {
     "id": "gitaxian-probe-nph",
@@ -594,7 +594,7 @@
     "flavorText": "\"My flesh holds no secrets, monster. The spirit of Mirrodin will fight on.\"\n—Vy Covalt, Mirran resistance",
     "artist": "Chippy",
     "set": "Set 1",
-    "imageUrl": "/Cube/RealCards/gitaxian-probe-nph.jpg"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__gitaxian-probe-nph.jpg"
   },
   {
     "id": "mind-stone-soc",
@@ -609,7 +609,7 @@
     "flavorText": "\"We have barely begun to learn the secrets of the Fourth People. Every remnant of their presence, however cryptic, is a gift.\"\n—Akal Pakal, First Steward of Oteclan",
     "artist": "Camille Alquier",
     "set": "Set 1",
-    "imageUrl": "/Cube/RealCards/mind-stone-soc.jpg"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__mind-stone-soc.jpg"
   },
   {
     "id": "mutagenic-growth-mm2",
@@ -628,7 +628,7 @@
     "flavorText": "\"Sympathy is for weaklings. Whoever survives, wins.\"\n—Benzir, archdruid of Temple Might",
     "artist": "Dave Kendall",
     "set": "Set 1",
-    "imageUrl": "/Cube/RealCards/mutagenic-growth-mm2.jpg"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__mutagenic-growth-mm2.jpg"
   },
   {
     "id": "reckoner-bankbuster-neo",
@@ -646,7 +646,7 @@
     "power": "4",
     "toughness": "4",
     "set": "Set 1",
-    "imageUrl": "/Cube/RealCards/reckoner-bankbuster-neo.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__reckoner-bankbuster-neo.jpg",
     "relatedTokens": [
       "Treasure",
       "1/1 colorless Pilot"
@@ -668,7 +668,7 @@
     "power": "3",
     "toughness": "3",
     "set": "Set 1",
-    "imageUrl": "/Cube/RealCards/smuggler-s-copter-nec.jpg"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__smuggler-s-copter-nec.jpg"
   },
   {
     "id": "unlicensed-hearse-snc",
@@ -686,7 +686,7 @@
     "power": "*",
     "toughness": "*",
     "set": "Set 1",
-    "imageUrl": "/Cube/RealCards/unlicensed-hearse-snc.jpg"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__unlicensed-hearse-snc.jpg"
   },
   {
     "id": "glissa-the-traitor-mbs",
@@ -707,7 +707,7 @@
     "power": "3",
     "toughness": "3",
     "set": "Set 1",
-    "imageUrl": "/Cube/RealCards/glissa-the-traitor-mbs.jpg"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__glissa-the-traitor-mbs.jpg"
   },
   {
     "id": "ravenous-squirrel-mh2",
@@ -729,7 +729,7 @@
     "power": "1",
     "toughness": "1",
     "set": "Set 1",
-    "imageUrl": "/Cube/RealCards/ravenous-squirrel-mh2.jpg"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__ravenous-squirrel-mh2.jpg"
   },
   {
     "id": "umori-the-collector-iko",
@@ -748,7 +748,7 @@
     "power": "4",
     "toughness": "5",
     "set": "Set 1",
-    "imageUrl": "/Cube/RealCards/umori-the-collector-iko.jpg"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__umori-the-collector-iko.jpg"
   },
   {
     "id": "mayhem-devil-eoc",
@@ -770,7 +770,7 @@
     "power": "3",
     "toughness": "3",
     "set": "Set 1",
-    "imageUrl": "/Cube/RealCards/mayhem-devil-eoc.jpg"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__mayhem-devil-eoc.jpg"
   },
   {
     "id": "obosh-the-preypiercer-iko",
@@ -789,7 +789,7 @@
     "power": "3",
     "toughness": "5",
     "set": "Set 1",
-    "imageUrl": "/Cube/RealCards/obosh-the-preypiercer-iko.jpg"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__obosh-the-preypiercer-iko.jpg"
   },
   {
     "id": "growth-spiral-dsc",
@@ -807,7 +807,7 @@
     "flavorText": "Hidden within the infinite, protean rooms of the House are strange pockets of power that only the bravest dare access.",
     "artist": "Nicholas Gregory",
     "set": "Set 1",
-    "imageUrl": "/Cube/RealCards/growth-spiral-dsc.jpg"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__growth-spiral-dsc.jpg"
   },
   {
     "id": "keruga-the-macrosage-iko",
@@ -826,7 +826,7 @@
     "power": "5",
     "toughness": "4",
     "set": "Set 1",
-    "imageUrl": "/Cube/RealCards/keruga-the-macrosage-iko.jpg"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__keruga-the-macrosage-iko.jpg"
   },
   {
     "id": "nadu-winged-wisdom-mh3",
@@ -845,7 +845,7 @@
     "power": "3",
     "toughness": "4",
     "set": "Set 1",
-    "imageUrl": "/Cube/RealCards/nadu-winged-wisdom-mh3.jpg"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__nadu-winged-wisdom-mh3.jpg"
   },
   {
     "id": "kaheera-the-orphanguard-iko",
@@ -864,7 +864,7 @@
     "power": "3",
     "toughness": "2",
     "set": "Set 1",
-    "imageUrl": "/Cube/RealCards/kaheera-the-orphanguard-iko.jpg"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__kaheera-the-orphanguard-iko.jpg"
   },
   {
     "id": "miriam-herd-whisperer-otj",
@@ -886,7 +886,7 @@
     "power": "3",
     "toughness": "2",
     "set": "Set 1",
-    "imageUrl": "/Cube/RealCards/miriam-herd-whisperer-otj.jpg"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__miriam-herd-whisperer-otj.jpg"
   },
   {
     "id": "jegantha-the-wellspring-ecc",
@@ -905,7 +905,7 @@
     "power": "5",
     "toughness": "5",
     "set": "Set 1",
-    "imageUrl": "/Cube/RealCards/jegantha-the-wellspring-ecc.jpg"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__jegantha-the-wellspring-ecc.jpg"
   },
   {
     "id": "minsc-boo-timeless-heroes-clb",
@@ -923,7 +923,7 @@
     "artist": "Andreas Zafiratos",
     "loyalty": 3,
     "set": "Set 1",
-    "imageUrl": "/Cube/RealCards/minsc-boo-timeless-heroes-clb.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__minsc-boo-timeless-heroes-clb.jpg",
     "relatedTokens": [
       "Boo"
     ]
@@ -944,7 +944,7 @@
     "flavorText": "After heavy casualties in the Phyrexian invasion, the Boros mage-priests trained as many rank-and-file soldiers as possible to wield the Legion's legendary battle magic.",
     "artist": "Eli Minaya",
     "set": "Set 1",
-    "imageUrl": "/Cube/RealCards/lightning-helix-mkm.jpg"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__lightning-helix-mkm.jpg"
   },
   {
     "id": "zirda-the-dawnwaker-iko",
@@ -963,7 +963,7 @@
     "power": "3",
     "toughness": "3",
     "set": "Set 1",
-    "imageUrl": "/Cube/RealCards/zirda-the-dawnwaker-iko.jpg"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__zirda-the-dawnwaker-iko.jpg"
   },
   {
     "id": "baleful-strix-otc",
@@ -985,7 +985,7 @@
     "power": "1",
     "toughness": "1",
     "set": "Set 1",
-    "imageUrl": "/Cube/RealCards/baleful-strix-otc.jpg"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__baleful-strix-otc.jpg"
   },
   {
     "id": "gyruda-doom-of-depths-iko",
@@ -1006,7 +1006,7 @@
     "power": "6",
     "toughness": "6",
     "set": "Set 1",
-    "imageUrl": "/Cube/RealCards/gyruda-doom-of-depths-iko.jpg"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__gyruda-doom-of-depths-iko.jpg"
   },
   {
     "id": "lutri-the-spellchaser-iko",
@@ -1027,7 +1027,7 @@
     "power": "3",
     "toughness": "2",
     "set": "Set 1",
-    "imageUrl": "/Cube/RealCards/lutri-the-spellchaser-iko.jpg"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__lutri-the-spellchaser-iko.jpg"
   },
   {
     "id": "abstruse-appropriation-mh3",
@@ -1042,7 +1042,7 @@
     "flavorText": "\"Kozilek experiences reality on his own terms.\"\n—Ayli, high priest of the Eternal Pilgrims",
     "artist": "Jason Rainville",
     "set": "Set 1",
-    "imageUrl": "/Cube/RealCards/abstruse-appropriation-mh3.jpg"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__abstruse-appropriation-mh3.jpg"
   },
   {
     "id": "lurrus-of-the-dream-den-iko",
@@ -1061,7 +1061,7 @@
     "power": "3",
     "toughness": "2",
     "set": "Set 1",
-    "imageUrl": "/Cube/RealCards/lurrus-of-the-dream-den-iko.jpg"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__lurrus-of-the-dream-den-iko.jpg"
   },
   {
     "id": "grand-arbiter-augustin-iv-2x2",
@@ -1083,7 +1083,7 @@
     "power": "2",
     "toughness": "3",
     "set": "Set 1",
-    "imageUrl": "/Cube/RealCards/grand-arbiter-augustin-iv-2x2.jpg"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__grand-arbiter-augustin-iv-2x2.jpg"
   },
   {
     "id": "wrath-of-leknif-mb2",
@@ -1100,7 +1100,7 @@
     "archetypes": [],
     "artist": "Marion Kivits",
     "set": "Set 1",
-    "imageUrl": "/Cube/RealCards/wrath-of-leknif-mb2.jpg"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__wrath-of-leknif-mb2.jpg"
   },
   {
     "id": "yorion-sky-nomad-iko",
@@ -1121,7 +1121,7 @@
     "power": "4",
     "toughness": "5",
     "set": "Set 1",
-    "imageUrl": "/Cube/RealCards/yorion-sky-nomad-iko.jpg"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__yorion-sky-nomad-iko.jpg"
   },
   {
     "id": "birds-of-paradise-msc",
@@ -1140,7 +1140,7 @@
     "power": "0",
     "toughness": "1",
     "set": "Set 1",
-    "imageUrl": "/Cube/RealCards/birds-of-paradise-msc.jpg"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__birds-of-paradise-msc.jpg"
   },
   {
     "id": "cemetery-prowler-vow",
@@ -1160,7 +1160,7 @@
     "power": "3",
     "toughness": "4",
     "set": "Set 1",
-    "imageUrl": "/Cube/RealCards/cemetery-prowler-vow.jpg"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__cemetery-prowler-vow.jpg"
   },
   {
     "id": "cultivate-msc",
@@ -1177,7 +1177,7 @@
     "flavorText": "\"Don't get so caught up in the science that you forget to embrace the wonder in front of you.\"\n—Reed Richards, to Valeria Richards",
     "artist": "Darius Zablockis",
     "set": "Set 1",
-    "imageUrl": "/Cube/RealCards/cultivate-msc.jpg"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__cultivate-msc.jpg"
   },
   {
     "id": "deeproot-champion-xln",
@@ -1198,7 +1198,7 @@
     "power": "1",
     "toughness": "1",
     "set": "Set 1",
-    "imageUrl": "/Cube/RealCards/deeproot-champion-xln.jpg"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__deeproot-champion-xln.jpg"
   },
   {
     "id": "elvish-mystic-soc",
@@ -1217,7 +1217,7 @@
     "power": "1",
     "toughness": "1",
     "set": "Set 1",
-    "imageUrl": "/Cube/RealCards/elvish-mystic-soc.jpg"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__elvish-mystic-soc.jpg"
   },
   {
     "id": "gilded-goose-soc",
@@ -1237,7 +1237,7 @@
     "power": "0",
     "toughness": "2",
     "set": "Set 1",
-    "imageUrl": "/Cube/RealCards/gilded-goose-soc.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__gilded-goose-soc.jpg",
     "relatedTokens": [
       "Food"
     ]
@@ -1261,7 +1261,7 @@
     "power": "5",
     "toughness": "5",
     "set": "Set 1",
-    "imageUrl": "/Cube/RealCards/hedge-shredder-dsk.jpg"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__hedge-shredder-dsk.jpg"
   },
   {
     "id": "scavenging-ooze-fdn",
@@ -1280,7 +1280,7 @@
     "power": "2",
     "toughness": "2",
     "set": "Set 1",
-    "imageUrl": "/Cube/RealCards/scavenging-ooze-fdn.jpg"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__scavenging-ooze-fdn.jpg"
   },
   {
     "id": "song-of-the-dryads-cmm",
@@ -1297,7 +1297,7 @@
     "flavorText": "Few who encounter the strange, human-like grove leave once the lilting chorus of the dryads reaches their ears.",
     "artist": "Lars Grant-West",
     "set": "Set 1",
-    "imageUrl": "/Cube/RealCards/song-of-the-dryads-cmm.jpg"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__song-of-the-dryads-cmm.jpg"
   },
   {
     "id": "arid-mesa-mh2",
@@ -1311,7 +1311,7 @@
     "archetypes": [],
     "artist": "Raymond Swanland",
     "set": "Set 1",
-    "imageUrl": "/Cube/RealCards/arid-mesa-mh2.jpg"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__arid-mesa-mh2.jpg"
   },
   {
     "id": "ash-barrens-tmc",
@@ -1326,7 +1326,7 @@
     "flavorText": "Many interstellar civilizations have dumped their unwanted elements on Planet Morbus, from toxins to lowlifes.",
     "artist": "Lucas Staniec",
     "set": "Set 1",
-    "imageUrl": "/Cube/RealCards/ash-barrens-tmc.jpg"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__ash-barrens-tmc.jpg"
   },
   {
     "id": "badlands-vma",
@@ -1340,7 +1340,7 @@
     "archetypes": [],
     "artist": "Daarken",
     "set": "Set 1",
-    "imageUrl": "/Cube/RealCards/badlands-vma.jpg"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__badlands-vma.jpg"
   },
   {
     "id": "bayou-vma",
@@ -1354,7 +1354,7 @@
     "archetypes": [],
     "artist": "Karl Kopinski",
     "set": "Set 1",
-    "imageUrl": "/Cube/RealCards/bayou-vma.jpg"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__bayou-vma.jpg"
   },
   {
     "id": "blood-crypt-ecl",
@@ -1369,7 +1369,7 @@
     "flavorText": "The boggart was playfully prodding a critter when the skies darkened, then he gobbled it down with glee.",
     "artist": "Adam Paquette",
     "set": "Set 1",
-    "imageUrl": "/Cube/RealCards/blood-crypt-ecl.jpg"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__blood-crypt-ecl.jpg"
   },
   {
     "id": "bloodstained-mire-mh3",
@@ -1384,7 +1384,7 @@
     "flavorText": "A graveyard for conquerors and conquered alike.",
     "artist": "Bruce Brenneise",
     "set": "Set 1",
-    "imageUrl": "/Cube/RealCards/bloodstained-mire-mh3.jpg"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__bloodstained-mire-mh3.jpg"
   },
   {
     "id": "breeding-pool-eoe",
@@ -1399,7 +1399,7 @@
     "flavorText": "\"Log 1.4.778: Granove, a tropical moon teeming with endemic biota. A must see for any aspiring astrobiologist!\"\n—*Maisie's Edge Chronicles*",
     "artist": "Constantin Marin",
     "set": "Set 1",
-    "imageUrl": "/Cube/RealCards/breeding-pool-eoe.jpg"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__breeding-pool-eoe.jpg"
   },
   {
     "id": "city-of-brass-tmc",
@@ -1414,7 +1414,7 @@
     "flavorText": "It's like the future's a party that these brothers just crashed . . .",
     "artist": "Robin Olausson",
     "set": "Set 1",
-    "imageUrl": "/Cube/RealCards/city-of-brass-tmc.jpg"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__city-of-brass-tmc.jpg"
   },
   {
     "id": "commercial-district-mkm",
@@ -1428,7 +1428,7 @@
     "archetypes": [],
     "artist": "Julian Kok Joon Wen",
     "set": "Set 1",
-    "imageUrl": "/Cube/RealCards/commercial-district-mkm.jpg"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__commercial-district-mkm.jpg"
   },
   {
     "id": "elegant-parlor-mkm",
@@ -1442,7 +1442,7 @@
     "archetypes": [],
     "artist": "Kamila Szutenberg",
     "set": "Set 1",
-    "imageUrl": "/Cube/RealCards/elegant-parlor-mkm.jpg"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__elegant-parlor-mkm.jpg"
   },
   {
     "id": "escape-tunnel-tmt",
@@ -1457,7 +1457,7 @@
     "flavorText": "\"I hear the sewers in Connecticut are really nice.\"\n—Michelangelo",
     "artist": "Aenami",
     "set": "Set 1",
-    "imageUrl": "/Cube/RealCards/escape-tunnel-tmt.jpg"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__escape-tunnel-tmt.jpg"
   },
   {
     "id": "evolving-wilds-msc",
@@ -1472,7 +1472,7 @@
     "flavorText": "\"The mechanisms of evolution do their work upon the Savage Land, as they do everywhere. I only hasten the process.\"\n—High Evolutionary, Herbert Wyndham",
     "artist": "Rytis Sabaliauskas",
     "set": "Set 1",
-    "imageUrl": "/Cube/RealCards/evolving-wilds-msc.jpg"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__evolving-wilds-msc.jpg"
   },
   {
     "id": "exotic-orchard-msc",
@@ -1487,7 +1487,7 @@
     "flavorText": "In the Blue Area of the moon lies a garden sculpted by alien hands, where the one called the Watcher stands witness.",
     "artist": "David Szabo",
     "set": "Set 1",
-    "imageUrl": "/Cube/RealCards/exotic-orchard-msc.jpg"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__exotic-orchard-msc.jpg"
   },
   {
     "id": "fabled-passage-msc",
@@ -1502,7 +1502,7 @@
     "flavorText": "\"Well? You coming in or what?\"\n—The One Above All",
     "artist": "Mintautas Šukys",
     "set": "Set 1",
-    "imageUrl": "/Cube/RealCards/fabled-passage-msc.jpg"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__fabled-passage-msc.jpg"
   },
   {
     "id": "fiery-islet-mh1",
@@ -1517,7 +1517,7 @@
     "flavorText": "Where water is the canvas and lava the paint.",
     "artist": "Richard Wright",
     "set": "Set 1",
-    "imageUrl": "/Cube/RealCards/fiery-islet-mh1.jpg"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__fiery-islet-mh1.jpg"
   },
   {
     "id": "flooded-strand-mh3",
@@ -1532,7 +1532,7 @@
     "flavorText": "Once a prosperous Vantress town, now swept clean and reclaimed by the waters of the wilds.",
     "artist": "Alexander Forssberg",
     "set": "Set 1",
-    "imageUrl": "/Cube/RealCards/flooded-strand-mh3.jpg"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__flooded-strand-mh3.jpg"
   },
   {
     "id": "godless-shrine-eoe",
@@ -1547,7 +1547,7 @@
     "flavorText": "\"Log 1.7.618: Starshadow, a relic of a culture lost to calamity. Its people were eradicated in a single day—but by what?\"\n—*Maisie's Edge Chronicles*",
     "artist": "Rob Rey",
     "set": "Set 1",
-    "imageUrl": "/Cube/RealCards/godless-shrine-eoe.jpg"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__godless-shrine-eoe.jpg"
   },
   {
     "id": "hallowed-fountain-ecl",
@@ -1562,7 +1562,7 @@
     "flavorText": "The merrow was vending her wares when the skies darkened, then she sharply raised her prices.",
     "artist": "Adam Paquette",
     "set": "Set 1",
-    "imageUrl": "/Cube/RealCards/hallowed-fountain-ecl.jpg"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__hallowed-fountain-ecl.jpg"
   },
   {
     "id": "hedge-maze-mkm",
@@ -1576,7 +1576,7 @@
     "archetypes": [],
     "artist": "Andrew Mar",
     "set": "Set 1",
-    "imageUrl": "/Cube/RealCards/hedge-maze-mkm.jpg"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__hedge-maze-mkm.jpg"
   },
   {
     "id": "horizon-canopy-ima",
@@ -1591,7 +1591,7 @@
     "flavorText": "The day is born within its branches.",
     "artist": "Noah Bradley",
     "set": "Set 1",
-    "imageUrl": "/Cube/RealCards/horizon-canopy-ima.jpg"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__horizon-canopy-ima.jpg"
   },
   {
     "id": "indatha-triome-iko",
@@ -1606,7 +1606,7 @@
     "flavorText": "\"These lowlands were formed thousands of years ago by the behemoth Indath—its final footsteps before vanishing into the sea.\"\n—*Tales of the Ozolith*",
     "artist": "Noah Bradley",
     "set": "Set 1",
-    "imageUrl": "/Cube/RealCards/indatha-triome-iko.jpg"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__indatha-triome-iko.jpg"
   },
   {
     "id": "jetmir-s-garden-snc",
@@ -1621,7 +1621,7 @@
     "flavorText": "The parklike Cabaretti grounds offer rest, food, and the perfect place to shake off a tail.",
     "artist": "Kasia 'Kafis' Zielińska",
     "set": "Set 1",
-    "imageUrl": "/Cube/RealCards/jetmir-s-garden-snc.jpg"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__jetmir-s-garden-snc.jpg"
   },
   {
     "id": "ketria-triome-iko",
@@ -1636,7 +1636,7 @@
     "flavorText": "Nowhere on Ikoria are monsters more integral to the landscape than Ketria, where the river itself will stand up and roar.",
     "artist": "Sam Burley",
     "set": "Set 1",
-    "imageUrl": "/Cube/RealCards/ketria-triome-iko.jpg"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__ketria-triome-iko.jpg"
   },
   {
     "id": "lush-portico-mkm",
@@ -1650,7 +1650,7 @@
     "archetypes": [],
     "artist": "Kamila Szutenberg",
     "set": "Set 1",
-    "imageUrl": "/Cube/RealCards/lush-portico-mkm.jpg"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__lush-portico-mkm.jpg"
   },
   {
     "id": "mana-confluence-jou",
@@ -1665,7 +1665,7 @@
     "flavorText": "Five rivers encircle Theros, flowing with waters more ancient than the world itself.",
     "artist": "Richard Wright",
     "set": "Set 1",
-    "imageUrl": "/Cube/RealCards/mana-confluence-jou.jpg"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__mana-confluence-jou.jpg"
   },
   {
     "id": "marsh-flats-mh2",
@@ -1679,7 +1679,7 @@
     "archetypes": [],
     "artist": "Izzy",
     "set": "Set 1",
-    "imageUrl": "/Cube/RealCards/marsh-flats-mh2.jpg"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__marsh-flats-mh2.jpg"
   },
   {
     "id": "meticulous-archive-mkm",
@@ -1693,7 +1693,7 @@
     "archetypes": [],
     "artist": "Sam Burley",
     "set": "Set 1",
-    "imageUrl": "/Cube/RealCards/meticulous-archive-mkm.jpg"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__meticulous-archive-mkm.jpg"
   },
   {
     "id": "misty-rainforest-mh2",
@@ -1707,7 +1707,7 @@
     "archetypes": [],
     "artist": "Shelly Wan",
     "set": "Set 1",
-    "imageUrl": "/Cube/RealCards/misty-rainforest-mh2.jpg"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__misty-rainforest-mh2.jpg"
   },
   {
     "id": "nurturing-peatland-mh1",
@@ -1722,7 +1722,7 @@
     "flavorText": "New life is born within its shadows.",
     "artist": "Noah Bradley",
     "set": "Set 1",
-    "imageUrl": "/Cube/RealCards/nurturing-peatland-mh1.jpg"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__nurturing-peatland-mh1.jpg"
   },
   {
     "id": "overgrown-tomb-ecl",
@@ -1737,7 +1737,7 @@
     "flavorText": "The elf was disgusted by the bramble before him when the skies darkened, then he stepped closer to observe the wild beauty.",
     "artist": "Adam Paquette",
     "set": "Set 1",
-    "imageUrl": "/Cube/RealCards/overgrown-tomb-ecl.jpg"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__overgrown-tomb-ecl.jpg"
   },
   {
     "id": "plateau-vma",
@@ -1751,7 +1751,7 @@
     "archetypes": [],
     "artist": "Noah Bradley",
     "set": "Set 1",
-    "imageUrl": "/Cube/RealCards/plateau-vma.jpg"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__plateau-vma.jpg"
   },
   {
     "id": "polluted-delta-mh3",
@@ -1766,7 +1766,7 @@
     "flavorText": "A warped gateway that seeps toxins and malevolence into the waters around Towashi.",
     "artist": "Chris Ostrowski",
     "set": "Set 1",
-    "imageUrl": "/Cube/RealCards/polluted-delta-mh3.jpg"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__polluted-delta-mh3.jpg"
   },
   {
     "id": "prismatic-vista-mh1",
@@ -1781,7 +1781,7 @@
     "flavorText": "There is beauty in the uncertainty of potential.",
     "artist": "Sam Burley",
     "set": "Set 1",
-    "imageUrl": "/Cube/RealCards/prismatic-vista-mh1.jpg"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__prismatic-vista-mh1.jpg"
   },
   {
     "id": "raffine-s-tower-snc",
@@ -1796,7 +1796,7 @@
     "flavorText": "The Obscura's Cloud Spire dominates the skyline, its eye a beacon of progress that sees all.",
     "artist": "Sam White",
     "set": "Set 1",
-    "imageUrl": "/Cube/RealCards/raffine-s-tower-snc.jpg"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__raffine-s-tower-snc.jpg"
   },
   {
     "id": "raucous-theater-mkm",
@@ -1810,7 +1810,7 @@
     "archetypes": [],
     "artist": "Sergey Glushakov",
     "set": "Set 1",
-    "imageUrl": "/Cube/RealCards/raucous-theater-mkm.jpg"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__raucous-theater-mkm.jpg"
   },
   {
     "id": "raugrin-triome-iko",
@@ -1825,7 +1825,7 @@
     "flavorText": "Raugrin meets the sea with jaws wide, its coast spiked with teeth of crystal and granite.",
     "artist": "Jonas De Ro",
     "set": "Set 1",
-    "imageUrl": "/Cube/RealCards/raugrin-triome-iko.jpg"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__raugrin-triome-iko.jpg"
   },
   {
     "id": "reflecting-pool-clb",
@@ -1840,7 +1840,7 @@
     "flavorText": "Gale stared into the pool and saw a stranger. The similarities were uncanny, but it was not him.",
     "artist": "Alayna Danner",
     "set": "Set 1",
-    "imageUrl": "/Cube/RealCards/reflecting-pool-clb.jpg"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__reflecting-pool-clb.jpg"
   },
   {
     "id": "sacred-foundry-eoe",
@@ -1855,7 +1855,7 @@
     "flavorText": "\"Log 2.2.119: Kiln, known for its blazing forges and ancient lava seeps. The footing may be treacherous, but the metallurgy is grand!\"\n—*Maisie's Edge Chronicles*",
     "artist": "Titus Lunter",
     "set": "Set 1",
-    "imageUrl": "/Cube/RealCards/sacred-foundry-eoe.jpg"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__sacred-foundry-eoe.jpg"
   },
   {
     "id": "savai-triome-iko",
@@ -1870,7 +1870,7 @@
     "flavorText": "Broad prairies feed the human sanctuary of Drannith and conceal a network of caverns where giant cats make their dens.",
     "artist": "Titus Lunter",
     "set": "Set 1",
-    "imageUrl": "/Cube/RealCards/savai-triome-iko.jpg"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__savai-triome-iko.jpg"
   },
   {
     "id": "savannah-vma",
@@ -1884,7 +1884,7 @@
     "archetypes": [],
     "artist": "Charles Urbach",
     "set": "Set 1",
-    "imageUrl": "/Cube/RealCards/savannah-vma.jpg"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__savannah-vma.jpg"
   },
   {
     "id": "scalding-tarn-mh2",
@@ -1898,7 +1898,7 @@
     "archetypes": [],
     "artist": "Philip Straub",
     "set": "Set 1",
-    "imageUrl": "/Cube/RealCards/scalding-tarn-mh2.jpg"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__scalding-tarn-mh2.jpg"
   },
   {
     "id": "scrubland-vma",
@@ -1912,7 +1912,7 @@
     "archetypes": [],
     "artist": "Eytan Zana",
     "set": "Set 1",
-    "imageUrl": "/Cube/RealCards/scrubland-vma.jpg"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__scrubland-vma.jpg"
   },
   {
     "id": "shadowy-backstreet-mkm",
@@ -1926,7 +1926,7 @@
     "archetypes": [],
     "artist": "Andreas Zafiratos",
     "set": "Set 1",
-    "imageUrl": "/Cube/RealCards/shadowy-backstreet-mkm.jpg"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__shadowy-backstreet-mkm.jpg"
   },
   {
     "id": "silent-clearing-mh1",
@@ -1941,7 +1941,7 @@
     "flavorText": "The expedition's end began the marsh's story.",
     "artist": "Seb McKinnon",
     "set": "Set 1",
-    "imageUrl": "/Cube/RealCards/silent-clearing-mh1.jpg"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__silent-clearing-mh1.jpg"
   },
   {
     "id": "spara-s-headquarters-snc",
@@ -1956,7 +1956,7 @@
     "flavorText": "To most, the Nido Sanctuary is an office complex. To the Brokers, it's a vault of secrets.",
     "artist": "Kieran Yanner",
     "set": "Set 1",
-    "imageUrl": "/Cube/RealCards/spara-s-headquarters-snc.jpg"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__spara-s-headquarters-snc.jpg"
   },
   {
     "id": "steam-vents-ecl",
@@ -1971,7 +1971,7 @@
     "flavorText": "The flamekin was drawn toward warm laughter when the skies darkened, then she turned back to the lonely peak.",
     "artist": "Adam Paquette",
     "set": "Set 1",
-    "imageUrl": "/Cube/RealCards/steam-vents-ecl.jpg"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__steam-vents-ecl.jpg"
   },
   {
     "id": "stomping-ground-eoe",
@@ -1986,7 +1986,7 @@
     "flavorText": "\"Log 2.5.325: A newborn moon, Aqqat still churns with the fires of creation. I'm eager to see what it will become!\"\n—*Maisie's Edge Chronicles*",
     "artist": "Bruce Brenneise",
     "set": "Set 1",
-    "imageUrl": "/Cube/RealCards/stomping-ground-eoe.jpg"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__stomping-ground-eoe.jpg"
   },
   {
     "id": "sunbaked-canyon-mh1",
@@ -2001,7 +2001,7 @@
     "flavorText": "Since the river ran dry, travelers wander where fish once swam.",
     "artist": "Yeong-Hao Han",
     "set": "Set 1",
-    "imageUrl": "/Cube/RealCards/sunbaked-canyon-mh1.jpg"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__sunbaked-canyon-mh1.jpg"
   },
   {
     "id": "taiga-vma",
@@ -2015,7 +2015,7 @@
     "archetypes": [],
     "artist": "Sam Burley",
     "set": "Set 1",
-    "imageUrl": "/Cube/RealCards/taiga-vma.jpg"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__taiga-vma.jpg"
   },
   {
     "id": "temple-garden-ecl",
@@ -2030,7 +2030,7 @@
     "flavorText": "The kithkin was admiring the flowers when the skies darkened, then they ripped up the roots for the next season.",
     "artist": "Adam Paquette",
     "set": "Set 1",
-    "imageUrl": "/Cube/RealCards/temple-garden-ecl.jpg"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__temple-garden-ecl.jpg"
   },
   {
     "id": "terramorphic-expanse-msc",
@@ -2045,7 +2045,7 @@
     "flavorText": "\"This is . . . I can't explain it. The opposite of all we know. A negative zone.\"\n—Mister Fantastic, Reed Richards",
     "artist": "Arthur Yuan",
     "set": "Set 1",
-    "imageUrl": "/Cube/RealCards/terramorphic-expanse-msc.jpg"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__terramorphic-expanse-msc.jpg"
   },
   {
     "id": "thundering-falls-mkm",
@@ -2059,7 +2059,7 @@
     "archetypes": [],
     "artist": "Grady Frederick",
     "set": "Set 1",
-    "imageUrl": "/Cube/RealCards/thundering-falls-mkm.jpg"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__thundering-falls-mkm.jpg"
   },
   {
     "id": "tropical-island-vma",
@@ -2073,7 +2073,7 @@
     "archetypes": [],
     "artist": "Franz Vohwinkel",
     "set": "Set 1",
-    "imageUrl": "/Cube/RealCards/tropical-island-vma.jpg"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__tropical-island-vma.jpg"
   },
   {
     "id": "tundra-vma",
@@ -2087,7 +2087,7 @@
     "archetypes": [],
     "artist": "Lars Grant-West",
     "set": "Set 1",
-    "imageUrl": "/Cube/RealCards/tundra-vma.jpg"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__tundra-vma.jpg"
   },
   {
     "id": "undercity-sewers-mkm",
@@ -2101,7 +2101,7 @@
     "archetypes": [],
     "artist": "Yeong-Hao Han",
     "set": "Set 1",
-    "imageUrl": "/Cube/RealCards/undercity-sewers-mkm.jpg"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__undercity-sewers-mkm.jpg"
   },
   {
     "id": "underground-mortuary-mkm",
@@ -2115,7 +2115,7 @@
     "archetypes": [],
     "artist": "Sergey Glushakov",
     "set": "Set 1",
-    "imageUrl": "/Cube/RealCards/underground-mortuary-mkm.jpg"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__underground-mortuary-mkm.jpg"
   },
   {
     "id": "underground-sea-vma",
@@ -2129,7 +2129,7 @@
     "archetypes": [],
     "artist": "Cliff Childs",
     "set": "Set 1",
-    "imageUrl": "/Cube/RealCards/underground-sea-vma.jpg"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__underground-sea-vma.jpg"
   },
   {
     "id": "verdant-catacombs-mh2",
@@ -2143,7 +2143,7 @@
     "archetypes": [],
     "artist": "Vance Kovacs",
     "set": "Set 1",
-    "imageUrl": "/Cube/RealCards/verdant-catacombs-mh2.jpg"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__verdant-catacombs-mh2.jpg"
   },
   {
     "id": "volcanic-island-vma",
@@ -2157,7 +2157,7 @@
     "archetypes": [],
     "artist": "Noah Bradley",
     "set": "Set 1",
-    "imageUrl": "/Cube/RealCards/volcanic-island-vma.jpg"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__volcanic-island-vma.jpg"
   },
   {
     "id": "waterlogged-grove-mh1",
@@ -2172,7 +2172,7 @@
     "flavorText": "The trees pull water from deep underground, filling the forest for miles.",
     "artist": "John Avon",
     "set": "Set 1",
-    "imageUrl": "/Cube/RealCards/waterlogged-grove-mh1.jpg"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__waterlogged-grove-mh1.jpg"
   },
   {
     "id": "watery-grave-eoe",
@@ -2187,7 +2187,7 @@
     "flavorText": "\"Log 2.9.089: Lammuat, the cemetery moon of salvage and secrets. Could be profitable for those brave enough to plumb its recesses.\"\n—*Maisie's Edge Chronicles*",
     "artist": "Sergey Glushakov",
     "set": "Set 1",
-    "imageUrl": "/Cube/RealCards/watery-grave-eoe.jpg"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__watery-grave-eoe.jpg"
   },
   {
     "id": "windswept-heath-mh3",
@@ -2202,7 +2202,7 @@
     "flavorText": "An underground paradise, bright and thriving beneath the surface of Ixalan.",
     "artist": "Alexander Forssberg",
     "set": "Set 1",
-    "imageUrl": "/Cube/RealCards/windswept-heath-mh3.jpg"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__windswept-heath-mh3.jpg"
   },
   {
     "id": "wooded-foothills-mh3",
@@ -2217,7 +2217,7 @@
     "flavorText": "Home and hunting ground for Kaldheim's fearsome trolls.",
     "artist": "Chris Ostrowski",
     "set": "Set 1",
-    "imageUrl": "/Cube/RealCards/wooded-foothills-mh3.jpg"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__wooded-foothills-mh3.jpg"
   },
   {
     "id": "xander-s-lounge-snc",
@@ -2232,7 +2232,7 @@
     "flavorText": "Maestros agents can lie low in high style at the opulent Shadow Hostel.",
     "artist": "James Paick",
     "set": "Set 1",
-    "imageUrl": "/Cube/RealCards/xander-s-lounge-snc.jpg"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__xander-s-lounge-snc.jpg"
   },
   {
     "id": "zagoth-triome-iko",
@@ -2247,7 +2247,7 @@
     "flavorText": "Hunters in the primeval wetlands become fluent in reading the ripples to tell when to pursue and when to flee.",
     "artist": "Eytan Zana",
     "set": "Set 1",
-    "imageUrl": "/Cube/RealCards/zagoth-triome-iko.jpg"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__zagoth-triome-iko.jpg"
   },
   {
     "id": "ziatora-s-proving-ground-snc",
@@ -2262,7 +2262,7 @@
     "flavorText": "Restless Riveteers can always find a sparring partner in the sprawling Treza warehouse.",
     "artist": "Viko Menezes",
     "set": "Set 1",
-    "imageUrl": "/Cube/RealCards/ziatora-s-proving-ground-snc.jpg"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__ziatora-s-proving-ground-snc.jpg"
   },
   {
     "id": "abrade-soc",
@@ -2281,7 +2281,7 @@
     "flavorText": "The desert is a voracious beast, devouring both flesh and stone.",
     "artist": "Jonas De Ro",
     "set": "Set 1",
-    "imageUrl": "/Cube/RealCards/abrade-soc.jpg"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__abrade-soc.jpg"
   },
   {
     "id": "brotherhood-s-end-bro",
@@ -2300,7 +2300,7 @@
     "flavorText": "The brothers' rivalry escalated into all-out enmity, and Tocasia paid the price.",
     "artist": "Bryan Sola",
     "set": "Set 1",
-    "imageUrl": "/Cube/RealCards/brotherhood-s-end-bro.jpg"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__brotherhood-s-end-bro.jpg"
   },
   {
     "id": "chain-lightning-dmr",
@@ -2318,7 +2318,7 @@
     ],
     "artist": "Christopher Moeller",
     "set": "Set 1",
-    "imageUrl": "/Cube/RealCards/chain-lightning-dmr.jpg"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__chain-lightning-dmr.jpg"
   },
   {
     "id": "dragon-s-rage-channeler-mh2",
@@ -2338,7 +2338,7 @@
     "power": "1",
     "toughness": "1",
     "set": "Set 1",
-    "imageUrl": "/Cube/RealCards/dragon-s-rage-channeler-mh2.jpg"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__dragon-s-rage-channeler-mh2.jpg"
   },
   {
     "id": "fable-of-the-mirror-breaker-neo",
@@ -2355,7 +2355,7 @@
     "artist": "Joseph Meehan",
     "set": "Set 1",
     "relatedFace": "Reflection of Kiki-Jiki",
-    "imageUrl": "/Cube/RealCards/fable-of-the-mirror-breaker-neo.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__fable-of-the-mirror-breaker-neo.jpg",
     "relatedTokens": [
       "2/2 red Goblin Shaman",
       "Treasure"
@@ -2381,7 +2381,7 @@
     "set": "Set 1",
     "relatedFace": "Fable of the Mirror-Breaker",
     "facedown": true,
-    "imageUrl": "/Cube/RealCards/reflection-of-kiki-jiki-neo.jpg"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__reflection-of-kiki-jiki-neo.jpg"
   },
   {
     "id": "faithless-looting-soc",
@@ -2400,7 +2400,7 @@
     "flavorText": "\"Avacyn has abandoned us! We have nothing left except what we can take!\"",
     "artist": "Gabor Szikszai",
     "set": "Set 1",
-    "imageUrl": "/Cube/RealCards/faithless-looting-soc.jpg"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__faithless-looting-soc.jpg"
   },
   {
     "id": "lightning-bolt-msc",
@@ -2419,7 +2419,7 @@
     "flavorText": "\"I am the god of thunder, the lord of the savage lightning, and the very skies must tremble when speaks The Mighty Thor!\"",
     "artist": "Milivoj Ćeran",
     "set": "Set 1",
-    "imageUrl": "/Cube/RealCards/lightning-bolt-msc.jpg"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__lightning-bolt-msc.jpg"
   },
   {
     "id": "monastery-swiftspear-bro",
@@ -2440,7 +2440,7 @@
     "power": "1",
     "toughness": "2",
     "set": "Set 1",
-    "imageUrl": "/Cube/RealCards/monastery-swiftspear-bro.jpg"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__monastery-swiftspear-bro.jpg"
   },
   {
     "id": "underworld-breach-thb",
@@ -2458,7 +2458,7 @@
     ],
     "artist": "Lie Setiawan",
     "set": "Set 1",
-    "imageUrl": "/Cube/RealCards/underworld-breach-thb.jpg"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__underworld-breach-thb.jpg"
   },
   {
     "id": "wildfire-mm2",
@@ -2477,7 +2477,7 @@
     "flavorText": "Fire is always at the top of the food chain, and it has a big appetite.",
     "artist": "Rob Alexander",
     "set": "Set 1",
-    "imageUrl": "/Cube/RealCards/wildfire-mm2.jpg"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__wildfire-mm2.jpg"
   },
   {
     "id": "day-of-judgment-fdn",
@@ -2494,7 +2494,7 @@
     "flavorText": "Clerics on both sides prayed for divine intervention to end the war. The gods didn't play favorites.",
     "artist": "Vincent Proce",
     "set": "Set 1",
-    "imageUrl": "/Cube/RealCards/day-of-judgment-fdn.jpg"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__day-of-judgment-fdn.jpg"
   },
   {
     "id": "esper-sentinel-mh2",
@@ -2513,7 +2513,7 @@
     "power": "1",
     "toughness": "1",
     "set": "Set 1",
-    "imageUrl": "/Cube/RealCards/esper-sentinel-mh2.jpg"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__esper-sentinel-mh2.jpg"
   },
   {
     "id": "path-to-exile-msc",
@@ -2530,7 +2530,7 @@
     "flavorText": "\"I ain't a man any more. I'm just . . . a monster.\"\n—The Thing, Ben Grimm",
     "artist": "Nino Is",
     "set": "Set 1",
-    "imageUrl": "/Cube/RealCards/path-to-exile-msc.jpg"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__path-to-exile-msc.jpg"
   },
   {
     "id": "sram-senior-edificer-soc",
@@ -2551,7 +2551,7 @@
     "power": "2",
     "toughness": "2",
     "set": "Set 1",
-    "imageUrl": "/Cube/RealCards/sram-senior-edificer-soc.jpg"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__sram-senior-edificer-soc.jpg"
   },
   {
     "id": "swords-to-plowshares-msc",
@@ -2568,7 +2568,7 @@
     "flavorText": "\"Gotta get that corn planted before the world ends again.\"\n—Clint Barton",
     "artist": "Greg Smallwood",
     "set": "Set 1",
-    "imageUrl": "/Cube/RealCards/swords-to-plowshares-msc.jpg"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__swords-to-plowshares-msc.jpg"
   },
   {
     "id": "thalia-guardian-of-thraben-vow",
@@ -2587,7 +2587,7 @@
     "power": "2",
     "toughness": "1",
     "set": "Set 1",
-    "imageUrl": "/Cube/RealCards/thalia-guardian-of-thraben-vow.jpg"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__thalia-guardian-of-thraben-vow.jpg"
   },
   {
     "id": "aetherborn-tutor-fb1",
@@ -2606,7 +2606,7 @@
     "flavorText": "The Aetherborn, shaped by their short existence, chase meaning with fervent intensity. For some, this means embracing thrill and adventure; for others, it involves immersing themselves in pure sensation and pain. A rare few, however, dedicate their brief lives to amassing objects, ideas, and experiences for future Aetherborn.",
     "artist": "DALL-E 3",
     "set": "Set 1",
-    "imageUrl": "/Cube/First Batch/Black/Aetherborn%20Tutor.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/first-batch__black__aetherborn-20tutor.png"
   },
   {
     "id": "annihilatog-fb1",
@@ -2627,7 +2627,7 @@
     "toughness": "2",
     "artist": "Jesper Milfords",
     "set": "Set 1",
-    "imageUrl": "/Cube/First Batch/Black/Annihilatog.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/first-batch__black__annihilatog.png"
   },
   {
     "id": "bloody-murder-fb1",
@@ -2649,7 +2649,7 @@
       "Blood"
     ],
     "set": "Set 1",
-    "imageUrl": "/Cube/First Batch/Black/Bloody%20Murder.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/first-batch__black__bloody-20murder.png"
   },
   {
     "id": "body-inspector-fb1",
@@ -2673,7 +2673,7 @@
     ],
     "artist": "ChatGPT",
     "set": "Set 1",
-    "imageUrl": "/Cube/First Batch/Black/Body%20Inspector.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/first-batch__black__body-20inspector.png"
   },
   {
     "id": "creeping-incubator-fb1",
@@ -2688,7 +2688,7 @@
     "custom": true,
     "archetypes": [],
     "set": "Set 1",
-    "imageUrl": "/Cube/First Batch/Black/Creeping%20Incubator.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/first-batch__black__creeping-20incubator.png"
   },
   {
     "id": "day-of-the-gorgon-fb1",
@@ -2705,7 +2705,7 @@
     "flavorText": "\"Sisters, the time has come to rebuild Ravnica, stone by stone.\"\n—Vraska, the Coiling Usurper",
     "artist": "DALL-E 3",
     "set": "Set 1",
-    "imageUrl": "/Cube/First Batch/Black/Day%20of%20the%20Gorgon.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/first-batch__black__day-20of-20the-20gorgon.png"
   },
   {
     "id": "forbidden-knowladge-fb1",
@@ -2723,7 +2723,7 @@
     ],
     "artist": "KingInYellow-AI-Art",
     "set": "Set 1",
-    "imageUrl": "/Cube/First Batch/Black/Forbidden%20Knowladge.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/first-batch__black__forbidden-20knowladge.png"
   },
   {
     "id": "gimme-that-fb1",
@@ -2744,7 +2744,7 @@
       "Treasure"
     ],
     "set": "Set 1",
-    "imageUrl": "/Cube/First Batch/Black/Gimme%20That.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/first-batch__black__gimme-20that.png"
   },
   {
     "id": "gnawing-in-the-deep-fb1",
@@ -2765,7 +2765,7 @@
       "1/1 black and green Pest"
     ],
     "set": "Set 1",
-    "imageUrl": "/Cube/First Batch/Black/Gnawing%20in%20the%20Deep.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/first-batch__black__gnawing-20in-20the-20deep.png"
   },
   {
     "id": "himoto-kaito-s-pet-fb1",
@@ -2785,7 +2785,7 @@
     "toughness": "1",
     "artist": "ChatGPT",
     "set": "Set 1",
-    "imageUrl": "/Cube/First Batch/Black/Himoto%2C%20Kaito%E2%80%99s%20Pet.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/first-batch__black__himoto-2c-20kaito-e2-80-99s-20pet.png"
   },
   {
     "id": "kexos-splicer-of-new-phyrexia-fb1",
@@ -2808,7 +2808,7 @@
       "3/3 colorless Phyrexian Golem"
     ],
     "set": "Set 1",
-    "imageUrl": "/Cube/First Batch/Black/Kexos%2C%20Splicer%20of%20New%20Phyrexia.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/first-batch__black__kexos-2c-20splicer-20of-20new-20phyrexia.png"
   },
   {
     "id": "last-will-fb1",
@@ -2825,7 +2825,7 @@
     "flavorText": "\"We play a different game around here, partner.\"\n—The Master Duelist",
     "artist": "Konami",
     "set": "Set 1",
-    "imageUrl": "/Cube/First Batch/Black/Last%20Will.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/first-batch__black__last-20will.png"
   },
   {
     "id": "leyline-of-greed-fb1",
@@ -2842,7 +2842,7 @@
     "flavorText": "Where untold power and the desire to explore it converge.",
     "artist": "ChatGPT",
     "set": "Set 1",
-    "imageUrl": "/Cube/First Batch/Black/Leyline%20of%20Greed.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/first-batch__black__leyline-20of-20greed.png"
   },
   {
     "id": "malakir-highborn-fb1",
@@ -2861,7 +2861,7 @@
     "power": "2",
     "toughness": "2",
     "set": "Set 1",
-    "imageUrl": "/Cube/First Batch/Black/Malakir%20Highborn.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/first-batch__black__malakir-20highborn.png"
   },
   {
     "id": "mindclogger-fb1",
@@ -2881,7 +2881,7 @@
     ],
     "artist": "ChatGPT",
     "set": "Set 1",
-    "imageUrl": "/Cube/First Batch/Black/Mindclogger.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/first-batch__black__mindclogger.png"
   },
   {
     "id": "necrogenic-face-gear-fb1",
@@ -2902,7 +2902,7 @@
       "2/2 red Rebel"
     ],
     "set": "Set 1",
-    "imageUrl": "/Cube/First Batch/Black/Necrogenic%20Face-Gear.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/first-batch__black__necrogenic-20face-gear.png"
   },
   {
     "id": "night-to-remamber-fb1",
@@ -2924,7 +2924,7 @@
     ],
     "artist": "ChatGPT",
     "set": "Set 1",
-    "imageUrl": "/Cube/First Batch/Black/Night%20to%20Remamber.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/first-batch__black__night-20to-20remamber.png"
   },
   {
     "id": "pull-from-the-static-noise-fb1",
@@ -2942,7 +2942,7 @@
     ],
     "artist": "DALL-E 3",
     "set": "Set 1",
-    "imageUrl": "/Cube/First Batch/Black/Pull%20from%20the%20Static%20Noise.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/first-batch__black__pull-20from-20the-20static-20noise.png"
   },
   {
     "id": "restless-tracker-fb1",
@@ -2965,7 +2965,7 @@
     ],
     "artist": "ChatGPT",
     "set": "Set 1",
-    "imageUrl": "/Cube/First Batch/Black/Restless%20Tracker.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/first-batch__black__restless-20tracker.png"
   },
   {
     "id": "salvage-automaton-fb1",
@@ -2986,7 +2986,7 @@
     "toughness": "1",
     "artist": "ChatGPT",
     "set": "Set 1",
-    "imageUrl": "/Cube/First Batch/Black/Salvage%20Automaton.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/first-batch__black__salvage-20automaton.png"
   },
   {
     "id": "sign-off-fb1",
@@ -3003,7 +3003,7 @@
     "flavorText": "\"My body is willing, my blood flows pure as crimson, my intentions remain untainted, my questions echo unanswered, and my patience wears thin.\"",
     "artist": "ARTBYCARLOS@DEVIANART",
     "set": "Set 1",
-    "imageUrl": "/Cube/First Batch/Black/Sign%20Off.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/first-batch__black__sign-20off.png"
   },
   {
     "id": "sleep-of-the-sleepless-fb1",
@@ -3020,7 +3020,7 @@
     "flavorText": "\"Give him a minute... or two... or three...\"",
     "artist": "ChatGPT",
     "set": "Set 1",
-    "imageUrl": "/Cube/First Batch/Black/Sleep%20of%20the%20Sleepless.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/first-batch__black__sleep-20of-20the-20sleepless.png"
   },
   {
     "id": "stillmoon-samurai-fb1",
@@ -3038,7 +3038,7 @@
     "toughness": "1",
     "artist": "TEOFT",
     "set": "Set 1",
-    "imageUrl": "/Cube/First Batch/Black/Stillmoon%20Samurai.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/first-batch__black__stillmoon-20samurai.png"
   },
   {
     "id": "total-sabotage-fb1",
@@ -3056,7 +3056,7 @@
     ],
     "artist": "ChatGPT",
     "set": "Set 1",
-    "imageUrl": "/Cube/First Batch/Black/Total%20Sabotage.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/first-batch__black__total-20sabotage.png"
   },
   {
     "id": "train-to-the-underworld-fb1",
@@ -3076,7 +3076,7 @@
     "toughness": "4",
     "artist": "Cesar Diaz Ayres",
     "set": "Set 1",
-    "imageUrl": "/Cube/First Batch/Black/Train%20to%20the%20Underworld.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/first-batch__black__train-20to-20the-20underworld.png"
   },
   {
     "id": "wailbounder-fb1",
@@ -3096,7 +3096,7 @@
     "toughness": "2",
     "artist": "DALL-E 3",
     "set": "Set 1",
-    "imageUrl": "/Cube/First Batch/Black/Wailbounder.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/first-batch__black__wailbounder.png"
   },
   {
     "id": "well-balanced-account-fb1",
@@ -3112,7 +3112,7 @@
     "archetypes": [],
     "artist": "Trez-Art",
     "set": "Set 1",
-    "imageUrl": "/Cube/First Batch/Black/Well-Balanced%20Account.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/first-batch__black__well-balanced-20account.png"
   },
   {
     "id": "broken-mirage-fb1",
@@ -3128,7 +3128,7 @@
     "archetypes": [],
     "artist": "DALL-E 3",
     "set": "Set 1",
-    "imageUrl": "/Cube/First Batch/Blue/Broken%20Mirage.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/first-batch__blue__broken-20mirage.png"
   },
   {
     "id": "clutterbrain-fb1",
@@ -3146,7 +3146,7 @@
     ],
     "artist": "ChatGPT",
     "set": "Set 1",
-    "imageUrl": "/Cube/First Batch/Blue/Clutterbrain.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/first-batch__blue__clutterbrain.png"
   },
   {
     "id": "dreamborn-queen-fb1",
@@ -3168,7 +3168,7 @@
       "Royal Role"
     ],
     "set": "Set 1",
-    "imageUrl": "/Cube/First Batch/Blue/Dreamborn%20Queen.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/first-batch__blue__dreamborn-20queen.png"
   },
   {
     "id": "fleeting-promises-fb1",
@@ -3189,7 +3189,7 @@
       "1/1 blue Bird"
     ],
     "set": "Set 1",
-    "imageUrl": "/Cube/First Batch/Blue/Fleeting%20Promises.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/first-batch__blue__fleeting-20promises.png"
   },
   {
     "id": "hold-that-thought-fb1",
@@ -3206,7 +3206,7 @@
     "flavorText": "\"Oh, that's a nice idea, I'll let you think about it.\"",
     "artist": "DALL-E 3",
     "set": "Set 1",
-    "imageUrl": "/Cube/First Batch/Blue/Hold%20That%20Thought.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/first-batch__blue__hold-20that-20thought.png"
   },
   {
     "id": "invigorating-roil-fb1",
@@ -3222,7 +3222,7 @@
     "archetypes": [],
     "artist": "DALL-E 3",
     "set": "Set 1",
-    "imageUrl": "/Cube/First Batch/Blue/Invigorating%20Roil.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/first-batch__blue__invigorating-20roil.png"
   },
   {
     "id": "it-of-incomprehensible-truths-fb1",
@@ -3239,7 +3239,7 @@
     "flavorText": "Eyes wide open to witness, yet none to beseech in the void's embrace.",
     "artist": "Marcus O. Ostergren",
     "set": "Set 1",
-    "imageUrl": "/Cube/First Batch/Blue/It%20of%20Incomprehensible%20Truths.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/first-batch__blue__it-20of-20incomprehensible-20truths.png"
   },
   {
     "id": "learn-storm-fb1",
@@ -3258,7 +3258,7 @@
     "flavorText": "You really should.",
     "artist": "Muhammad Wasif Mushtaq with ChatGPT",
     "set": "Set 1",
-    "imageUrl": "/Cube/First Batch/Blue/Learn%20Storm.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/first-batch__blue__learn-20storm.png"
   },
   {
     "id": "mana-piracy-fb1",
@@ -3276,7 +3276,7 @@
     ],
     "artist": "ChatGPT",
     "set": "Set 1",
-    "imageUrl": "/Cube/First Batch/Blue/Mana%20Piracy.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/first-batch__blue__mana-20piracy.png"
   },
   {
     "id": "misinformation-spreader-fb1",
@@ -3297,7 +3297,7 @@
     ],
     "artist": "Rhys Kim",
     "set": "Set 1",
-    "imageUrl": "/Cube/First Batch/Blue/Misinformation%20Spreader.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/first-batch__blue__misinformation-20spreader.png"
   },
   {
     "id": "most-thoughts-fb1",
@@ -3315,7 +3315,7 @@
     ],
     "artist": "ChatGPT",
     "set": "Set 1",
-    "imageUrl": "/Cube/First Batch/Blue/Most%20Thoughts.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/first-batch__blue__most-20thoughts.png"
   },
   {
     "id": "ninja-of-starry-nights-fb1",
@@ -3335,7 +3335,7 @@
     "toughness": "2",
     "artist": "ChatGPT",
     "set": "Set 1",
-    "imageUrl": "/Cube/First Batch/Blue/Ninja%20of%20Starry%20Nights.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/first-batch__blue__ninja-20of-20starry-20nights.png"
   },
   {
     "id": "nivix-data-collector-fb1",
@@ -3358,7 +3358,7 @@
     ],
     "artist": "ChatGPT",
     "set": "Set 1",
-    "imageUrl": "/Cube/First Batch/Blue/Nivix%20Data-Collector.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/first-batch__blue__nivix-20data-collector.png"
   },
   {
     "id": "papers-please-fb1",
@@ -3375,7 +3375,7 @@
     "flavorText": "The opening of the Omenpaths led to a steady influx of immigrants to Ravnica, resulting in a corresponding increase in the already extensive number of Azorius laws.",
     "artist": "ChatGPT",
     "set": "Set 1",
-    "imageUrl": "/Cube/First Batch/Blue/Papers%2C%20Please.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/first-batch__blue__papers-2c-20please.png"
   },
   {
     "id": "phantasmal-monk-fb1",
@@ -3396,7 +3396,7 @@
     "flavorText": "\"Forsake your body, and you'll gain a whole new perspective. Oh, and it helps with mobility, too.\"",
     "artist": "ChatGPT",
     "set": "Set 1",
-    "imageUrl": "/Cube/First Batch/Blue/Phantasmal%20Monk.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/first-batch__blue__phantasmal-20monk.png"
   },
   {
     "id": "rabbit-hole-fb1",
@@ -3413,7 +3413,7 @@
     "flavorText": "\"I've just had the weirdest dream...\"",
     "artist": "DALL-E 3",
     "set": "Set 1",
-    "imageUrl": "/Cube/First Batch/Blue/Rabbit%20Hole.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/first-batch__blue__rabbit-20hole.png"
   },
   {
     "id": "resculpt-with-porpuse-fb1",
@@ -3433,7 +3433,7 @@
       "4/4 blue and red Elemental"
     ],
     "set": "Set 1",
-    "imageUrl": "/Cube/First Batch/Blue/Resculpt%20with%20Porpuse.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/first-batch__blue__resculpt-20with-20porpuse.png"
   },
   {
     "id": "ronin-of-shimmering-azure-fb1",
@@ -3454,7 +3454,7 @@
     "flavorText": "Her master abandoned her, leaving her wary of humans, too distant for the Kitsune and too strange to the Moonfolk. In search of a new purpose, she wanders Kamigawa, a sad ronin seeking to sing her melancholic song of clashing swords.",
     "artist": "DALL-E 3",
     "set": "Set 1",
-    "imageUrl": "/Cube/First Batch/Blue/Ronin%20of%20Shimmering%20Azure.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/first-batch__blue__ronin-20of-20shimmering-20azure.png"
   },
   {
     "id": "scute-storm-fb1",
@@ -3475,7 +3475,7 @@
     "flavorText": "\"Survival rule 34: If it exist, there is a scute bugs version of it.\"\n—Zurdi, goblin shortcutter",
     "artist": "ChatGPT",
     "set": "Set 1",
-    "imageUrl": "/Cube/First Batch/Blue/Scute%20Storm.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/first-batch__blue__scute-20storm.png"
   },
   {
     "id": "stealing-time-fb1",
@@ -3493,7 +3493,7 @@
     ],
     "artist": "DALL-E 3",
     "set": "Set 1",
-    "imageUrl": "/Cube/First Batch/Blue/Stealing%20Time.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/first-batch__blue__stealing-20time.png"
   },
   {
     "id": "distrubing-cabinet-surgical-room-fb1",
@@ -3509,7 +3509,7 @@
     "archetypes": [],
     "artist": "ChatGPT",
     "set": "Set 1",
-    "imageUrl": "/Cube/First Batch/Blue/Surgical%20Room.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/first-batch__blue__surgical-20room.png"
   },
   {
     "id": "the-utopians-protocol-fb1",
@@ -3529,7 +3529,7 @@
       "The Experiment"
     ],
     "set": "Set 1",
-    "imageUrl": "/Cube/First Batch/Blue/The%20Utopians%E2%80%99%20Protocol.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/first-batch__blue__the-20utopians-e2-80-99-20protocol.png"
   },
   {
     "id": "tinkerer-s-caraven-fb1",
@@ -3549,7 +3549,7 @@
     "toughness": "4",
     "artist": "Studio Ghibli",
     "set": "Set 1",
-    "imageUrl": "/Cube/First Batch/Blue/Tinkerer%E2%80%99s%20Caraven.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/first-batch__blue__tinkerer-e2-80-99s-20caraven.png"
   },
   {
     "id": "written-in-the-stars-fb1",
@@ -3567,7 +3567,7 @@
     ],
     "artist": "BashfulGlowfly",
     "set": "Set 1",
-    "imageUrl": "/Cube/First Batch/Blue/Written%20in%20the%20Stars.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/first-batch__blue__written-20in-20the-20stars.png"
   },
   {
     "id": "crimson-wedding-decoration-fb1",
@@ -3584,7 +3584,7 @@
     "flavorText": "\"It really is a wedding to die for,\" said Edgar, smiling slightly.\n\"Why, of course, darling! You should've seen the faces of the uninvited!\" said Olivia, unable to hide her glee.",
     "artist": "ChatGPT",
     "set": "Set 1",
-    "imageUrl": "/Cube/First Batch/Colorless/Crimson-Wedding%20Decoration.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/first-batch__colorless__crimson-wedding-20decoration.png"
   },
   {
     "id": "deathcrafter-s-puzzleknot-fb1",
@@ -3600,7 +3600,7 @@
     ],
     "artist": "ChatGPT",
     "set": "Set 1",
-    "imageUrl": "/Cube/First Batch/Colorless/Deathcrafter%E2%80%99s%20Puzzleknot.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/first-batch__colorless__deathcrafter-e2-80-99s-20puzzleknot.png"
   },
   {
     "id": "doubling-orb-fb1",
@@ -3615,7 +3615,7 @@
     "flavorText": "Artists and dreamers flock to it, becoming consumed by an obsession to double their desires again and again.",
     "artist": "ChatGPT",
     "set": "Set 1",
-    "imageUrl": "/Cube/First Batch/Colorless/Doubling%20Orb.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/first-batch__colorless__doubling-20orb.png"
   },
   {
     "id": "keranos-gift-to-mankind-fb1",
@@ -3633,7 +3633,7 @@
     "toughness": "4",
     "artist": "DALL-E 3",
     "set": "Set 1",
-    "imageUrl": "/Cube/First Batch/Colorless/Keranos%E2%80%99%20Gift%20to%20Mankind.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/first-batch__colorless__keranos-e2-80-99-20gift-20to-20mankind.png"
   },
   {
     "id": "littjara-mirror-orb-fb1",
@@ -3647,7 +3647,7 @@
     "archetypes": [],
     "artist": "Artisan Fartisan",
     "set": "Set 1",
-    "imageUrl": "/Cube/First Batch/Colorless/Littjara%20Mirror-Orb.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/first-batch__colorless__littjara-20mirror-orb.png"
   },
   {
     "id": "map-to-the-sunken-vault-fb1",
@@ -3664,7 +3664,7 @@
     ],
     "artist": "ChatGPT",
     "set": "Set 1",
-    "imageUrl": "/Cube/First Batch/Colorless/Map%20to%20the%20Sunken%20Vault.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/first-batch__colorless__map-20to-20the-20sunken-20vault.png"
   },
   {
     "id": "mobilizer-of-the-machines-fb1",
@@ -3682,7 +3682,7 @@
     "toughness": "1",
     "artist": "ChatGPT",
     "set": "Set 1",
-    "imageUrl": "/Cube/First Batch/Colorless/Mobilizer%20of%20the%20Machines.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/first-batch__colorless__mobilizer-20of-20the-20machines.png"
   },
   {
     "id": "moxwagen-fb1",
@@ -3701,7 +3701,7 @@
     "toughness": "2",
     "artist": "DALL-E 3",
     "set": "Set 1",
-    "imageUrl": "/Cube/First Batch/Colorless/Moxwagen.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/first-batch__colorless__moxwagen.png"
   },
   {
     "id": "obliteration-titan-fb1",
@@ -3720,7 +3720,7 @@
     "toughness": "7",
     "artist": "ChatGPT",
     "set": "Set 1",
-    "imageUrl": "/Cube/First Batch/Colorless/Obliteration%20Titan.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/first-batch__colorless__obliteration-20titan.png"
   },
   {
     "id": "silver-lotus-fb1",
@@ -3735,7 +3735,7 @@
     "flavorText": "\"Be like the Lotus: let yourself grow with patience, and even if you are broken, let yourself find power in that.\"\n—Narset, to Her Students",
     "artist": "ChatGPT",
     "set": "Set 1",
-    "imageUrl": "/Cube/First Batch/Colorless/Silver%20Lotus.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/first-batch__colorless__silver-20lotus.png"
   },
   {
     "id": "sticker-collector-fb1",
@@ -3751,7 +3751,7 @@
     "toughness": "2",
     "artist": "Bing",
     "set": "Set 1",
-    "imageUrl": "/Cube/First Batch/Colorless/Sticker%20Collector.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/first-batch__colorless__sticker-20collector.png"
   },
   {
     "id": "sword-of-pauper-and-king-fb1",
@@ -3767,7 +3767,7 @@
     ],
     "artist": "ChatGPT",
     "set": "Set 1",
-    "imageUrl": "/Cube/First Batch/Colorless/Sword%20of%20Pauper%20and%20King.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/first-batch__colorless__sword-20of-20pauper-20and-20king.png"
   },
   {
     "id": "teferi-s-globe-of-possibilities-fb1",
@@ -3783,7 +3783,7 @@
     ],
     "artist": "Leonardo Santes",
     "set": "Set 1",
-    "imageUrl": "/Cube/First Batch/Colorless/Teferi%E2%80%99s%20Globe%20of%20Possibilities.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/first-batch__colorless__teferi-e2-80-99s-20globe-20of-20possibilities.png"
   },
   {
     "id": "thieves-masterpiece-fb1",
@@ -3799,7 +3799,7 @@
     ],
     "artist": "ChatGPT",
     "set": "Set 1",
-    "imageUrl": "/Cube/First Batch/Colorless/Thieves%E2%80%99%20Masterpiece.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/first-batch__colorless__thieves-e2-80-99-20masterpiece.png"
   },
   {
     "id": "threads-of-the-triad-fb1",
@@ -3816,7 +3816,7 @@
     "flavorText": "Life unfolds with choices, death gives it meaning, and destiny ties it all together.",
     "artist": "DALL-E 3",
     "set": "Set 1",
-    "imageUrl": "/Cube/First Batch/Colorless/Threads%20of%20the%20Triad.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/first-batch__colorless__threads-20of-20the-20triad.png"
   },
   {
     "id": "titan-of-impossibility-fb1",
@@ -3833,7 +3833,7 @@
     "artist": "Alexandr Elichev",
     "prompt": "My 6 mana Eldrazi did something. Respond with one powerful and interesting effect. Nothing else.",
     "set": "Set 1",
-    "imageUrl": "/Cube/First Batch/Colorless/Titan%20of%20Impossibility.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/first-batch__colorless__titan-20of-20impossibility.png"
   },
   {
     "id": "walker-of-the-finest-things-fb1",
@@ -3851,7 +3851,7 @@
     "toughness": "0",
     "artist": "Travis Anderson",
     "set": "Set 1",
-    "imageUrl": "/Cube/First Batch/Colorless/Walker%20of%20the%20Finest%20Things.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/first-batch__colorless__walker-20of-20the-20finest-20things.png"
   },
   {
     "id": "rust-germinator-fb1",
@@ -3877,7 +3877,7 @@
       "1/1 green Saproling"
     ],
     "set": "Set 1",
-    "imageUrl": "/Cube/First Batch/Gold/BG/Rust%20Germinator.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/first-batch__gold__bg__rust-20germinator.png"
   },
   {
     "id": "salvage-scraps-fb1",
@@ -3897,7 +3897,7 @@
     ],
     "artist": "ChatGPT",
     "set": "Set 1",
-    "imageUrl": "/Cube/First Batch/Gold/BG/Salvage%20Scraps.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/first-batch__gold__bg__salvage-20scraps.png"
   },
   {
     "id": "swarm-charm-fb1",
@@ -3914,7 +3914,7 @@
     "archetypes": [],
     "artist": "ChatGPT",
     "set": "Set 1",
-    "imageUrl": "/Cube/First Batch/Gold/BG/Swarm%20Charm.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/first-batch__gold__bg__swarm-20charm.png"
   },
   {
     "id": "cult-charm-fb1",
@@ -3936,7 +3936,7 @@
       "Spike"
     ],
     "set": "Set 1",
-    "imageUrl": "/Cube/First Batch/Gold/BR/Cult%20Charm.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/first-batch__gold__br__cult-20charm.png"
   },
   {
     "id": "mogis-s-battle-recorder-fb1",
@@ -3958,7 +3958,7 @@
     "toughness": "3",
     "artist": "ChatGPT",
     "set": "Set 1",
-    "imageUrl": "/Cube/First Batch/Gold/BR/Mogis%E2%80%99s%20Battle-Recorder.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/first-batch__gold__br__mogis-e2-80-99s-20battle-recorder.png"
   },
   {
     "id": "pyrotechnical-cauldron-fb1",
@@ -3980,7 +3980,7 @@
       "Firework"
     ],
     "set": "Set 1",
-    "imageUrl": "/Cube/First Batch/Gold/BR/Pyrotechnical%20Cauldron.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/first-batch__gold__br__pyrotechnical-20cauldron.png"
   },
   {
     "id": "taint-the-crime-scene-fb1",
@@ -4003,7 +4003,7 @@
       "Clue"
     ],
     "set": "Set 1",
-    "imageUrl": "/Cube/First Batch/Gold/BR/Taint%20the%20Crime%20Scene.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/first-batch__gold__br__taint-20the-20crime-20scene.png"
   },
   {
     "id": "combine-charm-fb1",
@@ -4023,7 +4023,7 @@
       "The Experiment"
     ],
     "set": "Set 1",
-    "imageUrl": "/Cube/First Batch/Gold/GU/Combine%20Charm.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/first-batch__gold__gu__combine-20charm.png"
   },
   {
     "id": "jadeskin-fb1",
@@ -4040,7 +4040,7 @@
     "archetypes": [],
     "artist": "ChatGPT",
     "set": "Set 1",
-    "imageUrl": "/Cube/First Batch/Gold/GU/Jadeskin.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/first-batch__gold__gu__jadeskin.png"
   },
   {
     "id": "pump-mutagen-fb1",
@@ -4060,7 +4060,7 @@
     "flavorText": "The Simic Combine has tried not to repeat Vig's mistakes. At least that's the official statement.",
     "artist": "ChatGPT",
     "set": "Set 1",
-    "imageUrl": "/Cube/First Batch/Gold/GU/Pump%20Mutagen.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/first-batch__gold__gu__pump-20mutagen.png"
   },
   {
     "id": "conclave-charm-fb1",
@@ -4077,7 +4077,7 @@
     "archetypes": [],
     "artist": "ChatGPT",
     "set": "Set 1",
-    "imageUrl": "/Cube/First Batch/Gold/GW/Conclave%20Charm.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/first-batch__gold__gw__conclave-20charm.png"
   },
   {
     "id": "park-heights-pride-and-joy-fb1",
@@ -4098,7 +4098,7 @@
     "toughness": "4",
     "artist": "ChatGPT",
     "set": "Set 1",
-    "imageUrl": "/Cube/First Batch/Gold/GW/Park%20Heights%20Pride%20and%20Joy.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/first-batch__gold__gw__park-20heights-20pride-20and-20joy.png"
   },
   {
     "id": "release-the-chariots-fb1",
@@ -4120,7 +4120,7 @@
       "Chariot"
     ],
     "set": "Set 1",
-    "imageUrl": "/Cube/First Batch/Gold/GW/Release%20the%20Chariots.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/first-batch__gold__gw__release-20the-20chariots.png"
   },
   {
     "id": "selesnya-battle-waker-fb1",
@@ -4141,7 +4141,7 @@
     "toughness": "3",
     "artist": "ChatGPT",
     "set": "Set 1",
-    "imageUrl": "/Cube/First Batch/Gold/GW/Selesnya%20Battle-Waker.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/first-batch__gold__gw__selesnya-20battle-waker.png"
   },
   {
     "id": "clans-charm-fb1",
@@ -4158,7 +4158,7 @@
     "archetypes": [],
     "artist": "ChatGPT",
     "set": "Set 1",
-    "imageUrl": "/Cube/First Batch/Gold/RG/Clans%20Charm.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/first-batch__gold__rg__clans-20charm.png"
   },
   {
     "id": "destroy-the-unnatural-fb1",
@@ -4175,7 +4175,7 @@
     "archetypes": [],
     "artist": "ChatGPT",
     "set": "Set 1",
-    "imageUrl": "/Cube/First Batch/Gold/RG/Destroy%20the%20Unnatural.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/first-batch__gold__rg__destroy-20the-20unnatural.png"
   },
   {
     "id": "it-that-demolish-societies-fb1",
@@ -4194,7 +4194,7 @@
     "toughness": "6",
     "artist": "ChatGPT",
     "set": "Set 1",
-    "imageUrl": "/Cube/First Batch/Gold/RG/It%20That%20Demolish%20Societies.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/first-batch__gold__rg__it-20that-20demolish-20societies.png"
   },
   {
     "id": "savagery-unbound-fb1",
@@ -4214,7 +4214,7 @@
     "toughness": "3",
     "artist": "Genzoman",
     "set": "Set 1",
-    "imageUrl": "/Cube/First Batch/Gold/RG/Savagery%20Unbound.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/first-batch__gold__rg__savagery-20unbound.png"
   },
   {
     "id": "dig-with-purpose-fb1",
@@ -4233,7 +4233,7 @@
     ],
     "artist": "ChatGPT",
     "set": "Set 1",
-    "imageUrl": "/Cube/First Batch/Gold/RW/Dig%20With%20Purpose.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/first-batch__gold__rw__dig-20with-20purpose.png"
   },
   {
     "id": "fear-of-the-apocalypse-fb1",
@@ -4255,7 +4255,7 @@
     "toughness": "2",
     "artist": "ChatGPT",
     "set": "Set 1",
-    "imageUrl": "/Cube/First Batch/Gold/RW/Fear%20of%20the%20Apocalypse.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/first-batch__gold__rw__fear-20of-20the-20apocalypse.png"
   },
   {
     "id": "legion-charm-fb1",
@@ -4272,7 +4272,7 @@
     "archetypes": [],
     "artist": "ChatGPT",
     "set": "Set 1",
-    "imageUrl": "/Cube/First Batch/Gold/RW/Legion%20Charm.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/first-batch__gold__rw__legion-20charm.png"
   },
   {
     "id": "quintorius-journal-fb1",
@@ -4291,7 +4291,7 @@
     ],
     "artist": "ChatGPT",
     "set": "Set 1",
-    "imageUrl": "/Cube/First Batch/Gold/RW/Quintorius%E2%80%99%20Journal.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/first-batch__gold__rw__quintorius-e2-80-99-20journal.png"
   },
   {
     "id": "entity-of-double-and-nothing-fb1",
@@ -4311,7 +4311,7 @@
     "toughness": "2",
     "artist": "ChatGPT",
     "set": "Set 1",
-    "imageUrl": "/Cube/First Batch/Gold/UB/Entity%20of%20Double%20and%20Nothing.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/first-batch__gold__ub__entity-20of-20double-20and-20nothing.png"
   },
   {
     "id": "house-charm-fb1",
@@ -4333,7 +4333,7 @@
       "Confusion"
     ],
     "set": "Set 1",
-    "imageUrl": "/Cube/First Batch/Gold/UB/House%20Charm.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/first-batch__gold__ub__house-20charm.png"
   },
   {
     "id": "perfected-scheme-fb1",
@@ -4352,7 +4352,7 @@
     ],
     "artist": "ChatGPT",
     "set": "Set 1",
-    "imageUrl": "/Cube/First Batch/Gold/UB/Perfected%20Scheme.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/first-batch__gold__ub__perfected-20scheme.png"
   },
   {
     "id": "prepare-the-troubles-fb1",
@@ -4371,7 +4371,7 @@
     ],
     "artist": "ChatGPT",
     "set": "Set 1",
-    "imageUrl": "/Cube/First Batch/Gold/UB/Prepare%20the%20Troubles.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/first-batch__gold__ub__prepare-20the-20troubles.png"
   },
   {
     "id": "fate-reforged-fb1",
@@ -4393,7 +4393,7 @@
       "Shard"
     ],
     "set": "Set 1",
-    "imageUrl": "/Cube/First Batch/Gold/UR/Fate%20Reforged.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/first-batch__gold__ur__fate-20reforged.png"
   },
   {
     "id": "glimmer-of-fun-fb1",
@@ -4414,7 +4414,7 @@
     "toughness": "2",
     "artist": "ChatGPT",
     "set": "Set 1",
-    "imageUrl": "/Cube/First Batch/Gold/UR/Glimmer%20of%20Fun.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/first-batch__gold__ur__glimmer-20of-20fun.png"
   },
   {
     "id": "league-charm-fb1",
@@ -4436,7 +4436,7 @@
       "Memory"
     ],
     "set": "Set 1",
-    "imageUrl": "/Cube/First Batch/Gold/UR/League%20Charm.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/first-batch__gold__ur__league-20charm.png"
   },
   {
     "id": "presence-of-the-firemind-fb1",
@@ -4455,7 +4455,7 @@
     ],
     "artist": "ChatGPT",
     "set": "Set 1",
-    "imageUrl": "/Cube/First Batch/Gold/UR/Presence%20of%20the%20Firemind.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/first-batch__gold__ur__presence-20of-20the-20firemind.png"
   },
   {
     "id": "risky-game-we-run-here-fb1",
@@ -4472,7 +4472,7 @@
     "archetypes": [],
     "artist": "DALL-E 3",
     "set": "Set 1",
-    "imageUrl": "/Cube/First Batch/Gold/UR/Risky%20Game%20We%20Run%20Here.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/first-batch__gold__ur__risky-20game-20we-20run-20here.png"
   },
   {
     "id": "it-of-earthly-and-divine-fb1",
@@ -4497,7 +4497,7 @@
     "notes": "Transforming double-faced card; this is the transformed (Spirit Monk) face of Walker of Good and Evil.",
     "artist": "Leni Kae",
     "set": "Set 1",
-    "imageUrl": "/Cube/First Batch/Gold/WB/It%20of%20Earthly%20and%20Divine.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/first-batch__gold__wb__it-20of-20earthly-20and-20divine.png"
   },
   {
     "id": "rise-to-the-occasion-fb1",
@@ -4517,7 +4517,7 @@
     ],
     "artist": "ChatGPT",
     "set": "Set 1",
-    "imageUrl": "/Cube/First Batch/Gold/WB/Rise%20to%20the%20Occasion.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/first-batch__gold__wb__rise-20to-20the-20occasion.png"
   },
   {
     "id": "starnheim-must-not-wait-fb1",
@@ -4538,7 +4538,7 @@
     "flavorText": "\"Brothers and sisters, rise as one! Tonight, we feast as the chosen of the gods, our names carved into history, and make Firja's name known across the realms!\"\n—Maja, Uniter of the Realms",
     "artist": "ChatGPT",
     "set": "Set 1",
-    "imageUrl": "/Cube/First Batch/Gold/WB/Starnheim%20Must%20Not%20Wait.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/first-batch__gold__wb__starnheim-20must-20not-20wait.png"
   },
   {
     "id": "syndicate-charm-fb1",
@@ -4555,7 +4555,7 @@
     "archetypes": [],
     "artist": "DALL-E 3",
     "set": "Set 1",
-    "imageUrl": "/Cube/First Batch/Gold/WB/Syndicate%20Charm.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/first-batch__gold__wb__syndicate-20charm.png"
   },
   {
     "id": "walker-of-good-and-evil-fb1",
@@ -4579,7 +4579,7 @@
     "notes": "Transforming double-faced card; transforms into It of Earthly and Divine (Spirit Monk).",
     "artist": "DALL-E 3",
     "set": "Set 1",
-    "imageUrl": "/Cube/First Batch/Gold/WB/Walker%20of%20Good%20and%20Evil.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/first-batch__gold__wb__walker-20of-20good-20and-20evil.png"
   },
   {
     "id": "deploy-the-cenn-fb1",
@@ -4602,7 +4602,7 @@
       "1/1 white Kithkin"
     ],
     "set": "Set 1",
-    "imageUrl": "/Cube/First Batch/Gold/WU/Deploy%20the%20Cenn.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/first-batch__gold__wu__deploy-20the-20cenn.png"
   },
   {
     "id": "ephara-s-epiphany-fb1",
@@ -4618,7 +4618,7 @@
     "custom": true,
     "archetypes": [],
     "set": "Set 1",
-    "imageUrl": "/Cube/First Batch/Gold/WU/Ephara%E2%80%99s%20Epiphany.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/first-batch__gold__wu__ephara-e2-80-99s-20epiphany.png"
   },
   {
     "id": "senate-charm-fb1",
@@ -4635,7 +4635,7 @@
     "archetypes": [],
     "artist": "DALL-E 3",
     "set": "Set 1",
-    "imageUrl": "/Cube/First Batch/Gold/WU/Senate%20Charm.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/first-batch__gold__wu__senate-20charm.png"
   },
   {
     "id": "anhelo-dashing-artist-fb1",
@@ -4661,7 +4661,7 @@
       "Treasure"
     ],
     "set": "Set 1",
-    "imageUrl": "/Cube/First Batch/Gold/3%20colors/Anhelo%2C%20Dashing%20Artist.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/first-batch__gold__3-20colors__anhelo-2c-20dashing-20artist.png"
   },
   {
     "id": "animar-corrupted-essence-fb1",
@@ -4683,7 +4683,7 @@
     "toughness": "1",
     "artist": "Kevin McKenna",
     "set": "Set 1",
-    "imageUrl": "/Cube/First Batch/Gold/3%20colors/Animar%2C%20Corrupted%20Essence.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/first-batch__gold__3-20colors__animar-2c-20corrupted-20essence.png"
   },
   {
     "id": "awareness-beyond-awareness-fb1",
@@ -4703,7 +4703,7 @@
     ],
     "artist": "DALL-E 3",
     "set": "Set 1",
-    "imageUrl": "/Cube/First Batch/Gold/3%20colors/Awareness%20Beyond%20Awareness.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/first-batch__gold__3-20colors__awareness-20beyond-20awareness.png"
   },
   {
     "id": "bell-of-echoing-possibilities-fb1",
@@ -4724,7 +4724,7 @@
     "flavorText": "A whisper of what once was, a promise of what could be, and a roar of what will come.",
     "artist": "DALL-E 3",
     "set": "Set 1",
-    "imageUrl": "/Cube/First Batch/Gold/3%20colors/Bell%20of%20Echoing%20Possibilities%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/first-batch__gold__3-20colors__bell-20of-20echoing-20possibilities-20-20-20-20-20-20-20-20-20-20-20-20-20-20-20-20.png"
   },
   {
     "id": "ill-gotten-wealth-fb1",
@@ -4744,7 +4744,7 @@
     ],
     "artist": "DALL-E 3",
     "set": "Set 1",
-    "imageUrl": "/Cube/First Batch/Gold/3%20colors/Ill-Gotten%20Wealth.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/first-batch__gold__3-20colors__ill-gotten-20wealth.png"
   },
   {
     "id": "sangrite-feeding-nexus-fb1",
@@ -4768,7 +4768,7 @@
       "Sangrite"
     ],
     "set": "Set 1",
-    "imageUrl": "/Cube/First Batch/Gold/3%20colors/Sangrite-Feeding%20Nexus.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/first-batch__gold__3-20colors__sangrite-feeding-20nexus.png"
   },
   {
     "id": "siege-mastodon-fb1",
@@ -4788,7 +4788,7 @@
     "toughness": "4",
     "artist": "ChatGPT",
     "set": "Set 1",
-    "imageUrl": "/Cube/First Batch/Gold/3%20colors/Siege%20Mastodon.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/first-batch__gold__3-20colors__siege-20mastodon.png"
   },
   {
     "id": "thrill-force-kaladesh-s-triumph-fb1",
@@ -4811,7 +4811,7 @@
     "toughness": "3",
     "artist": "ChatGPT",
     "set": "Set 1",
-    "imageUrl": "/Cube/First Batch/Gold/3%20colors/Thrill%20Force%2C%20Kaladesh%E2%80%99s%20Triumph.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/first-batch__gold__3-20colors__thrill-20force-2c-20kaladesh-e2-80-99s-20triumph.png"
   },
   {
     "id": "trillia-godmother-of-broken-hearts-fb1",
@@ -4834,7 +4834,7 @@
     "toughness": "2",
     "artist": "ChatGPT",
     "set": "Set 1",
-    "imageUrl": "/Cube/First Batch/Gold/3%20colors/Trillia%2C%20Godmother%20of%20Broken%20Hearts%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/first-batch__gold__3-20colors__trillia-2c-20godmother-20of-20broken-20hearts-20-20-20-20-20-20-20-20-20-20-20-20-20-20-20.png"
   },
   {
     "id": "untold-prosperity-fb1",
@@ -4854,7 +4854,7 @@
     ],
     "artist": "Angela Perrin",
     "set": "Set 1",
-    "imageUrl": "/Cube/First Batch/Gold/3%20colors/Untold%20Prosperity.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/first-batch__gold__3-20colors__untold-20prosperity.png"
   },
   {
     "id": "all-that-begin-must-end-fb1",
@@ -4872,7 +4872,7 @@
     ],
     "artist": "Mixze",
     "set": "Set 1",
-    "imageUrl": "/Cube/First Batch/Green/All%20That%20Begin%20Must%20End.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/first-batch__green__all-20that-20begin-20must-20end.png"
   },
   {
     "id": "aram-lockloft-co-ace-fb1",
@@ -4894,7 +4894,7 @@
     "artist": "ChatGPT",
     "relatedFace": "Danna, Lockloft Ace",
     "set": "Set 1",
-    "imageUrl": "/Cube/First Batch/Green/Aram%2C%20Lockloft%20Co-Ace.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/first-batch__green__aram-2c-20lockloft-20co-ace.png"
   },
   {
     "id": "battle-for-zendikar-fb1",
@@ -4912,7 +4912,7 @@
     "relatedFace": "Worldwake",
     "notes": "Modal double-faced card; the other face is Worldwake. Battle defense is 5.",
     "set": "Set 1",
-    "imageUrl": "/Cube/First Batch/Green/Battle%20for%20Zendikar.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/first-batch__green__battle-20for-20zendikar.png"
   },
   {
     "id": "beastie-within-fb1",
@@ -4934,7 +4934,7 @@
     "flavorText": "The beastie were told humans love being hugged, but not from where…",
     "artist": "Mumu",
     "set": "Set 1",
-    "imageUrl": "/Cube/First Batch/Green/Beastie%20Within.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/first-batch__green__beastie-20within.png"
   },
   {
     "id": "blooming-tender-fb1",
@@ -4954,7 +4954,7 @@
     "toughness": "*",
     "artist": "DALL-E 3",
     "set": "Set 1",
-    "imageUrl": "/Cube/First Batch/Green/Blooming%20Tender.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/first-batch__green__blooming-20tender.png"
   },
   {
     "id": "burning-tree-harvester-fb1",
@@ -4972,7 +4972,7 @@
     "toughness": "5",
     "artist": "ChatGPT",
     "set": "Set 1",
-    "imageUrl": "/Cube/First Batch/Green/Burning-Tree%20Harvester.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/first-batch__green__burning-tree-20harvester.png"
   },
   {
     "id": "colony-perfector-fb1",
@@ -4994,7 +4994,7 @@
     "notes": "Back face of the transforming card Skitterer Incubator.",
     "artist": "ChatGPT",
     "set": "Set 1",
-    "imageUrl": "/Cube/First Batch/Green/Colony%20Perfector.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/first-batch__green__colony-20perfector.png"
   },
   {
     "id": "deriving-a-formula-fb1",
@@ -5013,7 +5013,7 @@
     ],
     "artist": "DALL-E 3",
     "set": "Set 1",
-    "imageUrl": "/Cube/First Batch/Green/Deriving%20a%20Formula.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/first-batch__green__deriving-20a-20formula.png"
   },
   {
     "id": "emerald-clad-behemoth-fb1",
@@ -5033,7 +5033,7 @@
     "toughness": "7",
     "artist": "DALL-E 3",
     "set": "Set 1",
-    "imageUrl": "/Cube/First Batch/Green/Emerald-Clad%20Behemoth.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/first-batch__green__emerald-clad-20behemoth.png"
   },
   {
     "id": "extraterrestrial-entity-fb1",
@@ -5054,7 +5054,7 @@
     ],
     "artist": "Dall-E 3",
     "set": "Set 1",
-    "imageUrl": "/Cube/First Batch/Green/Extraterrestrial%20Entity.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/first-batch__green__extraterrestrial-20entity.png"
   },
   {
     "id": "flourishing-bauble-pet-fb1",
@@ -5073,7 +5073,7 @@
     "flavorText": "\"We are all vessels of nature's will. Some of us more… literally.\"\n—Calvatika, Korozda Gorgon",
     "artist": "ChatGPT",
     "set": "Set 1",
-    "imageUrl": "/Cube/First Batch/Green/Flourishing%20Bauble-Pet.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/first-batch__green__flourishing-20bauble-pet.png"
   },
   {
     "id": "gaea-root-of-machines-fb1",
@@ -5094,7 +5094,7 @@
     "flavorText": "A twisted timeline has given birth to a mockery of nature itself, sparing no irony.",
     "artist": "ChatGPT",
     "set": "Set 1",
-    "imageUrl": "/Cube/First Batch/Green/Gaea%2C%20Root%20of%20Machines.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/first-batch__green__gaea-2c-20root-20of-20machines.png"
   },
   {
     "id": "grazing-swifthoof-fb1",
@@ -5115,7 +5115,7 @@
     "flavorText": "After the failed heist, Oko swore off hired outlaws, choosing instead to train those worthy of his Gift of Transformation.",
     "artist": "ChatGPT",
     "set": "Set 1",
-    "imageUrl": "/Cube/First Batch/Green/Grazing%20Swifthoof.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/first-batch__green__grazing-20swifthoof.png"
   },
   {
     "id": "jade-weaver-fb1",
@@ -5134,7 +5134,7 @@
     "flavorText": "\"The Omenpaths opened new possibilities for beauty, but I still haven't found anything as beautiful as the Nine Rivers.\"",
     "artist": "ChatGPT",
     "set": "Set 1",
-    "imageUrl": "/Cube/First Batch/Green/Jade%20Weaver.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/first-batch__green__jade-20weaver.png"
   },
   {
     "id": "let-him-cook-fb1",
@@ -5153,7 +5153,7 @@
     ],
     "artist": "ChatGPT",
     "set": "Set 1",
-    "imageUrl": "/Cube/First Batch/Green/Let%20Him%20Cook.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/first-batch__green__let-20him-20cook.png"
   },
   {
     "id": "let-the-aether-flow-fb1",
@@ -5171,7 +5171,7 @@
     ],
     "artist": "ChatGPT",
     "set": "Set 1",
-    "imageUrl": "/Cube/First Batch/Green/Let%20the%20Aether%20Flow.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/first-batch__green__let-20the-20aether-20flow.png"
   },
   {
     "id": "mirran-witness-fb1",
@@ -5192,7 +5192,7 @@
     "artist": "MadManny510",
     "flavorText": "She remembers every friend who turned, every cry silenced, and every oath broken. She's done with just remembering.",
     "set": "Set 1",
-    "imageUrl": "/Cube/First Batch/Green/Mirran%20Witness.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/first-batch__green__mirran-20witness.png"
   },
   {
     "id": "muraganda-data-sphere-fb1",
@@ -5213,7 +5213,7 @@
     "toughness": "5",
     "artist": "ChatGPT",
     "set": "Set 1",
-    "imageUrl": "/Cube/First Batch/Green/Muraganda%20Data-Sphere.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/first-batch__green__muraganda-20data-sphere.png"
   },
   {
     "id": "natural-disagreement-fb1",
@@ -5231,7 +5231,7 @@
     ],
     "artist": "Dall-E 3",
     "set": "Set 1",
-    "imageUrl": "/Cube/First Batch/Green/Natural%20Disagreement.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/first-batch__green__natural-20disagreement.png"
   },
   {
     "id": "nature-s-touch-fb1",
@@ -5247,7 +5247,7 @@
     "archetypes": [],
     "artist": "Cynthia Brody",
     "set": "Set 1",
-    "imageUrl": "/Cube/First Batch/Green/Nature%27s%20Touch.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/first-batch__green__nature-27s-20touch.png"
   },
   {
     "id": "rev-it-up-fb1",
@@ -5266,7 +5266,7 @@
     "flavorText": "Most racers enjoy the thrill of the race itself, but not Aram. For him, it's all about the roar of engines igniting, the electric anticipation, the boundless potential, and the symphony of noise before chaos unfolds—that's where his heart truly lies.",
     "artist": "Dalle-3",
     "set": "Set 1",
-    "imageUrl": "/Cube/First Batch/Green/Rev%20it%20Up.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/first-batch__green__rev-20it-20up.png"
   },
   {
     "id": "runed-rendhorn-fb1",
@@ -5285,7 +5285,7 @@
     "artist": "saralgam1980",
     "flavorText": "\"Destruction is not the end, but the crucible in which wisdom is born, rising from the ruins of civilization.\"\n— Turuz, Burning-Tree Storyteller",
     "set": "Set 1",
-    "imageUrl": "/Cube/First Batch/Green/Runed%20Rendhorn.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/first-batch__green__runed-20rendhorn.png"
   },
   {
     "id": "skitterer-incubator-fb1",
@@ -5304,7 +5304,7 @@
     "notes": "Front face of a transforming card; back face is Colony Perfector.",
     "artist": "ChatGPT",
     "set": "Set 1",
-    "imageUrl": "/Cube/First Batch/Green/Skitterer%20Incubator.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/first-batch__green__skitterer-20incubator.png"
   },
   {
     "id": "storm-tamer-fb1",
@@ -5323,7 +5323,7 @@
     "flavorText": "\"Hush, mage. You will respect the timeline in awe or in death.\"",
     "artist": "ChatGPT",
     "set": "Set 1",
-    "imageUrl": "/Cube/First Batch/Green/Storm%20Tamer.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/first-batch__green__storm-20tamer.png"
   },
   {
     "id": "the-adaptationists-protocol-fb1",
@@ -5343,7 +5343,7 @@
     "flavorText": "The Adaptationists' sect of the Simic Combine believes that true evolution lies in rapid, fixed transformation—each mutation a definitive leap towards a perfected future, where perfection is not redefined, but attained once and for all.",
     "artist": "Dall-E 3",
     "set": "Set 1",
-    "imageUrl": "/Cube/First Batch/Green/The%20Adaptationists%E2%80%99%20Protocol.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/first-batch__green__the-20adaptationists-e2-80-99-20protocol.png"
   },
   {
     "id": "trek-fb1",
@@ -5360,7 +5360,7 @@
     "flavorText": "\"A path without purpose often holds the truest purpose.\"\n—Azusa, Lost but Seeking",
     "artist": "ChatGPT",
     "set": "Set 1",
-    "imageUrl": "/Cube/First Batch/Green/Trek.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/first-batch__green__trek.png"
   },
   {
     "id": "untamed-savagery-fb1",
@@ -5376,7 +5376,7 @@
     "archetypes": [],
     "artist": "ChatGPT",
     "set": "Set 1",
-    "imageUrl": "/Cube/First Batch/Green/Untamed%20Savagery.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/first-batch__green__untamed-20savagery.png"
   },
   {
     "id": "vinewrought-integrator-fb1",
@@ -5394,7 +5394,7 @@
     ],
     "artist": "ChatGPT",
     "set": "Set 1",
-    "imageUrl": "/Cube/First Batch/Green/Vinewrought%20Integrator.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/first-batch__green__vinewrought-20integrator.png"
   },
   {
     "id": "viridian-oilweaver-fb1",
@@ -5414,7 +5414,7 @@
     "toughness": "1",
     "artist": "ChatGPT",
     "set": "Set 1",
-    "imageUrl": "/Cube/First Batch/Green/Viridian%20Oilweaver.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/first-batch__green__viridian-20oilweaver.png"
   },
   {
     "id": "woodlings-progenitor-fb1",
@@ -5435,7 +5435,7 @@
     ],
     "artist": "ChatGPT",
     "set": "Set 1",
-    "imageUrl": "/Cube/First Batch/Green/Woodlings%20Progenitor.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/first-batch__green__woodlings-20progenitor.png"
   },
   {
     "id": "worldwake-fb1",
@@ -5454,7 +5454,7 @@
     "facedown": true,
     "notes": "Back face of the modal double-faced card whose front is Battle for Zendikar; no mana cost printed on this face.",
     "set": "Set 1",
-    "imageUrl": "/Cube/First Batch/Green/Worldwake.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/first-batch__green__worldwake.png"
   },
   {
     "id": "celestial-ice-realm-fb1",
@@ -5469,7 +5469,7 @@
     "flavorText": "The Ice Queen has gone, but her aura lingers, a chilling reminder to honor her legacy.",
     "artist": "ChatGPT",
     "set": "Set 1",
-    "imageUrl": "/Cube/First Batch/Lands/Celestial%20Ice-Realm.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/first-batch__lands__celestial-20ice-realm.png"
   },
   {
     "id": "fractured-mountain-range-fb1",
@@ -5484,7 +5484,7 @@
     "flavorText": "A broken canvas can still paint a beautiful picture, perhaps if you let your imagination wander just a little bit...",
     "artist": "ChatGPT",
     "set": "Set 1",
-    "imageUrl": "/Cube/First Batch/Lands/Fractured%20Mountain-Range.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/first-batch__lands__fractured-20mountain-range.png"
   },
   {
     "id": "mystical-marsh-fb1",
@@ -5499,7 +5499,7 @@
     "flavorText": "The waters will show you what you are, but look again; you will be shown what you are meant to be.",
     "artist": "ChatGPT",
     "set": "Set 1",
-    "imageUrl": "/Cube/First Batch/Lands/Mystical%20Marsh.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/first-batch__lands__mystical-20marsh.png"
   },
   {
     "id": "utopic-desolate-peaks-fb1",
@@ -5514,7 +5514,7 @@
     "flavorText": "The faefolk are forbidden from helping children directly, so they created a haven to gather those who are lost, even though they cannot cure the ache of homesickness...",
     "artist": "Dall-E 3",
     "set": "Set 1",
-    "imageUrl": "/Cube/First Batch/Lands/Utopic%20Desolate-Peaks.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/first-batch__lands__utopic-20desolate-peaks.png"
   },
   {
     "id": "all-in-good-fun-fb1",
@@ -5535,7 +5535,7 @@
       "Spike"
     ],
     "set": "Set 1",
-    "imageUrl": "/Cube/First Batch/Red/All%20In%20Good%20Fun.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/first-batch__red__all-20in-20good-20fun.png"
   },
   {
     "id": "bendable-lightning-fb1",
@@ -5552,7 +5552,7 @@
       "Control"
     ],
     "set": "Set 1",
-    "imageUrl": "/Cube/First Batch/Red/Bendable%20Lightining.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/first-batch__red__bendable-20lightining.png"
   },
   {
     "id": "bolrac-clan-gauntlets-fb1",
@@ -5569,7 +5569,7 @@
     "artist": "ChatGPT",
     "flavorText": "The Bolrac-Clan believes that the tools to dismantle society must be crafted from materials untainted by society.",
     "set": "Set 1",
-    "imageUrl": "/Cube/First Batch/Red/Bolrac-Clan%20Gauntlets.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/first-batch__red__bolrac-clan-20gauntlets.png"
   },
   {
     "id": "brightspark-collector-fb1",
@@ -5590,7 +5590,7 @@
     "toughness": "1",
     "flavorText": "\"Everything has a beautiful shine; you just have to look at it from the right perspective.\"",
     "set": "Set 1",
-    "imageUrl": "/Cube/First Batch/Red/Brightspark%20Collector.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/first-batch__red__brightspark-20collector.png"
   },
   {
     "id": "dumpster-diving-fb1",
@@ -5608,7 +5608,7 @@
     ],
     "artist": "ChatGPT",
     "set": "Set 1",
-    "imageUrl": "/Cube/First Batch/Red/Dumpster%20Diving.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/first-batch__red__dumpster-20diving.png"
   },
   {
     "id": "eidolon-maker-fb1",
@@ -5628,7 +5628,7 @@
     "power": "2",
     "toughness": "2",
     "set": "Set 1",
-    "imageUrl": "/Cube/First Batch/Red/Eidolon%20Maker.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/first-batch__red__eidolon-20maker.png"
   },
   {
     "id": "fire-ritual-fb1",
@@ -5647,7 +5647,7 @@
     "artist": "ChatGPT",
     "flavorText": "One flame to consume the past, / Another to forge what's yet to come, / And a third, to blur the line between them.",
     "set": "Set 1",
-    "imageUrl": "/Cube/First Batch/Red/Fire%20Ritual.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/first-batch__red__fire-20ritual.png"
   },
   {
     "id": "god-pharaoh-s-pup-fb1",
@@ -5665,7 +5665,7 @@
     "power": "2",
     "toughness": "2",
     "set": "Set 1",
-    "imageUrl": "/Cube/First Batch/Red/God-Pharaoh%27s%20Pup.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/first-batch__red__god-pharaoh-27s-20pup.png"
   },
   {
     "id": "impulsive-choice-fb1",
@@ -5682,7 +5682,7 @@
     "artist": "Dall-E 3",
     "flavorText": "\"Making your own choices is never wrong; the real mistake is mindlessly following the crowd.\"\n— Irena, the Gambler",
     "set": "Set 1",
-    "imageUrl": "/Cube/First Batch/Red/Impulsive%20Choice.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/first-batch__red__impulsive-20choice.png"
   },
   {
     "id": "journey-to-the-core-fb1",
@@ -5700,7 +5700,7 @@
     ],
     "artist": "Dall-E 3",
     "set": "Set 1",
-    "imageUrl": "/Cube/First Batch/Red/Journey%20to%20the%20Core.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/first-batch__red__journey-20to-20the-20core.png"
   },
   {
     "id": "laelia-reforger-of-the-lost-fb1",
@@ -5720,7 +5720,7 @@
     "power": "1",
     "toughness": "1",
     "set": "Set 1",
-    "imageUrl": "/Cube/First Batch/Red/Laelia%2C%20Reforger%20of%20the%20Lost.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/first-batch__red__laelia-2c-20reforger-20of-20the-20lost.png"
   },
   {
     "id": "lose-to-the-moment-fb1",
@@ -5737,7 +5737,7 @@
     "artist": "ChatGPT",
     "flavorText": "\"You are simple: You don't find joy in elaborate destruction, but you find joy in destruction nonetheless. We are not so different after all.\"\n- Judith, to the Burning-Tree Sisterhood",
     "set": "Set 1",
-    "imageUrl": "/Cube/First Batch/Red/Lose%20to%20the%20Moment.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/first-batch__red__lose-20to-20the-20moment.png"
   },
   {
     "id": "nothing-is-truly-forgotten-fb1",
@@ -5758,7 +5758,7 @@
       "3/2 white and red Spirit"
     ],
     "set": "Set 1",
-    "imageUrl": "/Cube/First Batch/Red/Nothing%20is%20Truly%20Forgotten.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/first-batch__red__nothing-20is-20truly-20forgotten.png"
   },
   {
     "id": "collector-s-spite-fb1",
@@ -5779,7 +5779,7 @@
       "Wicked Role"
     ],
     "set": "Set 1",
-    "imageUrl": "/Cube/First Batch/Red/Collector%E2%80%99s%20Spite.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/first-batch__red__collector-e2-80-99s-20spite.png"
   },
   {
     "id": "lorecrafter-s-tutor-fb1",
@@ -5796,7 +5796,7 @@
     "artist": "Marcos Paulo",
     "flavorText": "Every problem holds a solution, and every solution sparks new challenges. Lorecrafters thrive on this endless journey toward perfection, never settling for the first answer.",
     "set": "Set 1",
-    "imageUrl": "/Cube/First Batch/Red/Lorecrafter%E2%80%99s%20Tutor.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/first-batch__red__lorecrafter-e2-80-99s-20tutor.png"
   },
   {
     "id": "nymph-of-running-away-fb1",
@@ -5814,7 +5814,7 @@
     "power": "2",
     "toughness": "1",
     "set": "Set 1",
-    "imageUrl": "/Cube/First Batch/Red/Nymph%20of%20Running%20Away.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/first-batch__red__nymph-20of-20running-20away.png"
   },
   {
     "id": "paranormal-conspiricist-fb1",
@@ -5835,7 +5835,7 @@
     "toughness": "2",
     "flavorText": "\"Everything that can happen in The House, will happen. Connect enough dots, and it will happen to you, too.\"",
     "set": "Set 1",
-    "imageUrl": "/Cube/First Batch/Red/Paranormal%20Conspiricist.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/first-batch__red__paranormal-20conspiricist.png"
   },
   {
     "id": "predictions-obliterator-fb1",
@@ -5855,7 +5855,7 @@
     "power": "6",
     "toughness": "4",
     "set": "Set 1",
-    "imageUrl": "/Cube/First Batch/Red/Predictions%20Obliterator.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/first-batch__red__predictions-20obliterator.png"
   },
   {
     "id": "questing-beast-enraged-fb1",
@@ -5877,7 +5877,7 @@
       "Questing Role"
     ],
     "set": "Set 1",
-    "imageUrl": "/Cube/First Batch/Red/Questing%20Beast%2C%20Enraged.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/first-batch__red__questing-20beast-2c-20enraged.png"
   },
   {
     "id": "reckoner-of-fiery-justice-fb1",
@@ -5895,7 +5895,7 @@
     "power": "3",
     "toughness": "3",
     "set": "Set 1",
-    "imageUrl": "/Cube/First Batch/Red/Reckoner%20of%20Fiery%20Justice.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/first-batch__red__reckoner-20of-20fiery-20justice.png"
   },
   {
     "id": "searing-seering-fb1",
@@ -5913,7 +5913,7 @@
     ],
     "artist": "ChatGPT",
     "set": "Set 1",
-    "imageUrl": "/Cube/First Batch/Red/Searing%20Seering.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/first-batch__red__searing-20seering.png"
   },
   {
     "id": "shattering-sound-fb1",
@@ -5931,7 +5931,7 @@
     ],
     "artist": "Dall-E 3",
     "set": "Set 1",
-    "imageUrl": "/Cube/First Batch/Red/Shattering%20Sound.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/first-batch__red__shattering-20sound.png"
   },
   {
     "id": "shine-bright-fb1",
@@ -5950,7 +5950,7 @@
     "artist": "ChatGPT",
     "flavorText": "\"Each of us has a unique role to fulfill, but sometimes we struggle with our part. Join me, and I'll guide you toward a brighter path ahead!\"\n- Denara, Embereth Champion",
     "set": "Set 1",
-    "imageUrl": "/Cube/First Batch/Red/Shine%20Bright.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/first-batch__red__shine-20bright.png"
   },
   {
     "id": "spellsmute-fb1",
@@ -5966,7 +5966,7 @@
     "archetypes": [],
     "artist": "ChatGPT",
     "set": "Set 1",
-    "imageUrl": "/Cube/First Batch/Red/Spellsmute.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/first-batch__red__spellsmute.png"
   },
   {
     "id": "steam-preservation-program-fb1",
@@ -5988,7 +5988,7 @@
       "Memory"
     ],
     "set": "Set 1",
-    "imageUrl": "/Cube/First Batch/Red/Steam%20Preservation%20Program.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/first-batch__red__steam-20preservation-20program.png"
   },
   {
     "id": "straight-up-fire-fb1",
@@ -6007,7 +6007,7 @@
     "artist": "ChatGPT",
     "flavorText": "Nothing more to add.",
     "set": "Set 1",
-    "imageUrl": "/Cube/First Batch/Red/Straight%20Up%20Fire.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/first-batch__red__straight-20up-20fire.png"
   },
   {
     "id": "student-of-flaming-crimson-fb1",
@@ -6026,7 +6026,7 @@
     "toughness": "1",
     "flavorText": "His master had given him everything, but a deep emptiness remained. Whispers spoke of a woman Inu-kin who travels across Kamigawa, seeking her own path. In his heart, he wondered if their fates were intertwined, if she might be the answer he sought.",
     "set": "Set 1",
-    "imageUrl": "/Cube/First Batch/Red/Student%20of%20Flaming%20Crimson.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/first-batch__red__student-20of-20flaming-20crimson.png"
   },
   {
     "id": "everything-must-go-season-fb1",
@@ -6044,7 +6044,7 @@
     ],
     "artist": "ChatGPT",
     "set": "Set 1",
-    "imageUrl": "/Cube/First Batch/Red/%E2%80%9CEverything%20Must%20Go%E2%80%9D%20Season.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/first-batch__red__-e2-80-9ceverything-20must-20go-e2-80-9d-20season.png"
   },
   {
     "id": "altruistic-channeler-fb1",
@@ -6063,7 +6063,7 @@
     "toughness": "1",
     "flavorText": "\"Power shared is wisdom multiplied, for in giving, we all learn.\"",
     "set": "Set 1",
-    "imageUrl": "/Cube/First Batch/White/Altruistic%20Channeler.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/first-batch__white__altruistic-20channeler.png"
   },
   {
     "id": "ancestral-care-fb1",
@@ -6080,7 +6080,7 @@
     "artist": "Dall-E 3",
     "flavorText": "\"In the grand tapestry of Bloomburrow, no single generation shines brighter than the rest. We are but a humble thread in this intricate weave. Take pride in your place, but remember to tread lightly and honor the bonds that bind us all.\"\n— Mabel, to Her Children",
     "set": "Set 1",
-    "imageUrl": "/Cube/First Batch/White/Ancestral%20Care.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/first-batch__white__ancestral-20care.png"
   },
   {
     "id": "beza-s-grace-fb1",
@@ -6102,7 +6102,7 @@
       "1/1 blue Fish"
     ],
     "set": "Set 1",
-    "imageUrl": "/Cube/First Batch/White/Beza%E2%80%99s%20Grace.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/first-batch__white__beza-e2-80-99s-20grace.png"
   },
   {
     "id": "celestigoyf-fb1",
@@ -6122,7 +6122,7 @@
     "power": "*",
     "toughness": "1+*",
     "set": "Set 1",
-    "imageUrl": "/Cube/First Batch/White/Celestigoyf.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/first-batch__white__celestigoyf.png"
   },
   {
     "id": "coordination-unit-fb1",
@@ -6142,7 +6142,7 @@
     "power": "3",
     "toughness": "2",
     "set": "Set 1",
-    "imageUrl": "/Cube/First Batch/White/Coordination%20Unit.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/first-batch__white__coordination-20unit.png"
   },
   {
     "id": "cut-what-binds-fb1",
@@ -6161,7 +6161,7 @@
     "artist": "ChatGPT",
     "flavorText": "Sometimes fate is set in stone, and sometimes fate is set free.",
     "set": "Set 1",
-    "imageUrl": "/Cube/First Batch/White/Cut%20What%20Binds.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/first-batch__white__cut-20what-20binds.png"
   },
   {
     "id": "danna-lockloft-ace-fb1",
@@ -6183,7 +6183,7 @@
     "flavorText": "\"Let's show them what the Lockloft family is made of!\"",
     "relatedFace": "Aram, Lockloft Co-Ace",
     "set": "Set 1",
-    "imageUrl": "/Cube/First Batch/White/Danna%2C%20Lockloft%20Ace.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/first-batch__white__danna-2c-20lockloft-20ace.png"
   },
   {
     "id": "diamond-storm-fb1",
@@ -6205,7 +6205,7 @@
     ],
     "flavorText": "Gobakhan's weather is as dangerous as it is beautiful. Many inexperienced travelers don't know the difference and don't live to make the same mistake twice.",
     "set": "Set 1",
-    "imageUrl": "/Cube/First Batch/White/Diamond%20Storm.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/first-batch__white__diamond-20storm.png"
   },
   {
     "id": "dust-off-fb1",
@@ -6223,7 +6223,7 @@
     ],
     "artist": "Dall-E 3",
     "set": "Set 1",
-    "imageUrl": "/Cube/First Batch/White/Dust%20Off.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/first-batch__white__dust-20off.png"
   },
   {
     "id": "elite-teacher-fb1",
@@ -6242,7 +6242,7 @@
     "toughness": "1",
     "flavorText": "\"A lesson isn't a lesson if you don't learn from it.\"",
     "set": "Set 1",
-    "imageUrl": "/Cube/First Batch/White/Elite%20Teacher.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/first-batch__white__elite-20teacher.png"
   },
   {
     "id": "erni-shy-dreamer-fb1",
@@ -6265,7 +6265,7 @@
     "notes": "Reversible/transforming double-faced card; back face is Erni's Secret Identity.",
     "flavorText": "\"She's never faced combat, never achieved a Neural Sync, and yet she returns bearing the same bruises as the Elite Five. Intriguing.\"\n— First-Year Class Report",
     "set": "Set 1",
-    "imageUrl": "/Cube/First Batch/White/Erni%2C%20Shy%20Dreamer.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/first-batch__white__erni-2c-20shy-20dreamer.png"
   },
   {
     "id": "erni-s-secret-identity-fb1",
@@ -6289,7 +6289,7 @@
     "notes": "Back face of the reversible double-faced card Erni, Shy Dreamer. No printed mana cost.",
     "flavorText": "Rumors of a girl who achieved complete Bio-Sync spread rapidly, drawing intrigue from curious mech-pilots and ruthless bio-cyber corporations alike.",
     "set": "Set 1",
-    "imageUrl": "/Cube/First Batch/White/Erni%E2%80%99s%20Secret%20Identity.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/first-batch__white__erni-e2-80-99s-20secret-20identity.png"
   },
   {
     "id": "fill-the-wastes-fb1",
@@ -6311,7 +6311,7 @@
     ],
     "flavorText": "The Abzan and the Sultai agree: no amount of security is ever enough.",
     "set": "Set 1",
-    "imageUrl": "/Cube/First Batch/White/Fill%20the%20Wastes.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/first-batch__white__fill-20the-20wastes.png"
   },
   {
     "id": "inklined-to-stop-fb1",
@@ -6331,7 +6331,7 @@
     ],
     "flavorText": "Pun magic is encouraged by all Silverquill professors. The worse the pun is, the more inkredible.",
     "set": "Set 1",
-    "imageUrl": "/Cube/First Batch/White/Inklined%20to%20Stop.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/first-batch__white__inklined-20to-20stop.png"
   },
   {
     "id": "judge-s-falcon-fb1",
@@ -6350,7 +6350,7 @@
     "toughness": "1",
     "flavorText": "\"The owl and the falcon are working together! I've seen it with my own eyes!\"\n- Dar, Keyhole Downs Merchant",
     "set": "Set 1",
-    "imageUrl": "/Cube/First Batch/White/Judge%E2%80%99s%20Falcon.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/first-batch__white__judge-e2-80-99s-20falcon.png"
   },
   {
     "id": "leave-in-the-smokes-fb1",
@@ -6369,7 +6369,7 @@
     "artist": "ChatGPT",
     "flavorText": "\"I don't see any competition around me—not out of arrogance, but because the only rival I recognize is the one I face in the mirror.\"\n—Derian, Top Ace",
     "set": "Set 1",
-    "imageUrl": "/Cube/First Batch/White/Leave%20in%20the%20Smokes.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/first-batch__white__leave-20in-20the-20smokes.png"
   },
   {
     "id": "lightsworn-behemoth-fb1",
@@ -6388,7 +6388,7 @@
     "toughness": "2",
     "flavorText": "Before the shards converged, each of its steps shattered Naya. Now, it seeks healing, but through shattering the whole world.",
     "set": "Set 1",
-    "imageUrl": "/Cube/First Batch/White/Lightsworn%20Behemoth.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/first-batch__white__lightsworn-20behemoth.png"
   },
   {
     "id": "lightsworn-visionary-fb1",
@@ -6409,7 +6409,7 @@
     "toughness": "1",
     "flavorText": "\"Light is merely particles, and darkness is the absence of them. But I place no value in either. For us, the true light should lie in the spreading of knowledge—a beacon that dispels the darkness of ignorance.\"",
     "set": "Set 1",
-    "imageUrl": "/Cube/First Batch/White/Lightsworn%20Visionary.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/first-batch__white__lightsworn-20visionary.png"
   },
   {
     "id": "mardu-phoenix-blessed-fb1",
@@ -6429,7 +6429,7 @@
     "power": "3",
     "toughness": "1",
     "set": "Set 1",
-    "imageUrl": "/Cube/First Batch/White/Mardu%20Phoenix-Blessed.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/first-batch__white__mardu-20phoenix-blessed.png"
   },
   {
     "id": "mat-selesnya-loresinger-fb1",
@@ -6455,7 +6455,7 @@
       "Treasure"
     ],
     "set": "Set 1",
-    "imageUrl": "/Cube/First Batch/White/Mat%E2%80%99Selesnya%20Loresinger.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/first-batch__white__mat-e2-80-99selesnya-20loresinger.png"
   },
   {
     "id": "memory-car-fb1",
@@ -6475,7 +6475,7 @@
     "power": "3",
     "toughness": "3",
     "set": "Set 1",
-    "imageUrl": "/Cube/First Batch/White/Memory%20Car.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/first-batch__white__memory-20car.png"
   },
   {
     "id": "mirror-sigil-trooper-fb1",
@@ -6496,7 +6496,7 @@
     "toughness": "2",
     "flavorText": "\"I have the best sparring partners.\"",
     "set": "Set 1",
-    "imageUrl": "/Cube/First Batch/White/Mirror-Sigil%20Trooper.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/first-batch__white__mirror-sigil-20trooper.png"
   },
   {
     "id": "moth-winged-seeker-fb1",
@@ -6515,7 +6515,7 @@
     "artist": "ChatGPT",
     "flavorText": "\"This is probably another one of Valgavoth's 'gifts', but I don't care. It's pretty, and it inspires me to move forward.\"\n- Maggie, Hopeful Survivor",
     "set": "Set 1",
-    "imageUrl": "/Cube/First Batch/White/Moth-Winged%20Seeker.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/first-batch__white__moth-winged-20seeker.png"
   },
   {
     "id": "mutual-understanding-fb1",
@@ -6532,7 +6532,7 @@
     "artist": "Dall-E 3",
     "flavorText": "\"In New Capenna, you give a little, you take a little. But this ain't New Capenna, kid. Here in Thunder Junction, it's a bird-eats-worm kinda world.\"\n— Borio, Brokers' Recruiter",
     "set": "Set 1",
-    "imageUrl": "/Cube/First Batch/White/Mutual%20Understanding.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/first-batch__white__mutual-20understanding.png"
   },
   {
     "id": "palisade-champion-fb1",
@@ -6550,7 +6550,7 @@
     "power": "2",
     "toughness": "4",
     "set": "Set 1",
-    "imageUrl": "/Cube/First Batch/White/Palisade%20Champion.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/first-batch__white__palisade-20champion.png"
   },
   {
     "id": "prismation-mankind-s-reach-to-heaven-fb1",
@@ -6571,7 +6571,7 @@
     "power": "3",
     "toughness": "3",
     "set": "Set 1",
-    "imageUrl": "/Cube/First Batch/White/Prismation%2C%20Mankind%E2%80%99s%20Reach%20to%20Heaven%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/first-batch__white__prismation-2c-20mankind-e2-80-99s-20reach-20to-20heaven-20-20-20-20-20-20-20-20-20-20-20-20-20-20-20.png"
   },
   {
     "id": "serra-savior-fb1",
@@ -6593,7 +6593,7 @@
     "toughness": "4",
     "flavorText": "\"We lost so much, but the key word is 'we.' Remember—you are not alone.\"",
     "set": "Set 1",
-    "imageUrl": "/Cube/First Batch/White/Serra%20Savior.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/first-batch__white__serra-20savior.png"
   },
   {
     "id": "sigiled-lightsworn-fb1",
@@ -6614,7 +6614,7 @@
     "toughness": "1",
     "flavorText": "A decade after the shards merged, the three white-aligned shards united to form an organization called The Lightsworns, dedicated to finding light and countering the darkness embodied by the remaining two shards.",
     "set": "Set 1",
-    "imageUrl": "/Cube/First Batch/White/Sigiled%20Lightsworn.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/first-batch__white__sigiled-20lightsworn.png"
   },
   {
     "id": "the-bank-robs-you-fb1",
@@ -6633,7 +6633,7 @@
       "1/1 white Vampire Cleric"
     ],
     "set": "Set 1",
-    "imageUrl": "/Cube/First Batch/White/The%20Bank%20Robs%20You.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/first-batch__white__the-20bank-20robs-20you.png"
   },
   {
     "id": "the-golden-touch-fb1",
@@ -6654,7 +6654,7 @@
     "power": "3",
     "toughness": "3",
     "set": "Set 1",
-    "imageUrl": "/Cube/First Batch/White/The%20Golden%20Touch.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/first-batch__white__the-20golden-20touch.png"
   },
   {
     "id": "tongue-in-cheek-fb1",
@@ -6671,7 +6671,7 @@
     "artist": "Dall-E 3",
     "flavorText": "Mouth-binding magic is strictly banned in Silverquill duels, which is precisely why they reserve it for their classmates in other houses.",
     "set": "Set 1",
-    "imageUrl": "/Cube/First Batch/White/Tongue%20in%20Cheek.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/first-batch__white__tongue-20in-20cheek.png"
   },
   {
     "id": "wagon-of-karmic-justice-fb1",
@@ -6692,7 +6692,7 @@
     "power": "5",
     "toughness": "9",
     "set": "Set 1",
-    "imageUrl": "/Cube/First Batch/White/Wagon%20of%20Karmic%20Justice.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/first-batch__white__wagon-20of-20karmic-20justice.png"
   },
   {
     "id": "your-own-story-fb1",
@@ -6711,6 +6711,6 @@
     ],
     "artist": "Iris Rodriguez",
     "set": "Set 1",
-    "imageUrl": "/Cube/First Batch/White/Your%20Own%20Story.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/first-batch__white__your-20own-20story.png"
   }
 ]

@@ -18,7 +18,7 @@
     "power": "1",
     "toughness": "1",
     "set": "Set 5",
-    "imageUrl": "/Cube/RealCards/bitterbloom-bearer-ecl.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__bitterbloom-bearer-ecl.jpg",
     "relatedTokens": [
       "1/1 blue and black Faerie"
     ]
@@ -41,7 +41,7 @@
     "power": "2",
     "toughness": "2",
     "set": "Set 5",
-    "imageUrl": "/Cube/RealCards/osteomancer-adept-blb.jpg"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__osteomancer-adept-blb.jpg"
   },
   {
     "id": "hymn-of-the-wilds-cn2",
@@ -56,7 +56,7 @@
     "flavorText": "Many attempt to speak with nature. Selvala speaks less, and nature answers more.",
     "artist": "Jason Rainville",
     "set": "Set 5",
-    "imageUrl": "/Cube/RealCards/hymn-of-the-wilds-cn2.jpg"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__hymn-of-the-wilds-cn2.jpg"
   },
   {
     "id": "sovereign-s-realm-cn2",
@@ -70,7 +70,7 @@
     "archetypes": [],
     "artist": "Daniel Ljunggren",
     "set": "Set 5",
-    "imageUrl": "/Cube/RealCards/sovereign-s-realm-cn2.jpg"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__sovereign-s-realm-cn2.jpg"
   },
   {
     "id": "planar-birth-usg",
@@ -87,7 +87,7 @@
     "flavorText": "\"From womb of nothingness sprang this place of beauty, purity, and hope realized.\"\n—*Song of All*, canto 3",
     "artist": "Adam Rex",
     "set": "Set 5",
-    "imageUrl": "/Cube/RealCards/planar-birth-usg.jpg"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__planar-birth-usg.jpg"
   },
   {
     "id": "touch-the-spirit-realm-neo",
@@ -105,7 +105,7 @@
     ],
     "artist": "Marta Nael",
     "set": "Set 5",
-    "imageUrl": "/Cube/RealCards/touch-the-spirit-realm-neo.jpg"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__touch-the-spirit-realm-neo.jpg"
   },
   {
     "id": "armix-of-the-scrapped-past-fb5",
@@ -126,7 +126,7 @@
     "toughness": "0",
     "artist": "Zack Stella",
     "set": "Set 5",
-    "imageUrl": "/Cube/Fifth Batch/Black/Armix%20of%20the%20Scrapped%20Past.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/fifth-batch__black__armix-20of-20the-20scrapped-20past.png"
   },
   {
     "id": "can-t-back-down-fb5",
@@ -143,7 +143,7 @@
     "flavorText": "In Shadowmoor, the darkest emotions are the only way to endure the night.",
     "artist": "Adam Rex",
     "set": "Set 5",
-    "imageUrl": "/Cube/Fifth Batch/Black/Can%E2%80%99t%20Back%20Down.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/fifth-batch__black__can-e2-80-99t-20back-20down.png"
   },
   {
     "id": "confuse-fb5",
@@ -159,7 +159,7 @@
     "archetypes": [],
     "artist": "Milan Bourgeon",
     "set": "Set 5",
-    "imageUrl": "/Cube/Fifth Batch/Black/Confuse.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/fifth-batch__black__confuse.png"
   },
   {
     "id": "inkredible-idea-fb5",
@@ -179,7 +179,7 @@
       "2/1 white and black Inkling"
     ],
     "set": "Set 5",
-    "imageUrl": "/Cube/Fifth Batch/Black/Inkredible%20Idea.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/fifth-batch__black__inkredible-20idea.png"
   },
   {
     "id": "inverted-pathogenesis-fb5",
@@ -201,7 +201,7 @@
       "1/1 green Swamp Dryad"
     ],
     "set": "Set 5",
-    "imageUrl": "/Cube/Fifth Batch/Black/Inverted%20Pathogenesis.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/fifth-batch__black__inverted-20pathogenesis.png"
   },
   {
     "id": "keep-coming-back-wrong-fb5",
@@ -217,7 +217,7 @@
     "archetypes": [],
     "artist": "David Auden Nash",
     "set": "Set 5",
-    "imageUrl": "/Cube/Fifth Batch/Black/Keep%20Coming%20Back%20Wrong.webp"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/fifth-batch__black__keep-20coming-20back-20wrong.webp"
   },
   {
     "id": "pain-is-the-greatest-teacher-fb5",
@@ -238,7 +238,7 @@
       "Blood"
     ],
     "set": "Set 5",
-    "imageUrl": "/Cube/Fifth Batch/Black/Pain%20is%20the%20Greatest%20Teacher.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/fifth-batch__black__pain-20is-20the-20greatest-20teacher.png"
   },
   {
     "id": "rat-pack-fb5",
@@ -256,7 +256,7 @@
     "toughness": "0",
     "artist": "Tapioca",
     "set": "Set 5",
-    "imageUrl": "/Cube/Fifth Batch/Black/Rat%20Pack.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/fifth-batch__black__rat-20pack.png"
   },
   {
     "id": "table-of-costly-greatness-fb5",
@@ -277,7 +277,7 @@
       "Dark Confidant"
     ],
     "set": "Set 5",
-    "imageUrl": "/Cube/Fifth Batch/Black/Table%20of%20Costly%20Greatness.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/fifth-batch__black__table-20of-20costly-20greatness.png"
   },
   {
     "id": "claimed-by-the-muse-fb5",
@@ -297,7 +297,7 @@
       "1/1 green Island Dryad"
     ],
     "set": "Set 5",
-    "imageUrl": "/Cube/Fifth Batch/Blue/Claimed%20by%20the%20Muse.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/fifth-batch__blue__claimed-20by-20the-20muse.png"
   },
   {
     "id": "clonogoyf-fb5",
@@ -317,7 +317,7 @@
     "toughness": "1+*",
     "artist": "D1ESELX",
     "set": "Set 5",
-    "imageUrl": "/Cube/Fifth Batch/Blue/Clonogoyf.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/fifth-batch__blue__clonogoyf.png"
   },
   {
     "id": "cognition-fb5",
@@ -334,7 +334,7 @@
     "flavorText": "\"Oh, hacking? I'll say it's art, and science, and finding out who the hell you are under all this noise. And yeah—it's feeding the ever-growing crowd that craves the next Run sticking it to the Corpos.\"",
     "artist": "Matt Zeilinger",
     "set": "Set 5",
-    "imageUrl": "/Cube/Fifth Batch/Blue/Cognition.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/fifth-batch__blue__cognition.png"
   },
   {
     "id": "curator-of-broken-timelines-fb5",
@@ -353,7 +353,7 @@
     "flavorText": "\"Sit down, it's your time to learn the legend of Danna and Aram.\"",
     "artist": "ChatGPT o4",
     "set": "Set 5",
-    "imageUrl": "/Cube/Fifth Batch/Blue/Curator%20of%20Broken%20Timelines.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/fifth-batch__blue__curator-20of-20broken-20timelines.png"
   },
   {
     "id": "disrespect-fb5",
@@ -369,7 +369,7 @@
     "archetypes": [],
     "artist": "Lie Setiawan",
     "set": "Set 5",
-    "imageUrl": "/Cube/Fifth Batch/Blue/Disrespect.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/fifth-batch__blue__disrespect.png"
   },
   {
     "id": "gifted-arithmancer-fb5",
@@ -391,7 +391,7 @@
       "0/0 blue and green Fractal"
     ],
     "set": "Set 5",
-    "imageUrl": "/Cube/Fifth Batch/Blue/Gifted%20Arithmancer.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/fifth-batch__blue__gifted-20arithmancer.png"
   },
   {
     "id": "govermental-appropriation-fb5",
@@ -408,7 +408,7 @@
     "flavorText": "\"…Failing to do so, your goods shall be impounded at the nearest Interplanar Omenpath, subject to seizure, and cataloged under Section VII of the Ravnica Import Restrictions.\"",
     "artist": "Nano Banana",
     "set": "Set 5",
-    "imageUrl": "/Cube/Fifth Batch/Blue/Govermental%20Appropriation.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/fifth-batch__blue__govermental-20appropriation.png"
   },
   {
     "id": "mean-arithmetic-fb5",
@@ -428,7 +428,7 @@
       "0/0 blue and green Fractal"
     ],
     "set": "Set 5",
-    "imageUrl": "/Cube/Fifth Batch/Blue/Mean%20Arithmetic.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/fifth-batch__blue__mean-20arithmetic.png"
   },
   {
     "id": "mega-proompting-fb5",
@@ -450,7 +450,7 @@
     ],
     "prompt": "Give my Prompt enchantment token exactly one ability.",
     "set": "Set 5",
-    "imageUrl": "/Cube/Fifth Batch/Blue/Mega%20Proompting.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/fifth-batch__blue__mega-20proompting.png"
   },
   {
     "id": "waterbending-mastery-fb5",
@@ -466,7 +466,7 @@
     "archetypes": [],
     "artist": "Nickelodeon Animation Studio",
     "set": "Set 5",
-    "imageUrl": "/Cube/Fifth Batch/Blue/Waterbending%20Mastery.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/fifth-batch__blue__waterbending-20mastery.png"
   },
   {
     "id": "cogwork-mindsplitter-fb5",
@@ -483,7 +483,7 @@
     "flavorText": "Perfect for a divided society.",
     "artist": "Nano Banana",
     "set": "Set 5",
-    "imageUrl": "/Cube/Fifth Batch/Colorless/Cogwork%20Mindsplitter.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/fifth-batch__colorless__cogwork-20mindsplitter.png"
   },
   {
     "id": "dream-bullet-jolly-the-johnny-fb5",
@@ -500,7 +500,7 @@
     "flavorText": "\"My horse is a gosh darn gun. Any questions?\"",
     "artist": "Yuukoo009",
     "set": "Set 5",
-    "imageUrl": "/Cube/Fifth Batch/Colorless/Dream%20Bullet%20%26%20Jolly%20the%20Johnny.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/fifth-batch__colorless__dream-20bullet-20-26-20jolly-20the-20johnny.png"
   },
   {
     "id": "let-it-rip-fb5",
@@ -516,7 +516,7 @@
     ],
     "artist": "Michael Sutfin, Greg Staples, Rob Alexander and Takao Aoki",
     "set": "Set 5",
-    "imageUrl": "/Cube/Fifth Batch/Colorless/Let%20It%20Rip%21.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/fifth-batch__colorless__let-20it-20rip-21.png"
   },
   {
     "id": "literally-wedding-ring-fb5",
@@ -527,7 +527,7 @@
     "custom": true,
     "archetypes": [],
     "set": "Set 5",
-    "imageUrl": "/Cube/Fifth Batch/Colorless/Literally%20Wedding%20Ring.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/fifth-batch__colorless__literally-20wedding-20ring.png"
   },
   {
     "id": "mox-crimson-fb5",
@@ -542,7 +542,7 @@
     "flavorText": "\"War is ugly, chaotic, and unrelenting. It tests us at our highest and breaks us at our lowest. And yet, the fight itself must be beautiful, orderly, and calculated. May we always remember how to become whole after we are broken.\"\n—Alesha's First Poem of War",
     "artist": "Nano Banana",
     "set": "Set 5",
-    "imageUrl": "/Cube/Fifth Batch/Colorless/Mox%20Crimson.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/fifth-batch__colorless__mox-20crimson.png"
   },
   {
     "id": "the-custom-cube-fb5",
@@ -558,7 +558,7 @@
     "artist": "Nano Banana",
     "prompt": "Give me exactly one custom Magic the Gathering spell with mana cost of {noted mana cost}.",
     "set": "Set 5",
-    "imageUrl": "/Cube/Fifth Batch/Colorless/The%20Custom%20Cube.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/fifth-batch__colorless__the-20custom-20cube.png"
   },
   {
     "id": "arboria-survivalist-fb5",
@@ -580,7 +580,7 @@
     "flavorText": "\"With the correct bionic combination, the Extinction can do me no harm.\"",
     "artist": "Nano Banana",
     "set": "Set 5",
-    "imageUrl": "/Cube/Fifth Batch/Gold/Arboria%20Survivalist.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/fifth-batch__gold__arboria-20survivalist.png"
   },
   {
     "id": "armored-regent-fb5",
@@ -602,7 +602,7 @@
     "flavorText": "Some Dinokind work alongside humans to prevent the devastation of the Extinction.",
     "artist": "Nano Banana",
     "set": "Set 5",
-    "imageUrl": "/Cube/Fifth Batch/Gold/Armored%20Regent.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/fifth-batch__gold__armored-20regent.png"
   },
   {
     "id": "calamity-twins-fb5",
@@ -624,7 +624,7 @@
     "flavorText": "Dinokind twins are an exceedingly rare phenomenon. Those born as twins are said to embody life after the Extinction and are both feared and revered.",
     "artist": "Nano Banana",
     "set": "Set 5",
-    "imageUrl": "/Cube/Fifth Batch/Gold/Calamity%20Twins.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/fifth-batch__gold__calamity-20twins.png"
   },
   {
     "id": "citadel-preacher-fb5",
@@ -646,7 +646,7 @@
     "flavorText": "\"Humanity and Dinokind must sing as one. Join, tiny one, your voice matters.\"",
     "artist": "Nano Banana",
     "set": "Set 5",
-    "imageUrl": "/Cube/Fifth Batch/Gold/Citadel%20Preacher.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/fifth-batch__gold__citadel-20preacher.png"
   },
   {
     "id": "cosmoceraptos-fb5",
@@ -668,7 +668,7 @@
     "flavorText": "Behold, a vision of a broken world: one is swallowed by silent oblivion, while the other wails to the stars and beyond.",
     "artist": "Nano Banana",
     "set": "Set 5",
-    "imageUrl": "/Cube/Fifth Batch/Gold/Cosmoceraptos.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/fifth-batch__gold__cosmoceraptos.png"
   },
   {
     "id": "jagged-teeth-bringer-fb5",
@@ -690,7 +690,7 @@
     "flavorText": "A Bringer's bite gives visions of life after the Extinction. Some go mad; others live in pure bliss.",
     "artist": "Nano Banana",
     "set": "Set 5",
-    "imageUrl": "/Cube/Fifth Batch/Gold/Jagged-Teeth%20Bringer.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/fifth-batch__gold__jagged-teeth-20bringer.png"
   },
   {
     "id": "living-driveway-fb5",
@@ -712,7 +712,7 @@
     "flavorText": "These gentle dinokind do not see themselves as above humans, but as part of a vibrant ecosystem where everyone has their role and place to contend with.",
     "artist": "Nano Banana",
     "set": "Set 5",
-    "imageUrl": "/Cube/Fifth Batch/Gold/Living%20Driveway.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/fifth-batch__gold__living-20driveway.png"
   },
   {
     "id": "realm-chomper-fb5",
@@ -735,7 +735,7 @@
       "Treasure"
     ],
     "set": "Set 5",
-    "imageUrl": "/Cube/Fifth Batch/Gold/Realm%20Chomper.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/fifth-batch__gold__realm-20chomper.png"
   },
   {
     "id": "shepherd-of-the-extinction-fb5",
@@ -755,7 +755,7 @@
     "flavorText": "\"Who in willing of body and mind? Let us walk, unafraid! As one!\"",
     "artist": "Nano Banana",
     "set": "Set 5",
-    "imageUrl": "/Cube/Fifth Batch/Gold/Shepherd%20of%20the%20Extinction.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/fifth-batch__gold__shepherd-20of-20the-20extinction.png"
   },
   {
     "id": "wisened-stomper-fb5",
@@ -777,7 +777,7 @@
     "flavorText": "The Wiseneds manipulate the world so the Extinction will occur. Some prefer to do it from above.",
     "artist": "Nano Banana",
     "set": "Set 5",
-    "imageUrl": "/Cube/Fifth Batch/Gold/Wisened%20Stomper.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/fifth-batch__gold__wisened-20stomper.png"
   },
   {
     "id": "earthbending-mastery-fb5",
@@ -793,7 +793,7 @@
     "archetypes": [],
     "artist": "Nickelodeon Animation Studio",
     "set": "Set 5",
-    "imageUrl": "/Cube/Fifth Batch/Green/Earthbending%20Mastery.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/fifth-batch__green__earthbending-20mastery.png"
   },
   {
     "id": "fear-of-technology-fb5",
@@ -812,7 +812,7 @@
     "flavorText": "It saw your browsing history. It didn't like the fact you even have a phone.",
     "artist": "Gemini Nano Banana",
     "set": "Set 5",
-    "imageUrl": "/Cube/Fifth Batch/Green/Fear%20of%20Technology.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/fifth-batch__green__fear-20of-20technology.png"
   },
   {
     "id": "hearthstone-rules-fb5",
@@ -827,7 +827,7 @@
     "custom": true,
     "archetypes": [],
     "set": "Set 5",
-    "imageUrl": "/Cube/Fifth Batch/Green/Hearthstone%20Rules.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/fifth-batch__green__hearthstone-20rules.png"
   },
   {
     "id": "i-don-t-know-anymore-fb5",
@@ -843,7 +843,7 @@
     "archetypes": [],
     "artist": "SayGames",
     "set": "Set 5",
-    "imageUrl": "/Cube/Fifth Batch/Green/I%20Don%E2%80%99t%20Know%20Anymore.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/fifth-batch__green__i-20don-e2-80-99t-20know-20anymore.png"
   },
   {
     "id": "mrbeast-within-fb5",
@@ -863,7 +863,7 @@
       "MrBeast"
     ],
     "set": "Set 5",
-    "imageUrl": "/Cube/Fifth Batch/Green/MrBeast%20Within.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/fifth-batch__green__mrbeast-20within.png"
   },
   {
     "id": "mwonvuli-awakened-fb5",
@@ -886,7 +886,7 @@
       "1/1 green Forest Dryad"
     ],
     "set": "Set 5",
-    "imageUrl": "/Cube/Fifth Batch/Green/Mwonvuli%20Awakened.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/fifth-batch__green__mwonvuli-20awakened.png"
   },
   {
     "id": "nature-s-consumption-fb5",
@@ -908,7 +908,7 @@
       "1/1 black and green Pest"
     ],
     "set": "Set 5",
-    "imageUrl": "/Cube/Fifth Batch/Green/Nature%E2%80%99s%20Consumption.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/fifth-batch__green__nature-e2-80-99s-20consumption.png"
   },
   {
     "id": "overwhelming-crush-out-fb5",
@@ -927,7 +927,7 @@
     "flavorText": "Gonti's secret backup plan, in case Aetherdrift wouldn't sell well.",
     "artist": "Nano Banana",
     "set": "Set 5",
-    "imageUrl": "/Cube/Fifth Batch/Green/Overwhelming%20Crush-Out.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/fifth-batch__green__overwhelming-20crush-out.png"
   },
   {
     "id": "resonance-fb5",
@@ -944,7 +944,7 @@
     "flavorText": "\"Life, when lived to the fullest, teaches us that within each of us, there's the beauty of all of us.\"",
     "artist": "Cheryle Bannon",
     "set": "Set 5",
-    "imageUrl": "/Cube/Fifth Batch/Green/Resonance.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/fifth-batch__green__resonance.png"
   },
   {
     "id": "their-legacy-remambered-fb5",
@@ -960,7 +960,7 @@
     "archetypes": [],
     "artist": "Rebecca Guay",
     "set": "Set 5",
-    "imageUrl": "/Cube/Fifth Batch/Green/Their%20Legacy%20Remambered.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/fifth-batch__green__their-20legacy-20remambered.png"
   },
   {
     "id": "traveler-s-imaginarium-fb5",
@@ -975,7 +975,7 @@
     ],
     "artist": "Suzan Owens",
     "set": "Set 5",
-    "imageUrl": "/Cube/Fifth Batch/Lands/Traveler%E2%80%99s%20Imaginarium.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/fifth-batch__lands__traveler-e2-80-99s-20imaginarium.png"
   },
   {
     "id": "where-dreams-once-drifted-fb5",
@@ -991,7 +991,7 @@
     "flavorText": "\"Remember when the skies felt close enough to touch—like they'd always be there, just an arm's reach away?\"\n—Ponderings of the One That Was",
     "artist": "ChatGPT o4",
     "set": "Set 5",
-    "imageUrl": "/Cube/Fifth Batch/Lands/Where%20Dreams%20Once%20Drifted.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/fifth-batch__lands__where-20dreams-20once-20drifted.png"
   },
   {
     "id": "ash-blossoms-fb5",
@@ -1012,7 +1012,7 @@
       "1/1 green Mountain Dryad"
     ],
     "set": "Set 5",
-    "imageUrl": "/Cube/Fifth Batch/Red/Ash%20Blossoms.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/fifth-batch__red__ash-20blossoms.png"
   },
   {
     "id": "firebending-mastery-fb5",
@@ -1028,7 +1028,7 @@
     "archetypes": [],
     "artist": "Nickelodeon Animation Studio",
     "set": "Set 5",
-    "imageUrl": "/Cube/Fifth Batch/Red/Firebending%20Mastery.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/fifth-batch__red__firebending-20mastery.png"
   },
   {
     "id": "fragments-of-potential-fb5",
@@ -1050,7 +1050,7 @@
       "Shard"
     ],
     "set": "Set 5",
-    "imageUrl": "/Cube/Fifth Batch/Red/Fragments%20of%20Potential.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/fifth-batch__red__fragments-20of-20potential.png"
   },
   {
     "id": "kamehameha-fb5",
@@ -1066,7 +1066,7 @@
     "archetypes": [],
     "artist": "AGB234",
     "set": "Set 5",
-    "imageUrl": "/Cube/Fifth Batch/Red/KAMEHAMEHA%21.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/fifth-batch__red__kamehameha-21.png"
   },
   {
     "id": "keranos-s-displeasure-fb5",
@@ -1085,7 +1085,7 @@
     "flavorText": "Mankind soon understood that some mistakes cannot be made twice.",
     "artist": "deWitteillustration",
     "set": "Set 5",
-    "imageUrl": "/Cube/Fifth Batch/Red/Keranos%E2%80%99s%20Displeasure.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/fifth-batch__red__keranos-e2-80-99s-20displeasure.png"
   },
   {
     "id": "leave-an-impression-fb5",
@@ -1105,7 +1105,7 @@
       "4/4 blue and red Elemental"
     ],
     "set": "Set 5",
-    "imageUrl": "/Cube/Fifth Batch/Red/Leave%20an%20Impression.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/fifth-batch__red__leave-20an-20impression.png"
   },
   {
     "id": "mrbeast-fb5",
@@ -1129,7 +1129,7 @@
       "1/1 colorless Subscriber"
     ],
     "set": "Set 5",
-    "imageUrl": "/Cube/Fifth Batch/Red/MrBeast.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/fifth-batch__red__mrbeast.png"
   },
   {
     "id": "shivvin-dragon-fb5",
@@ -1152,7 +1152,7 @@
       "Shiv"
     ],
     "set": "Set 5",
-    "imageUrl": "/Cube/Fifth Batch/Red/Shivvin%27%20Dragon.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/fifth-batch__red__shivvin-27-20dragon.png"
   },
   {
     "id": "star-pegasus-fb5",
@@ -1170,7 +1170,7 @@
     "toughness": "2",
     "artist": "Takara",
     "set": "Set 5",
-    "imageUrl": "/Cube/Fifth Batch/Red/Star%20Pegasus.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/fifth-batch__red__star-20pegasus.png"
   },
   {
     "id": "tainted-wish-fb5",
@@ -1186,7 +1186,7 @@
     "archetypes": [],
     "artist": "Piotr Foksowicz",
     "set": "Set 5",
-    "imageUrl": "/Cube/Fifth Batch/Red/Tainted%20Wish.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/fifth-batch__red__tainted-20wish.png"
   },
   {
     "id": "ad-infinitum-fb5",
@@ -1204,7 +1204,7 @@
     "artist": "ChatGPT 04",
     "_supersedes": "ad-infinitum-fb4",
     "set": "Set 5",
-    "imageUrl": "/Cube/Fifth Batch/Remake/Ad%20Infinitum.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/fifth-batch__remake__ad-20infinitum.png"
   },
   {
     "id": "everything-is-a-conspiracy-fb5",
@@ -1218,7 +1218,7 @@
     "artist": "Sergiu Roman",
     "_supersedes": "everything-is-a-conspiricy-fb4",
     "set": "Set 5",
-    "imageUrl": "/Cube/Fifth Batch/Remake/Everything%20is%20a%20Conspiracy.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/fifth-batch__remake__everything-20is-20a-20conspiracy.png"
   },
   {
     "id": "gooser-cruiser-fb5",
@@ -1240,7 +1240,7 @@
     ],
     "_supersedes": "gooser-cruiser-fb4",
     "set": "Set 5",
-    "imageUrl": "/Cube/Fifth Batch/Remake/Gooser-Cruiser.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/fifth-batch__remake__gooser-cruiser.png"
   },
   {
     "id": "kroliz-conspiracy-nut-fb5",
@@ -1261,7 +1261,7 @@
     "artist": "ChatGPT 04",
     "_supersedes": "kroliz-conspiricy-nut-fb4",
     "set": "Set 5",
-    "imageUrl": "/Cube/Fifth Batch/Remake/Kroliz%2C%20Conspiracy%20Nut.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/fifth-batch__remake__kroliz-2c-20conspiracy-20nut.png"
   },
   {
     "id": "l-l-m-genius-prompter-fb5",
@@ -1285,7 +1285,7 @@
     "_supersedes": "llm-genius-prompter-sb2",
     "prompt": "Give my companion from Magic the Gathering exactly one custom companion condition",
     "set": "Set 5",
-    "imageUrl": "/Cube/Fifth Batch/Remake/L.L.M%2C%20Genius%20Prompter.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/fifth-batch__remake__l.l.m-2c-20genius-20prompter.png"
   },
   {
     "id": "let-the-aether-flow-fb5",
@@ -1302,7 +1302,7 @@
     "artist": "Dall-E 3",
     "_supersedes": "let-the-aether-flow-fb1",
     "set": "Set 5",
-    "imageUrl": "/Cube/Fifth Batch/Remake/Let%20the%20Aether%20Flow.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/fifth-batch__remake__let-20the-20aether-20flow.png"
   },
   {
     "id": "leyline-of-greed-fb5",
@@ -1320,7 +1320,7 @@
     "artist": "Dall-E 3",
     "_supersedes": "leyline-of-greed-fb4",
     "set": "Set 5",
-    "imageUrl": "/Cube/Fifth Batch/Remake/Leyline%20of%20Greed.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/fifth-batch__remake__leyline-20of-20greed.png"
   },
   {
     "id": "nature-s-touch-fb5",
@@ -1337,7 +1337,7 @@
     "artist": "Cynthia Brody",
     "_supersedes": "nature-s-touch-fb1",
     "set": "Set 5",
-    "imageUrl": "/Cube/Fifth Batch/Remake/Nature%E2%80%99s%20Touch.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/fifth-batch__remake__nature-e2-80-99s-20touch.png"
   },
   {
     "id": "necrogenic-face-gear-fb5",
@@ -1359,7 +1359,7 @@
     ],
     "_supersedes": "necrogenic-face-gear-fb1",
     "set": "Set 5",
-    "imageUrl": "/Cube/Fifth Batch/Remake/Necrogenic%20Face-Gear.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/fifth-batch__remake__necrogenic-20face-gear.png"
   },
   {
     "id": "omnious-basement-fb5",
@@ -1380,7 +1380,7 @@
     "artist": "Dall-E 3",
     "_supersedes": "omnious-basement-tb3",
     "set": "Set 5",
-    "imageUrl": "/Cube/Fifth Batch/Remake/Omnious%20Basement.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/fifth-batch__remake__omnious-20basement.png"
   },
   {
     "id": "park-heights-pride-and-joy-fb5",
@@ -1402,7 +1402,7 @@
     "artist": "Nano Banana",
     "_supersedes": "park-heights-pride-and-joy-fb1",
     "set": "Set 5",
-    "imageUrl": "/Cube/Fifth Batch/Remake/Park%20Heights%20Pride%20and%20Joy.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/fifth-batch__remake__park-20heights-20pride-20and-20joy.png"
   },
   {
     "id": "road-kill-fb5",
@@ -1424,7 +1424,7 @@
     "artist": "ChatGPT 04",
     "_supersedes": "road-kill-fb4",
     "set": "Set 5",
-    "imageUrl": "/Cube/Fifth Batch/Remake/Road%20Kill.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/fifth-batch__remake__road-20kill.png"
   },
   {
     "id": "selesnya-battle-waker-fb5",
@@ -1446,7 +1446,7 @@
     "artist": "ChatGPT",
     "_supersedes": "selesnya-battle-waker-fb1",
     "set": "Set 5",
-    "imageUrl": "/Cube/Fifth Batch/Remake/Selesnya%20Battle-Waker.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/fifth-batch__remake__selesnya-20battle-waker.png"
   },
   {
     "id": "sharestone-fb5",
@@ -1464,7 +1464,7 @@
     "artist": "ChatGPT 04",
     "_supersedes": "sharestone-fb4",
     "set": "Set 5",
-    "imageUrl": "/Cube/Fifth Batch/Remake/Sharestone.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/fifth-batch__remake__sharestone.png"
   },
   {
     "id": "soul-encoder-fb5",
@@ -1485,7 +1485,7 @@
     "artist": "ChatGPT 04",
     "_supersedes": "soul-encoder-fb4",
     "set": "Set 5",
-    "imageUrl": "/Cube/Fifth Batch/Remake/Soul%20Encoder.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/fifth-batch__remake__soul-20encoder.png"
   },
   {
     "id": "the-oracle-provides-fb5",
@@ -1500,7 +1500,7 @@
     "_supersedes": "the-oracle-provides-fb4",
     "prompt": "Give my Magic the Gathering conspiracy exactly one interesting ability that can effect the game. Nothing else and nothing related to Hidden Agenda.",
     "set": "Set 5",
-    "imageUrl": "/Cube/Fifth Batch/Remake/The%20Oracle%20Provides.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/fifth-batch__remake__the-20oracle-20provides.png"
   },
   {
     "id": "the-real-power-behind-the-throne-fb5",
@@ -1514,7 +1514,7 @@
     "artist": "ChatGPT 04",
     "_supersedes": "the-real-power-behind-the-throne-fb4",
     "set": "Set 5",
-    "imageUrl": "/Cube/Fifth Batch/Remake/The%20Real%20Power%20Behind%20the%20Throne%20%20%20.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/fifth-batch__remake__the-20real-20power-20behind-20the-20throne-20-20-20.png"
   },
   {
     "id": "vizier-of-second-glory-fb5",
@@ -1535,7 +1535,7 @@
     "artist": "ChatGPT 40",
     "_supersedes": "vizier-of-second-glory-fb4",
     "set": "Set 5",
-    "imageUrl": "/Cube/Fifth Batch/Remake/Vizier%20of%20Second%20Glory.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/fifth-batch__remake__vizier-20of-20second-20glory.png"
   },
   {
     "id": "wagon-of-karmic-justice-fb5",
@@ -1556,7 +1556,7 @@
     "artist": "ChatGPT",
     "_supersedes": "wagon-of-karmic-justice-fb1",
     "set": "Set 5",
-    "imageUrl": "/Cube/Fifth Batch/Remake/Wagon%20of%20Karmic%20Justice.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/fifth-batch__remake__wagon-20of-20karmic-20justice.png"
   },
   {
     "id": "airbending-mastery-fb5",
@@ -1574,7 +1574,7 @@
     ],
     "artist": "Nickelodeon Animation Studio",
     "set": "Set 5",
-    "imageUrl": "/Cube/Fifth Batch/White/Airbending%20Mastery.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/fifth-batch__white__airbending-20mastery.png"
   },
   {
     "id": "for-a-perfect-society-fb5",
@@ -1596,7 +1596,7 @@
       "1/1 white Human Soldier"
     ],
     "set": "Set 5",
-    "imageUrl": "/Cube/Fifth Batch/White/For%20a%20Perfect%20Society.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/fifth-batch__white__for-20a-20perfect-20society.png"
   },
   {
     "id": "garage-sale-fb5",
@@ -1618,7 +1618,7 @@
       "3/2 colorless Vehicle"
     ],
     "set": "Set 5",
-    "imageUrl": "/Cube/Fifth Batch/White/Garage%20Sale.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/fifth-batch__white__garage-20sale.png"
   },
   {
     "id": "lore-accurate-rhystic-study-fb5",
@@ -1635,7 +1635,7 @@
     "flavorText": "Some alternative timelines must be studied, whether to sate an undying curiosity or to win a debate.",
     "artist": "Nano Banana",
     "set": "Set 5",
-    "imageUrl": "/Cube/Fifth Batch/White/Lore-Accurate%20Rhystic%20Study.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/fifth-batch__white__lore-accurate-20rhystic-20study.png"
   },
   {
     "id": "memories-of-a-teacher-fb5",
@@ -1655,7 +1655,7 @@
       "3/2 white and red Spirit"
     ],
     "set": "Set 5",
-    "imageUrl": "/Cube/Fifth Batch/White/Memories%20of%20a%20Teacher.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/fifth-batch__white__memories-20of-20a-20teacher.png"
   },
   {
     "id": "planar-geomendesis-fb5",
@@ -1675,7 +1675,7 @@
       "1/1 green Plains Dryad"
     ],
     "set": "Set 5",
-    "imageUrl": "/Cube/Fifth Batch/White/Planar%20Geomendesis.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/fifth-batch__white__planar-20geomendesis.png"
   },
   {
     "id": "swords-to-more-swords-fb5",
@@ -1695,7 +1695,7 @@
       "Sword"
     ],
     "set": "Set 5",
-    "imageUrl": "/Cube/Fifth Batch/White/Swords%20to%20More%20Swords.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/fifth-batch__white__swords-20to-20more-20swords.png"
   },
   {
     "id": "truths-unspoken-fb5",
@@ -1711,6 +1711,6 @@
     "archetypes": [],
     "artist": "Vanette Kosman",
     "set": "Set 5",
-    "imageUrl": "/Cube/Fifth Batch/White/Truths%20Unspoken.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/fifth-batch__white__truths-20unspoken.png"
   }
 ]

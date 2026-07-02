@@ -18,7 +18,7 @@
     "power": "2",
     "toughness": "3",
     "set": "Set 4",
-    "imageUrl": "/Cube/RealCards/al-bhed-salvagers-fin.jpg"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__al-bhed-salvagers-fin.jpg"
   },
   {
     "id": "demonic-junker-dft",
@@ -39,7 +39,7 @@
     "power": "4",
     "toughness": "3",
     "set": "Set 4",
-    "imageUrl": "/Cube/RealCards/demonic-junker-dft.jpg"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__demonic-junker-dft.jpg"
   },
   {
     "id": "disciple-of-the-vault-2xm",
@@ -60,7 +60,7 @@
     "power": "1",
     "toughness": "1",
     "set": "Set 4",
-    "imageUrl": "/Cube/RealCards/disciple-of-the-vault-2xm.jpg"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__disciple-of-the-vault-2xm.jpg"
   },
   {
     "id": "dockside-chef-neo",
@@ -81,7 +81,7 @@
     "power": "1",
     "toughness": "2",
     "set": "Set 4",
-    "imageUrl": "/Cube/RealCards/dockside-chef-neo.jpg"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__dockside-chef-neo.jpg"
   },
   {
     "id": "grim-bauble-dft",
@@ -99,7 +99,7 @@
     ],
     "artist": "Wero Gallo",
     "set": "Set 4",
-    "imageUrl": "/Cube/RealCards/grim-bauble-dft.jpg"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__grim-bauble-dft.jpg"
   },
   {
     "id": "saw-in-half-unf",
@@ -118,7 +118,7 @@
     "flavorText": "The audience always loves it, but volunteers are divided.",
     "artist": "Sebastian Giacobino",
     "set": "Set 4",
-    "imageUrl": "/Cube/RealCards/saw-in-half-unf.jpg"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__saw-in-half-unf.jpg"
   },
   {
     "id": "tendrils-of-agony-vma",
@@ -136,7 +136,7 @@
     ],
     "artist": "Volkan Baǵa",
     "set": "Set 4",
-    "imageUrl": "/Cube/RealCards/tendrils-of-agony-vma.jpg"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__tendrils-of-agony-vma.jpg"
   },
   {
     "id": "unearth-2x2",
@@ -155,7 +155,7 @@
     "flavorText": "No matter how deep you bury it, some evil refuses to stay dead.",
     "artist": "Jehan Choo",
     "set": "Set 4",
-    "imageUrl": "/Cube/RealCards/unearth-2x2.jpg"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__unearth-2x2.jpg"
   },
   {
     "id": "brain-freeze-vma",
@@ -173,7 +173,7 @@
     ],
     "artist": "Tim Hildebrandt",
     "set": "Set 4",
-    "imageUrl": "/Cube/RealCards/brain-freeze-vma.jpg"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__brain-freeze-vma.jpg"
   },
   {
     "id": "dramatic-reversal-tle",
@@ -192,7 +192,7 @@
     "flavorText": "\"I beat you all before and I'll do it again!\"\n—Toph",
     "artist": "Maël Ollivier-Henry",
     "set": "Set 4",
-    "imageUrl": "/Cube/RealCards/dramatic-reversal-tle.jpg"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__dramatic-reversal-tle.jpg"
   },
   {
     "id": "witness-protection-fdn",
@@ -208,7 +208,7 @@
     "archetypes": [],
     "artist": "Dominik Mayer",
     "set": "Set 4",
-    "imageUrl": "/Cube/RealCards/witness-protection-fdn.jpg"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__witness-protection-fdn.jpg"
   },
   {
     "id": "agatha-s-soul-cauldron-woe",
@@ -224,7 +224,7 @@
     ],
     "artist": "Jason A. Engle",
     "set": "Set 4",
-    "imageUrl": "/Cube/RealCards/agatha-s-soul-cauldron-woe.jpg"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__agatha-s-soul-cauldron-woe.jpg"
   },
   {
     "id": "birthing-pod-nph",
@@ -240,7 +240,7 @@
     "archetypes": [],
     "artist": "Daarken",
     "set": "Set 4",
-    "imageUrl": "/Cube/RealCards/birthing-pod-nph.jpg"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__birthing-pod-nph.jpg"
   },
   {
     "id": "assassin-s-trophy-soc",
@@ -260,7 +260,7 @@
     "flavorText": "\"Not just any floriculturist can grow this caliber of nightbloom. We're looking for a rooftop hothouse with quite particular conditions.\"\n—Dr. A of the Foundway Associates",
     "artist": "Dmitry Burmak",
     "set": "Set 4",
-    "imageUrl": "/Cube/RealCards/assassin-s-trophy-soc.jpg"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__assassin-s-trophy-soc.jpg"
   },
   {
     "id": "grusilda-monster-masher-ust",
@@ -281,7 +281,7 @@
     "power": "4",
     "toughness": "4",
     "set": "Set 4",
-    "imageUrl": "/Cube/RealCards/grusilda-monster-masher-ust.jpg"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__grusilda-monster-masher-ust.jpg"
   },
   {
     "id": "juri-master-of-the-revue-eoc",
@@ -303,7 +303,7 @@
     "power": "1",
     "toughness": "1",
     "set": "Set 4",
-    "imageUrl": "/Cube/RealCards/juri-master-of-the-revue-eoc.jpg"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__juri-master-of-the-revue-eoc.jpg"
   },
   {
     "id": "edric-spymaster-of-trest-otc",
@@ -325,7 +325,7 @@
     "power": "2",
     "toughness": "2",
     "set": "Set 4",
-    "imageUrl": "/Cube/RealCards/edric-spymaster-of-trest-otc.jpg"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__edric-spymaster-of-trest-otc.jpg"
   },
   {
     "id": "it-came-from-planet-glurg-unf",
@@ -345,7 +345,7 @@
     "power": "0",
     "toughness": "0",
     "set": "Set 4",
-    "imageUrl": "/Cube/RealCards/it-came-from-planet-glurg-unf.jpg"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__it-came-from-planet-glurg-unf.jpg"
   },
   {
     "id": "rip-spawn-hunter-dsk",
@@ -364,7 +364,7 @@
     "power": "4",
     "toughness": "4",
     "set": "Set 4",
-    "imageUrl": "/Cube/RealCards/rip-spawn-hunter-dsk.jpg"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__rip-spawn-hunter-dsk.jpg"
   },
   {
     "id": "yotian-dissident-bro",
@@ -386,7 +386,7 @@
     "power": "1",
     "toughness": "1",
     "set": "Set 4",
-    "imageUrl": "/Cube/RealCards/yotian-dissident-bro.jpg"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__yotian-dissident-bro.jpg"
   },
   {
     "id": "phlage-titan-of-fire-s-fury-mh3",
@@ -407,7 +407,7 @@
     "power": "6",
     "toughness": "6",
     "set": "Set 4",
-    "imageUrl": "/Cube/RealCards/phlage-titan-of-fire-s-fury-mh3.jpg"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__phlage-titan-of-fire-s-fury-mh3.jpg"
   },
   {
     "id": "fallen-shinobi-otc",
@@ -428,7 +428,7 @@
     "power": "5",
     "toughness": "4",
     "set": "Set 4",
-    "imageUrl": "/Cube/RealCards/fallen-shinobi-otc.jpg"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__fallen-shinobi-otc.jpg"
   },
   {
     "id": "phoebe-head-of-s-n-e-a-k-ust",
@@ -448,7 +448,7 @@
     "power": "2",
     "toughness": "3",
     "set": "Set 4",
-    "imageUrl": "/Cube/RealCards/phoebe-head-of-s-n-e-a-k-ust.jpg"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__phoebe-head-of-s-n-e-a-k-ust.jpg"
   },
   {
     "id": "bohn-beguiling-balladeer-slx",
@@ -469,7 +469,7 @@
     "power": "3",
     "toughness": "3",
     "set": "Set 4",
-    "imageUrl": "/Cube/RealCards/bohn-beguiling-balladeer-slx.jpg"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__bohn-beguiling-balladeer-slx.jpg"
   },
   {
     "id": "athreos-god-of-passage-jou",
@@ -488,7 +488,7 @@
     "power": "5",
     "toughness": "4",
     "set": "Set 4",
-    "imageUrl": "/Cube/RealCards/athreos-god-of-passage-jou.jpg"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__athreos-god-of-passage-jou.jpg"
   },
   {
     "id": "urza-lord-protector-bro",
@@ -509,7 +509,7 @@
     "power": "2",
     "toughness": "4",
     "set": "Set 4",
-    "imageUrl": "/Cube/RealCards/urza-lord-protector-bro.jpg"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__urza-lord-protector-bro.jpg"
   },
   {
     "id": "alloy-animist-bro",
@@ -530,7 +530,7 @@
     "power": "1",
     "toughness": "1",
     "set": "Set 4",
-    "imageUrl": "/Cube/RealCards/alloy-animist-bro.jpg"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__alloy-animist-bro.jpg"
   },
   {
     "id": "bane-of-progress-ecc",
@@ -549,7 +549,7 @@
     "power": "2",
     "toughness": "2",
     "set": "Set 4",
-    "imageUrl": "/Cube/RealCards/bane-of-progress-ecc.jpg"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__bane-of-progress-ecc.jpg"
   },
   {
     "id": "biorhythm-9ed",
@@ -568,7 +568,7 @@
     "flavorText": "\"I have seen life's purpose, and now it is my own.\"\n—Kamahl, druid acolyte",
     "artist": "Ron Spears",
     "set": "Set 4",
-    "imageUrl": "/Cube/RealCards/biorhythm-9ed.jpg"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__biorhythm-9ed.jpg"
   },
   {
     "id": "defend-the-rider-dft",
@@ -587,7 +587,7 @@
     "flavorText": "Lagorin would not lose another.",
     "artist": "Raph Lomotan",
     "set": "Set 4",
-    "imageUrl": "/Cube/RealCards/defend-the-rider-dft.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__defend-the-rider-dft.jpg",
     "relatedTokens": [
       "1/1 colorless Pilot"
     ]
@@ -610,7 +610,7 @@
     "power": "5",
     "toughness": "5",
     "set": "Set 4",
-    "imageUrl": "/Cube/RealCards/thunderous-velocipede-dft.jpg"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__thunderous-velocipede-dft.jpg"
   },
   {
     "id": "titania-s-song-me4",
@@ -628,7 +628,7 @@
     ],
     "artist": "Kerstin Kaman",
     "set": "Set 4",
-    "imageUrl": "/Cube/RealCards/titania-s-song-me4.jpg"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__titania-s-song-me4.jpg"
   },
   {
     "id": "canyon-slough-msc",
@@ -643,7 +643,7 @@
     "flavorText": "Gamma radiation destroys all it touches, save for an unlucky few.",
     "artist": "Arthur Yuan",
     "set": "Set 4",
-    "imageUrl": "/Cube/RealCards/canyon-slough-msc.jpg"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__canyon-slough-msc.jpg"
   },
   {
     "id": "darkmoss-bridge-dsc",
@@ -658,7 +658,7 @@
     "flavorText": "The path to power is forged in ruthlessness.",
     "artist": "Raoul Vitale",
     "set": "Set 4",
-    "imageUrl": "/Cube/RealCards/darkmoss-bridge-dsc.jpg"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__darkmoss-bridge-dsc.jpg"
   },
   {
     "id": "fetid-pools-msc",
@@ -673,7 +673,7 @@
     "flavorText": "\"I was baptized in gamma radiation and reborn into greatness.\"\n—Leader, Samuel Sterns",
     "artist": "Jonas De Ro",
     "set": "Set 4",
-    "imageUrl": "/Cube/RealCards/fetid-pools-msc.jpg"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__fetid-pools-msc.jpg"
   },
   {
     "id": "irrigated-farmland-msc",
@@ -688,7 +688,7 @@
     "flavorText": "\"O beautiful for spacious skies, for amber waves of grain.\"\n—\"America the Beautiful\"",
     "artist": "Milivoj Ćeran",
     "set": "Set 4",
-    "imageUrl": "/Cube/RealCards/irrigated-farmland-msc.jpg"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__irrigated-farmland-msc.jpg"
   },
   {
     "id": "scattered-groves-msc",
@@ -703,7 +703,7 @@
     "flavorText": "\"Just because you have ravaged your natural resources and paved over your forests, do not think we have made the same mistake.\"\n—King T'Chaka, to the United Nations",
     "artist": "Josu Hernaiz",
     "set": "Set 4",
-    "imageUrl": "/Cube/RealCards/scattered-groves-msc.jpg"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__scattered-groves-msc.jpg"
   },
   {
     "id": "sheltered-thicket-ecc",
@@ -717,7 +717,7 @@
     "archetypes": [],
     "artist": "Sung Choi",
     "set": "Set 4",
-    "imageUrl": "/Cube/RealCards/sheltered-thicket-ecc.jpg"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__sheltered-thicket-ecc.jpg"
   },
   {
     "id": "artist-s-talent-blb",
@@ -736,7 +736,7 @@
     ],
     "artist": "Lars Grant-West",
     "set": "Set 4",
-    "imageUrl": "/Cube/RealCards/artist-s-talent-blb.jpg"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__artist-s-talent-blb.jpg"
   },
   {
     "id": "pyroclasm-dsk",
@@ -755,7 +755,7 @@
     "flavorText": "\"In my younger days, I would meticulously catalog all the terrors I encountered. These days, I mostly just kill them with fire.\"\n—Rip, spawn hunter",
     "artist": "Néstor Ossandón Leal",
     "set": "Set 4",
-    "imageUrl": "/Cube/RealCards/pyroclasm-dsk.jpg"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__pyroclasm-dsk.jpg"
   },
   {
     "id": "trigger-happy-unf",
@@ -772,7 +772,7 @@
     "flavorText": "Whenever you copy a triggered ability, you may do a little dance.",
     "artist": "Jamroz Gary",
     "set": "Set 4",
-    "imageUrl": "/Cube/RealCards/trigger-happy-unf.jpg"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__trigger-happy-unf.jpg"
   },
   {
     "id": "spectacular-pileup-dft",
@@ -789,7 +789,7 @@
     "flavorText": "The first four crashes were accidental. Then the Endriders joined the fun.",
     "artist": "Zezhou Chen",
     "set": "Set 4",
-    "imageUrl": "/Cube/RealCards/spectacular-pileup-dft.jpg"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__spectacular-pileup-dft.jpg"
   },
   {
     "id": "tempest-technique-tdc",
@@ -808,7 +808,7 @@
     ],
     "artist": "Nino Vecia",
     "set": "Set 4",
-    "imageUrl": "/Cube/RealCards/tempest-technique-tdc.jpg"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__tempest-technique-tdc.jpg"
   },
   {
     "id": "voyager-glidecar-dft",
@@ -829,7 +829,7 @@
     "power": "2",
     "toughness": "3",
     "set": "Set 4",
-    "imageUrl": "/Cube/RealCards/voyager-glidecar-dft.jpg"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__voyager-glidecar-dft.jpg"
   },
   {
     "id": "bloodtithe-watcher-fb4",
@@ -850,7 +850,7 @@
       "1/1 white Vampire Cleric"
     ],
     "set": "Set 4",
-    "imageUrl": "/Cube/Forth Batch/Black/Bloodtithe%20Watcher.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__black__bloodtithe-20watcher.png"
   },
   {
     "id": "cleanser-of-imperfections-fb4",
@@ -870,7 +870,7 @@
     "toughness": "4",
     "artist": "Dmitry Brushray",
     "set": "Set 4",
-    "imageUrl": "/Cube/Forth Batch/Black/Cleanser%20of%20Imperfections.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__black__cleanser-20of-20imperfections.png"
   },
   {
     "id": "conjure-from-blood-fb4",
@@ -889,7 +889,7 @@
     "flavorText": "\"Blood is thicker than water, and much more useful.\"\n—Tiany, Aspiring Bloodmage",
     "artist": "ChatGPT o4",
     "set": "Set 4",
-    "imageUrl": "/Cube/Forth Batch/Black/Conjure%20From%20Blood.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__black__conjure-20from-20blood.png"
   },
   {
     "id": "deep-sea-horrors-fb4",
@@ -909,7 +909,7 @@
     "toughness": "1",
     "artist": "Sam Manley",
     "set": "Set 4",
-    "imageUrl": "/Cube/Forth Batch/Black/Deep-Sea%20Horrors.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__black__deep-sea-20horrors.png"
   },
   {
     "id": "force-of-greed-fb4",
@@ -925,7 +925,7 @@
     "archetypes": [],
     "artist": "FallenNeophyteDesign",
     "set": "Set 4",
-    "imageUrl": "/Cube/Forth Batch/Black/Force%20of%20Greed.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__black__force-20of-20greed.png"
   },
   {
     "id": "gonti-s-nexus-fb4",
@@ -941,7 +941,7 @@
     "artist": "ChatGPT o4",
     "relatedFace": "Inside Gonti's Nexus",
     "set": "Set 4",
-    "imageUrl": "/Cube/Forth Batch/Black/Gonti%E2%80%99s%20Nexus.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__black__gonti-e2-80-99s-20nexus.png"
   },
   {
     "id": "greater-bad-fb4",
@@ -958,7 +958,7 @@
     "flavorText": "\"I did it for me. I liked it. I was good at it. And I was really… I was alive.\"\n—Walter White, to Skyler White",
     "artist": "After Darkness Art",
     "set": "Set 4",
-    "imageUrl": "/Cube/Forth Batch/Black/Greater%20Bad.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__black__greater-20bad.png"
   },
   {
     "id": "grimacing-grackle-fb4",
@@ -981,7 +981,7 @@
       "Blood"
     ],
     "set": "Set 4",
-    "imageUrl": "/Cube/Forth Batch/Black/Grimacing%20Grackle.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__black__grimacing-20grackle.png"
   },
   {
     "id": "inside-gonti-s-nexus-fb4",
@@ -999,7 +999,7 @@
     "artist": "ChatGPT o4",
     "relatedFace": "Gonti's Nexus",
     "set": "Set 4",
-    "imageUrl": "/Cube/Forth Batch/Black/Inside%20Gonti%E2%80%99s%20Nexus.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__black__inside-20gonti-e2-80-99s-20nexus.png"
   },
   {
     "id": "lost-in-the-sauce-fb4",
@@ -1021,7 +1021,7 @@
       "Food"
     ],
     "set": "Set 4",
-    "imageUrl": "/Cube/Forth Batch/Black/Lost%20in%20the%20Sauce.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__black__lost-20in-20the-20sauce.png"
   },
   {
     "id": "loyalty-exploiter-fb4",
@@ -1045,7 +1045,7 @@
       "1/1 red Warrior"
     ],
     "set": "Set 4",
-    "imageUrl": "/Cube/Forth Batch/Black/Loyalty%20Exploiter.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__black__loyalty-20exploiter.png"
   },
   {
     "id": "lying-by-omission-fb4",
@@ -1062,7 +1062,7 @@
     "flavorText": "The truth always sits comfortably between two lies.",
     "artist": "ChatGPT o4",
     "set": "Set 4",
-    "imageUrl": "/Cube/Forth Batch/Black/Lying%20By%20Omission.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__black__lying-20by-20omission.png"
   },
   {
     "id": "makub-the-dealer-fb4",
@@ -1082,7 +1082,7 @@
     "toughness": "6",
     "artist": "FazzRaven (A.I)",
     "set": "Set 4",
-    "imageUrl": "/Cube/Forth Batch/Black/Makub%2C%20the%20Dealer.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__black__makub-2c-20the-20dealer.png"
   },
   {
     "id": "monster-mash-fb4",
@@ -1100,7 +1100,7 @@
     ],
     "artist": "Francine Bridge",
     "set": "Set 4",
-    "imageUrl": "/Cube/Forth Batch/Black/Monster%20Mash.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__black__monster-20mash.png"
   },
   {
     "id": "problematic-trolley-fb4",
@@ -1120,7 +1120,7 @@
     "toughness": "3",
     "artist": "L. Lullabi & K. Turovec",
     "set": "Set 4",
-    "imageUrl": "/Cube/Forth Batch/Black/Problematic%20Trolley.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__black__problematic-20trolley.png"
   },
   {
     "id": "ran-by-the-numbers-fb4",
@@ -1137,7 +1137,7 @@
     "flavorText": "No matter how dull the lesson or dubious the instructor, a Silverquill student will always embrace the opportunity to learn a forbidden spell.",
     "artist": "ChatGPT o4",
     "set": "Set 4",
-    "imageUrl": "/Cube/Forth Batch/Black/Ran%20by%20the%20Numbers.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__black__ran-20by-20the-20numbers.png"
   },
   {
     "id": "stargazer-s-tutor-fb4",
@@ -1154,7 +1154,7 @@
     "flavorText": "\"Absorb the wisdom of success and failure alike, but above all, find truths in the moments that lie between.\"\n—Warion, scholar of the Cosmos",
     "artist": "EKHIRN",
     "set": "Set 4",
-    "imageUrl": "/Cube/Forth Batch/Black/Stargazer%E2%80%99s%20Tutor.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__black__stargazer-e2-80-99s-20tutor.png"
   },
   {
     "id": "submerge-into-darkness-fb4",
@@ -1170,7 +1170,7 @@
     "archetypes": [],
     "artist": "Nad N",
     "set": "Set 4",
-    "imageUrl": "/Cube/Forth Batch/Black/Submerge%20into%20Darkness.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__black__submerge-20into-20darkness.png"
   },
   {
     "id": "thalia-rebelious-heretic-fb4",
@@ -1189,7 +1189,7 @@
     "flavorText": "\"It's not just a phase, Avacyn — it's the beginning of the end phase.\"",
     "artist": "ChatGPT o4",
     "set": "Set 4",
-    "imageUrl": "/Cube/Forth Batch/Black/Thalia%2C%20Rebelious%20Heretic.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__black__thalia-2c-20rebelious-20heretic.png"
   },
   {
     "id": "the-road-to-fenara-fb4",
@@ -1208,7 +1208,7 @@
     "flavorText": "Even after life, the citizens and the outsiders crave to be in Fenara.",
     "artist": "PixelRealms",
     "set": "Set 4",
-    "imageUrl": "/Cube/Forth Batch/Black/The%20Road%20to%20Fenara.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__black__the-20road-20to-20fenara.png"
   },
   {
     "id": "tormenting-decision-fb4",
@@ -1226,7 +1226,7 @@
     ],
     "artist": "Andrew Paranavitana",
     "set": "Set 4",
-    "imageUrl": "/Cube/Forth Batch/Black/Tormenting%20Decision.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__black__tormenting-20decision.png"
   },
   {
     "id": "total-annihilation-fb4",
@@ -1244,7 +1244,7 @@
     ],
     "artist": "Peakpx",
     "set": "Set 4",
-    "imageUrl": "/Cube/Forth Batch/Black/Total%20Annihilation.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__black__total-20annihilation.png"
   },
   {
     "id": "vessel-of-the-cycle-fb4",
@@ -1264,7 +1264,7 @@
     "toughness": "1",
     "artist": "JAGA",
     "set": "Set 4",
-    "imageUrl": "/Cube/Forth Batch/Black/Vessel%20of%20the%20Cycle.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__black__vessel-20of-20the-20cycle.png"
   },
   {
     "id": "begone-fb4",
@@ -1280,7 +1280,7 @@
     "archetypes": [],
     "artist": "Matt Forsyth",
     "set": "Set 4",
-    "imageUrl": "/Cube/Forth Batch/Blue/Begone.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__blue__begone.png"
   },
   {
     "id": "blend-in-fb4",
@@ -1296,7 +1296,7 @@
     "archetypes": [],
     "artist": "ChatGPT 4o",
     "set": "Set 4",
-    "imageUrl": "/Cube/Forth Batch/Blue/Blend%20In.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__blue__blend-20in.png"
   },
   {
     "id": "decorated-sibsig-fb4",
@@ -1316,7 +1316,7 @@
     "toughness": "2",
     "artist": "IllustrationsBySam",
     "set": "Set 4",
-    "imageUrl": "/Cube/Forth Batch/Blue/Decorated%20Sibsig.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__blue__decorated-20sibsig.png"
   },
   {
     "id": "dreams-can-travel-tonight-fb4",
@@ -1333,7 +1333,7 @@
     "flavorText": "\"You may drift through endless dreamscapes, but waking always brings you back to where your heart calls home…\"",
     "artist": "Peter Ryan",
     "set": "Set 4",
-    "imageUrl": "/Cube/Forth Batch/Blue/Dreams%20Can%20Travel%20Tonight.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__blue__dreams-20can-20travel-20tonight.png"
   },
   {
     "id": "frog-leap-fb4",
@@ -1350,7 +1350,7 @@
     "flavorText": "With the weight of the whole village resting behind her knees, Helga let go of fear, felt the raindrops—and leapt.",
     "artist": "ChatGPT o4",
     "set": "Set 4",
-    "imageUrl": "/Cube/Forth Batch/Blue/Frog%20Leap.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__blue__frog-20leap.png"
   },
   {
     "id": "gifts-unwrapped-fb4",
@@ -1366,7 +1366,7 @@
     "archetypes": [],
     "artist": "Dall-E 3 (I hope D. Alexander Gregory is going to sue you holy f)",
     "set": "Set 4",
-    "imageUrl": "/Cube/Forth Batch/Blue/Gifts%20Unwrapped.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__blue__gifts-20unwrapped.png"
   },
   {
     "id": "how-cold-of-you-fb4",
@@ -1384,7 +1384,7 @@
     ],
     "artist": "DavidMahl",
     "set": "Set 4",
-    "imageUrl": "/Cube/Forth Batch/Blue/How%20Cold%20of%20You.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__blue__how-20cold-20of-20you.png"
   },
   {
     "id": "identity-theft-fb4",
@@ -1402,7 +1402,7 @@
     ],
     "artist": "ChatGPT o4",
     "set": "Set 4",
-    "imageUrl": "/Cube/Forth Batch/Blue/Identity%20Theft.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__blue__identity-20theft.png"
   },
   {
     "id": "magecaster-page-fb4",
@@ -1423,7 +1423,7 @@
       "Snapcaster Mage"
     ],
     "set": "Set 4",
-    "imageUrl": "/Cube/Forth Batch/Blue/Magecaster%20Page.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__blue__magecaster-20page.png"
   },
   {
     "id": "mental-breakdown-fb4",
@@ -1440,7 +1440,7 @@
     "artist": "ChatGPT o4",
     "relatedFace": "Not Myself Lately",
     "set": "Set 4",
-    "imageUrl": "/Cube/Forth Batch/Blue/Mental%20Breakdown.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__blue__mental-20breakdown.png"
   },
   {
     "id": "muddle-with-existance-fb4",
@@ -1456,7 +1456,7 @@
     "archetypes": [],
     "artist": "sakimori_st30",
     "set": "Set 4",
-    "imageUrl": "/Cube/Forth Batch/Blue/Muddle%20with%20Existance.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__blue__muddle-20with-20existance.png"
   },
   {
     "id": "not-myself-lately-fb4",
@@ -1474,7 +1474,7 @@
     "artist": "ChatGPT o4",
     "relatedFace": "Mental Breakdown",
     "set": "Set 4",
-    "imageUrl": "/Cube/Forth Batch/Blue/Not%20Myself%20Lately.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__blue__not-20myself-20lately.png"
   },
   {
     "id": "nyxification-fb4",
@@ -1492,7 +1492,7 @@
     ],
     "artist": "Tashi Nakia",
     "set": "Set 4",
-    "imageUrl": "/Cube/Forth Batch/Blue/Nyxification.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__blue__nyxification.png"
   },
   {
     "id": "orca-war-beast-fb4",
@@ -1510,7 +1510,7 @@
     "toughness": "6",
     "artist": "Davesrightmind",
     "set": "Set 4",
-    "imageUrl": "/Cube/Forth Batch/Blue/Orca%20War-Beast.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__blue__orca-20war-beast.png"
   },
   {
     "id": "pay-day-fb4",
@@ -1527,7 +1527,7 @@
     "flavorText": "The Azorius hire tax collectors whose dedication runs so deep, they'd still do the job for free.",
     "artist": "Based on art by RenMoraes",
     "set": "Set 4",
-    "imageUrl": "/Cube/Forth Batch/Blue/Pay%20Day.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__blue__pay-20day.png"
   },
   {
     "id": "perish-that-thought-fb4",
@@ -1544,7 +1544,7 @@
     "flavorText": "\"One day I imagined myself to be sad. It was a great day, for to summon sorrow from nothing is to admit it once had meaning. In pretending to ache, I remembered all that had once made me whole.\"",
     "artist": "ChatGPT o4",
     "set": "Set 4",
-    "imageUrl": "/Cube/Forth Batch/Blue/Perish%20That%20Thought.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__blue__perish-20that-20thought.png"
   },
   {
     "id": "plesiosplash-fb4",
@@ -1564,7 +1564,7 @@
     "toughness": "1",
     "artist": "Hurca!",
     "set": "Set 4",
-    "imageUrl": "/Cube/Forth Batch/Blue/Plesiosplash.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__blue__plesiosplash.png"
   },
   {
     "id": "point-and-laugh-fb4",
@@ -1584,7 +1584,7 @@
       "Cursed Role"
     ],
     "set": "Set 4",
-    "imageUrl": "/Cube/Forth Batch/Blue/Point%20and%20Laugh.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__blue__point-20and-20laugh.png"
   },
   {
     "id": "protective-custody-fb4",
@@ -1600,7 +1600,7 @@
     "archetypes": [],
     "artist": "ChatGPT o4",
     "set": "Set 4",
-    "imageUrl": "/Cube/Forth Batch/Blue/Protective%20Custody.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__blue__protective-20custody.png"
   },
   {
     "id": "savvy-seagull-fb4",
@@ -1624,7 +1624,7 @@
       "Shard"
     ],
     "set": "Set 4",
-    "imageUrl": "/Cube/Forth Batch/Blue/Savvy%20Seagull.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__blue__savvy-20seagull.png"
   },
   {
     "id": "soul-encoder-fb4",
@@ -1644,7 +1644,7 @@
     "toughness": "3",
     "artist": "ChatGPT o4",
     "set": "Set 4",
-    "imageUrl": "/Cube/Forth Batch/Blue/Soul%20Encoder.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__blue__soul-20encoder.png"
   },
   {
     "id": "swarm-of-night-s-sky-fb4",
@@ -1664,7 +1664,7 @@
     "toughness": "1",
     "artist": "NightCafe",
     "set": "Set 4",
-    "imageUrl": "/Cube/Forth Batch/Blue/Swarm%20of%20Night%E2%80%99s%20Sky%20.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__blue__swarm-20of-20night-e2-80-99s-20sky-20.png"
   },
   {
     "id": "taukai-spellstainer-fb4",
@@ -1685,7 +1685,7 @@
     "flavorText": "Most sharkfolk of the Lost Isles of Ulak'thaar follow the Vow of Humanity, forsaking their hunger to live peacefully with humans—except for the Taukai, whose thirst for violence deepens with each passing tide.",
     "artist": "Arcane Wonders",
     "set": "Set 4",
-    "imageUrl": "/Cube/Forth Batch/Blue/Taukai%20Spellstainer.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__blue__taukai-20spellstainer.png"
   },
   {
     "id": "terai-ghost-writer-fb4",
@@ -1704,7 +1704,7 @@
     "flavorText": "\"Based on true story… trust me.\"",
     "artist": "ChatGPT o4",
     "set": "Set 4",
-    "imageUrl": "/Cube/Forth Batch/Blue/Terai%2C%20Ghost%20Writer.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__blue__terai-2c-20ghost-20writer.png"
   },
   {
     "id": "the-pretender-fb4",
@@ -1722,7 +1722,7 @@
     "toughness": "0",
     "artist": "ChatGPT 4o",
     "set": "Set 4",
-    "imageUrl": "/Cube/Forth Batch/Blue/The%20Pretender.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__blue__the-20pretender.png"
   },
   {
     "id": "traditional-futurist-fb4",
@@ -1742,7 +1742,7 @@
     "toughness": "2",
     "artist": "ChatGPT o4",
     "set": "Set 4",
-    "imageUrl": "/Cube/Forth Batch/Blue/Traditional%20Futurist.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__blue__traditional-20futurist.png"
   },
   {
     "id": "train-of-thought-not-the-guildpact-one-fb4",
@@ -1763,7 +1763,7 @@
     "flavorText": "Obviously.",
     "artist": "ChatGPT o4",
     "set": "Set 4",
-    "imageUrl": "/Cube/Forth Batch/Blue/Train%20of%20Thought%20%28Not%20the%20Guildpact%20One%29%20%20%20%20%20%20%20%20%20%20.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__blue__train-20of-20thought-20-28not-20the-20guildpact-20one-29-20-20-20-20-20-20-20-20-20-20.png"
   },
   {
     "id": "wall-of-questions-fb4",
@@ -1782,7 +1782,7 @@
     "flavorText": "The sphinx adores it, for within lies a paradox: To enter, one must abandon the desire to solve it.",
     "artist": "ChatGPT o4",
     "set": "Set 4",
-    "imageUrl": "/Cube/Forth Batch/Blue/Wall%20of%20Questions.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__blue__wall-20of-20questions.png"
   },
   {
     "id": "sticker-collector-fb4",
@@ -1801,7 +1801,7 @@
     "artist": "DALL-E 3",
     "_supersedes": "sticker-collector-tb3",
     "set": "Set 4",
-    "imageUrl": "/Cube/Forth Batch/Changes/Total/Sticker%20Collector.jpg"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__changes__total__sticker-20collector.jpg"
   },
   {
     "id": "blessed-be-the-fruition-fb4",
@@ -1820,7 +1820,7 @@
     "artist": "Rosie A",
     "_supersedes": "blessed-be-the-fruition-sb2",
     "set": "Set 4",
-    "imageUrl": "/Cube/Forth Batch/Changes/Buff/Blessed%20Be%20the%20Fruition.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__changes__buff__blessed-20be-20the-20fruition.png"
   },
   {
     "id": "brightspark-collector-fb4",
@@ -1842,7 +1842,7 @@
     "artist": "Dall-E 3",
     "_supersedes": "brightspark-collector-fb1",
     "set": "Set 4",
-    "imageUrl": "/Cube/Forth Batch/Changes/Nerf/Brightspark%20Collector.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__changes__nerf__brightspark-20collector.png"
   },
   {
     "id": "creeping-incubator-fb4",
@@ -1862,7 +1862,7 @@
     "relatedFace": "Creeping Monstrosity",
     "_supersedes": "creeping-incubator-fb1",
     "set": "Set 4",
-    "imageUrl": "/Cube/Forth Batch/Changes/Nerf/Creeping%20Incubator.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__changes__nerf__creeping-20incubator.png"
   },
   {
     "id": "creeping-monstrosity-fb4",
@@ -1883,7 +1883,7 @@
     "relatedFace": "Creeping Incubator",
     "facedown": true,
     "set": "Set 4",
-    "imageUrl": "/Cube/Forth Batch/Changes/Nerf/Creeping%20Monstrosity.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__changes__nerf__creeping-20monstrosity.png"
   },
   {
     "id": "escape-from-the-underworld-fb4",
@@ -1907,7 +1907,7 @@
     "artist": "Dall-E 3",
     "_supersedes": "escape-from-the-underworld-tb3",
     "set": "Set 4",
-    "imageUrl": "/Cube/Forth Batch/Changes/Nerf/Escape%20from%20the%20Underworld.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__changes__nerf__escape-20from-20the-20underworld.png"
   },
   {
     "id": "escaping-bolt-fb4",
@@ -1926,7 +1926,7 @@
     "artist": "Cobaltplasma",
     "_supersedes": "escaping-bolt-tb3",
     "set": "Set 4",
-    "imageUrl": "/Cube/Forth Batch/Changes/Nerf/Escaping%20Bolt.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__changes__nerf__escaping-20bolt.png"
   },
   {
     "id": "fear-of-the-apocalypse-fb4",
@@ -1949,7 +1949,7 @@
     "artist": "Dall-E 3",
     "_supersedes": "fear-of-the-apocalypse-fb1",
     "set": "Set 4",
-    "imageUrl": "/Cube/Forth Batch/Changes/Nerf/Fear%20of%20the%20Apocalypse.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__changes__nerf__fear-20of-20the-20apocalypse.png"
   },
   {
     "id": "gnawing-in-the-deep-fb4",
@@ -1969,7 +1969,7 @@
     "artist": "Dexistor371",
     "_supersedes": "gnawing-in-the-deep-fb1",
     "set": "Set 4",
-    "imageUrl": "/Cube/Forth Batch/Changes/Nerf/Gnawing%20in%20the%20Deep.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__changes__nerf__gnawing-20in-20the-20deep.png"
   },
   {
     "id": "keranos-gift-to-mankind-fb4",
@@ -1988,7 +1988,7 @@
     "artist": "Dall-E 3",
     "_supersedes": "keranos-gift-to-mankind-fb1",
     "set": "Set 4",
-    "imageUrl": "/Cube/Forth Batch/Changes/Nerf/Keranos%E2%80%99%20Gift%20to%20Mankind.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__changes__nerf__keranos-e2-80-99-20gift-20to-20mankind.png"
   },
   {
     "id": "no-rose-without-thorns-fb4",
@@ -2017,7 +2017,7 @@
       "Treasure"
     ],
     "set": "Set 4",
-    "imageUrl": "/Cube/Forth Batch/Changes/Nerf/No%20Rose%20Without%20Thorns.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__changes__nerf__no-20rose-20without-20thorns.png"
   },
   {
     "id": "pyrotechnical-cauldron-fb4",
@@ -2040,7 +2040,7 @@
     "artist": "Dall-E 3",
     "_supersedes": "pyrotechnical-cauldron-fb1",
     "set": "Set 4",
-    "imageUrl": "/Cube/Forth Batch/Changes/Nerf/Pyrotechnical%20Cauldron.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__changes__nerf__pyrotechnical-20cauldron.png"
   },
   {
     "id": "untold-prosperity-fb4",
@@ -2061,7 +2061,7 @@
     "artist": "Angela Perrin",
     "_supersedes": "untold-prosperity-fb1",
     "set": "Set 4",
-    "imageUrl": "/Cube/Forth Batch/Changes/Nerf/Untold%20Prosperity.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__changes__nerf__untold-20prosperity.png"
   },
   {
     "id": "valuable-smithing-fb4",
@@ -2085,7 +2085,7 @@
     "artist": "Dall-E 3",
     "_supersedes": "valuable-smithing-tb3",
     "set": "Set 4",
-    "imageUrl": "/Cube/Forth Batch/Changes/Nerf/Valuable%20Smithing.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__changes__nerf__valuable-20smithing.png"
   },
   {
     "id": "experimental-test-facility-fb4",
@@ -2102,7 +2102,7 @@
     "artist": "Wasurah",
     "_supersedes": "experimental-test-facility-tb3",
     "set": "Set 4",
-    "imageUrl": "/Cube/Forth Batch/Changes/Total/Experimental%20Test%20Facility.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__changes__total__experimental-20test-20facility.png"
   },
   {
     "id": "flourishing-bauble-pet-fb4",
@@ -2122,7 +2122,7 @@
     "artist": "Dall-E 3",
     "_supersedes": "flourishing-bauble-pet-tb3",
     "set": "Set 4",
-    "imageUrl": "/Cube/Forth Batch/Changes/Total/Flourishing%20Bauble-Pet.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__changes__total__flourishing-20bauble-pet.png"
   },
   {
     "id": "gilded-cage-fb4",
@@ -2137,7 +2137,7 @@
     "artist": "Dall-E 3",
     "_supersedes": "gilded-cage-tb3",
     "set": "Set 4",
-    "imageUrl": "/Cube/Forth Batch/Changes/Total/Gilded%20Cage.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__changes__total__gilded-20cage.png"
   },
   {
     "id": "gimme-that-fb4",
@@ -2159,7 +2159,7 @@
     "artist": "SirTiefling, DeviantArt",
     "_supersedes": "gimme-that-fb1",
     "set": "Set 4",
-    "imageUrl": "/Cube/Forth Batch/Changes/Total/Gimme%20That.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__changes__total__gimme-20that.png"
   },
   {
     "id": "impossible-pact-fb4",
@@ -2174,7 +2174,7 @@
     "artist": "Diligent Nocturne",
     "prompt": "Give me a Magic the Gathering 'Pact' price to pay next upkeep or lose the game and one ability for this instant. Nothing else.",
     "set": "Set 4",
-    "imageUrl": "/Cube/Forth Batch/Changes/Total/Impossible%20Pact.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__changes__total__impossible-20pact.png"
   },
   {
     "id": "leyline-of-greed-fb4",
@@ -2194,7 +2194,7 @@
     "_supersedes": "leyline-of-greed-fb1",
     "artist": "Dall-E 3",
     "set": "Set 4",
-    "imageUrl": "/Cube/Forth Batch/Changes/Total/Leyline%20of%20Greed%202.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__changes__total__leyline-20of-20greed-202.png"
   },
   {
     "id": "mana-piracy-fb4",
@@ -2213,7 +2213,7 @@
     "artist": "Dall-E 3",
     "_supersedes": "mana-piracy-fb1",
     "set": "Set 4",
-    "imageUrl": "/Cube/Forth Batch/Changes/Total/Mana%20Piracy.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__changes__total__mana-20piracy.png"
   },
   {
     "id": "misinformation-spreader-fb4",
@@ -2232,7 +2232,7 @@
     "artist": "Rhys Kim",
     "_supersedes": "misinformation-spreader-fb1",
     "set": "Set 4",
-    "imageUrl": "/Cube/Forth Batch/Changes/Total/Misinformation%20Spreader.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__changes__total__misinformation-20spreader.png"
   },
   {
     "id": "risky-game-we-run-here-fb4",
@@ -2250,7 +2250,7 @@
     "artist": "Dall-E 3",
     "_supersedes": "risky-game-we-run-here-fb1",
     "set": "Set 4",
-    "imageUrl": "/Cube/Forth Batch/Changes/Total/Risky%20Game%20We%20Run%20Here.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__changes__total__risky-20game-20we-20run-20here.png"
   },
   {
     "id": "the-utopians-protocol-fb4",
@@ -2271,7 +2271,7 @@
     "artist": "Dall-E 3",
     "_supersedes": "the-utopians-protocol-fb1",
     "set": "Set 4",
-    "imageUrl": "/Cube/Forth Batch/Changes/Total/The%20Utopians%E2%80%99%20Protocol.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__changes__total__the-20utopians-e2-80-99-20protocol.png"
   },
   {
     "id": "your-own-story-fb4",
@@ -2288,7 +2288,7 @@
     "artist": "Iris Rodriguez",
     "_supersedes": "your-own-story-fb1",
     "set": "Set 4",
-    "imageUrl": "/Cube/Forth Batch/Changes/Total/Your%20Own%20Story.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__changes__total__your-20own-20story.png"
   },
   {
     "id": "cogwork-redeemer-fb4",
@@ -2304,7 +2304,7 @@
     "toughness": "4",
     "artist": "ChatGPT o4",
     "set": "Set 4",
-    "imageUrl": "/Cube/Forth Batch/Colorless/Cogwork%20Redeemer.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__colorless__cogwork-20redeemer.png"
   },
   {
     "id": "duel-masters-fb4",
@@ -2317,7 +2317,7 @@
     "archetypes": [],
     "artist": "タカヤマトシアキ",
     "set": "Set 4",
-    "imageUrl": "/Cube/Forth Batch/Colorless/Duel%20Masters.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__colorless__duel-20masters.png"
   },
   {
     "id": "emrakul-disturbing-reality-fb4",
@@ -2337,7 +2337,7 @@
       "Ulamog, Eternal Consumer"
     ],
     "set": "Set 4",
-    "imageUrl": "/Cube/Forth Batch/Colorless/Emrakul%2C%20Disturbing%20Reality.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__colorless__emrakul-2c-20disturbing-20reality.png"
   },
   {
     "id": "everything-is-a-conspiricy-fb4",
@@ -2350,7 +2350,7 @@
     "archetypes": [],
     "artist": "Sergiu Roman",
     "set": "Set 4",
-    "imageUrl": "/Cube/Forth Batch/Colorless/Everything%20is%20a%20Conspiricy.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__colorless__everything-20is-20a-20conspiricy.png"
   },
   {
     "id": "fresh-start-fb4",
@@ -2364,7 +2364,7 @@
     "flavorText": "Another chance to do it right.",
     "artist": "Charley Daveler",
     "set": "Set 4",
-    "imageUrl": "/Cube/Forth Batch/Colorless/Fresh%20Start.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__colorless__fresh-20start.png"
   },
   {
     "id": "gooser-cruiser-fb4",
@@ -2385,7 +2385,7 @@
       "Golden Egg"
     ],
     "set": "Set 4",
-    "imageUrl": "/Cube/Forth Batch/Colorless/Gooser-Cruiser.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__colorless__gooser-cruiser.png"
   },
   {
     "id": "height-advantage-fb4",
@@ -2399,7 +2399,7 @@
     "flavorText": "It's better to stand aside than to stand out.",
     "artist": "ChatGPT o4",
     "set": "Set 4",
-    "imageUrl": "/Cube/Forth Batch/Colorless/Height%20Advantage.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__colorless__height-20advantage.png"
   },
   {
     "id": "karametra-s-beloved-fb4",
@@ -2416,7 +2416,7 @@
     "flavorText": "Forged by Purphoros and shaped by Nylea, this gift from her two former lovers stands as a reminder that even hands hardened and stained by violence, though they may alter nature's perfection, can still craft beauty beyond imagination.",
     "artist": "ChatGPT o4",
     "set": "Set 4",
-    "imageUrl": "/Cube/Forth Batch/Colorless/Karametra%E2%80%99s%20Beloved.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__colorless__karametra-e2-80-99s-20beloved.png"
   },
   {
     "id": "kozilek-unfathomable-truth-fb4",
@@ -2436,7 +2436,7 @@
       "Ulamog, Eternal Consumer"
     ],
     "set": "Set 4",
-    "imageUrl": "/Cube/Forth Batch/Colorless/Kozilek%2C%20Unfathomable%20Truth.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__colorless__kozilek-2c-20unfathomable-20truth.png"
   },
   {
     "id": "magus-of-the-petal-fb4",
@@ -2453,7 +2453,7 @@
     "flavorText": "To be entrusted with the petal is to be free of greed and untouched by human affairs—and even then, one must endure a rite that strips away the last traces of their humanity.",
     "artist": "ChatGPT o4",
     "set": "Set 4",
-    "imageUrl": "/Cube/Forth Batch/Colorless/Magus%20of%20the%20Petal.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__colorless__magus-20of-20the-20petal.png"
   },
   {
     "id": "mox-amethyst-fb4",
@@ -2470,7 +2470,7 @@
     "flavorText": "\"Gathering the stars, fourteen gods entrusted Phorphoros to forge them into one perfect jewel, which they hurled to the earth — and from its impact, humanity emerged.\"\n—Theros' Tale of Creation",
     "artist": "ChatGPT o4",
     "set": "Set 4",
-    "imageUrl": "/Cube/Forth Batch/Colorless/Mox%20Amethyst.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__colorless__mox-20amethyst.png"
   },
   {
     "id": "pizza-oven-fb4",
@@ -2493,7 +2493,7 @@
       "Pizza"
     ],
     "set": "Set 4",
-    "imageUrl": "/Cube/Forth Batch/Colorless/Pizza%20Oven.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__colorless__pizza-20oven.png"
   },
   {
     "id": "soul-ring-fb4",
@@ -2510,7 +2510,7 @@
     "flavorText": "It holds every final goodbye, every hidden tear, each missed moment, every forsaken dream, and lingering regret — yet within it, a light endures, not to mourn what's lost, but to transform it into something greater.",
     "artist": "Xinoir",
     "set": "Set 4",
-    "imageUrl": "/Cube/Forth Batch/Colorless/Soul%20Ring.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__colorless__soul-20ring.png"
   },
   {
     "id": "surveillance-state-fb4",
@@ -2524,7 +2524,7 @@
     "flavorText": "The convenience of the many must be ensured through the inconvenience of the few.",
     "artist": "ChatGPT o4",
     "set": "Set 4",
-    "imageUrl": "/Cube/Forth Batch/Colorless/Surveillance%20State.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__colorless__surveillance-20state.png"
   },
   {
     "id": "the-godess-of-speed-fb4",
@@ -2542,7 +2542,7 @@
     "toughness": "3",
     "artist": "Julie Dillon",
     "set": "Set 4",
-    "imageUrl": "/Cube/Forth Batch/Colorless/The%20Godess%20of%20Speed.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__colorless__the-20godess-20of-20speed.png"
   },
   {
     "id": "the-oracle-provides-fb4",
@@ -2556,7 +2556,7 @@
     "artist": "ChatGPT o4",
     "prompt": "Give my Magic the Gathering conspiracy exactly one interesting ability that can effect the game. Nothing else and nothing related to Hidden Agenda.",
     "set": "Set 4",
-    "imageUrl": "/Cube/Forth Batch/Colorless/The%20Oracle%20Provides.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__colorless__the-20oracle-20provides.png"
   },
   {
     "id": "the-real-power-behind-the-throne-fb4",
@@ -2569,7 +2569,7 @@
     "archetypes": [],
     "artist": "ChatGPT o4",
     "set": "Set 4",
-    "imageUrl": "/Cube/Forth Batch/Colorless/The%20Real%20Power%20Behind%20the%20Throne%20%20%20%20%20.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__colorless__the-20real-20power-20behind-20the-20throne-20-20-20-20-20.png"
   },
   {
     "id": "ulamog-eternal-consumer-fb4",
@@ -2589,7 +2589,7 @@
       "Kozilek, Unfathomable Truth"
     ],
     "set": "Set 4",
-    "imageUrl": "/Cube/Forth Batch/Colorless/Ulamog%2C%20Eternal%20Consumer.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__colorless__ulamog-2c-20eternal-20consumer.png"
   },
   {
     "id": "new-phyrexia-fb4",
@@ -2609,7 +2609,7 @@
     "flavorText": "Even the Five Suns thirsted to serve Them.",
     "artist": "Aleksi Briclot",
     "set": "Set 4",
-    "imageUrl": "/Cube/Forth Batch/Gold/BG/New%20Phyrexia.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__gold__bg__new-20phyrexia.png"
   },
   {
     "id": "pulse-blaster-fb4",
@@ -2628,7 +2628,7 @@
     ],
     "artist": "Craiyon (A.I)",
     "set": "Set 4",
-    "imageUrl": "/Cube/Forth Batch/Gold/BG/Pulse%20Blaster.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__gold__bg__pulse-20blaster.png"
   },
   {
     "id": "purito-vilefingers-fb4",
@@ -2649,7 +2649,7 @@
     "toughness": "2",
     "artist": "Ludovico Tellatin",
     "set": "Set 4",
-    "imageUrl": "/Cube/Forth Batch/Gold/BG/Purito%20%E2%80%9CVilefingers%E2%80%9D.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__gold__bg__purito-20-e2-80-9cvilefingers-e2-80-9d.png"
   },
   {
     "id": "vraska-the-coiling-usurper-fb4",
@@ -2670,7 +2670,7 @@
     "loyalty": "5",
     "artist": "Jaïn van Nigtevegt",
     "set": "Set 4",
-    "imageUrl": "/Cube/Forth Batch/Gold/BG/Vraska%2C%20The%20Coiling%20Usurper.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__gold__bg__vraska-2c-20the-20coiling-20usurper.png"
   },
   {
     "id": "brewer-s-troubles-fb4",
@@ -2689,7 +2689,7 @@
     ],
     "artist": "_theine_",
     "set": "Set 4",
-    "imageUrl": "/Cube/Forth Batch/Gold/BR/Brewer%E2%80%99s%20Troubles.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__gold__br__brewer-e2-80-99s-20troubles.png"
   },
   {
     "id": "knife-to-meet-you-fb4",
@@ -2708,7 +2708,7 @@
     ],
     "artist": "Leamis_",
     "set": "Set 4",
-    "imageUrl": "/Cube/Forth Batch/Gold/BR/Knife%20to%20Meet%20You.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__gold__br__knife-20to-20meet-20you.png"
   },
   {
     "id": "rakdos-sadism-incarnate-fb4",
@@ -2732,7 +2732,7 @@
       "Spike"
     ],
     "set": "Set 4",
-    "imageUrl": "/Cube/Forth Batch/Gold/BR/Rakdos%2C%20Sadism%20Incarnate.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__gold__br__rakdos-2c-20sadism-20incarnate.png"
   },
   {
     "id": "pact-of-abundance-fb4",
@@ -2749,7 +2749,7 @@
     "archetypes": [],
     "artist": "Kasia Zielinska",
     "set": "Set 4",
-    "imageUrl": "/Cube/Forth Batch/Gold/GU/Pact%20of%20Abundance.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__gold__gu__pact-20of-20abundance.png"
   },
   {
     "id": "selkie-caretaker-fb4",
@@ -2769,7 +2769,7 @@
     "flavorText": "“Before the first fake-gill was born, I was there, keeping watch.”",
     "artist": "Christopher Moeller",
     "set": "Set 4",
-    "imageUrl": "/Cube/Forth Batch/Gold/GU/Selkie%20Caretaker.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__gold__gu__selkie-20caretaker.png"
   },
   {
     "id": "talion-the-infinite-progress-fb4",
@@ -2791,7 +2791,7 @@
       "The Experiment"
     ],
     "set": "Set 4",
-    "imageUrl": "/Cube/Forth Batch/Gold/GU/Talion%2C%20the%20Infinite%20Progress.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__gold__gu__talion-2c-20the-20infinite-20progress.png"
   },
   {
     "id": "blessed-neon-pulse-fb4",
@@ -2813,7 +2813,7 @@
       "Chariot"
     ],
     "set": "Set 4",
-    "imageUrl": "/Cube/Forth Batch/Gold/GW/Blessed%20Neon-Pulse.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__gold__gw__blessed-20neon-pulse.png"
   },
   {
     "id": "mat-selesnya-fb4",
@@ -2835,7 +2835,7 @@
       "Vernadi Shieldmate"
     ],
     "set": "Set 4",
-    "imageUrl": "/Cube/Forth Batch/Gold/GW/Mat%E2%80%99Selesnya.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__gold__gw__mat-e2-80-99selesnya.png"
   },
   {
     "id": "vitu-ghazi-behemoth-fb4",
@@ -2856,7 +2856,7 @@
     "toughness": "6",
     "artist": "ChatGPT 04",
     "set": "Set 4",
-    "imageUrl": "/Cube/Forth Batch/Gold/GW/Vitu-Ghazi%20Behemoth.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__gold__gw__vitu-ghazi-20behemoth.png"
   },
   {
     "id": "anzrag-fb4",
@@ -2877,7 +2877,7 @@
     "toughness": "4",
     "artist": "Patricio Soler",
     "set": "Set 4",
-    "imageUrl": "/Cube/Forth Batch/Gold/RG/Anzrag.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__gold__rg__anzrag.png"
   },
   {
     "id": "branching-helix-fb4",
@@ -2897,7 +2897,7 @@
     "flavorText": "“Whispers among the Clans tell of a ritual buried for a thousand years, now unearthed. I fear our understanding was flawed—and that it may become the force that unites the Clans together.”\n—Aurix, Boros Historian",
     "artist": "Dall-E 3",
     "set": "Set 4",
-    "imageUrl": "/Cube/Forth Batch/Gold/RG/Branching%20Helix.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__gold__rg__branching-20helix.png"
   },
   {
     "id": "doomskar-s-aftershock-fb4",
@@ -2915,7 +2915,7 @@
     "flavorText": "The foretold doom struck true, yet the Doomskar's wrath brought prosperity to the Realms that embraced it.",
     "artist": "ChatGPT 04",
     "set": "Set 4",
-    "imageUrl": "/Cube/Forth Batch/Gold/RG/Doomskar%E2%80%99s%20Aftershock.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__gold__rg__doomskar-e2-80-99s-20aftershock.png"
   },
   {
     "id": "kuraz-the-boiling-anger-fb4",
@@ -2934,7 +2934,7 @@
     "toughness": "5",
     "artist": "ChatGPT 04",
     "set": "Set 4",
-    "imageUrl": "/Cube/Forth Batch/Gold/RG/Kuraz%2C%20the%20Boiling%20Anger.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__gold__rg__kuraz-2c-20the-20boiling-20anger.png"
   },
   {
     "id": "maakian-nodorog-fb4",
@@ -2956,7 +2956,7 @@
     "flavorText": "She escaped the cold Simic lab—hungry, sad, but lucky to find the Gruul Clans, where food was plenty and she was worshipped as she deserved.",
     "artist": "ChatGPT 04",
     "set": "Set 4",
-    "imageUrl": "/Cube/Forth Batch/Gold/RG/Maakian%20Nodorog.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__gold__rg__maakian-20nodorog.png"
   },
   {
     "id": "ela-she-who-defies-destiny-fb4",
@@ -2977,7 +2977,7 @@
     "toughness": "1",
     "artist": "ChatGPT 04",
     "set": "Set 4",
-    "imageUrl": "/Cube/Forth Batch/Gold/RW/Ela%2C%20She%20Who%20Defies%20Destiny.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__gold__rw__ela-2c-20she-20who-20defies-20destiny.png"
   },
   {
     "id": "lord-of-dissociation-fb4",
@@ -2999,7 +2999,7 @@
     "flavorText": "Born of a longing for a past that never was, its laughter is made of sorrow and irony.",
     "artist": "ChatGPT 04",
     "set": "Set 4",
-    "imageUrl": "/Cube/Forth Batch/Gold/RW/Lord%20of%20Dissociation.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__gold__rw__lord-20of-20dissociation.png"
   },
   {
     "id": "odric-redeemed-cathar-fb4",
@@ -3020,7 +3020,7 @@
     "toughness": "3",
     "artist": "Rohland DeMoss",
     "set": "Set 4",
-    "imageUrl": "/Cube/Forth Batch/Gold/RW/Odric%2C%20Redeemed%20Cathar.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__gold__rw__odric-2c-20redeemed-20cathar.png"
   },
   {
     "id": "yaszen-ascendant-commander-fb4",
@@ -3045,7 +3045,7 @@
       "1/1 white and red Soldier"
     ],
     "set": "Set 4",
-    "imageUrl": "/Cube/Forth Batch/Gold/RW/Yaszen%2C%20Ascendant%20Commander.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__gold__rw__yaszen-2c-20ascendant-20commander.png"
   },
   {
     "id": "inkfathom-s-brew-fb4",
@@ -3067,7 +3067,7 @@
       "Inkfathom Role"
     ],
     "set": "Set 4",
-    "imageUrl": "/Cube/Forth Batch/Gold/UB/Inkfathom%E2%80%99s%20Brew.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__gold__ub__inkfathom-e2-80-99s-20brew.png"
   },
   {
     "id": "phenax-first-to-escape-fb4",
@@ -3088,7 +3088,7 @@
     "toughness": "2",
     "artist": "ChatGPT 04",
     "set": "Set 4",
-    "imageUrl": "/Cube/Forth Batch/Gold/UB/Phenax%2C%20First%20to%20Escape.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__gold__ub__phenax-2c-20first-20to-20escape.png"
   },
   {
     "id": "szadek-ancient-madness-fb4",
@@ -3110,7 +3110,7 @@
       "Confusion"
     ],
     "set": "Set 4",
-    "imageUrl": "/Cube/Forth Batch/Gold/UB/Szadek%2C%20Ancient%20Madness.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__gold__ub__szadek-2c-20ancient-20madness.png"
   },
   {
     "id": "glengal-aether-splitter-fb4",
@@ -3129,7 +3129,7 @@
     "toughness": "3",
     "artist": "Kemonomichi",
     "set": "Set 4",
-    "imageUrl": "/Cube/Forth Batch/Gold/UR/Glengal%2C%20Aether-Splitter.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__gold__ur__glengal-2c-20aether-splitter.png"
   },
   {
     "id": "kroliz-conspiricy-nut-fb4",
@@ -3149,7 +3149,7 @@
     "flavorText": "“They sell us Commander so we chase Universes Beyond, while they suppress Standard. Wake up sheeple!”",
     "artist": "ChatGPT 04",
     "set": "Set 4",
-    "imageUrl": "/Cube/Forth Batch/Gold/UR/Kroliz%2C%20Conspiricy%20Nut.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__gold__ur__kroliz-2c-20conspiricy-20nut.png"
   },
   {
     "id": "memorydra-fb4",
@@ -3170,7 +3170,7 @@
     "toughness": "0",
     "artist": "Liiga Smilshkalne",
     "set": "Set 4",
-    "imageUrl": "/Cube/Forth Batch/Gold/UR/Memorydra.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__gold__ur__memorydra.png"
   },
   {
     "id": "stack-overflow-fb4",
@@ -3192,7 +3192,7 @@
       "Potential"
     ],
     "set": "Set 4",
-    "imageUrl": "/Cube/Forth Batch/Gold/UR/Stack%20Overflow.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__gold__ur__stack-20overflow.png"
   },
   {
     "id": "cube-of-promised-balance-fb4",
@@ -3209,7 +3209,7 @@
     "archetypes": [],
     "artist": "ChatGPT 04",
     "set": "Set 4",
-    "imageUrl": "/Cube/Forth Batch/Gold/WB/Cube%20of%20Promised%20Balance.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__gold__wb__cube-20of-20promised-20balance.png"
   },
   {
     "id": "dance-of-life-and-death-fb4",
@@ -3228,7 +3228,7 @@
     ],
     "artist": "Threl",
     "set": "Set 4",
-    "imageUrl": "/Cube/Forth Batch/Gold/WB/Dance%20of%20Life%20and%20Death.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__gold__wb__dance-20of-20life-20and-20death.png"
   },
   {
     "id": "siyara-judge-of-indulgence-fb4",
@@ -3247,7 +3247,7 @@
     "toughness": "3",
     "artist": "Kevfang",
     "set": "Set 4",
-    "imageUrl": "/Cube/Forth Batch/Gold/WB/Siyara%2C%20Judge%20of%20Indulgence.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__gold__wb__siyara-2c-20judge-20of-20indulgence.png"
   },
   {
     "id": "we-are-all-one-fb4",
@@ -3264,7 +3264,7 @@
     "archetypes": [],
     "artist": "Sarwet46-And-SCP",
     "set": "Set 4",
-    "imageUrl": "/Cube/Forth Batch/Gold/WB/We%20Are%20All%20One.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__gold__wb__we-20are-20all-20one.png"
   },
   {
     "id": "class-room-adventure-fb4",
@@ -3285,7 +3285,7 @@
       "1/2 colorless Child"
     ],
     "set": "Set 4",
-    "imageUrl": "/Cube/Forth Batch/Gold/WU/Class%20Room%20Adventure.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__gold__wu__class-20room-20adventure.png"
   },
   {
     "id": "misted-away-fb4",
@@ -3305,7 +3305,7 @@
     ],
     "artist": "Dall-E 3",
     "set": "Set 4",
-    "imageUrl": "/Cube/Forth Batch/Gold/WU/Misted%20Away.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__gold__wu__misted-20away.png"
   },
   {
     "id": "niro-ascetic-judge-fb4",
@@ -3324,7 +3324,7 @@
     "toughness": "4",
     "artist": "dndplaybook.com's A.I",
     "set": "Set 4",
-    "imageUrl": "/Cube/Forth Batch/Gold/WU/Niro%2C%20Ascetic%20Judge.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__gold__wu__niro-2c-20ascetic-20judge.png"
   },
   {
     "id": "the-calming-storm-fb4",
@@ -3347,7 +3347,7 @@
       "-2/1 white and blue Human Monk"
     ],
     "set": "Set 4",
-    "imageUrl": "/Cube/Forth Batch/Gold/WU/The%20Calming%20Storm.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__gold__wu__the-20calming-20storm.png"
   },
   {
     "id": "aspiring-speedbrooder-fb4",
@@ -3365,7 +3365,7 @@
     "toughness": "3",
     "artist": "ChatGPT 04",
     "set": "Set 4",
-    "imageUrl": "/Cube/Forth Batch/Green/Aspiring%20Speedbrooder.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__green__aspiring-20speedbrooder.png"
   },
   {
     "id": "berserker-s-prayer-fb4",
@@ -3382,7 +3382,7 @@
     "flavorText": "\"Raze-Boar, roar with me: if I die today, I die with their city in ruins!\"",
     "artist": "Maciej Kuciara",
     "set": "Set 4",
-    "imageUrl": "/Cube/Forth Batch/Green/Berserker%E2%80%99s%20Prayer.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__green__berserker-e2-80-99s-20prayer.png"
   },
   {
     "id": "boss-encounter-fb4",
@@ -3400,7 +3400,7 @@
     ],
     "artist": "Josh Herman",
     "set": "Set 4",
-    "imageUrl": "/Cube/Forth Batch/Green/Boss%20Encounter.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__green__boss-20encounter.png"
   },
   {
     "id": "decorated-overseer-fb4",
@@ -3421,7 +3421,7 @@
       "1/1 green Human Soldier"
     ],
     "set": "Set 4",
-    "imageUrl": "/Cube/Forth Batch/Green/Decorated%20Overseer.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__green__decorated-20overseer.png"
   },
   {
     "id": "domain-expansion-fb4",
@@ -3443,7 +3443,7 @@
       "1/1 green Dryad"
     ],
     "set": "Set 4",
-    "imageUrl": "/Cube/Forth Batch/Green/Domain%20Expansion.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__green__domain-20expansion.png"
   },
   {
     "id": "el-verde-danna-s-masterpiece-fb4",
@@ -3463,7 +3463,7 @@
     "toughness": "3",
     "artist": "ChatGPT 04",
     "set": "Set 4",
-    "imageUrl": "/Cube/Forth Batch/Green/El-Verde%2C%20Danna%E2%80%99s%20Masterpiece.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__green__el-verde-2c-20danna-e2-80-99s-20masterpiece.png"
   },
   {
     "id": "elves-of-civilized-facade-fb4",
@@ -3482,7 +3482,7 @@
     "flavorText": "Some Gruul elves leave the Clans and seek acceptance in Ravnican society, but old habits die hard.",
     "artist": "ChatGPT 04",
     "set": "Set 4",
-    "imageUrl": "/Cube/Forth Batch/Green/Elves%20of%20Civilized%20Facade.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__green__elves-20of-20civilized-20facade.png"
   },
   {
     "id": "essence-resonator-fb4",
@@ -3502,7 +3502,7 @@
     "flavorText": "At the Edge of Eternities, it awaits—not to be understood, but to awaken what lies beyond understanding.",
     "artist": "Gustav Schmidt",
     "set": "Set 4",
-    "imageUrl": "/Cube/Forth Batch/Green/Essence%20Resonator.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__green__essence-20resonator.png"
   },
   {
     "id": "grothama-the-final-boss-fb4",
@@ -3520,7 +3520,7 @@
     "artist": "Kohei Hayama",
     "relatedFace": "Legendary Loot Drop",
     "set": "Set 4",
-    "imageUrl": "/Cube/Forth Batch/Green/Grothama%2C%20the%20Final%20Boss.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__green__grothama-2c-20the-20final-20boss.png"
   },
   {
     "id": "heretic-s-capusle-fb4",
@@ -3534,7 +3534,7 @@
     "flavorText": "\"Nothing is more natural than nurturing the world around you while discarding your metallic impurities.\"\n—Dolomarus, Esper Heretic",
     "artist": "ChatGPT 04",
     "set": "Set 4",
-    "imageUrl": "/Cube/Forth Batch/Green/Heretic%E2%80%99s%20Capusle.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__green__heretic-e2-80-99s-20capusle.png"
   },
   {
     "id": "jungle-sanctifier-fb4",
@@ -3552,7 +3552,7 @@
     "toughness": "1",
     "artist": "Raini Studios",
     "set": "Set 4",
-    "imageUrl": "/Cube/Forth Batch/Green/Jungle%20Sanctifier.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__green__jungle-20sanctifier.png"
   },
   {
     "id": "legendary-loot-drop-fb4",
@@ -3572,7 +3572,7 @@
     "artist": "IllustrationBySam",
     "relatedFace": "Grothama, the Final Boss",
     "set": "Set 4",
-    "imageUrl": "/Cube/Forth Batch/Green/Legendary%20Loot%20Drop.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__green__legendary-20loot-20drop.png"
   },
   {
     "id": "nourishment-for-the-puppet-fb4",
@@ -3591,7 +3591,7 @@
       "Nourisher"
     ],
     "set": "Set 4",
-    "imageUrl": "/Cube/Forth Batch/Green/Nourishment%20for%20the%20Puppet.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__green__nourishment-20for-20the-20puppet.png"
   },
   {
     "id": "overgrown-peacock-fb4",
@@ -3613,7 +3613,7 @@
     "flavorText": "\"In the Wastelands, always carry the biggest stick.\"",
     "artist": "Marianna Kladi",
     "set": "Set 4",
-    "imageUrl": "/Cube/Forth Batch/Green/Overgrown%20Peacock.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__green__overgrown-20peacock.png"
   },
   {
     "id": "podium-of-the-ancestors-fb4",
@@ -3634,7 +3634,7 @@
       "1/1 white Spirit"
     ],
     "set": "Set 4",
-    "imageUrl": "/Cube/Forth Batch/Green/Podium%20of%20the%20Ancestors.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__green__podium-20of-20the-20ancestors.png"
   },
   {
     "id": "road-kill-fb4",
@@ -3655,7 +3655,7 @@
     "flavorText": "You might forget your little accident, but she remembers—and she never forgives.",
     "artist": "ChatGPT 04",
     "set": "Set 4",
-    "imageUrl": "/Cube/Forth Batch/Green/Road%20Kill.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__green__road-20kill.png"
   },
   {
     "id": "shepard-of-the-cycle-fb4",
@@ -3675,7 +3675,7 @@
     "toughness": "2",
     "artist": "Sydney Young",
     "set": "Set 4",
-    "imageUrl": "/Cube/Forth Batch/Green/Shepard%20of%20the%20Cycle.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__green__shepard-20of-20the-20cycle.png"
   },
   {
     "id": "spell-fierce-fb4",
@@ -3694,7 +3694,7 @@
     "flavorText": "The Fleshbeasts of Iquatana are born for psychological warfare by The Masked Ones, and the only triumph that truly quenches their thirst is one over their own Memorybeast.",
     "artist": "ChatGPT 40",
     "set": "Set 4",
-    "imageUrl": "/Cube/Forth Batch/Green/Spell%20Fierce.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__green__spell-20fierce.png"
   },
   {
     "id": "tankamutaticar-fb4",
@@ -3718,7 +3718,7 @@
       "The Experiment"
     ],
     "set": "Set 4",
-    "imageUrl": "/Cube/Forth Batch/Green/Tankamutaticar.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__green__tankamutaticar.png"
   },
   {
     "id": "thaldrin-the-rune-bearer-fb4",
@@ -3739,7 +3739,7 @@
     "flavorText": "\"You hide behind the artificial to imitate a fraction of our power… pitiful.\"",
     "artist": "ChatGPT 04",
     "set": "Set 4",
-    "imageUrl": "/Cube/Forth Batch/Green/Thaldrin%2C%20the%20Rune-Bearer.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__green__thaldrin-2c-20the-20rune-bearer.png"
   },
   {
     "id": "there-are-two-wolves-inside-you-fb4",
@@ -3762,7 +3762,7 @@
       "2/2 black Wolf"
     ],
     "set": "Set 4",
-    "imageUrl": "/Cube/Forth Batch/Green/There%20Are%20Two%20Wolves%20Inside%20You.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__green__there-20are-20two-20wolves-20inside-20you.png"
   },
   {
     "id": "titan-of-future-promised-fb4",
@@ -3783,7 +3783,7 @@
     "flavorText": "When the first man-made tool on Dominaria was crafted, he was there, watching.",
     "artist": "ChatGPT 04",
     "set": "Set 4",
-    "imageUrl": "/Cube/Forth Batch/Green/Titan%20of%20Future%20Promised.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__green__titan-20of-20future-20promised.png"
   },
   {
     "id": "unveil-the-future-fb4",
@@ -3802,7 +3802,7 @@
       "The Experiment"
     ],
     "set": "Set 4",
-    "imageUrl": "/Cube/Forth Batch/Green/Unveil%20the%20Future.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__green__unveil-20the-20future.png"
   },
   {
     "id": "verdentreader-fb4",
@@ -3823,7 +3823,7 @@
       "1/1 green Forest Dryad"
     ],
     "set": "Set 4",
-    "imageUrl": "/Cube/Forth Batch/Green/Verdentreader.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__green__verdentreader.png"
   },
   {
     "id": "vorinclex-s-garage-fb4",
@@ -3844,7 +3844,7 @@
       "X/X green Vehicle"
     ],
     "set": "Set 4",
-    "imageUrl": "/Cube/Forth Batch/Green/Vorinclex%E2%80%99s%20Garage.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__green__vorinclex-e2-80-99s-20garage.png"
   },
   {
     "id": "abandoned-church-fb4",
@@ -3858,7 +3858,7 @@
     "flavorText": "Thunder Junction is a land with no faith, yet even outlaws must always find something to believe in.",
     "artist": "ChatGPT o4",
     "set": "Set 4",
-    "imageUrl": "/Cube/Forth Batch/Lands/Abandoned%20Church.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__lands__abandoned-20church.png"
   },
   {
     "id": "architoid-s-nexus-fb4",
@@ -3874,7 +3874,7 @@
     "flavorText": "It can be anything—so long as it remains nothing.",
     "artist": "Neople",
     "set": "Set 4",
-    "imageUrl": "/Cube/Forth Batch/Lands/Architoid%E2%80%99s%20Nexus.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__lands__architoid-e2-80-99s-20nexus.png"
   },
   {
     "id": "bazaar-of-the-damned-fb4",
@@ -3887,7 +3887,7 @@
     "archetypes": [],
     "artist": "Planescape: I am the Mimir",
     "set": "Set 4",
-    "imageUrl": "/Cube/Forth Batch/Lands/Bazaar%20of%20the%20Damned.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__lands__bazaar-20of-20the-20damned.png"
   },
   {
     "id": "bountiful-oasis-fb4",
@@ -3901,7 +3901,7 @@
     "flavorText": "Thunder Juncture is a land with no nature, yet even outlaws must always find something to rely on.",
     "artist": "ChatGPT o4",
     "set": "Set 4",
-    "imageUrl": "/Cube/Forth Batch/Lands/Bountiful%20Oasis.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__lands__bountiful-20oasis.png"
   },
   {
     "id": "collectomancer-s-lab-fb4",
@@ -3916,7 +3916,7 @@
     ],
     "artist": "Kaileigh Vincent",
     "set": "Set 4",
-    "imageUrl": "/Cube/Forth Batch/Lands/Collectomancer%E2%80%99s%20Lab.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__lands__collectomancer-e2-80-99s-20lab.png"
   },
   {
     "id": "forgotten-town-fb4",
@@ -3930,7 +3930,7 @@
     "flavorText": "Thunder Juncture is a land with no history, yet even outlaws must always find something to look back on.",
     "artist": "ChatGPT o4",
     "set": "Set 4",
-    "imageUrl": "/Cube/Forth Batch/Lands/Forgotten%20Town.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__lands__forgotten-20town.png"
   },
   {
     "id": "glittermore-fb4",
@@ -3944,7 +3944,7 @@
     "flavorText": "Dreams never die, as long as you know where to look.",
     "artist": "StarryAI",
     "set": "Set 4",
-    "imageUrl": "/Cube/Forth Batch/Lands/Glittermore.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__lands__glittermore.png"
   },
   {
     "id": "inconspicuous-drop-site-fb4",
@@ -3958,7 +3958,7 @@
     "flavorText": "It's hidden in plain sight, even if you know what you are looking for.",
     "artist": "MatLatArt",
     "set": "Set 4",
-    "imageUrl": "/Cube/Forth Batch/Lands/Inconspicuous%20Drop-Site.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__lands__inconspicuous-20drop-site.png"
   },
   {
     "id": "industrious-frontier-fb4",
@@ -3972,7 +3972,7 @@
     "flavorText": "Thunder Juncture is a land with no future, yet even outlaws must always find something to leave behind.",
     "artist": "ChatGPT o4",
     "set": "Set 4",
-    "imageUrl": "/Cube/Forth Batch/Lands/Industrious%20Frontier.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__lands__industrious-20frontier.png"
   },
   {
     "id": "lockloft-charge-station-fb4",
@@ -3988,7 +3988,7 @@
     "flavorText": "Maximum convenience, if you know what drives the Lockloft family.",
     "artist": "ChatGPT o4",
     "set": "Set 4",
-    "imageUrl": "/Cube/Forth Batch/Lands/Lockloft%20Charge-Station.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__lands__lockloft-20charge-station.png"
   },
   {
     "id": "lushwater-monastery-fb4",
@@ -4003,7 +4003,7 @@
     ],
     "artist": "Stable Diffusion",
     "set": "Set 4",
-    "imageUrl": "/Cube/Forth Batch/Lands/Lushwater%20Monastery.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__lands__lushwater-20monastery.png"
   },
   {
     "id": "security-outpost-fb4",
@@ -4017,7 +4017,7 @@
     "flavorText": "Thunder Juncture is a land with no law, yet even outlaws must always find something to stand for.",
     "artist": "ChatGPT o4",
     "set": "Set 4",
-    "imageUrl": "/Cube/Forth Batch/Lands/Security%20Outpost.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__lands__security-20outpost.png"
   },
   {
     "id": "sweltering-heath-fb4",
@@ -4033,7 +4033,7 @@
     "flavorText": "Your mind won't betray you, as long as you stay hydrated.",
     "artist": "ChanceKafkaArt",
     "set": "Set 4",
-    "imageUrl": "/Cube/Forth Batch/Lands/Sweltering%20Heath.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__lands__sweltering-20heath.png"
   },
   {
     "id": "titan-s-proving-grounds-fb4",
@@ -4047,7 +4047,7 @@
     "flavorText": "You've got this… just don't look up.",
     "artist": "ChatGPT o4",
     "set": "Set 4",
-    "imageUrl": "/Cube/Forth Batch/Lands/Titan%E2%80%99s%20Proving%20Grounds.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__lands__titan-e2-80-99s-20proving-20grounds.png"
   },
   {
     "id": "ad-infinitum-fb4",
@@ -4064,7 +4064,7 @@
     "flavorText": "\"The best part of this job is getting fired.\"",
     "artist": "ChatGPT o4",
     "set": "Set 4",
-    "imageUrl": "/Cube/Forth Batch/Red/Ad%20Infinitum.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__red__ad-20infinitum.png"
   },
   {
     "id": "artistic-strike-fb4",
@@ -4083,7 +4083,7 @@
     "flavorText": "A lot of Prismari students start off with a bright idea, only to be shut down by an even brighter one.",
     "artist": "Asur Misoa",
     "set": "Set 4",
-    "imageUrl": "/Cube/Forth Batch/Red/Artistic%20Strike.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__red__artistic-20strike.png"
   },
   {
     "id": "astral-force-fb4",
@@ -4099,7 +4099,7 @@
     "archetypes": [],
     "artist": "Harliskudo",
     "set": "Set 4",
-    "imageUrl": "/Cube/Forth Batch/Red/Astral%20Force.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__red__astral-20force.png"
   },
   {
     "id": "bloodrush-bellow-fb4",
@@ -4115,7 +4115,7 @@
     "archetypes": [],
     "artist": "Wisnu Tan",
     "set": "Set 4",
-    "imageUrl": "/Cube/Forth Batch/Red/Bloodrush%20Bellow.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__red__bloodrush-20bellow.png"
   },
   {
     "id": "collectric-blast-fb4",
@@ -4134,7 +4134,7 @@
     "flavorText": "Collectomancy is part art, part science, and all fun.",
     "artist": "ChatGPT o4",
     "set": "Set 4",
-    "imageUrl": "/Cube/Forth Batch/Red/Collectric%20Blast.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__red__collectric-20blast.png"
   },
   {
     "id": "crash-bandicoot-fb4",
@@ -4153,7 +4153,7 @@
     "flavorText": "Woah!",
     "artist": "Naughty Dog",
     "set": "Set 4",
-    "imageUrl": "/Cube/Forth Batch/Red/Crash%20Bandicoot%21.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__red__crash-20bandicoot-21.png"
   },
   {
     "id": "determined-fb4",
@@ -4169,7 +4169,7 @@
     "archetypes": [],
     "artist": "BoredPanda",
     "set": "Set 4",
-    "imageUrl": "/Cube/Forth Batch/Red/Determined.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__red__determined.png"
   },
   {
     "id": "everything-at-once-fb4",
@@ -4186,7 +4186,7 @@
     ],
     "artist": "Janne Parviainen",
     "set": "Set 4",
-    "imageUrl": "/Cube/Forth Batch/Red/Everything%2C%20at%20Once.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__red__everything-2c-20at-20once.png"
   },
   {
     "id": "go-out-with-a-bang-fb4",
@@ -4203,7 +4203,7 @@
     "flavorText": "\"Please remember me at my best, but most of all, remember me at my worst.\"\n— Judith, the Magnificent Death",
     "artist": "Imagen 3",
     "set": "Set 4",
-    "imageUrl": "/Cube/Forth Batch/Red/Go%20Out%20With%20a%20Bang.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__red__go-20out-20with-20a-20bang.png"
   },
   {
     "id": "guilty-gear-fb4",
@@ -4222,7 +4222,7 @@
     ],
     "artist": "Daisuke Ishiwatari",
     "set": "Set 4",
-    "imageUrl": "/Cube/Forth Batch/Red/Guilty%20Gear.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__red__guilty-20gear.png"
   },
   {
     "id": "i-want-it-all-fb4",
@@ -4239,7 +4239,7 @@
     "flavorText": "\"A torturous existence indeed—to taste everything, yet taste nothing.\"\n—Elspeth, to Xenagos",
     "artist": "Easy-Peasy-AI",
     "set": "Set 4",
-    "imageUrl": "/Cube/Forth Batch/Red/I%20Want%20It%20All.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__red__i-20want-20it-20all.png"
   },
   {
     "id": "jaxis-taxis-fb4",
@@ -4260,7 +4260,7 @@
     "toughness": "2",
     "artist": "ChatGPT o4",
     "set": "Set 4",
-    "imageUrl": "/Cube/Forth Batch/Red/Jaxis%20Taxis.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__red__jaxis-20taxis.png"
   },
   {
     "id": "leave-no-turn-unstoned-fb4",
@@ -4279,7 +4279,7 @@
     "flavorText": "\"All truths are seeded in your mind — your path is simply the journey of remembrance.\"\n—The Burning-Tree Sisterhood, to Judith",
     "artist": "Natasha Chomko",
     "set": "Set 4",
-    "imageUrl": "/Cube/Forth Batch/Red/Leave%20No%20Turn%20Unstoned.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__red__leave-20no-20turn-20unstoned.png"
   },
   {
     "id": "look-for-fossils-fb4",
@@ -4297,7 +4297,7 @@
     ],
     "artist": "ChatGPT o4",
     "set": "Set 4",
-    "imageUrl": "/Cube/Forth Batch/Red/Look%20for%20Fossils.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__red__look-20for-20fossils.png"
   },
   {
     "id": "nightmare-halls-fb4",
@@ -4314,7 +4314,7 @@
     "flavorText": "\"Madness is not a problem, Fran. It's a gift.\"",
     "artist": "Foxtragic",
     "set": "Set 4",
-    "imageUrl": "/Cube/Forth Batch/Red/Nightmare%20Halls.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__red__nightmare-20halls.png"
   },
   {
     "id": "pyromancer-s-mentor-fb4",
@@ -4337,7 +4337,7 @@
       "Young Pyromancer"
     ],
     "set": "Set 4",
-    "imageUrl": "/Cube/Forth Batch/Red/Pyromancer%E2%80%99s%20Mentor.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__red__pyromancer-e2-80-99s-20mentor.png"
   },
   {
     "id": "raga-van-nimble-pilferer-fb4",
@@ -4360,7 +4360,7 @@
       "Treasure"
     ],
     "set": "Set 4",
-    "imageUrl": "/Cube/Forth Batch/Red/Raga-Van%2C%20Nimble%20Pilferer.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__red__raga-van-2c-20nimble-20pilferer.png"
   },
   {
     "id": "regal-rooster-fb4",
@@ -4384,7 +4384,7 @@
       "Treasure"
     ],
     "set": "Set 4",
-    "imageUrl": "/Cube/Forth Batch/Red/Regal%20Rooster.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__red__regal-20rooster.png"
   },
   {
     "id": "shocking-revelation-fb4",
@@ -4400,7 +4400,7 @@
     "archetypes": [],
     "artist": "ChatGPT 4o",
     "set": "Set 4",
-    "imageUrl": "/Cube/Forth Batch/Red/Shocking%20Revelation.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__red__shocking-20revelation.png"
   },
   {
     "id": "song-of-hero-s-past-fb4",
@@ -4419,7 +4419,7 @@
     "flavorText": "\"I sing of warriors lost to night,\nTheir flames snuffed out, yet set to light.\nAcross the Realms, their names shall roar,\nThe fire wakes and burns once more.\"\n—Birgi, God of Storytelling",
     "artist": "Shutterstock",
     "set": "Set 4",
-    "imageUrl": "/Cube/Forth Batch/Red/Song%20of%20Hero%E2%80%99s%20Past.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__red__song-20of-20hero-e2-80-99s-20past.png"
   },
   {
     "id": "sort-yourself-out-fb4",
@@ -4436,7 +4436,7 @@
     "loyalty": "4",
     "artist": "Janne Parviainen",
     "set": "Set 4",
-    "imageUrl": "/Cube/Forth Batch/Red/Sort%20Yourself%20Out.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__red__sort-20yourself-20out.png"
   },
   {
     "id": "titan-of-stars-aligned-fb4",
@@ -4457,7 +4457,7 @@
     "flavorText": "When the skies of Theros were formed, he was there, watching.",
     "artist": "ChatGPT o4",
     "set": "Set 4",
-    "imageUrl": "/Cube/Forth Batch/Red/Titan%20of%20Stars%20Aligned.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__red__titan-20of-20stars-20aligned.png"
   },
   {
     "id": "unlock-creativity-fb4",
@@ -4473,7 +4473,7 @@
     "archetypes": [],
     "artist": "ChatGPT o4",
     "set": "Set 4",
-    "imageUrl": "/Cube/Forth Batch/Red/Unlock%20Creativity.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__red__unlock-20creativity.png"
   },
   {
     "id": "unlucky-strike-fb4",
@@ -4491,7 +4491,7 @@
     ],
     "artist": "ChatGPT o4",
     "set": "Set 4",
-    "imageUrl": "/Cube/Forth Batch/Red/Unlucky%20Strike.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__red__unlucky-20strike.png"
   },
   {
     "id": "visionary-of-unfathomable-sights-fb4",
@@ -4507,7 +4507,7 @@
     "toughness": "2",
     "artist": "Imagen 3",
     "set": "Set 4",
-    "imageUrl": "/Cube/Forth Batch/Red/Visionary%20of%20Unfathomable%20Sights%20%20%20%20%20%20%20%20%20.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__red__visionary-20of-20unfathomable-20sights-20-20-20-20-20-20-20-20-20.png"
   },
   {
     "id": "whisper-twice-fb4",
@@ -4526,7 +4526,7 @@
     "flavorText": "\"Let the Jeskai meditate in silence—a silence that will be broken as easily as their bones.\"\n—Taki, Temur Whisperer",
     "artist": "ChatGPT o4",
     "set": "Set 4",
-    "imageUrl": "/Cube/Forth Batch/Red/Whisper%20Twice.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__red__whisper-20twice.png"
   },
   {
     "id": "wild-speculation-fb4",
@@ -4542,7 +4542,7 @@
     "archetypes": [],
     "artist": "ChatGPT o4",
     "set": "Set 4",
-    "imageUrl": "/Cube/Forth Batch/Red/Wild%20Speculation.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__red__wild-20speculation.png"
   },
   {
     "id": "yamper-fb4",
@@ -4560,7 +4560,7 @@
     "toughness": "1",
     "artist": "陰狐",
     "set": "Set 4",
-    "imageUrl": "/Cube/Forth Batch/Red/Yamper.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__red__yamper.png"
   },
   {
     "id": "anthem-of-duality-fb4",
@@ -4577,7 +4577,7 @@
     "flavorText": "Humanity diverged, yet sang as one.",
     "artist": "ChatGPT o4",
     "set": "Set 4",
-    "imageUrl": "/Cube/Forth Batch/White/Anthem%20of%20Duality.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__white__anthem-20of-20duality.png"
   },
   {
     "id": "barrenton-acrobat-singer-fb4",
@@ -4595,7 +4595,7 @@
     "toughness": "1",
     "artist": "ChatGPT o4",
     "set": "Set 4",
-    "imageUrl": "/Cube/Forth Batch/White/Barrenton%20Acrobat-Singer.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__white__barrenton-20acrobat-singer.png"
   },
   {
     "id": "cleanse-impure-thoughts-fb4",
@@ -4612,7 +4612,7 @@
     "flavorText": "\"Only those bound by ten winters of shared vigil may invoke the Mind Purification—for to tread the halls of another's mind is to walk barefoot upon sacred ground.\"\n—Her Holy Word, Avacyn's Book, Page 354",
     "artist": "ChatGPT o4",
     "set": "Set 4",
-    "imageUrl": "/Cube/Forth Batch/White/Cleanse%20Impure%20Thoughts.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__white__cleanse-20impure-20thoughts.png"
   },
   {
     "id": "count-your-grains-fb4",
@@ -4629,7 +4629,7 @@
     "flavorText": "Warriors who shed excessive blood must tend Inys Haen for ten years under the Harvesting Sun Goddess to atone, cultivating patience, humility, and grace.",
     "artist": "Dominik Mayer",
     "set": "Set 4",
-    "imageUrl": "/Cube/Forth Batch/White/Count%20Your%20Grains.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__white__count-20your-20grains.png"
   },
   {
     "id": "day-of-awakening-fb4",
@@ -4648,7 +4648,7 @@
     "flavorText": "\"… On that day, they shall rise as one, a legion forged from difference, for it is the clash of voices that births the mightiest chorus.\"\n—Song of All, canto 38",
     "artist": "Fantastic-Rope-713",
     "set": "Set 4",
-    "imageUrl": "/Cube/Forth Batch/White/Day%20of%20Awakening.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__white__day-20of-20awakening.png"
   },
   {
     "id": "doctor-s-orders-fb4",
@@ -4668,7 +4668,7 @@
     "flavorText": "\"Side effects include: death, coughing blood, confusing medical bills…\"",
     "artist": "Hinata Sipes",
     "set": "Set 4",
-    "imageUrl": "/Cube/Forth Batch/White/Doctor%E2%80%99s%20Orders.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__white__doctor-e2-80-99s-20orders.png"
   },
   {
     "id": "el-argint-aram-s-masterpiece-fb4",
@@ -4688,7 +4688,7 @@
     "toughness": "5",
     "artist": "ChatGPT o4",
     "set": "Set 4",
-    "imageUrl": "/Cube/Forth Batch/White/El-Argint%2C%20Aram%E2%80%99s%20Masterpiece.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__white__el-argint-2c-20aram-e2-80-99s-20masterpiece.png"
   },
   {
     "id": "equenaut-coordinator-fb4",
@@ -4708,7 +4708,7 @@
     "toughness": "4",
     "artist": "ChatGPT o4",
     "set": "Set 4",
-    "imageUrl": "/Cube/Forth Batch/White/Equenaut%20Coordinator.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__white__equenaut-20coordinator.png"
   },
   {
     "id": "erayo-s-gift-fb4",
@@ -4726,7 +4726,7 @@
     ],
     "artist": "ChatGPT o4",
     "set": "Set 4",
-    "imageUrl": "/Cube/Forth Batch/White/Erayo%E2%80%99s%20Gift.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__white__erayo-e2-80-99s-20gift.png"
   },
   {
     "id": "falcon-mecha-fb4",
@@ -4747,7 +4747,7 @@
     "toughness": "2",
     "artist": "Ramza Ardyputra",
     "set": "Set 4",
-    "imageUrl": "/Cube/Forth Batch/White/Falcon%20Mecha.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__white__falcon-20mecha.png"
   },
   {
     "id": "glisterchrome-elemental-fb4",
@@ -4767,7 +4767,7 @@
     "toughness": "1",
     "artist": "Tiziana Federica Ruiu",
     "set": "Set 4",
-    "imageUrl": "/Cube/Forth Batch/White/Glisterchrome%20Elemental.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__white__glisterchrome-20elemental.png"
   },
   {
     "id": "matron-of-porcelain-fb4",
@@ -4791,7 +4791,7 @@
       "Tears"
     ],
     "set": "Set 4",
-    "imageUrl": "/Cube/Forth Batch/White/Matron%20of%20Porcelain.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__white__matron-20of-20porcelain.png"
   },
   {
     "id": "monastery-alarmist-fb4",
@@ -4812,7 +4812,7 @@
     "flavorText": "From barking through the nights of his puphood to ringing his bell until dawn as an adult, his proficiency was never in question — only his methods.",
     "artist": "ChatGPT o4",
     "set": "Set 4",
-    "imageUrl": "/Cube/Forth Batch/White/Monastery%20Alarmist.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__white__monastery-20alarmist.png"
   },
   {
     "id": "more-money-more-problems-fb4",
@@ -4833,7 +4833,7 @@
       "Treasure"
     ],
     "set": "Set 4",
-    "imageUrl": "/Cube/Forth Batch/White/More%20Money%2C%20More%20Problems.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__white__more-20money-2c-20more-20problems.png"
   },
   {
     "id": "nightmare-fracture-fb4",
@@ -4850,7 +4850,7 @@
     "flavorText": "\"Dreams are paradoxical. They offer freedom, yet trap the mind in its own desires.\"\n—Olka, Mistmeadow witch",
     "artist": "ChatGPT o4",
     "set": "Set 4",
-    "imageUrl": "/Cube/Forth Batch/White/Nightmare%20Fracture.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__white__nightmare-20fracture.png"
   },
   {
     "id": "out-of-body-experience-fb4",
@@ -4871,7 +4871,7 @@
       "colorless Body"
     ],
     "set": "Set 4",
-    "imageUrl": "/Cube/Forth Batch/White/Out%20of%20Body%20Experience.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__white__out-20of-20body-20experience.png"
   },
   {
     "id": "parhelion-iii-fb4",
@@ -4892,7 +4892,7 @@
     "artist": "ChatGPT o4",
     "relatedFace": "Ravnica's Last Resort",
     "set": "Set 4",
-    "imageUrl": "/Cube/Forth Batch/White/Parhelion%20III.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__white__parhelion-20iii.png"
   },
   {
     "id": "radiant-multi-striker-fb4",
@@ -4912,7 +4912,7 @@
     "toughness": "1",
     "artist": "kisuke_ichi",
     "set": "Set 4",
-    "imageUrl": "/Cube/Forth Batch/White/Radiant%20Multi-Striker.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__white__radiant-20multi-striker.png"
   },
   {
     "id": "ravnica-s-last-resort-fb4",
@@ -4932,7 +4932,7 @@
     "artist": "ChatGPT o4",
     "relatedFace": "Parhelion III",
     "set": "Set 4",
-    "imageUrl": "/Cube/Forth Batch/White/Ravnica%E2%80%99s%20Last%20Resort.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__white__ravnica-e2-80-99s-20last-20resort.png"
   },
   {
     "id": "sancitifier-of-lost-media-fb4",
@@ -4953,7 +4953,7 @@
     "flavorText": "\"And to think, I once hunted for a real copy of Red Mist. The irony isn't lost on me—but I'm sure Valgavoth enjoys it more.\"",
     "artist": "ChatGPT o4",
     "set": "Set 4",
-    "imageUrl": "/Cube/Forth Batch/White/Sancitifier%20of%20Lost%20Media.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__white__sancitifier-20of-20lost-20media.png"
   },
   {
     "id": "sharestone-fb4",
@@ -4970,7 +4970,7 @@
     "flavorText": "A relic from an alternate Fomori timeline, this stone reveals a united humanity so profoundly harmonious, its beauty could bring one to tears.",
     "artist": "ChatGPT o4",
     "set": "Set 4",
-    "imageUrl": "/Cube/Forth Batch/White/Sharestone.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__white__sharestone.png"
   },
   {
     "id": "stranded-on-a-shore-fb4",
@@ -4986,7 +4986,7 @@
     "archetypes": [],
     "artist": "Paul Reid",
     "set": "Set 4",
-    "imageUrl": "/Cube/Forth Batch/White/Stranded%20on%20a%20Shore.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__white__stranded-20on-20a-20shore.png"
   },
   {
     "id": "strength-in-solitude-fb4",
@@ -5005,7 +5005,7 @@
     "flavorText": "\"I quenched my inner storm. Now, I am the storm that is approaching.\"",
     "artist": "||Lamb||",
     "set": "Set 4",
-    "imageUrl": "/Cube/Forth Batch/White/Strength%20in%20Solitude.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__white__strength-20in-20solitude.png"
   },
   {
     "id": "the-day-is-yours-fb4",
@@ -5022,7 +5022,7 @@
     "flavorText": "\"I never dreamt of battle, nor of banners raised in my name. But fate chose this course, and I ask you now to believe in it as I do.\"\n—The One Who Risen",
     "artist": "Gabriel Velloso",
     "set": "Set 4",
-    "imageUrl": "/Cube/Forth Batch/White/The%20Day%20is%20Yours.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__white__the-20day-20is-20yours.png"
   },
   {
     "id": "the-paper-man-fb4",
@@ -5043,7 +5043,7 @@
     "flavorText": "Wrap and wrap and wrap he goes,\nWith hands of silk delight.\nHe'll snatch you up, he'll fold you tight,\nAnd vanish you from sight.",
     "artist": "ChatGPT o4",
     "set": "Set 4",
-    "imageUrl": "/Cube/Forth Batch/White/The%20Paper%20Man.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__white__the-20paper-20man.png"
   },
   {
     "id": "vehicles-need-it-fb4",
@@ -5061,7 +5061,7 @@
     ],
     "artist": "ChatGPT o4",
     "set": "Set 4",
-    "imageUrl": "/Cube/Forth Batch/White/Vehicles%20Need%20It.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__white__vehicles-20need-20it.png"
   },
   {
     "id": "vizier-of-second-glory-fb4",
@@ -5082,7 +5082,7 @@
     "toughness": "1",
     "artist": "ChatGPT 4o",
     "set": "Set 4",
-    "imageUrl": "/Cube/Forth Batch/White/Vizier%20of%20Second%20Glory.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__white__vizier-20of-20second-20glory.png"
   },
   {
     "id": "we-own-this-city-fb4",
@@ -5098,7 +5098,7 @@
     "archetypes": [],
     "artist": "Anna Steinbauer",
     "set": "Set 4",
-    "imageUrl": "/Cube/Forth Batch/White/We%20Own%20This%20City.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__white__we-20own-20this-20city.png"
   },
   {
     "id": "where-lies-hide-where-truth-reveals-fb4",
@@ -5114,6 +5114,6 @@
     "archetypes": [],
     "artist": "ChatGPT o4",
     "set": "Set 4",
-    "imageUrl": "/Cube/Forth Batch/White/Where%20Truth%20Reveals.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__white__where-20truth-20reveals.png"
   }
 ]

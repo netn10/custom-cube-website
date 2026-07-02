@@ -48,3 +48,20 @@ Thumbs.db
 public/resources/all_tokens.pdf
 !public/resources/all_cards.pdf
 bfg-1.15.0.jar
+
+# Card/token art is hosted on GitHub Releases (cube-art, cube-art-2), NOT in git.
+# The JSON under public/Cube/*/json/ references the release URLs. Keeping the raw
+# image binaries out of git avoids ~9.5GB of repo bloat and push-size limits.
+public/Cube/**/*.jpg
+public/Cube/**/*.jpeg
+public/Cube/**/*.png
+public/Cube/**/*.webp
+public/Cube/**/*.gif
+public/Cube/**/*.bmp
+
+# Source scan PDFs that exceed GitHub's 100MB/file hard limit — kept local only.
+public/Cube/Forth Batch/Set 4.pdf
+public/Cube/Third Batch/all_images/set_3.pdf
+# Scraped reference-art scratch (Instagram HTML/.download dumps) — not used by the site.
+public/Cube/art/
+public/Cube/Misc/

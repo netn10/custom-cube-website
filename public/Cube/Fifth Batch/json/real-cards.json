@@ -18,7 +18,7 @@
     "power": "1",
     "toughness": "1",
     "set": "Lorwyn Eclipsed",
-    "imageUrl": "/Cube/RealCards/bitterbloom-bearer-ecl.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__bitterbloom-bearer-ecl.jpg",
     "_source": "Black\\Bitterbloom Bearer.jpg",
     "relatedTokens": [
       "1/1 blue and black Faerie"
@@ -42,7 +42,7 @@
     "power": "2",
     "toughness": "2",
     "set": "Bloomburrow",
-    "imageUrl": "/Cube/RealCards/osteomancer-adept-blb.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__osteomancer-adept-blb.jpg",
     "_source": "Black\\Osteomancer Adept.jpg"
   },
   {
@@ -58,7 +58,7 @@
     "flavorText": "Many attempt to speak with nature. Selvala speaks less, and nature answers more.",
     "artist": "Jason Rainville",
     "set": "Conspiracy: Take the Crown",
-    "imageUrl": "/Cube/RealCards/hymn-of-the-wilds-cn2.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__hymn-of-the-wilds-cn2.jpg",
     "_source": "Colorless\\Hymn of the Wilds.jpg"
   },
   {
@@ -73,7 +73,7 @@
     "archetypes": [],
     "artist": "Daniel Ljunggren",
     "set": "Conspiracy: Take the Crown",
-    "imageUrl": "/Cube/RealCards/sovereign-s-realm-cn2.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__sovereign-s-realm-cn2.jpg",
     "_source": "Colorless\\Sovereign's Realm.jpg"
   },
   {
@@ -91,7 +91,7 @@
     "flavorText": "\"From womb of nothingness sprang this place of beauty, purity, and hope realized.\"\n—*Song of All*, canto 3",
     "artist": "Adam Rex",
     "set": "Urza's Saga",
-    "imageUrl": "/Cube/RealCards/planar-birth-usg.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__planar-birth-usg.jpg",
     "_source": "White\\Planar Birth.jpg"
   },
   {
@@ -110,7 +110,7 @@
     ],
     "artist": "Marta Nael",
     "set": "Kamigawa: Neon Dynasty",
-    "imageUrl": "/Cube/RealCards/touch-the-spirit-realm-neo.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__touch-the-spirit-realm-neo.jpg",
     "_source": "White\\Touch the Spirit Realm.jpg"
   }
 ]

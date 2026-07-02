@@ -15,7 +15,7 @@
     ],
     "artist": "Xabi Gaztelua",
     "set": "Marvel Super Heroes Commander",
-    "imageUrl": "/Cube/RealCards/black-market-connections-msc.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__black-market-connections-msc.jpg",
     "_source": "Black\\Black Market Connections.jpg",
     "relatedTokens": [
       "Treasure",
@@ -36,7 +36,7 @@
     "archetypes": [],
     "artist": "Jonas De Ro",
     "set": "War of the Spark",
-    "imageUrl": "/Cube/RealCards/bolas-s-citadel-war.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__bolas-s-citadel-war.jpg",
     "_source": "Black\\Bolas's Citadel.jpg"
   },
   {
@@ -54,7 +54,7 @@
     "flavorText": "\"You saved that *Urza's Saga* pack all these years for *this*?\"",
     "artist": "Heather Hudson",
     "set": "Unsanctioned",
-    "imageUrl": "/Cube/RealCards/booster-tutor-und.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__booster-tutor-und.jpg",
     "_source": "Black\\Booster Tutor.jpg"
   },
   {
@@ -75,7 +75,7 @@
     "power": "1",
     "toughness": "1",
     "set": "The Lord of the Rings: Tales of Middle-earth",
-    "imageUrl": "/Cube/RealCards/orcish-bowmasters-ltr.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__orcish-bowmasters-ltr.jpg",
     "_source": "Black\\Orcish Bowmasters.jpg"
   },
   {
@@ -97,7 +97,7 @@
     "power": "3",
     "toughness": "2",
     "set": "Strixhaven: School of Mages",
-    "imageUrl": "/Cube/RealCards/sedgemoor-witch-stx.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__sedgemoor-witch-stx.jpg",
     "_source": "Black\\Sedgemoor Witch.jpg",
     "relatedTokens": [
       "1/1 black and green Pest"
@@ -117,7 +117,7 @@
     "archetypes": [],
     "artist": "Mary Kathryn Amiotte-Beaulieu",
     "set": "Mystery Booster Playtest Cards 2021",
-    "imageUrl": "/Cube/RealCards/yawgmoth-s-testament-cmb2.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__yawgmoth-s-testament-cmb2.jpg",
     "_source": "Black\\Yawgmoth's Testament.jpg"
   },
   {
@@ -136,7 +136,7 @@
     ],
     "artist": "Anna Pavleeva",
     "set": "Outlaws of Thunder Junction Commander",
-    "imageUrl": "/Cube/RealCards/arcane-heist-otc.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__arcane-heist-otc.jpg",
     "_source": "Blue\\Arcane Heist.jpg"
   },
   {
@@ -158,7 +158,7 @@
     "power": "1",
     "toughness": "2",
     "set": "Edge of Eternities Commander",
-    "imageUrl": "/Cube/RealCards/etherium-sculptor-eoc.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__etherium-sculptor-eoc.jpg",
     "_source": "Blue\\Etherium Sculptor.jpg"
   },
   {
@@ -176,7 +176,7 @@
     "flavorText": "\"Your artillery will burn itself out before I allow my focus to waver.\"",
     "artist": "Donato Giancola",
     "set": "Dominaria Remastered",
-    "imageUrl": "/Cube/RealCards/force-of-will-dmr.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__force-of-will-dmr.jpg",
     "_source": "Blue\\Force of Will.jpg"
   },
   {
@@ -195,7 +195,7 @@
     ],
     "artist": "Anthony Francisco",
     "set": "Commander 2021",
-    "imageUrl": "/Cube/RealCards/mind-s-desire-c21.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__mind-s-desire-c21.jpg",
     "_source": "Blue\\Mind's Desire.jpg"
   },
   {
@@ -213,7 +213,7 @@
     "flavorText": "\"Why vote for a mere mortal when you can vote for a god?\"",
     "artist": "Borja Pindado",
     "set": "Marvel Super Heroes Commander",
-    "imageUrl": "/Cube/RealCards/propaganda-msc.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__propaganda-msc.jpg",
     "_source": "Blue\\Propaganda.jpg"
   },
   {
@@ -234,7 +234,7 @@
     "power": "1",
     "toughness": "3",
     "set": "Theros Beyond Death",
-    "imageUrl": "/Cube/RealCards/thassa-s-oracle-thb.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__thassa-s-oracle-thb.jpg",
     "_source": "Blue\\Thassa's Oracle.jpg"
   },
   {
@@ -272,7 +272,7 @@
     "power": "1",
     "toughness": "1",
     "set": "Modern Horizons 3",
-    "imageUrl": "/Cube/RealCards/triton-wavebreaker-mh3.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__triton-wavebreaker-mh3.jpg",
     "_source": "Blue\\Triton Wavebreaker.jpg"
   },
   {
@@ -289,7 +289,7 @@
     "power": "2",
     "toughness": "3",
     "set": "Conspiracy",
-    "imageUrl": "/Cube/RealCards/deal-broker-cns.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__deal-broker-cns.jpg",
     "_source": "Colorless\\Deal Broker.jpg"
   },
   {
@@ -306,7 +306,7 @@
     ],
     "artist": "Alina Marica",
     "set": "Mystery Booster 2",
-    "imageUrl": "/Cube/RealCards/microscope-mb2.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__microscope-mb2.jpg",
     "_source": "Colorless\\Microscope.jpg"
   },
   {
@@ -323,7 +323,7 @@
     "archetypes": [],
     "artist": "Raoul Vitale",
     "set": "Modern Horizons 3",
-    "imageUrl": "/Cube/RealCards/collective-resistance-mh3.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__collective-resistance-mh3.jpg",
     "_source": "Green\\Collective Resistance.jpg"
   },
   {
@@ -345,7 +345,7 @@
     "power": "2",
     "toughness": "2",
     "set": "Strixhaven: School of Mages",
-    "imageUrl": "/Cube/RealCards/dragonsguard-elite-stx.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__dragonsguard-elite-stx.jpg",
     "_source": "Green\\Dragonsguard Elite.jpg"
   },
   {
@@ -362,7 +362,7 @@
     "archetypes": [],
     "artist": "Chris Bellach",
     "set": "Mystery Booster Playtest Cards 2021",
-    "imageUrl": "/Cube/RealCards/growth-charm-cmb2.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__growth-charm-cmb2.jpg",
     "_source": "Green\\Growth Charm.jpg"
   },
   {
@@ -384,7 +384,7 @@
     "power": "2",
     "toughness": "2",
     "set": "Commander Masters",
-    "imageUrl": "/Cube/RealCards/herald-of-the-pantheon-cmm.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__herald-of-the-pantheon-cmm.jpg",
     "_source": "Green\\Herald of the Pantheon.jpg"
   },
   {
@@ -406,7 +406,7 @@
     "power": "1",
     "toughness": "1",
     "set": "Innistrad Remastered",
-    "imageUrl": "/Cube/RealCards/hermit-druid-inr.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__hermit-druid-inr.jpg",
     "_source": "Green\\Hermit Druid.jpg"
   },
   {
@@ -424,7 +424,7 @@
     "flavorText": "The shaman looked at the world through Ghalta's eyes and understood that everything else was his prey.",
     "artist": "Randy Vargas",
     "set": "Foundations",
-    "imageUrl": "/Cube/RealCards/primal-might-fdn.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__primal-might-fdn.jpg",
     "_source": "Green\\Primal Might.jpg"
   },
   {
@@ -442,7 +442,7 @@
     "flavorText": "\"When they write songs about this battle, I will make sure your name is forgotten, devil.\"",
     "artist": "Kieran Yanner",
     "set": "Secrets of Strixhaven Commander",
-    "imageUrl": "/Cube/RealCards/tyvar-s-stand-soc.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__tyvar-s-stand-soc.jpg",
     "_source": "Green\\Tyvar's Stand.jpg"
   },
   {
@@ -457,7 +457,7 @@
     "archetypes": [],
     "artist": "Demitrios Feredinos",
     "set": "Mystery Booster Playtest Cards 2021",
-    "imageUrl": "/Cube/RealCards/aggressive-crag-cmb2.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__aggressive-crag-cmb2.jpg",
     "_source": "Lands\\Aggressive Crag.jpg"
   },
   {
@@ -472,7 +472,7 @@
     "archetypes": [],
     "artist": "Joe Torra",
     "set": "Mystery Booster Playtest Cards 2021",
-    "imageUrl": "/Cube/RealCards/domesticated-watercourse-cmb2.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__domesticated-watercourse-cmb2.jpg",
     "_source": "Lands\\Domesticated Watercourse.jpg"
   },
   {
@@ -487,7 +487,7 @@
     "archetypes": [],
     "artist": "James Arnold",
     "set": "Mystery Booster Playtest Cards 2021",
-    "imageUrl": "/Cube/RealCards/enchanted-prairie-cmb2.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__enchanted-prairie-cmb2.jpg",
     "_source": "Lands\\Enchanted Prairie.jpg"
   },
   {
@@ -502,7 +502,7 @@
     "archetypes": [],
     "artist": "Sophie Rochon",
     "set": "Mystery Booster 2",
-    "imageUrl": "/Cube/RealCards/fetching-garden-mb2.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__fetching-garden-mb2.jpg",
     "_source": "Lands\\Fetching Garden.jpg"
   },
   {
@@ -521,7 +521,7 @@
     "power": "2",
     "toughness": "1",
     "set": "Mystery Booster 2",
-    "imageUrl": "/Cube/RealCards/gobland-mb2.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__gobland-mb2.jpg",
     "_source": "Lands\\Gobland.jpg"
   },
   {
@@ -538,7 +538,7 @@
     "power": "3",
     "toughness": "4",
     "set": "Mystery Booster Playtest Cards 2021",
-    "imageUrl": "/Cube/RealCards/jasconian-isle-cmb2.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__jasconian-isle-cmb2.jpg",
     "_source": "Lands\\Jasconian Isle.jpg"
   },
   {
@@ -553,7 +553,7 @@
     "archetypes": [],
     "artist": "Will Liu",
     "set": "Mystery Booster 2",
-    "imageUrl": "/Cube/RealCards/lazotep-archway-mb2.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__lazotep-archway-mb2.jpg",
     "_source": "Lands\\Lazotep Archway.jpg"
   },
   {
@@ -568,7 +568,7 @@
     "archetypes": [],
     "artist": "Véronique Chabot",
     "set": "Mystery Booster 2",
-    "imageUrl": "/Cube/RealCards/madlands-mb2.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__madlands-mb2.jpg",
     "_source": "Lands\\Madlands.jpg"
   },
   {
@@ -583,7 +583,7 @@
     "archetypes": [],
     "artist": "Gonçalo Pereira",
     "set": "Mystery Booster 2",
-    "imageUrl": "/Cube/RealCards/maestros-totally-safe-hideout-mb2.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__maestros-totally-safe-hideout-mb2.jpg",
     "_source": "Lands\\Maestros' Totally Safe Hideout.jpg"
   },
   {
@@ -598,7 +598,7 @@
     "archetypes": [],
     "artist": "James Rose",
     "set": "Mystery Booster Playtest Cards 2021",
-    "imageUrl": "/Cube/RealCards/noxious-bayou-cmb2.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__noxious-bayou-cmb2.jpg",
     "_source": "Lands\\Noxious Bayou.jpg"
   },
   {
@@ -613,7 +613,7 @@
     "archetypes": [],
     "artist": "Sandy Lee",
     "set": "Mystery Booster 2",
-    "imageUrl": "/Cube/RealCards/omenpath-to-naya-mb2.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__omenpath-to-naya-mb2.jpg",
     "_source": "Lands\\Omenpath to Naya.jpg"
   },
   {
@@ -628,7 +628,7 @@
     "archetypes": [],
     "artist": "Thomas Ricci",
     "set": "Mystery Booster 2",
-    "imageUrl": "/Cube/RealCards/processing-plant-mb2.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__processing-plant-mb2.jpg",
     "_source": "Lands\\Processing Plant.jpg"
   },
   {
@@ -643,7 +643,7 @@
     "archetypes": [],
     "artist": "Tara Rueping",
     "set": "Mystery Booster Playtest Cards 2021",
-    "imageUrl": "/Cube/RealCards/taiga-stadium-cmb2.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__taiga-stadium-cmb2.jpg",
     "_source": "Lands\\Taiga Stadium.jpg"
   },
   {
@@ -658,7 +658,7 @@
     "archetypes": [],
     "artist": "Marika Lord",
     "set": "Mystery Booster 2",
-    "imageUrl": "/Cube/RealCards/temur-elevator-mb2.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__temur-elevator-mb2.jpg",
     "_source": "Lands\\Temur Elevator.jpg"
   },
   {
@@ -673,7 +673,7 @@
     "archetypes": [],
     "artist": "Kevin Dubell",
     "set": "Mystery Booster 2",
-    "imageUrl": "/Cube/RealCards/under-construction-skyscraper-mb2.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__under-construction-skyscraper-mb2.jpg",
     "_source": "Lands\\Under-Construction Skyscraper.jpg"
   },
   {
@@ -688,7 +688,7 @@
     "archetypes": [],
     "artist": "Hélio Frazão",
     "set": "Mystery Booster 2",
-    "imageUrl": "/Cube/RealCards/value-town-take-a-trip-to-mb2.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__value-town-take-a-trip-to-mb2.jpg",
     "_source": "Lands\\Value Town.jpg"
   },
   {
@@ -706,7 +706,7 @@
     "artist": "Marianne Martin",
     "loyalty": 1,
     "set": "Mystery Booster 2",
-    "imageUrl": "/Cube/RealCards/wrenn-and-one-mb2.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__wrenn-and-one-mb2.jpg",
     "_source": "Lands\\Wrenn and One.jpg"
   },
   {
@@ -727,7 +727,7 @@
     "power": "2",
     "toughness": "2",
     "set": "Modern Horizons 3",
-    "imageUrl": "/Cube/RealCards/detective-s-phoenix-mh3.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__detective-s-phoenix-mh3.jpg",
     "_source": "Red\\Detective's Phoenix.jpg"
   },
   {
@@ -745,7 +745,7 @@
       "Storm"
     ],
     "set": "Unknown Event",
-    "imageUrl": "/Cube/RealCards/force-of-rowan-unk.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__force-of-rowan-unk.jpg",
     "_source": "Red\\Force of Rowan.jpg"
   },
   {
@@ -767,7 +767,7 @@
     "power": "1",
     "toughness": "1",
     "set": "Commander Anthology Volume II",
-    "imageUrl": "/Cube/RealCards/goblin-welder-cm2.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__goblin-welder-cm2.jpg",
     "_source": "Red\\Goblin Welder.jpg"
   },
   {
@@ -787,7 +787,7 @@
     "flavorText": "As the mother rewrites the fabric of reality, so too does the son.",
     "artist": "Irvin Rodriguez",
     "set": "Marvel Super Heroes Commander",
-    "imageUrl": "/Cube/RealCards/grapeshot-msc.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__grapeshot-msc.jpg",
     "_source": "Red\\Grapeshot.jpg"
   },
   {
@@ -809,7 +809,7 @@
     "power": "1",
     "toughness": "3.5",
     "set": "Unhinged",
-    "imageUrl": "/Cube/RealCards/cheap-ass-unh.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__cheap-ass-unh.jpg",
     "_source": "White\\Cheap Ass.jpg"
   },
   {
@@ -828,7 +828,7 @@
     ],
     "artist": "Bastien L. Deharme",
     "set": "Modern Horizons",
-    "imageUrl": "/Cube/RealCards/ephemerate-mh1.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__ephemerate-mh1.jpg",
     "_source": "White\\Ephemerate.jpg"
   },
   {
@@ -848,7 +848,7 @@
     "power": "2",
     "toughness": "2",
     "set": "Double Masters",
-    "imageUrl": "/Cube/RealCards/ethersworn-canonist-2xm.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__ethersworn-canonist-2xm.jpg",
     "_source": "White\\Ethersworn Canonist.jpg"
   },
   {
@@ -867,7 +867,7 @@
     ],
     "artist": "Racrufi",
     "set": "The Lost Caverns of Ixalan",
-    "imageUrl": "/Cube/RealCards/fabrication-foundry-lci.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__fabrication-foundry-lci.jpg",
     "_source": "White\\Fabrication Foundry.jpg"
   },
   {
@@ -884,7 +884,7 @@
     "archetypes": [],
     "artist": "Marisa Oh",
     "set": "Mystery Booster 2",
-    "imageUrl": "/Cube/RealCards/intangible-vibes-mb2.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__intangible-vibes-mb2.jpg",
     "_source": "White\\Intangible Vibes.jpg"
   },
   {
@@ -901,7 +901,7 @@
     "archetypes": [],
     "artist": "Chuck Lukacs",
     "set": "Secrets of Strixhaven Commander",
-    "imageUrl": "/Cube/RealCards/land-tax-soc.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__land-tax-soc.jpg",
     "_source": "White\\Land Tax.jpg"
   },
   {
@@ -924,7 +924,7 @@
     "power": "2",
     "toughness": "2",
     "set": "Tarkir: Dragonstorm Commander",
-    "imageUrl": "/Cube/RealCards/monastery-mentor-tdc.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__monastery-mentor-tdc.jpg",
     "_source": "White\\Monastery Mentor.jpg",
     "relatedTokens": [
       "1/1 white Monk"
@@ -947,7 +947,7 @@
     "flavorText": "Once the crow birdfolk realized augurs were using the shapes of their murmurations for divination, they decided to have some fun with it.",
     "artist": "Xabi Gaztelua",
     "set": "Bloomburrow Commander",
-    "imageUrl": "/Cube/RealCards/murmuration-blc.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__murmuration-blc.jpg",
     "_source": "White\\Murmuration.jpg",
     "relatedTokens": [
       "Storm Crow"
@@ -968,7 +968,7 @@
     "flavorText": "\"They fall for it every time.\"",
     "artist": "John Stanko",
     "set": "Adventures in the Forgotten Realms",
-    "imageUrl": "/Cube/RealCards/portable-hole-afr.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__portable-hole-afr.jpg",
     "_source": "White\\Portable Hole.jpg"
   },
   {
@@ -988,7 +988,7 @@
     "flavorText": "\"Put your backs into it! If we don't lay claim to it, the Fallaji will!\"",
     "artist": "Andrew Mar",
     "set": "The Brothers' War",
-    "imageUrl": "/Cube/RealCards/recommission-bro.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__recommission-bro.jpg",
     "_source": "White\\Recommission.jpg"
   },
   {
@@ -1008,7 +1008,7 @@
     "flavorText": "\"I can't go with you into the House, but I can give you one chance to reverse your doom. Make it count.\"",
     "artist": "Julie Dillon",
     "set": "Duskmourn: House of Horror Commander",
-    "imageUrl": "/Cube/RealCards/redress-fate-dsc.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__redress-fate-dsc.jpg",
     "_source": "White\\Redress Fate.jpg"
   },
   {
@@ -1028,7 +1028,7 @@
     "flavorText": "Treasures, trinkets, trash—the relics of the past are brought forth again.",
     "artist": "Jim Nelson",
     "set": "Urza's Destiny",
-    "imageUrl": "/Cube/RealCards/replenish-uds.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__replenish-uds.jpg",
     "_source": "White\\Replenish.jpg"
   },
   {
@@ -1046,7 +1046,7 @@
     "flavorText": "Teferi's body couldn't travel through time far enough, but with Kaya's help, his spirit could.",
     "artist": "Kekai Kotaki",
     "set": "The Brothers' War",
-    "imageUrl": "/Cube/RealCards/soul-partition-bro.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__soul-partition-bro.jpg",
     "_source": "White\\Soul Partition.jpg"
   },
   {
@@ -1067,7 +1067,7 @@
     "power": "7",
     "toughness": "7",
     "set": "Aetherdrift",
-    "imageUrl": "/Cube/RealCards/valor-s-flagship-dft.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__valor-s-flagship-dft.jpg",
     "_source": "White\\Valor's Flagship.jpg",
     "relatedTokens": [
       "1/1 colorless Pilot"
@@ -1091,7 +1091,7 @@
     "artist": "Randy Gallegos",
     "set": "The Lost Caverns of Ixalan",
     "relatedFace": "The Tomb of Aclazotz",
-    "imageUrl": "/Cube/RealCards/tarrian-s-journal-lci.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__tarrian-s-journal-lci.jpg",
     "_source": "Black/Tarrian's Journal.jpg"
   },
   {
@@ -1110,7 +1110,7 @@
     "set": "The Lost Caverns of Ixalan",
     "facedown": true,
     "relatedFace": "Tarrian's Journal",
-    "imageUrl": "/Cube/RealCards/the-tomb-of-aclazotz-lci.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__the-tomb-of-aclazotz-lci.jpg",
     "_source": "Black/The Tomb of Aclazotz.jpg"
   }
 ]

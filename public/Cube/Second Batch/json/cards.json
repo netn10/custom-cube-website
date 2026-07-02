@@ -17,7 +17,7 @@
     "flavorText": "\"Ain't you heard a' honor among thieves?\"\n—Tombstone, to Anaconda",
     "artist": "John Thacker",
     "set": "Set 2",
-    "imageUrl": "/Cube/RealCards/deadly-dispute-msc.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__deadly-dispute-msc.jpg",
     "relatedTokens": [
       "Treasure"
     ]
@@ -39,7 +39,7 @@
     ],
     "artist": "Christina Kraus",
     "set": "Set 2",
-    "imageUrl": "/Cube/RealCards/stormchaser-s-talent-blb.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__stormchaser-s-talent-blb.jpg",
     "relatedTokens": [
       "1/1 blue and red Otter"
     ]
@@ -57,7 +57,7 @@
     "flavorText": "Can it be Lightning Bolt yet?",
     "artist": "Igor Grechanyi",
     "set": "Set 2",
-    "imageUrl": "/Cube/RealCards/standard-procedure-unf.jpg"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__standard-procedure-unf.jpg"
   },
   {
     "id": "worldknit-cns",
@@ -71,7 +71,7 @@
     "archetypes": [],
     "artist": "Adam Paquette",
     "set": "Set 2",
-    "imageUrl": "/Cube/RealCards/worldknit-cns.jpg"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__worldknit-cns.jpg"
   },
   {
     "id": "chaos-warp-msc",
@@ -90,7 +90,7 @@
     "flavorText": "Loki chortled. \"The trap is sprung, and Loki has achieved his most brilliant jest!\" Thor prepared a thunderous reply. \"Ribbit ribbit!\"",
     "artist": "Filipe Pagliuso",
     "set": "Set 2",
-    "imageUrl": "/Cube/RealCards/chaos-warp-msc.jpg"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__chaos-warp-msc.jpg"
   },
   {
     "id": "wrath-of-god-cmm",
@@ -107,7 +107,7 @@
     "flavorText": "Legend speaks of the lost coastal polis of Olantin, whose inhabitants' hubris enraged the sun god Heliod.",
     "artist": "Willian Murai",
     "set": "Set 2",
-    "imageUrl": "/Cube/RealCards/wrath-of-god-cmm.jpg"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__wrath-of-god-cmm.jpg"
   },
   {
     "id": "bizarre-tutor-sb2",
@@ -123,7 +123,7 @@
     "archetypes": [],
     "artist": "Remedios Varo",
     "set": "Set 2",
-    "imageUrl": "/Cube/Second Batch/Black/Bizarre%20Tutor.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/second-batch__black__bizarre-20tutor.png"
   },
   {
     "id": "compleat-mockery-sb2",
@@ -142,7 +142,7 @@
     ],
     "artist": "DALL-E 3",
     "set": "Set 2",
-    "imageUrl": "/Cube/Second Batch/Black/Compleat%20Mockery.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/second-batch__black__compleat-20mockery.png"
   },
   {
     "id": "two-with-nothing-sb2",
@@ -160,7 +160,7 @@
     ],
     "artist": "Jim Nelson",
     "set": "Set 2",
-    "imageUrl": "/Cube/Second Batch/Black/Two%20with%20Nothing.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/second-batch__black__two-20with-20nothing.png"
   },
   {
     "id": "be-as-one-sb2",
@@ -177,7 +177,7 @@
     "flavorText": "\"You don't have to be alone anymore.\"",
     "artist": "MasterJuunanagou17",
     "set": "Set 2",
-    "imageUrl": "/Cube/Second Batch/Blue/Be%20As%20One.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/second-batch__blue__be-20as-20one.png"
   },
   {
     "id": "head-twister-sb2",
@@ -193,7 +193,7 @@
     "archetypes": [],
     "artist": "Bruce Rolff",
     "set": "Set 2",
-    "imageUrl": "/Cube/Second Batch/Blue/Head%20Twister.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/second-batch__blue__head-20twister.png"
   },
   {
     "id": "rise-my-minions-sb2",
@@ -214,7 +214,7 @@
       "2/2 black Zombie"
     ],
     "set": "Set 2",
-    "imageUrl": "/Cube/Second Batch/Blue/Rise%2C%20My%20Minions%21.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/second-batch__blue__rise-2c-20my-20minions-21.png"
   },
   {
     "id": "impossible-charm-sb2",
@@ -229,7 +229,7 @@
     "artist": "Brian Palmer Art",
     "prompt": "Give me exactly one option for three abilities for my Magic the Gathering 3 mana charm. Nothing else.",
     "set": "Set 2",
-    "imageUrl": "/Cube/Second Batch/Colorless/Impossible%20Charm.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/second-batch__colorless__impossible-20charm.png"
   },
   {
     "id": "the-eludha-prime-sb2",
@@ -245,7 +245,7 @@
     "toughness": "1",
     "artist": "DALL-E 3",
     "set": "Set 2",
-    "imageUrl": "/Cube/Second Batch/Colorless/The%20Eludha%20Prime.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/second-batch__colorless__the-20eludha-20prime.png"
   },
   {
     "id": "unnatural-selection-sb2",
@@ -259,7 +259,7 @@
     "archetypes": [],
     "artist": "Peter Mohrbacher",
     "set": "Set 2",
-    "imageUrl": "/Cube/Second Batch/Colorless/Unnatural%20Selection.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/second-batch__colorless__unnatural-20selection.png"
   },
   {
     "id": "akul-dirtiest-gun-in-the-juncture-sb2",
@@ -280,7 +280,7 @@
     "toughness": "3",
     "artist": "DALL-E 3",
     "set": "Set 2",
-    "imageUrl": "/Cube/Second Batch/Gold/Akul%2C%20Dirtiest%20Gun%20in%20the%20Juncture.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/second-batch__gold__akul-2c-20dirtiest-20gun-20in-20the-20juncture.png"
   },
   {
     "id": "bara-loca-good-luck-omen-sb2",
@@ -305,7 +305,7 @@
       "2/2 white and green Elemental Lizard"
     ],
     "set": "Set 2",
-    "imageUrl": "/Cube/Second Batch/Gold/Bara-Loca%2C%20Good-Luck%20Omen.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/second-batch__gold__bara-loca-2c-20good-luck-20omen.png"
   },
   {
     "id": "gyrudas-scion-sb2",
@@ -324,7 +324,7 @@
     "toughness": "*",
     "artist": "Dinotropia",
     "set": "Set 2",
-    "imageUrl": "/Cube/Second Batch/Gold/Gyruda%E2%80%99s%20Scion.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/second-batch__gold__gyruda-e2-80-99s-20scion.png"
   },
   {
     "id": "jeganthas-presence-sb2",
@@ -341,7 +341,7 @@
     "archetypes": [],
     "artist": "DALL-E 3",
     "set": "Set 2",
-    "imageUrl": "/Cube/Second Batch/Gold/Jegantha%E2%80%99s%20Presence.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/second-batch__gold__jegantha-e2-80-99s-20presence.png"
   },
   {
     "id": "kaheeras-family-sb2",
@@ -367,7 +367,7 @@
       "1/1 green Beast"
     ],
     "set": "Set 2",
-    "imageUrl": "/Cube/Second Batch/Gold/Kaheera%E2%80%99s%20Family.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/second-batch__gold__kaheera-e2-80-99s-20family.png"
   },
   {
     "id": "kerugas-sage-crystal-sb2",
@@ -384,7 +384,7 @@
     "archetypes": [],
     "artist": "DALL-E 3",
     "set": "Set 2",
-    "imageUrl": "/Cube/Second Batch/Gold/Keruga%E2%80%99s%20Sage-Crystal.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/second-batch__gold__keruga-e2-80-99s-20sage-crystal.png"
   },
   {
     "id": "llm-genius-prompter-sb2",
@@ -407,7 +407,7 @@
     ],
     "prompt": "Give my companion from Magic the Gathering exactly one custom companion condition",
     "set": "Set 2",
-    "imageUrl": "/Cube/Second Batch/Gold/L.L.M%2C%20Genius%20Prompter.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/second-batch__gold__l.l.m-2c-20genius-20prompter.png"
   },
   {
     "id": "lurruss-stirrings-sb2",
@@ -426,7 +426,7 @@
     ],
     "artist": "DALL-E 3",
     "set": "Set 2",
-    "imageUrl": "/Cube/Second Batch/Gold/Lurrus%E2%80%99s%20Stirrings.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/second-batch__gold__lurrus-e2-80-99s-20stirrings.png"
   },
   {
     "id": "lutris-shenanigens-sb2",
@@ -445,7 +445,7 @@
     ],
     "artist": "DALL-E 3",
     "set": "Set 2",
-    "imageUrl": "/Cube/Second Batch/Gold/Lutri%E2%80%99s%20Shenanigens.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/second-batch__gold__lutri-e2-80-99s-20shenanigens.png"
   },
   {
     "id": "oboshs-spawn-sb2",
@@ -466,7 +466,7 @@
     "toughness": "1",
     "artist": "CobaltPlasma",
     "set": "Set 2",
-    "imageUrl": "/Cube/Second Batch/Gold/Obosh%E2%80%99s%20Spawn.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/second-batch__gold__obosh-e2-80-99s-20spawn.png"
   },
   {
     "id": "orgle-the-slippery-sb2",
@@ -487,7 +487,7 @@
     "toughness": "1",
     "artist": "Максим E",
     "set": "Set 2",
-    "imageUrl": "/Cube/Second Batch/Gold/Orgle%2C%20the%20Slippery.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/second-batch__gold__orgle-2c-20the-20slippery.png"
   },
   {
     "id": "oru-reality-redifined-sb2",
@@ -506,7 +506,7 @@
     "toughness": "6",
     "artist": "HeartyJessman",
     "set": "Set 2",
-    "imageUrl": "/Cube/Second Batch/Gold/Oru%2C%20Reality%20Redifined.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/second-batch__gold__oru-2c-20reality-20redifined.png"
   },
   {
     "id": "tekikal-geoshaper-of-continents-sb2",
@@ -525,7 +525,7 @@
     "toughness": "2",
     "artist": "Wattpad",
     "set": "Set 2",
-    "imageUrl": "/Cube/Second Batch/Gold/Tekikal%2C%20Geoshaper%20of%20Continents.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/second-batch__gold__tekikal-2c-20geoshaper-20of-20continents.png"
   },
   {
     "id": "the-fleecetail-wolf-sb2",
@@ -544,7 +544,7 @@
     "toughness": "4",
     "artist": "Tricia Beal",
     "set": "Set 2",
-    "imageUrl": "/Cube/Second Batch/Gold/The%20Fleecetail%20Wolf.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/second-batch__gold__the-20fleecetail-20wolf.png"
   },
   {
     "id": "the-inevitable-sb2",
@@ -563,7 +563,7 @@
     "toughness": "-20",
     "artist": "Midjourney",
     "set": "Set 2",
-    "imageUrl": "/Cube/Second Batch/Gold/The%20Inevitable.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/second-batch__gold__the-20inevitable.png"
   },
   {
     "id": "tsuriai-of-perfected-balance-sb2",
@@ -584,7 +584,7 @@
     "toughness": "3",
     "artist": "DALL-E 3",
     "set": "Set 2",
-    "imageUrl": "/Cube/Second Batch/Gold/Tsuriai%2C%20of%20Perfected%20Balance.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/second-batch__gold__tsuriai-2c-20of-20perfected-20balance.png"
   },
   {
     "id": "umoris-glittering-cavern-sb2",
@@ -600,7 +600,7 @@
     ],
     "artist": "DALL-E 3",
     "set": "Set 2",
-    "imageUrl": "/Cube/Second Batch/Gold/Umori%E2%80%99s%20Glittering-Cavern.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/second-batch__gold__umori-e2-80-99s-20glittering-cavern.png"
   },
   {
     "id": "volgoth-chewer-of-toys-sb2",
@@ -621,7 +621,7 @@
     "toughness": "4",
     "artist": "DALL-E 3",
     "set": "Set 2",
-    "imageUrl": "/Cube/Second Batch/Gold/Volgoth%2C%20Chewer%20of%20Toys.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/second-batch__gold__volgoth-2c-20chewer-20of-20toys.png"
   },
   {
     "id": "yorions-soaring-sb2",
@@ -645,7 +645,7 @@
       "Blink"
     ],
     "set": "Set 2",
-    "imageUrl": "/Cube/Second Batch/Gold/Yorion%E2%80%99s%20Soaring.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/second-batch__gold__yorion-e2-80-99s-20soaring.png"
   },
   {
     "id": "zirdas-zenith-sb2",
@@ -664,7 +664,7 @@
     ],
     "artist": "DALL-E 3",
     "set": "Set 2",
-    "imageUrl": "/Cube/Second Batch/Gold/Zirda%E2%80%99s%20Zenith.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/second-batch__gold__zirda-e2-80-99s-20zenith.png"
   },
   {
     "id": "nine-rivers-defense-sb2",
@@ -683,7 +683,7 @@
       "1/1 blue Merfolk"
     ],
     "set": "Set 2",
-    "imageUrl": "/Cube/Second Batch/Green/Nine%20River%E2%80%99s%20Defense.jpeg"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/second-batch__green__nine-20river-e2-80-99s-20defense.jpeg"
   },
   {
     "id": "preserver-of-the-flesh-sb2",
@@ -699,7 +699,7 @@
     "archetypes": [],
     "artist": "DALL-E 3",
     "set": "Set 2",
-    "imageUrl": "/Cube/Second Batch/Green/Preserver%20of%20the%20Flesh.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/second-batch__green__preserver-20of-20the-20flesh.png"
   },
   {
     "id": "remade-into-perfection-sb2",
@@ -720,7 +720,7 @@
       "Incubator"
     ],
     "set": "Set 2",
-    "imageUrl": "/Cube/Second Batch/Green/Remade%20into%20Perfection.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/second-batch__green__remade-20into-20perfection.png"
   },
   {
     "id": "sylvan-wisdom-sb2",
@@ -736,7 +736,7 @@
     "archetypes": [],
     "artist": "World Anvil",
     "set": "Set 2",
-    "imageUrl": "/Cube/Second Batch/Green/Sylvan%20Wisdom.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/second-batch__green__sylvan-20wisdom.png"
   },
   {
     "id": "house-maniac-sb2",
@@ -757,7 +757,7 @@
     "flavorText": "come inside keep happy thoughts no laugh\n—Scratched on a Colorful Door in Duskmourn",
     "artist": "Pxfuel",
     "set": "Set 2",
-    "imageUrl": "/Cube/Second Batch/Red/House%20Maniac.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/second-batch__red__house-20maniac.png"
   },
   {
     "id": "sunbirds-song-sb2",
@@ -773,7 +773,7 @@
     "archetypes": [],
     "artist": "Liz and Jess Art Shop",
     "set": "Set 2",
-    "imageUrl": "/Cube/Second Batch/Red/Sunbird%E2%80%99s%20Song.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/second-batch__red__sunbird-e2-80-99s-20song.png"
   },
   {
     "id": "tiring-bolt-sb2",
@@ -791,7 +791,7 @@
     ],
     "artist": "Dice Cove",
     "set": "Set 2",
-    "imageUrl": "/Cube/Second Batch/Red/Tiring%20Bolt.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/second-batch__red__tiring-20bolt.png"
   },
   {
     "id": "anhelo-dashing-artist-sb2",
@@ -815,7 +815,7 @@
     "artist": "Alessandra Gava",
     "_supersedes": "anhelo-dashing-artist-fb1",
     "set": "Set 2",
-    "imageUrl": "/Cube/Second Batch/Remake/Anhelo%2C%20Dashing%20Artist.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/second-batch__remake__anhelo-2c-20dashing-20artist.png"
   },
   {
     "id": "destroy-the-unnatural-sb2",
@@ -835,7 +835,7 @@
     "artist": "DALL-E 3",
     "_supersedes": "destroy-the-unnatural-fb1",
     "set": "Set 2",
-    "imageUrl": "/Cube/Second Batch/Remake/Destroy%20the%20Unnatural.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/second-batch__remake__destroy-20the-20unnatural.png"
   },
   {
     "id": "judges-falcon-sb2",
@@ -855,7 +855,7 @@
     "artist": "DALL-E 3",
     "_supersedes": "judge-s-falcon-fb1",
     "set": "Set 2",
-    "imageUrl": "/Cube/Second Batch/Remake/Judge%E2%80%99s%20Falcon.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/second-batch__remake__judge-e2-80-99s-20falcon.png"
   },
   {
     "id": "rabbit-hole-sb2",
@@ -873,7 +873,7 @@
     "artist": "DALL-E 3",
     "_supersedes": "rabbit-hole-fb1",
     "set": "Set 2",
-    "imageUrl": "/Cube/Second Batch/Remake/Rabbit%20Hole.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/second-batch__remake__rabbit-20hole.png"
   },
   {
     "id": "titan-of-impossibility-sb2",
@@ -891,7 +891,7 @@
     "_supersedes": "titan-of-impossibility-fb1",
     "prompt": "My 6 mana Eldrazi did something. Respond with one effect. Nothing else.",
     "set": "Set 2",
-    "imageUrl": "/Cube/Second Batch/Remake/Titan%20of%20Impossibility.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/second-batch__remake__titan-20of-20impossibility.png"
   },
   {
     "id": "march-of-the-machine-sb2",
@@ -915,7 +915,7 @@
     ],
     "_supersedes": "ravenous-squirrel-mh2",
     "set": "Set 2",
-    "imageUrl": "/Cube/Second Batch/Replace/March%20of%20the%20Machine%20%28Replace%20Ravenous%20Squirrel%29.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/second-batch__replace__march-20of-20the-20machine-20-28replace-20ravenous-20squirrel-29.png"
   },
   {
     "id": "blessed-be-the-fruition-sb2",
@@ -933,7 +933,7 @@
     ],
     "artist": "Rosie A",
     "set": "Set 2",
-    "imageUrl": "/Cube/Second Batch/White/Blessed%20Be%20the%20Fruition.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/second-batch__white__blessed-20be-20the-20fruition.png"
   },
   {
     "id": "darksteel-intergrator-sb2",
@@ -951,7 +951,7 @@
     ],
     "artist": "DALL-E 3",
     "set": "Set 2",
-    "imageUrl": "/Cube/Second Batch/White/Darksteel%20Intergrator.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/second-batch__white__darksteel-20intergrator.png"
   },
   {
     "id": "hang-in-the-balance-sb2",
@@ -967,6 +967,6 @@
     "archetypes": [],
     "artist": "Eviaison",
     "set": "Set 2",
-    "imageUrl": "/Cube/Second Batch/White/Hang%20in%20the%20Balance.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/second-batch__white__hang-20in-20the-20balance.png"
   }
 ]

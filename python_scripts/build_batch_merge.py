@@ -60,6 +60,11 @@ def main(argv):
     batch_dir = os.path.join(REPO, "public", "Cube", batch)
     json_dir = os.path.join(batch_dir, "json")
 
+    # If images have been published to GitHub Releases, repoint local /Cube/ paths
+    # at their hosted URLs so the deployed site serves art from the release.
+    map_path = os.path.join(REPO, "python_scripts", "gh_release_map.json")
+    gh_map = json.load(open(map_path, encoding="utf-8")) if os.path.exists(map_path) else {}
+
     parts = []
     real = os.path.join(json_dir, "real-cards.json")
     if os.path.exists(real):
@@ -79,6 +84,8 @@ def main(argv):
                 c["imageUrl"] = (
                     f"/Cube/{batch}/" + quote(resolve_source(src, batch_dir), safe="/")
                 )
+            if c.get("imageUrl") in gh_map:
+                c["imageUrl"] = gh_map[c["imageUrl"]]
             all_cards.append(c)
         print(f"  {label}: {len(cards)}")
 

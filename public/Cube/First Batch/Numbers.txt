@@ -1,0 +1,28 @@
+360 cards
+70 lands
+70 gold (6 of each 2 colors and 1 of each 3 colors)
+30 colorless
+38 of each color
+
+Holes (24.11.24)
+331/360 (32 cards remaining)
+
+White 35/38
+Blue 38/38
+Black 33/38
+Red 33/38
+Green 31/38
+Multicolored 65/70
+Colorless 26/30
+Lands 70/70
+
+Specific holes:
+Rakdos - 1
+Orzhov - 1
+Jund - 1
+Jeskai - 1
+Sultai - 1
+
+To finish cycles:
+Artifact - Orzhov activation
+Artifact - Simic activation

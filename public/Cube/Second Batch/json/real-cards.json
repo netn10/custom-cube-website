@@ -17,7 +17,7 @@
     "flavorText": "\"Ain't you heard a' honor among thieves?\"\n—Tombstone, to Anaconda",
     "artist": "John Thacker",
     "set": "Marvel Super Heroes Commander",
-    "imageUrl": "/Cube/RealCards/deadly-dispute-msc.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__deadly-dispute-msc.jpg",
     "_source": "Black\\Deadly Dispute.jpg",
     "relatedTokens": [
       "Treasure"
@@ -40,7 +40,7 @@
     ],
     "artist": "Christina Kraus",
     "set": "Bloomburrow",
-    "imageUrl": "/Cube/RealCards/stormchaser-s-talent-blb.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__stormchaser-s-talent-blb.jpg",
     "_source": "Blue\\Stormchaser's Talent.jpg",
     "relatedTokens": [
       "1/1 blue and red Otter"
@@ -59,7 +59,7 @@
     "flavorText": "Can it be Lightning Bolt yet?",
     "artist": "Igor Grechanyi",
     "set": "Unfinity",
-    "imageUrl": "/Cube/RealCards/standard-procedure-unf.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__standard-procedure-unf.jpg",
     "_source": "Colorless\\Standard Procedure.jpg"
   },
   {
@@ -74,7 +74,7 @@
     "archetypes": [],
     "artist": "Adam Paquette",
     "set": "Conspiracy",
-    "imageUrl": "/Cube/RealCards/worldknit-cns.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__worldknit-cns.jpg",
     "_source": "Colorless\\Worldknit.jpg"
   },
   {
@@ -94,7 +94,7 @@
     "flavorText": "Loki chortled. \"The trap is sprung, and Loki has achieved his most brilliant jest!\" Thor prepared a thunderous reply. \"Ribbit ribbit!\"",
     "artist": "Filipe Pagliuso",
     "set": "Marvel Super Heroes Commander",
-    "imageUrl": "/Cube/RealCards/chaos-warp-msc.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__chaos-warp-msc.jpg",
     "_source": "Red\\Chaos Warp.jpg"
   },
   {
@@ -112,7 +112,7 @@
     "flavorText": "Legend speaks of the lost coastal polis of Olantin, whose inhabitants' hubris enraged the sun god Heliod.",
     "artist": "Willian Murai",
     "set": "Commander Masters",
-    "imageUrl": "/Cube/RealCards/wrath-of-god-cmm.jpg",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/realcards__wrath-of-god-cmm.jpg",
     "_source": "White\\Wrath of God.jpg"
   }
 ]
