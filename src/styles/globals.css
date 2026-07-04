@@ -471,7 +471,11 @@ body {
     position: absolute;
     top: 50%;
     left: 50%;
+    /* width = the frame's HEIGHT (frame is 2.5:3.5, so height = 1.4 * width).
+       max-width must be cleared because Tailwind's base sets img{max-width:100%},
+       which would otherwise cap this back to the frame width and leave gaps. */
     width: 140%;
+    max-width: none;
     height: auto;
     aspect-ratio: 3.5 / 2.5;
     object-fit: cover;
