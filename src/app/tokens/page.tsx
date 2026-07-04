@@ -557,36 +557,6 @@ export default function TokensPage() {
                         }
                       }}
                     />
-                    <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-70 p-2">
-                      <h3 className="font-bold text-white text-sm truncate">{token.name}</h3>
-                      <div className="flex items-center justify-between mt-1">
-                        <div className="flex space-x-1">
-                          {sortColors(token.colors).map(color => {
-                            const colorClasses: Record<string, string> = {
-                              W: 'bg-mtg-white text-black',
-                              U: 'bg-mtg-blue text-white',
-                              B: 'bg-mtg-black text-white',
-                              R: 'bg-mtg-red text-white',
-                              G: 'bg-mtg-green text-white',
-                            };
-                            
-                            return (
-                              <span 
-                                key={color} 
-                                className={`w-4 h-4 rounded-full flex items-center justify-center text-xs font-bold ${colorClasses[color]}`}
-                              >
-                                {color}
-                              </span>
-                            );
-                          })}
-                        </div>
-                        {token.power && token.toughness && (
-                          <span className="text-xs px-1 py-0.5 bg-gray-100 text-gray-800 rounded-full">
-                            {token.power}/{token.toughness}
-                          </span>
-                        )}
-                      </div>
-                    </div>
                   </div>
                 ) : (
                   <div className="h-full bg-gray-300 dark:bg-gray-700 flex flex-col items-center justify-center p-2">

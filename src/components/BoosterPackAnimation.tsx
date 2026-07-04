@@ -115,9 +115,6 @@ export default function BoosterPackAnimation({ cards, onAnimationComplete }: Boo
                     e.currentTarget.src = getFallbackImageUrl(card.colors);
                   }}
                 />
-                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-2 rounded-b-lg">
-                  <p className="text-white text-xs font-bold truncate">{card.name}</p>
-                </div>
               </div>
             ))}
           </div>

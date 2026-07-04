@@ -817,43 +817,6 @@ function CubeListContent() {
                           }}
                         />
                       )}
-                      <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-70 p-2">
-                        <h3 className="font-bold text-white text-sm truncate">{card.name}</h3>
-                        <div className="flex items-center justify-between mt-1">
-                          <div className="flex space-x-1">
-                            {card.colors.map(color => {
-                              const colorClasses: Record<string, string> = {
-                                W: 'bg-mtg-white text-black',
-                                U: 'bg-mtg-blue text-white',
-                                B: 'bg-mtg-black text-white',
-                                R: 'bg-mtg-red text-white',
-                                G: 'bg-mtg-green text-white',
-                              };
-                              
-                              return (
-                                <span 
-                                  key={color} 
-                                  className={`w-4 h-4 rounded-full flex items-center justify-center text-xs font-bold ${colorClasses[color]}`}
-                                >
-                                  {color}
-                                </span>
-                              );
-                            })}
-                          </div>
-                          <div className="flex items-center space-x-1">
-                            {card.custom && (
-                              <span className="text-xs px-1 py-0.5 bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 rounded-full">
-                                Custom
-                              </span>
-                            )}
-                            {getRelatedFaces(card.relatedFace).length > 0 && (
-                              <span className="text-xs px-1 py-0.5 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded-full" title="Has related face">
-                                ↔
-                              </span>
-                            )}
-                          </div>
-                        </div>
-                      </div>
                     </div>
                   ) : (
                     <div className="h-full bg-gray-300 dark:bg-gray-700 flex items-center justify-center">

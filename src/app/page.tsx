@@ -457,14 +457,6 @@ export default function Home() {
                             }}
                           />
                         )}
-                        <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-1 rounded-b-lg">
-                          <p className="text-white text-xs font-bold truncate">
-                            {card.name}
-                            {getRelatedFaces(card.relatedFace).length > 0 && (
-                              <span className="ml-1 text-blue-300" title="Has related face">↔</span>
-                            )}
-                          </p>
-                        </div>
                       </div>
                     </Link>
                   </div>
@@ -700,12 +692,6 @@ export default function Home() {
                                   }}
                                 />
                               )}
-                              <div className="absolute bottom-0 left-0 right-0 bg-black/60 p-1 text-white text-xs font-semibold truncate">
-                                {/*{randomCard.name}*/}
-                                {getRelatedFaces(randomCard.relatedFace).length > 0 && (
-                                  <span className="ml-1 text-blue-300" title="Has related face">↔</span>
-                                )}
-                              </div>
                             </>
                           ) : (
                             <div className="w-full h-full flex items-center justify-center bg-gray-200 dark:bg-gray-700">
@@ -795,12 +781,6 @@ export default function Home() {
                               }}
                             />
                           )}
-                          <div className="absolute bottom-0 left-0 right-0 bg-black/60 p-1 text-white text-xs font-semibold truncate">
-                            {card.name}
-                            {getRelatedFaces(card.relatedFace).length > 0 && (
-                              <span className="ml-1 text-blue-300" title="Has related face">↔</span>
-                            )}
-                          </div>
                         </div>
                       </Link>
                     )
