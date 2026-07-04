@@ -2,6 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
+import CardArt from '@/components/CardArt';
 import { useState, useRef, useEffect } from 'react';
 import { FaDice, FaRandom, FaCalculator, FaSearch, FaPlusCircle, FaList, FaRobot, FaDownload } from 'react-icons/fa';
 import { getBotDraftPick, getDraftPack, getMultipleDraftPacks, getSuggestions, addSuggestion, uploadSuggestionImage, getChatGPTCards, getChatGPTResponse, getChatGPTResponseAlt, getRandomPack, getShowDecks, API_BASE_URL, getImageSrc } from '@/lib/api';
@@ -2929,7 +2930,8 @@ function RandomPackGenerator() {
                 <div className="h-full bg-gray-100 dark:bg-gray-700 flex flex-col justify-between p-3 relative">
                   {card.imageUrl && (
                     <div className="absolute inset-0 p-1">
-                      <img
+                      <CardArt
+                        type={card.type}
                         src={getImageSrc(card.imageUrl)}
                         alt={card.name}
                         className="w-full h-full object-cover rounded"

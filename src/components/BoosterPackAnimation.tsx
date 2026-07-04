@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import { Card } from '@/types/types';
 import { API_BASE_URL } from '@/lib/api';
+import CardArt from '@/components/CardArt';
 
 interface BoosterPackAnimationProps {
   cards: Card[];
@@ -107,7 +108,8 @@ export default function BoosterPackAnimation({ cards, onAnimationComplete }: Boo
                   transform: 'translateY(20px)'
                 }}
               >
-                <img 
+                <CardArt
+                  type={card.type}
                   src={card.imageUrl ? getProxiedImageUrl(card.imageUrl) : getFallbackImageUrl(card.colors)}
                   alt={card.name || 'MTG Card'}
                   className="w-full rounded-lg shadow-lg"

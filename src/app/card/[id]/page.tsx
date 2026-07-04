@@ -9,6 +9,7 @@ import { Card, Token, Comment, CommentFormData, Archetype } from '@/types/types'
 import { useAuth } from '@/contexts/AuthContext';
 import CardPreview from '@/components/CardPreview';
 import RelatedFaceCardDetail from '@/components/RelatedFaceCardDetail';
+import CardArt from '@/components/CardArt';
 import CardHistoryModal from '@/components/CardHistoryModal';
 import HoverTooltip from '@/components/HoverTooltip';
 import CardSkeleton from '@/components/CardSkeleton';
@@ -857,7 +858,8 @@ export default function CardDetailPage() {
                   className="mtg-card-detail fixed-card-size object-contain"
                 />
               ) : (
-                <img 
+                <CardArt
+                  type={card.type}
                   src={getImageSrc(card.imageUrl)}
                   alt={card.name}
                   className="mtg-card-detail fixed-card-size object-contain"
@@ -1480,11 +1482,6 @@ export default function CardDetailPage() {
                   <FaRobot className="text-blue-500 mr-2" />
                   <h3 className="text-lg font-semibold dark:text-white">AI Archetype Analysis</h3>
                 </div>
-                {lastAnalysisTime && (
-                  <div className="text-xs text-gray-500 dark:text-gray-400">
-                    Rate limited: 1 request per minute
-                  </div>
-                )}
               </div>
               
               {aiLoading ? (

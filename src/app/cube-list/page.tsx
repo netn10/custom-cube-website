@@ -6,6 +6,7 @@ import { getCards, API_BASE_URL } from '@/lib/api';
 import { useSearchParams, useRouter } from 'next/navigation';
 import { Card } from '@/types/types';
 import RelatedFaceCard from '@/components/RelatedFaceCard';
+import CardArt from '@/components/CardArt';
 
 // Component that uses the useSearchParams hook
 function CubeListContent() {
@@ -798,7 +799,8 @@ function CubeListContent() {
                       {getRelatedFaces(card.relatedFace).length > 0 ? (
                         <RelatedFaceCard card={card} className="w-full h-full" />
                       ) : (
-                        <img 
+                        <CardArt
+                          type={card.type}
                           src={card.imageUrl}
                           alt={card.name}
                           className="w-full h-auto object-contain"

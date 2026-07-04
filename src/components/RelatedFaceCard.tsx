@@ -3,6 +3,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { Card } from '@/types/types';
 import { API_BASE_URL, getImageSrc } from '@/lib/api';
+import { isRotatedCardType } from './CardArt';
 
 interface RelatedFaceCardProps {
   card: Card;
@@ -99,18 +100,20 @@ export default function RelatedFaceCard({ card, className = '', children }: Rela
     }
   };
 
+  const rotated = isRotatedCardType(card.type);
+
   return (
-    <div 
-      className={`relative ${className}`}
+    <div
+      className={`relative ${rotated ? 'battle-frame' : ''} ${className}`}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
       {children || (
-        <img 
+        <img
           ref={imgRef}
           src={processImageUrl(card.imageUrl || '') || '/card-back.jpg'}
           alt={card.name}
-          className="w-full h-full object-cover rounded-lg transition-all duration-300"
+          className={rotated ? 'battle-rotate' : 'w-full h-full object-cover rounded-lg transition-all duration-300'}
           onError={(e) => {
             console.error(`Error loading image for ${card.name}`);
             e.currentTarget.src = '/card-back.jpg';

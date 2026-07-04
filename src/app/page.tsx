@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { getArchetypes, getRandomArchetypeCards, getRandomPack } from '@/lib/api';
 import { Archetype, Card } from '@/types/types';
 import RelatedFaceCard from '@/components/RelatedFaceCard';
+import CardArt from '@/components/CardArt';
 
 // Color mapping for visual representation
 const colorMap: Record<string, string> = {
@@ -448,8 +449,9 @@ export default function Home() {
                         {getRelatedFaces(card.relatedFace).length > 0 ? (
                           <RelatedFaceCard card={card} className="w-full h-full" />
                         ) : (
-                          <img 
-                            src={card.imageUrl || '/card-back.jpg'} 
+                          <CardArt
+                            type={card.type}
+                            src={card.imageUrl || '/card-back.jpg'}
                             alt={card.name || 'MTG Card'}
                             className="w-full h-full object-cover rounded-lg"
                             onError={(e) => {
@@ -650,7 +652,8 @@ export default function Home() {
                               {getRelatedFaces(randomCard.relatedFace).length > 0 ? (
                                 <RelatedFaceCard card={randomCard} className="w-full h-full" />
                               ) : (
-                                <img 
+                                <CardArt
+                                  type={randomCard.type}
                                   src={randomCard.imageUrl}
                                   alt={randomCard.name}
                                   className="w-full h-full object-cover"
@@ -772,7 +775,8 @@ export default function Home() {
                           {getRelatedFaces(card.relatedFace).length > 0 ? (
                             <RelatedFaceCard card={card} className="w-full h-full" />
                           ) : (
-                            <img 
+                            <CardArt
+                              type={card.type}
                               src={card.imageUrl}
                               alt={card.name || 'MTG Card'}
                               className="w-full h-full object-cover"
