@@ -1,8 +1,9 @@
 'use client';
 
 import React from 'react';
+import Link from 'next/link';
 import { useState, useRef, useEffect } from 'react';
-import { FaDice, FaRandom, FaCalculator, FaSearch, FaPlusCircle, FaList, FaRobot } from 'react-icons/fa';
+import { FaDice, FaRandom, FaCalculator, FaSearch, FaPlusCircle, FaList, FaRobot, FaDownload } from 'react-icons/fa';
 import { getBotDraftPick, getDraftPack, getMultipleDraftPacks, getSuggestions, addSuggestion, uploadSuggestionImage, getChatGPTCards, getChatGPTResponse, getChatGPTResponseAlt, getRandomPack, getShowDecks, API_BASE_URL, getImageSrc } from '@/lib/api';
 
 type Tool = {
@@ -2747,12 +2748,13 @@ function RandomPackGenerator() {
   const [error, setError] = useState<string | null>(null);
   const [metadata, setMetadata] = useState<any>(null);
   const [packSize, setPackSize] = useState(15);
-  
+  const [downloading, setDownloading] = useState(false);
+
   const generatePack = async () => {
     try {
       setLoading(true);
       setError(null);
-      
+
       const result = await getRandomPack(packSize);
       setPack(result.pack);
       setMetadata(result.metadata);
@@ -2762,6 +2764,100 @@ function RandomPackGenerator() {
       setPack([]);
     } finally {
       setLoading(false);
+    }
+  };
+
+  // Load an image for canvas compositing. crossOrigin is required so the
+  // canvas isn't tainted (the backend image-proxy returns
+  // Access-Control-Allow-Origin: *). Resolves to null on failure so one bad
+  // image doesn't abort the whole download.
+  const loadImage = (src: string): Promise<HTMLImageElement | null> =>
+    new Promise((resolve) => {
+      const img = new window.Image();
+      img.crossOrigin = 'anonymous';
+      img.onload = () => resolve(img);
+      img.onerror = () => resolve(null);
+      img.src = src;
+    });
+
+  // Composite the whole pack into a single PNG laid out 3 cards wide
+  // (a 12-card pack fills a 3x4 grid; other sizes keep 3 columns and add rows).
+  const downloadPackAsImage = async () => {
+    if (pack.length === 0) return;
+    try {
+      setDownloading(true);
+      setError(null);
+
+      const cols = 3;
+      const rows = Math.ceil(pack.length / cols);
+      const cardW = 488;
+      const cardH = 680; // standard MTG 5:7 ratio
+      const gap = 20;
+      const margin = 24;
+      const radius = 20;
+
+      const canvas = document.createElement('canvas');
+      canvas.width = margin * 2 + cols * cardW + (cols - 1) * gap;
+      canvas.height = margin * 2 + rows * cardH + (rows - 1) * gap;
+      const ctx = canvas.getContext('2d');
+      if (!ctx) throw new Error('Canvas is not supported in this browser');
+
+      ctx.fillStyle = '#0f172a';
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+      const images = await Promise.all(
+        pack.map((card) =>
+          card.imageUrl ? loadImage(getImageSrc(card.imageUrl)) : Promise.resolve(null)
+        )
+      );
+
+      pack.forEach((card, i) => {
+        const col = i % cols;
+        const row = Math.floor(i / cols);
+        const x = margin + col * (cardW + gap);
+        const y = margin + row * (cardH + gap);
+        const img = images[i];
+
+        ctx.save();
+        ctx.beginPath();
+        ctx.moveTo(x + radius, y);
+        ctx.arcTo(x + cardW, y, x + cardW, y + cardH, radius);
+        ctx.arcTo(x + cardW, y + cardH, x, y + cardH, radius);
+        ctx.arcTo(x, y + cardH, x, y, radius);
+        ctx.arcTo(x, y, x + cardW, y, radius);
+        ctx.closePath();
+        ctx.clip();
+
+        if (img) {
+          // cover-fit the card art into the cell
+          const scale = Math.max(cardW / img.width, cardH / img.height);
+          const dw = img.width * scale;
+          const dh = img.height * scale;
+          ctx.drawImage(img, x + (cardW - dw) / 2, y + (cardH - dh) / 2, dw, dh);
+        } else {
+          ctx.fillStyle = '#1e293b';
+          ctx.fillRect(x, y, cardW, cardH);
+          ctx.fillStyle = '#e2e8f0';
+          ctx.font = 'bold 28px sans-serif';
+          ctx.textAlign = 'center';
+          ctx.textBaseline = 'middle';
+          ctx.fillText(card.name || 'Card', x + cardW / 2, y + cardH / 2);
+        }
+        ctx.restore();
+      });
+
+      const dataUrl = canvas.toDataURL('image/png');
+      const a = document.createElement('a');
+      a.href = dataUrl;
+      a.download = `random-pack-${pack.length}-cards.png`;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+    } catch (err: any) {
+      console.error('Error creating pack image:', err);
+      setError(err?.message || 'Failed to create pack image');
+    } finally {
+      setDownloading(false);
     }
   };
 
@@ -2811,25 +2907,37 @@ function RandomPackGenerator() {
       
       {pack.length > 0 && (
         <div className="mt-4">
-          <h3 className="text-lg font-semibold mb-2 dark:text-white">Your Pack ({pack.length} cards):</h3>
+          <div className="flex items-center justify-between mb-2 gap-2 flex-wrap">
+            <h3 className="text-lg font-semibold dark:text-white">Your Pack ({pack.length} cards):</h3>
+            <button
+              className="btn-primary inline-flex items-center gap-2"
+              onClick={downloadPackAsImage}
+              disabled={downloading}
+              title="Download the whole pack as one image (3 cards wide)"
+            >
+              <FaDownload className="h-4 w-4" />
+              {downloading ? 'Preparing image...' : 'Download as Image'}
+            </button>
+          </div>
           <div className="mtg-card-grid">
             {pack.map(card => (
-              <div 
-                key={card.id} 
-                className="mtg-card"
+              <Link
+                key={card.id}
+                href={`/card/${encodeURIComponent(card.name)}`}
+                className="mtg-card block"
               >
                 <div className="h-full bg-gray-100 dark:bg-gray-700 flex flex-col justify-between p-3 relative">
                   {card.imageUrl && (
                     <div className="absolute inset-0 p-1">
-                      <img 
-                        src={getImageSrc(card.imageUrl)} 
+                      <img
+                        src={getImageSrc(card.imageUrl)}
                         alt={card.name}
                         className="w-full h-full object-cover rounded"
                         loading="lazy"
                       />
                     </div>
                   )}
-                  
+
                   {!card.imageUrl && (
                     <>
                       <div>
@@ -2868,7 +2976,7 @@ function RandomPackGenerator() {
                     </>
                   )}
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
         </div>

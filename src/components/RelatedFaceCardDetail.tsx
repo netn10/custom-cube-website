@@ -59,7 +59,7 @@ export default function RelatedFaceCardDetail({ card, relatedCard, className = '
         
         {/* Show indicator if any related face exists */}
         {hasRelated && (
-          <div className="absolute top-2 right-2 bg-black bg-opacity-50 text-white rounded-full w-6 h-6 flex items-center justify-center">
+          <div className="absolute top-[9%] right-2 bg-black bg-opacity-50 text-white rounded-full w-6 h-6 flex items-center justify-center">
             <span className="text-xs">↔</span>
           </div>
         )}

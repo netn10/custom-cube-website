@@ -120,7 +120,7 @@ export default function RelatedFaceCard({ card, className = '', children }: Rela
       
       {/* Show indicator if any related face exists */}
       {(Array.isArray(card.relatedFace) ? card.relatedFace.length > 0 : !!card.relatedFace) && (
-        <div className="absolute top-2 right-2 bg-black bg-opacity-50 text-white rounded-full w-6 h-6 flex items-center justify-center">
+        <div className="absolute top-[9%] right-2 bg-black bg-opacity-50 text-white rounded-full w-6 h-6 flex items-center justify-center">
           <span className="text-xs">↔</span>
         </div>
       )}
