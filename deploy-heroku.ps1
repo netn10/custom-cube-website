@@ -10,9 +10,10 @@ Write-Host "- Frontend (Next.js) to: https://netn10-custom-cube-885947dcd6aa.her
 Write-Host "- Backend (Python Flask) to: https://netn10-custom-cube-885947dcd6aa.herokuapp.com/" -ForegroundColor Green
 Write-Host ""
 
-# Set Heroku app names
-$FRONTEND_APP = "netn10-custom-cube-885947dcd6aa"
-$BACKEND_APP = "netn10-custom-cube-885947dcd6aa"
+# Set Heroku app names (the public URL still uses the old
+# netn10-custom-cube-885947dcd6aa subdomain, but the app names for git/CLI are:)
+$FRONTEND_APP = "netn10-custom-cube"
+$BACKEND_APP = "netn10-custom-cube-backend"
 
 # Check if Heroku CLI is installed
 try {
@@ -60,6 +61,8 @@ if ($LASTEXITCODE -ne 0) {
 
 Write-Host ""
 Write-Host "Pushing frontend to Heroku..." -ForegroundColor Yellow
+# Ensure the 'heroku' remote points at the current frontend app name
+heroku git:remote -a $FRONTEND_APP | Out-Null
 git push heroku master
 if ($LASTEXITCODE -ne 0) {
     Write-Host "Trying to push to main branch instead..." -ForegroundColor Yellow
@@ -82,60 +85,41 @@ Write-Host "   STEP 2: DEPLOYING BACKEND" -ForegroundColor Cyan
 Write-Host "===========================================" -ForegroundColor Cyan
 Write-Host ""
 
-# Navigate to backend directory
-try {
-    Set-Location backend
-} catch {
-    Write-Host "ERROR: Cannot access backend directory" -ForegroundColor Red
-    Read-Host "Press Enter to exit"
-    exit 1
-}
-
-Write-Host ""
-Write-Host "Committing latest backend changes..." -ForegroundColor Yellow
-git add .
-git commit -m "Backend deployment - $(Get-Date -Format 'yyyy-MM-dd HH:mm:ss')"
-if ($LASTEXITCODE -ne 0) {
-    Write-Host "No changes to commit for backend" -ForegroundColor Gray
-}
-
+# The backend lives in the backend/ subdirectory of THIS same repo (it is not
+# a separate git repo). It has its own self-contained Procfile + requirements.txt,
+# so it is deployed to the backend app by pushing just that subdirectory via
+# git subtree. Any pending changes were already committed in the frontend step
+# above (single repo), so we only need to push here.
 Write-Host ""
 Write-Host "Pushing backend to Heroku..." -ForegroundColor Yellow
-git push heroku master
+# Point a dedicated 'heroku-backend' remote at the backend app (does NOT touch
+# the frontend 'heroku' remote).
+heroku git:remote -a $BACKEND_APP -r heroku-backend | Out-Null
+git subtree push --prefix backend heroku-backend master
 if ($LASTEXITCODE -ne 0) {
-    Write-Host "Trying to push to main branch instead..." -ForegroundColor Yellow
-    git push heroku main
-    if ($LASTEXITCODE -ne 0) {
-        Write-Host "ERROR: Failed to deploy backend to Heroku" -ForegroundColor Red
-        Write-Host "Make sure you have the correct Heroku remote configured:" -ForegroundColor Yellow
-        Write-Host "  heroku git:remote -a $BACKEND_APP" -ForegroundColor Cyan
-        Set-Location ..
-        Read-Host "Press Enter to exit"
-        exit 1
-    }
+    Write-Host "ERROR: Failed to deploy backend to Heroku" -ForegroundColor Red
+    Write-Host "If the push was rejected as non-fast-forward, force it with:" -ForegroundColor Yellow
+    Write-Host "  git push heroku-backend ``git subtree split --prefix backend master``:refs/heads/master --force" -ForegroundColor Cyan
+    Read-Host "Press Enter to exit"
+    exit 1
 }
 
 Write-Host ""
 Write-Host "✅ Backend deployed successfully!" -ForegroundColor Green
 Write-Host ""
 
-# Go back to root directory
-Set-Location ..
-
 Write-Host "===========================================" -ForegroundColor Cyan
 Write-Host "   DEPLOYMENT COMPLETE!" -ForegroundColor Cyan
 Write-Host "===========================================" -ForegroundColor Cyan
 Write-Host ""
 Write-Host "✅ Frontend: https://netn10-custom-cube-885947dcd6aa.herokuapp.com/" -ForegroundColor Green
-Write-Host "✅ Backend:  https://netn10-custom-cube-885947dcd6aa.herokuapp.com/" -ForegroundColor Green
+Write-Host "✅ Backend:  https://netn10-custom-cube-backend-31fb1edb5cb3.herokuapp.com/" -ForegroundColor Green
 Write-Host ""
 Write-Host "Both applications have been deployed successfully!" -ForegroundColor Yellow
 Write-Host ""
 
-# Optional: Open the deployed applications
-Write-Host "Opening deployed applications..." -ForegroundColor Yellow
-Start-Process "https://netn10-custom-cube-885947dcd6aa.herokuapp.com/"
-Start-Sleep -Seconds 2
+# Optional: Open the deployed frontend
+Write-Host "Opening deployed application..." -ForegroundColor Yellow
 Start-Process "https://netn10-custom-cube-885947dcd6aa.herokuapp.com/"
 
 Write-Host ""
