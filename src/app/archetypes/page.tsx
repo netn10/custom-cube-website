@@ -180,21 +180,48 @@ export default function ArchetypesPage() {
       }
     };
 
+    // Fetch cards for a single archetype, retrying a few times before giving up.
+    // On initial load we fire one request per archetype in parallel; under that
+    // burst some requests transiently fail (backend under load, dropped
+    // connection). Previously a single failure was silently turned into an empty
+    // result, so the archetype rendered "No cards found" until a manual refresh
+    // happened to succeed. Retrying with backoff makes that transient failure
+    // recover on its own.
+    const fetchOneArchetypeWithRetry = async (
+      archetype: Archetype,
+      retries = 2
+    ): Promise<{ archetypeId: string; cards: Card[]; colors: string[] }> => {
+      for (let attempt = 0; attempt <= retries; attempt++) {
+        try {
+          const { cards } = await getArchetypeCards(archetype.id, 1, 30);
+          return { archetypeId: archetype.id, cards, colors: archetype.colors };
+        } catch (error) {
+          if (attempt === retries) {
+            console.error(
+              `Failed to load cards for archetype ${archetype.id} after ${retries + 1} attempts:`,
+              error
+            );
+            return { archetypeId: archetype.id, cards: [], colors: archetype.colors };
+          }
+          // Back off (with a little spread) before retrying so we don't
+          // immediately re-hammer a backend that's already struggling.
+          await new Promise(resolve => setTimeout(resolve, 400 * (attempt + 1)));
+        }
+      }
+      return { archetypeId: archetype.id, cards: [], colors: archetype.colors };
+    };
+
     // Function to fetch cards for all archetypes in parallel
     const fetchArchetypeCards = async (archetypes: Archetype[]) => {
       // Skip if already loaded
       if (dataLoaded.cards) return;
-      
+
       try {
         setCardsLoading(true);
-        
+
         // Create an array of promises for all archetype card fetches
-        const cardFetchPromises = archetypes.map(archetype => 
-          getArchetypeCards(archetype.id, 1, 30)
-            .then(({ cards }) => ({ archetypeId: archetype.id, cards, colors: archetype.colors }))
-            .catch(error => {
-              return { archetypeId: archetype.id, cards: [], colors: archetype.colors };
-            })
+        const cardFetchPromises = archetypes.map(archetype =>
+          fetchOneArchetypeWithRetry(archetype)
         );
         
         // Wait for all promises to resolve in parallel
