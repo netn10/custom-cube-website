@@ -520,6 +520,7 @@ function CubeListContent() {
               <option value="Set 3">Set 3</option>
               <option value="Set 4">Set 4</option>
               <option value="Set 5">Set 5</option>
+              <option value="Set 6">Set 6</option>
             </select>
           </div>
         </div>

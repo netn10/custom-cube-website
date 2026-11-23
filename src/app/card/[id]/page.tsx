@@ -331,7 +331,7 @@ export default function CardDetailPage() {
       setLoadingStates(prev => ({ ...prev, history: true }));
       const historyResponse = await getCardHistory(cardObj.id, 1, 50);
       setHasHistory(historyResponse.total > 0);
-      const SET_ORDER: Record<string, number> = { 'Set 1': 1, 'Set 2': 2, 'Set 3': 3, 'Set 4': 4, 'Set 5': 5 };
+      const SET_ORDER: Record<string, number> = { 'Set 1': 1, 'Set 2': 2, 'Set 3': 3, 'Set 4': 4, 'Set 5': 5, 'Set 6': 6 };
       const vs: { set: string; imageUrl: string; name: string; current?: boolean }[] = (historyResponse.history || [])
         .filter((h: any) => h.version_data)
         .map((h: any) => ({ set: h.version_data.set || '', imageUrl: h.version_data.imageUrl || '', name: h.version_data.name }));

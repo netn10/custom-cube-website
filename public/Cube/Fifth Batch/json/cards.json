@@ -113,7 +113,7 @@
     "manaCost": "{2}{B}",
     "type": "Legendary Artifact Creature — Golem",
     "rarity": "Rare",
-    "text": "Armix gets +1/+1 for each artifact and creature card in your graveyard with an activated ability.\nDuring your turn, you may activate activated abilities of artifact and creature cards in your graveyard as though they were on the battlefield. (Tap them in your graveyard.)",
+    "text": "Armix gets +1/+1 for each artifact and/or creature card in your graveyard with an activated ability.\nDuring your turn, you may activate abilities of artifact and/or creature cards in your graveyard as though they were on the battlefield. (Tap them in your graveyard.)",
     "colors": [
       "B"
     ],
@@ -126,7 +126,7 @@
     "toughness": "0",
     "artist": "Zack Stella",
     "set": "Set 5",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/fifth-batch__black__armix-20of-20the-20scrapped-20past.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/fifth-batch__black__armix-20of-20the-20scrapped-20past--r2.png"
   },
   {
     "id": "can-t-back-down-fb5",
@@ -134,7 +134,7 @@
     "manaCost": "{5}{B}{B}",
     "type": "Instant",
     "rarity": "Rare",
-    "text": "Each nontoken creature you control gains persist until end of turn, then destroy all creatures. (When it dies, if it had no -1/-1 counters on it, return it to the battlefield under its owner’s control with a -1/-1 counter on it.)",
+    "text": "Each nontoken creature you control gains persist until end of turn. (When it dies, if it had no -1/-1 counters on it, return it to the battlefield under its owner’s control with a -1/-1 counter on it.) Then destroy all creatures.",
     "colors": [
       "B"
     ],
@@ -143,7 +143,7 @@
     "flavorText": "In Shadowmoor, the darkest emotions are the only way to endure the night.",
     "artist": "Adam Rex",
     "set": "Set 5",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/fifth-batch__black__can-e2-80-99t-20back-20down.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/fifth-batch__black__can-e2-80-99t-20back-20down--r2.png"
   },
   {
     "id": "confuse-fb5",
@@ -151,7 +151,7 @@
     "manaCost": "{B}",
     "type": "Sorcery",
     "rarity": "Rare",
-    "text": "Target player reveals their hand. You choose a nonland card from it. That player discards that card, then puts a Confusion card into their hand. (Confusion is a colorless sorcery card with no mana cost that has cycling {2}.)",
+    "text": "Target player reveals their hand. You choose a nonland card from it. That player discards that card, then conjures a card named Confusion into their hand. (Confusion is a colorless sorcery card with no mana cost that has cycling {2}.)",
     "colors": [
       "B"
     ],
@@ -159,7 +159,7 @@
     "archetypes": [],
     "artist": "Milan Bourgeon",
     "set": "Set 5",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/fifth-batch__black__confuse.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/fifth-batch__black__confuse--r2.png"
   },
   {
     "id": "inkredible-idea-fb5",
@@ -167,19 +167,19 @@
     "manaCost": "{B}{B}",
     "type": "Sorcery — Lesson",
     "rarity": "Rare",
-    "text": "Search your library for a card, exile it face down, then shuffle. Create a 2/1 white and black Inkling creature token with flying. It gains “Whenever this creature dies, put the exiled card into your hand.”",
+    "text": "Search your library for a card, exile it face down, then shuffle. Create a 2/1 white and black Inkling creature token with flying. It gains “When this token dies, put the exiled card into your hand.”",
     "colors": [
       "B"
     ],
     "custom": true,
     "archetypes": [],
     "flavorText": "“Writer’s block? Naa, I prefer writer’s attack.”",
-    "artist": "Nano Banana",
+    "artist": "T zzzzz",
     "relatedTokens": [
       "2/1 white and black Inkling"
     ],
     "set": "Set 5",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/fifth-batch__black__inkredible-20idea.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/fifth-batch__black__inkredible-20idea--r2.png"
   },
   {
     "id": "inverted-pathogenesis-fb5",
@@ -196,12 +196,12 @@
       "Token Collection"
     ],
     "flavorText": "“Dawnsire, Log 122: Planet Adagia breaks under the sickness we caused. Its twisted, dying life is filled with retribution, and I sense something far worse has been awakened.”",
-    "artist": "Nano Banana",
+    "artist": "Aldo Katayanagi",
     "relatedTokens": [
       "1/1 green Swamp Dryad"
     ],
     "set": "Set 5",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/fifth-batch__black__inverted-20pathogenesis.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/fifth-batch__black__inverted-20pathogenesis--r2.png"
   },
   {
     "id": "pain-is-the-greatest-teacher-fb5",
@@ -209,7 +209,7 @@
     "manaCost": "{2}{B}",
     "type": "Enchantment",
     "rarity": "Rare",
-    "text": "Whenever you lose life, create that many Blood tokens. Then, if you lost 3 or more life, learn. (You may reveal a Lesson card you own from outside the game and put it into your hand, or discard a card to draw a card.)\n{1}, Sacrifice a Blood: You gain 1 life.",
+    "text": "Whenever you lose life, create that many Blood tokens. Then if you lost 3 or more life, learn. (You may reveal a Lesson card you own from outside the game and put it into your hand, or discard a card to draw a card.)\n{1}, Sacrifice a Blood: You gain 1 life.",
     "colors": [
       "B"
     ],
@@ -222,7 +222,7 @@
       "Blood"
     ],
     "set": "Set 5",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/fifth-batch__black__pain-20is-20the-20greatest-20teacher.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/fifth-batch__black__pain-20is-20the-20greatest-20teacher--r2.png"
   },
   {
     "id": "rat-pack-fb5",
@@ -240,7 +240,7 @@
     "toughness": "0",
     "artist": "Tapioca",
     "set": "Set 5",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/fifth-batch__black__rat-20pack.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/fifth-batch__black__rat-20pack--r2.png"
   },
   {
     "id": "table-of-costly-greatness-fb5",
@@ -269,7 +269,7 @@
     "manaCost": "{1}{U}{U}",
     "type": "Instant",
     "rarity": "Uncommon",
-    "text": "Create a 1/1 green Island Dryad land creature token, then choose one —\n• Counter target spell.\n• Draw two cards.",
+    "text": "Choose one. Create a 1/1 green Island Dryad land creature token, then —\n• Counter target spell.\n• Draw two cards.",
     "colors": [
       "U"
     ],
@@ -281,7 +281,7 @@
       "1/1 green Island Dryad"
     ],
     "set": "Set 5",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/fifth-batch__blue__claimed-20by-20the-20muse.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/fifth-batch__blue__claimed-20by-20the-20muse--r2.png"
   },
   {
     "id": "clonogoyf-fb5",
@@ -289,7 +289,7 @@
     "manaCost": "{3}{U}",
     "type": "Creature — Lhurgoyf",
     "rarity": "Rare",
-    "text": "You may have this creature enter the battlefield as a copy of any creature, except its power is equal to the number of card types among cards in all graveyards and its toughness is equal to that number plus 1.",
+    "text": "You may have this creature enter as a copy of any creature on the battlefield, except its power is equal to the number of card types among cards in all graveyards and its toughness is equal to that number plus 1.",
     "colors": [
       "U"
     ],
@@ -299,9 +299,9 @@
     ],
     "power": "*",
     "toughness": "1+*",
-    "artist": "D1ESELX",
+    "artist": "d1eselx",
     "set": "Set 5",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/fifth-batch__blue__clonogoyf.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/fifth-batch__blue__clonogoyf--r2.png"
   },
   {
     "id": "cognition-fb5",
@@ -345,7 +345,7 @@
     "manaCost": "{U}",
     "type": "Instant",
     "rarity": "Common",
-    "text": "Counter target spell unless its controller pays {1}. Your opponents respect you until the end of your next turn. (Creatures can't attack you or block creatures you control unless their controller pays {1} for each creature they control that's attacking you or blocking a creature you control. You have ward {1}.)",
+    "text": "Counter target spell unless its controller pays {1}. Your opponents respect you until the end of your next turn. (Creatures can't attack you or block creatures you control unless their controller pays {1} for each creature they control that's attacking you or blocking a creature you control. Whenever you become the target of a spell or ability an opponent controls, counter that spell or ability unless its controller pays {1}.)",
     "colors": [
       "U"
     ],
@@ -353,7 +353,7 @@
     "archetypes": [],
     "artist": "Lie Setiawan",
     "set": "Set 5",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/fifth-batch__blue__disrespect.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/fifth-batch__blue__disrespect--r2.png"
   },
   {
     "id": "gifted-arithmancer-fb5",
@@ -379,20 +379,20 @@
   },
   {
     "id": "govermental-appropriation-fb5",
-    "name": "Governmental Appropriation",
+    "name": "Decree: Governmental Appropriation",
     "manaCost": "{1}{U}{U}",
     "type": "Sorcery",
     "rarity": "Rare",
-    "text": "Gain control of target nonland permanent. Tax yourself X, where X is that permanent's mana cost. (The next spell you cast costs {X} more to cast. This doesn't end at the end of turn.)",
+    "text": "Gain control of target nonland permanent. Tax yourself X, where X is that permanent’s mana value. (The next spell you cast costs {X} more to cast. This doesn’t end at the end of turn.)",
     "colors": [
       "U"
     ],
     "custom": true,
     "archetypes": [],
     "flavorText": "\"…Failing to do so, your goods shall be impounded at the nearest Interplanar Omenpath, subject to seizure, and cataloged under Section VII of the Ravnica Import Restrictions.\"",
-    "artist": "Nano Banana",
+    "artist": "MorkarDFC",
     "set": "Set 5",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/fifth-batch__blue__govermental-20appropriation.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/fifth-batch__blue__govermental-20appropriation--r2.png"
   },
   {
     "id": "mean-arithmetic-fb5",
@@ -412,7 +412,7 @@
       "0/0 blue and green Fractal"
     ],
     "set": "Set 5",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/fifth-batch__blue__mean-20arithmetic.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/fifth-batch__blue__mean-20arithmetic--r2.png"
   },
   {
     "id": "mega-proompting-fb5",
@@ -420,7 +420,7 @@
     "manaCost": "{3}{U}{U}",
     "type": "Sorcery",
     "rarity": "Rare",
-    "text": "Create an enchantment token named Prompt. It has \"When this enchantment enters, ask ChatGPT with 'Give my Prompt enchantment token exactly one ability.'\"\nStorm (When you cast this spell, copy it for each spell cast before it this turn.)",
+    "text": "Create an enchantment token named Prompt. It has “When this token enters, ask ChatGPT with ‘Give my Prompt enchantment token exactly one ability.’”\nStorm (When you cast this spell, copy it for each spell cast before it this turn.)",
     "colors": [
       "U"
     ],
@@ -434,7 +434,7 @@
     ],
     "prompt": "Give my Prompt enchantment token exactly one ability.",
     "set": "Set 5",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/fifth-batch__blue__mega-20proompting.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/fifth-batch__blue__mega-20proompting--r2.png"
   },
   {
     "id": "waterbending-mastery-fb5",
@@ -442,7 +442,7 @@
     "manaCost": "{4}{U}{U}",
     "type": "Enchantment",
     "rarity": "Rare",
-    "text": "Spells you cast and activated abilities you activate are waterbended. (While paying a waterbend cost, you can tap your artifacts and creatures to help. Each one pays for {1}.)",
+    "text": "Spells you cast and abilities you activate are waterbended. (While paying a waterbend cost, you can tap your artifacts and creatures to help. Each one pays for {1}.)",
     "colors": [
       "U"
     ],
@@ -450,7 +450,7 @@
     "archetypes": [],
     "artist": "Nickelodeon Animation Studio",
     "set": "Set 5",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/fifth-batch__blue__waterbending-20mastery.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/fifth-batch__blue__waterbending-20mastery--r2.png"
   },
   {
     "id": "cogwork-mindsplitter-fb5",
@@ -475,7 +475,7 @@
     "manaCost": "{7}",
     "type": "Legendary Creature — Joker Mercenary",
     "rarity": "Mythic Rare",
-    "text": "You may cast Dream Bullet & Jolly the Johnny without paying its mana cost if you control five or more creatures with different mana values.\nHaste\nWhenever Dream Bullet & Jolly the Johnny attacks, it deals damage equal to the number of creatures you control with different mana values to target creature or player. Your opponents can't cast spells with those mana values during their next turn.",
+    "text": "If there are five or more different mana values among creatures you control, you may cast this spell without paying its mana cost.\nHaste\nWhenever Dream Bullet & Jolly the Johnny attacks, it deals damage equal to the number of different mana values among creatures you control to target creature or player. Your opponents can't cast spells with those mana values during their next turn.",
     "colors": [],
     "custom": true,
     "archetypes": [],
@@ -484,7 +484,7 @@
     "flavorText": "\"My horse is a gosh darn gun. Any questions?\"",
     "artist": "Yuukoo009",
     "set": "Set 5",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/fifth-batch__colorless__dream-20bullet-20-26-20jolly-20the-20johnny.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/fifth-batch__colorless__dream-20bullet-20-26-20jolly-20the-20johnny--r2.png"
   },
   {
     "id": "let-it-rip-fb5",
@@ -492,7 +492,7 @@
     "manaCost": "{5}",
     "type": "Sorcery",
     "rarity": "Mythic Rare",
-    "text": "Create three Sensei's Divining Tops. (They're not tokens.)",
+    "text": "Conjure three cards named Sensei's Divining Top onto the battlefield.",
     "colors": [],
     "custom": true,
     "archetypes": [
@@ -500,18 +500,19 @@
     ],
     "artist": "Michael Sutfin, Greg Staples, Rob Alexander and Takao Aoki",
     "set": "Set 5",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/fifth-batch__colorless__let-20it-20rip-21.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/fifth-batch__colorless__let-20it-20rip-21--r2.png"
   },
   {
     "id": "literally-wedding-ring-fb5",
     "name": "Literally Wedding Ring",
     "type": "Artifact",
-    "text": "When you draft this ring, reveal a creature from your draft pool. That creature becomes your companion. (You may put it into your hand from outside the game for {3} any time you could cast a sorcery.)",
+    "text": "As you draft this card, reveal a creature card from your draft pool. That card becomes your companion. (You may put it into your hand from outside the game for {3} as a sorcery.)",
     "colors": [],
     "custom": true,
     "archetypes": [],
     "set": "Set 5",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/fifth-batch__colorless__literally-20wedding-20ring.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/fifth-batch__colorless__literally-20wedding-20ring--r2.png",
+    "rarity": "Rare"
   },
   {
     "id": "mox-crimson-fb5",
@@ -534,7 +535,7 @@
     "manaCost": "{3}",
     "type": "Legendary Artifact",
     "rarity": "Mythic Rare",
-    "text": "Whenever you cast your first spell each turn, counter it. Note its mana cost, and type the following line into ChatGPT and cast it without paying its mana cost: \"Give me exactly one custom Magic the Gathering spell with mana cost of {noted mana cost}.\"",
+    "text": "Whenever you cast your first spell each turn, counter it. Note its mana cost, and type the following line into ChatGPT and cast it without paying its mana cost: \"Give me exactly one custom Magic: The Gathering spell with mana cost of {noted mana cost}.\"",
     "colors": [],
     "custom": true,
     "archetypes": [],
@@ -542,7 +543,7 @@
     "artist": "Nano Banana",
     "prompt": "Give me exactly one custom Magic the Gathering spell with mana cost of {noted mana cost}.",
     "set": "Set 5",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/fifth-batch__colorless__the-20custom-20cube.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/fifth-batch__colorless__the-20custom-20cube--r2.png"
   },
   {
     "id": "arboria-survivalist-fb5",
@@ -550,7 +551,7 @@
     "manaCost": "{2}{B}{G}",
     "type": "Artifact Creature — Dinosaur Cyborg",
     "rarity": "Rare",
-    "text": "Whenever you activate an artifact's activated ability, exile it.\nWhenever this creature attacks, create a token that's a copy of a card exiled with it.\n{1}, Sacrifice an artifact: This creature gets +2/+2 until end of turn.",
+    "text": "Whenever you activate an ability of another artifact, exile that artifact.\nWhenever this creature attacks, create a token that's a copy of a card exiled with it.\n{1}, Sacrifice an artifact: This creature gets +2/+2 until end of turn.",
     "colors": [
       "B",
       "G"
@@ -562,9 +563,9 @@
     "power": "3",
     "toughness": "3",
     "flavorText": "\"With the correct bionic combination, the Extinction can do me no harm.\"",
-    "artist": "Nano Banana",
+    "artist": "ptitvinc",
     "set": "Set 5",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/fifth-batch__gold__arboria-20survivalist.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/fifth-batch__gold__arboria-20survivalist--r2.png"
   },
   {
     "id": "armored-regent-fb5",
@@ -606,9 +607,9 @@
     "power": "2",
     "toughness": "2",
     "flavorText": "Dinokind twins are an exceedingly rare phenomenon. Those born as twins are said to embody life after the Extinction and are both feared and revered.",
-    "artist": "Nano Banana",
+    "artist": "ChatGPT Images 2.6",
     "set": "Set 5",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/fifth-batch__gold__calamity-20twins.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/fifth-batch__gold__calamity-20twins--r2.png"
   },
   {
     "id": "citadel-preacher-fb5",
@@ -628,9 +629,9 @@
     "power": "2",
     "toughness": "2",
     "flavorText": "\"Humanity and Dinokind must sing as one. Join, tiny one, your voice matters.\"",
-    "artist": "Nano Banana",
+    "artist": "ChatGPT Images 2.6",
     "set": "Set 5",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/fifth-batch__gold__citadel-20preacher.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/fifth-batch__gold__citadel-20preacher--r2.png"
   },
   {
     "id": "cosmoceraptos-fb5",
@@ -650,9 +651,9 @@
     "power": "4",
     "toughness": "4",
     "flavorText": "Behold, a vision of a broken world: one is swallowed by silent oblivion, while the other wails to the stars and beyond.",
-    "artist": "Nano Banana",
+    "artist": "ChatGPT Images 2.6",
     "set": "Set 5",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/fifth-batch__gold__cosmoceraptos.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/fifth-batch__gold__cosmoceraptos--r2.png"
   },
   {
     "id": "jagged-teeth-bringer-fb5",
@@ -672,9 +673,9 @@
     "power": "3",
     "toughness": "5",
     "flavorText": "A Bringer's bite gives visions of life after the Extinction. Some go mad; others live in pure bliss.",
-    "artist": "Nano Banana",
+    "artist": "ChatGPT Images 2.6",
     "set": "Set 5",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/fifth-batch__gold__jagged-teeth-20bringer.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/fifth-batch__gold__jagged-teeth-20bringer--r2.png"
   },
   {
     "id": "living-driveway-fb5",
@@ -693,10 +694,10 @@
     ],
     "power": "1",
     "toughness": "4",
-    "flavorText": "These gentle dinokind do not see themselves as above humans, but as part of a vibrant ecosystem where everyone has their role and place to contend with.",
-    "artist": "Nano Banana",
+    "flavorText": "These gentle dinokind do not see themselves as above humans, but as part of a vibrant ecosystem where everyone has their role and their place.",
+    "artist": "ChatGPT Images 2.6",
     "set": "Set 5",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/fifth-batch__gold__living-20driveway.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/fifth-batch__gold__living-20driveway--r2.png"
   },
   {
     "id": "realm-chomper-fb5",
@@ -704,7 +705,7 @@
     "manaCost": "{1}{R}{G}",
     "type": "Creature — Dinosaur Warrior",
     "rarity": "Rare",
-    "text": "Vigilance, trample\nWhenever this creature enters, goad target creature you don't control.\nWhenever this creature kills a creature, create a Treasure token.",
+    "text": "Vigilance, trample\nWhen this creature enters, goad target creature you don’t control.\nWhenever a creature dealt damage by this creature this turn dies, create a Treasure token.",
     "colors": [
       "R",
       "G"
@@ -713,13 +714,13 @@
     "archetypes": [],
     "power": "4",
     "toughness": "4",
-    "flavorText": "\"The Extinction begins when I say it does — and I'm not in a merciful mood.\"",
-    "artist": "Nano Banana",
+    "flavorText": "“The Extinction begins when I say it does—and I’m not in a merciful mood.”",
+    "artist": "ChatGPT Images 2.6",
     "relatedTokens": [
       "Treasure"
     ],
     "set": "Set 5",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/fifth-batch__gold__realm-20chomper.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/fifth-batch__gold__realm-20chomper--r2.png"
   },
   {
     "id": "shepherd-of-the-extinction-fb5",
@@ -736,10 +737,10 @@
     "archetypes": [],
     "power": "3",
     "toughness": "3",
-    "flavorText": "\"Who in willing of body and mind? Let us walk, unafraid! As one!\"",
-    "artist": "Nano Banana",
+    "flavorText": "\"Who is willing of body and mind? Let us walk, unafraid! As one!\"",
+    "artist": "ChatGPT Images 2.6",
     "set": "Set 5",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/fifth-batch__gold__shepherd-20of-20the-20extinction.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/fifth-batch__gold__shepherd-20of-20the-20extinction--r2.png"
   },
   {
     "id": "wisened-stomper-fb5",
@@ -747,7 +748,7 @@
     "manaCost": "{3}{G}{U}",
     "type": "Creature — Dinosaur Ninja",
     "rarity": "Rare",
-    "text": "Prowess\nWhenever you cast a noncreature spell while this creature is attacking, choose one —\n• Tap target creature and put a stun counter on it.\n• Untap target creature and put a +1/+1 counter on it.",
+    "text": "Prowess\nWhenever you cast a noncreature spell while this creature is attacking, choose one —\n• Tap target creature and put a stun counter on it. (If it would become untapped, remove a stun counter from it instead.)\n• Untap target creature and put a +1/+1 counter on it.",
     "colors": [
       "G",
       "U"
@@ -759,9 +760,9 @@
     "power": "4",
     "toughness": "4",
     "flavorText": "The Wiseneds manipulate the world so the Extinction will occur. Some prefer to do it from above.",
-    "artist": "Nano Banana",
+    "artist": "ChatGPT Images 2.6",
     "set": "Set 5",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/fifth-batch__gold__wisened-20stomper.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/fifth-batch__gold__wisened-20stomper--r2.png"
   },
   {
     "id": "earthbending-mastery-fb5",
@@ -804,14 +805,14 @@
     "manaCost": "{3}{G}",
     "type": "Enchantment",
     "rarity": "Rare",
-    "text": "Creatures can attack other creatures. (You figure it out)",
+    "text": "Creatures can attack other creatures. (You figure it out.)",
     "colors": [
       "G"
     ],
     "custom": true,
     "archetypes": [],
     "set": "Set 5",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/fifth-batch__green__hearthstone-20rules.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/fifth-batch__green__hearthstone-20rules--r2.png"
   },
   {
     "id": "i-don-t-know-anymore-fb5",
@@ -819,7 +820,7 @@
     "manaCost": "{4}{G}{G}",
     "type": "Sorcery",
     "rarity": "Rare",
-    "text": "Search your library for a custom creature card and a noncustom creature card. If you do, put them onto the battlefield combined into one creature. (Its power is equal to their total power, its toughness is equal to their total toughness, and it has their names, mana costs, types, text boxes, etc.)",
+    "text": "Search your library for a custom creature card and a non-custom creature card. If you find both, put them onto the battlefield combined into one creature. Then shuffle. (Its power is equal to their total power, its toughness is equal to their total toughness, and it has their names, mana costs, types, text boxes, etc.)",
     "colors": [
       "G"
     ],
@@ -827,7 +828,7 @@
     "archetypes": [],
     "artist": "SayGames",
     "set": "Set 5",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/fifth-batch__green__i-20don-e2-80-99t-20know-20anymore.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/fifth-batch__green__i-20don-e2-80-99t-20know-20anymore--r2.png"
   },
   {
     "id": "mrbeast-within-fb5",
@@ -835,7 +836,7 @@
     "manaCost": "{2}{G}",
     "type": "Instant",
     "rarity": "Uncommon",
-    "text": "Destroy target permanent. Its controller creates a MrBeast token.",
+    "text": "Destroy target permanent. Its controller creates MrBeast, a legendary 3/3 red Beast creature token.",
     "colors": [
       "G"
     ],
@@ -847,7 +848,7 @@
       "MrBeast"
     ],
     "set": "Set 5",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/fifth-batch__green__mrbeast-20within.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/fifth-batch__green__mrbeast-20within--r2.png"
   },
   {
     "id": "mwonvuli-awakened-fb5",
@@ -878,7 +879,7 @@
     "manaCost": "{G}{G}",
     "type": "Sorcery — Lesson",
     "rarity": "Uncommon",
-    "text": "Destroy target artifact or enchantment. Create X 1/1 black and green Pest creature tokens with \"When this token dies, you gain 1 life\", where X is that permanent's mana value.",
+    "text": "Destroy target artifact or enchantment. Create X 1/1 black and green Pest creature tokens with “When this token dies, you gain 1 life,” where X is that permanent's mana value.",
     "colors": [
       "G"
     ],
@@ -892,7 +893,7 @@
       "1/1 black and green Pest"
     ],
     "set": "Set 5",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/fifth-batch__green__nature-e2-80-99s-20consumption.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/fifth-batch__green__nature-e2-80-99s-20consumption--r2.png"
   },
   {
     "id": "overwhelming-crush-out-fb5",
@@ -919,7 +920,7 @@
     "manaCost": "{X}{X}{X}{G}",
     "type": "Sorcery",
     "rarity": "Mythic Rare",
-    "text": "Resonance for permanents (This spell costs {X} less to cast, where X is the total mana value of permanents you control.)\nDraw X cards.",
+    "text": "Resonance for permanents (This spell costs {1} less to cast for each 1 of total mana value among permanents you control.)\nDraw X cards.",
     "colors": [
       "G"
     ],
@@ -928,7 +929,7 @@
     "flavorText": "\"Life, when lived to the fullest, teaches us that within each of us, there's the beauty of all of us.\"",
     "artist": "Cheryle Bannon",
     "set": "Set 5",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/fifth-batch__green__resonance.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/fifth-batch__green__resonance--r2.png"
   },
   {
     "id": "their-legacy-remambered-fb5",
@@ -944,7 +945,7 @@
     "archetypes": [],
     "artist": "Rebecca Guay",
     "set": "Set 5",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/fifth-batch__green__their-20legacy-20remambered.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/fifth-batch__green__their-20legacy-20remambered--r2.png"
   },
   {
     "id": "traveler-s-imaginarium-fb5",
@@ -959,23 +960,23 @@
     ],
     "artist": "Suzan Owens",
     "set": "Set 5",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/fifth-batch__lands__traveler-e2-80-99s-20imaginarium.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/fifth-batch__lands__traveler-e2-80-99s-20imaginarium--r2.png"
   },
   {
     "id": "where-dreams-once-drifted-fb5",
     "name": "Where Dreams Once Drifted",
     "type": "Land",
     "rarity": "Uncommon",
-    "text": "Landstorm (When you play this land, create a token that's a copy of it for each spell cast this turn.)\nThis land enters tapped with a stun counter on it.\n{T}: Add {C}.",
+    "text": "Landstorm (When you play this land, create a token that's a copy of it for each spell cast this turn.)\nThis land enters tapped with a stun counter on it. (If it would become untapped, remove a stun counter from it instead.)\n{T}: Add {C}.",
     "colors": [],
     "custom": true,
     "archetypes": [
       "Storm"
     ],
     "flavorText": "\"Remember when the skies felt close enough to touch—like they'd always be there, just an arm's reach away?\"\n—Ponderings of the One That Was",
-    "artist": "ChatGPT o4",
+    "artist": "DongQiu",
     "set": "Set 5",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/fifth-batch__lands__where-20dreams-20once-20drifted.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/fifth-batch__lands__where-20dreams-20once-20drifted--r2.png"
   },
   {
     "id": "ash-blossoms-fb5",
@@ -1004,7 +1005,7 @@
     "manaCost": "{R}",
     "type": "Enchantment",
     "rarity": "Rare",
-    "text": "Each creature you control has firebending X, where X is that creature's power. (Whenever that creature attacks, add {R}. This mana lasts until end of combat.)",
+    "text": "Each creature you control has firebending X, where X is that creature's power. (Whenever that creature attacks, add X {R}. This mana lasts until end of combat.)",
     "colors": [
       "R"
     ],
@@ -1012,7 +1013,7 @@
     "archetypes": [],
     "artist": "Nickelodeon Animation Studio",
     "set": "Set 5",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/fifth-batch__red__firebending-20mastery.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/fifth-batch__red__firebending-20mastery--r2.png"
   },
   {
     "id": "fragments-of-potential-fb5",
@@ -1020,7 +1021,7 @@
     "manaCost": "{R}",
     "type": "Sorcery",
     "rarity": "Rare",
-    "text": "Create three Shard tokens. At the beginning of the end step on your next turn, sacrifice those tokens. (They're enchantments with \"{2}, Sacrifice this token: Scry 1, then draw a card.\")",
+    "text": "Create three Shard tokens. At the beginning of the end step of your next turn, sacrifice those tokens. (They're enchantments with \"{2}, Sacrifice this token: Scry 1, then draw a card.\")",
     "colors": [
       "R"
     ],
@@ -1034,7 +1035,7 @@
       "Shard"
     ],
     "set": "Set 5",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/fifth-batch__red__fragments-20of-20potential.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/fifth-batch__red__fragments-20of-20potential--r2.png"
   },
   {
     "id": "kamehameha-fb5",
@@ -1058,7 +1059,7 @@
     "manaCost": "{2}{R}{R}",
     "type": "Sorcery",
     "rarity": "Rare",
-    "text": "Keranos's Displeasure deals 4 damage to each creature. Whenever a creature dies this way, learn. (You may reveal a Lesson card you own from outside the game and put it into your hand, or discard a card to draw a card.)",
+    "text": "Keranos's Displeasure deals 4 damage to each creature. Whenever a creature dealt damage this way dies this turn, learn. (You may reveal a Lesson card you own from outside the game and put it into your hand, or discard a card to draw a card.)",
     "colors": [
       "R"
     ],
@@ -1069,7 +1070,7 @@
     "flavorText": "Mankind soon understood that some mistakes cannot be made twice.",
     "artist": "deWitteillustration",
     "set": "Set 5",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/fifth-batch__red__keranos-e2-80-99s-20displeasure.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/fifth-batch__red__keranos-e2-80-99s-20displeasure--r2.png"
   },
   {
     "id": "leave-an-impression-fb5",
@@ -1097,7 +1098,7 @@
     "manaCost": "{2}{R}{R}",
     "type": "Legendary Creature — Beast YouTuber",
     "rarity": "Mythic Rare",
-    "text": "MrBeast is gifting tokens when it enters the battlefield instead of cast. (It works.)\nGift an Island\nGift a Vehicle (It's 3/2 with crew 1.)\nGift two Treasures\nFor each gift that was promised, create a Treasure token and two 1/1 colorless Subscriber tokens with haste.",
+    "text": "MrBeast is gifting tokens when it enters instead of cast. (It works.)\nGift an Island\nGift a Vehicle (It's 3/2 with crew 1.)\nGift two Treasures\nFor each gift that was promised, create a Treasure token and two 1/1 colorless Subscriber creature tokens with haste.",
     "colors": [
       "R"
     ],
@@ -1113,7 +1114,7 @@
       "1/1 colorless Subscriber"
     ],
     "set": "Set 5",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/fifth-batch__red__mrbeast.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/fifth-batch__red__mrbeast--r2.png"
   },
   {
     "id": "shivvin-dragon-fb5",
@@ -1144,7 +1145,7 @@
     "manaCost": "{R}",
     "type": "Legendary Enchantment Artifact — Beyblade",
     "rarity": "Mythic Rare",
-    "text": "Go Shoot! (Tap an untapped creature you control: put a number of spin counters on this Beyblade equal to that creature's power. This Beyblade is a creature as long as it has spin counters on it. At the beginning of your upkeep, remove a spin counter from it. Activate this ability only as a sorcery.)\nFirst strike, haste\nStarblast Attack — Whenever Star Pegasus attacks you may pay {W} and remove one spin counter from it. If you do, it gains flying until end of turn.",
+    "text": "Go Shoot! (Tap an untapped creature you control: Put a number of spin counters on this Beyblade equal to that creature's power. This Beyblade is a creature as long as it has spin counters on it. At the beginning of your upkeep, remove a spin counter from it. Activate only as a sorcery.)\nFirst strike, haste\nStarblast Attack — Whenever Star Pegasus attacks, you may pay {W} and remove a spin counter from it. If you do, it gains flying until end of turn.",
     "colors": [
       "R"
     ],
@@ -1154,7 +1155,7 @@
     "toughness": "2",
     "artist": "Takara",
     "set": "Set 5",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/fifth-batch__red__star-20pegasus.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/fifth-batch__red__star-20pegasus--r2.png"
   },
   {
     "id": "tainted-wish-fb5",
@@ -1162,7 +1163,7 @@
     "manaCost": "{R}",
     "type": "Instant",
     "rarity": "Mythic Rare",
-    "text": "Exile the top card of your library. Until the end of your next turn, you may play it unless it has the same name as another card exiled this way. Repeat this process until you put a card into your hand or you exile two cards with the same name, whichever comes first.",
+    "text": "Exile the top card of your library. Until the end of your next turn, you may play it unless it has the same name as another card exiled this way. Repeat this process until you exile two cards with the same name.",
     "colors": [
       "R"
     ],
@@ -1170,7 +1171,7 @@
     "archetypes": [],
     "artist": "Piotr Foksowicz",
     "set": "Set 5",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/fifth-batch__red__tainted-20wish.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/fifth-batch__red__tainted-20wish--r2.png"
   },
   {
     "id": "ad-infinitum-fb5",
@@ -1202,7 +1203,7 @@
     "artist": "Sergiu Roman",
     "_supersedes": "everything-is-a-conspiricy-fb4",
     "set": "Set 5",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/fifth-batch__remake__everything-20is-20a-20conspiracy.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/fifth-batch__remake__everything-20is-20a-20conspiracy--r2.png"
   },
   {
     "id": "gooser-cruiser-fb5",
@@ -1210,7 +1211,7 @@
     "manaCost": "{1}",
     "type": "Artifact — Vehicle Mount",
     "rarity": "Rare",
-    "text": "Whenever this attacks while saddled, create a Golden Egg token. (It's a {2} artifact Food with “When this artifact enters, draw a card.”, “{1}, {T}, Sacrifice this artifact: Add one mana of any color.” and “{2}, {T}, Sacrifice this artifact: You gain 3 life.”)\nCrew 1\nSaddle 1 (Tap any number of other creatures you control with total power 1 or more: This Mount becomes saddled until end of turn. Saddle only as a sorcery.)",
+    "text": "Whenever this Vehicle attacks while saddled, create a Golden Egg token. (It’s an artifact Food with “When this token enters, draw a card,” “{1}, {T}, Sacrifice this token: Add one mana of any color,” and “{2}, {T}, Sacrifice this token: You gain 3 life.”)\nCrew 1\nSaddle 1 (Tap any number of other creatures you control with total power 1 or more: This Mount becomes saddled until end of turn. Saddle only as a sorcery.)",
     "colors": [],
     "custom": true,
     "archetypes": [
@@ -1218,13 +1219,13 @@
     ],
     "power": "3",
     "toughness": "3",
-    "artist": "ChatGPT 04",
+    "artist": "ChatGPT o4",
     "relatedTokens": [
       "Golden Egg"
     ],
     "_supersedes": "gooser-cruiser-fb4",
     "set": "Set 5",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/fifth-batch__remake__gooser-cruiser.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/fifth-batch__remake__gooser-cruiser--r2.png"
   },
   {
     "id": "kroliz-conspiracy-nut-fb5",
@@ -1232,7 +1233,7 @@
     "manaCost": "{U}{R}",
     "type": "Legendary Creature — Squirrel Citizen",
     "rarity": "Rare",
-    "text": "At the beginning of your upkeep, you may choose a Conspiracy card you own from outside the game or from your command zone. If you do, create a token that's a copy of it, except it's an enchantment.",
+    "text": "At the beginning of your upkeep, you may choose a Conspiracy card you own from outside the game or from the command zone. If you do, create a token that's a copy of it, except it's an enchantment.",
     "colors": [
       "U",
       "R"
@@ -1242,18 +1243,18 @@
     "power": "2",
     "toughness": "3",
     "flavorText": "“They sell us Commander so we chase Universes Beyond, while they suppress Standard. Wake up sheeple!”",
-    "artist": "ChatGPT 04",
+    "artist": "Google “Six Alleged Zionist Spy Animals Detained For ‘Espionage’”",
     "_supersedes": "kroliz-conspiricy-nut-fb4",
     "set": "Set 5",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/fifth-batch__remake__kroliz-2c-20conspiracy-20nut.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/fifth-batch__remake__kroliz-2c-20conspiracy-20nut--r2.png"
   },
   {
     "id": "l-l-m-genius-prompter-fb5",
     "name": "L.L.M, Genius Prompter",
     "manaCost": "{1}{U}{R}",
-    "type": "Legendary Creature — Cyborg Rogue",
+    "type": "Legendary Artifact Creature — Cyborg Rogue",
     "rarity": "Rare",
-    "text": "Companion — When you pick this card in a limited event, ask ChatGPT with “Give my companion from Magic the Gathering exactly one custom companion condition“. Otherwise, ask ChatGPT while deck building.\nAt the beginning of your end step, create an enchantment token named Prompt. It has “When this enchantment enters, ask ChatGPT with ‘Give my Prompt enchantment token exactly one ability.’”",
+    "text": "Companion — When you pick this card in a limited event, ask ChatGPT with “Give my companion from Magic the Gathering exactly one custom companion condition“. Otherwise, ask ChatGPT while deck building.\nAt the beginning of your end step, create an enchantment token named Prompt. It has “When this token enters, ask ChatGPT with ‘Give my Prompt enchantment token exactly one ability.’”",
     "colors": [
       "U",
       "R"
@@ -1269,7 +1270,7 @@
     "_supersedes": "llm-genius-prompter-sb2",
     "prompt": "Give my companion from Magic the Gathering exactly one custom companion condition",
     "set": "Set 5",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/fifth-batch__remake__l.l.m-2c-20genius-20prompter.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/fifth-batch__remake__l.l.m-2c-20genius-20prompter--r2.png"
   },
   {
     "id": "let-the-aether-flow-fb5",
@@ -1277,16 +1278,16 @@
     "manaCost": "{2}{G}{G}",
     "type": "Enchantment",
     "rarity": "Rare",
-    "text": "Whenever you cast a noncreature spell, if it's an —\n• Artifact or enchantment spell — Draw a card.\n• Battle or planeswalker spell — Destroy target noncreature, nonland permanent.\n• Instant or sorcery spell — Put two +1/+1 counters on target creature you control.",
+    "text": "Whenever you cast a noncreature spell, if it's —\n• Artifact or enchantment spell — Draw a card.\n• Battle or planeswalker spell — Destroy target noncreature, nonland permanent.\n• Instant or sorcery spell — Put two +1/+1 counters on target creature you control.",
     "colors": [
       "G"
     ],
     "custom": true,
     "archetypes": [],
-    "artist": "Dall-E 3",
+    "artist": "Cygames",
     "_supersedes": "let-the-aether-flow-fb1",
     "set": "Set 5",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/fifth-batch__remake__let-20the-20aether-20flow.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/fifth-batch__remake__let-20the-20aether-20flow--r2.png"
   },
   {
     "id": "leyline-of-greed-fb5",
@@ -1301,10 +1302,10 @@
     "custom": true,
     "archetypes": [],
     "flavorText": "Where untold power and the desire to explore it converge.",
-    "artist": "Dall-E 3",
+    "artist": "Artur Sadlos (edited by me)",
     "_supersedes": "leyline-of-greed-fb4",
     "set": "Set 5",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/fifth-batch__remake__leyline-20of-20greed.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/fifth-batch__remake__leyline-20of-20greed--r2.png"
   },
   {
     "id": "nature-s-touch-fb5",
@@ -1329,7 +1330,7 @@
     "manaCost": "{B}",
     "type": "Artifact — Equipment",
     "rarity": "Rare",
-    "text": "For Mirrodin! (When this Equipment enters, create a 2/2 red Rebel creature token, then attach this to it.)\nEquipped creature gets -1/-1.\nWhenever equipped creature dies, you lose 2 life. Then choose one —\n• Draw two cards.\n• Return target artifact card from your graveyard to your hand.\nEquip {1}",
+    "text": "For Mirrodin! (When this Equipment enters, create a 2/2 red Rebel creature token, then attach this to it.)\nEquipped creature gets -1/-1.\nWhenever equipped creature dies, choose one. You lose 2 life, then —\n• Draw two cards.\n• Return target artifact card from your graveyard to your hand.\nEquip {1}",
     "colors": [
       "B"
     ],
@@ -1337,13 +1338,13 @@
     "archetypes": [
       "Artifacts"
     ],
-    "artist": "Dall-E 3",
+    "artist": "Pilar",
     "relatedTokens": [
       "2/2 red Rebel"
     ],
     "_supersedes": "necrogenic-face-gear-fb1",
     "set": "Set 5",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/fifth-batch__remake__necrogenic-20face-gear.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/fifth-batch__remake__necrogenic-20face-gear--r2.png"
   },
   {
     "id": "omnious-basement-fb5",
@@ -1359,10 +1360,10 @@
     "power": "6",
     "toughness": "6",
     "flavorText": "”I am the shame you cannot hide.”",
-    "artist": "Dall-E 3",
+    "artist": "dubombo",
     "_supersedes": "omnious-basement-tb3",
     "set": "Set 5",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/fifth-batch__remake__omnious-20basement.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/fifth-batch__remake__omnious-20basement--r2.png"
   },
   {
     "id": "park-heights-pride-and-joy-fb5",
@@ -1443,10 +1444,10 @@
     "custom": true,
     "archetypes": [],
     "flavorText": "A relic from an alternate Fomori timeline, this stone reveals a united humanity so profoundly harmonious, its beauty could bring one to tears.",
-    "artist": "ChatGPT 04",
+    "artist": "Molly Chudes",
     "_supersedes": "sharestone-fb4",
     "set": "Set 5",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/fifth-batch__remake__sharestone.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/fifth-batch__remake__sharestone--r2.png"
   },
   {
     "id": "soul-encoder-fb5",
@@ -1454,7 +1455,7 @@
     "manaCost": "{1}{U}{U}",
     "type": "Creature — Spirit Ninja",
     "rarity": "Rare",
-    "text": "Cipherjutsu {2}{U}{U} ({2}{U}{U}, Exile an unblocked attacker you control: Put this creature onto the battlefield tapped and attacking, then encode the exiled creature to it. Whenever this creature deals combat damage to a player, you may cast a copy of the encoded card without paying its mana cost.)\nFlying",
+    "text": "Cipherjutsu {2}{U}{U} ({2}{U}{U}, Exile an unblocked attacker you control: Put this card onto the battlefield from your hand tapped and attacking, then encode the exiled card on it. Whenever this creature deals combat damage to a player, you may cast a copy of the encoded card without paying its mana cost.)\nFlying",
     "colors": [
       "U"
     ],
@@ -1467,7 +1468,7 @@
     "artist": "ChatGPT 04",
     "_supersedes": "soul-encoder-fb4",
     "set": "Set 5",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/fifth-batch__remake__soul-20encoder.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/fifth-batch__remake__soul-20encoder--r2.png"
   },
   {
     "id": "the-oracle-provides-fb5",
@@ -1489,14 +1490,14 @@
     "name": "The Real Power Behind the Throne",
     "type": "Conspiracy",
     "rarity": "Mythic Rare",
-    "text": "Hidden agenda (Start the game with this conspiracy face down in the command zone and secretly choose a card name. You may turn this conspiracy face up any time and reveal that name.)\nWhen you turn this Conspiracy face-up, search your library for a legendary creature card with the chosen name, reveal it, put it into your command zone, then shuffle. It becomes your commander. For the rest of the game, you can only cast spells that share a color with your commander.",
+    "text": "Hidden agenda (Start the game with this conspiracy face down in the command zone and secretly choose a card name. You may turn this conspiracy face up any time and reveal that name.)\nWhen you turn this conspiracy face up, search your library for a legendary creature card with the chosen name, reveal it, put it into the command zone, then shuffle. It becomes your commander. For the rest of the game, you can cast only spells that share a color with your commander.",
     "colors": [],
     "custom": true,
     "archetypes": [],
-    "artist": "ChatGPT 04",
+    "artist": "Darya Kuznetsova",
     "_supersedes": "the-real-power-behind-the-throne-fb4",
     "set": "Set 5",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/fifth-batch__remake__the-20real-20power-20behind-20the-20throne-20-20-20.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/fifth-batch__remake__the-20real-20power-20behind-20the-20throne-20-20-20--r2.png"
   },
   {
     "id": "vizier-of-second-glory-fb5",
@@ -1514,10 +1515,10 @@
     ],
     "power": "2",
     "toughness": "1",
-    "artist": "ChatGPT 40",
+    "artist": "Youzheng",
     "_supersedes": "vizier-of-second-glory-fb4",
     "set": "Set 5",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/fifth-batch__remake__vizier-20of-20second-20glory.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/fifth-batch__remake__vizier-20of-20second-20glory--r2.png"
   },
   {
     "id": "wagon-of-karmic-justice-fb5",
@@ -1582,7 +1583,7 @@
   },
   {
     "id": "garage-sale-fb5",
-    "name": "Garage Sale",
+    "name": "Manifesto of Speed",
     "manaCost": "{2}{W}",
     "type": "Sorcery",
     "rarity": "Rare",
@@ -1594,17 +1595,17 @@
     "archetypes": [
       "Storm"
     ],
-    "flavorText": "Across the multiverse, Chandra's motorcycle has gained legendary notoriety, inspiring countless cheaper replicas.",
-    "artist": "Nano Banana",
+    "flavorText": "“An engine that roars like thunder is more beautiful than any marble idol.”\n—The Velocitist",
+    "artist": "Balla, Depero, Funi, Giannattasio, Pannaggi & Sironi",
     "relatedTokens": [
       "3/2 colorless Vehicle"
     ],
     "set": "Set 5",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/fifth-batch__white__garage-20sale.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/fifth-batch__white__garage-20sale--r2.png"
   },
   {
     "id": "lore-accurate-rhystic-study-fb5",
-    "name": "Lore-Accurate Rhystic Study",
+    "name": "Rhystic Teachings",
     "manaCost": "{2}{W}",
     "type": "Enchantment",
     "rarity": "Rare",
@@ -1614,10 +1615,10 @@
     ],
     "custom": true,
     "archetypes": [],
-    "flavorText": "Some alternative timelines must be studied, whether to sate an undying curiosity or to win a debate.",
-    "artist": "Nano Banana",
+    "flavorText": "“Everything around us has something to tell us. One must pay attention.”",
+    "artist": "Vicki Pangestu",
     "set": "Set 5",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/fifth-batch__white__lore-accurate-20rhystic-20study.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/fifth-batch__white__lore-accurate-20rhystic-20study--r2.png"
   },
   {
     "id": "memories-of-a-teacher-fb5",
@@ -1631,13 +1632,13 @@
     ],
     "custom": true,
     "archetypes": [],
-    "flavorText": "\"Do not mourn me. As you remember me, so too will the history books. Now, Let us study once more.\"\n—Augusta, Lorehold's former dean",
-    "artist": "Nano Banana",
+    "flavorText": "\"Do not mourn me. As you remember me, so too will the history books. Now, let us study once more.\"\n—Augusta, Lorehold's former dean",
+    "artist": "Jeffrey Jeanson",
     "relatedTokens": [
       "3/2 white and red Spirit"
     ],
     "set": "Set 5",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/fifth-batch__white__memories-20of-20a-20teacher.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/fifth-batch__white__memories-20of-20a-20teacher--r2.png"
   },
   {
     "id": "planar-geomendesis-fb5",
@@ -1664,7 +1665,7 @@
     "name": "Swords to More Swords",
     "manaCost": "{W}",
     "type": "Instant",
-    "rarity": "Rare",
+    "rarity": "Special",
     "text": "Exile target creature. Its controller creates a number of Sword tokens equal to its power. (They are colorless Equipment artifact tokens with \"Equipped creature gets +1/+1\" and equip {2}.)",
     "colors": [
       "W"
@@ -1685,7 +1686,7 @@
     "manaCost": "{1}{W}",
     "type": "Sorcery",
     "rarity": "Rare",
-    "text": "Search your library for up to four cards with different names and reveal them. Target opponent chooses two of those cards. Exile the chosen cards and put the rest into your hand. Then shuffle. That opponent may play the exiled cards as long as they remain exiled, and mana of any type can be spent to cast them.",
+    "text": "Search your library for up to four cards with different names and reveal them. Target opponent chooses two of those cards. Exile the chosen cards and put the rest into your hand. Then shuffle. That opponent may play the exiled cards for as long as they remain exiled, and mana of any type can be spent to cast them.",
     "colors": [
       "W"
     ],
@@ -1693,6 +1694,6 @@
     "archetypes": [],
     "artist": "Vanette Kosman",
     "set": "Set 5",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/fifth-batch__white__truths-20unspoken.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/fifth-batch__white__truths-20unspoken--r2.png"
   }
 ]

@@ -85,7 +85,7 @@ def _load_cube_docs():
 
     # Chronological ordering of history entries (by the set a version belongs to),
     # independent of the alphabetical order batches are globbed in.
-    _set_order = {"Set 1": 1, "Set 2": 2, "Set 3": 3, "Set 4": 4, "Set 5": 5}
+    _set_order = {"Set 1": 1, "Set 2": 2, "Set 3": 3, "Set 4": 4, "Set 5": 5, "Set 6": 6}
 
     # Map each superseded card -> the card that directly replaced it, so a lineage
     # spanning several sets (A <- B <- C) can be followed to its current head.
@@ -902,13 +902,15 @@ def get_cards_internal(search, body_search, colors, color_match, exclude_colorle
             sets_to_include = ["Set 1", "Set 2", "Set 3", "Set 4"]
         elif card_set == "Set 5":
             sets_to_include = ["Set 1", "Set 2", "Set 3", "Set 4", "Set 5"]
-        
+        elif card_set == "Set 6":
+            sets_to_include = ["Set 1", "Set 2", "Set 3", "Set 4", "Set 5", "Set 6"]
+
         # Apply the filter to show cards from the included sets
         if sets_to_include:
             query["set"] = {"$in": sets_to_include}
-            
+
             # If we're looking at an earlier set (i.e., not showing all sets), get cards from later sets with historical versions
-            if card_set != "Set 5":  # Don't need to do this for Set 5 as it already includes everything
+            if card_set != "Set 6":  # Don't need to do this for Set 6 (the latest) as it already includes everything
                 # Find all card_history entries for cards that have versions in the sets we're interested in
                 history_query = {"version_data.set": {"$in": sets_to_include}}
                 history_cards = db.card_history.find(history_query)
@@ -3126,7 +3128,7 @@ def gemini_analyze_card():
             "WU Storm, UB Cipher, BR Token Collection, RG Control, GW Vehicles, WB ETB/Death Value, BG Artifacts, UR Enchantments, RW Self-Mill, GU Prowess. "
             "Return archetypes as an array of matching archetype names. "
             "Set imageUrl to an empty string (it will be filled later). "
-            "set 'set' to 'Set 5', always. "
+            "set 'set' to 'Set 6', always. "
             "Try to figure out if the card is custom or not. The field name is 'custom' and should be set to true or false. "
             "If a field is not present, use an empty string or null."
         )

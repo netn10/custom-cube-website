@@ -1,0 +1,4253 @@
+[
+  {
+    "id": "abandoned-church-sb6",
+    "name": "Abandoned Church",
+    "manaCost": "",
+    "type": "Land — Plains Swamp",
+    "rarity": "Rare",
+    "text": "({T}: Add {W} or {B}.)\nThis land enters tapped.\nCycling {2} ({2}, Discard this card: Draw a card.)",
+    "colors": [],
+    "custom": true,
+    "archetypes": [],
+    "set": "Set 6",
+    "flavorText": "Thunder Junction is a land without faith, yet even outlaws must find something to believe in.",
+    "artist": "Maxence Burgel (Edited by me)",
+    "_supersedes": "abandoned-church-fb4",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__cards__abandoned-church.png"
+  },
+  {
+    "id": "ad-infinitum-sb6",
+    "name": "Ad Infinitum",
+    "manaCost": "{3}{R}{R}",
+    "type": "Instant",
+    "rarity": "Rare",
+    "text": "Discard your hand, then draw seven cards, then Ad Infinitum deals 7 damage to you. You may repeat this process any number of times.",
+    "colors": [
+      "R"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "set": "Set 6",
+    "flavorText": "“The best part of this job is getting fired.”",
+    "artist": "HaissiTall",
+    "_supersedes": "ad-infinitum-fb5",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__cards__ad-infinitum.png"
+  },
+  {
+    "id": "aetherborn-tutor-sb6",
+    "name": "Aetherborn Tutor",
+    "manaCost": "{B}",
+    "type": "Sorcery",
+    "rarity": "Rare",
+    "text": "Search your library for a nonland card with mana value less than or equal to the number of differently named tokens you control, reveal it, put it into your hand, then shuffle.",
+    "colors": [
+      "B"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Token Collection"
+    ],
+    "set": "Set 6",
+    "flavorText": "The Aetherborn, shaped by their short existence, chase meaning with fervent intensity. For some, this means embracing thrill and adventure; for others, it involves immersing themselves in pure sensation and pain. A rare few, however, dedicate their brief lives to amassing objects, ideas, and experiences for future Aetherborn.",
+    "artist": "Anton Oxenuk",
+    "_supersedes": "aetherborn-tutor-fb1",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__cards__aetherborn-tutor.png"
+  },
+  {
+    "id": "all-must-be-perfected-sb6",
+    "name": "All Must Be Perfected",
+    "manaCost": "{2}{G}{G}",
+    "type": "Sorcery",
+    "rarity": "Rare",
+    "text": "Destroy all creatures. For each creature destroyed this way, its controller incubates X, where X is that creature’s power. (They create an Incubator token with X +1/+1 counters on it and “{2}: Transform this artifact.” It transforms into a 0/0 Phyrexian artifact creature.)",
+    "colors": [
+      "G"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Control"
+    ],
+    "set": "Set 6",
+    "artist": "Scorn",
+    "relatedTokens": [
+      "Incubator"
+    ],
+    "_supersedes": "all-must-be-perfected-tb3",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__cards__all-must-be-perfected.png"
+  },
+  {
+    "id": "ancestral-care-sb6",
+    "name": "Ancestral Care",
+    "manaCost": "{W}",
+    "type": "Instant",
+    "rarity": "Mythic Rare",
+    "text": "Each player draws three cards.",
+    "colors": [
+      "W"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "set": "Set 6",
+    "flavorText": "\"In the grand tapestry of Bloomburrow, no single generation shines brighter than the rest. We are but a humble thread in this intricate weave. Take pride in your place, but remember to tread lightly and honor the bonds that bind us all.\"\n— Mabel, to Her Children",
+    "artist": "Jamie Lauby",
+    "_supersedes": "ancestral-care-fb1",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__cards__ancestral-care.png"
+  },
+  {
+    "id": "arbiter-approved-material-sb6",
+    "name": "Arbiter-Approved Material",
+    "manaCost": "{1}{U}",
+    "type": "Artifact",
+    "rarity": "Rare",
+    "text": "{T}: Add {C}{C}. Activate this ability only if you are taxed.\n{X}, {T}: Draw X cards and tax yourself X. X can’t be 0. (The next spell you cast costs {X} more to cast. This doesn’t end at the end of turn.)",
+    "colors": [
+      "U"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "set": "Set 6",
+    "artist": "Jessie Bayes (Edited by me)",
+    "_supersedes": "arbiter-approved-material-tb3",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__cards__arbiter-approved-material.png"
+  },
+  {
+    "id": "ashen-vista-sb6",
+    "name": "Ashen Vista",
+    "manaCost": "",
+    "type": "Land",
+    "rarity": "Rare",
+    "text": "{T}, Pay 1 life: Add {B} or {R}.\n{1}, {T}, Sacrifice this land: Draw a card.",
+    "colors": [],
+    "custom": true,
+    "archetypes": [],
+    "set": "Set 6",
+    "flavorText": "A broken canvas can still paint a beautiful picture, perhaps if you let your imagination wander just a little bit...",
+    "artist": "ruffneck.xd",
+    "_supersedes": "fractured-mountain-range-fb1",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__cards__ashen-vista.png"
+  },
+  {
+    "id": "astral-projection-sb6",
+    "name": "Astral Projection",
+    "manaCost": "{2}{W}",
+    "type": "Instant",
+    "rarity": "Rare",
+    "text": "Exile target creature. Its controller creates a token that’s a copy of it, except it’s 1/1, it’s a Mind in addition to its other types, and it has flying. Its controller creates a colorless Body creature token with power equal to that creature’s power and toughness equal to that creature’s toughness.",
+    "colors": [
+      "W"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Blink/ETB/Value"
+    ],
+    "set": "Set 6",
+    "artist": "Rogosjin",
+    "relatedTokens": [
+      "colorless Body"
+    ],
+    "_supersedes": "out-of-body-experience-fb4",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__cards__astral-projection.png"
+  },
+  {
+    "id": "awakened-totem-treant-sb6",
+    "name": "Awakened Totem-Treant",
+    "manaCost": "{4}{G}{G}{G}",
+    "type": "Artifact — Vehicle",
+    "rarity": "Mythic Rare",
+    "text": "This spell can’t be countered.\nReach, vigilance, trample\nWard {7}\nWhenever this Vehicle attacks, for each nontoken creature that crewed it this turn, create a token that’s a copy of that creature.\nCrew 3",
+    "colors": [
+      "G"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Vehicles"
+    ],
+    "set": "Set 6",
+    "power": "7",
+    "toughness": "7",
+    "artist": "Yiğit Köroğlu",
+    "_supersedes": "emerald-clad-behemoth-fb1",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__cards__awakened-totem-treant.png"
+  },
+  {
+    "id": "bant-s-finest-sb6",
+    "name": "Bant's Finest",
+    "manaCost": "{1}{W}{W}",
+    "type": "Enchantment",
+    "rarity": "Rare",
+    "text": "This enchantment enters with an exalted counter on it for each spell you’ve cast this turn. (Whenever a creature you control attacks alone, that creature gets +1/+1 until end of turn.)\nWhenever a creature you control attacks alone, you may pay {1}{U}{U}. Create a token that’s a copy of that creature. That token is tapped and attacking. If you didn’t pay {1}{U}{U}, that token has base power and toughness 1/1.",
+    "colors": [
+      "W"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Storm",
+      "Token Collection"
+    ],
+    "set": "Set 6",
+    "artist": "Greg Staples",
+    "_supersedes": "mirror-sigil-trooper-tb3",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__cards__bant-s-finest.png"
+  },
+  {
+    "id": "bell-of-echoing-possibilities-sb6",
+    "name": "Bell of Echoing Possibilities",
+    "manaCost": "{2}{U}{R}{W}",
+    "type": "Artifact",
+    "rarity": "Mythic Rare",
+    "text": "Enchantment and planeswalker cards in your graveyard have escape {1}{W}{U}.\nInstant and sorcery cards in your graveyard have flashback {1}{U}{R}.\nArtifact and creature cards in your graveyard have unearth {1}{R}{W}.",
+    "colors": [
+      "W",
+      "U",
+      "R"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Self-mill"
+    ],
+    "set": "Set 6",
+    "flavorText": "A whisper of what once was, a promise of what could be, and a roar of what will come.",
+    "artist": "Tenong TN",
+    "_supersedes": "bell-of-echoing-possibilities-fb1",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__cards__bell-of-echoing-possibilities.png"
+  },
+  {
+    "id": "blend-in-sb6",
+    "name": "Blend In",
+    "manaCost": "{1}{U}",
+    "type": "Enchantment — Aura",
+    "rarity": "Uncommon",
+    "text": "Enchant creature\nEnchanted creature loses all abilities, has hexproof, can’t be blocked, and is a green and white Citizen creature with base power and toughness 1/1 named Face in the Crowd.\n{3}: This Aura phases out. Any player may activate this ability.",
+    "colors": [
+      "U"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "set": "Set 6",
+    "artist": "Lesley Oldaker",
+    "_supersedes": "blend-in-fb4",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__cards__blend-in.png"
+  },
+  {
+    "id": "blooming-tender-sb6",
+    "name": "Blooming Tender",
+    "manaCost": "{1}{G}",
+    "type": "Artifact — Vehicle",
+    "rarity": "Rare",
+    "text": "Trample, vigilance\n{T}: For each color among permanents you control, add one mana of that color. Activate only if this Vehicle has dealt combat damage to a player this turn.\nCrew 5",
+    "colors": [
+      "G"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Vehicles"
+    ],
+    "set": "Set 6",
+    "power": "5",
+    "toughness": "5",
+    "artist": "Posuka Demizu",
+    "_supersedes": "blooming-tender-tb3",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__cards__blooming-tender.png"
+  },
+  {
+    "id": "bolrac-clan-gauntlets-sb6",
+    "name": "Bolrac-Clan Gauntlets",
+    "manaCost": "{2}{R}",
+    "type": "Artifact — Equipment",
+    "rarity": "Rare",
+    "text": "Equipped creature has double strike and berserk. (Whenever this creature attacks, you may double its power until end of turn. If you do, sacrifice it at the beginning of the next end step.)\nWhenever equipped creature dies, it deals damage equal to its power to any target.\nEquip {3}",
+    "colors": [
+      "R"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "set": "Set 6",
+    "flavorText": "The Bolrac-Clan believes that the tools to dismantle society must be crafted from materials untainted by society.",
+    "artist": "Imagen 2",
+    "_supersedes": "bolrac-clan-gauntlets-fb1",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__cards__bolrac-clan-gauntlets.png"
+  },
+  {
+    "id": "bounteous-mankind-s-reach-to-heaven-sb6",
+    "name": "Bounteous, Mankind's Reach to Heaven",
+    "manaCost": "{1}{W}{W}",
+    "type": "Legendary Artifact — Vehicle",
+    "rarity": "Mythic Rare",
+    "text": "Flash\nFlying, vigilance\n{2}{W}{W}, {T}: Return another target permanent you control to its owner’s hand.\n{2}{W}{W}, {T}: Return to the battlefield target permanent card in your graveyard that was put there from the battlefield this turn.\nCrew 1",
+    "colors": [
+      "W"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Vehicles",
+      "Blink/ETB/Value"
+    ],
+    "set": "Set 6",
+    "power": "3",
+    "toughness": "3",
+    "artist": "Cory and Catska Ench",
+    "_supersedes": "prismation-mankind-s-reach-to-heaven-fb1",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__cards__bounteous-mankind-s-reach-to-heaven.png"
+  },
+  {
+    "id": "brain-melting-chalice-sb6",
+    "name": "Brain-Melting Chalice",
+    "manaCost": "{0}",
+    "type": "Artifact",
+    "rarity": "Rare",
+    "text": "{4}, {T}: Conjure four cards named Confusion into your library, then shuffle. Reveal cards from the top of your library until you reveal a Confusion card. Put that card into your hand and the rest into your graveyard. (Confusion is a colorless sorcery card with no mana cost that has cycling {2}.)",
+    "colors": [],
+    "custom": true,
+    "archetypes": [],
+    "set": "Set 6",
+    "artist": "Sam Guay",
+    "_supersedes": "brain-clearing-chip-tb3",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__cards__brain-melting-chalice.png"
+  },
+  {
+    "id": "broken-mirage-sb6",
+    "name": "Broken Mirage",
+    "manaCost": "{2}{U}{U}",
+    "type": "Enchantment",
+    "rarity": "Rare",
+    "text": "Replicate {R} (When you cast this spell, copy it for each time you paid its replicate cost. A copy of a permanent spell becomes a token.)\nYou may have this enchantment enter as a copy of any permanent on the battlefield, except it’s an enchantment in addition to its other types and, if it’s a token, it has “At the beginning of the end step, sacrifice this token.”",
+    "colors": [
+      "U"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "set": "Set 6",
+    "artist": "Takatsugu Kimura",
+    "_supersedes": "broken-mirage-fb1",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__cards__broken-mirage.png"
+  },
+  {
+    "id": "burning-tree-promiser-sb6",
+    "name": "Burning-Tree Promiser",
+    "manaCost": "{2}{G}{G}",
+    "type": "Creature — Wurm Beast",
+    "rarity": "Rare",
+    "text": "Whenever this creature deals combat damage to a player, add that much {R}. Until end of turn, you don’t lose this mana as steps and phases end.\nBloodrush — {1}{R}{R}, Discard this card: Target attacking creature gets +5/+5 and gains “Whenever this creature deals combat damage to a player, add that much {R}. Until end of turn, you don’t lose this mana as steps and phases end.”",
+    "colors": [
+      "G"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "set": "Set 6",
+    "power": "5",
+    "toughness": "5",
+    "artist": "James Fletcher",
+    "_supersedes": "burning-tree-harvester-fb1",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__cards__burning-tree-promiser.png"
+  },
+  {
+    "id": "bury-the-hatchet-sb6",
+    "name": "Bury the Hatchet",
+    "manaCost": "{W}",
+    "type": "Sorcery",
+    "rarity": "Rare",
+    "text": "Target opponent reveals their hand. You choose a nonland card from it. That player discards that card. Then you reveal your hand. That opponent chooses a nonland card from it. You discard that card.",
+    "colors": [
+      "W"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "set": "Set 6",
+    "flavorText": "Grix gave up his axe. Nubbin gave up his grudge. Neither felt he’d gotten the better end of it, which is how you know it worked.",
+    "artist": "Chris Seaman",
+    "_supersedes": "cleanse-impure-thoughts-fb4",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__cards__bury-the-hatchet.png"
+  },
+  {
+    "id": "celestigoyf-sb6",
+    "name": "Celestigoyf",
+    "manaCost": "{W}{W}",
+    "type": "Creature — Lhurgoyf",
+    "rarity": "Mythic Rare",
+    "text": "This creature’s power is equal to the number of card types among cards in all graveyards and its toughness is equal to that number plus 1.\n{2}{W}{W}, Discard a card: Return a nonland permanent card with mana value 3 or less from your graveyard to the battlefield with a finality counter on it.",
+    "colors": [
+      "W"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Self-mill"
+    ],
+    "set": "Set 6",
+    "power": "*",
+    "toughness": "1+*",
+    "artist": "Richard Lay",
+    "_supersedes": "celestigoyf-fb1",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__cards__celestigoyf.png"
+  },
+  {
+    "id": "chorus-of-the-worldsoul-sb6",
+    "name": "Chorus of the Worldsoul",
+    "manaCost": "{3}{G}",
+    "type": "Enchantment",
+    "rarity": "Rare",
+    "text": "Play with the top card of your library revealed.\nYou may cast creature spells from the top of your library.\nNontoken creatures you control have unity. (Token creatures you control have all activated abilities of all nontoken creatures you control with unity.)\nAs long as the top card of your library is a creature card, nontoken creatures you control have all activated abilities of that card.",
+    "colors": [
+      "G"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "set": "Set 6",
+    "artist": "Tessa Mythos",
+    "_supersedes": "chorus-of-the-worldsoul-tb3",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__cards__chorus-of-the-worldsoul.png"
+  },
+  {
+    "id": "chorus-core-integrator-sb6",
+    "name": "Chorus-Core Integrator",
+    "manaCost": "{2}{G/W}",
+    "type": "Artifact — Extension",
+    "rarity": "Rare",
+    "text": "When this Extension enters, create a green and white Vehicle artifact token named Chariot with crew 1 and “This token’s power and toughness are each equal to the number of creatures you control.” Then attach this to it.\nExtended permanent gets +1/+1 for each creature you control.\nExtend {3} ({3}: Attach to target creature or Vehicle you control. Extend only as a sorcery.)",
+    "colors": [
+      "W",
+      "G"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Vehicles"
+    ],
+    "set": "Set 6",
+    "artist": "Alex van Daalen",
+    "relatedTokens": [
+      "Chariot"
+    ],
+    "_supersedes": "blessed-neon-pulse-fb4",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__cards__chorus-core-integrator.png"
+  },
+  {
+    "id": "chromatic-orb-sb6",
+    "name": "Chromatic Orb",
+    "manaCost": "{3}",
+    "type": "Artifact",
+    "rarity": "Rare",
+    "text": "You don't lose unspent mana as steps and phases end.\n{T}: Add one mana of any color.\n{5}, {T}: Double the amount of each type of unspent mana you have.",
+    "colors": [],
+    "custom": true,
+    "archetypes": [],
+    "set": "Set 6",
+    "flavorText": "Artists and dreamers flock to it, becoming consumed by an obsession to double their desires again and again.",
+    "artist": "Exellero",
+    "_supersedes": "doubling-orb-fb1",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__cards__chromatic-orb.png"
+  },
+  {
+    "id": "chromium-preserver-sb6",
+    "name": "Chromium Preserver",
+    "manaCost": "{G}{W}",
+    "type": "Artifact — Vehicle",
+    "rarity": "Rare",
+    "text": "Flash\n{G}{W}, Sacrifice this Vehicle: Permanents you control gain hexproof and indestructible until end of turn. This ability costs {G}{W} less to activate if this Vehicle is a creature.\nCrew 2",
+    "colors": [
+      "W",
+      "G"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Vehicles"
+    ],
+    "set": "Set 6",
+    "power": "3",
+    "toughness": "3",
+    "artist": "denni5",
+    "_supersedes": "park-heights-pride-and-joy-fb5",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__cards__chromium-preserver.png"
+  },
+  {
+    "id": "circuit-cleanser-sb6",
+    "name": "Circuit Cleanser",
+    "manaCost": "{G}",
+    "type": "Artifact Creature — Frog Cyborg",
+    "rarity": "Rare",
+    "text": "Machine intelligence (Nontoken artifacts you control have all activated abilities of all nontoken artifacts you control with machine intelligence.)\n{1}{G}: Return this artifact to its owner’s hand. Activate only as a sorcery.",
+    "colors": [
+      "G"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Artifacts"
+    ],
+    "set": "Set 6",
+    "flavorText": "The Collective Biomachinery is a byproduct of Bloomburrow’s timeline colliding with Neo-Kamigawa’s timeline. Their bond became more literal—and far more potent.",
+    "power": "1",
+    "toughness": "1",
+    "artist": "花先舍",
+    "_supersedes": "circuit-gorger-tb3",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__cards__circuit-cleanser.png"
+  },
+  {
+    "id": "clockwork-time-spinner-sb6",
+    "name": "Clockwork Time-Spinner",
+    "manaCost": "{5}",
+    "type": "Artifact — Vehicle",
+    "rarity": "Mythic Rare",
+    "text": "Reveal this card as you draft it. When you do, you may reverse the picking order of the next booster round.\nThe phases of each player’s turn are reversed. (The phases are, in reverse order, ending, second main, combat, first main, and beginning.)\nAs long as there are more than two players in the game, the turn order is reversed.\nCrew 3",
+    "colors": [],
+    "custom": true,
+    "archetypes": [],
+    "set": "Set 6",
+    "power": "7",
+    "toughness": "7",
+    "artist": "Demizu Posuka",
+    "_supersedes": "cogwork-rotator-tb3",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__cards__clockwork-time-spinner.png"
+  },
+  {
+    "id": "code-monkey-sb6",
+    "name": "Code Monkey",
+    "manaCost": "{2}{R}",
+    "type": "Creature — Monkey Wizard",
+    "rarity": "Rare",
+    "text": "Activated abilities of tokens you control cost {1} less to activate.\nAt the beginning of your end step, discard your hand, then upload 3 for each card discarded this way. (Create a Memory enchantment token. It has “When this token enters, exile an instant or sorcery card from your hand or graveyard with mana value 3 or less.” and “{2}, Sacrifice this token: Cast a copy of a card exiled with this token without paying its mana cost.”)",
+    "colors": [
+      "R"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Token Collection"
+    ],
+    "set": "Set 6",
+    "power": "1",
+    "toughness": "3",
+    "artist": "Len Peralta (Edited by me)",
+    "relatedTokens": [
+      "Memory"
+    ],
+    "_supersedes": "code-monkey-tb3",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__cards__code-monkey.png"
+  },
+  {
+    "id": "cogwork-bartender-sb6",
+    "name": "Cogwork Bartender",
+    "manaCost": "{3}",
+    "type": "Artifact Creature — Construct",
+    "rarity": "Uncommon",
+    "text": "As you draft this card, reveal it. When you do, look at five random unused cards from the cube pool and draft one of them.\nWhen this creature enters, look at the top four cards of your library. Put one of them into your hand and the rest on the bottom of your library in a random order.",
+    "colors": [],
+    "custom": true,
+    "archetypes": [],
+    "set": "Set 6",
+    "flavorText": "“ONLY THE FINEST DRINKS FOR THE FINEST HUMAN.”",
+    "power": "2",
+    "toughness": "2",
+    "artist": "Axel Medellin",
+    "_supersedes": "cogwork-bartender-tb3",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__cards__cogwork-bartender.png"
+  },
+  {
+    "id": "cogwork-phone-sb6",
+    "name": "Cogwork Phone",
+    "manaCost": "{2}",
+    "type": "Artifact Creature — Construct",
+    "rarity": "Uncommon",
+    "text": "Draft this card face up.\nImmediately after the draft, you may reveal a card in your card pool with \"partner with\". If you do, search the cube pool for its partner and put it in your card pool.\n{T}: Search your library for a card with \"partner with\", reveal it, put it into your hand, then shuffle.",
+    "colors": [],
+    "custom": true,
+    "archetypes": [],
+    "set": "Set 6",
+    "power": "1",
+    "toughness": "1",
+    "artist": "www.thisiswhyimbroke.com",
+    "_supersedes": "cogwork-phone-tb3",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__cards__cogwork-phone.png"
+  },
+  {
+    "id": "cogwork-redeemer-sb6",
+    "name": "Cogwork Redeemer",
+    "manaCost": "{6}",
+    "type": "Artifact Creature — Angel Construct",
+    "rarity": "Rare",
+    "text": "Draft this card face up.\nAs you draft the last card of a booster pack, you may reveal it and note its name.\nFlying, vigilance\nWhen this creature enters, you may cast a copy of the noted card without paying its mana cost.",
+    "colors": [],
+    "custom": true,
+    "archetypes": [],
+    "set": "Set 6",
+    "flavorText": "Open your heart to the possibilities.",
+    "power": "4",
+    "toughness": "4",
+    "artist": "Jesse Li",
+    "_supersedes": "cogwork-redeemer-fb4",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__cards__cogwork-redeemer.png"
+  },
+  {
+    "id": "cogwork-timesplitter-sb6",
+    "name": "Cogwork Timesplitter",
+    "manaCost": "{4}",
+    "type": "Artifact Creature — Construct",
+    "rarity": "Mythic Rare",
+    "text": "You may reveal this card as you draft it. If you do, remove any number of other cards from the booster, then put that many random cards from the Cube into the booster.\n{2}, {T}: Exile any number of cards from your hand, then draw that many cards.",
+    "colors": [],
+    "custom": true,
+    "archetypes": [],
+    "set": "Set 6",
+    "flavorText": "Tasked with reshaping time itself, it is blessed and cursed with all the time in the world.",
+    "power": "2",
+    "toughness": "4",
+    "artist": "O. SZWAJA",
+    "_supersedes": "cogwork-mindsplitter-fb5",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__cards__cogwork-timesplitter.png"
+  },
+  {
+    "id": "colony-perfector-sb6",
+    "name": "Colony Perfector",
+    "manaCost": "",
+    "type": "Artifact Creature — Phyrexian Insect",
+    "rarity": "Common",
+    "text": "Ward {2}\nWhen this creature transforms into Colony Perfector, reveal the top card of your library. If it’s a land card, put it onto the battlefield. Otherwise, put that card into your hand.",
+    "colors": [
+      "G"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "set": "Set 6",
+    "flavorText": "… and yet, it brought life to a lifeless world.",
+    "power": "0",
+    "toughness": "0",
+    "artist": "Liquid Development",
+    "relatedFace": "Skitterer Incubator",
+    "facedown": true,
+    "_supersedes": "colony-perfector-fb1",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__cards__colony-perfector.png"
+  },
+  {
+    "id": "crimson-wedding-decoration-sb6",
+    "name": "Crimson-Wedding Decoration",
+    "manaCost": "{2}",
+    "type": "Artifact — Blood",
+    "rarity": "Rare",
+    "text": "{1}, {T}, Discard a card, Sacrifice this artifact: Draw a card. Add {C} for each differently named token you control.\n{B}{R}, {T}: Create a token that's a copy of this artifact.",
+    "colors": [],
+    "custom": true,
+    "archetypes": [
+      "Token Collection"
+    ],
+    "set": "Set 6",
+    "flavorText": "\"It really is a wedding to die for,\" said Edgar, smiling slightly.\n\"Why, of course, darling! You should've seen the faces of the uninvited!\" said Olivia, unable to hide her glee.",
+    "artist": "gosha.flowers",
+    "_supersedes": "crimson-wedding-decoration-tb3",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__cards__crimson-wedding-decoration.png"
+  },
+  {
+    "id": "cube-of-promised-balance-sb6",
+    "name": "Cube of Promised Balance",
+    "manaCost": "{1}{W}{B}",
+    "type": "Legendary Artifact",
+    "rarity": "Mythic Rare",
+    "text": "As Cube of Promised Balance enters, choose custom or non-custom.\n{T}: Add {W}{B}. Spend this mana only to cast spells that aren’t of the chosen kind.\n{2}{W}{B}, {T}: Destroy another target nonland, nontoken permanent of the chosen kind.\n{4}{W}{B}, {T}, Sacrifice Cube of Promised Balance: Destroy all nonland, nontoken permanents of the chosen kind.",
+    "colors": [
+      "W",
+      "B"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "set": "Set 6",
+    "artist": "Eddie Del Rio",
+    "_supersedes": "cube-of-promised-balance-fb4",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__cards__cube-of-promised-balance.png"
+  },
+  {
+    "id": "cut-what-binds-sb6",
+    "name": "Cut What Binds",
+    "manaCost": "{1}{W}",
+    "type": "Instant",
+    "rarity": "Uncommon",
+    "text": "Kicker {1}{B}\nExile target nonland permanent, then return it to the battlefield under its owner’s control unless this spell was kicked.",
+    "colors": [
+      "W"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Blink/ETB/Value"
+    ],
+    "set": "Set 6",
+    "flavorText": "Sometimes fate is set in stone, and sometimes fate is set free.",
+    "artist": "Annabelle Lewis",
+    "_supersedes": "cut-what-binds-fb1",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__cards__cut-what-binds.png"
+  },
+  {
+    "id": "cybercode-integrator-sb6",
+    "name": "Cybercode Integrator",
+    "manaCost": "{1}{G}",
+    "type": "Artifact — Extension",
+    "rarity": "Rare",
+    "text": "Whenever extended creature deals combat damage to a player, draw that many cards.\n{1}{G}: If extended permanent is a Vehicle, it becomes an artifact creature until end of turn.\nExtend {2} ({2}: Attach to target creature or Vehicle you control. Extend only as a sorcery.)",
+    "colors": [
+      "G"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Vehicles"
+    ],
+    "set": "Set 6",
+    "artist": "n9l6u",
+    "_supersedes": "vinewrought-integrator-fb1",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__cards__cybercode-integrator.png"
+  },
+  {
+    "id": "darksteel-integrator-sb6",
+    "name": "Darksteel Integrator",
+    "manaCost": "{1}{W}",
+    "type": "Artifact — Extension",
+    "rarity": "Rare",
+    "text": "Extended permanent has indestructible.\n{1}{W}: If extended permanent is a Vehicle, it becomes an artifact creature until end of turn.\nExtend {2} ({2}: Attach to target creature or Vehicle you control. Extend only as a sorcery.)",
+    "colors": [
+      "W"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Vehicles"
+    ],
+    "set": "Set 6",
+    "artist": "aletiune",
+    "_supersedes": "darksteel-intergrator-sb2",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__cards__darksteel-integrator.png"
+  },
+  {
+    "id": "day-of-the-gorgon-sb6",
+    "name": "Day of the Gorgon",
+    "manaCost": "{B}{B}",
+    "type": "Sorcery",
+    "rarity": "Rare",
+    "text": "Petrify all non-Gorgon creatures. (To petrify a creature, exile it. Its controller creates a token that’s a copy of it, except it's an artifact.)",
+    "colors": [
+      "B"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "set": "Set 6",
+    "flavorText": "\"Sisters, the time has come to rebuild Ravnica, stone by stone.\"\n—Vraska, the Coiling Usurper",
+    "artist": "Daniel Warren Johnson",
+    "_supersedes": "day-of-the-gorgon-fb1",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__cards__day-of-the-gorgon.png"
+  },
+  {
+    "id": "dealer-of-double-and-nothing-sb6",
+    "name": "Dealer of Double and Nothing",
+    "manaCost": "{U}{B}",
+    "type": "Creature — Djinn Demon",
+    "rarity": "Rare",
+    "text": "Flying\nYou may pay {2} less to cast spells. Whenever you cast a spell this way, you lose the game at the beginning of the next end step unless you’ve cast another spell with the same name as that spell this turn.",
+    "colors": [
+      "U",
+      "B"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "set": "Set 6",
+    "flavorText": "“If I were you, I’d take the deal. Twice, even.”",
+    "power": "2",
+    "toughness": "2",
+    "artist": "Moe",
+    "_supersedes": "entity-of-double-and-nothing-fb1",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__cards__dealer-of-double-and-nothing.png"
+  },
+  {
+    "id": "deathcrafter-s-puzzleknot-sb6",
+    "name": "Deathcrafter's Puzzleknot",
+    "manaCost": "{2}",
+    "type": "Artifact",
+    "rarity": "Common",
+    "text": "When this artifact enters, destroy target permanent an opponent controls. Its controller may search their library for a basic land card, put it onto the battlefield, then shuffle.\n{B}{G}, Sacrifice this artifact: Destroy target permanent an opponent controls. Its controller may search their library for a basic land card, put it onto the battlefield, then shuffle.",
+    "colors": [],
+    "custom": true,
+    "archetypes": [
+      "Control"
+    ],
+    "set": "Set 6",
+    "artist": "TMS Entertainment and Boichi",
+    "_supersedes": "deathcrafter-s-puzzleknot-fb1",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__cards__deathcrafter-s-puzzleknot.png"
+  },
+  {
+    "id": "deliverer-of-angelic-wrath-sb6",
+    "name": "Deliverer of Angelic Wrath",
+    "manaCost": "{5}{W}{W}",
+    "type": "Artifact — Vehicle",
+    "rarity": "Mythic Rare",
+    "text": "This spell costs {1} less to cast for each nonland permanent type among permanents your opponents control but not among permanents you control.\nFlying\nWhenever this Vehicle attacks, each opponent sacrifices a permanent of each nonland permanent type.\nCrew 3",
+    "colors": [
+      "W"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Vehicles"
+    ],
+    "set": "Set 6",
+    "power": "5",
+    "toughness": "9",
+    "artist": "Soso max",
+    "_supersedes": "wagon-of-karmic-justice-fb5",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__cards__deliverer-of-angelic-wrath.png"
+  },
+  {
+    "id": "destroy-the-unnatural-sb6",
+    "name": "Destroy the Unnatural",
+    "manaCost": "{1}{R}{G}",
+    "type": "Sorcery",
+    "rarity": "Common",
+    "text": "Destroy target artifact, enchantment, creature with flying, or land with an activated ability that isn't a mana ability.\nFlashback {3}{R}{G}",
+    "colors": [
+      "R",
+      "G"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Control"
+    ],
+    "set": "Set 6",
+    "flavorText": "“It came from the soil, City-Dwellers. I am only sending it home.”",
+    "artist": "poccololo13",
+    "_supersedes": "destroy-the-unnatural-sb2",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__cards__destroy-the-unnatural.png"
+  },
+  {
+    "id": "diamond-storm-sb6",
+    "name": "Diamond Storm",
+    "manaCost": "{W}{W}",
+    "type": "Instant",
+    "rarity": "Rare",
+    "text": "This spell deals 1 damage to each attacking creature. Create a tapped Treasure token for each creature dealt damage this way.\nStorm",
+    "colors": [
+      "W"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Storm"
+    ],
+    "set": "Set 6",
+    "flavorText": "Gobakhan's weather is as dangerous as it is beautiful. Many inexperienced travelers don't know the difference and don't live to make the same mistake twice.",
+    "artist": "Leigh J. McCloskey",
+    "relatedTokens": [
+      "Treasure"
+    ],
+    "_supersedes": "diamond-storm-tb3",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__cards__diamond-storm.png"
+  },
+  {
+    "id": "dinokind-regent-sb6",
+    "name": "Dinokind Regent",
+    "manaCost": "{3}{R}{W}",
+    "type": "Creature — Dinosaur Noble",
+    "rarity": "Rare",
+    "text": "Trample, lifelink\nWhenever this creature attacks, put a stun counter on it. (If a permanent with a stun counter would become untapped, remove one from it instead.)\nRequiem — Whenever one or more cards are put into or leave your graveyard, if this creature is tapped, put a +1/+1 counter on target creature you control.",
+    "colors": [
+      "W",
+      "R"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Self-mill"
+    ],
+    "set": "Set 6",
+    "flavorText": "“The Extinction will come, but that does not mean our children do not deserve peace.”",
+    "power": "6",
+    "toughness": "6",
+    "artist": "Corey Rivera",
+    "_supersedes": "armored-regent-fb5",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__cards__dinokind-regent.png"
+  },
+  {
+    "id": "doomskar-s-aftermath-sb6",
+    "name": "Doomskar's Aftermath",
+    "manaCost": "{2}{R}{G}",
+    "type": "Sorcery",
+    "rarity": "Rare",
+    "text": "Put a stun counter on each land you don’t control and a vitality counter on each land you control. (If a permanent with a stun counter would become untapped, remove one from it instead. Whenever a permanent with a vitality counter becomes tapped, remove a vitality counter from it and untap it.)",
+    "colors": [
+      "R",
+      "G"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "set": "Set 6",
+    "flavorText": "The foretold doom struck true, yet the Doomskar’s wrath brought prosperity to the Realms that embraced it.",
+    "artist": "Spiral Wood",
+    "_supersedes": "doomskar-s-aftershock-fb4",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__cards__doomskar-s-aftermath.png"
+  },
+  {
+    "id": "dumpster-diving-sb6",
+    "name": "Dumpster Diving",
+    "manaCost": "{1}{R}",
+    "type": "Sorcery",
+    "rarity": "Uncommon",
+    "text": "As an additional cost to cast this spell, discard a card at random.\nTurn your graveyard face down and shuffle it.\nChoose a card type. Reveal cards from your graveyard until you reveal a card of that type and put it into your hand. Then repeat this process.\nTurn your graveyard face up.",
+    "colors": [
+      "R"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Self-mill"
+    ],
+    "set": "Set 6",
+    "artist": "@buttercat_paradox",
+    "_supersedes": "dumpster-diving-fb1",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__cards__dumpster-diving.png"
+  },
+  {
+    "id": "dungeon-apparition-sb6",
+    "name": "Dungeon Apparition",
+    "manaCost": "{U}",
+    "type": "Enchantment Creature — Spirit Knight",
+    "rarity": "Rare",
+    "text": "Bestow {2}{U} (If you cast this card for its bestow cost, it's an Aura spell with enchant creature. It becomes a creature again if it's not attached.)\nAs long as you haven’t completed a dungeon, this creature and enchanted creature have base power and toughness 1/1 and have \"{2}{U}, {T}: Venture into the dungeon.\" (Enter the first room or advance to the next room.)\n{2}{U}, {T}: Venture into the dungeon.",
+    "colors": [
+      "U"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "set": "Set 6",
+    "power": "4",
+    "toughness": "4",
+    "artist": "Jason Kang",
+    "_supersedes": "dungeon-trapper-tb3",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__cards__dungeon-apparition.png"
+  },
+  {
+    "id": "eidolon-of-creation-sb6",
+    "name": "Eidolon of Creation",
+    "manaCost": "{R}{R}",
+    "type": "Enchantment Creature — Spirit",
+    "rarity": "Rare",
+    "text": "{R}, {T}, Discard a card: Exile target creature card from your graveyard. Create a token that’s a copy of it, except it’s an enchantment and loses all other card types. Sacrifice that token at the beginning of the next end step.",
+    "colors": [
+      "R"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Self-mill"
+    ],
+    "set": "Set 6",
+    "power": "2",
+    "toughness": "2",
+    "artist": "Olivia Merchant",
+    "_supersedes": "eidolon-maker-fb1",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__cards__eidolon-of-creation.png"
+  },
+  {
+    "id": "elf-of-civilized-facade-sb6",
+    "name": "Elf of Civilized Facade",
+    "manaCost": "{G}",
+    "type": "Creature — Elf Druid",
+    "rarity": "Common",
+    "text": "Berserk (Whenever this creature attacks, you may double its power until end of turn. If you do, sacrifice it at the beginning of the next end step.)\n{T}: Add {R}.",
+    "colors": [
+      "G"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "set": "Set 6",
+    "flavorText": "Some Gruul elves leave the Clans and seek acceptance in Ravnican society, but old habits die hard.",
+    "power": "0",
+    "toughness": "1",
+    "artist": "Barbara Samantha Lucas (Edited by me)",
+    "_supersedes": "elves-of-civilized-facade-fb4",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__cards__elf-of-civilized-facade.png"
+  },
+  {
+    "id": "elite-student-sb6",
+    "name": "Elite Student",
+    "manaCost": "{W}",
+    "type": "Creature — Human Wizard",
+    "rarity": "Uncommon",
+    "text": "Whenever this creature enters or attacks, each player learns. (You may reveal a Lesson card you own from outside the game and put it into your hand, or discard a card to draw a card.)",
+    "colors": [
+      "W"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "set": "Set 6",
+    "flavorText": "“My teacher revived a dead language. I wouldn’t have let it die.”",
+    "power": "2",
+    "toughness": "1",
+    "artist": "Rui Li",
+    "_supersedes": "elite-teacher-fb1",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__cards__elite-student.png"
+  },
+  {
+    "id": "engelinum-singularium-sb6",
+    "name": "Engelinum Singularium",
+    "manaCost": "",
+    "type": "Artifact Land — Plains Vehicle",
+    "rarity": "Rare",
+    "text": "(This land isn't a spell, it's affected by summoning sickness if it's a creature, and it has \"{T}: Add {W}.\")\nCrew 1",
+    "colors": [],
+    "custom": true,
+    "archetypes": [
+      "Vehicles"
+    ],
+    "set": "Set 6",
+    "power": "2",
+    "toughness": "3",
+    "artist": "Zhillustrator",
+    "_supersedes": "the-open-road-tb3",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__cards__engelinum-singularium.png"
+  },
+  {
+    "id": "ephara-s-epiphany-sb6",
+    "name": "Ephara's Epiphany",
+    "manaCost": "{W/U}",
+    "type": "Sorcery",
+    "rarity": "Common",
+    "text": "Surveil 2.\nDraw a card at the beginning of your next upkeep.\nFlashback {W}{U}",
+    "colors": [
+      "W",
+      "U"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "set": "Set 6",
+    "flavorText": "“All that lies in disorder longs to be structured: marble into temples, letters into sentences, stars into constellations. Mother will show you.”",
+    "artist": "Alice De Ste Croix",
+    "_supersedes": "ephara-s-epiphany-fb1",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__cards__ephara-s-epiphany.png"
+  },
+  {
+    "id": "equenaut-coordinators-sb6",
+    "name": "Equenaut Coordinators",
+    "manaCost": "{3}{W}{W}",
+    "type": "Creature — Human Knight",
+    "rarity": "Rare",
+    "text": "Flying, vigilance\nUnity (Token creatures you control have all activated abilities of all nontoken creatures you control with unity.)\nAs long as this creature is on the battlefield, it has all activated abilities of all creature cards in your graveyard.",
+    "colors": [
+      "W"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Self-mill"
+    ],
+    "set": "Set 6",
+    "power": "4",
+    "toughness": "4",
+    "artist": "marcelamedeiros-arts",
+    "_supersedes": "equenaut-coordinator-fb4",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__cards__equenaut-coordinators.png"
+  },
+  {
+    "id": "escape-from-the-underworld-sb6",
+    "name": "Escape from the Underworld",
+    "manaCost": "{B}{B}",
+    "type": "Sorcery",
+    "rarity": "Rare",
+    "text": "Create a Map token or a 0/1 white Goat creature token.\nReturn target creature card with mana value X or less from your graveyard to the battlefield, where X is the number of differently named tokens you control.\nEscape—{1}{B}, Exile four other cards from your graveyard. (You may cast this card from your graveyard for its escape cost.)",
+    "colors": [
+      "B"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Self-mill",
+      "Token Collection"
+    ],
+    "set": "Set 6",
+    "artist": "John Bauer",
+    "relatedTokens": [
+      "Map",
+      "0/1 white Goat"
+    ],
+    "_supersedes": "escape-from-the-underworld-fb4",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__cards__escape-from-the-underworld.png"
+  },
+  {
+    "id": "ethereal-blacksmith-sb6",
+    "name": "Ethereal Blacksmith",
+    "manaCost": "{R}",
+    "type": "Enchantment Creature — Spirit Artificer",
+    "rarity": "Rare",
+    "text": "Bestow {2}{R} (If you cast this card for its bestow cost, it's an Aura spell with enchant creature. It becomes a creature again if it's not attached.)\nThis creature and enchanted creature each get +1/+0 for each enchantment you control.\n{2/W}, {T}, Discard a card: Conjure a card named Ethereal Armor onto the battlefield attached to target creature you control. Activate only as a sorcery.",
+    "colors": [
+      "R"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Enchantments"
+    ],
+    "set": "Set 6",
+    "power": "0",
+    "toughness": "1",
+    "artist": "Brandon Moore",
+    "relatedTokens": [
+      "Ethereal Armor"
+    ],
+    "_supersedes": "ethereal-blacksmith-tb3",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__cards__ethereal-blacksmith.png"
+  },
+  {
+    "id": "extract-dna-sb6",
+    "name": "Extract DNA",
+    "manaCost": "{1}{G}",
+    "type": "Sorcery",
+    "rarity": "Uncommon",
+    "text": "Target creature you control deals damage equal to its power to target creature or planeswalker you don’t control. If excess damage was dealt this way, experiment X, where X is that excess damage. (You get X [flask] counters. If you don't control The Experiment, create one. Then spend any amount of [flask] counters on it.)",
+    "colors": [
+      "G"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Control"
+    ],
+    "set": "Set 6",
+    "artist": "Josh Kirby",
+    "relatedTokens": [
+      "The Experiment"
+    ],
+    "_supersedes": "extract-dna-tb3",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__cards__extract-dna.png"
+  },
+  {
+    "id": "extraterrestrial-entity-sb6",
+    "name": "Extraterrestrial Entity",
+    "manaCost": "{3}{G}",
+    "type": "Creature — Alien",
+    "rarity": "Rare",
+    "text": "Changeling (This card is every creature type.)\n{1}{W}{W}: Conjure a card named Unidentified Hovership onto the battlefield.\n{X}: Until end of turn, artifacts and creatures you control become creatures with base power and toughness X/X and gain all creature types.",
+    "colors": [
+      "G"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "set": "Set 6",
+    "power": "1",
+    "toughness": "1",
+    "artist": "Chuck Burr",
+    "relatedTokens": [
+      "Unidentified Hovership"
+    ],
+    "_supersedes": "extraterrestrial-entity-fb1",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__cards__extraterrestrial-entity.png"
+  },
+  {
+    "id": "faerie-lull-bringer-sb6",
+    "name": "Faerie Lull-Bringer",
+    "manaCost": "{U}{U}",
+    "type": "Creature — Faerie Wizard",
+    "rarity": "Rare",
+    "text": "Flying\nProwess\nWhenever you cast a noncreature spell, tap target creature an opponent controls.",
+    "colors": [
+      "U"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Prowess"
+    ],
+    "set": "Set 6",
+    "flavorText": "\"I do not grant wishes—unless your wish is to be dead.\"",
+    "power": "2",
+    "toughness": "1",
+    "artist": "Michael Turner",
+    "_supersedes": "faerie-gale-bringer-tb3",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__cards__faerie-lull-bringer.png"
+  },
+  {
+    "id": "fate-reforged-sb6",
+    "name": "Fate Reforged",
+    "manaCost": "{2}{U/R}",
+    "type": "Instant",
+    "rarity": "Common",
+    "text": "You may discard a card. If you do, create two Shard tokens. (They're enchantments with \"{2}, Sacrifice this token: Scry 1, then draw a card.\")\nFlashback {U}{R}",
+    "colors": [
+      "U",
+      "R"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Enchantments"
+    ],
+    "set": "Set 6",
+    "artist": "Zinanch",
+    "relatedTokens": [
+      "Shard"
+    ],
+    "_supersedes": "fate-reforged-fb1",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__cards__fate-reforged.png"
+  },
+  {
+    "id": "fear-of-technology-sb6",
+    "name": "Fear of Technology",
+    "manaCost": "{2}{G}{G}",
+    "type": "Enchantment Creature — Nightmare",
+    "rarity": "Rare",
+    "text": "Artifact and enchantment spells cost {1} more to cast.\nActivated abilities of artifacts and enchantments cost {1} more to activate.\nChatGPT can’t be used unless its prompter pays {1}.",
+    "colors": [
+      "G"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "set": "Set 6",
+    "flavorText": "“Next time use VPN.”",
+    "power": "3",
+    "toughness": "3",
+    "artist": "CCDriver",
+    "_supersedes": "fear-of-technology-fb5",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__cards__fear-of-technology.png"
+  },
+  {
+    "id": "fear-of-the-apocalypse-sb6",
+    "name": "Fear of the Apocalypse",
+    "manaCost": "{4}{R}{W}",
+    "type": "Enchantment Creature — Nightmare",
+    "rarity": "Mythic Rare",
+    "text": "When this creature enters, each player discards their hand, then draws a card for each card type among cards in their graveyard.\nDelirium — Whenever this creature attacks, if there are four or more card types among cards in your graveyard, destroy each other creature.",
+    "colors": [
+      "W",
+      "R"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Self-mill"
+    ],
+    "set": "Set 6",
+    "flavorText": "Worlds end, yet it persists.",
+    "power": "6",
+    "toughness": "4",
+    "artist": "Eliran Kantor (Edited by me)",
+    "_supersedes": "fear-of-the-apocalypse-fb4",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__cards__fear-of-the-apocalypse.png"
+  },
+  {
+    "id": "feedback-loop-sb6",
+    "name": "Feedback Loop",
+    "manaCost": "{2}{U}{U}",
+    "type": "Instant",
+    "rarity": "Uncommon",
+    "text": "Experiment 2. (You get two [flask] counters. If you don't control The Experiment, create one. Then spend any amount of [flask] counters on it.)\nStorm (When you cast this spell, copy it for each spell cast before it this turn.)",
+    "colors": [
+      "U"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Storm"
+    ],
+    "set": "Set 6",
+    "artist": "ttazn666",
+    "_supersedes": "feedback-loop-tb3",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__cards__feedback-loop.png"
+  },
+  {
+    "id": "fire-ritual-sb6",
+    "name": "Fire Ritual",
+    "manaCost": "{R}",
+    "type": "Instant",
+    "rarity": "Uncommon",
+    "text": "Add {R}{R}{R}.",
+    "colors": [
+      "R"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Storm"
+    ],
+    "set": "Set 6",
+    "artist": "Leah Gardner",
+    "_supersedes": "fire-ritual-fb1",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__cards__fire-ritual.png"
+  },
+  {
+    "id": "fleeting-promises-sb6",
+    "name": "Fleeting Promises",
+    "manaCost": "{2}{U}",
+    "type": "Instant",
+    "rarity": "Rare",
+    "text": "Return any number of target enchantments to their owners' hands. For each card returned to your hand this way, you draw a card and you create a 1/1 blue Insect creature token with flying.",
+    "colors": [
+      "U"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Enchantments"
+    ],
+    "set": "Set 6",
+    "artist": "Elena Myshkina",
+    "relatedTokens": [
+      "1/1 blue Bird"
+    ],
+    "_supersedes": "fleeting-promises-fb1",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__cards__fleeting-promises.png"
+  },
+  {
+    "id": "for-a-perfect-society-sb6",
+    "name": "For a Perfect Society",
+    "manaCost": "{W}",
+    "type": "Sorcery",
+    "rarity": "Mythic Rare",
+    "text": "Create an Esper Sentinel creature token for each two artifact cards in your graveyard. (It’s a 1/1 white Human Soldier artifact creature with “Whenever an opponent casts their first noncreature spell each turn, draw a card unless that player pays {X}, where X is this token’s power.”)",
+    "colors": [
+      "W"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Artifacts",
+      "Self-mill"
+    ],
+    "set": "Set 6",
+    "artist": "Nano Banana",
+    "relatedTokens": [
+      "1/1 white Human Soldier"
+    ],
+    "_supersedes": "for-a-perfect-society-fb5",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__cards__for-a-perfect-society.png"
+  },
+  {
+    "id": "forgotten-town-sb6",
+    "name": "Forgotten Town",
+    "manaCost": "",
+    "type": "Land — Swamp Forest",
+    "rarity": "Rare",
+    "text": "({T}: Add {B} or {G}.)\nThis land enters tapped.\nCycling {2} ({2}, Discard this card: Draw a card.)",
+    "colors": [],
+    "custom": true,
+    "archetypes": [],
+    "set": "Set 6",
+    "flavorText": "Thunder Junction is a land with no history, yet even outlaws must always find something to look back on.",
+    "artist": "Viacheslav M",
+    "_supersedes": "forgotten-town-fb4",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__cards__forgotten-town.png"
+  },
+  {
+    "id": "garbage-collector-sb6",
+    "name": "Garbage Collector",
+    "manaCost": "{2}",
+    "type": "Artifact Enchantment — Software",
+    "rarity": "Rare",
+    "text": "{T}: Exile target card from a graveyard.\n{2}, {T}: Upload X, where X is the number of cards exiled with this permanent. (Create a Memory enchantment token. It has “When this token enters, exile an instant or sorcery card from your hand or graveyard with mana value X or less.” and “{2}, Sacrifice this token: Cast a copy of a card exiled with this token without paying its mana cost.”)",
+    "colors": [],
+    "custom": true,
+    "archetypes": [],
+    "set": "Set 6",
+    "artist": "Ishibashi Yosuke",
+    "relatedTokens": [
+      "Memory"
+    ],
+    "_supersedes": "garbage-collector-tb3",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__cards__garbage-collector.png"
+  },
+  {
+    "id": "gifted-arithmancer-sb6",
+    "name": "Gifted Arithmancer",
+    "manaCost": "{2}{U}",
+    "type": "Creature — Human Wizard",
+    "rarity": "Rare",
+    "text": "As this creature enters, assign the numbers 2 and 4 to the variables A and B.\nA{U}, {T}: Learn. (You may reveal a Lesson card you own from outside the game and put it into your hand, or discard a card to draw a card.)\nB{U}, {T}: Create a 0/0 green and blue Fractal creature token. Put B +1/+1 counters on it.",
+    "colors": [
+      "U"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "set": "Set 6",
+    "flavorText": "\"Odd. You even read it twice.\"",
+    "power": "A",
+    "toughness": "B",
+    "artist": "Don dos Santos",
+    "relatedTokens": [
+      "0/0 blue and green Fractal"
+    ],
+    "_supersedes": "gifted-arithmancer-fb5",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__cards__gifted-arithmancer.png"
+  },
+  {
+    "id": "gifts-ungiven-sb6",
+    "name": "Gifts Ungiven",
+    "manaCost": "{3}{U}",
+    "type": "Instant",
+    "rarity": "Rare",
+    "text": "Search your library for up to four cards with different names and reveal them. Target opponent chooses two of those cards. Put the chosen cards into your graveyard and the rest into your hand. Then shuffle your library.",
+    "colors": [
+      "U"
+    ],
+    "custom": false,
+    "archetypes": [],
+    "set": "Set 6",
+    "artist": "D. Alexander Gregory",
+    "_supersedes": "gifts-unwrapped-fb4",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__cards__gifts-ungiven.webp"
+  },
+  {
+    "id": "glimmer-of-freedom-sb6",
+    "name": "Glimmer of Freedom",
+    "manaCost": "{U}{R}",
+    "type": "Enchantment Creature — Horse Glimmer",
+    "rarity": "Rare",
+    "text": "This creature’s power is equal to the number of enchantments you control.\nEnchantment spells you cast cost {1} less to cast.\nWhen this creature dies, if it was a creature, return it to the battlefield under its owner's control. It's an enchantment. (It's not a creature.)",
+    "colors": [
+      "U",
+      "R"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Enchantments"
+    ],
+    "set": "Set 6",
+    "power": "*",
+    "toughness": "2",
+    "artist": "F. M Donnelly",
+    "_supersedes": "glimmer-of-fun-fb1",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__cards__glimmer-of-freedom.png"
+  },
+  {
+    "id": "goblin-leg-master-sb6",
+    "name": "Goblin Leg-Master",
+    "manaCost": "{R}",
+    "type": "Creature — Goblin Berserker",
+    "rarity": "Uncommon",
+    "text": "Berserk (Whenever this creature attacks, you may double its power until end of turn. If you do, sacrifice it at the beginning of the next end step.)",
+    "colors": [
+      "R"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "set": "Set 6",
+    "flavorText": "“Topple the city this, eat the authorities that… brother, I just want to kick shit.”",
+    "power": "2",
+    "toughness": "1",
+    "artist": "Guillaume Menuel",
+    "_supersedes": "goblin-mauler-tb3",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__cards__goblin-leg-master.png"
+  },
+  {
+    "id": "god-pharaoh-s-pup-sb6",
+    "name": "God-Pharaoh's Pup",
+    "manaCost": "{R}",
+    "type": "Creature — Dog",
+    "rarity": "Rare",
+    "text": "When this creature enters, it deals damage to each player equal to its power.\nEmbalm {R}\nEternalize {R}{R}",
+    "colors": [
+      "R"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Self-mill"
+    ],
+    "set": "Set 6",
+    "power": "2",
+    "toughness": "2",
+    "artist": "Hardy Parker",
+    "_supersedes": "god-pharaoh-s-pup-tb3",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__cards__god-pharaoh-s-pup.png"
+  },
+  {
+    "id": "gorgon-granite-collector-sb6",
+    "name": "Gorgon Granite-Collector",
+    "manaCost": "{1}{B}{B}",
+    "type": "Creature — Gorgon Noble",
+    "rarity": "Rare",
+    "text": "Deathtouch\nWhenever a creature you don't control dies, you may pay {2}{B}. If you do, you petrify it. (To petrify a creature, exile it. Create a token that’s a copy of it, except it’s an artifact.)\nAt the beginning of your upkeep, target creature an opponent controls gets -1/-1 until end of turn for each differently named token you control.",
+    "colors": [
+      "B"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Token Collection"
+    ],
+    "set": "Set 6",
+    "power": "2",
+    "toughness": "3",
+    "artist": "Johann Bodin",
+    "_supersedes": "gorgon-granite-collector-tb3",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__cards__gorgon-granite-collector.png"
+  },
+  {
+    "id": "grazing-swifthoof-sb6",
+    "name": "Grazing Swifthoof",
+    "manaCost": "{1}{G}{G}",
+    "type": "Creature — Elk Monk",
+    "rarity": "Rare",
+    "text": "Haste\nProwess\nWhenever you cast a noncreature spell, until end of turn, up to one target creature loses all abilities and has base power and toughness 3/3.",
+    "colors": [
+      "G"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Prowess"
+    ],
+    "set": "Set 6",
+    "flavorText": "After the failed heist, Oko swore off hired outlaws, choosing instead to train those worthy of his Gift of Transformation.",
+    "power": "3",
+    "toughness": "3",
+    "artist": "CatBrain",
+    "_supersedes": "grazing-swifthoof-fb1",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__cards__grazing-swifthoof.png"
+  },
+  {
+    "id": "hatching-ground-sb6",
+    "name": "Hatching Ground",
+    "manaCost": "",
+    "type": "Kindred Land — Lizard",
+    "rarity": "Rare",
+    "text": "Offspring {2} (You may pay an additional {2} as you play. If you do, when this land enters, create a 1/1 land creature token copy of it.)\nDevour permanent 1 (As this land enters, you may sacrifice any number of permanents. It enters with that many +1/+1 counters on it.)\nThis land enters tapped.\n{T}: Add {B}, {R}, or {G}.",
+    "colors": [],
+    "custom": true,
+    "archetypes": [],
+    "set": "Set 6",
+    "artist": "Siegbert Hahn",
+    "_supersedes": "hatching-ground-tb3",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__cards__hatching-ground.png"
+  },
+  {
+    "id": "hedgewitch-s-wagon-sb6",
+    "name": "Hedgewitch's Wagon",
+    "manaCost": "{G}",
+    "type": "Artifact — Vehicle",
+    "rarity": "Rare",
+    "text": "Whenever this Vehicle attacks, create a 1/1 Shapeshifter land creature token with changeling that’s all colors and every basic land type. (It’s every creature type. It’s affected by summoning sickness.)\nCrew 2",
+    "colors": [
+      "G"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Vehicles"
+    ],
+    "set": "Set 6",
+    "flavorText": "It carries Lorwyn’s seeds into Shadowmoor and Shadowmoor’s back again, and neither world is ever quite the same.",
+    "power": "0",
+    "toughness": "4",
+    "artist": "natandrewson",
+    "relatedTokens": [
+      "1/1 green Forest Dryad"
+    ],
+    "_supersedes": "verdentreader-fb4",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__cards__hedgewitch-s-wagon.png"
+  },
+  {
+    "id": "high-octane-mind-stimulator-sb6",
+    "name": "High-Octane Mind-Stimulator",
+    "manaCost": "{1}{R}",
+    "type": "Artifact",
+    "rarity": "Rare",
+    "text": "Machine Intelligence (Nontoken artifacts you control have all activated abilities of all nontoken artifacts you control with machine intelligence.)\n{R}, {T}: Exile the top card of your library. Put it into its owner's graveyard at the beginning of your next end step.\n{R}, {T}: Choose a card exiled from the top of your library this turn. You may play it this turn.",
+    "colors": [
+      "R"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Artifacts"
+    ],
+    "set": "Set 6",
+    "flavorText": "For those who truly want to see the smell of the noises between nanoseconds.",
+    "artist": "Imagen 2",
+    "_supersedes": "high-octane-mind-stimulator-tb3",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__cards__high-octane-mind-stimulator.png"
+  },
+  {
+    "id": "himoto-kaito-s-pet-sb6",
+    "name": "Himoto, Kaito's Pet",
+    "manaCost": "{B}",
+    "type": "Legendary Artifact Creature — Equipment Dog",
+    "rarity": "Mythic Rare",
+    "text": "Himoto and equipped creature can't block and can't be blocked.\nWhenever Himoto or equipped creature deals combat damage to a player, reveal that many cards from the top of your library and put them into your hand. You lose life equal to their total mana value.\nReconfigure—Pay {2} or 4 life.",
+    "colors": [
+      "B"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Broken Cipher"
+    ],
+    "set": "Set 6",
+    "power": "1",
+    "toughness": "1",
+    "artist": "Rorubei",
+    "_supersedes": "himoto-kaito-s-pet-fb1",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__cards__himoto-kaito-s-pet.png"
+  },
+  {
+    "id": "hold-that-thought-sb6",
+    "name": "Hold That Thought",
+    "manaCost": "{U}",
+    "type": "Instant",
+    "rarity": "Uncommon",
+    "text": "Buyback {W}{W} (You may pay an additional {W}{W} as you cast this spell. If you do, put this card into your hand as it resolves.)\nReturn target spell to its owner's hand.",
+    "colors": [
+      "U"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "set": "Set 6",
+    "flavorText": "\"Oh, that's a nice idea, I'll let you think about it.\"",
+    "artist": "latifaarts",
+    "_supersedes": "hold-that-thought-fb1",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__cards__hold-that-thought.png"
+  },
+  {
+    "id": "identity-theft-sb6",
+    "name": "Identity Theft",
+    "manaCost": "{1}{U}",
+    "type": "Sorcery",
+    "rarity": "Rare",
+    "text": "Populate (Create a token that's a copy of a creature token you control.)\nCipher (Then you may exile this spell card encoded on a creature you control. Whenever that creature deals combat damage to a player, its controller may cast a copy of the encoded card without paying its mana cost.)",
+    "colors": [
+      "U"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Broken Cipher"
+    ],
+    "set": "Set 6",
+    "artist": "Dotswap",
+    "_supersedes": "identity-theft-fb4",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__cards__identity-theft.png"
+  },
+  {
+    "id": "ill-gotten-wealth-sb6",
+    "name": "Ill-Gotten Wealth",
+    "manaCost": "{B}{G}{U}",
+    "type": "Sorcery",
+    "rarity": "Rare",
+    "text": "If you cast this spell from your hand, X is 3. Otherwise, you may exile any number of cards from your graveyard. X is the number of cards exiled this way.\nTarget opponent exiles the top X cards of their library. You may cast any number of spells with mana value X or less from among them without paying their mana costs.\nCipher",
+    "colors": [
+      "U",
+      "B",
+      "G"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Broken Cipher"
+    ],
+    "set": "Set 6",
+    "artist": "Xavier Ribeiro",
+    "_supersedes": "ill-gotten-wealth-fb1",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__cards__ill-gotten-wealth.png"
+  },
+  {
+    "id": "industrious-frontier-sb6",
+    "name": "Industrious Frontier",
+    "manaCost": "",
+    "type": "Land — Island Mountain",
+    "rarity": "Rare",
+    "text": "({T}: Add {U} or {R}.)\nThis land enters tapped.\nCycling {2} ({2}, Discard this card: Draw a card.)",
+    "colors": [],
+    "custom": true,
+    "archetypes": [],
+    "set": "Set 6",
+    "flavorText": "Thunder Junction is a land with no future, yet even outlaws must always find something to leave behind.",
+    "artist": "VincentiusMatthew",
+    "_supersedes": "industrious-frontier-fb4",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__cards__industrious-frontier.png"
+  },
+  {
+    "id": "inferno-fun-rakdoss-favorite-sb6",
+    "name": "Inferno Fun, Rakdos’s Favorite",
+    "manaCost": "{3}",
+    "type": "Legendary Artifact — Spike",
+    "rarity": "Rare",
+    "text": "At the beginning of your upkeep, if Inferno Fun is in your graveyard, return it to the battlefield.\n{2}, Sacrifice Inferno Fun: Target opponent gets an emblem with “At the beginning of your upkeep, you lose 1 life.”",
+    "colors": [],
+    "custom": true,
+    "archetypes": [],
+    "set": "Set 6",
+    "flavorText": "It is an honor and a source of power among the Bloodwitches of Rix Maadi to withstand the excruciating pain it inflicts.",
+    "artist": "dungeon_strugglers (Edited by me)",
+    "_supersedes": "inferno-fun-rakdos-s-favorite-tb3",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__cards__inferno-fun-rakdoss-favorite.png"
+  },
+  {
+    "id": "instruments-of-the-trine-sb6",
+    "name": "Instruments of the Trine",
+    "manaCost": "{3}",
+    "type": "Artifact",
+    "rarity": "Rare",
+    "text": "Whenever a nontoken creature you control dies, return that card to the battlefield under its owner’s control with a finality counter on it. This ability triggers only once each turn.\n{3}{W}{B}, {T}: Move a finality counter from target creature you control onto another target creature, then destroy one of them.",
+    "colors": [],
+    "custom": true,
+    "archetypes": [
+      "Blink/ETB/Value"
+    ],
+    "set": "Set 6",
+    "flavorText": "Life unfolds with choices, death gives it meaning, and destiny ties it all together.",
+    "artist": "Dominik Mayer",
+    "_supersedes": "threads-of-the-triad-fb1",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__cards__instruments-of-the-trine.png"
+  },
+  {
+    "id": "it-that-demolishes-societies-sb6",
+    "name": "It That Demolishes Societies",
+    "manaCost": "{3}{R}{G}",
+    "type": "Legendary Creature — Dinosaur Anteater",
+    "rarity": "Mythic Rare",
+    "text": "Trample\nWhen It That Demolishes Societies enters, choose another creature. It fights that creature. If that creature dies this way, repeat this process.\nWhenever It That Demolishes Societies is dealt damage, put two +1/+1 counters on it. (It must survive the damage to get the counters.)",
+    "colors": [
+      "R",
+      "G"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "set": "Set 6",
+    "power": "6",
+    "toughness": "6",
+    "artist": "Walter Behrens (Edited by me)",
+    "_supersedes": "it-that-demolish-societies-fb1",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__cards__it-that-demolishes-societies.png"
+  },
+  {
+    "id": "judge-s-pet-sb6",
+    "name": "Judge's Pet",
+    "manaCost": "{W}",
+    "type": "Creature — Dog Advisor",
+    "rarity": "Uncommon",
+    "text": "{2}{W}, {T}: Tax 1. (The next spell each of your opponents casts costs {1} more to cast. This doesn’t end at the end of turn.)",
+    "colors": [
+      "W"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "set": "Set 6",
+    "flavorText": "A good dog detects dirt on your enemies. A great dog plants it there first.",
+    "power": "2",
+    "toughness": "1",
+    "artist": "Lucas Torquato",
+    "_supersedes": "judges-falcon-sb2",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__cards__judge-s-pet.png"
+  },
+  {
+    "id": "keruga-s-sage-crystal-sb6",
+    "name": "Keruga's Sage-Crystal",
+    "manaCost": "{2}{G/U}",
+    "type": "Legendary Artifact",
+    "rarity": "Rare",
+    "text": "This spell costs {2} less to cast if you have a companion named Keruga, the Macrosage.\nWard {2}\n{T}: Add {G}{U}. Spend this mana only to cast spells with mana value 3 or greater, and those spells can’t be countered.",
+    "colors": [
+      "U",
+      "G"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "set": "Set 6",
+    "artist": "ChatGPT o4",
+    "_supersedes": "kerugas-sage-crystal-sb2",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__cards__keruga-s-sage-crystal.png"
+  },
+  {
+    "id": "know-thyself-sb6",
+    "name": "Know Thyself",
+    "manaCost": "{X}{R/W}",
+    "type": "Sorcery",
+    "rarity": "Common",
+    "text": "X can’t be 0.\nDiscover X, except put the rest into your graveyard instead of on the bottom of your library. If you didn’t exile a nonland card this way, shuffle them into your library instead.\nFlashback {X}{R}{W}",
+    "colors": [
+      "W",
+      "R"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Self-mill"
+    ],
+    "set": "Set 6",
+    "artist": "Hans Walør",
+    "_supersedes": "dig-with-purpose-fb1",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__cards__know-thyself.png"
+  },
+  {
+    "id": "laelia-reforger-of-the-lost-sb6",
+    "name": "Laelia, Reforger of the Lost",
+    "manaCost": "{R}",
+    "type": "Legendary Creature — Spirit",
+    "rarity": "Rare",
+    "text": "Haste\n{X}, {T}: Surveil X.\nWhenever one or more cards are put into your graveyard from your library for the first time each turn, put a +1/+1 counter on Laelia and you may exile one of those cards. If you do, you may play that card this turn.",
+    "colors": [
+      "R"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Self-mill"
+    ],
+    "set": "Set 6",
+    "power": "0",
+    "toughness": "1",
+    "artist": "@_Rashuu_",
+    "_supersedes": "laelia-reforger-of-the-lost-tb3",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__cards__laelia-reforger-of-the-lost.png"
+  },
+  {
+    "id": "lavacore-giant-sb6",
+    "name": "Lavacore Giant",
+    "manaCost": "{3}{R}{R}",
+    "type": "Creature — Elemental Giant",
+    "rarity": "Rare",
+    "text": "Trample\nAt the beginning of your upkeep, if an opponent controls three or more artifacts and/or creatures, you may return this card from your graveyard to your hand.\n{3}{R}{R}, Discard this card: Destroy all artifacts with mana value 3 or less. This card deals 3 damage to each creature. Activate only as a sorcery.",
+    "colors": [
+      "R"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Control"
+    ],
+    "set": "Set 6",
+    "power": "6",
+    "toughness": "4",
+    "artist": "Haelsing",
+    "_supersedes": "earthcore-elder-tb3",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__cards__lavacore-giant.png"
+  },
+  {
+    "id": "leave-an-impression-sb6",
+    "name": "Leave an Impression",
+    "manaCost": "{1}{R}{R}",
+    "type": "Sorcery — Lesson",
+    "rarity": "Rare",
+    "text": "Create a 4/4 blue and red Elemental creature token. Then sacrifice a creature. Leave an Impression deals damage equal to the sacrificed creature's power to any target.",
+    "colors": [
+      "R"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "set": "Set 6",
+    "flavorText": "\"Some people only get the point when it's shoved in their face.\"",
+    "artist": "bcnyArt",
+    "relatedTokens": [
+      "4/4 blue and red Elemental"
+    ],
+    "_supersedes": "leave-an-impression-fb5",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__cards__leave-an-impression.png"
+  },
+  {
+    "id": "leave-in-the-smokes-sb6",
+    "name": "Leave in the Smokes",
+    "manaCost": "{2}{W}{W}",
+    "type": "Sorcery",
+    "rarity": "Rare",
+    "text": "Destroy all creatures with mana value less than the greatest printed power among Vehicles you control.",
+    "colors": [
+      "W"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Vehicles"
+    ],
+    "set": "Set 6",
+    "flavorText": "“I don’t see any competition around me—beneath me is another story.”\n—S. B., Leader of the Silver Bikes",
+    "artist": "Qiang Zhou",
+    "_supersedes": "leave-in-the-smokes-fb1",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__cards__leave-in-the-smokes.png"
+  },
+  {
+    "id": "legcellent-blasts-sb6",
+    "name": "Legcellent Blasts",
+    "manaCost": "{R}",
+    "type": "Instant",
+    "rarity": "Common",
+    "text": "Legcellent Blasts deals 2 damage to any target.\nCollected — Legcellent Blasts deals 4 damage instead if you control three or more differently named tokens.",
+    "colors": [
+      "R"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Token Collection"
+    ],
+    "set": "Set 6",
+    "flavorText": "“The Elders said it couldn’t be done. They’ve since gone quiet.”",
+    "artist": "AfuChan",
+    "_supersedes": "collectric-blast-fb4",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__cards__legcellent-blasts.png"
+  },
+  {
+    "id": "let-him-cook-sb6",
+    "name": "Let Him Cook",
+    "manaCost": "{3}{G}{G}",
+    "type": "Sorcery",
+    "rarity": "Rare",
+    "text": "As an additional cost to cast this spell, choose a creature you control or reveal a creature card from your hand.\nLet Him Cook deals damage equal to the power of the creature you chose or the card you revealed to each other creature. Whenever a creature dealt damage this way dies this turn, create a Food token.",
+    "colors": [
+      "G"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "set": "Set 6",
+    "artist": "Eiichiro Oda",
+    "relatedTokens": [
+      "Food"
+    ],
+    "_supersedes": "let-him-cook-fb1",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__cards__let-him-cook.png"
+  },
+  {
+    "id": "level-heads-sb6",
+    "name": "Level Heads",
+    "manaCost": "{1}{U}{U}",
+    "type": "Sorcery",
+    "rarity": "Rare",
+    "text": "Choose an opponent. If that player has more cards in hand than you, draw cards equal to the difference.\nCipher (Then you may exile this spell card encoded on a creature you control. Whenever that creature deals combat damage to a player, its controller may cast a copy of the encoded card without paying its mana cost.)",
+    "colors": [
+      "U"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Broken Cipher"
+    ],
+    "set": "Set 6",
+    "artist": "Adobe Stock",
+    "_supersedes": "most-thoughts-fb1",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__cards__level-heads.png"
+  },
+  {
+    "id": "liminal-reverie-sb6",
+    "name": "Liminal Reverie",
+    "manaCost": "{W}{U}{B}",
+    "type": "Enchantment",
+    "rarity": "Mythic Rare",
+    "text": "If a nonland permanent entering causes a triggered ability of a permanent you control to trigger, that ability triggers an additional time.\nIf a nonland permanent leaving the battlefield causes a triggered ability of a permanent you control to trigger, that ability triggers an additional time.\n{3}: Destroy target nonland permanent, then return that card to the battlefield under its owner’s control.",
+    "colors": [
+      "W",
+      "U",
+      "B"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Blink/ETB/Value"
+    ],
+    "set": "Set 6",
+    "artist": "Sieskja",
+    "_supersedes": "awareness-beyond-awareness-fb1",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__cards__liminal-reverie.png"
+  },
+  {
+    "id": "lost-in-the-sauce-sb6",
+    "name": "Lost in the Sauce",
+    "manaCost": "{X}{X}{B}",
+    "type": "Instant",
+    "rarity": "Uncommon",
+    "text": "Target player creates X Food tokens, then up to one target creature gets -1/-1 until end of turn for each token you control.",
+    "colors": [
+      "B"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Token Collection"
+    ],
+    "set": "Set 6",
+    "flavorText": "“Every wise witch will always sob,\n‘If you get cooked, you’ll lose the job!’”",
+    "artist": "JK Woo",
+    "relatedTokens": [
+      "Food"
+    ],
+    "_supersedes": "lost-in-the-sauce-fb4",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__cards__lost-in-the-sauce.png"
+  },
+  {
+    "id": "lost-media-enthusiast-sb6",
+    "name": "Lost Media Enthusiast",
+    "manaCost": "{W}",
+    "type": "Creature — Human Survivor",
+    "rarity": "Rare",
+    "text": "Requiem — Whenever one or more cards enter or leave your graveyard, scry that many cards.\n{4}{W}: Exile target player’s graveyard, then you may return the cards exiled this way to their graveyard.",
+    "colors": [
+      "W"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Self-mill"
+    ],
+    "set": "Set 6",
+    "flavorText": "“A house with infinite possibilities of incomprehensible truths? Sign me up!”",
+    "power": "0",
+    "toughness": "3",
+    "artist": "don_alcazar_",
+    "_supersedes": "sancitifier-of-lost-media-fb4",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__cards__lost-media-enthusiast.png"
+  },
+  {
+    "id": "lutri-s-creativity-sb6",
+    "name": "Lutri's Creativity",
+    "manaCost": "{2}{U/R}{U/R}",
+    "type": "Enchantment — Aura",
+    "rarity": "Rare",
+    "text": "This spell costs {2} less to cast if you have a companion named Lutri, the Spellchaser.\nFlash\nEnchant creature\nEnchanted creature has “{T}: Copy target instant or sorcery spell. You may choose new targets for the copy.”",
+    "colors": [
+      "U",
+      "R"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Storm"
+    ],
+    "set": "Set 6",
+    "artist": "Inspired by lorazombie",
+    "_supersedes": "lutris-shenanigens-sb2",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__cards__lutri-s-creativity.png"
+  },
+  {
+    "id": "maakian-nodorog-sb6",
+    "name": "Maakian Nodorog",
+    "manaCost": "{R/G}{R/G}",
+    "type": "Creature — Cat Dog",
+    "rarity": "Rare",
+    "text": "{T}: Add {R} or {G}.\n{2}{R}{G}: This creature fights another target creature.",
+    "colors": [
+      "R",
+      "G"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Control"
+    ],
+    "set": "Set 6",
+    "flavorText": "She escaped the cold Simic lab—hungry, sad, but lucky to find the Gruul Clans, where food was plenty and she was worshipped as she deserved.",
+    "power": "3",
+    "toughness": "3",
+    "artist": "Imagen 2",
+    "_supersedes": "maakian-nodorog-fb4",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__cards__maakian-nodorog.png"
+  },
+  {
+    "id": "magecaster-page-sb6",
+    "name": "Magecaster Page",
+    "manaCost": "{1}{U}{U}",
+    "type": "Artifact",
+    "rarity": "Rare",
+    "text": "Flash\n{1}{U}, {T}, Discard a card: Create a Snapcaster Mage token. (It’s a 2/1 {1}{U} Human Wizard creature with “When this token enters, target instant or sorcery card in your graveyard gains flashback until end of turn. The flashback cost is equal to its mana cost.”)",
+    "colors": [
+      "U"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Self-mill"
+    ],
+    "set": "Set 6",
+    "artist": "From the book \"Rebuilding Civilization\"",
+    "relatedTokens": [
+      "Snapcaster Mage"
+    ],
+    "_supersedes": "magecaster-page-fb4",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__cards__magecaster-page.png"
+  },
+  {
+    "id": "mardu-phoenix-blessed-sb6",
+    "name": "Mardu Phoenix-Blessed",
+    "manaCost": "{W}{W}",
+    "type": "Creature — Human Warrior",
+    "rarity": "Rare",
+    "text": "Flying\nDash {1}{R}{R} (You may cast this spell for its dash cost. If you do, it gains haste, and it's returned from the battlefield to its owner's hand at the beginning of the next end step.)\nWhen this creature enters or is put into your hand from the battlefield, surveil 1.\nYou may cast this card from your graveyard using its dash ability.",
+    "colors": [
+      "W"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Self-mill"
+    ],
+    "set": "Set 6",
+    "power": "3",
+    "toughness": "1",
+    "artist": "ChatGPT Images 2.0",
+    "_supersedes": "mardu-phoenix-blessed-fb1",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__cards__mardu-phoenix-blessed.png"
+  },
+  {
+    "id": "memorium-preservation-program-sb6",
+    "name": "Memorium Preservation Program",
+    "manaCost": "{U}{R}",
+    "type": "Enchantment",
+    "rarity": "Rare",
+    "text": "Instant and sorcery spells you cast cost {1} less to cast.\nWhenever you cast an instant or sorcery spell from your hand, upload X, where X is that spell’s mana value. (Create a Memory enchantment token. It has “When this token enters, exile an instant or sorcery card from your hand or graveyard with mana value X or less.” and “{2}, Sacrifice this token: Cast a copy of a card exiled with this token without paying its mana cost.”)",
+    "colors": [
+      "U",
+      "R"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "set": "Set 6",
+    "artist": "Jonathan Solter",
+    "_supersedes": "risky-game-we-run-here-fb4",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__cards__memorium-preservation-program.png"
+  },
+  {
+    "id": "memory-car-sb6",
+    "name": "Memory Car",
+    "manaCost": "{3}{W}{W}",
+    "type": "Artifact — Vehicle",
+    "rarity": "Rare",
+    "text": "Double strike\nWhenever this Vehicle deals combat damage to a player, each player exiles their hand face down and draws seven cards. At the beginning of the next end step, each player discards their hand, then returns to their hand each card they exiled this way.\nCrew 1",
+    "colors": [
+      "W"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Vehicles"
+    ],
+    "set": "Set 6",
+    "power": "3",
+    "toughness": "3",
+    "artist": "EA Games",
+    "_supersedes": "memory-car-fb1",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__cards__memory-car.png"
+  },
+  {
+    "id": "mindclogger-sb6",
+    "name": "Mindclogger",
+    "manaCost": "{2}{B}",
+    "type": "Artifact",
+    "rarity": "Rare",
+    "text": "When this artifact enters, target opponent conjures five cards named Confusion into their library, then shuffles. (Confusion is a colorless sorcery card with no mana cost that has cycling {2}.)\nYour opponents reveal each card they draw. Whenever they reveal a card named Confusion this way, they lose 5 life.\n{2}{B}, {T}: Target opponent conjures three cards named Confusion into their library, then shuffles.",
+    "colors": [
+      "B"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "set": "Set 6",
+    "flavorText": "\"Of course it's a repurposed Izzet mind-enhancer. We love irony around here.\"\n—Yariva, Dimir Engineer",
+    "artist": "Marek Okoń",
+    "relatedTokens": [
+      "Confusion"
+    ],
+    "_supersedes": "mindclogger-fb1",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__cards__mindclogger.png"
+  },
+  {
+    "id": "mindmelt-visitors-sb6",
+    "name": "Mindmelt Visitors",
+    "manaCost": "{2}{B}",
+    "type": "Creature — Human Homunculus Horror",
+    "rarity": "Rare",
+    "text": "Menace\nWhenever an opponent discards a card, put a +1/+1 counter on this creature.\nWhenever this creature deals combat damage to a player, that player conjures that many cards named Confusion into their library, then shuffles. (Confusion is a colorless sorcery card with no mana cost that has cycling {2}.)",
+    "colors": [
+      "B"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "set": "Set 6",
+    "power": "3",
+    "toughness": "3",
+    "artist": "Dariusz Kieliszek",
+    "_supersedes": "mindbender-moroii-tb3",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__cards__mindmelt-visitors.png"
+  },
+  {
+    "id": "misinformation-spreader-sb6",
+    "name": "Misinformation Spreader",
+    "manaCost": "{3}{U}",
+    "type": "Creature — Vedalken Rogue",
+    "rarity": "Rare",
+    "text": "Flash\nAt the beginning of your upkeep, each player conjures two cards named Confusion into their library, then shuffles. (They're colorless sorceries with cycling {2}.)\nAt the beginning of your end step, draw a card for each Confusion card in all graveyards.\nWhenever you surveil for the first time each turn, target player conjures that many cards named Confusion into their library, then shuffles.",
+    "colors": [
+      "U"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "set": "Set 6",
+    "power": "2",
+    "toughness": "4",
+    "artist": "Rhys Kim",
+    "_supersedes": "misinformation-spreader-fb4",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__cards__misinformation-spreader.png"
+  },
+  {
+    "id": "mogis-soul-chaser-sb6",
+    "name": "Mogis Soul-Chaser",
+    "manaCost": "{B}{R}",
+    "type": "Enchantment Creature — Minotaur Demon",
+    "rarity": "Rare",
+    "text": "This creature gets +1/+1 for each differently named token you control.\nWhenever another nontoken creature you control enters or dies, create a token that's a copy of it, except it's 1/1 and an enchantment in addition to its other types. It gains haste. At the beginning of the next end step, sacrifice it.",
+    "colors": [
+      "B",
+      "R"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Token Collection"
+    ],
+    "set": "Set 6",
+    "flavorText": "\"No moment of bloodshed is hidden from His eye. I offer thee the glory of basking in these fleeting moments. Rejoice, and bleed for Him!\"",
+    "power": "0",
+    "toughness": "1",
+    "artist": "John Rubio",
+    "_supersedes": "mogis-s-battle-recorder-fb1",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__cards__mogis-soul-chaser.png"
+  },
+  {
+    "id": "moonlit-lotus-sb6",
+    "name": "Moonlit Lotus",
+    "manaCost": "{0}",
+    "type": "Legendary Artifact",
+    "rarity": "Mythic Rare",
+    "text": "You can't cast this spell during your first, second, or third turns of the game.\n{T}, Sacrifice Moonlit Lotus: Add three mana of any one color.",
+    "colors": [],
+    "custom": true,
+    "archetypes": [],
+    "set": "Set 6",
+    "flavorText": "\"Be like the Lotus: let yourself grow with patience, and even if you are broken, let yourself find power in that.\"\n—Narset, to Her Students",
+    "artist": "vuham01",
+    "_supersedes": "silver-lotus-fb1",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__cards__moonlit-lotus.png"
+  },
+  {
+    "id": "mosaic-of-past-unburied-sb6",
+    "name": "Mosaic of Past Unburied",
+    "manaCost": "{2}{R}{W}",
+    "type": "Legendary Artifact",
+    "rarity": "Mythic Rare",
+    "text": "Cards in your graveyard have dredge 2.\nYou may dredge only once each turn.\nInstant and sorcery cards you own from outside the game are Lessons in addition to their other types.\n{R}{W}, {T}: Learn.",
+    "colors": [
+      "W",
+      "R"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Self-mill"
+    ],
+    "set": "Set 6",
+    "artist": "Lynxyly",
+    "_supersedes": "quintorius-journal-fb1",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__cards__mosaic-of-past-unburied.png"
+  },
+  {
+    "id": "moth-winged-seeker-sb6",
+    "name": "Moth-Winged Seeker",
+    "manaCost": "{W}",
+    "type": "Artifact",
+    "rarity": "Rare",
+    "text": "At the beginning of each end step, if an opponent controls more lands than you, return target land card from your graveyard to the battlefield tapped and untap this artifact.\n{T}: Surveil 1.",
+    "colors": [
+      "W"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Self-mill"
+    ],
+    "set": "Set 6",
+    "flavorText": "\"This is probably another one of Valgavoth's 'gifts', but I don't care. It's pretty, and it inspires me to move forward.\"\n- Maggie, Hopeful Survivor",
+    "artist": "bryx_studio",
+    "_supersedes": "moth-winged-seeker-fb1",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__cards__moth-winged-seeker.png"
+  },
+  {
+    "id": "muraganda-terra-sphere-sb6",
+    "name": "Muraganda Terra-Sphere",
+    "manaCost": "{1}{G}{G}",
+    "type": "Artifact — Vehicle",
+    "rarity": "Rare",
+    "text": "When this Vehicle enters, draw a card for each creature you control with no abilities and each other artifact you control.\nWhenever this Vehicle attacks, untap all creatures you control with no abilities and all other artifacts you control.\nCrew 3",
+    "colors": [
+      "G"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Vehicles",
+      "Artifacts"
+    ],
+    "set": "Set 6",
+    "power": "5",
+    "toughness": "5",
+    "artist": "ArturroCreaturro",
+    "_supersedes": "muraganda-data-sphere-tb3",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__cards__muraganda-terra-sphere.png"
+  },
+  {
+    "id": "mwonvuli-awakened-sb6",
+    "name": "Mwonvuli Awakened",
+    "manaCost": "{5}{G}{G}{G}",
+    "type": "Legendary Land Creature — Elemental",
+    "rarity": "Mythic Rare",
+    "text": "Trample, vigilance\n{T}: Add {G}.\nMwonvuli's power and toughness are each equal to the number of creatures you control plus the number of lands you control.\nWhenever Mwonvuli deals combat damage to a player, create that many 1/1 green Forest Dryad land creature tokens. (They're affected by summoning sickness.)",
+    "colors": [
+      "G"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Token Collection"
+    ],
+    "set": "Set 6",
+    "power": "*",
+    "toughness": "*",
+    "artist": "Peter Mohrbacher",
+    "relatedTokens": [
+      "1/1 green Forest Dryad"
+    ],
+    "_supersedes": "mwonvuli-awakened-fb5",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__cards__mwonvuli-awakened.png"
+  },
+  {
+    "id": "nivix-data-collector-sb6",
+    "name": "Nivix Data-Collector",
+    "manaCost": "{U}{U}",
+    "type": "Enchantment Creature — Weird",
+    "rarity": "Uncommon",
+    "text": "This creature can't be blocked.\nWhenever this creature deals combat damage to a player, draw a card, then discard a card, then upload 3. (Create a Memory enchantment token. It has “When this token enters, exile an instant or sorcery card from your hand or graveyard with mana value 3 or less.” and “{2}, Sacrifice this token: Cast a copy of a card exiled with this token without paying its mana cost.”)",
+    "colors": [
+      "U"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Broken Cipher"
+    ],
+    "set": "Set 6",
+    "power": "1",
+    "toughness": "1",
+    "artist": "Alexandr Elichev",
+    "relatedTokens": [
+      "Memory"
+    ],
+    "_supersedes": "nivix-data-collector-tb3",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__cards__nivix-data-collector.png"
+  },
+  {
+    "id": "no-rose-without-thorns-sb6",
+    "name": "No Rose Without Thorns",
+    "manaCost": "{1}{B}",
+    "type": "Enchantment",
+    "rarity": "Mythic Rare",
+    "text": "At the beginning of your upkeep, you lose 1 life and you create the next token from the following list. If you can't, you lose the game.\n[Blood, Clue, Food, Junk, Map, Scroll, Spike, Treasure]",
+    "colors": [
+      "B"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Token Collection"
+    ],
+    "set": "Set 6",
+    "artist": "ensorcelled",
+    "relatedTokens": [
+      "Blood",
+      "Clue",
+      "Food",
+      "Junk",
+      "Map",
+      "Scroll",
+      "Spike",
+      "Treasure"
+    ],
+    "_supersedes": "no-rose-without-thorns-fb4",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__cards__no-rose-without-thorns.png"
+  },
+  {
+    "id": "nymph-of-running-away-sb6",
+    "name": "Nymph of Running Away",
+    "manaCost": "{R}",
+    "type": "Enchantment Creature — Nymph",
+    "rarity": "Rare",
+    "text": "Bestow {U}{U} (If you cast this card for its bestow cost, it's an Aura spell with enchant creature. It becomes a creature again if it's not attached to a creature.)\nHaste\nYou control enchanted creature.\nAt the beginning of your end step, return this permanent to its owner’s hand. (Return it only if it’s on the battlefield.)",
+    "colors": [
+      "R"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "set": "Set 6",
+    "power": "2",
+    "toughness": "2",
+    "artist": "prinnay",
+    "_supersedes": "nymph-of-running-away-fb1",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__cards__nymph-of-running-away.png"
+  },
+  {
+    "id": "ordained-to-mayhem-sb6",
+    "name": "Ordained to Mayhem",
+    "manaCost": "{R}",
+    "type": "Sorcery",
+    "rarity": "Uncommon",
+    "text": "Create a Wicked Role token attached to up to one target creature you control. (If you control another Role on it, put that one into the graveyard. Enchanted creature gets +1/+1. When this Aura is put into a graveyard, each opponent loses 1 life.)\nThis spell deals damage to any target equal to the number of differently named tokens you control.",
+    "colors": [
+      "R"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Token Collection"
+    ],
+    "set": "Set 6",
+    "artist": "John J. Pearson",
+    "relatedTokens": [
+      "Wicked Role"
+    ],
+    "_supersedes": "collector-s-spite-fb1",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__cards__ordained-to-mayhem.png"
+  },
+  {
+    "id": "oru-reality-redefined-sb6",
+    "name": "Oru, Reality Redefined",
+    "manaCost": "{4}{W}{U}",
+    "type": "Legendary Creature — Dragon Fractal",
+    "rarity": "Rare",
+    "text": "Companion — Your starting deck contains at least one card of each mana value between 1 and 6. (If this card is your chosen companion, you may put it into your hand from outside the game for {3} as a sorcery.)\nFlash\nFlying\nSpells you cast have flash.\nYou may cast nonland permanents you control from the battlefield. (They enter the stack.)",
+    "colors": [
+      "W",
+      "U"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "set": "Set 6",
+    "power": "2",
+    "toughness": "6",
+    "artist": "0Bolzak0",
+    "_supersedes": "oru-reality-redifined-sb2",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__cards__oru-reality-redefined.png"
+  },
+  {
+    "id": "overwhelming-crush-out-sb6",
+    "name": "Overwhelming Crush-Out",
+    "manaCost": "{2}{G}{G}{G}",
+    "type": "Sorcery",
+    "rarity": "Uncommon",
+    "text": "Vehicles you control become artifact creatures until end of turn. Creatures you control get +3/+3 and gain trample until end of turn.",
+    "colors": [
+      "G"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Vehicles"
+    ],
+    "set": "Set 6",
+    "flavorText": "Speed is a way of life, and at the Ghirapur Grand Prix, it is a way of death.",
+    "artist": "Svetlin Velinov",
+    "_supersedes": "overwhelming-crush-out-fb5",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__cards__overwhelming-crush-out.png"
+  },
+  {
+    "id": "palisade-champion-sb6",
+    "name": "Palisade Champion",
+    "manaCost": "{2}{W}",
+    "type": "Creature — Human Soldier",
+    "rarity": "Rare",
+    "text": "Formation (The first time each turn damage would be dealt to a creature with formation, you may have that damage dealt to another creature you control with formation instead.)\nYou have formation.\n{W}: Target creature you control gains formation until end of turn.",
+    "colors": [
+      "W"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "set": "Set 6",
+    "power": "2",
+    "toughness": "4",
+    "artist": "Camilo Palma",
+    "_supersedes": "palisade-champion-tb3",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__cards__palisade-champion.png"
+  },
+  {
+    "id": "papers-please-sb6",
+    "name": "Papers, Please",
+    "manaCost": "{1}{U}{U}",
+    "type": "Instant",
+    "rarity": "Common",
+    "text": "Counter target spell.\nTax 1 (The next spell each of your opponents casts costs {1} more to cast. This doesn’t end at the end of turn.)",
+    "colors": [
+      "U"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "set": "Set 6",
+    "flavorText": "The opening of the Omenpaths led to a steady influx of immigrants to Ravnica, resulting in a corresponding increase in the already extensive number of Azorius laws.",
+    "artist": "Björn Öberg",
+    "_supersedes": "papers-please-tb3",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__cards__papers-please.png"
+  },
+  {
+    "id": "passed-by-sb6",
+    "name": "Passed By",
+    "manaCost": "{X}{W}",
+    "type": "Instant",
+    "rarity": "Rare",
+    "text": "You may return X Plains you control to their owner’s hand rather than pay this spell’s mana cost.\nReturn up to one target artifact or creature card with mana value X or less from your graveyard to the battlefield.",
+    "colors": [
+      "W"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Blink/ETB/Value"
+    ],
+    "set": "Set 6",
+    "flavorText": "Some roads are gone, only to become again.",
+    "artist": "Jenny Bloomfield",
+    "_supersedes": "dust-off-fb1",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__cards__passed-by.png"
+  },
+  {
+    "id": "perfected-scheme-sb6",
+    "name": "Perfected Scheme",
+    "manaCost": "{U}{B}",
+    "type": "Sorcery",
+    "rarity": "Uncommon",
+    "text": "Surveil 3.\nCipher\nTransmute {1}{U}{B} ({1}{U}{B}, Discard this card: Search your library for a card with the same mana value as this card, reveal it, put it into your hand, then shuffle. Transmute only as a sorcery.)",
+    "colors": [
+      "U",
+      "B"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Broken Cipher"
+    ],
+    "set": "Set 6",
+    "artist": "voidface_entity",
+    "_supersedes": "perfected-scheme-fb1",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__cards__perfected-scheme.png"
+  },
+  {
+    "id": "perish-that-thought-sb6",
+    "name": "Perish That Thought",
+    "manaCost": "{U}",
+    "type": "Sorcery",
+    "rarity": "Rare",
+    "text": "Target player reveals their hand. You choose a nonland card from it. That player exiles that card, then draws a card.",
+    "colors": [
+      "U"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "set": "Set 6",
+    "flavorText": "\"One day I imagined myself to be sad. It was a great day, for to summon sorrow from nothing is to admit it once had meaning. In pretending to ache, I remembered all that had once made me whole.\"",
+    "artist": "Erik Thor Sandberg",
+    "_supersedes": "perish-that-thought-fb4",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__cards__perish-that-thought.png"
+  },
+  {
+    "id": "phantasmal-scoundrel-sb6",
+    "name": "Phantasmal Scoundrel",
+    "manaCost": "{U}",
+    "type": "Creature — Illusion Rogue",
+    "rarity": "Uncommon",
+    "text": "Prowess\nWhen this creature becomes the target of a spell or ability, sacrifice it.\nWhenever this creature dies or deals combat damage to a player, you may draw a card from each player’s library.",
+    "colors": [
+      "U"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Prowess"
+    ],
+    "set": "Set 6",
+    "flavorText": "“I’m very flexible about the rules… and pretty much everything else.”",
+    "power": "1",
+    "toughness": "1",
+    "artist": "Benjamin Goutte",
+    "_supersedes": "phantasmal-monk-tb3",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__cards__phantasmal-scoundrel.png"
+  },
+  {
+    "id": "phenax-first-to-escape-sb6",
+    "name": "Phenax, First to Escape",
+    "manaCost": "{U}{B}",
+    "type": "Legendary Enchantment Creature — Human Rogue",
+    "rarity": "Rare",
+    "text": "Underworld’s Heist {1}{U}{B}\nSorcery — Adventure\nTarget player mills four cards. Exile a card from their graveyard. You may play that card for as long as it remains exiled, and mana of any type can be spent to cast that spell.\n—\nWard—{2}, Pay 2 life.\nWhenever Phenax deals combat damage to a player, you may cast a copy of its Adventure. (You still pay its cost.)",
+    "colors": [
+      "U",
+      "B"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Broken Cipher"
+    ],
+    "set": "Set 6",
+    "power": "2",
+    "toughness": "2",
+    "artist": "Mister Adam",
+    "_supersedes": "phenax-first-to-escape-fb4",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__cards__phenax-first-to-escape.png"
+  },
+  {
+    "id": "phylon-rumalos-mk-1-sb6",
+    "name": "Phylon Rumalos MK. 1",
+    "manaCost": "{W}",
+    "type": "Artifact — Vehicle",
+    "rarity": "Rare",
+    "text": "At the beginning of your end step, put a +1/+1 counter on another target creature you control if this Vehicle is untapped. Otherwise, each player draws a card.\nCrew 1",
+    "colors": [
+      "W"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Vehicles"
+    ],
+    "set": "Set 6",
+    "power": "1",
+    "toughness": "4",
+    "artist": "Ronan Le Fur",
+    "_supersedes": "coordination-unit-tb3",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__cards__phylon-rumalos-mk-1.png"
+  },
+  {
+    "id": "planar-geomendesis-sb6",
+    "name": "Planar Geomendesis",
+    "manaCost": "{W}",
+    "type": "Enchantment",
+    "rarity": "Rare",
+    "text": "At the beginning of your upkeep, create a 1/1 green Plains Dryad land creature token if an opponent controls more lands than you. Otherwise, surveil 1. (The token is affected by summoning sickness.)",
+    "colors": [
+      "W"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "set": "Set 6",
+    "flavorText": "\"Dawnsire, Log 121: Planet Adagia is generating new lifeforms, as if it is fighting a sickness caused by our terraforming.\"",
+    "artist": "Peter Mohrbacher",
+    "relatedTokens": [
+      "1/1 green Plains Dryad"
+    ],
+    "_supersedes": "planar-geomendesis-fb5",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__cards__planar-geomendesis.png"
+  },
+  {
+    "id": "podium-of-the-ancestors-sb6",
+    "name": "Podium of the Ancestors",
+    "manaCost": "{3}{G}",
+    "type": "Artifact",
+    "rarity": "Mythic Rare",
+    "text": "{T}: Target creature you control endures 1. (Put a +1/+1 counter on it or create a 1/1 white Spirit creature token.)\n{T}, Remove any number of counters from among creatures you control and sacrifice any number of tokens: Search your library for a creature card with mana value less than or equal to the total number of counters removed and tokens sacrificed this way, put it onto the battlefield, then shuffle. Activate only as a sorcery.",
+    "colors": [
+      "G"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Token Collection"
+    ],
+    "set": "Set 6",
+    "artist": "Chris Rahn",
+    "relatedTokens": [
+      "1/1 white Spirit"
+    ],
+    "_supersedes": "podium-of-the-ancestors-fb4",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__cards__podium-of-the-ancestors.png"
+  },
+  {
+    "id": "point-and-laugh-sb6",
+    "name": "Point and Laugh",
+    "manaCost": "{U}",
+    "type": "Instant",
+    "rarity": "Common",
+    "text": "Create a Cursed Role token attached to target creature. (If you control another Role on it, put that one into the graveyard. Enchanted creature is 1/1.)\nDraw a card.",
+    "colors": [
+      "U"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "set": "Set 6",
+    "flavorText": "Most tales of Eldraine are epic tales of heroism and grandeur. This one… barely croaks.",
+    "artist": "Julek Heller",
+    "relatedTokens": [
+      "Cursed Role"
+    ],
+    "_supersedes": "point-and-laugh-fb4",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__cards__point-and-laugh.png"
+  },
+  {
+    "id": "presence-of-the-minds-sb6",
+    "name": "Presence of the Minds",
+    "manaCost": "{2}{U}{R}",
+    "type": "Enchantment",
+    "rarity": "Rare",
+    "text": "Whenever you cast an enchantment spell, this enchantment deals 2 damage to any target.\nWhenever an opponent is dealt noncombat damage, draw a card.\nEach enchantment card in your graveyard has jump-start. (You may cast that card from your graveyard by discarding a card in addition to paying its other costs. It enters with a finality counter on it.)",
+    "colors": [
+      "U",
+      "R"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Enchantments"
+    ],
+    "set": "Set 6",
+    "artist": "Jaime Jones",
+    "_supersedes": "presence-of-the-firemind-fb1",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__cards__presence-of-the-minds.png"
+  },
+  {
+    "id": "preserver-of-the-flesh-sb6",
+    "name": "Preserver of the Flesh",
+    "manaCost": "{G}",
+    "type": "Artifact",
+    "rarity": "Rare",
+    "text": "Ward—Untap all artifacts.\n{2}{G}, {T}: Petrify target creature card from a graveyard. (To petrify a creature, exile it. Its controller creates a token that’s a copy of it, except it’s an artifact.)\n{4}{B}, {T}: Petrify target creature.",
+    "colors": [
+      "G"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "set": "Set 6",
+    "artist": "BigballGao",
+    "_supersedes": "preserver-of-the-flesh-sb2",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__cards__preserver-of-the-flesh.png"
+  },
+  {
+    "id": "protective-custody-sb6",
+    "name": "Protective Custody",
+    "manaCost": "{1}{U}{U}",
+    "type": "Enchantment — Aura",
+    "rarity": "Rare",
+    "text": "Enchant creature\nYou control enchanted creature.\nEnchanted creature loses all abilities and is a green and white Citizen creature with base power and toughness 1/1 named Familiar Stranger. (It loses all other colors, card types, creature types, and names.)",
+    "colors": [
+      "U"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "set": "Set 6",
+    "artist": "Malika Favre",
+    "_supersedes": "protective-custody-fb4",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__cards__protective-custody.png"
+  },
+  {
+    "id": "pull-from-the-static-noise-sb6",
+    "name": "Pull from the Static Noise",
+    "manaCost": "{2}{B}{B}",
+    "type": "Enchantment",
+    "rarity": "Rare",
+    "text": "Whenever a creature you control deals combat damage to a player, that player exiles a card from their hand with an impending counter on it.\n{4}{U}{U}: Choose target nonland card in exile with an impending counter on it. Copy it, then put that card into its owner’s graveyard. You may cast the copy without paying its mana cost.",
+    "colors": [
+      "B"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Broken Cipher"
+    ],
+    "set": "Set 6",
+    "artist": "0lvac",
+    "_supersedes": "pull-from-the-static-noise-fb1",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__cards__pull-from-the-static-noise.png"
+  },
+  {
+    "id": "rin-loyal-friend-sb6",
+    "name": "Rin, Loyal Friend",
+    "manaCost": "{2}{W}",
+    "type": "Legendary Creature — Dog",
+    "rarity": "Rare",
+    "text": "Partner with Seri, Fierce Friend (When this creature enters, target player may put Seri into their hand from their library, then shuffle.)\nWhenever one or more Cats you control attack, surveil X, then you may return a nonland permanent card with mana value X or less from your graveyard to the battlefield, where X is the number of attacking Cats.\n{2/G}, {T}: Create a 1/1 green Cat creature token.",
+    "colors": [
+      "W"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Self-mill"
+    ],
+    "set": "Set 6",
+    "flavorText": "The fiercest heart protects the vulnerable.",
+    "power": "2",
+    "toughness": "2",
+    "artist": "ChatGPT o4",
+    "relatedTokens": [
+      "1/1 green Cat"
+    ],
+    "relatedFace": "Seri, Fierce Friend",
+    "_supersedes": "rin-loyal-friend-tb3",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__cards__rin-loyal-friend.png"
+  },
+  {
+    "id": "road-kill-sb6",
+    "name": "Road Kill",
+    "manaCost": "{G}{G}",
+    "type": "Creature — Beast Avatar",
+    "rarity": "Rare",
+    "text": "You may begin the game with this card in your graveyard. If you do, each opponent investigates.\nRequiem — Whenever a card enters or leaves your graveyard, you may pay {G}{G}. If you do, return this card from your graveyard to the battlefield with a finality counter on it. When it enters this way, you may destroy target Vehicle.",
+    "colors": [
+      "G"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Self-mill"
+    ],
+    "set": "Set 6",
+    "power": "3",
+    "toughness": "3",
+    "artist": "Danielle Kukic (Edited by me)",
+    "_supersedes": "road-kill-fb5",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__cards__road-kill.png"
+  },
+  {
+    "id": "rockface-village-weaponmaster-sb6",
+    "name": "Rockface-Village Weaponmaster",
+    "manaCost": "{R}",
+    "type": "Creature — Lizard Artificer",
+    "rarity": "Rare",
+    "text": "Offspring {2}{B} (You may pay an additional {2}{B} as you cast this spell. If you do, when this creature enters, create a 1/1 token copy of it.)\nWhenever a token you control enters, this creature deals 1 damage to each opponent.",
+    "colors": [
+      "R"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Token Collection"
+    ],
+    "set": "Set 6",
+    "flavorText": "“Don’t give a part of yourself to everything you do. Give EVERYTHING you are!”",
+    "power": "2",
+    "toughness": "1",
+    "artist": "Ryota Murayama",
+    "_supersedes": "brightspark-collector-fb4",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__cards__rockface-village-weaponmaster.png"
+  },
+  {
+    "id": "savage-clash-sb6",
+    "name": "Savage Clash",
+    "manaCost": "{1}{G}{G}",
+    "type": "Instant",
+    "rarity": "Common",
+    "text": "As an additional cost to cast this spell, choose a creature you control or reveal a creature card from your hand.\nSavage Clash deals damage equal to the power of the creature you chose or the card you revealed to target creature. Excess damage is dealt to that creature’s controller instead.",
+    "colors": [
+      "G"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "set": "Set 6",
+    "artist": "Wayne Reynolds",
+    "_supersedes": "untamed-savagery-fb1",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__cards__savage-clash.png"
+  },
+  {
+    "id": "savvy-seagull-sb6",
+    "name": "Savvy Seagull",
+    "manaCost": "{2}{U}",
+    "type": "Creature — Bird",
+    "rarity": "Rare",
+    "text": "Flying, prowess\nWhenever this creature attacks, choose one —\n• You may cast target noncreature, nonland card from your graveyard this turn. If that spell would be put into your graveyard, exile it instead.\n• Create a Shard token. (It's an enchantment with \"{2}, Sacrifice this token: Scry 1, then draw a card.\")",
+    "colors": [
+      "U"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Prowess",
+      "Self-mill"
+    ],
+    "set": "Set 6",
+    "power": "2",
+    "toughness": "2",
+    "artist": "Elisabeth Lucas",
+    "relatedTokens": [
+      "Shard"
+    ],
+    "_supersedes": "savvy-seagull-fb4",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__cards__savvy-seagull.png"
+  },
+  {
+    "id": "seri-fierce-friend-sb6",
+    "name": "Seri, Fierce Friend",
+    "manaCost": "{2}{R}",
+    "type": "Legendary Creature — Cat",
+    "rarity": "Rare",
+    "text": "Partner with Rin, Loyal Friend (When this creature enters, target player may put Rin into their hand from their library, then shuffle.)\nWhenever a card leaves your graveyard, Seri deals damage equal to twice the number of Dogs you control to each opponent. This ability triggers only once each turn.\n{2/G}, {T}: Create a 1/1 green Dog creature token.",
+    "colors": [
+      "R"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Self-mill"
+    ],
+    "set": "Set 6",
+    "flavorText": "The most loyal claws punish the invaders.",
+    "power": "2",
+    "toughness": "2",
+    "artist": "ChatGPT o4",
+    "relatedTokens": [
+      "1/1 green Dog"
+    ],
+    "relatedFace": "Rin, Loyal Friend",
+    "_supersedes": "seri-fierce-friend-tb3",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__cards__seri-fierce-friend.png"
+  },
+  {
+    "id": "shattering-sound-sb6",
+    "name": "Shattering Sound",
+    "manaCost": "{R}{R}",
+    "type": "Sorcery",
+    "rarity": "Uncommon",
+    "text": "Destroy target artifact. Shattering Sound deals 3 damage to that artifact’s controller.\nWhen this card is put into your graveyard from your library, you may exile it. If you do, destroy target artifact. This card deals 3 damage to that artifact’s controller.",
+    "colors": [
+      "R"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Self-mill"
+    ],
+    "set": "Set 6",
+    "artist": "mayk.75",
+    "_supersedes": "shattering-sound-fb1",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__cards__shattering-sound.png"
+  },
+  {
+    "id": "shine-bright-sb6",
+    "name": "Shine Bright",
+    "manaCost": "{R}",
+    "type": "Enchantment — Aura",
+    "rarity": "Uncommon",
+    "text": "Flash\nEnchant creature\nEnchanted creature gets +1/+0 for each enchantment you control and has trample.",
+    "colors": [
+      "R"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Enchantments"
+    ],
+    "set": "Set 6",
+    "flavorText": "“Each of us has a unique role to fulfill, but sometimes we struggle with our part. When I forget this simple truth, I let my sword remind me.”\n—Denara, Embereth Champion",
+    "artist": "Nitrox-Marquez",
+    "_supersedes": "shine-bright-fb1",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__cards__shine-bright.png"
+  },
+  {
+    "id": "shocking-revelation-sb6",
+    "name": "Shocking Revelation",
+    "manaCost": "{1}{R}",
+    "type": "Instant",
+    "rarity": "Uncommon",
+    "text": "As an additional cost to cast this spell, you may behold a card with mana value 6 or greater. (To behold a card with mana value 6 or greater, choose a permanent you control or reveal a card from your hand, either with mana value 6 or greater.)\nThis spell deals 2 damage to any target. If a card was beheld, discard any number of cards, then draw that many cards.",
+    "colors": [
+      "R"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "set": "Set 6",
+    "artist": "Skynight.art",
+    "_supersedes": "shocking-revelation-fb4",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__cards__shocking-revelation.png"
+  },
+  {
+    "id": "siege-engine-sb6",
+    "name": "Siege Engine",
+    "manaCost": "{1}{W}{B}{G}",
+    "type": "Artifact — Vehicle",
+    "rarity": "Rare",
+    "text": "Trample\nWhenever a creature you control enters, put a ward {1} counter and a ward—Pay 2 life counter on this Vehicle.\nWhenever this Vehicle attacks, each opponent loses life equal to the number of counters on this Vehicle and you gain that much life.\nCrew 3",
+    "colors": [
+      "W",
+      "B",
+      "G"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Vehicles"
+    ],
+    "set": "Set 6",
+    "power": "4",
+    "toughness": "5",
+    "artist": "Vance Kovacs",
+    "_supersedes": "siege-engine-tb3",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__cards__siege-engine.png"
+  },
+  {
+    "id": "soul-coder-of-yearning-steel-sb6",
+    "name": "Soul-Coder of Yearning Steel",
+    "manaCost": "{1}",
+    "type": "Artifact Creature — Spirit",
+    "rarity": "Rare",
+    "text": "{T}: Until end of turn, target noncreature artifact you control becomes an artifact creature. If it’s not a Vehicle, it has base power and toughness each equal to its mana value until end of turn.\n{2}{G}{W}, {T}: Until end of turn, each noncreature artifact you control becomes an artifact creature. Each one that isn’t a Vehicle has base power and toughness each equal to its mana value until end of turn.",
+    "colors": [],
+    "custom": true,
+    "archetypes": [
+      "Artifacts"
+    ],
+    "set": "Set 6",
+    "power": "1",
+    "toughness": "1",
+    "artist": "Kinu Nishimura",
+    "_supersedes": "mobilizer-of-the-machines-fb1",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__cards__soul-coder-of-yearning-steel.png"
+  },
+  {
+    "id": "soul-value-cage-sb6",
+    "name": "Soul-Value Cage",
+    "manaCost": "{4}",
+    "type": "Artifact",
+    "rarity": "Rare",
+    "text": "Whenever a nontoken creature dies, exile it. Its controller gets a number of debt counters equal to that creature’s mana value. (At the beginning of that player’s end step, they may pay {1} for each debt counter they have. They remove that many counters, then lose 1 life for each debt counter they have.)\nWhenever a player removes the last debt counter from themselves, they may put a creature card exiled with this artifact onto the battlefield under their control.",
+    "colors": [],
+    "custom": true,
+    "archetypes": [],
+    "set": "Set 6",
+    "artist": "Howell Golson",
+    "_supersedes": "gilded-cage-fb4",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__cards__soul-value-cage.png"
+  },
+  {
+    "id": "spoiled-high-blood-sb6",
+    "name": "Spoiled High-Blood",
+    "manaCost": "{2}{B}",
+    "type": "Creature — Vampire Noble",
+    "rarity": "Rare",
+    "text": "Lifelink\nWhen this creature enters, return target creature card from your graveyard to the battlefield. Put a null counter on it. As long as it has a null counter on it, it’s a black Thrull creature named Blood Pet with base power and toughness 1/1, loses all abilities, and has “Sacrifice this creature: Add {B}.” (Its “when this creature enters” abilities still trigger.)",
+    "colors": [
+      "B"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Blink/ETB/Value"
+    ],
+    "set": "Set 6",
+    "power": "2",
+    "toughness": "2",
+    "artist": "pby95 (I edited a little)",
+    "_supersedes": "malakir-highborn-fb1",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__cards__spoiled-high-blood.png"
+  },
+  {
+    "id": "starfallen-vale-sb6",
+    "name": "Starfallen Vale",
+    "manaCost": "",
+    "type": "Land",
+    "rarity": "Rare",
+    "text": "{T}, Pay 1 life: Add {U} or {B}.\n{1}, {T}, Sacrifice this land: Draw a card.",
+    "colors": [],
+    "custom": true,
+    "archetypes": [],
+    "set": "Set 6",
+    "flavorText": "The stars will show you what you are, but look again; you will be shown what you are meant to be.",
+    "artist": "Liz Marsh",
+    "_supersedes": "mystical-marsh-fb1",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__cards__starfallen-vale.png"
+  },
+  {
+    "id": "stealing-time-sb6",
+    "name": "Stealing Time",
+    "manaCost": "{6}{U}{U}",
+    "type": "Sorcery",
+    "rarity": "Mythic Rare",
+    "text": "Draw three cards and untap up to five lands. If this is the second time you’ve cast a spell named Stealing Time this turn, take an extra turn after this one.\nCipher",
+    "colors": [
+      "U"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Broken Cipher"
+    ],
+    "set": "Set 6",
+    "artist": "평소작",
+    "_supersedes": "stealing-time-tb3",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__cards__stealing-time.png"
+  },
+  {
+    "id": "storm-tamer-sb6",
+    "name": "Storm Tamer",
+    "manaCost": "{1}{G}",
+    "type": "Creature — Elf Knight",
+    "rarity": "Rare",
+    "text": "Flash\nSplit second (As long as this spell is on the stack, players can't cast spells or activate abilities that aren't mana abilities.)\nEach spell a player casts costs {1} more to cast for each other spell that player has cast this turn.",
+    "colors": [
+      "G"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "set": "Set 6",
+    "flavorText": "\"Hush, mage. You will respect the timeline in awe or in death.\"",
+    "power": "2",
+    "toughness": "2",
+    "artist": "sandara",
+    "_supersedes": "storm-tamer-fb1",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__cards__storm-tamer.png"
+  },
+  {
+    "id": "straight-up-fire-sb6",
+    "name": "Straight Up Fire",
+    "manaCost": "{1}{R}",
+    "type": "Instant",
+    "rarity": "Uncommon",
+    "text": "Straight Up Fire deals 2 damage to target player for each spell they have on the stack.",
+    "colors": [
+      "R"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Storm"
+    ],
+    "set": "Set 6",
+    "flavorText": "Packing crowds and packing heat.",
+    "artist": "Imagen 2",
+    "_supersedes": "straight-up-fire-fb1",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__cards__straight-up-fire.png"
+  },
+  {
+    "id": "surveillance-state-sb6",
+    "name": "Surveillance State",
+    "manaCost": "",
+    "type": "Conspiracy",
+    "rarity": "Rare",
+    "text": "(Start the game with this conspiracy face up in the command zone.)\nLands you control enter tapped.\nWhenever a land you control enters, surveil 1.",
+    "colors": [],
+    "custom": true,
+    "archetypes": [],
+    "set": "Set 6",
+    "flavorText": "The convenience of the many must be ensured through the inconvenience of the few.",
+    "artist": "YUX.III — ANSI Art Series",
+    "_supersedes": "surveillance-state-fb4",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__cards__surveillance-state.png"
+  },
+  {
+    "id": "take-a-loan-sb6",
+    "name": "Take a Loan",
+    "manaCost": "{X}{B}",
+    "type": "Sorcery",
+    "rarity": "Rare",
+    "text": "Create twice X tapped Treasure tokens.\nYou get X debt counters. (At the beginning of your end step, you may pay {1} for each debt counter you have. Remove that many counters, then lose 1 life for each debt counter you have.)",
+    "colors": [
+      "B"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Token Collection"
+    ],
+    "set": "Set 6",
+    "artist": "Topseoung",
+    "relatedTokens": [
+      "Treasure"
+    ],
+    "_supersedes": "take-a-loan-tb3",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__cards__take-a-loan.png"
+  },
+  {
+    "id": "thanks-obama-sb6",
+    "name": "Thanks Obama",
+    "manaCost": "",
+    "type": "Conspiracy",
+    "rarity": "Rare",
+    "text": "(Start the game with this conspiracy face up in the command zone.)\nBefore the game starts, type the following line into ChatGPT and this card’s abilities become the response:\n“Give my Magic: The Gathering conspiracy exactly one ability that can affect the game. Nothing else and nothing related to Hidden Agenda.”",
+    "colors": [],
+    "custom": true,
+    "archetypes": [],
+    "set": "Set 6",
+    "artist": "Obama's Mother",
+    "_supersedes": "the-oracle-provides-fb5",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__cards__thanks-obama.png"
+  },
+  {
+    "id": "the-floor-is-lava-sb6",
+    "name": "The Floor Is Lava",
+    "manaCost": "{1}{R}{R}",
+    "type": "Enchantment",
+    "rarity": "Rare",
+    "text": "Players can't gain life.\nAt the beginning of each player’s upkeep, this enchantment deals 2 damage to that player and that player takes the initiative.",
+    "colors": [
+      "R"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "set": "Set 6",
+    "artist": "WOTC (Edited by me)",
+    "_supersedes": "the-floor-is-lava-tb3",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__cards__the-floor-is-lava.png"
+  },
+  {
+    "id": "the-ghost-writer-sb6",
+    "name": "The Ghost Writer",
+    "manaCost": "{2}{U}{U}",
+    "type": "Legendary Creature — Spirit Detective",
+    "rarity": "Mythic Rare",
+    "text": "Hexproof\nThe Ghost Writer can’t be blocked.\nWhen The Ghost Writer enters, you may search your graveyard, hand, and/or library for a card named Blend In, a card named Protective Custody, and/or a card named Witness Protection, reveal them, and put them into your hand. If you search your library this way, shuffle.\nWhenever you cast a spell that targets a creature, draw a card.",
+    "colors": [
+      "U"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "set": "Set 6",
+    "power": "3",
+    "toughness": "3",
+    "artist": "Forrest Eddington",
+    "_supersedes": "terai-ghost-writer-fb4",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__cards__the-ghost-writer.png"
+  },
+  {
+    "id": "the-legion-does-not-forget-sb6",
+    "name": "The Legion Does Not Forget",
+    "manaCost": "{6}{W}{W}",
+    "type": "Instant",
+    "rarity": "Rare",
+    "text": "This spell costs {1} less to cast for each creature card in your graveyard.\nCreate a 1/1 red and white Soldier creature token with formation for each creature card in your graveyard. (The first time each turn damage would be dealt to a creature with formation, you may have that damage dealt to another creature you control with formation instead.)",
+    "colors": [
+      "W"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Self-mill"
+    ],
+    "set": "Set 6",
+    "artist": "Loic Canavaggia",
+    "relatedTokens": [
+      "1/1 white and red Soldier"
+    ],
+    "_supersedes": "the-legion-does-not-forget-tb3",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__cards__the-legion-does-not-forget.png"
+  },
+  {
+    "id": "the-oculus-imperatorum-sb6",
+    "name": "The Oculus Imperatorum",
+    "manaCost": "{1}{B}",
+    "type": "Legendary Artifact",
+    "rarity": "Mythic Rare",
+    "text": "At the beginning of your upkeep, create a Dark Confidant token. (It’s a {1}{B} 2/1 Human Wizard creature with “At the beginning of your upkeep, reveal the top card of your library and put that card into your hand. You lose life equal to its mana value.”)\n{T}, Tap five untapped Wizards you control: Target opponent loses 10 life and you gain 10 life.",
+    "colors": [
+      "B"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Token Collection"
+    ],
+    "set": "Set 6",
+    "artist": "Susan Sun",
+    "relatedTokens": [
+      "Dark Confidant"
+    ],
+    "_supersedes": "table-of-costly-greatness-fb5",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__cards__the-oculus-imperatorum.png"
+  },
+  {
+    "id": "the-paper-woman-sb6",
+    "name": "The Paper Woman",
+    "manaCost": "{1}{W}{W}",
+    "type": "Legendary Creature — Alien",
+    "rarity": "Rare",
+    "text": "Requiem — Whenever a card is put into or leaves your graveyard, each player exiles a creature they control. If they do, they draw a card.",
+    "colors": [
+      "W"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Self-mill"
+    ],
+    "set": "Set 6",
+    "flavorText": "Wrap and wrap and wrap she goes,\nIn sheets of crackling white.\nShe’ll snatch you up, she’ll fold you tight,\nAnd vanish you from sight.",
+    "power": "3",
+    "toughness": "3",
+    "artist": "Junji Ito",
+    "_supersedes": "the-paper-man-fb4",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__cards__the-paper-woman.png"
+  },
+  {
+    "id": "thieves-masterpiece-sb6",
+    "name": "Thieves' Masterpiece",
+    "manaCost": "{2}",
+    "type": "Artifact — Equipment",
+    "rarity": "Rare",
+    "text": "Whenever equipped creature deals combat damage to a player, you draw a card and that player discards a card.\n{U}{B}: Target instant or sorcery spell you control gains cipher. It must be encoded on equipped creature if able.\nEquip {2}",
+    "colors": [],
+    "custom": true,
+    "archetypes": [
+      "Broken Cipher"
+    ],
+    "set": "Set 6",
+    "artist": "Eric Belisle (Edited by me)",
+    "_supersedes": "thieves-masterpiece-fb1",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__cards__thieves-masterpiece.png"
+  },
+  {
+    "id": "thrill-force-kaladesh-s-triumph-sb6",
+    "name": "Thrill Force, Kaladesh's Triumph",
+    "manaCost": "{2}{W}{G}{R}",
+    "type": "Legendary Artifact — Vehicle",
+    "rarity": "Mythic Rare",
+    "text": "You may pay 3 life and exile a white card, a green card, and a red card from your hand rather than pay this spell’s mana cost.\nTrample, haste\nThrill Force has indestructible and hexproof as long as it's tapped.\nCrew 3",
+    "colors": [
+      "W",
+      "R",
+      "G"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Vehicles"
+    ],
+    "set": "Set 6",
+    "flavorText": "\"Dwarven craftsmanship merges with elven elegance and human ambition. When I drive it, I don't miss home at all.\"\n—Chandra Nalaar",
+    "power": "7",
+    "toughness": "5",
+    "artist": "ChatGPT Images 2.6",
+    "_supersedes": "thrill-force-kaladesh-s-triumph-fb1",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__cards__thrill-force-kaladesh-s-triumph.png"
+  },
+  {
+    "id": "total-sabotage-sb6",
+    "name": "Total Sabotage",
+    "manaCost": "{B}{B}",
+    "type": "Sorcery",
+    "rarity": "Rare",
+    "text": "Sneak {1}{B}{B} (You may cast this spell for {1}{B}{B} if you also return an unblocked attacker you control to hand during the declare blockers step.)\nCipher\nTarget player sacrifices a creature, enchantment, or Vehicle. If this is the second time you cast a spell named Total Sabotage this turn, instead that player sacrifices a creature, an enchantment, and a Vehicle.",
+    "colors": [
+      "B"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Broken Cipher"
+    ],
+    "set": "Set 6",
+    "artist": "Mauro Perini",
+    "_supersedes": "total-sabotage-fb1",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__cards__total-sabotage.png"
+  },
+  {
+    "id": "touch-brilliance-sb6",
+    "name": "Touch Brilliance",
+    "manaCost": "{1}{W}{U}",
+    "type": "Sorcery",
+    "rarity": "Rare",
+    "text": "Until end of turn, target creature you control gets +1/+1 and gains “Whenever this creature deals combat damage to a player, you may draw a card.”\nStorm (When you cast this spell, copy it for each spell cast before it this turn. You may choose new targets for the copies.)\nOverload {5}{W}{U} (You may cast this spell for its overload cost. If you do, change “target” in its text to “each.”)",
+    "colors": [
+      "W",
+      "U"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Storm",
+      "Self-mill"
+    ],
+    "set": "Set 6",
+    "artist": "Sainker",
+    "relatedTokens": [
+      "1/1 white Kithkin"
+    ],
+    "_supersedes": "deploy-the-cenn-fb1",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__cards__touch-brilliance.png"
+  },
+  {
+    "id": "traditional-futurist-sb6",
+    "name": "Traditional Futurist",
+    "manaCost": "{U}",
+    "type": "Enchantment Artifact Creature — Moonfolk Artificer",
+    "rarity": "Uncommon",
+    "text": "Custom spells you cast cost {1} less to cast as long as you control two or more non-custom, nonland, nontoken permanents.\nNon-custom spells you cast cost {1} less to cast as long as you control two or more other non-custom, nonland, nontoken permanents.",
+    "colors": [
+      "U"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Storm"
+    ],
+    "set": "Set 6",
+    "power": "1",
+    "toughness": "2",
+    "artist": "Julie Dillon",
+    "_supersedes": "traditional-futurist-fb4",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__cards__traditional-futurist.png"
+  },
+  {
+    "id": "transformative-art-sb6",
+    "name": "Transformative Art",
+    "manaCost": "{U}",
+    "type": "Sorcery — Lesson",
+    "rarity": "Common",
+    "text": "Exile target enchantment or creature. Its controller creates a 4/4 blue and red Elemental creature token.",
+    "colors": [
+      "U"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "set": "Set 6",
+    "flavorText": "“Good art makes you think. Great art makes you forget how.”\n—Glera, Emotion Sculptor",
+    "artist": "bossmonsterbani",
+    "relatedTokens": [
+      "4/4 blue and red Elemental"
+    ],
+    "_supersedes": "resculpt-with-porpuse-fb1",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__cards__transformative-art.png"
+  },
+  {
+    "id": "treetop-rascal-sb6",
+    "name": "Treetop Rascal",
+    "manaCost": "{W}",
+    "type": "Creature — Kithkin Rogue",
+    "rarity": "Rare",
+    "text": "Whenever this creature attacks, you may pay {2}{W}. If you do, choose one —\n• Tap target creature and put a stun counter on it. (If it would become untapped, remove a stun counter from it instead.)\n• Untap target creature and put a vitality counter on it.\nIf {U}{U} was spent to pay this cost, choose both instead.\n(Whenever a permanent with a vitality counter becomes tapped, remove a vitality counter from it and untap it.)",
+    "colors": [
+      "W"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "set": "Set 6",
+    "power": "2",
+    "toughness": "1",
+    "artist": "Jason Best",
+    "_supersedes": "barrenton-acrobat-singer-fb4",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__cards__treetop-rascal.png"
+  },
+  {
+    "id": "trek-sb6",
+    "name": "Trek",
+    "manaCost": "{G}",
+    "type": "Sorcery",
+    "rarity": "Common",
+    "text": "Reveal the top card of your library. If it's a land card, put it onto the battlefield. Otherwise, put that card into your hand.",
+    "colors": [
+      "G"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "set": "Set 6",
+    "flavorText": "“A path without purpose is a purpose of its own.”\n—Azusa, Lost but Seeking",
+    "artist": "Nicholas Roerich",
+    "_supersedes": "trek-fb1",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__cards__trek.png"
+  },
+  {
+    "id": "tsuriai-of-perfect-balance-sb6",
+    "name": "Tsuriai of Perfect Balance",
+    "manaCost": "{2}{W}{B}",
+    "type": "Legendary Creature — Spirit",
+    "rarity": "Rare",
+    "text": "Companion — Excluding lands, the number of custom cards and non-custom cards in your starting deck is the same. (If this card is your chosen companion, you may put it into your hand from outside the game for {3} as a sorcery.)\nIndestructible\nAt the beginning of your end step, if you've cast a custom card and a non-custom card this turn, exile target nonland permanent, then you may return it to the battlefield under its owner's control.",
+    "colors": [
+      "W",
+      "B"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Blink/ETB/Value"
+    ],
+    "set": "Set 6",
+    "power": "3",
+    "toughness": "3",
+    "artist": "Delphi Art",
+    "_supersedes": "tsuriai-of-perfected-balance-sb2",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__cards__tsuriai-of-perfect-balance.png"
+  },
+  {
+    "id": "twinsoul-oread-sb6",
+    "name": "Twinsoul Oread",
+    "manaCost": "{1}{R}",
+    "type": "Enchantment Creature — Nymph",
+    "rarity": "Rare",
+    "text": "Bestow {3}{R} (If you cast this card for its bestow cost, it’s an Aura spell with enchant creature. It becomes a creature again if it’s not attached to a creature.)\nEnchanted creature gets +2/+1.\nWhenever this creature or enchanted creature attacks, create a tapped and attacking token that’s a copy of it. Sacrifice that token at the beginning of the next end step.",
+    "colors": [
+      "R"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Token Collection"
+    ],
+    "set": "Set 6",
+    "power": "2",
+    "toughness": "1",
+    "artist": "Syd Mills",
+    "_supersedes": "afterimage-brawler-tb3",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__cards__twinsoul-oread.png"
+  },
+  {
+    "id": "twisted-pinata-sb6",
+    "name": "Twisted Piñata",
+    "manaCost": "{R}",
+    "type": "Artifact Creature — Demon Toy",
+    "rarity": "Uncommon",
+    "text": "Defender\nWhenever this creature is dealt damage, create that many Spike tokens. (They’re artifacts with “{2}, Sacrifice this token: Target opponent gets an emblem with ‘At the beginning of your upkeep, you lose 1 life.’”)\n{2}: Target creature an opponent controls attacks you this turn if able.",
+    "colors": [
+      "R"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Token Collection"
+    ],
+    "set": "Set 6",
+    "power": "0",
+    "toughness": "2",
+    "artist": "Blizzards",
+    "relatedTokens": [
+      "Spike"
+    ],
+    "_supersedes": "twisted-pinata-tb3",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__cards__twisted-pinata.png"
+  },
+  {
+    "id": "united-we-stay-sb6",
+    "name": "United We Stay",
+    "manaCost": "{2}{W}",
+    "type": "Instant",
+    "rarity": "Rare",
+    "text": "Creatures you control gain hexproof and indestructible until end of turn. Nontoken creatures you control gain unity until end of turn. (Token creatures you control have all activated abilities of all nontoken creatures you control with unity.)",
+    "colors": [
+      "W"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "set": "Set 6",
+    "artist": "zhjake",
+    "_supersedes": "united-we-stand-tb3",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__cards__united-we-stay.png"
+  },
+  {
+    "id": "unlucky-strike-sb6",
+    "name": "Unlucky Strike",
+    "manaCost": "{R}",
+    "type": "Enchantment",
+    "rarity": "Rare",
+    "text": "At the beginning of your upkeep, if you have exactly thirteen cards in your graveyard, sacrifice this enchantment and it deals 13 damage to each opponent.\n{2}{R}, Exile a card from your graveyard: This enchantment deals 1 damage to each opponent.",
+    "colors": [
+      "R"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Self-mill"
+    ],
+    "set": "Set 6",
+    "artist": "paca.ski (Edited by me)",
+    "_supersedes": "unlucky-strike-fb4",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__cards__unlucky-strike.png"
+  },
+  {
+    "id": "vehicles-need-it-sb6",
+    "name": "Vehicles Need It",
+    "manaCost": "{3}{W}{W}",
+    "type": "Instant",
+    "rarity": "Rare",
+    "text": "Put an artifact card you own from outside the game onto the battlefield. It’s a 4/4 kindred artifact Angel Vehicle with flying and crew 3.\nMiracle {2}{W} (You may cast this card for its miracle cost when you draw it if it's the first card you drew this turn.)",
+    "colors": [
+      "W"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Vehicles"
+    ],
+    "set": "Set 6",
+    "artist": "letsblockourselves",
+    "_supersedes": "vehicles-need-it-fb4",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__cards__vehicles-need-it.png"
+  },
+  {
+    "id": "veil-up-sb6",
+    "name": "Veil Up",
+    "manaCost": "{G/U}",
+    "type": "Instant",
+    "rarity": "Common",
+    "text": "Put a +1/+1 counter on target creature you control. It gains hexproof until end of turn.\nFlashback {1}{G}{U}",
+    "colors": [
+      "U",
+      "G"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "set": "Set 6",
+    "artist": "Wenqing Yan",
+    "_supersedes": "jadeskin-fb1",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__cards__veil-up.png"
+  },
+  {
+    "id": "wailbounder-sb6",
+    "name": "Wailbounder",
+    "manaCost": "{4}{B}",
+    "type": "Creature — Elemental",
+    "rarity": "Uncommon",
+    "text": "Flash\nWhen this creature enters, return target creature card from your graveyard to the battlefield. That creature gains “When you control no permanents named Wailbounder, exile this creature.”\nEvoke {1}{W} (You may cast this spell for its evoke cost. If you do, it's sacrificed when it enters.)",
+    "colors": [
+      "B"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Blink/ETB/Value",
+      "Self-mill"
+    ],
+    "set": "Set 6",
+    "power": "3",
+    "toughness": "2",
+    "artist": "Aria Fawn",
+    "_supersedes": "wailbounder-tb3",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__cards__wailbounder.png"
+  },
+  {
+    "id": "wall-of-aurora-sb6",
+    "name": "Wall of Aurora",
+    "manaCost": "{1}{U}",
+    "type": "Enchantment Creature — Wall",
+    "rarity": "Uncommon",
+    "text": "Defender\nWhen this creature enters, draw a card.",
+    "colors": [
+      "U"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "set": "Set 6",
+    "flavorText": "“Their realm is without a guard, and yet is protected as the most tended of gardens. One may wander for a millennium beneath its lights, and still crave to bask there evermore.”\n—Tunk, Former General",
+    "power": "0",
+    "toughness": "4",
+    "artist": "juturrne",
+    "_supersedes": "wall-of-questions-fb4",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__cards__wall-of-aurora.png"
+  },
+  {
+    "id": "what-argoth-had-sb6",
+    "name": "What Argoth Had",
+    "manaCost": "{1}{G}",
+    "type": "Sorcery",
+    "rarity": "Common",
+    "text": "Mill two cards. Create a tapped Powerstone token. (It’s an artifact with “{T}: Add {C}. This mana can’t be spent to cast a nonartifact spell.”)\nFlashback {1}{G}\nFlashback—Exile an artifact card from your graveyard.",
+    "colors": [
+      "G"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Self-mill"
+    ],
+    "set": "Set 6",
+    "flavorText": "“Nature gave freely what the Brothers could never obtain. A cruel irony, yet nature, in its essence, is never cruel.”\n—Dalmir, Argoth Storyteller",
+    "artist": "Sam Keiser",
+    "relatedTokens": [
+      "Powerstone"
+    ],
+    "_supersedes": "argoth-s-findings-tb3",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__cards__what-argoth-had.png"
+  },
+  {
+    "id": "whisper-twice-sb6",
+    "name": "Whisper Twice",
+    "manaCost": "{1}{R}",
+    "type": "Instant",
+    "rarity": "Common",
+    "text": "Add {G}{U}{R}.\nHarmonize {4}{R} (You may cast this card from your graveyard for its harmonize cost. You may tap a creature you control to reduce that cost by {X}, where X is its power. Then exile this spell.)",
+    "colors": [
+      "R"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Self-mill"
+    ],
+    "set": "Set 6",
+    "flavorText": "\"Let the Jeskai meditate in silence—a silence that will be broken as easily as their bones.\"\n—Taki, Temur Omen-Eyes",
+    "artist": "María Elena Borzatta",
+    "_supersedes": "whisper-twice-fb4",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__cards__whisper-twice.png"
+  },
+  {
+    "id": "who-could-it-be-sb6",
+    "name": "Who Could It Be?",
+    "manaCost": "{U}{U}",
+    "type": "Sorcery",
+    "rarity": "Rare",
+    "text": "Gain control of target creature you don’t control. Its owner creates a token that’s a copy of a card named Ransom Note. You control that creature until that token leaves the battlefield.\nCipher (Then you may exile this spell card encoded on a creature you control. Whenever that creature deals combat damage to a player, its controller may cast a copy of the encoded card without paying its mana cost.)",
+    "colors": [
+      "U"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "set": "Set 6",
+    "artist": "Gaboleps and trixtzys",
+    "relatedTokens": [
+      "Ransom Note"
+    ],
+    "_supersedes": "who-could-it-be-tb3",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__cards__who-could-it-be.png"
+  },
+  {
+    "id": "wild-guess-sb6",
+    "name": "Wild Guess",
+    "manaCost": "{R}",
+    "type": "Instant",
+    "rarity": "Rare",
+    "text": "Buyback {2} (You may pay an additional {2} as you cast this spell. If you do, put this card into your hand as it resolves.)\nChoose a card type and a card name. Shuffle, then reveal the top card of your library. If it’s the chosen type, draw it. If it has the chosen name, instead you may cast it without paying its mana cost.",
+    "colors": [
+      "R"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "set": "Set 6",
+    "artist": "strautniekas",
+    "_supersedes": "wild-speculation-fb4",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__cards__wild-guess.png"
+  },
+  {
+    "id": "wistgrove-haven-sb6",
+    "name": "Wistgrove Haven",
+    "manaCost": "",
+    "type": "Land",
+    "rarity": "Rare",
+    "text": "{T}, Pay 1 life: Add {R} or {G}.\n{1}, {T}, Sacrifice this land: Draw a card.",
+    "colors": [],
+    "custom": true,
+    "archetypes": [],
+    "set": "Set 6",
+    "flavorText": "The faefolk are forbidden from helping children directly, so they created a place to gather those who are lost. Still, they cannot cure the ache of homesickness…",
+    "artist": "Viktor Zaretsky",
+    "_supersedes": "utopic-desolate-peaks-fb1",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__cards__wistgrove-haven.png"
+  },
+  {
+    "id": "woodlings-shepherd-sb6",
+    "name": "Woodlings Shepherd",
+    "manaCost": "{4}{G}{G}",
+    "type": "Creature — Centaur Elemental Druid",
+    "rarity": "Rare",
+    "text": "Convoke\nUnity (Token creatures you control have all activated abilities of all nontoken creatures you control with unity.)\nWhen this creature enters, create a 1/1 green Saproling creature token for each creature that convoked it.\n{T}: Add {G}.",
+    "colors": [
+      "G"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "set": "Set 6",
+    "power": "4",
+    "toughness": "4",
+    "artist": "vladgheneli",
+    "relatedTokens": [
+      "1/1 green Saproling"
+    ],
+    "_supersedes": "woodlings-progenitor-fb1",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__cards__woodlings-shepherd.png"
+  },
+  {
+    "id": "yorion-s-encouragement-sb6",
+    "name": "Yorion's Encouragement",
+    "manaCost": "{3}{W/U}{W/U}",
+    "type": "Enchantment",
+    "rarity": "Rare",
+    "text": "This spell costs {2} less to cast if Yorion, Sky Nomad is your companion.\nIf a permanent entering causes a triggered ability of a permanent you control to trigger, that ability triggers an additional time. If your starting deck contains at least twenty cards more than the minimum deck size, it triggers two additional times instead.",
+    "colors": [
+      "W",
+      "U"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Blink/ETB/Value",
+      "Enchantments"
+    ],
+    "set": "Set 6",
+    "artist": "@tro_pikaru",
+    "relatedTokens": [
+      "Shard",
+      "Blink"
+    ],
+    "_supersedes": "yorions-soaring-sb2",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__cards__yorion-s-encouragement.png"
+  },
+  {
+    "id": "zirda-s-joy-sb6",
+    "name": "Zirda's Joy",
+    "manaCost": "{3}{R/W}{R/W}",
+    "type": "Enchantment",
+    "rarity": "Rare",
+    "text": "This spell costs {2} less to cast if you have a companion named Zirda, the Dawnwaker.\nCards in your hand have cycling {3}.\nCards in your graveyard have hopping {3} (They have \"{3}, Exile three cards from your graveyard: Return this card from your graveyard to its owner's hand.\")\nCycling {3}, hopping {3}",
+    "colors": [
+      "W",
+      "R"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Self-mill"
+    ],
+    "set": "Set 6",
+    "artist": "tehchan_",
+    "_supersedes": "zirdas-zenith-sb2",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__cards__zirda-s-joy.png"
+  },
+  {
+    "id": "everything-must-go-season-sb6",
+    "name": "“Everything Must Go” Season",
+    "manaCost": "{1}{R}",
+    "type": "Enchantment",
+    "rarity": "Mythic Rare",
+    "text": "If an effect would create one or more tokens under your control, it creates twice that many of those tokens instead.\nIf an effect would put one or more counters on a permanent you control, it puts twice that many of those counters on that permanent instead.\nAt the beginning of each end step, sacrifice each token you control and remove all counters from permanents you control.",
+    "colors": [
+      "R"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Token Collection"
+    ],
+    "set": "Set 6",
+    "artist": "Chris Seaman",
+    "_supersedes": "everything-must-go-season-fb1",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__cards__everything-must-go-season.png"
+  },
+  {
+    "id": "mind-the-gap-sb6",
+    "name": "Mind the Gap",
+    "manaCost": "{1}{B}{B}",
+    "type": "Sorcery",
+    "rarity": "Rare",
+    "text": "Each opponent with more cards in hand than you discards cards until they have as many as you.\nCipher (Then you may exile this spell card encoded on a creature you control. Whenever that creature deals combat damage to a player, its controller may cast a copy of the encoded card without paying its mana cost.)",
+    "colors": [
+      "B"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "set": "Set 6",
+    "artist": "Adobe Stock but slightly edited lol",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__black__mind-the-gap.png"
+  },
+  {
+    "id": "baldur-s-gate-wilderness-sb6",
+    "name": "Baldur's Gate Wilderness",
+    "manaCost": "{4}",
+    "type": "Artifact — Dungeon",
+    "rarity": "Rare",
+    "text": "Enter this enters and at the beginning of your upkeep, venture into the dungeon.\nCrash Landing — Search your library for a basic land card, reveal it, put it into your hand, then shuffle.\nGoblin Camp — Create a Treasure token.\nEmerald Grove — Create a 2/2 white Knight creature token.\nAuntie’s Teahouse — Scry 3.\nDefiled Temple — You may sacrifice a permanent. If you do, draw a card.\nMountain Pass — You may put a land card from your hand onto the battlefield.\nEbonlake Grotto — Create two 1/1 blue Faerie Dragon creature tokens with flying.\nGrymforge — For each opponent, goad up to one target creature that player controls.\nGithyanki Crèche — Distribute three +1/+1 counters among up to three target creatures you control.\nLast Light Inn — Draw two cards.\nReithwin Tollhouse — Roll 2d4 and create that many Treasure tokens.\nMoonrise Towers — Instant and sorcery spells you cast this turn cost {3} less to cast.\nGauntlet of Shar — Each opponent loses 5 life.\nBalthazar’s Lab — Return up to two target creature cards from your graveyard to your hand.\nCircus of the Last Days — Create a token that’s a copy of one of your commanders, except it’s not legendary.\nUndercity Ruins — Create three 4/1 black Skeleton creature tokens with menace.\nSteel Watch Foundry — You get an emblem with “Creatures you control get +2/+2 and have trample.”\nAnsur’s Sanctum — Reveal the top four cards of your library and put them into your hand. Each opponent loses life equal to those cards’ total mana value.\nTemple of Bhaal — Creatures your opponents control get -5/-5 until end of turn.",
+    "colors": [],
+    "custom": true,
+    "archetypes": [],
+    "set": "Set 6",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__colorless__baldur-s-gate-wilderness.jpg"
+  },
+  {
+    "id": "piloted-shredder-sb6",
+    "name": "Piloted Shredder",
+    "manaCost": "{4}",
+    "type": "Artifact — Vehicle",
+    "rarity": "Uncommon",
+    "text": "When this artifact dies, create a random 2 mana minion. (From Hearthstone. Figure it out.)\nCrew 2",
+    "colors": [],
+    "custom": true,
+    "archetypes": [],
+    "set": "Set 6",
+    "power": "4",
+    "toughness": "3",
+    "artist": "Dan Scott",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__colorless__piloted-shredder.png"
+  },
+  {
+    "id": "preserver-of-the-moon-sb6",
+    "name": "Preserver of the Moon",
+    "manaCost": "{2}",
+    "type": "Artifact Creature — Scarecrow",
+    "rarity": "Mythic Rare",
+    "text": "When this creature enters, put target nontoken creature into this creature’s sleeve, under it. (It stays there between games.)\n{4}, {T}: Put a creature card from inside this creature onto the battlefield under your control.",
+    "colors": [],
+    "custom": true,
+    "archetypes": [],
+    "set": "Set 6",
+    "power": "1",
+    "toughness": "3",
+    "artist": "David.S.Delgado_XCVII",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__colorless__preserver-of-the-moon.png"
+  },
+  {
+    "id": "fracture-the-timeline-sb6",
+    "name": "Fracture the Timeline",
+    "manaCost": "{2}{W}{U}",
+    "type": "Sorcery",
+    "rarity": "Rare",
+    "text": "Exile all nonland permenants and put two time counters on each of them. For each one, if it doesn’t have suspend, it gains suspend. (At the beginning of its owner’s upkeep, they remove a time counter. When the last is removed, they may play it without paying its mana cost. If it’s a creature, it has haste.)",
+    "colors": [
+      "W",
+      "U"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "set": "Set 6",
+    "artist": "Rainer Petter",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__gold__fracture-the-timeline.png"
+  },
+  {
+    "id": "march-of-the-hollowed-sb6",
+    "name": "March of the Hollowed",
+    "manaCost": "{4}{W}{B}",
+    "type": "Enchantment",
+    "rarity": "Rare",
+    "text": "Whenever a creature you control dies, put a respect counter on this enchantment.\nCreatures you control gets +1/+1 for each respect counter on this enchantment.\nYour opponents respect you {X}, where X’s the number of respect counters on this enchantment. (Creatures can’t attack you or block creatures you control unless their controller pays {X} for each creature they control that’s attacking you or blocking a creature you control. You have ward {X}.)",
+    "colors": [
+      "W",
+      "B"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "set": "Set 6",
+    "artist": "Valin Mattheis",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__gold__march-of-the-hollowed.png"
+  },
+  {
+    "id": "pockets-of-hope-sb6",
+    "name": "Pockets of Hope",
+    "manaCost": "{1}{G}{U}",
+    "type": "Enchantment",
+    "rarity": "Rare",
+    "text": "At the beginning of your upkeep, create a 0/1 artifact Egg creature token with defender.\nWhenever an Egg creature you control dies, reveal the top card of your library. If it’s a land card, put it onto the battlefield. Otherwise, put that card into your hand.",
+    "colors": [
+      "U",
+      "G"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "set": "Set 6",
+    "flavorText": "“The Nahash tempts us because we are worth testing. It shelters us because we are worth keeping.”\n—Menkhet, shell-reader of Naktamun",
+    "artist": "WhileMysterious1151",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__gold__pockets-of-hope.png"
+  },
+  {
+    "id": "stoic-strivebonder-sb6",
+    "name": "Stoic Strivebonder",
+    "manaCost": "{1}{R/W}{R/W}",
+    "type": "Creature — Human Soldier",
+    "rarity": "Rare",
+    "text": "Double strike\nWhenever a creature card is put into your graveyard from anywhere, for each of the following keywords it had, put a counter of that kind on target creature you control: flying, first strike, double strike, deathtouch, haste, hexproof, indestructible, lifelink, menace, reach, trample, and vigilance.",
+    "colors": [
+      "W",
+      "R"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "set": "Set 6",
+    "power": "1",
+    "toughness": "1",
+    "artist": "Jesper Ejsing",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__gold__stoic-strivebonder.png"
+  },
+  {
+    "id": "behold-the-lost-treasures-sb6",
+    "name": "Behold the Lost Treasures",
+    "manaCost": "{2}{G}",
+    "type": "Sorcery",
+    "rarity": "Mythic Rare",
+    "text": "Conjure the Five Moxen from Alpha into your library, then shuffle.\nDraw a card.\n{W}{U}{B}{R}{G}, Exile this card from your graveyard: Draw five cards. If this ability was paid by the Five Moxen, you win the game.",
+    "colors": [
+      "G"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "set": "Set 6",
+    "artist": "Rainer Petter",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__green__behold-the-lost-treasures.png"
+  },
+  {
+    "id": "elvish-rhystic-sb6",
+    "name": "Elvish Rhystic",
+    "manaCost": "{1}{G}",
+    "type": "Creature — Elf Wizard",
+    "rarity": "Rare",
+    "text": "{T}: Add {U}.\n{T}: Draw a card unless a player pays {1}.",
+    "colors": [
+      "G"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "set": "Set 6",
+    "flavorText": "“Life grows everywhere. My kin merely find those places where they don’t pay the {1}.”\n—Nissa Revane",
+    "power": "1",
+    "toughness": "1",
+    "artist": "Winona Nelson, Paul Scott Canavan",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__green__elvish-rhystic.png"
+  },
+  {
+    "id": "gorapede-sb6",
+    "name": "Gorapede",
+    "manaCost": "{4}{G}{G}{G}",
+    "type": "Creature — Wurm Horror",
+    "rarity": "Mythic Rare",
+    "text": "Trample, haste\nWhenever this creature deals combat damage to a player, destroy that many artifacts and enchantments. If you can’t, sacrifice this creature.\nUndying (When this creature dies, if it had no +1/+1 counters on it, return it to the battlefield under its owner’s control with a +1/+1 counter on it.)",
+    "colors": [
+      "G"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "set": "Set 6",
+    "flavorText": "“If you think you’ve killed the second one… just stop thinking.”\n—Thalia, Knight-Cathar",
+    "power": "6",
+    "toughness": "4",
+    "artist": "WhileMysterious1151",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__green__gorapede.png"
+  },
+  {
+    "id": "guide-of-uncertain-path-sb6",
+    "name": "Guide of Uncertain Path",
+    "manaCost": "{3}{G}{G}",
+    "type": "Creature — Sphinx",
+    "rarity": "Rare",
+    "text": "Flying, vigilance\nWhen this creature enters, reveal cards from the top of your library until you reveal five land cards. An opponent separates those land cards into two piles. Put one pile onto the battlefield tapped, then shuffle the rest into your library.",
+    "colors": [
+      "G"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "set": "Set 6",
+    "power": "4",
+    "toughness": "4",
+    "artist": "Maury Weiss",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__green__guide-of-uncertain-path.png"
+  },
+  {
+    "id": "savage-domination-sb6",
+    "name": "Savage Domination",
+    "manaCost": "{G}",
+    "type": "Sorcery",
+    "rarity": "Common",
+    "text": "Target creature you control deals damage equal to its power to target creature you don’t control. Your opponents respect you until the end of your next turn. (Creatures can’t attack you or block creatures you control unless their controller pays {1} for each creature they control that’s attacking you or blocking a creature you control. You have ward {1}.)",
+    "colors": [
+      "G"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "set": "Set 6",
+    "artist": "Alexey Kruglov",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__green__savage-domination.png"
+  },
+  {
+    "id": "vorinclex-s-pet-sb6",
+    "name": "Vorinclex's Pet",
+    "manaCost": "{1}{G}",
+    "type": "Artifact Creature — Phyrexian Snake",
+    "rarity": "Uncommon",
+    "text": "Flash\nWhen this creature enters, choose one —\n• This creature gains deathtouch until end of turn.\n• This creature fights target creature you don’t control.\nEntwine {B} (Choose both if you pay the entwine cost.)",
+    "colors": [
+      "G"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "set": "Set 6",
+    "flavorText": "“Behold true evolution.”",
+    "power": "2",
+    "toughness": "1",
+    "artist": "Sandara Tang",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__green__vorinclex-s-pet.png"
+  },
+  {
+    "id": "zix-vara-t-zashat-sb6",
+    "name": "Zix'vara T'zashat",
+    "manaCost": "{X}{Y}{G}",
+    "type": "Legendary Creature — Alien Noble",
+    "rarity": "Mythic Rare",
+    "text": "When Zix’vara T’zashat enters, reveal cards from the Cube until you reveal X permenant cards, each with mana value Y and put them onto the battlefield.",
+    "colors": [
+      "G"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "set": "Set 6",
+    "flavorText": "She speaks the Infinirium in languages that predate sound itself, and reality writes itself to comply.",
+    "power": "X",
+    "toughness": "Y",
+    "artist": "Alexey Egorov",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__green__zix-vara-t-zashat.png"
+  },
+  {
+    "id": "nahag-toran-sb6",
+    "name": "נהג תורן",
+    "manaCost": "{1}{G}",
+    "type": "Creature — Human Pilot",
+    "rarity": "Rare",
+    "text": "This creature is the only creature you control that is allowed to crew Vehicles you control, it can crew all Vehicles and at once.",
+    "colors": [
+      "G"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "set": "Set 6",
+    "flavorText": "נהגים צריכים את זה.",
+    "power": "3",
+    "toughness": "1",
+    "artist": "הרשות הלאומית לבטיחות בדרכים",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__green__nahag-toran.png"
+  },
+  {
+    "id": "path-to-akros-sb6",
+    "name": "Path to Akros",
+    "manaCost": "",
+    "type": "Land",
+    "rarity": "Rare",
+    "text": "{T}, Sacrifice this land: Search your library for a Plains card, put it onto the battlefield, then shuffle.",
+    "colors": [],
+    "custom": true,
+    "archetypes": [],
+    "set": "Set 6",
+    "flavorText": "It is said that Heliod made a city of sunlight and heroes, a place where justice shines through the darkness and the worthy always rise above the rest.",
+    "artist": "Adam Paquette",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__land__path-to-akros.png"
+  },
+  {
+    "id": "path-to-asphodel-sb6",
+    "name": "Path to Asphodel",
+    "manaCost": "",
+    "type": "Land",
+    "rarity": "Rare",
+    "text": "{T}, Sacrifice this land: Search your library for a Swamp card, put it onto the battlefield, then shuffle.",
+    "colors": [],
+    "custom": true,
+    "archetypes": [],
+    "set": "Set 6",
+    "flavorText": "It is said that Erebos was once curious of what made humans happy. Did he wish to take it all away, or to create a world worthy of it? one must wonder.",
+    "artist": "Józef Stefański",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__land__path-to-asphodel.png"
+  },
+  {
+    "id": "path-to-meletis-sb6",
+    "name": "Path to Meletis",
+    "manaCost": "",
+    "type": "Land",
+    "rarity": "Rare",
+    "text": "{T}, Sacrifice this land: Search your library for a Island card, put it onto the battlefield, then shuffle.",
+    "colors": [],
+    "custom": true,
+    "archetypes": [],
+    "set": "Set 6",
+    "flavorText": "It is said that Ephara raised a city of marble, a place where humanity could finally find freedom and happiness.",
+    "artist": "Adam Paquette",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__land__path-to-meletis.png"
+  },
+  {
+    "id": "path-to-setessa-sb6",
+    "name": "Path to Setessa",
+    "manaCost": "",
+    "type": "Land",
+    "rarity": "Rare",
+    "text": "{T}, Sacrifice this land: Search your library for a Forest card, put it onto the battlefield, then shuffle.",
+    "colors": [],
+    "custom": true,
+    "archetypes": [],
+    "set": "Set 6",
+    "flavorText": "It is said that Karametra sowed a city of daughters, strong as the oaks that shadowed them.",
+    "artist": "Adam Paquette",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__land__path-to-setessa.png"
+  },
+  {
+    "id": "path-to-skophos-sb6",
+    "name": "Path to Skophos",
+    "manaCost": "",
+    "type": "Land",
+    "rarity": "Rare",
+    "text": "{T}, Sacrifice this land: Search your library for a Mountain card, put it onto the battlefield, then shuffle.",
+    "colors": [],
+    "custom": true,
+    "archetypes": [],
+    "set": "Set 6",
+    "flavorText": "It is said that one can wander forever through Mogis’s labyrinth, never reaching peace—unless, paradoxically, one finds peace in the very act of being lost.",
+    "artist": "George Johnstone",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__land__path-to-skophos.png"
+  },
+  {
+    "id": "conqueror-s-foothold-sb6",
+    "name": "Conqueror's Foothold",
+    "manaCost": "",
+    "type": "Land",
+    "rarity": "Rare",
+    "text": "{T}: Add {C} to your mana pool.\n{2}, {T}: Draw a card, then discard a card.\n{4}, {T}: Draw a card.\n{6}, {T}: Return target card from your graveyard to your hand.",
+    "colors": [],
+    "custom": true,
+    "archetypes": [],
+    "set": "Set 6",
+    "artist": "Emrah Elmasli",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__land__conqueror-s-foothold.jpg"
+  },
+  {
+    "id": "fleeting-thoughts-sb6",
+    "name": "Fleeting Thoughts",
+    "manaCost": "{4}{R}{R}",
+    "type": "Instant",
+    "rarity": "Rare",
+    "text": "Reveal cards from the top of your library until you reveal three nonland cards. Airbend them, then put the rest of the revealed cards on the bottom of your library in random order. (Exile them. While each one is exiled, its owner may cast it for {2} rather than its mana cost.)",
+    "colors": [
+      "R"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "set": "Set 6",
+    "artist": "massiveburnstudios",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__red__fleeting-thoughts.png"
+  },
+  {
+    "id": "impulse-of-the-beyond-sb6",
+    "name": "Impulse of the Beyond",
+    "manaCost": "{R}",
+    "type": "Sorcery",
+    "rarity": "Mythic Rare",
+    "text": "Exile three random cards from the Cube. Until the end of turn, you may play them. (They return to the cube when the game ends.)",
+    "colors": [
+      "R"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "set": "Set 6",
+    "flavorText": "The heart yearns for what it cannot understand — and that understanding screams in delight.",
+    "artist": "Valin Mattheis",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__red__impulse-of-the-beyond.png"
+  },
+  {
+    "id": "let-go-sb6",
+    "name": "Let Go",
+    "manaCost": "{4}{R}{R}",
+    "type": "Sorcery",
+    "rarity": "Mythic Rare",
+    "text": "Discard your hand, sacrifice each token you control, then draw a card for each card discarded this way plus each token sacrificed this way.",
+    "colors": [
+      "R"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "set": "Set 6",
+    "flavorText": "“A closed fist holds nothing but itself.”",
+    "artist": "RakasaDemon",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__red__let-go.png"
+  },
+  {
+    "id": "mind-if-i-do-sb6",
+    "name": "Mind If I Do",
+    "manaCost": "{R}",
+    "type": "Sorcery",
+    "rarity": "Rare",
+    "text": "Target player reveals an unrevealed card from their hand. You may have them discard it. If you don’t, repeat this process.",
+    "colors": [
+      "R"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "set": "Set 6",
+    "flavorText": "“We believe in a healthy give-and-take… as long as you’re healthy, you can give, and we can take.”\n—Captain Howler, Sea Scourge",
+    "artist": "Hans Krill",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__red__mind-if-i-do.png"
+  },
+  {
+    "id": "power-word-gun-sb6",
+    "name": "Power Word: Gun",
+    "manaCost": "{R}{R}",
+    "type": "Instant",
+    "rarity": "Uncommon",
+    "text": "You repeatadly shot target creature with 1 damage until it’s dead.",
+    "colors": [
+      "R"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "set": "Set 6",
+    "flavorText": "“I might be out of spells,\nbut I’m never out of shells.”",
+    "artist": "Devin Forst",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__red__power-word-gun.png"
+  },
+  {
+    "id": "send-the-message-sb6",
+    "name": "Send the Message",
+    "manaCost": "{1}{R}",
+    "type": "Instant",
+    "rarity": "Common",
+    "text": "Send the Message deals 3 damage to any target. Your opponents respect you until the end of your next turn. (Creatures can’t attack you or block creatures you control unless their controller pays {1} for each creature they control that’s attacking you or blocking a creature you control. You have ward {1}.)",
+    "colors": [
+      "R"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "set": "Set 6",
+    "artist": "nkhaotic",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__red__send-the-message.png"
+  },
+  {
+    "id": "cling-to-life-sb6",
+    "name": "Cling to Life",
+    "manaCost": "{2}{W}{W}",
+    "type": "Sorcery",
+    "rarity": "Uncommon",
+    "text": "Return target creature card from your graveyard to the battlefield, then exile it, then return it to the battlefied.",
+    "colors": [
+      "W"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "set": "Set 6",
+    "flavorText": "What returns may not be what was lost, but all deserve a second chance.",
+    "artist": "Aaron Nakahara",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__white__cling-to-life.png"
+  },
+  {
+    "id": "parting-tears-sb6",
+    "name": "Parting Tears",
+    "manaCost": "{2}{W}",
+    "type": "Instant",
+    "rarity": "Uncommon",
+    "text": "Counter target spell unless its controller waterbend {3}. (While paying a waterbend cost, you can tap your artifacts and creatures to help. Each one pays for {1}.)\nDraw a card.",
+    "colors": [
+      "W"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "set": "Set 6",
+    "flavorText": "Don’t think about it too much.",
+    "artist": "Dreamstime",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__white__parting-tears.png"
+  },
+  {
+    "id": "remember-where-you-came-from-sb6",
+    "name": "Remember Where You Came From",
+    "manaCost": "{W}",
+    "type": "Sorcery",
+    "rarity": "Uncommon",
+    "text": "Return target historic card from your graveyard to your hand. (Artifacts, legendaries, and Sagas are historic.)",
+    "colors": [
+      "W"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "set": "Set 6",
+    "flavorText": "“The future leaves its footprints in the past. Learn to follow them.”\n—Quintorius, History Chaser",
+    "artist": "WhileMysterious1151",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__white__remember-where-you-came-from.png"
+  },
+  {
+    "id": "snow-tribe-heretic-sb6",
+    "name": "Snow-Tribe Heretic",
+    "manaCost": "{W}",
+    "type": "Creature — Human Cleric",
+    "rarity": "Rare",
+    "text": "Firebending X, where X is the number of other creatures you control. (Whenever this creature attacks, add X {R}. This mana lasts until end of combat.)\nWhenever you lose unspent mana, you gain that much life.",
+    "colors": [
+      "W"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "set": "Set 6",
+    "flavorText": "“My tribe are fools, shivering in their conformity… or perhaps I’m the fool, trying to keep them warm and ignorant.”",
+    "power": "2",
+    "toughness": "1",
+    "artist": "Sandara Tang",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__white__snow-tribe-heretic.png"
+  }
+]

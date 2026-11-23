@@ -837,7 +837,7 @@
     "manaCost": "{1}{B}",
     "type": "Creature — Vampire Cleric",
     "rarity": "Uncommon",
-    "text": "Debtouch (Keep reading.)\nWhen this creature enters or dies, create a 1/1 white Vampire Cleric creature token with \"Whenever this creature deals combat damage to a player, they get that many debt counters. Basically debtouch.\" (At the beginning of that player's end step, they may pay {1} for each debt counter they have. They remove that many counters, then lose 1 life for each debt counter they have.)",
+    "text": "Debtouch (Whenever this creature deals combat damage to a player, that player gets that many debt counters. At the beginning of that player’s end step, they may pay {1} for each debt counter they have. They remove that many counters, then lose 1 life for each debt counter they have.)\nWhen this creature enters or dies, create a 1/1 white Vampire Cleric creature token with debtouch.",
     "colors": [
       "B"
     ],
@@ -850,7 +850,7 @@
       "1/1 white Vampire Cleric"
     ],
     "set": "Set 4",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__black__bloodtithe-20watcher.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/forth-batch__black__bloodtithe-20watcher--r2.png"
   },
   {
     "id": "cleanser-of-imperfections-fb4",
@@ -858,7 +858,7 @@
     "manaCost": "{4}{B}",
     "type": "Artifact Creature — Horror Cleric",
     "rarity": "Rare",
-    "text": "{2}{B}, {T}: Choose target nonartifact creature and target noncreature artifact you control, from the battlefield and/or from your graveyard. Combine them into one artifact creature. Activate only as a sorcery. (It has their names, mana costs, types, text boxes, etc.)",
+    "text": "{2}{B}, {T}: Choose target nonartifact creature and target noncreature artifact you control, from the battlefield and/or from your graveyard. Combine them into one artifact creature with the creature’s power and toughness. Activate only as a sorcery. (It has their names, mana costs, types, text boxes, etc.)",
     "colors": [
       "B"
     ],
@@ -870,11 +870,11 @@
     "toughness": "4",
     "artist": "Dmitry Brushray",
     "set": "Set 4",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__black__cleanser-20of-20imperfections.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/forth-batch__black__cleanser-20of-20imperfections--r2.png"
   },
   {
     "id": "conjure-from-blood-fb4",
-    "name": "Conjure From Blood",
+    "name": "Conjure from Blood",
     "manaCost": "{B}",
     "type": "Sorcery",
     "rarity": "Rare",
@@ -886,10 +886,10 @@
     "archetypes": [
       "Token Collection"
     ],
-    "flavorText": "\"Blood is thicker than water, and much more useful.\"\n—Tiany, Aspiring Bloodmage",
-    "artist": "ChatGPT o4",
+    "flavorText": "\"Blood is thicker than water, and much more useful.\"\n—Tiarim, Arch-Bloodmage",
+    "artist": "Muslinski",
     "set": "Set 4",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__black__conjure-20from-20blood.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/forth-batch__black__conjure-20from-20blood--r2.png"
   },
   {
     "id": "deep-sea-horrors-fb4",
@@ -917,7 +917,7 @@
     "manaCost": "{3}{B}{B}",
     "type": "Instant",
     "rarity": "Mythic Rare",
-    "text": "You may pay 1 life and exile a black card from your hand rather than pay this spell's mana cost.\nSearch your library for a card, reveal it, put it into your hand, then shuffle. You lose life equal to its mana value if you didn't pay mana to cast this spell.",
+    "text": "You may pay 1 life and exile a black card from your hand rather than pay this spell's mana cost.\nSearch your library for a card, reveal it, put it into your hand, then shuffle. You lose life equal to its mana value if no mana was spent to cast this spell.",
     "colors": [
       "B"
     ],
@@ -925,23 +925,25 @@
     "archetypes": [],
     "artist": "FallenNeophyteDesign",
     "set": "Set 4",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__black__force-20of-20greed.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/forth-batch__black__force-20of-20greed--r2.png"
   },
   {
     "id": "gonti-s-nexus-fb4",
     "name": "Gonti's Nexus",
     "type": "Artifact Battle — Nexus",
     "rarity": "Rare",
-    "text": "(All players protect Nexuses. You and others can attack it. When it's defeated, the player that defeated it exiles it, then puts it onto the battlefield transformed.)\nAt the beginning of each player's upkeep, that player loses 1 life and exiles the top card of your library with a prize counter on it.",
+    "text": "(All players protect Nexuses. You and others can attack it. When it's defeated, the player that defeated it exiles it, then puts it onto the battlefield transformed.)\nAt the beginning of each player's upkeep, that player loses 1 life and exiles the top card of their library with a prize counter on it.",
     "colors": [
       "B"
     ],
     "custom": true,
     "archetypes": [],
-    "artist": "ChatGPT o4",
+    "artist": "ChatGPT Images 2.6",
     "relatedFace": "Inside Gonti's Nexus",
     "set": "Set 4",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__black__gonti-e2-80-99s-20nexus.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/forth-batch__black__gonti-e2-80-99s-20nexus--r2.png",
+    "manaCost": "{B}",
+    "loyalty": "8"
   },
   {
     "id": "greater-bad-fb4",
@@ -996,10 +998,10 @@
     "archetypes": [],
     "facedown": true,
     "flavorText": "The Ghirapur Grand Prix was a front for a far more thrilling competition with an even greater prize.",
-    "artist": "ChatGPT o4",
+    "artist": "ChatGPT Images 2.6",
     "relatedFace": "Gonti's Nexus",
     "set": "Set 4",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__black__inside-20gonti-e2-80-99s-20nexus.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/forth-batch__black__inside-20gonti-e2-80-99s-20nexus--r2.png"
   },
   {
     "id": "lost-in-the-sauce-fb4",
@@ -1040,12 +1042,12 @@
     "power": "2",
     "toughness": "2",
     "flavorText": "\"They are desperate to find a cause to die for—I will become that cause.\"",
-    "artist": "ChatGPT o4",
+    "artist": "Mirko Failoni",
     "relatedTokens": [
       "1/1 red Warrior"
     ],
     "set": "Set 4",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__black__loyalty-20exploiter.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/forth-batch__black__loyalty-20exploiter--r2.png"
   },
   {
     "id": "lying-by-omission-fb4",
@@ -1068,7 +1070,7 @@
     "id": "makub-the-dealer-fb4",
     "name": "Makub, the Dealer",
     "manaCost": "{1}{B}{B}",
-    "type": "Creature — Wraith Mercenery",
+    "type": "Creature — Wraith Mercenary",
     "rarity": "Rare",
     "text": "Decayed (This creature can't block. When it attacks, sacrifice it at end of combat.)\nWhen this creature enters or dies, sacrifice any number of nonland permanents, then draw that many cards.",
     "colors": [
@@ -1082,7 +1084,7 @@
     "toughness": "6",
     "artist": "FazzRaven (A.I)",
     "set": "Set 4",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__black__makub-2c-20the-20dealer.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/forth-batch__black__makub-2c-20the-20dealer--r2.png"
   },
   {
     "id": "monster-mash-fb4",
@@ -1090,7 +1092,7 @@
     "manaCost": "{3}{B}",
     "type": "Sorcery",
     "rarity": "Rare",
-    "text": "Put target custom creature card and target noncustom creature card from your graveyard onto the battlefield combined into one creature. (Its power is equal to their total power, its toughness is equal to their total toughness, and it has their names, mana costs, types, text boxes, etc.)",
+    "text": "Put target custom creature card and target non-custom creature card from your graveyard onto the battlefield combined into one creature. (Its power is equal to their total power, its toughness is equal to their total toughness, and it has their names, mana costs, types, text boxes, etc. If it leaves the battlefield, both cards go to the same zone.)",
     "colors": [
       "B"
     ],
@@ -1100,7 +1102,7 @@
     ],
     "artist": "Francine Bridge",
     "set": "Set 4",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__black__monster-20mash.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/forth-batch__black__monster-20mash--r2.png"
   },
   {
     "id": "problematic-trolley-fb4",
@@ -1124,20 +1126,20 @@
   },
   {
     "id": "ran-by-the-numbers-fb4",
-    "name": "Ran by the Numbers",
+    "name": "Run by the Numbers",
     "manaCost": "{B}",
     "type": "Instant — Lesson",
     "rarity": "Uncommon",
-    "text": "Destroy target creature if its power plus toughness plus mana value equals a prime number. (2, 3, 5, 7, 11, 13, 17, 19, 23, 29, and 31 are prime numbers.)",
+    "text": "Destroy target creature if its power plus toughness plus mana value is a prime number. (2, 3, 5, 7, 11, 13, 17, 19, 23, 29, and 31 are prime numbers.)",
     "colors": [
       "B"
     ],
     "custom": true,
     "archetypes": [],
     "flavorText": "No matter how dull the lesson or dubious the instructor, a Silverquill student will always embrace the opportunity to learn a forbidden spell.",
-    "artist": "ChatGPT o4",
+    "artist": "Emil Emchiev",
     "set": "Set 4",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__black__ran-20by-20the-20numbers.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/forth-batch__black__ran-20by-20the-20numbers--r2.png"
   },
   {
     "id": "stargazer-s-tutor-fb4",
@@ -1162,7 +1164,7 @@
     "manaCost": "{2}{B}",
     "type": "Sorcery",
     "rarity": "Uncommon",
-    "text": "Search target player's library for up to four cards and exile them. Then, that player shuffles that many Confusion cards into their library. (Confusion is a colorless sorcery card with no mana cost that has cycling {2}.)",
+    "text": "Search target player’s library for up to four cards and exile them. That player conjures that many cards named Confusion into their library, then shuffles. (Confusion is a colorless sorcery card with no mana cost that has cycling {2}.)",
     "colors": [
       "B"
     ],
@@ -1170,7 +1172,7 @@
     "archetypes": [],
     "artist": "Nad N",
     "set": "Set 4",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__black__submerge-20into-20darkness.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/forth-batch__black__submerge-20into-20darkness--r2.png"
   },
   {
     "id": "thalia-rebelious-heretic-fb4",
@@ -1189,7 +1191,7 @@
     "flavorText": "\"It's not just a phase, Avacyn — it's the beginning of the end phase.\"",
     "artist": "ChatGPT o4",
     "set": "Set 4",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__black__thalia-2c-20rebelious-20heretic.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/forth-batch__black__thalia-2c-20rebelious-20heretic--r2.png"
   },
   {
     "id": "the-road-to-fenara-fb4",
@@ -1226,7 +1228,7 @@
     ],
     "artist": "Andrew Paranavitana",
     "set": "Set 4",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__black__tormenting-20decision.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/forth-batch__black__tormenting-20decision--r2.png"
   },
   {
     "id": "total-annihilation-fb4",
@@ -1252,7 +1254,7 @@
     "manaCost": "{1}{B}",
     "type": "Creature — Human Druid",
     "rarity": "Rare",
-    "text": "{T}: If this permanent is a creature, sacrifice a creature. Then, add {B}{B}.\nPetrify from your graveyard {5}{G} ({5}{G}, Exile this card from your graveyard: Create a copy of it, except it's an artifact. Activate only as a sorcery.)",
+    "text": "{T}: If this permanent is a creature, sacrifice a creature. Then, add {B}{B}.\nPetrify from your graveyard {5}{G} ({5}{G}, Exile this card from your graveyard: Create a token that’s a copy of it, except it’s an artifact. Activate only as a sorcery.)",
     "colors": [
       "B"
     ],
@@ -1262,9 +1264,9 @@
     ],
     "power": "1",
     "toughness": "1",
-    "artist": "JAGA",
+    "artist": "Jaga",
     "set": "Set 4",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__black__vessel-20of-20the-20cycle.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/forth-batch__black__vessel-20of-20the-20cycle--r2.png"
   },
   {
     "id": "begone-fb4",
@@ -1272,7 +1274,7 @@
     "manaCost": "{2}{U}",
     "type": "Sorcery",
     "rarity": "Rare",
-    "text": "Choose one —\n• Put target creature on top of its owner's library.\n• Target player puts a Confusion card on top of their library. (Confusion is a colorless sorcery card with no mana cost that has cycling {2}.)\nEntwine {B} (Choose both if you pay the entwine cost.)",
+    "text": "Choose one —\n• Put target creature on top of its owner's library.\n• Target player conjures a card named Confusion on top of their library. (Confusion is a colorless sorcery card with no mana cost that has cycling {2}.)\nEntwine {B} (Choose both if you pay the entwine cost.)",
     "colors": [
       "U"
     ],
@@ -1280,7 +1282,7 @@
     "archetypes": [],
     "artist": "Matt Forsyth",
     "set": "Set 4",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__blue__begone.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/forth-batch__blue__begone--r2.png"
   },
   {
     "id": "blend-in-fb4",
@@ -1337,20 +1339,20 @@
   },
   {
     "id": "frog-leap-fb4",
-    "name": "Frog Leap",
+    "name": "Starbound Breach",
     "manaCost": "{U}",
     "type": "Instant",
     "rarity": "Uncommon",
-    "text": "Buyback {2}{G} (You may pay an additional {2}{G} as you cast this spell. If you do, put this card into your hand as it resolves.)\nTarget creature gets +3/+3 and gains flying until end of turn. At the end of turn, return it to its owner's hand unless this spell was buybacked.",
+    "text": "Buyback {2}{G} (You may pay an additional {2}{G} as you cast this spell. If you do, put this card into your hand as it resolves.)\nTarget creature gets +3/+3 and gains flying until end of turn. At the beginning of the next end step, return that creature to its owner’s hand unless this spell’s buyback cost was paid.",
     "colors": [
       "U"
     ],
     "custom": true,
     "archetypes": [],
-    "flavorText": "With the weight of the whole village resting behind her knees, Helga let go of fear, felt the raindrops—and leapt.",
-    "artist": "ChatGPT o4",
+    "flavorText": "When the skies become your seas, you too will forget your ups and downs.",
+    "artist": "Razel C",
     "set": "Set 4",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__blue__frog-20leap.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/forth-batch__blue__starbound-20breach--r2.png"
   },
   {
     "id": "gifts-unwrapped-fb4",
@@ -1374,7 +1376,7 @@
     "manaCost": "{2}{U}",
     "type": "Sorcery",
     "rarity": "Uncommon",
-    "text": "This spell costs {2} less to cast if it targets a creature you control.\nTap up to two target creatures and put a stun counter on each of those creatures.\nCipher (Then you may exile this spell card encoded on a creature you control. Whenever that creature deals combat damage to a player, its controller may cast a copy of the encoded card without paying its mana cost.)",
+    "text": "This spell costs {2} less to cast if it targets a creature you control.\nTap up to two target creatures. Put a stun counter on each of them. (If a permanent with a stun counter would become untapped, remove one from it instead.)\nCipher (Then you may exile this spell card encoded on a creature you control. Whenever that creature deals combat damage to a player, its controller may cast a copy of the encoded card without paying its mana cost.)",
     "colors": [
       "U"
     ],
@@ -1384,7 +1386,7 @@
     ],
     "artist": "DavidMahl",
     "set": "Set 4",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__blue__how-20cold-20of-20you.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/forth-batch__blue__how-20cold-20of-20you--r2.png"
   },
   {
     "id": "identity-theft-fb4",
@@ -1431,7 +1433,7 @@
     "manaCost": "{1}{U}{U}",
     "type": "Battle Enchantment — Aura State",
     "rarity": "Rare",
-    "text": "(Enchanted creature's controller defends this State. When it's defeated, the owner of enchanted creature exiles this State, then cast it transformed.)\nEnchant creature you don't own\nYou control enchanted creature.",
+    "text": "(Enchanted creature's controller defends this State. When it's defeated, the owner of enchanted creature exiles this State, then casts it transformed.)\nEnchant creature you don't own\nYou control enchanted creature.",
     "colors": [
       "U"
     ],
@@ -1440,7 +1442,8 @@
     "artist": "ChatGPT o4",
     "relatedFace": "Not Myself Lately",
     "set": "Set 4",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__blue__mental-20breakdown.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/forth-batch__blue__mental-20breakdown--r2.png",
+    "loyalty": "4"
   },
   {
     "id": "muddle-with-existance-fb4",
@@ -1456,7 +1459,7 @@
     "archetypes": [],
     "artist": "sakimori_st30",
     "set": "Set 4",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__blue__muddle-20with-20existance.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/forth-batch__blue__muddle-20with-20existance--r2.png"
   },
   {
     "id": "not-myself-lately-fb4",
@@ -1492,7 +1495,7 @@
     ],
     "artist": "Tashi Nakia",
     "set": "Set 4",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__blue__nyxification.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/forth-batch__blue__nyxification--r2.png"
   },
   {
     "id": "orca-war-beast-fb4",
@@ -1500,7 +1503,7 @@
     "manaCost": "{4}{U}{U}",
     "type": "Creature — Leviathan Beast Mount",
     "rarity": "Rare",
-    "text": "Ward {4}\nWhenever this creature attacks while saddled, untap all artifacts and creatures you control and tap all artifacts and creatures you don't control.\nSaddle 4 (Tap any number of other creatures you control with total power 6 or more: This Mount becomes saddled until end of turn. Saddle only as a sorcery.)",
+    "text": "Ward {4}\nWhenever this creature attacks while saddled, untap all artifacts and creatures you control and tap all artifacts and creatures you don't control.\nSaddle 4 (Tap any number of other creatures you control with total power 4 or more: This Mount becomes saddled until end of turn. Saddle only as a sorcery.)",
     "colors": [
       "U"
     ],
@@ -1510,7 +1513,7 @@
     "toughness": "6",
     "artist": "Davesrightmind",
     "set": "Set 4",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__blue__orca-20war-beast.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/forth-batch__blue__orca-20war-beast--r2.png"
   },
   {
     "id": "pay-day-fb4",
@@ -1518,7 +1521,7 @@
     "manaCost": "{4}{U}",
     "type": "Sorcery",
     "rarity": "Common",
-    "text": "Tax 3 (The next spell each of your opponents cast costs {3} more to cast. This doesn't end at the end of turn.)\nDraw a card.",
+    "text": "Tax 3 (The next spell each of your opponents casts costs {3} more to cast. This doesn’t end at the end of turn.)\nDraw a card.",
     "colors": [
       "U"
     ],
@@ -1527,7 +1530,7 @@
     "flavorText": "The Azorius hire tax collectors whose dedication runs so deep, they'd still do the job for free.",
     "artist": "Based on art by RenMoraes",
     "set": "Set 4",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__blue__pay-20day.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/forth-batch__blue__pay-20day--r2.png"
   },
   {
     "id": "perish-that-thought-fb4",
@@ -1562,9 +1565,9 @@
     ],
     "power": "1",
     "toughness": "1",
-    "artist": "Hurca!",
+    "artist": "Hurca!™",
     "set": "Set 4",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__blue__plesiosplash.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/forth-batch__blue__plesiosplash--r2.png"
   },
   {
     "id": "point-and-laugh-fb4",
@@ -1712,7 +1715,7 @@
     "manaCost": "{3}{U}",
     "type": "Legendary Creature — Mutant Shapeshifter",
     "rarity": "Rare",
-    "text": "You may have The Pretender enter as a copy of any creature on the battlefield, except it has all the abilities of The Experiment. When it does, its name becomes The Experiment and you experiment 4. (You get four {experiment} counters. If you don't control The Experiment, create one. Then, spend any amount of {experiment} on it.)",
+    "text": "You may have The Pretender enter as a copy of any creature on the battlefield, except its name is The Experiment, it has all the abilities of The Experiment, and it has “When this creature enters, experiment 4.” (You get four {experiment} counters. If you don’t control The Experiment, create one. Then spend any amount of {experiment} counters on it.)",
     "colors": [
       "U"
     ],
@@ -1720,9 +1723,9 @@
     "archetypes": [],
     "power": "0",
     "toughness": "0",
-    "artist": "ChatGPT 4o",
+    "artist": "Shinbross",
     "set": "Set 4",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__blue__the-20pretender.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/forth-batch__blue__the-20pretender--r2.png"
   },
   {
     "id": "traditional-futurist-fb4",
@@ -1746,7 +1749,7 @@
   },
   {
     "id": "train-of-thought-not-the-guildpact-one-fb4",
-    "name": "Train of Thought (Not the Guildpact One)",
+    "name": "Runaway Train of Thought",
     "manaCost": "{1}{U}",
     "type": "Artifact — Vehicle",
     "rarity": "Uncommon",
@@ -1760,10 +1763,10 @@
     ],
     "power": "3",
     "toughness": "2",
-    "flavorText": "Obviously.",
-    "artist": "ChatGPT o4",
+    "flavorText": "Next stop: anywhere.",
+    "artist": "Dimitry SkoLzki",
     "set": "Set 4",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__blue__train-20of-20thought-20-28not-20the-20guildpact-20one-29-20-20-20-20-20-20-20-20-20-20.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/forth-batch__blue__train-20of-20thought-20-28not-20the-20guildpact-20one-29-20-20-20-20-20-20-20-20-20-20--r2.png"
   },
   {
     "id": "wall-of-questions-fb4",
@@ -1850,7 +1853,7 @@
     "manaCost": "{3}{B}",
     "type": "Artifact — Incubator",
     "rarity": "Uncommon",
-    "text": "This enters the battlefield with three +1/+1 counters on it. When it does, target opponent loses 3 life unless they sacrifice a nonland permanent or discard a card.\n{2}: Transform this artifact.\n{3}{B}{B}: Return this card from your graveyard to the battlefield with an additional +1/+1 counter on it.",
+    "text": "This artifact enters with three +1/+1 counters on it.\nWhen this artifact enters, target opponent loses 3 life unless they sacrifice a nonland permanent or discard a card.\n{2}: Transform this artifact.\n{3}{B}{B}: Return this card from your graveyard to the battlefield with an additional +1/+1 counter on it.",
     "colors": [
       "B"
     ],
@@ -1858,18 +1861,18 @@
     "archetypes": [],
     "power": "0",
     "toughness": "0",
-    "artist": "Dall-E 3",
+    "artist": "Xu Tianhua",
     "relatedFace": "Creeping Monstrosity",
     "_supersedes": "creeping-incubator-fb1",
     "set": "Set 4",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__changes__nerf__creeping-20incubator.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/forth-batch__changes__nerf__creeping-20incubator--r2.png"
   },
   {
     "id": "creeping-monstrosity-fb4",
     "name": "Creeping Monstrosity",
     "type": "Artifact Creature — Phyrexian Horror",
     "rarity": "Uncommon",
-    "text": "Menace\nWhen this creature deals combat damage to a player, that player loses 3 life unless they sacrifice a nonland permanent or discard a card.",
+    "text": "Flying\nWhenever this creature deals combat damage to a player, that player loses 3 life unless they sacrifice a nonland permanent or discard a card.",
     "colors": [
       "B"
     ],
@@ -1879,11 +1882,11 @@
     ],
     "power": "0",
     "toughness": "0",
-    "artist": "Dall-E 3",
+    "artist": "Douzen",
     "relatedFace": "Creeping Incubator",
     "facedown": true,
     "set": "Set 4",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__changes__nerf__creeping-20monstrosity.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/forth-batch__changes__nerf__creeping-20monstrosity--r2.png"
   },
   {
     "id": "escape-from-the-underworld-fb4",
@@ -1926,7 +1929,7 @@
     "artist": "Cobaltplasma",
     "_supersedes": "escaping-bolt-tb3",
     "set": "Set 4",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__changes__nerf__escaping-20bolt.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/forth-batch__changes__nerf__escaping-20bolt--r2.png"
   },
   {
     "id": "fear-of-the-apocalypse-fb4",
@@ -1957,7 +1960,7 @@
     "manaCost": "{B}",
     "type": "Sorcery — Lesson",
     "rarity": "Rare",
-    "text": "Exile target card from a graveyard. If a creature card was exiled this way, create a 1/1 black and green Pest creature token with \"When this creature dies, you gain 1 life.\"\nAt the beginning of your end step, if this card is in your graveyard, you may pay {2}{B/G}. If you do, cast it without paying its mana cost.",
+    "text": "Exile target card from a graveyard. If a creature card was exiled this way, create a 1/1 black and green Pest creature token with \"When this token dies, you gain 1 life.\"\nAt the beginning of your end step, if this card is in your graveyard, you may pay {2}{B/G}. If you do, cast it without paying its mana cost.",
     "colors": [
       "B"
     ],
@@ -1969,7 +1972,7 @@
     "artist": "Dexistor371",
     "_supersedes": "gnawing-in-the-deep-fb1",
     "set": "Set 4",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__changes__nerf__gnawing-20in-20the-20deep.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/forth-batch__changes__nerf__gnawing-20in-20the-20deep--r2.png"
   },
   {
     "id": "keranos-gift-to-mankind-fb4",
@@ -1977,7 +1980,7 @@
     "manaCost": "{5}",
     "type": "Legendary Artifact Enchantment Creature — Demigod",
     "rarity": "Mythic Rare",
-    "text": "Vigilance, haste\nAt the beginning of your upkeep and whenever Keranos' Gift to Mankind attacks or blocks, reveal the top card of your library. If it's a land card, scry X. If it's a nonland card, Keranos' Gift to Mankind deals X damage to any target. X is the number of enchantments you control.\n{5}{U/R}: If it's your turn, after this step, you get an additional upkeep followed by an additional combat step.",
+    "text": "Vigilance, haste\nAt the beginning of your upkeep and whenever Keranos' Gift to Mankind attacks or blocks, reveal the top card of your library. If it's a land card, scry X. If it's a nonland card, Keranos' Gift to Mankind deals X damage to any target. X is the number of enchantments you control.\n{5}{U}{R}: After this phase, you get an additional upkeep step followed by an additional combat phase. Activate only during your turn.",
     "colors": [],
     "custom": true,
     "archetypes": [
@@ -1985,10 +1988,10 @@
     ],
     "power": "3",
     "toughness": "3",
-    "artist": "Dall-E 3",
+    "artist": "Bjorn Hurri",
     "_supersedes": "keranos-gift-to-mankind-fb1",
     "set": "Set 4",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__changes__nerf__keranos-e2-80-99-20gift-20to-20mankind.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/forth-batch__changes__nerf__keranos-e2-80-99-20gift-20to-20mankind--r2.png"
   },
   {
     "id": "no-rose-without-thorns-fb4",
@@ -2025,7 +2028,7 @@
     "manaCost": "{B}{R}",
     "type": "Artifact",
     "rarity": "Rare",
-    "text": "{T}, Pay 1 life: Create a tapped Firework token of a color of your choice.\n{T}, Sacrifice X tokens with different names, Sacrifice this artifact: You may cast a spell with mana value X or less from your hand or graveyard without paying its mana cost.",
+    "text": "{T}, Pay 1 life: Create a tapped Firework artifact token of the color of your choice.\n{T}, Sacrifice X tokens with different names, Sacrifice this artifact: You may cast a spell with mana value X or less from your hand or graveyard without paying its mana cost.",
     "colors": [
       "B",
       "R"
@@ -2040,7 +2043,7 @@
     "artist": "Dall-E 3",
     "_supersedes": "pyrotechnical-cauldron-fb1",
     "set": "Set 4",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__changes__nerf__pyrotechnical-20cauldron.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/forth-batch__changes__nerf__pyrotechnical-20cauldron--r2.png"
   },
   {
     "id": "untold-prosperity-fb4",
@@ -2065,7 +2068,7 @@
   },
   {
     "id": "valuable-smithing-fb4",
-    "name": "Valuable Smithing",
+    "name": "The Old Smith's Labor",
     "manaCost": "{3}{R}",
     "type": "Sorcery",
     "rarity": "Rare",
@@ -2082,17 +2085,17 @@
       "Treasure",
       "Clue"
     ],
-    "artist": "Dall-E 3",
+    "artist": "Ben Lo",
     "_supersedes": "valuable-smithing-tb3",
     "set": "Set 4",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__changes__nerf__valuable-20smithing.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/forth-batch__changes__nerf__valuable-20smithing--r2.png"
   },
   {
     "id": "experimental-test-facility-fb4",
     "name": "Experimental Test Facility",
     "type": "Land",
     "rarity": "Rare",
-    "text": "This land enters tapped unless you control a modified creature. (Equipment, Auras you control, and counters are modifications.)\n{T}: Add {G} or {U}.\n{X}{X}, {T}: Experiment X. X can't be 0. (You get X vial counters. If you don't control The Experiment, create one. Then, spend any amount of vial on it.)",
+    "text": "This land enters tapped unless you control a modified creature. (Equipment, Auras you control, and counters are modifications.)\n{T}: Add {G} or {U}.\n{X}{X}, {T}: Experiment X. X can't be 0. (You get X [flask] counters. If you don't control The Experiment, create one. Then spend any amount of [flask] counters on it.)",
     "colors": [],
     "custom": true,
     "archetypes": [],
@@ -2102,7 +2105,7 @@
     "artist": "Wasurah",
     "_supersedes": "experimental-test-facility-tb3",
     "set": "Set 4",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__changes__total__experimental-20test-20facility.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/forth-batch__changes__total__experimental-20test-20facility--r2.png"
   },
   {
     "id": "flourishing-bauble-pet-fb4",
@@ -2110,7 +2113,7 @@
     "manaCost": "{G}",
     "type": "Creature — Saproling",
     "rarity": "Common",
-    "text": "{1}, {T}, Sacrifice this creature: Add one mana of any color. Draw a card.\nPetrify from your graveyard {G} ({T}, Exile this card from your graveyard: Create a copy of it, except it's an artifact. Activate only as a sorcery.)",
+    "text": "{1}, {T}, Sacrifice this creature: Add one mana of any color. Draw a card.\nPetrify from your graveyard {G} ({G}, Exile this card from your graveyard: Create a token that’s a copy of it, except it's an artifact. Activate only as a sorcery.)",
     "colors": [
       "G"
     ],
@@ -2119,10 +2122,10 @@
     "power": "1",
     "toughness": "1",
     "flavorText": "\"We are all vessels of nature's will. Some of us more… literally.\"\n—Calvatika, Korozda Gorgon",
-    "artist": "Dall-E 3",
+    "artist": "Metalratrox",
     "_supersedes": "flourishing-bauble-pet-tb3",
     "set": "Set 4",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__changes__total__flourishing-20bauble-pet.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/forth-batch__changes__total__flourishing-20bauble-pet--r2.png"
   },
   {
     "id": "gilded-cage-fb4",
@@ -2198,11 +2201,11 @@
   },
   {
     "id": "mana-piracy-fb4",
-    "name": "Mana Piracy",
+    "name": "Moonfilch",
     "manaCost": "{2}{U}{U}",
     "type": "Sorcery",
     "rarity": "Mythic Rare",
-    "text": "Your opponents can't tap lands for mana as long as this spell is on the stack.\nUntil end of turn, you may tap lands you don't control for mana and your opponents can't tap lands for mana. If this is the second time you've cast a spell named Mana Piracy this turn, untap all lands your opponents control.\nCipher",
+    "text": "Your opponents can't tap lands for mana as long as this spell is on the stack.\nUntil end of turn, you may tap lands you don't control for mana and your opponents can't tap lands for mana. If this is the second time you've cast a spell named Moonfilch this turn, untap all lands your opponents control.\nCipher",
     "colors": [
       "U"
     ],
@@ -2210,10 +2213,10 @@
     "archetypes": [
       "Broken Cipher"
     ],
-    "artist": "Dall-E 3",
+    "artist": "Omar Rayyan",
     "_supersedes": "mana-piracy-fb1",
     "set": "Set 4",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__changes__total__mana-20piracy.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/forth-batch__changes__total__mana-20piracy--r2.png"
   },
   {
     "id": "misinformation-spreader-fb4",
@@ -2258,7 +2261,7 @@
     "manaCost": "{U}",
     "type": "Enchantment",
     "rarity": "Rare",
-    "text": "When this enchantment enters, experiment 1. (You get a vial counter. If you don't control The Experiment, create one. Then, spend any amount of vial on it.)\n{3}{U}: Experiment 2.",
+    "text": "When this enchantment enters, experiment 1. (You get a {experiment} counter. If you don’t control The Experiment, create one. Then spend any amount of {experiment} counters on it.)\n{3}{U}: Experiment 2.",
     "colors": [
       "U"
     ],
@@ -2268,10 +2271,10 @@
       "The Experiment"
     ],
     "flavorText": "The Utopians' sect of the Simic Combine believes that true evolution lies in slow, constant experimentation—each mutation a step towards an ideal future, where perfection is not achieved, but continually redefined.",
-    "artist": "Dall-E 3",
+    "artist": "ChatGPT Images 2.6",
     "_supersedes": "the-utopians-protocol-fb1",
     "set": "Set 4",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__changes__total__the-20utopians-e2-80-99-20protocol.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/forth-batch__changes__total__the-20utopians-e2-80-99-20protocol--r2.png"
   },
   {
     "id": "your-own-story-fb4",
@@ -2311,13 +2314,13 @@
     "name": "Duel Masters",
     "type": "Conspiracy",
     "rarity": "Mythic Rare",
-    "text": "(Start the game with this conspiracy face up in the command zone.)\nYou don't have a life total.\nAt the start of the game, put the top five cards of your library face-down in front of you as shields.\nIf you would lose life, instead put one of your shields into your hand. If you can't, you lose the game.",
+    "text": "(Start the game with this conspiracy face up in the command zone.)\nYou don't have a life total.\nAt the beginning of the first upkeep, exile the top five cards of your library face down as shields.\nIf you would lose life, instead put one of your shields into your hand. If you can't, you lose the game.",
     "colors": [],
     "custom": true,
     "archetypes": [],
     "artist": "タカヤマトシアキ",
     "set": "Set 4",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__colorless__duel-20masters.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/forth-batch__colorless__duel-20masters--r2.png"
   },
   {
     "id": "emrakul-disturbing-reality-fb4",
@@ -2325,7 +2328,7 @@
     "manaCost": "{12}",
     "type": "Legendary Creature — Eldrazi",
     "rarity": "Mythic Rare",
-    "text": "Partner with Kozilek, Unfathomable Truth and Ulamog, Eternal Consumer\nWhenever you cast this spell, target opponent shuffles thirty confusion cards into their library.\nAt the beginning of your end step, if you both own and control this creature and a creature named Kozilek, Unfathomable Truth and a creature named Ulamog, Eternal Consumer, exile them, then meld them into The Three.",
+    "text": "Partner with Kozilek, Unfathomable Truth and Ulamog, Eternal Consumer\nWhen you cast this spell, target opponent conjures thirty cards named Confusion into their library, then shuffles.\nAt the beginning of your end step, if you both own and control Emrakul, a creature named Kozilek, Unfathomable Truth, and a creature named Ulamog, Eternal Consumer, exile them, then meld them into The Three.",
     "colors": [],
     "custom": true,
     "archetypes": [],
@@ -2337,7 +2340,7 @@
       "Ulamog, Eternal Consumer"
     ],
     "set": "Set 4",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__colorless__emrakul-2c-20disturbing-20reality.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/forth-batch__colorless__emrakul-2c-20disturbing-20reality--r2.png"
   },
   {
     "id": "everything-is-a-conspiricy-fb4",
@@ -2357,14 +2360,14 @@
     "name": "Fresh Start",
     "type": "Conspiracy",
     "rarity": "Rare",
-    "text": "(Start the game with this conspiracy face up in the command zone.)\nWhenever you take a mulligan, you may exile your hand instead of shuffling your hand into your library.",
+    "text": "(Start the game with this conspiracy face up in the command zone.)\nAs you take a mulligan, you may exile your hand instead of shuffling it into your library.",
     "colors": [],
     "custom": true,
     "archetypes": [],
     "flavorText": "Another chance to do it right.",
     "artist": "Charley Daveler",
     "set": "Set 4",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__colorless__fresh-20start.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/forth-batch__colorless__fresh-20start--r2.png"
   },
   {
     "id": "gooser-cruiser-fb4",
@@ -2397,15 +2400,15 @@
     "custom": true,
     "archetypes": [],
     "flavorText": "It's better to stand aside than to stand out.",
-    "artist": "ChatGPT o4",
+    "artist": "Yangyang Sui",
     "set": "Set 4",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__colorless__height-20advantage.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/forth-batch__colorless__height-20advantage--r2.png"
   },
   {
     "id": "karametra-s-beloved-fb4",
     "name": "Karametra's Beloved",
     "manaCost": "{0}",
-    "type": "Enchantment Artifact Creature — Ferret",
+    "type": "Enchantment Artifact Creature — Antelope",
     "rarity": "Uncommon",
     "text": "",
     "colors": [],
@@ -2414,9 +2417,9 @@
     "power": "0",
     "toughness": "1",
     "flavorText": "Forged by Purphoros and shaped by Nylea, this gift from her two former lovers stands as a reminder that even hands hardened and stained by violence, though they may alter nature's perfection, can still craft beauty beyond imagination.",
-    "artist": "ChatGPT o4",
+    "artist": "Astruma",
     "set": "Set 4",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__colorless__karametra-e2-80-99s-20beloved.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/forth-batch__colorless__karametra-e2-80-99s-20beloved--r2.png"
   },
   {
     "id": "kozilek-unfathomable-truth-fb4",
@@ -2424,7 +2427,7 @@
     "manaCost": "{10}",
     "type": "Legendary Creature — Eldrazi",
     "rarity": "Mythic Rare",
-    "text": "Partner with Emrakul, Disturbing Reality and Ulamog, Eternal Consumer\nTrample\nWhen you cast this spell, exile five random cards from the cube pool face-down. An opponent separates those cards into a face-down pile and a face-up pile. You may cast spells from it without paying their mana cost.",
+    "text": "Partner with Emrakul, Disturbing Reality and Ulamog, Eternal Consumer\nTrample\nWhen you cast this spell, conjure five random cards from the cube pool into exile face down. An opponent separates those cards into a face-down pile and a face-up pile. Choose one of those piles. You may cast any number of spells from among cards in that pile without paying their mana costs.",
     "colors": [],
     "custom": true,
     "archetypes": [],
@@ -2436,13 +2439,13 @@
       "Ulamog, Eternal Consumer"
     ],
     "set": "Set 4",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__colorless__kozilek-2c-20unfathomable-20truth.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/forth-batch__colorless__kozilek-2c-20unfathomable-20truth--r2.png"
   },
   {
     "id": "magus-of-the-petal-fb4",
     "name": "Magus of the Petal",
     "manaCost": "{0}",
-    "type": "Artifact Creature — Human Wizard",
+    "type": "Artifact Creature — Cyborg Wizard",
     "rarity": "Rare",
     "text": "{T}, Sacrifice this creature: Add one mana of any color.",
     "colors": [],
@@ -2451,9 +2454,9 @@
     "power": "0",
     "toughness": "1",
     "flavorText": "To be entrusted with the petal is to be free of greed and untouched by human affairs—and even then, one must endure a rite that strips away the last traces of their humanity.",
-    "artist": "ChatGPT o4",
+    "artist": "Aude Pfister",
     "set": "Set 4",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__colorless__magus-20of-20the-20petal.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/forth-batch__colorless__magus-20of-20the-20petal--r2.png"
   },
   {
     "id": "mox-amethyst-fb4",
@@ -2467,10 +2470,10 @@
     "archetypes": [
       "Enchantments"
     ],
-    "flavorText": "\"Gathering the stars, fourteen gods entrusted Phorphoros to forge them into one perfect jewel, which they hurled to the earth — and from its impact, humanity emerged.\"\n—Theros' Tale of Creation",
+    "flavorText": "\"Gathering the stars, fourteen gods entrusted Purphoros to forge them into one perfect jewel, which they hurled to the earth — and from its impact, humanity emerged.\"\n—Theros' Tale of Creation",
     "artist": "ChatGPT o4",
     "set": "Set 4",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__colorless__mox-20amethyst.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/forth-batch__colorless__mox-20amethyst--r2.png"
   },
   {
     "id": "pizza-oven-fb4",
@@ -2478,7 +2481,7 @@
     "manaCost": "{2}",
     "type": "Artifact",
     "rarity": "Rare",
-    "text": "{T}: Create a Food token named Cheese, Dough or Tomato.\n{2}{R}, {T}, Sacrifice a Cheese, a Dough and a Tomato: Create a Pizza token. (It's an artifact Food token with \"{2}, {T}, Sacrifice this token: You gain 9 life and draw three cards.)",
+    "text": "{T}: Create a Food token named Cheese, Dough, or Tomato.\n{2/R}, {T}, Sacrifice a Cheese, a Dough, and a Tomato: Create a Pizza token. (It’s an artifact Food token with “{2}, {T}, Sacrifice this token: You gain 9 life and draw three cards.”)",
     "colors": [],
     "custom": true,
     "archetypes": [
@@ -2493,7 +2496,7 @@
       "Pizza"
     ],
     "set": "Set 4",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__colorless__pizza-20oven.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/forth-batch__colorless__pizza-20oven--r2.png"
   },
   {
     "id": "soul-ring-fb4",
@@ -2510,7 +2513,7 @@
     "flavorText": "It holds every final goodbye, every hidden tear, each missed moment, every forsaken dream, and lingering regret — yet within it, a light endures, not to mourn what's lost, but to transform it into something greater.",
     "artist": "Xinoir",
     "set": "Set 4",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__colorless__soul-20ring.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/forth-batch__colorless__soul-20ring--r2.png"
   },
   {
     "id": "surveillance-state-fb4",
@@ -2532,7 +2535,7 @@
     "manaCost": "{3}",
     "type": "Legendary Artifact — Vehicle",
     "rarity": "Rare",
-    "text": "Haste\nYour opponents respect you. (Creatures can't attack you or block creatures you control unless their controller pays {1} for each creature they control that's attacking you or blocking a creature you control. You have ward {1}.)\nCrew 1",
+    "text": "Haste\nYour opponents respect you. (Creatures can’t attack you or block creatures you control unless their controller pays {1} for each creature they control that’s attacking you or blocking a creature you control. Whenever you become the target of a spell or ability an opponent controls, counter that spell or ability unless its controller pays {1}.)\nCrew 1",
     "colors": [],
     "custom": true,
     "archetypes": [
@@ -2542,7 +2545,7 @@
     "toughness": "3",
     "artist": "Julie Dillon",
     "set": "Set 4",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__colorless__the-20godess-20of-20speed.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/forth-batch__colorless__the-20godess-20of-20speed--r2.png"
   },
   {
     "id": "the-oracle-provides-fb4",
@@ -2577,7 +2580,7 @@
     "manaCost": "{12}",
     "type": "Legendary Creature — Eldrazi",
     "rarity": "Mythic Rare",
-    "text": "Partner with Emrakul, Disturbing Reality and Kozilek, Unfathomable Truth\nWhen you cast this spell, exile two target permanents.\nWhen Ulamog enters, combine all permanent cards from target opponent's exile onto it.\nCombinnihilator 4 (Whenever Ulamog attacks, defending player choose four permanents they control to be combined with Ulamog.)",
+    "text": "Partner with Emrakul, Disturbing Reality and Kozilek, Unfathomable Truth\nWhen you cast this spell, exile two target permanents.\nWhen Ulamog enters, combine all permanent cards target opponent owns in exile onto it.\nCombinnihilator 4 (Whenever Ulamog attacks, defending player chooses four permanents they control to be combined with Ulamog.)",
     "colors": [],
     "custom": true,
     "archetypes": [],
@@ -2589,7 +2592,7 @@
       "Kozilek, Unfathomable Truth"
     ],
     "set": "Set 4",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__colorless__ulamog-2c-20eternal-20consumer.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/forth-batch__colorless__ulamog-2c-20eternal-20consumer--r2.png"
   },
   {
     "id": "new-phyrexia-fb4",
@@ -2597,7 +2600,7 @@
     "manaCost": "{2}{B/G}{B/G}",
     "type": "Enchantment",
     "rarity": "Rare",
-    "text": "Lands you control are artifacts in addition to their other types.\nWhenever you tap an artifact for mana, add an additional one mana of any color, you lose 1 life and you get a poison counter. (A player with ten or more poison counters loses the game.)",
+    "text": "Lands you control are artifacts in addition to their other types.\nWhenever you tap an artifact for mana, add an additional one mana of any color, you lose 1 life, and you get a poison counter. (A player with ten or more poison counters loses the game.)",
     "colors": [
       "B",
       "G"
@@ -2609,7 +2612,7 @@
     "flavorText": "Even the Five Suns thirsted to serve Them.",
     "artist": "Aleksi Briclot",
     "set": "Set 4",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__gold__bg__new-20phyrexia.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/forth-batch__gold__bg__new-20phyrexia--r2.png"
   },
   {
     "id": "pulse-blaster-fb4",
@@ -2626,9 +2629,9 @@
     "archetypes": [
       "Broken Cipher"
     ],
-    "artist": "Craiyon (A.I)",
+    "artist": "Kidjoker27",
     "set": "Set 4",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__gold__bg__pulse-20blaster.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/forth-batch__gold__bg__pulse-20blaster--r2.png"
   },
   {
     "id": "purito-vilefingers-fb4",
@@ -2636,7 +2639,7 @@
     "manaCost": "{1}{B}{G}",
     "type": "Legendary Artifact Creature — Rat Artificer",
     "rarity": "Rare",
-    "text": "Machine Intelligence (Nontoken artifacts you control have all activated abilities of all nontoken artifacts you control with Machine Intelligence.)\n{T}: Surveil 1.\n{2}{B}{G}, {T}, Sacrifice this artifact: Return target permanent card with less mana value than this artifact from your graveyard to the battlefield. Activate only as a sorcery.",
+    "text": "Machine Intelligence (Nontoken artifacts you control have all activated abilities of all nontoken artifacts you control with Machine Intelligence.)\n{T}: Surveil 1.\n{2}{B}{G}, {T}, Sacrifice Purito: Return target permanent card with less mana value than Purito from your graveyard to the battlefield. Activate only as a sorcery.",
     "colors": [
       "B",
       "G"
@@ -2649,11 +2652,11 @@
     "toughness": "2",
     "artist": "Ludovico Tellatin",
     "set": "Set 4",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__gold__bg__purito-20-e2-80-9cvilefingers-e2-80-9d.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/forth-batch__gold__bg__purito-20-e2-80-9cvilefingers-e2-80-9d--r2.png"
   },
   {
     "id": "vraska-the-coiling-usurper-fb4",
-    "name": "Vraska, The Coiling Usurper",
+    "name": "Vraska, the Coiling Usurper",
     "manaCost": "{5}{B}{G}",
     "type": "Legendary Planeswalker — Vraska",
     "rarity": "Mythic Rare",
@@ -2670,7 +2673,7 @@
     "loyalty": "5",
     "artist": "Jaïn van Nigtevegt",
     "set": "Set 4",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__gold__bg__vraska-2c-20the-20coiling-20usurper.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/forth-batch__gold__bg__vraska-2c-20the-20coiling-20usurper--r2.png"
   },
   {
     "id": "brewer-s-troubles-fb4",
@@ -2689,7 +2692,7 @@
     ],
     "artist": "_theine_",
     "set": "Set 4",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__gold__br__brewer-e2-80-99s-20troubles.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/forth-batch__gold__br__brewer-e2-80-99s-20troubles--r2.png"
   },
   {
     "id": "knife-to-meet-you-fb4",
@@ -2697,7 +2700,7 @@
     "manaCost": "{B/R}",
     "type": "Enchantment",
     "rarity": "Rare",
-    "text": "{2}: Attach target noncreature token you control to target creature you don't control.\nAt the beginning of your upkeep, sacrifice each token you control that's attached to a creature you don't control. Each token sacrificed this way deals 1 damage to that creature and 1 damage to that creature's controller.",
+    "text": "{2}: Target noncreature token you control becomes an Equipment in addition to its other types. Attach it to target creature you don't control.\nAt the beginning of your upkeep, sacrifice each token you control that's attached to a creature you don't control. Each token sacrificed this way deals 1 damage to that creature and 1 damage to that creature's controller.",
     "colors": [
       "B",
       "R"
@@ -2708,7 +2711,7 @@
     ],
     "artist": "Leamis_",
     "set": "Set 4",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__gold__br__knife-20to-20meet-20you.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/forth-batch__gold__br__knife-20to-20meet-20you--r2.png"
   },
   {
     "id": "rakdos-sadism-incarnate-fb4",
@@ -2716,7 +2719,7 @@
     "manaCost": "{B}{B}{R}{R}",
     "type": "Legendary Creature — Demon",
     "rarity": "Mythic Rare",
-    "text": "Flying, trample\nWhen Rakdos enters, you get an emblem with \"Your opponents can only lose life by emblems.\"\nIf an opponent would be dealt damage, instead create that many Spike tokens. (They're artifacts with \"{2}, Sacrifice this artifact: Target opponent gains an emblem with 'At the beginning of your upkeep, you lose 1 life.'\")",
+    "text": "Flying, trample\nWhen Rakdos enters, you get an emblem with “Your opponents can’t lose life except from abilities of emblems.”\nIf an opponent would be dealt damage, create that many Spike tokens instead. (They’re artifacts with “{2}, Sacrifice this token: Target opponent gets an emblem with ‘At the beginning of your upkeep, you lose 1 life.’”)",
     "colors": [
       "B",
       "R"
@@ -2732,7 +2735,7 @@
       "Spike"
     ],
     "set": "Set 4",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__gold__br__rakdos-2c-20sadism-20incarnate.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/forth-batch__gold__br__rakdos-2c-20sadism-20incarnate--r2.png"
   },
   {
     "id": "pact-of-abundance-fb4",
@@ -2740,7 +2743,7 @@
     "manaCost": "{0}",
     "type": "Instant",
     "rarity": "Rare",
-    "text": "Until end of turn, whenever you cast a spell, draw a card, then may put a land card from your hand onto the battlefield.\nAt the beginning of your next upkeep, pay {4}{G}{U}. If you don't, you lose the game.",
+    "text": "Until end of turn, whenever you cast a spell, draw a card, then you may put a land card from your hand onto the battlefield.\nAt the beginning of your next upkeep, pay {4}{G}{U}. If you don't, you lose the game.",
     "colors": [
       "G",
       "U"
@@ -2749,7 +2752,7 @@
     "archetypes": [],
     "artist": "Kasia Zielinska",
     "set": "Set 4",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__gold__gu__pact-20of-20abundance.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/forth-batch__gold__gu__pact-20of-20abundance--r2.png"
   },
   {
     "id": "selkie-caretaker-fb4",
@@ -2769,7 +2772,7 @@
     "flavorText": "“Before the first fake-gill was born, I was there, keeping watch.”",
     "artist": "Christopher Moeller",
     "set": "Set 4",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__gold__gu__selkie-20caretaker.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/forth-batch__gold__gu__selkie-20caretaker--r2.png"
   },
   {
     "id": "talion-the-infinite-progress-fb4",
@@ -2777,7 +2780,7 @@
     "manaCost": "{1}{G}{U}",
     "type": "Legendary Creature — Merfolk Octopus Scientist",
     "rarity": "Mythic Rare",
-    "text": "Whenever a nontoken creature you control enters, experiment 2. (You get two experiment counters. If you don't control The Experiment, create one. Then, spend any amount of experiment counters on it.)\nCreatures you control have all the abilities that The Experiment currently has.",
+    "text": "Whenever a nontoken creature you control enters, experiment 2. (You get two experiment counters. If you don't control The Experiment, create one. Then spend any amount of experiment counters on it.)\nCreatures you control have all the abilities The Experiment currently has.",
     "colors": [
       "G",
       "U"
@@ -2791,7 +2794,7 @@
       "The Experiment"
     ],
     "set": "Set 4",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__gold__gu__talion-2c-20the-20infinite-20progress.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/forth-batch__gold__gu__talion-2c-20the-20infinite-20progress--r2.png"
   },
   {
     "id": "blessed-neon-pulse-fb4",
@@ -2818,13 +2821,13 @@
   {
     "id": "mat-selesnya-fb4",
     "name": "Mat’Selesnya",
-    "manaCost": "{G}{G}{G}{W}{W}{W}{W}",
+    "manaCost": "{G}{G}{G}{G}{W}{W}{W}{W}",
     "type": "Legendary Creature — Dryad Elemental",
     "rarity": "Mythic Rare",
-    "text": "Convoke\nUnity (Token creatures you control have all activated abilities of nontoken creatures you control with unity.)\nActivated abilities you control have Convoke.\n{2}{G}{W}, {T}: Create a Vernadi Shieldmate token, then put a +1/+1 counter on each creature you control. (It's a {1}{G}{W} Human Soldier creature with vigilance.)",
+    "text": "Convoke\nUnity (Token creatures you control have all activated abilities of all nontoken creatures you control with unity.)\nActivated abilities you control have convoke.\n{2}{G/W}, {T}: Create a Verdani Shieldmate token, then put a +1/+1 counter on each creature you control. (It’s a {1}{G/W} Human Soldier creature with vigilance.)",
     "colors": [
-      "G",
-      "W"
+      "W",
+      "G"
     ],
     "custom": true,
     "archetypes": [],
@@ -2835,15 +2838,15 @@
       "Vernadi Shieldmate"
     ],
     "set": "Set 4",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__gold__gw__mat-e2-80-99selesnya.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/forth-batch__gold__gw__mat-e2-80-99selesnya--r2.png"
   },
   {
     "id": "vitu-ghazi-behemoth-fb4",
-    "name": "Vitu-Ghazi Behemoth",
+    "name": "Vitu-Ghazi Colossus",
     "manaCost": "{3}{G}{W}",
     "type": "Artifact — Vehicle",
     "rarity": "Mythic Rare",
-    "text": "At the beginning of each of your postcombat main phases, choose one. If you attacked with this Vehicle this turn, choose both —\n• Creature and Vehicle spells you cast have Convoke until end of turn.\n• During this turn, you may look at the top card of your library any time, and you may cast a creature and Vehicle spells from the top of your library.\nCrew 4",
+    "text": "At the beginning of your second main phase, choose one. If this Vehicle attacked this turn, choose both instead.\n• Creature and Vehicle spells you cast this turn have convoke.\n• Until end of turn, you may look at the top card of your library any time, and you may cast creature and Vehicle spells from the top of your library.\nCrew 4",
     "colors": [
       "G",
       "W"
@@ -2854,17 +2857,17 @@
     ],
     "power": "6",
     "toughness": "6",
-    "artist": "ChatGPT 04",
+    "artist": "toart-studio",
     "set": "Set 4",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__gold__gw__vitu-ghazi-20behemoth.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/forth-batch__gold__gw__vitu-ghazi-20behemoth--r2.png"
   },
   {
     "id": "anzrag-fb4",
     "name": "Anzrag",
     "manaCost": "{4}{R}{R}{G}{G}",
-    "type": "Legendary Creature — God Mole",
+    "type": "Legendary Creature — Mole God",
     "rarity": "Mythic Rare",
-    "text": "Anzrag can't be countered.\nTrample, haste\nAll creatures able to block Anzrag do so.\nDiscard your hand: If you discarded at least one card, Anzrag gains hexproof and indestructible until end of turn. Tap it.\n{2}{R}{G}: Destroy target noncreature permanent. You gain 8 life.",
+    "text": "This spell can’t be countered.\nTrample, haste\nAll creatures able to block Anzrag do so.\nDiscard your hand: If one or more cards were discarded this way, Anzrag gains hexproof and indestructible until end of turn. Tap it.\n{2}{R}{G}: Destroy target noncreature permanent. You gain 8 life.",
     "colors": [
       "R",
       "G"
@@ -2877,7 +2880,7 @@
     "toughness": "4",
     "artist": "Patricio Soler",
     "set": "Set 4",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__gold__rg__anzrag.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/forth-batch__gold__rg__anzrag--r2.png"
   },
   {
     "id": "branching-helix-fb4",
@@ -2894,10 +2897,10 @@
     "archetypes": [
       "Control"
     ],
-    "flavorText": "“Whispers among the Clans tell of a ritual buried for a thousand years, now unearthed. I fear our understanding was flawed—and that it may become the force that unites the Clans together.”\n—Aurix, Boros Historian",
+    "flavorText": "“Whispers among the Clans tell of a ritual buried for a thousand years, now unearthed. I fear our understanding was flawed—and that it may become the force that unites the Clans.”\n—Aurix, Boros historian",
     "artist": "Dall-E 3",
     "set": "Set 4",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__gold__rg__branching-20helix.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/forth-batch__gold__rg__branching-20helix--r2.png"
   },
   {
     "id": "doomskar-s-aftershock-fb4",
@@ -2923,7 +2926,7 @@
     "manaCost": "{4}{R}{G}",
     "type": "Legendary Creature — Dragon Beast",
     "rarity": "Mythic Rare",
-    "text": "Flying, vigilance\nBerserk (Whenever this creature attacks, you may double its power. If you do, sacrifice it at the end of turn.)\nOther creatures have berserk and attack each turn if able.\nWhenever a creature you don't control attacks, you may berserk it.",
+    "text": "Flying, vigilance\nBerserk (Whenever this creature attacks, you may double its power until end of turn. If you do, sacrifice it at the beginning of the next end step.)\nOther creatures have berserk and attack each turn if able.\nWhenever a creature you don't control attacks, you may berserk it.",
     "colors": [
       "R",
       "G"
@@ -2932,9 +2935,9 @@
     "archetypes": [],
     "power": "5",
     "toughness": "5",
-    "artist": "ChatGPT 04",
+    "artist": "SEGA",
     "set": "Set 4",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__gold__rg__kuraz-2c-20the-20boiling-20anger.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/forth-batch__gold__rg__kuraz-2c-20the-20boiling-20anger--r2.png"
   },
   {
     "id": "maakian-nodorog-fb4",
@@ -2964,7 +2967,7 @@
     "manaCost": "{R/W}",
     "type": "Legendary Creature — Human Hero",
     "rarity": "Rare",
-    "text": "Requiem — Whenever a card enters or leaves your graveyard, put a level counter on this creature.\nLEVEL 1-5\nFirst strike\nSpells and abilities from your graveyard cost {1} less to cast and activate.\n2/2\nLEVEL 6+\nFlying, double strike\nSpells and abilities from your graveyard cost {3} less to cast and activate.\n3/3",
+    "text": "Requiem — Whenever a card is put into or leaves your graveyard, put a level counter on Ela.\nLEVEL 1-5\nFirst strike\nSpells you cast and abilities you activate from your graveyard cost {1} less to cast and activate.\n2/2\nLEVEL 6+\nFlying, double strike\nSpells you cast and abilities you activate from your graveyard cost {3} less to cast and activate.\n3/3",
     "colors": [
       "R",
       "W"
@@ -2975,9 +2978,9 @@
     ],
     "power": "1",
     "toughness": "1",
-    "artist": "ChatGPT 04",
+    "artist": "ChatGPT Images 2.6",
     "set": "Set 4",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__gold__rw__ela-2c-20she-20who-20defies-20destiny.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/forth-batch__gold__rw__ela-2c-20she-20who-20defies-20destiny--r2.png"
   },
   {
     "id": "lord-of-dissociation-fb4",
@@ -2985,7 +2988,7 @@
     "manaCost": "{1}{R}{R}{W}{W}",
     "type": "Creature — Elemental",
     "rarity": "Mythic Rare",
-    "text": "This creature's power and toughness are each equal to the number of cards in all graveyards plus all exiles.",
+    "text": "This creature's power and toughness are each equal to the number of cards in all graveyards and in exile.",
     "colors": [
       "R",
       "W"
@@ -2997,9 +3000,9 @@
     "power": "*",
     "toughness": "*",
     "flavorText": "Born of a longing for a past that never was, its laughter is made of sorrow and irony.",
-    "artist": "ChatGPT 04",
+    "artist": "ChatGPT o4",
     "set": "Set 4",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__gold__rw__lord-20of-20dissociation.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/forth-batch__gold__rw__lord-20of-20dissociation--r2.png"
   },
   {
     "id": "odric-redeemed-cathar-fb4",
@@ -3007,7 +3010,7 @@
     "manaCost": "{1}{R}{W}",
     "type": "Legendary Creature — Human Spirit Soldier",
     "rarity": "Rare",
-    "text": "Whenever Odric attacks, return target creature card with flying, a card with first strike, and so on for double strike, deathtouch, haste, hexproof, indestructible, lifelink, menace, reach, trample, and vigilance from your graveyard to the battlefield tapped and attacking. Sacrifice them at the beginning of the next end step.",
+    "text": "Whenever Odric attacks, for each of flying, first strike, double strike, deathtouch, haste, hexproof, indestructible, lifelink, menace, reach, trample, and vigilance, return up to one target creature card with that ability from your graveyard to the battlefield tapped and attacking. Sacrifice those creatures at the beginning of the next end step.",
     "colors": [
       "R",
       "W"
@@ -3020,7 +3023,7 @@
     "toughness": "3",
     "artist": "Rohland DeMoss",
     "set": "Set 4",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__gold__rw__odric-2c-20redeemed-20cathar.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/forth-batch__gold__rw__odric-2c-20redeemed-20cathar--r2.png"
   },
   {
     "id": "yaszen-ascendant-commander-fb4",
@@ -3028,7 +3031,7 @@
     "manaCost": "{2}{R}{W}",
     "type": "Legendary Creature — Human Angel Soldier",
     "rarity": "Mythic Rare",
-    "text": "Flying\nFormation (Whenever a creature with formation is dealt damage for the first time each turn, you may have it instead be dealt to another creature you control with formation.)\nWhenever another nontoken creature card is put into your graveyard from anywhere, create a 1/1 white and red Soldier creature token with formation.",
+    "text": "Flying\nFormation (The first time each turn damage would be dealt to a creature with formation, you may have that damage dealt to another creature you control with formation instead.)\nWhenever another nontoken creature card is put into your graveyard from anywhere, create a 1/1 red and white Soldier creature token with formation.",
     "colors": [
       "R",
       "W"
@@ -3045,7 +3048,7 @@
       "1/1 white and red Soldier"
     ],
     "set": "Set 4",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__gold__rw__yaszen-2c-20ascendant-20commander.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/forth-batch__gold__rw__yaszen-2c-20ascendant-20commander--r2.png"
   },
   {
     "id": "inkfathom-s-brew-fb4",
@@ -3096,7 +3099,7 @@
     "manaCost": "{3}{U}{U}{B}{B}",
     "type": "Legendary Creature — Vampire Horror Elder",
     "rarity": "Mythic Rare",
-    "text": "Szadek can't be countered.\nFlying\nWhen Szadek, Ancient Madness enters, exile target player's hand. Then, that player adds a Confusion to their hand for each card exiled this way. (Confusion is a colorless sorcery card with no mana cost that has cycling {2}.)",
+    "text": "This spell can’t be countered.\nFlying\nWhen Szadek enters, exile target player’s hand. Then that player conjures a card named Confusion into their hand for each card exiled this way. (Confusion is a colorless sorcery card with no mana cost that has cycling {2}.)",
     "colors": [
       "U",
       "B"
@@ -3110,7 +3113,7 @@
       "Confusion"
     ],
     "set": "Set 4",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__gold__ub__szadek-2c-20ancient-20madness.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/forth-batch__gold__ub__szadek-2c-20ancient-20madness--r2.png"
   },
   {
     "id": "glengal-aether-splitter-fb4",
@@ -3157,7 +3160,7 @@
     "manaCost": "{X}{U/R}{U/R}",
     "type": "Enchantment Creature — Memory Hydra",
     "rarity": "Rare",
-    "text": "When this creature enters, exile X instant and/or sorcery cards from your hand and/or graveyard with total mana value X or less.\n{2}, Sacrifice this creature: Cast a copy of each card exiled with this creature without paying its mana cost.",
+    "text": "This creature enters with X +1/+1 counters on it.\nWhen this creature enters, exile X instant and/or sorcery cards from your hand and/or graveyard with total mana value X or less.\n{2}, Sacrifice this creature: Cast a copy of each card exiled with this creature without paying its mana cost.",
     "colors": [
       "U",
       "R"
@@ -3170,7 +3173,7 @@
     "toughness": "0",
     "artist": "Liiga Smilshkalne",
     "set": "Set 4",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__gold__ur__memorydra.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/forth-batch__gold__ur__memorydra--r2.png"
   },
   {
     "id": "stack-overflow-fb4",
@@ -3178,7 +3181,7 @@
     "manaCost": "{3}{U}{R}",
     "type": "Instant",
     "rarity": "Rare",
-    "text": "For each other noncreature spell, create a red and blue Potential enchantment token, then exile that spell. Each of these tokens has \"{3}, Sacrifice this token: Cast each card exiled with it without paying its mana cost.\"",
+    "text": "For each other noncreature spell, exile that spell and create a blue and red Potential enchantment token with “{3}, Sacrifice this token: You may cast the card exiled with this token without paying its mana cost.” Each card exiled this way is exiled with the token created for it.",
     "colors": [
       "U",
       "R"
@@ -3192,7 +3195,7 @@
       "Potential"
     ],
     "set": "Set 4",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__gold__ur__stack-20overflow.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/forth-batch__gold__ur__stack-20overflow--r2.png"
   },
   {
     "id": "cube-of-promised-balance-fb4",
@@ -3228,7 +3231,7 @@
     ],
     "artist": "Threl",
     "set": "Set 4",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__gold__wb__dance-20of-20life-20and-20death.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/forth-batch__gold__wb__dance-20of-20life-20and-20death--r2.png"
   },
   {
     "id": "siyara-judge-of-indulgence-fb4",
@@ -3236,7 +3239,7 @@
     "manaCost": "{2}{W}{B}",
     "type": "Legendary Creature — Angel Cleric",
     "rarity": "Mythic Rare",
-    "text": "Flying, lifelink\nWhenever an opponent casts a spell during your turn, draws two or more cards, and/or creates a Treasure token, they get a debt counter. (At the beginning of that player's end step, they may pay {1} for each debt counter they have. They remove that many counters, then lose 1 life for each debt counter they have.)",
+    "text": "Flying, lifelink\nWhenever an opponent casts a spell during your turn, draws their second card each turn, and/or creates a Treasure token, they get a debt counter. (At the beginning of that player's end step, they may pay {1} for each debt counter they have. They remove that many counters, then lose 1 life for each debt counter they have.)",
     "colors": [
       "W",
       "B"
@@ -3247,7 +3250,7 @@
     "toughness": "3",
     "artist": "Kevfang",
     "set": "Set 4",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__gold__wb__siyara-2c-20judge-20of-20indulgence.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/forth-batch__gold__wb__siyara-2c-20judge-20of-20indulgence--r2.png"
   },
   {
     "id": "we-are-all-one-fb4",
@@ -3255,7 +3258,7 @@
     "manaCost": "{3}{W}{W}{B}{B}",
     "type": "Sorcery",
     "rarity": "Mythic Rare",
-    "text": "Each player exiles all creatures they control. Then, put them onto the battlefield under your control combined into one creature. (Its power is equal to their total power, its toughness is equal to their total toughness, and it has their names, mana costs, types, text boxes, etc.)",
+    "text": "Each player exiles all creatures they control. Then put them onto the battlefield under your control combined into one creature. (Its power is equal to their total power, its toughness is equal to their total toughness, and it has their names, mana costs, types, text boxes, etc.)",
     "colors": [
       "W",
       "B"
@@ -3264,14 +3267,14 @@
     "archetypes": [],
     "artist": "Sarwet46-And-SCP",
     "set": "Set 4",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__gold__wb__we-20are-20all-20one.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/forth-batch__gold__wb__we-20are-20all-20one--r2.png"
   },
   {
     "id": "class-room-adventure-fb4",
     "name": "Class Room Adventure",
     "type": "Enchantment — Class Room",
     "rarity": "Rare",
-    "text": "Class {1}{W/U}\nArtifact spells you cast have demonstrate.\n{3}{W/U}: Level 2\nTokens you control have exalted.\nRoom {X}{X}{W/U}\nWhen you unlock this room, create X 1/2 colorless Child creature tokens with curiosity (whenever one deals damage to an opponent, you may draw a card.)\nAdventure {2}{W/U}\nSorcery — Adventure\nLearn about artifacts (learn, but you may treat an artifact card as a lesson.)\n“Seatbelts, everyone!”",
+    "text": "Class {1}{W/U}\nArtifact spells you cast have demonstrate.\n{3}{W/U}: Level 2\nTokens you control have exalted.\nRoom {X}{X}{W/U}\nWhen you unlock this door, create X 1/2 colorless Child creature tokens with curiosity (Whenever one deals damage to an opponent, you may draw a card.)\nAdventure {2}{W/U}\nSorcery — Adventure\nLearn about artifacts (Learn, but you may treat an artifact card as a Lesson.)",
     "colors": [
       "W",
       "U"
@@ -3285,15 +3288,16 @@
       "1/2 colorless Child"
     ],
     "set": "Set 4",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__gold__wu__class-20room-20adventure.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/forth-batch__gold__wu__class-20room-20adventure--r2.png",
+    "flavorText": "“Seatbelts, everyone!”"
   },
   {
     "id": "misted-away-fb4",
     "name": "Misted Away",
-    "manaCost": "{2}{U/W}{U/W}",
+    "manaCost": "{2}{W/U}{W/U}",
     "type": "Instant",
     "rarity": "Rare",
-    "text": "Exile target creature. Return that card to the battlefield under its owner's control either now, or at the beginning of the next end step.\nStorm (When you cast this spell, copy it for each spell cast before it this turn.)",
+    "text": "Exile target creature. Return that card to the battlefield under its owner's control either now or at the beginning of the next end step.\nStorm (When you cast this spell, copy it for each spell cast before it this turn. You may choose new targets for the copies.)",
     "colors": [
       "W",
       "U"
@@ -3303,9 +3307,9 @@
       "Storm",
       "Blink/ETB/Value"
     ],
-    "artist": "Dall-E 3",
+    "artist": "Stephanie Pui-Mun Law",
     "set": "Set 4",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__gold__wu__misted-20away.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/forth-batch__gold__wu__misted-20away--r2.png"
   },
   {
     "id": "niro-ascetic-judge-fb4",
@@ -3313,7 +3317,7 @@
     "manaCost": "{1}{W}{U}",
     "type": "Legendary Creature — Vedalken Advisor",
     "rarity": "Mythic Rare",
-    "text": "At the beginning of each player's upkeep, that player is taxed 1. (The next spell they cast costs {1} more to cast. This doesn't end at the end of turn.)\nWhenever a player pays tax, ward mana costs, or for cards they don't own that instruct them to pay mana, they draw cards equal to the amount paid. (Cards like Mana Leak.)",
+    "text": "At the beginning of each player's upkeep, that player is taxed 1. (The next spell they cast costs {1} more to cast. This doesn't end at the end of turn.)\nWhenever a player pays mana for tax, for a ward cost, or because a spell or ability they don’t control instructs them to, that player draws cards equal to the amount of mana paid. (Cards like Mana Leak.)",
     "colors": [
       "W",
       "U"
@@ -3324,7 +3328,7 @@
     "toughness": "4",
     "artist": "dndplaybook.com's A.I",
     "set": "Set 4",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__gold__wu__niro-2c-20ascetic-20judge.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/forth-batch__gold__wu__niro-2c-20ascetic-20judge--r2.png"
   },
   {
     "id": "the-calming-storm-fb4",
@@ -3342,19 +3346,19 @@
       "Storm"
     ],
     "flavorText": "“One must remember their innocence—the days before they became so rigid with life, before the nature of mankind did its thing.”\n—Ponderings of the One That Was",
-    "artist": "ChatGPT 04",
+    "artist": "Dayu Network (Edited by me)",
     "relatedTokens": [
       "-2/1 white and blue Human Monk"
     ],
     "set": "Set 4",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__gold__wu__the-20calming-20storm.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/forth-batch__gold__wu__the-20calming-20storm--r2.png"
   },
   {
     "id": "aspiring-speedbrooder-fb4",
     "name": "Aspiring Speedbrooder",
     "type": "Artifact — Vehicle",
     "rarity": "Rare",
-    "text": "Level up Crew 2 (Crew 2: Put a level counter on this. Level up only as a sorcery.)\nLEVEL 2-3\n4/4\nThis Vehicle gets +1/+1 for each artifact and/or creature card in your graveyard.\nLEVEL 4+\n5/5\nEach Vehicle you control gets +1/+1 for each artifact and/or creature card in your graveyard.",
+    "text": "Level up—Tap any number of untapped creatures you control with total power 2 or more. (Level up only as a sorcery.)\nLEVEL 2-3\n4/4\nThis Vehicle gets +1/+1 for each artifact and/or creature card in your graveyard.\nLEVEL 4+\n5/5\nEach Vehicle you control gets +1/+1 for each artifact and/or creature card in your graveyard.",
     "colors": [
       "G"
     ],
@@ -3365,9 +3369,10 @@
     ],
     "power": "3",
     "toughness": "3",
-    "artist": "ChatGPT 04",
+    "artist": "8bitwizard (Edited by me)",
     "set": "Set 4",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__green__aspiring-20speedbrooder.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/forth-batch__green__aspiring-20speedbrooder--r2.png",
+    "manaCost": "{G}"
   },
   {
     "id": "berserker-s-prayer-fb4",
@@ -3375,7 +3380,7 @@
     "manaCost": "{1}{G}",
     "type": "Instant",
     "rarity": "Common",
-    "text": "Target creature gets +2/+2 and gains berserk until end of turn. (Whenever it attacks, you may double its power. If you do, sacrifice it at the end of turn.)",
+    "text": "Target creature gets +2/+2 and gains berserk until end of turn. (Whenever this creature attacks, you may double its power until end of turn. If you do, sacrifice it at the beginning of the next end step.)",
     "colors": [
       "G"
     ],
@@ -3384,7 +3389,7 @@
     "flavorText": "\"Raze-Boar, roar with me: if I die today, I die with their city in ruins!\"",
     "artist": "Maciej Kuciara",
     "set": "Set 4",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__green__berserker-e2-80-99s-20prayer.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/forth-batch__green__berserker-e2-80-99s-20prayer--r2.png"
   },
   {
     "id": "boss-encounter-fb4",
@@ -3392,7 +3397,7 @@
     "manaCost": "{2}{G}{G}",
     "type": "Sorcery",
     "rarity": "Rare",
-    "text": "At the beginning of your next combat, target creature you control fights each creature you don't control, one at a time.\nSuspend 2 — {R}{R}\nThrilling Preparations — Whenever a time counter is removed from this card while it's exiled, exile the top card of your library. Until end of turn, you may play that card. If it's a creature spell, it enters with two +1/+1 counters on it.",
+    "text": "At the beginning of your next combat, target creature you control fights each creature you don’t control, one at a time.\nSuspend 2 — {R}{R}\nThrilling Preparations — Whenever a time counter is removed from this card while it’s exiled, exile the top card of your library. Until end of turn, you may play that card. If you cast a creature spell this way, that creature enters with two additional +1/+1 counters on it.",
     "colors": [
       "G"
     ],
@@ -3402,7 +3407,7 @@
     ],
     "artist": "Josh Herman",
     "set": "Set 4",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__green__boss-20encounter.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/forth-batch__green__boss-20encounter--r2.png"
   },
   {
     "id": "decorated-overseer-fb4",
@@ -3410,7 +3415,7 @@
     "manaCost": "{2}{G}",
     "type": "Creature — Centaur Warrior",
     "rarity": "Rare",
-    "text": "Unity (Token creatures you control have all activated abilities of all nontoken creatures you control with unity.)\nWhenever this creature becomes a target of a spell, create a 1/1 green Human Soldier creature token with haste.\n{G}, {T}: Target creature gets +1/+1 until end of turn.",
+    "text": "Unity (Token creatures you control have all activated abilities of all nontoken creatures you control with unity.)\nWhenever this creature becomes the target of a spell, create a 1/1 green Human Soldier creature token with haste.\n{G}, {T}: Target creature gets +1/+1 until end of turn.",
     "colors": [
       "G"
     ],
@@ -3418,12 +3423,12 @@
     "archetypes": [],
     "power": "3",
     "toughness": "3",
-    "artist": "ChatGPT 04",
+    "artist": "Federico Arguissein",
     "relatedTokens": [
       "1/1 green Human Soldier"
     ],
     "set": "Set 4",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__green__decorated-20overseer.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/forth-batch__green__decorated-20overseer--r2.png"
   },
   {
     "id": "domain-expansion-fb4",
@@ -3431,7 +3436,7 @@
     "manaCost": "{5}{G}{G}",
     "type": "Instant",
     "rarity": "Mythic Rare",
-    "text": "For each basic land type, create a 1/1 green Dryad land creature token with that basic land type. (They're affected by summoning sickness, and each of them has a different name.)",
+    "text": "For each basic land type, create a 1/1 green Dryad land creature token with that basic land type. (They're affected by summoning sickness.)",
     "colors": [
       "G"
     ],
@@ -3440,12 +3445,12 @@
       "Token Collection"
     ],
     "flavorText": "United in sorrow, the dryads quietly pledged to reclaim and grow—lest human greed consume what little remained.",
-    "artist": "ChatGPT 04",
+    "artist": "Cammiereis (Edited by me)",
     "relatedTokens": [
       "1/1 green Dryad"
     ],
     "set": "Set 4",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__green__domain-20expansion.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/forth-batch__green__domain-20expansion--r2.png"
   },
   {
     "id": "el-verde-danna-s-masterpiece-fb4",
@@ -3453,7 +3458,7 @@
     "manaCost": "{1}{G}",
     "type": "Legendary Artifact — Vehicle",
     "rarity": "Rare",
-    "text": "Haste\n{2}{W}: This Vehicle becomes an artifact creature until end of turn. Until end of turn, whenever a Vehicle you control attacks, put a +1/+1 counter on each creature you control and noncreature Vehicle you control. If a creature named Danna, Lockloft Ace crewed this Vehicle this turn, copy this ability.\nCrew 2",
+    "text": "Haste\n{2}{W}: El-Verde becomes an artifact creature until end of turn. Until end of turn, whenever a Vehicle you control attacks, put a +1/+1 counter on each creature you control and noncreature Vehicle you control. If a creature named Danna, Lockloft Ace crewed El-Verde this turn, copy this ability.\nCrew 2",
     "colors": [
       "G"
     ],
@@ -3463,9 +3468,9 @@
     ],
     "power": "4",
     "toughness": "3",
-    "artist": "ChatGPT 04",
+    "artist": "Imagen",
     "set": "Set 4",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__green__el-verde-2c-20danna-e2-80-99s-20masterpiece.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/forth-batch__green__el-verde-2c-20danna-e2-80-99s-20masterpiece--r2.png"
   },
   {
     "id": "elves-of-civilized-facade-fb4",
@@ -3492,7 +3497,7 @@
     "manaCost": "{2}{G}",
     "type": "Artifact",
     "rarity": "Mythic Rare",
-    "text": "Whenever an artifact or creature enters under your control, you may activate one of its activated abilities without paying its mana cost and/or {T} cost.\nCreatures you control have haste.",
+    "text": "Whenever an artifact or creature you control enters, you may activate one of its activated abilities without paying any mana or {T} in its activation cost.\nCreatures you control have haste.",
     "colors": [
       "G"
     ],
@@ -3504,7 +3509,7 @@
     "flavorText": "At the Edge of Eternities, it awaits—not to be understood, but to awaken what lies beyond understanding.",
     "artist": "Gustav Schmidt",
     "set": "Set 4",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__green__essence-20resonator.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/forth-batch__green__essence-20resonator--r2.png"
   },
   {
     "id": "grothama-the-final-boss-fb4",
@@ -3512,17 +3517,17 @@
     "manaCost": "{4}{G}{G}",
     "type": "Legendary Battle Creature — Wurm Boss",
     "rarity": "Mythic Rare",
-    "text": "(Any player may attack and defend Bosses. Whenever a Boss is dealt damage, remove that many defense counters from it. Bosses deal damage equal to their defense. A boss can't attack itself. When it's defeated, the player that defeated it exile it, then cast it transformed.)\nVigilance, trample, ward {3}",
+    "text": "(Any player may attack and defend Bosses. Whenever a Boss is dealt damage, remove that many defense counters from it. Bosses deal damage equal to their defense. A Boss can't attack itself. When it's defeated, the player that defeated it exiles it, then casts it transformed.)\nVigilance, trample, ward {3}",
     "colors": [
       "G"
     ],
     "custom": true,
     "archetypes": [],
-    "power": "9",
     "artist": "Kohei Hayama",
     "relatedFace": "Legendary Loot Drop",
     "set": "Set 4",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__green__grothama-2c-20the-20final-20boss.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/forth-batch__green__grothama-2c-20the-20final-20boss--r2.png",
+    "loyalty": "9"
   },
   {
     "id": "heretic-s-capusle-fb4",
@@ -3536,9 +3541,10 @@
     "custom": true,
     "archetypes": [],
     "flavorText": "\"Nothing is more natural than nurturing the world around you while discarding your metallic impurities.\"\n—Dolomarus, Esper Heretic",
-    "artist": "ChatGPT 04",
+    "artist": "ChatGPT o4",
     "set": "Set 4",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__green__heretic-e2-80-99s-20capusle.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/forth-batch__green__heretic-e2-80-99s-20capusle--r2.png",
+    "manaCost": "{G}"
   },
   {
     "id": "jungle-sanctifier-fb4",
@@ -3546,7 +3552,7 @@
     "manaCost": "{1}{G}",
     "type": "Creature — Koala Druid",
     "rarity": "Rare",
-    "text": "Vigilance\n{T}: Add {G}. If this mana was spent to cast a spell that targets this creature, put a +1/+1 counter on this creature, then you may destroy target artifact or enchantment with mana value less than or equal to this creature's power.",
+    "text": "Vigilance\n{T}: Add {G}. When that mana is spent to cast a spell that targets this creature, put a +1/+1 counter on this creature, then you may destroy target artifact or enchantment with mana value less than or equal to this creature's power.",
     "colors": [
       "G"
     ],
@@ -3556,7 +3562,7 @@
     "toughness": "1",
     "artist": "Raini Studios",
     "set": "Set 4",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__green__jungle-20sanctifier.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/forth-batch__green__jungle-20sanctifier--r2.png"
   },
   {
     "id": "legendary-loot-drop-fb4",
@@ -3584,7 +3590,7 @@
     "manaCost": "{3}{G}{G}",
     "type": "Sorcery",
     "rarity": "Rare",
-    "text": "Cleave {1}{G}{G} (You may cast this spell for its cleave cost. If you do, remove the words in square brackets.)\nCreate a [4/6] green artifact [Treefolk Horror creature] token named Nourisher with \"At the beginning of your upkeep, return target creature card from your graveyard to your hand.\"",
+    "text": "Cleave {1}{G}{G} (You may cast this spell for its cleave cost. If you do, remove the words in square brackets.)\nCreate a [4/6] green [Treefolk Horror] artifact [creature] token named Nourisher with “At the beginning of your upkeep, return target creature card from your graveyard to your hand.”",
     "colors": [
       "G"
     ],
@@ -3595,7 +3601,7 @@
       "Nourisher"
     ],
     "set": "Set 4",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__green__nourishment-20for-20the-20puppet.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/forth-batch__green__nourishment-20for-20the-20puppet--r2.png"
   },
   {
     "id": "overgrown-peacock-fb4",
@@ -3667,7 +3673,7 @@
     "manaCost": "{3}{G}",
     "type": "Creature — Elf Shaman",
     "rarity": "Rare",
-    "text": "{2}, {T}: Put a +1/+1 counter on target creature for each artifact and/or creature you control. If this permanent is an artifact, also put a +1/+1 counter on that creature for each artifact and/or creature card in your graveyard.\nPetrify from your graveyard {5}{B} ({5}{B}, Exile this card from your graveyard: Create a copy of it, except it's an artifact. Activate only as a sorcery.)",
+    "text": "{2}, {T}: Put a +1/+1 counter on target creature for each artifact and/or creature you control. If this permanent is an artifact, also put a +1/+1 counter on that creature for each artifact and/or creature card in your graveyard.\nPetrify from your graveyard {5}{B} ({5}{B}, Exile this card from your graveyard: Create a token that’s a copy of it, except it's an artifact. Activate only as a sorcery.)",
     "colors": [
       "G"
     ],
@@ -3679,11 +3685,11 @@
     "toughness": "2",
     "artist": "Sydney Young",
     "set": "Set 4",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__green__shepard-20of-20the-20cycle.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/forth-batch__green__shepard-20of-20the-20cycle--r2.png"
   },
   {
     "id": "spell-fierce-fb4",
-    "name": "Spell Fierce",
+    "name": "Rattle",
     "manaCost": "{G}",
     "type": "Instant",
     "rarity": "Common",
@@ -3695,18 +3701,18 @@
     "archetypes": [
       "Control"
     ],
-    "flavorText": "The Fleshbeasts of Iquatana are born for psychological warfare by The Masked Ones, and the only triumph that truly quenches their thirst is one over their own Memorybeast.",
-    "artist": "ChatGPT 40",
+    "flavorText": "“Chin up, doll. Wait for the bell and you’re kissin’ canvas. Clip ’em while they’re still climbin’ through the ropes, got it?”\n—The Terrible Trioz, to Lucky Lucy",
+    "artist": "Guang Yang",
     "set": "Set 4",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__green__spell-20fierce.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/forth-batch__green__spell-20fierce--r2.png"
   },
   {
     "id": "tankamutaticar-fb4",
-    "name": "Tankamutaticar",
+    "name": "Tankamutatigolem",
     "manaCost": "{3}{G}{G}",
     "type": "Artifact — Vehicle",
     "rarity": "Rare",
-    "text": "Whenever this Vehicle attacks, experiment X, where X is the total power of creatures that crewed it this turn. (You get X {E} counters. If you don't control The Experiment, create one. Then, spend any amount of {E} on it.)\nCrew 3. Activate only once each turn.",
+    "text": "Whenever this Vehicle attacks, experiment X, where X is the total power of creatures that crewed it this turn. (You get X experiment counters. If you don’t control The Experiment, create one. Then spend any amount of experiment counters on it.)\nCrew 3. Activate only once each turn.",
     "colors": [
       "G"
     ],
@@ -3716,13 +3722,13 @@
     ],
     "power": "7",
     "toughness": "7",
-    "flavorText": "\"Holy shit.\"\n—Auralia, Very Confused",
-    "artist": "ChatGPT 04",
+    "flavorText": "",
+    "artist": "Gao Yinglai",
     "relatedTokens": [
       "The Experiment"
     ],
     "set": "Set 4",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__green__tankamutaticar.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/forth-batch__green__tankamutaticar--r2.png"
   },
   {
     "id": "thaldrin-the-rune-bearer-fb4",
@@ -3743,7 +3749,7 @@
     "flavorText": "\"You hide behind the artificial to imitate a fraction of our power… pitiful.\"",
     "artist": "ChatGPT 04",
     "set": "Set 4",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__green__thaldrin-2c-20the-20rune-bearer.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/forth-batch__green__thaldrin-2c-20the-20rune-bearer--r2.png"
   },
   {
     "id": "there-are-two-wolves-inside-you-fb4",
@@ -3751,7 +3757,7 @@
     "manaCost": "{G}",
     "type": "Sorcery",
     "rarity": "Rare",
-    "text": "Destroy target creature. Its controller creates a 2/2 legendary white Wolf creature token and a 2/2 legendary black Wolf creature token, then they give each of them a different name.",
+    "text": "Destroy target creature. Its controller creates a legendary 2/2 white Wolf creature token and a legendary 2/2 black Wolf creature token, then they give each of them a different name.",
     "colors": [
       "G"
     ],
@@ -3766,7 +3772,7 @@
       "2/2 black Wolf"
     ],
     "set": "Set 4",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__green__there-20are-20two-20wolves-20inside-20you.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/forth-batch__green__there-20are-20two-20wolves-20inside-20you--r2.png"
   },
   {
     "id": "titan-of-future-promised-fb4",
@@ -3785,9 +3791,9 @@
     "power": "*",
     "toughness": "*",
     "flavorText": "When the first man-made tool on Dominaria was crafted, he was there, watching.",
-    "artist": "ChatGPT 04",
+    "artist": "Jason Chan",
     "set": "Set 4",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__green__titan-20of-20future-20promised.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/forth-batch__green__titan-20of-20future-20promised--r2.png"
   },
   {
     "id": "unveil-the-future-fb4",
@@ -3795,18 +3801,18 @@
     "manaCost": "{2}{G}",
     "type": "Instant",
     "rarity": "Common",
-    "text": "Prevent all damage that would be dealt this turn except by sources you control with one or more counters on them.\nExperiment 3. (You get three {E} counters. If you don't control The Experiment, create one. Then, spend any amount of {E} on it.)",
+    "text": "Prevent all damage that would be dealt this turn except by sources you control with one or more counters on them.\nExperiment 3. (You get three {experiment} counters. If you don’t control The Experiment, create one. Then spend any amount of {experiment} counters on it.)",
     "colors": [
       "G"
     ],
     "custom": true,
     "archetypes": [],
-    "artist": "ChatGPT 04",
+    "artist": "David Quiles",
     "relatedTokens": [
       "The Experiment"
     ],
     "set": "Set 4",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__green__unveil-20the-20future.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/forth-batch__green__unveil-20the-20future--r2.png"
   },
   {
     "id": "verdentreader-fb4",
@@ -3833,11 +3839,11 @@
   },
   {
     "id": "vorinclex-s-garage-fb4",
-    "name": "Vorinclex's Garage",
+    "name": "Vorinclex's Motorworks",
     "manaCost": "{2}{G}",
     "type": "Artifact",
     "rarity": "Rare",
-    "text": "At the beginning of combat on your turn, put an oil counter on this artifact, then create an X/X green artifact Vehicle token with trample, haste and crew 1, where X is the number of oil counters on this artifact.",
+    "text": "At the beginning of combat on your turn, put an oil counter on this artifact, then create an X/X green Vehicle artifact token with trample, haste, and crew 1, where X is the number of oil counters on this artifact.",
     "colors": [
       "G"
     ],
@@ -3845,12 +3851,12 @@
     "archetypes": [
       "Vehicles"
     ],
-    "artist": "ChatGPT 04",
+    "artist": "Goodname Studio",
     "relatedTokens": [
       "X/X green Vehicle"
     ],
     "set": "Set 4",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__green__vorinclex-e2-80-99s-20garage.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/forth-batch__green__vorinclex-e2-80-99s-20garage--r2.png"
   },
   {
     "id": "abandoned-church-fb4",
@@ -3878,7 +3884,7 @@
       "Storm"
     ],
     "flavorText": "It can be anything—so long as it remains nothing.",
-    "artist": "Neople",
+    "artist": "NeoPle",
     "set": "Set 4",
     "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__lands__architoid-e2-80-99s-20nexus.png"
   },
@@ -3887,13 +3893,13 @@
     "name": "Bazaar of the Damned",
     "type": "Land",
     "rarity": "Common",
-    "text": "This land enters tapped.\nWhen this land enters, you may sacrifice a creature. If you do, return a creature card with the same mana value from your graveyard to your hand.\n{T}: Add {W} or {B}.",
+    "text": "This land enters tapped.\nWhen this land enters, you may sacrifice a creature. If you do, return a creature card with the same mana value as the sacrificed creature from your graveyard to your hand.\n{T}: Add {W} or {B}.",
     "colors": [],
     "custom": true,
     "archetypes": [],
     "artist": "Planescape: I am the Mimir",
     "set": "Set 4",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__lands__bazaar-20of-20the-20damned.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/forth-batch__lands__bazaar-20of-20the-20damned--r2.png"
   },
   {
     "id": "bountiful-oasis-fb4",
@@ -3904,10 +3910,10 @@
     "colors": [],
     "custom": true,
     "archetypes": [],
-    "flavorText": "Thunder Juncture is a land with no nature, yet even outlaws must always find something to rely on.",
-    "artist": "ChatGPT o4",
+    "flavorText": "Thunder Junction is a land with no nature, yet even outlaws must always find something to rely on.",
+    "artist": "Chris Karbach",
     "set": "Set 4",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__lands__bountiful-20oasis.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/forth-batch__lands__bountiful-20oasis--r2.png"
   },
   {
     "id": "collectomancer-s-lab-fb4",
@@ -3922,7 +3928,7 @@
     ],
     "artist": "Kaileigh Vincent",
     "set": "Set 4",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__lands__collectomancer-e2-80-99s-20lab.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/forth-batch__lands__collectomancer-e2-80-99s-20lab--r2.png"
   },
   {
     "id": "forgotten-town-fb4",
@@ -3957,14 +3963,14 @@
     "name": "Inconspicuous Drop-Site",
     "type": "Land",
     "rarity": "Common",
-    "text": "This land enters tapped unless you control an encoded creature or a creature you control was dealt combat damage to a player this turn.\n{T}: Add {U} or {B}.",
+    "text": "This land enters tapped unless you control a creature with a card encoded on it or a creature you control dealt combat damage to a player this turn.\n{T}: Add {U} or {B}.",
     "colors": [],
     "custom": true,
     "archetypes": [],
     "flavorText": "It's hidden in plain sight, even if you know what you are looking for.",
     "artist": "MatLatArt",
     "set": "Set 4",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__lands__inconspicuous-20drop-site.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/forth-batch__lands__inconspicuous-20drop-site--r2.png"
   },
   {
     "id": "industrious-frontier-fb4",
@@ -3982,7 +3988,7 @@
   },
   {
     "id": "lockloft-charge-station-fb4",
-    "name": "Lockloft Charge-Station",
+    "name": "Lockloft Garage",
     "type": "Land",
     "rarity": "Common",
     "text": "This land enters tapped.\nWhen this land enters, up to one target Vehicle you control becomes an artifact creature until end of turn.\n{T}: Add {G} or {W}.",
@@ -3992,16 +3998,16 @@
       "Vehicles"
     ],
     "flavorText": "Maximum convenience, if you know what drives the Lockloft family.",
-    "artist": "ChatGPT o4",
+    "artist": "Imagen",
     "set": "Set 4",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__lands__lockloft-20charge-station.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/forth-batch__lands__lockloft-20charge-station--r2.png"
   },
   {
     "id": "lushwater-monastery-fb4",
     "name": "Lushwater Monastery",
     "type": "Land",
     "rarity": "Common",
-    "text": "This land enters tapped.\n{T}: Add {G} or {U}.\nGraft Prowess 1 (This land enters with a prowess counter on it. Whenever a creature enters, you may move a prowess counter from this land onto it.)",
+    "text": "This land enters tapped.\n{T}: Add {G} or {U}.\nGraft Prowess 1 (This land enters with a prowess counter on it. Whenever a creature enters, you may move a prowess counter from this land onto it. A creature with a prowess counter on it has prowess.)",
     "colors": [],
     "custom": true,
     "archetypes": [
@@ -4009,7 +4015,7 @@
     ],
     "artist": "Stable Diffusion",
     "set": "Set 4",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__lands__lushwater-20monastery.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/forth-batch__lands__lushwater-20monastery--r2.png"
   },
   {
     "id": "security-outpost-fb4",
@@ -4023,7 +4029,7 @@
     "flavorText": "Thunder Juncture is a land with no law, yet even outlaws must always find something to stand for.",
     "artist": "ChatGPT o4",
     "set": "Set 4",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__lands__security-20outpost.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/forth-batch__lands__security-20outpost--r2.png"
   },
   {
     "id": "sweltering-heath-fb4",
@@ -4039,21 +4045,21 @@
     "flavorText": "Your mind won't betray you, as long as you stay hydrated.",
     "artist": "ChanceKafkaArt",
     "set": "Set 4",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__lands__sweltering-20heath.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/forth-batch__lands__sweltering-20heath--r2.png"
   },
   {
     "id": "titan-s-proving-grounds-fb4",
     "name": "Titan's Proving Grounds",
     "type": "Land",
     "rarity": "Common",
-    "text": "This land enters tapped.\nSpells you cast with mana value 6 or more cost {1} less to cast.\n{T}: Add {R} or {G}.",
+    "text": "This land enters tapped.\nSpells you cast with mana value 6 or greater cost {1} less to cast.\n{T}: Add {R} or {G}.",
     "colors": [],
     "custom": true,
     "archetypes": [],
     "flavorText": "You've got this… just don't look up.",
-    "artist": "ChatGPT o4",
+    "artist": "Noah Bradley",
     "set": "Set 4",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__lands__titan-e2-80-99s-20proving-20grounds.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/forth-batch__lands__titan-e2-80-99s-20proving-20grounds--r2.png"
   },
   {
     "id": "ad-infinitum-fb4",
@@ -4078,7 +4084,7 @@
     "manaCost": "{2}{R}",
     "type": "Instant",
     "rarity": "Common",
-    "text": "This spell deals 3 damage to any target, including a spell on the stack (If it deals enough damage to a creature or planeswalker spell, it's countered. If it's a Battle, it enters transformed.)",
+    "text": "This spell deals 3 damage to any target, including a spell on the stack. (If a creature or planeswalker spell is dealt enough damage, it’s countered. A battle spell dealt damage enters transformed.)",
     "colors": [
       "R"
     ],
@@ -4089,7 +4095,7 @@
     "flavorText": "A lot of Prismari students start off with a bright idea, only to be shut down by an even brighter one.",
     "artist": "Asur Misoa",
     "set": "Set 4",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__red__artistic-20strike.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/forth-batch__red__artistic-20strike--r2.png"
   },
   {
     "id": "astral-force-fb4",
@@ -4097,15 +4103,15 @@
     "manaCost": "{1}{R}",
     "type": "Enchantment",
     "rarity": "Rare",
-    "text": "At the beginning of combat on your turn, target creature you control gains double strike until end of turn.\n{2}{U}: Until end of turn, this enchantment becomes a 1/1 Monk creature with prowess and \"Whenever this creature deals combat damage to a player, draw a card.\" in addition to its other types until end of turn.",
+    "text": "At the beginning of combat on your turn, target creature you control gains double strike until end of turn.\n{2}{U}: Until end of turn, this enchantment becomes a 1/1 Monk creature with prowess and \"Whenever this creature deals combat damage to a player, draw a card.\" in addition to its other types.",
     "colors": [
       "R"
     ],
     "custom": true,
     "archetypes": [],
-    "artist": "Harliskudo",
+    "artist": "Harliskudo (Edited by me)",
     "set": "Set 4",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__red__astral-20force.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/forth-batch__red__astral-20force--r2.png"
   },
   {
     "id": "bloodrush-bellow-fb4",
@@ -4113,7 +4119,7 @@
     "manaCost": "{3}{R}",
     "type": "Enchantment",
     "rarity": "Rare",
-    "text": "At the beginning of combat on your turn, target creature you control gets +1/+0 and gains haste and berserk until end of turn. (Whenever it attacks, you may double its power. If you do, sacrifice it at the end of turn.)\n{4}{R/G}{R/G}, Discard a creature card: Add the discarded creature card's power, toughness and text box to target attacking creature until end of turn.",
+    "text": "At the beginning of combat on your turn, target creature you control gets +1/+0 and gains haste and berserk until end of turn. (Whenever this creature attacks, you may double its power until end of turn. If you do, sacrifice it at the beginning of the next end step.)\n{4}{R/G}{R/G}, Discard a creature card: Target attacking creature gets +X/+Y and gains all abilities of the discarded card until end of turn, where X is that card’s power and Y is its toughness.",
     "colors": [
       "R"
     ],
@@ -4121,7 +4127,7 @@
     "archetypes": [],
     "artist": "Wisnu Tan",
     "set": "Set 4",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__red__bloodrush-20bellow.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/forth-batch__red__bloodrush-20bellow--r2.png"
   },
   {
     "id": "collectric-blast-fb4",
@@ -4148,7 +4154,7 @@
     "manaCost": "{2}{R}",
     "type": "Legendary Creature — Bandicoot",
     "rarity": "Rare",
-    "text": "{R}{R}{R}{R}{R}: Destroy target artifact. If an artifact is put into a graveyard this way, put a shield counter on Crash Bandicoot! Then, if Crash Bandicoot! has three or more shield counters on him, untap him and until end of turn, he must be blocked by all creatures if able. (You literally tap him 450 degrees. Make it look good.)",
+    "text": "{T}{T}{T}{T}{T}: Destroy target artifact. If an artifact is put into a graveyard this way, put a shield counter on Crash Bandicoot! Then if Crash Bandicoot! has three or more shield counters on it, untap it and all creatures able to block it this turn do so. (You literally tap it 450 degrees. Make it look good.)",
     "colors": [
       "R"
     ],
@@ -4159,15 +4165,15 @@
     "flavorText": "Woah!",
     "artist": "Naughty Dog",
     "set": "Set 4",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__red__crash-20bandicoot-21.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/forth-batch__red__crash-20bandicoot-21--r2.png"
   },
   {
     "id": "determined-fb4",
-    "name": "Determined",
+    "name": "Determined // Help",
     "manaCost": "{R}",
-    "type": "Sorcery",
+    "type": "Sorcery // Instant",
     "rarity": "Rare",
-    "text": "Discard a nonland card. If you do, draw two cards.",
+    "text": "Determined {R}\nDiscard a nonland card. If you do, draw two cards.\nHelp {3}{W}\nAftermath (Cast this spell only from your graveyard. Then exile it.)\nReturn to your hand all cards that were put into your graveyard from anywhere this turn.",
     "colors": [
       "R"
     ],
@@ -4211,7 +4217,7 @@
     "flavorText": "\"Please remember me at my best, but most of all, remember me at my worst.\"\n— Judith, the Magnificent Death",
     "artist": "Imagen 3",
     "set": "Set 4",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__red__go-20out-20with-20a-20bang.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/forth-batch__red__go-20out-20with-20a-20bang--r2.png"
   },
   {
     "id": "guilty-gear-fb4",
@@ -4230,7 +4236,7 @@
     ],
     "artist": "Daisuke Ishiwatari",
     "set": "Set 4",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__red__guilty-20gear.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/forth-batch__red__guilty-20gear--r2.png"
   },
   {
     "id": "i-want-it-all-fb4",
@@ -4247,7 +4253,7 @@
     "flavorText": "\"A torturous existence indeed—to taste everything, yet taste nothing.\"\n—Elspeth, to Xenagos",
     "artist": "Easy-Peasy-AI",
     "set": "Set 4",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__red__i-20want-20it-20all.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/forth-batch__red__i-20want-20it-20all--r2.png"
   },
   {
     "id": "jaxis-taxis-fb4",
@@ -4266,9 +4272,9 @@
     ],
     "power": "5",
     "toughness": "2",
-    "artist": "ChatGPT o4",
+    "artist": "J. Otto Szatmari (Edited by me)",
     "set": "Set 4",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__red__jaxis-20taxis.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/forth-batch__red__jaxis-20taxis--r2.png"
   },
   {
     "id": "leave-no-turn-unstoned-fb4",
@@ -4291,7 +4297,7 @@
   },
   {
     "id": "look-for-fossils-fb4",
-    "name": "Look for Fossils",
+    "name": "Rekindled Growth",
     "manaCost": "{1}{R}",
     "type": "Instant",
     "rarity": "Uncommon",
@@ -4303,9 +4309,9 @@
     "archetypes": [
       "Self-mill"
     ],
-    "artist": "ChatGPT o4",
+    "artist": "Adelijah Ocampo",
     "set": "Set 4",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__red__look-20for-20fossils.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/forth-batch__red__look-20for-20fossils--r2.png"
   },
   {
     "id": "nightmare-halls-fb4",
@@ -4330,7 +4336,7 @@
     "manaCost": "{3}{R}{R}",
     "type": "Creature — Human Elder Shaman",
     "rarity": "Mythic Rare",
-    "text": "Whenever you cast an instant or sorcery spell, create a Young Pyromancer token. (It's a {1}{R} 2/1 Human Shaman creature with \"Whenever you cast an instant or sorcery spell, create a 1/1 red Elemental creature token.\")",
+    "text": "Whenever you cast an instant or sorcery spell, create a 2/1 red Human Shaman creature token named Young Pyromancer with “Whenever you cast an instant or sorcery spell, create a 1/1 red Elemental creature token.”",
     "colors": [
       "R"
     ],
@@ -4345,7 +4351,7 @@
       "Young Pyromancer"
     ],
     "set": "Set 4",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__red__pyromancer-e2-80-99s-20mentor.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/forth-batch__red__pyromancer-e2-80-99s-20mentor--r2.png"
   },
   {
     "id": "raga-van-nimble-pilferer-fb4",
@@ -4353,7 +4359,7 @@
     "manaCost": "{R}",
     "type": "Kindred Artifact — Vehicle Monkey Pirate",
     "rarity": "Mythic Rare",
-    "text": "Whenever Raga-Van deals combat damage to a player, create a Treasure token and exile the top card of that player's library. Until end of turn, you may cast that card.\nDash {1}{R} (You may cast this spell for its dash cost. If you do, it gains haste, and it's returned from the battlefield to its owner's hand at the beginning of the next end step.)\nCrew 3",
+    "text": "Whenever this Vehicle deals combat damage to a player, create a Treasure token and exile the top card of that player's library. Until end of turn, you may cast that card.\nDash {1}{R} (You may cast this spell for its dash cost. If you do, it gains haste, and it's returned from the battlefield to its owner's hand at the beginning of the next end step.)\nCrew 3",
     "colors": [
       "R"
     ],
@@ -4368,7 +4374,7 @@
       "Treasure"
     ],
     "set": "Set 4",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__red__raga-van-2c-20nimble-20pilferer.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/forth-batch__red__raga-van-2c-20nimble-20pilferer--r2.png"
   },
   {
     "id": "regal-rooster-fb4",
@@ -4376,7 +4382,7 @@
     "manaCost": "{5}{R}{R}",
     "type": "Creature — Bird Berserker Noble",
     "rarity": "Rare",
-    "text": "Flying, menace, haste\nWhen this creature enters, mill cards until you mill an enchantment card. Create a tapped Treasure token for each card milled this way, and put that enchantment into your hand.\n{2}{R}, Discard this card: You become the monarch.",
+    "text": "Flying, menace, haste\nWhen this creature enters, mill cards until you mill an enchantment card. Create a tapped Treasure token for each card milled this way, and put that card into your hand.\n{2}{R}, Discard this card: You become the monarch.",
     "colors": [
       "R"
     ],
@@ -4392,7 +4398,7 @@
       "Treasure"
     ],
     "set": "Set 4",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__red__regal-20rooster.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/forth-batch__red__regal-20rooster--r2.png"
   },
   {
     "id": "shocking-revelation-fb4",
@@ -4445,7 +4451,7 @@
     "artist": "Janne Parviainen",
     "relatedFace": "Everything, at Once",
     "set": "Set 4",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__red__sort-20yourself-20out.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/forth-batch__red__sort-20yourself-20out--r2.png"
   },
   {
     "id": "titan-of-stars-aligned-fb4",
@@ -4464,9 +4470,9 @@
     "power": "*",
     "toughness": "*",
     "flavorText": "When the skies of Theros were formed, he was there, watching.",
-    "artist": "ChatGPT o4",
+    "artist": "Nightjar Illustration",
     "set": "Set 4",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__red__titan-20of-20stars-20aligned.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/forth-batch__red__titan-20of-20stars-20aligned--r2.png"
   },
   {
     "id": "unlock-creativity-fb4",
@@ -4474,15 +4480,15 @@
     "manaCost": "{3}{R}",
     "type": "Sorcery",
     "rarity": "Rare",
-    "text": "Fill the blanks with \"custom\" and \"noncustom\". Use each word only once.\nAdd {R} for each ___, nonland, nontoken permanent you control.\nExile the top card of your library for each ___, nonland, nontoken permanent you control. You may play them this turn.",
+    "text": "Fill in the blanks with “custom” and “non-custom.” Use each word only once.\nAdd {R} for each ___, nonland, nontoken permanent you control.\nExile the top card of your library for each ___, nonland, nontoken permanent you control. You may play them this turn.",
     "colors": [
       "R"
     ],
     "custom": true,
     "archetypes": [],
-    "artist": "ChatGPT o4",
+    "artist": "Noodles240",
     "set": "Set 4",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__red__unlock-20creativity.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/forth-batch__red__unlock-20creativity--r2.png"
   },
   {
     "id": "unlucky-strike-fb4",
@@ -4508,7 +4514,7 @@
     "manaCost": "{2}{R}",
     "type": "Creature — Human Horror",
     "rarity": "Rare",
-    "text": "Devoid (This card has no color.)\nTitanform 7 (7, Exile this card from your hand: Cast a copy of it, except it's a 8/8 Eldrazi in addition to its other types. Activate only as a sorcery.)\nWhen this creature enters or attacks, discard cards equal to its toughness, then draw cards equal to its power.",
+    "text": "Devoid (This card has no color.)\nTitanform {7} ({7}, Exile this card from your hand: Cast a copy of it, except it’s an 8/8 Eldrazi in addition to its other types. Activate only as a sorcery.)\nWhenever this creature enters or attacks, discard cards equal to its toughness, then draw cards equal to its power.",
     "colors": [
       "R"
     ],
@@ -4518,7 +4524,7 @@
     "toughness": "2",
     "artist": "Imagen 3",
     "set": "Set 4",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__red__visionary-20of-20unfathomable-20sights-20-20-20-20-20-20-20-20-20.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/forth-batch__red__visionary-20of-20unfathomable-20sights-20-20-20-20-20-20-20-20-20--r2.png"
   },
   {
     "id": "whisper-twice-fb4",
@@ -4579,16 +4585,16 @@
     "manaCost": "{W}",
     "type": "Enchantment",
     "rarity": "Rare",
-    "text": "Non-custom, nontoken creatures you control get +1/+1 as long as you control a custom, nontoken creature.\nCustom, nontoken creatures you control get +1/+1 as long as you control a non-custom, nontoken creature.",
+    "text": "Non-custom, nontoken creatures you control get +1/+1 as long as you control a custom nontoken creature.\nCustom nontoken creatures you control get +1/+1 as long as you control a non-custom, nontoken creature.",
     "colors": [
       "W"
     ],
     "custom": true,
     "archetypes": [],
     "flavorText": "Humanity diverged, yet sang as one.",
-    "artist": "ChatGPT o4",
+    "artist": "Henry Fong",
     "set": "Set 4",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__white__anthem-20of-20duality.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/forth-batch__white__anthem-20of-20duality--r2.png"
   },
   {
     "id": "barrenton-acrobat-singer-fb4",
@@ -4631,7 +4637,7 @@
     "manaCost": "{W}",
     "type": "Sorcery",
     "rarity": "Uncommon",
-    "text": "Choose an opponent. If they control more lands than you, untap a number of lands you control equal to the difference.\nDraw a card.",
+    "text": "Choose an opponent. If that player controls more lands than you, untap a number of lands you control equal to the difference.\nDraw a card.",
     "colors": [
       "W"
     ],
@@ -4640,7 +4646,7 @@
     "flavorText": "Warriors who shed excessive blood must tend Inys Haen for ten years under the Harvesting Sun Goddess to atone, cultivating patience, humility, and grace.",
     "artist": "Dominik Mayer",
     "set": "Set 4",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__white__count-20your-20grains.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/forth-batch__white__count-20your-20grains--r2.png"
   },
   {
     "id": "day-of-awakening-fb4",
@@ -4667,7 +4673,7 @@
     "manaCost": "{W}",
     "type": "Sorcery",
     "rarity": "Uncommon",
-    "text": "Destroy target creature, then return it to the battlefield.\nFlashback {2}{B}",
+    "text": "Destroy target creature. Return that card to the battlefield under its owner’s control.\nFlashback {2}{B}",
     "colors": [
       "W"
     ],
@@ -4679,7 +4685,7 @@
     "flavorText": "\"Side effects include: death, coughing blood, confusing medical bills…\"",
     "artist": "Hinata Sipes",
     "set": "Set 4",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__white__doctor-e2-80-99s-20orders.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/forth-batch__white__doctor-e2-80-99s-20orders--r2.png"
   },
   {
     "id": "el-argint-aram-s-masterpiece-fb4",
@@ -4687,7 +4693,7 @@
     "manaCost": "{2}{W}",
     "type": "Legendary Artifact — Vehicle",
     "rarity": "Rare",
-    "text": "Lifelink\n{3}{G}: This Vehicle becomes an artifact creature until end of turn. Until end of turn, whenever a Vehicle you control deals combat damage to a player, put that many +1/+1 counters on target creature or Vehicle you control. If a creature named Aram, Lockloft Co-Ace crewed this Vehicle this turn, copy this ability.\nCrew 3",
+    "text": "Lifelink\n{3}{G}: El-Argint becomes an artifact creature until end of turn. Until end of turn, whenever a Vehicle you control deals combat damage to a player, put that many +1/+1 counters on target creature or Vehicle you control. If a creature named Aram, Lockloft Co-Ace crewed El-Argint this turn, copy this ability.\nCrew 3",
     "colors": [
       "W"
     ],
@@ -4697,9 +4703,9 @@
     ],
     "power": "5",
     "toughness": "5",
-    "artist": "ChatGPT o4",
+    "artist": "Imagen",
     "set": "Set 4",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__white__el-argint-2c-20aram-e2-80-99s-20masterpiece.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/forth-batch__white__el-argint-2c-20aram-e2-80-99s-20masterpiece--r2.png"
   },
   {
     "id": "equenaut-coordinator-fb4",
@@ -4727,7 +4733,7 @@
     "manaCost": "{1}{W}",
     "type": "Legendary Enchantment",
     "rarity": "Rare",
-    "text": "Whenever the fourth spell of a turn is cast, each player draws four cards and flips Erayo's Gift.",
+    "text": "Whenever the fourth spell of a turn is cast, each player draws four cards. Flip Erayo's Gift.",
     "colors": [
       "W"
     ],
@@ -4737,7 +4743,7 @@
     ],
     "artist": "ChatGPT o4",
     "set": "Set 4",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__white__erayo-e2-80-99s-20gift.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/forth-batch__white__erayo-e2-80-99s-20gift--r2.png"
   },
   {
     "id": "falcon-mecha-fb4",
@@ -4758,7 +4764,7 @@
     "toughness": "2",
     "artist": "Ramza Ardyputra",
     "set": "Set 4",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__white__falcon-20mecha.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/forth-batch__white__falcon-20mecha--r2.png"
   },
   {
     "id": "glisterchrome-elemental-fb4",
@@ -4766,7 +4772,7 @@
     "manaCost": "{1}{W}",
     "type": "Creature — Elemental",
     "rarity": "Uncommon",
-    "text": "Lifelink\nThis creature enters with a +1/+1 counter on it for each other spell cast this turn.\nStormcycling {3} ({3}, Discard this card: Search your library for a card with Storm, reveal it, put it into your hand, then shuffle.)",
+    "text": "Lifelink\nThis creature enters with a +1/+1 counter on it for each other spell cast this turn.\nStormcycling {3} ({3}, Discard this card: Search your library for a card with storm, reveal it, put it into your hand, then shuffle.)",
     "colors": [
       "W"
     ],
@@ -4778,7 +4784,7 @@
     "toughness": "1",
     "artist": "Tiziana Federica Ruiu",
     "set": "Set 4",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__white__glisterchrome-20elemental.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/forth-batch__white__glisterchrome-20elemental--r2.png"
   },
   {
     "id": "matron-of-porcelain-fb4",
@@ -4786,7 +4792,7 @@
     "manaCost": "{2}{W}",
     "type": "Creature — Vampire Artificer",
     "rarity": "Rare",
-    "text": "When this creature enters, create a 4/3 artifact Vehicle token with crew 1 named Sweat.\nWhen this creature dies, create a 3/4 artifact Vehicle token with crew 1 named Tears.\n{W}, Exile this card from your graveyard: Target Vehicle you control becomes an artifact creature until end of turn.",
+    "text": "When this creature enters, create a 4/3 Vehicle artifact token named Sweat with crew 1.\nWhen this creature dies, create a 3/4 Vehicle artifact token named Tears with crew 1.\n{W}, Exile this card from your graveyard: Target Vehicle you control becomes an artifact creature until end of turn.",
     "colors": [
       "W"
     ],
@@ -4802,7 +4808,7 @@
       "Tears"
     ],
     "set": "Set 4",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__white__matron-20of-20porcelain.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/forth-batch__white__matron-20of-20porcelain--r2.png"
   },
   {
     "id": "monastery-alarmist-fb4",
@@ -4831,7 +4837,7 @@
     "manaCost": "{2}{W}",
     "type": "Sorcery",
     "rarity": "Rare",
-    "text": "Target player creates a tapped Treasure token with a stun counter on it and gets a debt counter. (At the beginning of that player's end step, they may pay {1} for each debt counter they have. They remove that many counters, then lose 1 life for each debt counter they have.)\nStorm (When you cast this spell, copy it for each spell cast before it this turn.)",
+    "text": "Target player creates a tapped Treasure token with a stun counter on it and gets a debt counter. (If a permanent with a stun counter would become untapped, remove one from it instead.) (At the beginning of that player's end step, they may pay {1} for each debt counter they have. They remove that many counters, then lose 1 life for each debt counter they have.)\nStorm (When you cast this spell, copy it for each spell cast before it this turn. You may choose new targets for the copies.)",
     "colors": [
       "W"
     ],
@@ -4839,12 +4845,12 @@
     "archetypes": [
       "Storm"
     ],
-    "artist": "ChatGPT o4",
+    "artist": "Patolli",
     "relatedTokens": [
       "Treasure"
     ],
     "set": "Set 4",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__white__more-20money-2c-20more-20problems.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/forth-batch__white__more-20money-2c-20more-20problems--r2.png"
   },
   {
     "id": "nightmare-fracture-fb4",
@@ -4889,7 +4895,7 @@
     "name": "Parhelion III",
     "type": "Legendary Artifact — Vehicle",
     "rarity": "Mythic Rare",
-    "text": "Flying, first strike, vigilance\nWhenever Parhelion III attacks, put two Vehicle cards from your hand tapped and attacking. They become creatures until end of turn. Return them to your hand at the end of turn.\nCrew 4",
+    "text": "Flying, first strike, vigilance\nWhenever Parhelion III attacks, put up to two Vehicle cards from your hand onto the battlefield tapped and attacking. They become artifact creatures until end of turn. Return them to your hand at the beginning of the next end step.\nCrew 4",
     "colors": [
       "W"
     ],
@@ -4903,7 +4909,7 @@
     "artist": "ChatGPT o4",
     "relatedFace": "Ravnica's Last Resort",
     "set": "Set 4",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__white__parhelion-20iii.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/forth-batch__white__parhelion-20iii--r2.png"
   },
   {
     "id": "radiant-multi-striker-fb4",
@@ -4931,7 +4937,7 @@
     "manaCost": "{2}{W}{W}",
     "type": "Battle — Siege",
     "rarity": "Mythic Rare",
-    "text": "(As a Siege enters, choose an opponent to protect it. You and others can attack it. When it's defeated, exile it, then cast it transformed.)\nAt the beginning of your upkeep, surveil 1, then reveal the top card of your library. If it's a creature or a Vehicle card, put it into your hand.",
+    "text": "(As a Siege enters, choose an opponent to protect it. You and others can attack it. When it's defeated, exile it, then cast it transformed.)\nAt the beginning of your upkeep, surveil 1, then reveal the top card of your library. If it’s a creature or Vehicle card, put it into your hand.",
     "colors": [
       "W"
     ],
@@ -4943,7 +4949,7 @@
     "artist": "ChatGPT o4",
     "relatedFace": "Parhelion III",
     "set": "Set 4",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__white__ravnica-e2-80-99s-20last-20resort.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/forth-batch__white__ravnica-e2-80-99s-20last-20resort--r2.png"
   },
   {
     "id": "sancitifier-of-lost-media-fb4",
@@ -5016,11 +5022,11 @@
     "flavorText": "\"I quenched my inner storm. Now, I am the storm that is approaching.\"",
     "artist": "||Lamb||",
     "set": "Set 4",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__white__strength-20in-20solitude.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/forth-batch__white__strength-20in-20solitude--r2.png"
   },
   {
     "id": "the-day-is-yours-fb4",
-    "name": "The Day is Yours",
+    "name": "The Day Is Yours",
     "manaCost": "{1}{W}",
     "type": "Instant",
     "rarity": "Uncommon",
@@ -5030,10 +5036,10 @@
     ],
     "custom": true,
     "archetypes": [],
-    "flavorText": "\"I never dreamt of battle, nor of banners raised in my name. But fate chose this course, and I ask you now to believe in it as I do.\"\n—The One Who Risen",
+    "flavorText": "\"I never dreamt of battle, nor of banners raised in my name. But fate chose this course, and I ask you now to believe in it as I do.\"\n—The One Who Has Risen",
     "artist": "Gabriel Velloso",
     "set": "Set 4",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__white__the-20day-20is-20yours.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/forth-batch__white__the-20day-20is-20yours--r2.png"
   },
   {
     "id": "the-paper-man-fb4",
@@ -5101,7 +5107,7 @@
     "manaCost": "{2}{W}{W}",
     "type": "Enchantment",
     "rarity": "Rare",
-    "text": "Ward {2}\nYour opponents respect you twice. (Creatures can't attack you or block creatures you control unless their controller pays {2} for each creature they control that's attacking you or blocking a creature you control. You have ward {2}.)",
+    "text": "Ward {2}\nYour opponents respect you twice. (Creatures can’t attack you or block creatures you control unless their controller pays {2} for each creature they control that’s attacking you or blocking a creature you control. Whenever you become the target of a spell or ability an opponent controls, counter that spell or ability unless its controller pays {2}.)",
     "colors": [
       "W"
     ],
@@ -5109,22 +5115,22 @@
     "archetypes": [],
     "artist": "Anna Steinbauer",
     "set": "Set 4",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__white__we-20own-20this-20city.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/forth-batch__white__we-20own-20this-20city--r2.png"
   },
   {
     "id": "where-lies-hide-where-truth-reveals-fb4",
     "name": "Where Lies Hide // Where Truth Reveals",
     "type": "Enchantment — Room",
     "rarity": "Mythic Rare",
-    "text": "Where Lies Hide {2}{W}{W}\nWhen you unlock this door, exile up to three other target creatures from the battlefield and/or creature cards from graveyards.\nWhen this Room leaves the battlefield, return the exiled cards to their owners' hands.\n//\nWhere Truth Reveals {6}{R}{R}\nYou may cast cards exiled with permanents you control, and you may spend any type of mana to cast them.\n(You may cast either half. That door unlocks on the battlefield. As a sorcery, you may pay the mana cost of a locked door to unlock it.)",
+    "text": "Where Lies Hide {2}{W}{W}\nWhen you unlock this door, exile up to three other target creatures from the battlefield and/or creature cards from graveyards.\nWhen this Room leaves the battlefield, return the exiled cards to their owners' hands.\n//\nWhere Truth Reveals {6}{R}{R}\nYou may cast cards exiled with permanents you control, and mana of any type can be spent to cast them.\n(You may cast either half. That door unlocks on the battlefield. As a sorcery, you may pay the mana cost of a locked door to unlock it.)",
     "colors": [
       "W",
       "R"
     ],
     "custom": true,
     "archetypes": [],
-    "artist": "ChatGPT o4",
+    "artist": "Quentin Deronzier",
     "set": "Set 4",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__white__where-20truth-20reveals.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/forth-batch__white__where-20truth-20reveals--r2.png"
   }
 ]
