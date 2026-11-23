@@ -16,10 +16,10 @@ A web application for managing and exploring a custom Magic: The Gathering cube 
   - UR Enchantments
   - RW Self-mill
   - GU Prowess
-- **Cube list section** with advanced filtering options (by name, color, type, and source)
+- **Cube list section** with advanced filtering options (by name, color, type, and source) and a zip export of the images of every card matching the current filters
 - **Card detail pages** with full card information and hover tooltips for tokens and related cards
 - **Archetype detail pages** showing strategy and key cards
-- **Tokens section** for browsing all tokens in the cube
+- **Tokens section** for browsing all tokens in the cube, with a zip export of the images of every token matching the current filters
 - **About page** with information about the cube
 - **Tools section** with functional tools:
   - Draft Simulator

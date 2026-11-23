@@ -4,6 +4,8 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { getTokens, API_BASE_URL } from '@/lib/api';
 import { Token } from '@/types/types';
+import ExportListButton from '@/components/ExportListButton';
+import { fetchAllPages, downloadImagesAsZip, describeImageExport } from '@/lib/export';
 
 export default function TokensPage() {
   const [tokens, setTokens] = useState<Token[]>([]);
@@ -32,54 +34,51 @@ export default function TokensPage() {
     colorMatchType
   ]);
 
+  // Build the API query for the current filters (shared by the page view and the export)
+  const buildTokenQuery = () => {
+    const params: {
+      search?: string;
+      body_search?: string;
+      colors?: string[];
+      color_match?: 'exact' | 'includes' | 'at-most';
+      sort_by?: string;
+      sort_dir?: string;
+    } = {
+      sort_by: sortFields.map(sort => sort.field).join(','),
+      sort_dir: sortFields.map(sort => sort.direction).join(',')
+    };
+    
+    if (searchTerm) {
+      params.search = searchTerm;
+    }
+    
+    if (bodySearchTerm) {
+      params.body_search = bodySearchTerm;
+    }
+    
+    if (filterColor.length > 0) {
+      params.colors = filterColor;
+      params.color_match = colorMatchType;
+    }
+
+    // If multicolor is selected but not colorless, filter out tokens with no colors
+    const excludeColorless = filterColor.includes('multicolor') && !filterColor.includes('colorless');
+    const filterResults = (results: Token[]) =>
+      excludeColorless ? results.filter(token => token.colors && token.colors.length > 0) : results;
+
+    return { params, filterResults };
+  };
+
   // Fetch tokens with current filters
   const fetchTokens = async () => {
     setLoading(true);
     setError(null);
-    
+
     try {
-      const params: {
-        search?: string;
-        body_search?: string;
-        colors?: string[];
-        page?: number;
-        limit?: number;
-        sort_by?: string;
-        sort_dir?: string;
-      } = {
-        page: currentPage,
-        limit: tokensPerPage,
-        sort_by: sortFields.map(sort => sort.field).join(','),
-        sort_dir: sortFields.map(sort => sort.direction).join(',')
-      };
-      
-      if (searchTerm) {
-        params.search = searchTerm;
-      }
-      
-      if (bodySearchTerm) {
-        params.body_search = bodySearchTerm;
-      }
-      
-      if (filterColor.length > 0) {
-        params.colors = filterColor;
-        params.color_match = colorMatchType;
-      }
-      
-      const response = await getTokens(params);
-      
-      // Check if we need to filter out colorless tokens (when multicolor is selected)
-      let filteredTokens = response.tokens;
-      
-      // If multicolor is selected but not colorless, filter out tokens with no colors
-      if (filterColor.includes('multicolor') && !filterColor.includes('colorless')) {
-        filteredTokens = filteredTokens.filter(token => {
-          // Filter out tokens with empty colors array or no colors property
-          return token.colors && token.colors.length > 0;
-        });
-      }
-      
-      setTokens(filteredTokens);
+      const { params, filterResults } = buildTokenQuery();
+      const response = await getTokens({ ...params, page: currentPage, limit: tokensPerPage });
+
+      setTokens(filterResults(response.tokens));
       setTotalTokens(response.total);
     } catch (err) {
       console.error('Error fetching tokens:', err);
@@ -87,6 +86,20 @@ export default function TokensPage() {
     } finally {
       setLoading(false);
     }
+  };
+
+  // Export the images of every token matching the current filters, across all pages, as a zip
+  const exportTokens = async (reportProgress: (message: string) => void) => {
+    reportProgress('Finding tokens...');
+    const { params, filterResults } = buildTokenQuery();
+    const allTokens = await fetchAllPages(async (page, limit) => {
+      const response = await getTokens({ ...params, page, limit });
+      return { items: response.tokens, total: response.total };
+    });
+    const result = await downloadImagesAsZip(filterResults(allTokens), 'cube-tokens', (done, total) =>
+      reportProgress(`Downloading images ${done}/${total}...`)
+    );
+    return describeImageExport(result);
   };
 
   const toggleColorFilter = (color: string) => {
@@ -515,6 +528,11 @@ export default function TokensPage() {
         <>
           <div className="flex flex-col items-center mb-4 space-y-2">
             <p className="dark:text-gray-300">Results: {totalTokens} tokens found</p>
+            <ExportListButton
+              label="Export all results as images (.zip)"
+              exportList={exportTokens}
+              disabled={totalTokens === 0}
+            />
             <div className="text-sm text-gray-600 dark:text-gray-400 text-center">
               <p>
                 <strong>Filters:</strong> {searchTerm ? `Name: "${searchTerm}"` : ''} 

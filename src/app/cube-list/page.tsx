@@ -7,6 +7,8 @@ import { useSearchParams, useRouter } from 'next/navigation';
 import { Card } from '@/types/types';
 import RelatedFaceCard from '@/components/RelatedFaceCard';
 import CardArt from '@/components/CardArt';
+import ExportListButton from '@/components/ExportListButton';
+import { fetchAllPages, withBackFaces, downloadImagesAsZip, describeImageExport } from '@/lib/export';
 
 // Component that uses the useSearchParams hook
 function CubeListContent() {
@@ -108,117 +110,130 @@ function CubeListContent() {
     historicMode
   ]);
 
+  // Build the API query for the current filters (shared by the page view and the export)
+  const buildCardQuery = () => {
+    const params: {
+      search?: string;
+      body_search?: string;
+      colors?: string[];
+      color_match?: 'exact' | 'includes' | 'at-most';
+      exclude_colorless?: string;
+      type?: string;
+      set?: string;
+      custom?: boolean | null;
+      has_history?: boolean;
+      page?: number;
+      limit?: number;
+      sort_by?: string;
+      sort_dir?: string;
+      facedown?: string;
+      historic_mode?: string;
+    } = {
+      sort_by: sortFields.map(sort => sort.field).join(','),
+      sort_dir: sortFields.map(sort => sort.direction).join(','),
+      facedown: 'false', // Always exclude facedown cards
+      historic_mode: historicMode ? 'true' : 'false'
+    };
+    
+    // Special handling for "colorless" search term
+    let searchTermToUse = searchTerm;
+    let colorFilters = [...filterColor];
+    
+    // Check if the search term contains "colorless" (case insensitive)
+    if (searchTerm && searchTerm.toLowerCase().includes('colorless')) {
+      // Add 'colorless' to color filters if not already there
+      if (!colorFilters.includes('colorless')) {
+        colorFilters.push('colorless');
+      }
+      
+      // Remove "colorless" from the search term
+      searchTermToUse = searchTerm.replace(/colorless/gi, '').trim();
+    }
+    
+    // Apply the possibly modified search term
+    if (searchTermToUse) {
+      params.search = searchTermToUse;
+    }
+    
+    if (bodySearchTerm) {
+      params.body_search = bodySearchTerm;
+    }
+    
+    // Apply color filters with special handling for our marker filters
+    if (colorFilters.length > 0) {
+      // Special handling for 'not-colorless' marker - we need to ensure colorless cards are excluded
+      // when multicolor filter is applied
+      const hasNotColorlessMarker = colorFilters.includes('not-colorless');
+      
+      // Filter out our special marker, as it's not a real color the API understands
+      const apiColorFilters = colorFilters.filter(c => c !== 'not-colorless');
+      
+      // Set the filtered colors array for the API
+      params.colors = apiColorFilters;
+      params.color_match = colorMatchType;
+      
+      // If we have the not-colorless marker, add a special parameter to tell the API
+      // to exclude colorless cards
+      if (hasNotColorlessMarker) {
+        params.exclude_colorless = 'true';
+      }
+    }
+    
+    if (filterType) {
+      params.type = filterType;
+    }
+    
+    if (filterSet) {
+      params.set = filterSet;
+    }
+    
+    if (filterCustom !== null) {
+      params.custom = filterCustom;
+    }
+    
+    if (filterHasHistory) {
+      params.has_history = true;
+    }
+
+    // If multicolor is selected but not colorless, filter out cards with no colors
+    const excludeColorless = colorFilters.includes('multicolor') && !colorFilters.includes('colorless');
+    const filterResults = (results: Card[]) =>
+      excludeColorless ? results.filter(card => card.colors && card.colors.length > 0) : results;
+
+    return { params, filterResults };
+  };
+
   // Fetch cards with current filters
   const fetchCards = async () => {
     setLoading(true);
     setError(null);
-    
+
     try {
-      const params: {
-        search?: string;
-        body_search?: string;
-        colors?: string[];
-        color_match?: 'exact' | 'includes' | 'at-most';
-        exclude_colorless?: string;
-        type?: string;
-        set?: string;
-        custom?: boolean | null;
-        has_history?: boolean;
-        page?: number;
-        limit?: number;
-        sort_by?: string;
-        sort_dir?: string;
-        facedown?: string;
-        historic_mode?: string;
-      } = {
-        page: currentPage,
-        limit: cardsPerPage,
-        sort_by: sortFields.map(sort => sort.field).join(','),
-        sort_dir: sortFields.map(sort => sort.direction).join(','),
-        facedown: 'false', // Always exclude facedown cards
-        historic_mode: historicMode ? 'true' : 'false'
-      };
-      
-      // Special handling for "colorless" search term
-      let searchTermToUse = searchTerm;
-      let colorFilters = [...filterColor];
-      
-      // Check if the search term contains "colorless" (case insensitive)
-      if (searchTerm && searchTerm.toLowerCase().includes('colorless')) {
-        // Add 'colorless' to color filters if not already there
-        if (!colorFilters.includes('colorless')) {
-          colorFilters.push('colorless');
-        }
-        
-        // Remove "colorless" from the search term
-        searchTermToUse = searchTerm.replace(/colorless/gi, '').trim();
-      }
-      
-      // Apply the possibly modified search term
-      if (searchTermToUse) {
-        params.search = searchTermToUse;
-      }
-      
-      if (bodySearchTerm) {
-        params.body_search = bodySearchTerm;
-      }
-      
-      // Apply color filters with special handling for our marker filters
-      if (colorFilters.length > 0) {
-        // Special handling for 'not-colorless' marker - we need to ensure colorless cards are excluded
-        // when multicolor filter is applied
-        const hasNotColorlessMarker = colorFilters.includes('not-colorless');
-        
-        // Filter out our special marker, as it's not a real color the API understands
-        const apiColorFilters = colorFilters.filter(c => c !== 'not-colorless');
-        
-        // Set the filtered colors array for the API
-        params.colors = apiColorFilters;
-        params.color_match = colorMatchType;
-        
-        // If we have the not-colorless marker, add a special parameter to tell the API
-        // to exclude colorless cards
-        if (hasNotColorlessMarker) {
-          params.exclude_colorless = 'true';
-        }
-      }
-      
-      if (filterType) {
-        params.type = filterType;
-      }
-      
-      if (filterSet) {
-        params.set = filterSet;
-      }
-      
-      if (filterCustom !== null) {
-        params.custom = filterCustom;
-      }
-      
-      if (filterHasHistory) {
-        params.has_history = true;
-      }
-      
-      const response = await getCards(params);
-      
-      // Check if we need to filter out colorless cards (when multicolor is selected)
-      let filteredCards = response.cards;
-      
-      // If multicolor is selected but not colorless, filter out cards with no colors
-      if (colorFilters.includes('multicolor') && !colorFilters.includes('colorless')) {
-        filteredCards = filteredCards.filter(card => {
-          // Filter out cards with empty colors array or no colors property
-          return card.colors && card.colors.length > 0;
-        });
-      }
-      
-      setCards(filteredCards);
+      const { params, filterResults } = buildCardQuery();
+      const response = await getCards({ ...params, page: currentPage, limit: cardsPerPage });
+
+      setCards(filterResults(response.cards));
       setTotalCards(response.total);
     } catch (err) {
       setError('Failed to load cards. Please try again later.');
     } finally {
       setLoading(false);
     }
+  };
+
+  // Export the images of every card matching the current filters, across all pages, as a zip
+  const exportCards = async (reportProgress: (message: string) => void) => {
+    reportProgress('Finding cards...');
+    const { params, filterResults } = buildCardQuery();
+    const allCards = await fetchAllPages(async (page, limit) => {
+      const response = await getCards({ ...params, page, limit });
+      return { items: response.cards, total: response.total };
+    });
+    const cardsWithBacks = await withBackFaces(filterResults(allCards));
+    const result = await downloadImagesAsZip(cardsWithBacks, 'cube-cards', (done, total) =>
+      reportProgress(`Downloading images ${done}/${total}...`)
+    );
+    return describeImageExport(result);
   };
 
   const toggleColorFilter = (color: string) => {
@@ -770,6 +785,11 @@ function CubeListContent() {
         <>
           <div className="flex flex-col items-center mb-4 space-y-2">
             <p className="dark:text-gray-300">Results: {totalCards} cards found</p>
+            <ExportListButton
+              label="Export all results as images (.zip)"
+              exportList={exportCards}
+              disabled={totalCards === 0}
+            />
             <div className="text-sm text-gray-600 dark:text-gray-400 text-center">
               <p>
                 <strong>Filters:</strong> {searchTerm ? `Name: "${searchTerm}"` : ''} 
