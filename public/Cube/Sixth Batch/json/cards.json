@@ -3781,7 +3781,7 @@
     "manaCost": "{2}{W}{U}",
     "type": "Sorcery",
     "rarity": "Rare",
-    "text": "Exile all nonland permenants and put two time counters on each of them. For each one, if it doesn’t have suspend, it gains suspend. (At the beginning of its owner’s upkeep, they remove a time counter. When the last is removed, they may play it without paying its mana cost. If it’s a creature, it has haste.)",
+    "text": "Exile all nonland permanents and put two time counters on each of them. For each one, if it doesn’t have suspend, it gains suspend. (At the beginning of its owner’s upkeep, they remove a time counter. When the last is removed, they may play it without paying its mana cost. If it’s a creature, it has haste.)",
     "colors": [
       "W",
       "U"
@@ -3790,7 +3790,7 @@
     "archetypes": [],
     "set": "Set 6",
     "artist": "Rainer Petter",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__gold__fracture-the-timeline.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__gold__fracture-the-timeline--r2.png"
   },
   {
     "id": "march-of-the-hollowed-sb6",
@@ -3798,7 +3798,7 @@
     "manaCost": "{4}{W}{B}",
     "type": "Enchantment",
     "rarity": "Rare",
-    "text": "Whenever a creature you control dies, put a respect counter on this enchantment.\nCreatures you control gets +1/+1 for each respect counter on this enchantment.\nYour opponents respect you {X}, where X’s the number of respect counters on this enchantment. (Creatures can’t attack you or block creatures you control unless their controller pays {X} for each creature they control that’s attacking you or blocking a creature you control. You have ward {X}.)",
+    "text": "Whenever a creature you control dies, put a respect counter on this enchantment.\nCreatures you control get +1/+1 for each respect counter on this enchantment.\nYour opponents respect you {X}, where X’s the number of respect counters on this enchantment. (Creatures can’t attack you or block creatures you control unless their controller pays {X} for each creature they control that’s attacking you or blocking a creature you control. You have ward {X}.)",
     "colors": [
       "W",
       "B"
@@ -3807,7 +3807,7 @@
     "archetypes": [],
     "set": "Set 6",
     "artist": "Valin Mattheis",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__gold__march-of-the-hollowed.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__gold__march-of-the-hollowed--r2.png"
   },
   {
     "id": "pockets-of-hope-sb6",
@@ -3959,7 +3959,7 @@
     "manaCost": "{X}{Y}{G}",
     "type": "Legendary Creature — Alien Noble",
     "rarity": "Mythic Rare",
-    "text": "When Zix’vara T’zashat enters, reveal cards from the Cube until you reveal X permenant cards, each with mana value Y and put them onto the battlefield.",
+    "text": "When Zix’vara T’zashat enters, reveal cards from the Cube until you reveal X permanent cards, each with mana value Y and put them onto the battlefield.",
     "colors": [
       "G"
     ],
@@ -3970,7 +3970,7 @@
     "power": "X",
     "toughness": "Y",
     "artist": "Alexey Egorov",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__green__zix-vara-t-zashat.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__green__zix-vara-t-zashat--r2.png"
   },
   {
     "id": "nahag-toran-sb6",
@@ -4027,14 +4027,14 @@
     "manaCost": "",
     "type": "Land",
     "rarity": "Rare",
-    "text": "{T}, Sacrifice this land: Search your library for a Island card, put it onto the battlefield, then shuffle.",
+    "text": "{T}, Sacrifice this land: Search your library for an Island card, put it onto the battlefield, then shuffle.",
     "colors": [],
     "custom": true,
     "archetypes": [],
     "set": "Set 6",
     "flavorText": "It is said that Ephara raised a city of marble, a place where humanity could finally find freedom and happiness.",
     "artist": "Adam Paquette",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__land__path-to-meletis.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__land__path-to-meletis--r2.png"
   },
   {
     "id": "path-to-setessa-sb6",
@@ -4153,7 +4153,7 @@
     "manaCost": "{R}{R}",
     "type": "Instant",
     "rarity": "Uncommon",
-    "text": "You repeatadly shot target creature with 1 damage until it’s dead.",
+    "text": "You repeatedly shot target creature with 1 damage until it’s dead.",
     "colors": [
       "R"
     ],
@@ -4162,7 +4162,7 @@
     "set": "Set 6",
     "flavorText": "“I might be out of spells,\nbut I’m never out of shells.”",
     "artist": "Devin Forst",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__red__power-word-gun.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__red__power-word-gun--r2.png"
   },
   {
     "id": "send-the-message-sb6",
@@ -4186,7 +4186,7 @@
     "manaCost": "{2}{W}{W}",
     "type": "Sorcery",
     "rarity": "Uncommon",
-    "text": "Return target creature card from your graveyard to the battlefield, then exile it, then return it to the battlefied.",
+    "text": "Return target creature card from your graveyard to the battlefield, then exile it, then return it to the battlefield.",
     "colors": [
       "W"
     ],
@@ -4195,7 +4195,7 @@
     "set": "Set 6",
     "flavorText": "What returns may not be what was lost, but all deserve a second chance.",
     "artist": "Aaron Nakahara",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__white__cling-to-life.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__white__cling-to-life--r2.png"
   },
   {
     "id": "parting-tears-sb6",
