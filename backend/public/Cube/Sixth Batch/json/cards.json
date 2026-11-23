@@ -4249,5 +4249,28 @@
     "toughness": "1",
     "artist": "Sandara Tang",
     "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__white__snow-tribe-heretic.png"
+  },
+  {
+    "id": "citadel-preacher-sb6",
+    "name": "Citadel Preacher",
+    "manaCost": "{1}{W}{U}",
+    "type": "Creature — Dinosaur Cleric",
+    "rarity": "Rare",
+    "text": "Whenever you cast your second spell each turn, put a +1/+1 counter on this creature. Third spell, untap up to two target lands you control, and fourth spell, draw two cards.",
+    "colors": [
+      "W",
+      "U"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Storm"
+    ],
+    "flavorText": "\"Humanity and Dinokind must sing as one. Join, tiny one, your voice matters.\"",
+    "power": "2",
+    "toughness": "3",
+    "artist": "Tomek Larek",
+    "set": "Set 6",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__gold__citadel-preacher.png",
+    "_supersedes": "citadel-preacher-fb5"
   }
 ]
