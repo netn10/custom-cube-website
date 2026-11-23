@@ -4272,5 +4272,23 @@
     "set": "Set 6",
     "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__gold__citadel-preacher.png",
     "_supersedes": "citadel-preacher-fb5"
+  },
+  {
+    "id": "go-out-with-a-bang-sb6",
+    "name": "Go Out With a Bang",
+    "manaCost": "{R}",
+    "type": "Instant",
+    "rarity": "Common",
+    "text": "Until end of turn, target creature you control gains “When this creature dies, it deals damage equal to its power to any target and you create a token that’s a copy of it, except it’s an enchantment in addition to its other types.”",
+    "colors": [
+      "R"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "flavorText": "“Please remember me at my best, but most of all, remember me at my worst.”",
+    "artist": "Due_Butterfly_1359",
+    "set": "Set 6",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__red__go-out-with-a-bang.png",
+    "_supersedes": "go-out-with-a-bang-fb4"
   }
 ]
