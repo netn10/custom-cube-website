@@ -828,7 +828,7 @@
     "archetypes": [],
     "artist": "SayGames",
     "set": "Set 5",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/fifth-batch__green__i-20don-e2-80-99t-20know-20anymore--r2.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/fifth-batch__green__i-20don-e2-80-99t-20know-20anymore--r2--full.png"
   },
   {
     "id": "mrbeast-within-fb5",
@@ -1013,7 +1013,7 @@
     "archetypes": [],
     "artist": "Nickelodeon Animation Studio",
     "set": "Set 5",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/fifth-batch__red__firebending-20mastery--r2.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/fifth-batch__red__firebending-20mastery--r2--full.png"
   },
   {
     "id": "fragments-of-potential-fb5",
@@ -1270,7 +1270,7 @@
     "_supersedes": "llm-genius-prompter-sb2",
     "prompt": "Give my companion from Magic the Gathering exactly one custom companion condition",
     "set": "Set 5",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/fifth-batch__remake__l.l.m-2c-20genius-20prompter--r2.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/fifth-batch__remake__l.l.m-2c-20genius-20prompter--r2--full.png"
   },
   {
     "id": "let-the-aether-flow-fb5",
@@ -1694,6 +1694,6 @@
     "archetypes": [],
     "artist": "Vanette Kosman",
     "set": "Set 5",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/fifth-batch__white__truths-20unspoken--r2.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/fifth-batch__white__truths-20unspoken--r2--full.png"
   }
 ]

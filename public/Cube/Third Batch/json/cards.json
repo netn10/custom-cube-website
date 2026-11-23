@@ -1161,7 +1161,7 @@
     "flavorText": "Gorgons do like giving the silent treatment.",
     "artist": "Mischeviouslittleelf",
     "set": "Set 3",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/third-batch__black__gaze-20of-20stone--r2.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/third-batch__black__gaze-20of-20stone--r2--full.png"
   },
   {
     "id": "gorgon-granite-collector-tb3",
@@ -1654,7 +1654,7 @@
     "flavorText": "\"Wisdom is the true wealth, and stories are the greatest treasures. Those who never stop wondering are the most fortunate, for knowledge is a currency that never loses its value.\"\n—Kellan, the Poetic Guide",
     "artist": "Midjourney 5.2",
     "set": "Set 3",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/third-batch__blue__riches-20beyond-20imagination--r2.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/third-batch__blue__riches-20beyond-20imagination--r2--full.png"
   },
   {
     "id": "show-off-attitude-tb3",
@@ -1715,7 +1715,7 @@
     "flavorText": "\"Then she scattered droplets across the Surface World, like the waves embracing the shore.\"\n—\"The Enchantress,\" Tritonian tale",
     "artist": "Sylvia Strijk",
     "set": "Set 3",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/third-batch__blue__thassa-e2-80-99s-20enchantress--r2.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/third-batch__blue__thassa-e2-80-99s-20enchantress--r2--full.png"
   },
   {
     "id": "the-usurper-of-house-dimir-tb3",
@@ -1736,7 +1736,7 @@
     "artist": "Whizumi",
     "relatedFace": "Meet the Crew",
     "set": "Set 3",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/third-batch__blue__the-20usurper-20of-20house-20dimir--r2.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/third-batch__blue__the-20usurper-20of-20house-20dimir--r2--full.png"
   },
   {
     "id": "who-could-it-be-tb3",
@@ -1795,7 +1795,7 @@
     "artist": "Jesper Milfords",
     "_supersedes": "annihilatog-fb1",
     "set": "Set 3",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/third-batch__changes-20from-20set-201__buffs__annihilatog--r2.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/third-batch__changes-20from-20set-201__buffs__annihilatog--r2--full.png"
   },
   {
     "id": "crimson-wedding-decoration-tb3",
@@ -2370,7 +2370,7 @@
     "artist": "Konami",
     "_supersedes": "lightsworn-behemoth-fb1",
     "set": "Set 3",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/third-batch__changes-20from-20set-201__wording-20fixes__lightsworn-20behemoth--r2.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/third-batch__changes-20from-20set-201__wording-20fixes__lightsworn-20behemoth--r2--full.png"
   },
   {
     "id": "lightsworn-visionary-tb3",
@@ -3081,7 +3081,7 @@
     ],
     "artist": "Dall-E 3",
     "set": "Set 3",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/third-batch__green__the-20otterly-20impossible-20machine--r2.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/third-batch__green__the-20otterly-20impossible-20machine--r2--full.png"
   },
   {
     "id": "the-swarm-speedbrood-agreement-tb3",
@@ -3173,7 +3173,7 @@
     "archetypes": [],
     "artist": "Rockstar Games",
     "set": "Set 3",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/third-batch__lands__brokers-20safehouse--r2.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/third-batch__lands__brokers-20safehouse--r2--full.png"
   },
   {
     "id": "experimental-test-facility-tb3",
@@ -3437,7 +3437,7 @@
     "toughness": "1",
     "artist": "Adzerak",
     "set": "Set 3",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/third-batch__red__evoker-20of-20unbound-20potential--r2.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/third-batch__red__evoker-20of-20unbound-20potential--r2--full.png"
   },
   {
     "id": "fear-of-mana-screw-tb3",
@@ -3576,7 +3576,7 @@
     ],
     "artist": "Dall-E 3",
     "set": "Set 3",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/third-batch__red__pump-20and-20dump--r2.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/third-batch__red__pump-20and-20dump--r2--full.png"
   },
   {
     "id": "reflections-of-a-daydreamer-tb3",

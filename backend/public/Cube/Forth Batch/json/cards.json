@@ -1530,7 +1530,7 @@
     "flavorText": "The Azorius hire tax collectors whose dedication runs so deep, they'd still do the job for free.",
     "artist": "Based on art by RenMoraes",
     "set": "Set 4",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/forth-batch__blue__pay-20day--r2.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/forth-batch__blue__pay-20day--r2--full.png"
   },
   {
     "id": "perish-that-thought-fb4",
@@ -2320,7 +2320,7 @@
     "archetypes": [],
     "artist": "タカヤマトシアキ",
     "set": "Set 4",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/forth-batch__colorless__duel-20masters--r2.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/forth-batch__colorless__duel-20masters--r2--full.png"
   },
   {
     "id": "emrakul-disturbing-reality-fb4",
@@ -2473,7 +2473,7 @@
     "flavorText": "\"Gathering the stars, fourteen gods entrusted Purphoros to forge them into one perfect jewel, which they hurled to the earth — and from its impact, humanity emerged.\"\n—Theros' Tale of Creation",
     "artist": "ChatGPT o4",
     "set": "Set 4",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/forth-batch__colorless__mox-20amethyst--r2.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/forth-batch__colorless__mox-20amethyst--r2--full.png"
   },
   {
     "id": "pizza-oven-fb4",
@@ -2592,7 +2592,7 @@
       "Kozilek, Unfathomable Truth"
     ],
     "set": "Set 4",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/forth-batch__colorless__ulamog-2c-20eternal-20consumer--r2.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/forth-batch__colorless__ulamog-2c-20eternal-20consumer--r2--full.png"
   },
   {
     "id": "new-phyrexia-fb4",
@@ -3470,7 +3470,7 @@
     "toughness": "3",
     "artist": "Imagen",
     "set": "Set 4",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/forth-batch__green__el-verde-2c-20danna-e2-80-99s-20masterpiece--r2.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/forth-batch__green__el-verde-2c-20danna-e2-80-99s-20masterpiece--r2--full.png"
   },
   {
     "id": "elves-of-civilized-facade-fb4",
@@ -3562,7 +3562,7 @@
     "toughness": "1",
     "artist": "Raini Studios",
     "set": "Set 4",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/forth-batch__green__jungle-20sanctifier--r2.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/forth-batch__green__jungle-20sanctifier--r2--full.png"
   },
   {
     "id": "legendary-loot-drop-fb4",
@@ -4111,7 +4111,7 @@
     "archetypes": [],
     "artist": "Harliskudo (Edited by me)",
     "set": "Set 4",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/forth-batch__red__astral-20force--r2.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/forth-batch__red__astral-20force--r2--full.png"
   },
   {
     "id": "bloodrush-bellow-fb4",
@@ -4524,7 +4524,7 @@
     "toughness": "2",
     "artist": "Imagen 3",
     "set": "Set 4",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/forth-batch__red__visionary-20of-20unfathomable-20sights-20-20-20-20-20-20-20-20-20--r2.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/forth-batch__red__visionary-20of-20unfathomable-20sights-20-20-20-20-20-20-20-20-20--r2--full.png"
   },
   {
     "id": "whisper-twice-fb4",
@@ -4705,7 +4705,7 @@
     "toughness": "5",
     "artist": "Imagen",
     "set": "Set 4",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/forth-batch__white__el-argint-2c-20aram-e2-80-99s-20masterpiece--r2.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/forth-batch__white__el-argint-2c-20aram-e2-80-99s-20masterpiece--r2--full.png"
   },
   {
     "id": "equenaut-coordinator-fb4",
@@ -4743,7 +4743,7 @@
     ],
     "artist": "ChatGPT o4",
     "set": "Set 4",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/forth-batch__white__erayo-e2-80-99s-20gift--r2.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/forth-batch__white__erayo-e2-80-99s-20gift--r4.png"
   },
   {
     "id": "falcon-mecha-fb4",
@@ -5039,7 +5039,7 @@
     "flavorText": "\"I never dreamt of battle, nor of banners raised in my name. But fate chose this course, and I ask you now to believe in it as I do.\"\n—The One Who Has Risen",
     "artist": "Gabriel Velloso",
     "set": "Set 4",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/forth-batch__white__the-20day-20is-20yours--r2.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/forth-batch__white__the-20day-20is-20yours--r2--full.png"
   },
   {
     "id": "the-paper-man-fb4",

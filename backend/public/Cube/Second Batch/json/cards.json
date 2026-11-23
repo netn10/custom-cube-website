@@ -178,7 +178,7 @@
     "archetypes": [],
     "artist": "Bruce Rolff",
     "set": "Set 2",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/second-batch__blue__head-20twister--r2.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/second-batch__blue__head-20twister--r2--full.png"
   },
   {
     "id": "rise-my-minions-sb2",
@@ -244,7 +244,7 @@
     "archetypes": [],
     "artist": "Peter Mohrbacher",
     "set": "Set 2",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/second-batch__colorless__unnatural-20selection--r2.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/second-batch__colorless__unnatural-20selection--r2--full.png"
   },
   {
     "id": "akul-dirtiest-gun-in-the-juncture-sb2",
@@ -309,7 +309,7 @@
     "toughness": "*",
     "artist": "Dinotropia",
     "set": "Set 2",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/second-batch__gold__gyruda-e2-80-99s-20scion--r2.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/second-batch__gold__gyruda-e2-80-99s-20scion--r2--full.png"
   },
   {
     "id": "jeganthas-presence-sb2",
@@ -451,7 +451,7 @@
     "toughness": "1",
     "artist": "CobaltPlasma",
     "set": "Set 2",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/second-batch__gold__obosh-e2-80-99s-20spawn--r2.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/second-batch__gold__obosh-e2-80-99s-20spawn--r2--full.png"
   },
   {
     "id": "orgle-the-slippery-sb2",
@@ -529,7 +529,7 @@
     "toughness": "4",
     "artist": "Tricia Beal",
     "set": "Set 2",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/second-batch__gold__the-20fleecetail-20wolf--r2.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/second-batch__gold__the-20fleecetail-20wolf--r2--full.png"
   },
   {
     "id": "the-inevitable-sb2",
@@ -585,7 +585,7 @@
     ],
     "artist": "DALL-E 3",
     "set": "Set 2",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/second-batch__gold__umori-e2-80-99s-20glittering-cavern--r2.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/second-batch__gold__umori-e2-80-99s-20glittering-cavern--r2--full.png"
   },
   {
     "id": "volgoth-chewer-of-toys-sb2",
@@ -758,7 +758,7 @@
     "archetypes": [],
     "artist": "Liz and Jess art shop",
     "set": "Set 2",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/second-batch__red__sunbird-e2-80-99s-20song--r2.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/second-batch__red__sunbird-e2-80-99s-20song--r2--full.png"
   },
   {
     "id": "tiring-bolt-sb2",
@@ -952,6 +952,6 @@
     "archetypes": [],
     "artist": "Eviaison",
     "set": "Set 2",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/second-batch__white__hang-20in-20the-20balance--r2.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/second-batch__white__hang-20in-20the-20balance--r2--full.png"
   }
 ]

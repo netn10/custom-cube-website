@@ -887,7 +887,7 @@
     "set": "Set 6",
     "artist": "@buttercat_paradox",
     "_supersedes": "dumpster-diving-fb1",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__cards__dumpster-diving.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__cards__dumpster-diving--full.png"
   },
   {
     "id": "dungeon-apparition-sb6",
@@ -1284,12 +1284,12 @@
       "Self-mill"
     ],
     "set": "Set 6",
-    "artist": "Nano Banana",
+    "artist": "Richard Whitters",
     "relatedTokens": [
       "1/1 white Human Soldier"
     ],
     "_supersedes": "for-a-perfect-society-fb5",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__cards__for-a-perfect-society.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__cards__for-a-perfect-society--r2.png"
   },
   {
     "id": "forgotten-town-sb6",
@@ -1624,7 +1624,7 @@
     "flavorText": "Thunder Junction is a land with no future, yet even outlaws must always find something to leave behind.",
     "artist": "VincentiusMatthew",
     "_supersedes": "industrious-frontier-fb4",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__cards__industrious-frontier.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__cards__industrious-frontier--full.png"
   },
   {
     "id": "inferno-fun-rakdoss-favorite-sb6",
@@ -1987,7 +1987,7 @@
     "toughness": "3",
     "artist": "Imagen 2",
     "_supersedes": "maakian-nodorog-fb4",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__cards__maakian-nodorog.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__cards__maakian-nodorog--full.png"
   },
   {
     "id": "magecaster-page-sb6",
