@@ -3016,7 +3016,7 @@
     "id": "saikeiseisha-reshaper-of-boseiju-tb3",
     "name": "Saikeiseisha, Reshaper of Boseiju",
     "manaCost": "{6}{G}",
-    "type": "Legendary Creature — Cyborg Druid",
+    "type": "Legendary Creature — Robot Druid",
     "rarity": "Mythic Rare",
     "text": "This spell costs {X} less to cast, where X is the total printed power of Vehicles you control.\n{T}: Add {W}{W}{W}. If you spend this mana to cast a permanent spell, it enters with an indestructible counter and a hexproof counter on it.\n{3}: Target artifact becomes an artifact creature. If it isn't a Vehicle, it has base power and toughness 4/4.",
     "colors": [
@@ -3028,9 +3028,9 @@
     ],
     "power": "3",
     "toughness": "3",
-    "artist": "Dall-E 3",
+    "artist": "Gyūdon",
     "set": "Set 3",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/third-batch__green__saikeiseisha-2c-20reshaper-20of-20boseiju--r2.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-3/saikeiseisha-reshaper-of-boseiju-tb3--art2.png"
   },
   {
     "id": "someone-to-rely-on-tb3",

@@ -1426,10 +1426,11 @@
     ],
     "power": "3",
     "toughness": "3",
-    "artist": "ChatGPT",
+    "artist": "Privateer Press",
     "_supersedes": "selesnya-battle-waker-fb1",
     "set": "Set 5",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/fifth-batch__remake__selesnya-20battle-waker.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-3/selesnya-battle-waker-fb5--art2.png",
+    "flavorText": "“The Conclave never works with the League. Discern the meaning of this.”\n—Proft, to The Agency"
   },
   {
     "id": "sharestone-fb5",
