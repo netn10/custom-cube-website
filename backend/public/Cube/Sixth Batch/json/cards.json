@@ -4290,5 +4290,70 @@
     "set": "Set 6",
     "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__red__go-out-with-a-bang.png",
     "_supersedes": "go-out-with-a-bang-fb4"
+  },
+  {
+    "name": "Volgoth, Plaything Ripper",
+    "manaCost": "{8}{B}{G}",
+    "type": "Legendary Artifact Creature — Cat Horror",
+    "rarity": "Rare",
+    "text": "Companion — Before the game starts, conjure eight cards named Squee’s Toy into your library, then shuffle. (If this card is your chosen companion, you may put it into your hand from outside the game for {3} as a sorcery.)\nAffinity for artifacts (This spell costs {1} less to cast for each artifact you control.)\nWhenever you activate an ability of an artifact, if it isn’t a mana ability, you may sacrifice that artifact. If you do, draw a card and copy that ability. You may choose new targets for the copy.",
+    "colors": [
+      "B",
+      "G"
+    ],
+    "custom": true,
+    "archetypes": [
+      "Artifacts"
+    ],
+    "power": "6",
+    "toughness": "4",
+    "artist": "Amanita Design",
+    "set": "Set 6",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-3/sixth-batch__gold__volgoth-plaything-ripper.png",
+    "id": "volgoth-plaything-ripper-sb6",
+    "_supersedes": "volgoth-chewer-of-toys-sb2"
+  },
+  {
+    "id": "the-houses-rightful-ruler-sb6",
+    "name": "The House's Rightful Ruler",
+    "manaCost": "{3}{U}{U}{B}{B}",
+    "type": "Legendary Creature — Vampire Horror Elder",
+    "rarity": "Mythic Rare",
+    "text": "This spell can’t be countered.\nMenace\nWhen The House’s Rightful Ruler enters, exile target player’s hand. Then that player conjures a card named Confusion into their hand for each card exiled this way. (Confusion is a colorless sorcery card with no mana cost that has cycling {2}.)",
+    "colors": [
+      "U",
+      "B"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "power": "7",
+    "toughness": "7",
+    "artist": "Joseph Vargo",
+    "relatedTokens": [
+      "Confusion"
+    ],
+    "set": "Set 6",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-3/sixth-batch__gold__the-houses-rightful-ruler.png",
+    "_supersedes": "szadek-ancient-madness-fb4"
+  },
+  {
+    "id": "thalia-rebellious-heretic-sb6",
+    "name": "Thalia, Rebellious Heretic",
+    "manaCost": "{1}{B}",
+    "type": "Legendary Creature — Human Soldier",
+    "rarity": "Rare",
+    "text": "Deathtouch\nNoncreature spells cost 2 life more to cast.",
+    "colors": [
+      "B"
+    ],
+    "custom": true,
+    "archetypes": [],
+    "power": "1",
+    "toughness": "2",
+    "flavorText": "\"It's not just a phase, Avacyn — it's the beginning of the end phase.\"",
+    "artist": "GODMACHINE (Edited by me)",
+    "set": "Set 6",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-3/sixth-batch__black__thalia-rebellious-heretic.png",
+    "_supersedes": "thalia-rebelious-heretic-fb4"
   }
 ]
