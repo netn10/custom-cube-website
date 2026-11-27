@@ -4314,12 +4314,12 @@
     "_supersedes": "volgoth-chewer-of-toys-sb2"
   },
   {
-    "id": "the-houses-rightful-ruler-sb6",
-    "name": "The House's Rightful Ruler",
+    "id": "the-forgotten-parun-sb6",
+    "name": "The Forgotten Parun",
     "manaCost": "{3}{U}{U}{B}{B}",
     "type": "Legendary Creature — Vampire Horror Elder",
     "rarity": "Mythic Rare",
-    "text": "This spell can’t be countered.\nMenace\nWhen The House’s Rightful Ruler enters, exile target player’s hand. Then that player conjures a card named Confusion into their hand for each card exiled this way. (Confusion is a colorless sorcery card with no mana cost that has cycling {2}.)",
+    "text": "This spell can’t be countered.\nMenace\nWhen The Forgotten Parun enters, exile target player’s hand. Then that player conjures a card named Confusion into their hand for each card exiled this way. (Confusion is a colorless sorcery card with no mana cost that has cycling {2}.)",
     "colors": [
       "U",
       "B"
@@ -4333,7 +4333,7 @@
       "Confusion"
     ],
     "set": "Set 6",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-3/sixth-batch__gold__the-houses-rightful-ruler.png",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-3/sixth-batch__gold__the-forgotten-parun.png",
     "_supersedes": "szadek-ancient-madness-fb4"
   },
   {
