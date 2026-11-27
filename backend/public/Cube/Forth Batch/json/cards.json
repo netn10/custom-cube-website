@@ -1062,9 +1062,9 @@
     "custom": true,
     "archetypes": [],
     "flavorText": "The truth always sits comfortably between two lies.",
-    "artist": "ChatGPT o4",
+    "artist": "Chris Alfeus",
     "set": "Set 4",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art/forth-batch__black__lying-20by-20omission.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-3/forth-batch__black__lying-20by-20omission--newart.png"
   },
   {
     "id": "makub-the-dealer-fb4",
@@ -3541,9 +3541,9 @@
     "custom": true,
     "archetypes": [],
     "flavorText": "\"Nothing is more natural than nurturing the world around you while discarding your metallic impurities.\"\n—Dolomarus, Esper Heretic",
-    "artist": "ChatGPT o4",
+    "artist": "ChatGPT Images 2.6",
     "set": "Set 4",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/forth-batch__green__heretic-e2-80-99s-20capusle--r2.png",
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-3/forth-batch__green__heretic-e2-80-99s-20capusle--newart.png",
     "manaCost": "{G}"
   },
   {
@@ -4111,7 +4111,7 @@
     "archetypes": [],
     "artist": "Harliskudo (Edited by me)",
     "set": "Set 4",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/forth-batch__red__astral-20force--r2--full.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-3/forth-batch__red__astral-20force--blue.png"
   },
   {
     "id": "bloodrush-bellow-fb4",

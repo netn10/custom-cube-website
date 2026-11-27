@@ -3959,7 +3959,7 @@
     "manaCost": "{X}{Y}{G}",
     "type": "Legendary Creature — Alien Noble",
     "rarity": "Mythic Rare",
-    "text": "When Zix’vara T’zashat enters, reveal cards from the Cube until you reveal X permanent cards, each with mana value Y and put them onto the battlefield.",
+    "text": "When Zix’vara T’zashat enters, reveal cards from the Cube until you reveal X permanent cards, each with mana value Y or less and put them onto the battlefield.",
     "colors": [
       "G"
     ],
@@ -3970,7 +3970,7 @@
     "power": "X",
     "toughness": "Y",
     "artist": "Alexey Egorov",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-2/sixth-batch__green__zix-vara-t-zashat--r2.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-3/sixth-batch__green__zix-vara-t-zashat--orless.png"
   },
   {
     "id": "nahag-toran-sb6",

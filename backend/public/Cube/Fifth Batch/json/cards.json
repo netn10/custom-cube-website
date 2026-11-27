@@ -540,10 +540,10 @@
     "custom": true,
     "archetypes": [],
     "flavorText": "\"The age of Wizards of the Coast is over. Billions must design.\"",
-    "artist": "Nano Banana",
+    "artist": "Atelier Olschinsky",
     "prompt": "Give me exactly one custom Magic the Gathering spell with mana cost of {noted mana cost}.",
     "set": "Set 5",
-    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-3/fifth-batch__colorless__the-20custom-20cube--wm2.png"
+    "imageUrl": "https://github.com/netn10/custom-cube-website/releases/download/cube-art-3/fifth-batch__colorless__the-20custom-20cube--newart.png"
   },
   {
     "id": "arboria-survivalist-fb5",
